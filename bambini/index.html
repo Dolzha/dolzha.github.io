@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bambini — частный детский сад в Екатеринбурге</title>
+<meta name="description" content="Bambini — частный детский сад в Екатеринбурге. Уютные группы, заботливые педагоги, английский, логопед, йога и продуманный режим дня. Рейтинг 4.8 в 2ГИС. Запишитесь на просмотр." />
+<meta name="theme-color" content="#FF8A66" />
+<link rel="icon" type="image/png" href="images/logo.png" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:title" content="Bambini — частный детский сад в Екатеринбурге" />
+<meta property="og:description" content="Уютные группы, заботливые педагоги, английский, логопед, йога. Рейтинг 4.8 в 2ГИС. Запишитесь на просмотр." />
+<meta property="og:image" content="images/og-preview.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FFF8EF;
+    --cream-2:#FFFDFA;
+    --ink:#4B4459;
+    --ink-soft:#857E92;
+    --coral:#FF8A66;
+    --coral-deep:#FB6B45;
+    --peach:#FFD7B0;
+    --yellow:#FFC95B;
+    --yellow-soft:#FFE9AE;
+    --mint:#7FD2A6;
+    --mint-deep:#46B985;
+    --mint-soft:#CDEFDD;
+    --sky:#86CFE6;
+    --sky-deep:#52B5D7;
+    --sky-soft:#D4F0F8;
+    --lilac:#C6B4F0;
+    --pink:#FFB0C8;
+    --shadow:0 18px 40px -18px rgba(120,90,70,.35);
+    --shadow-soft:0 12px 30px -16px rgba(120,90,70,.28);
+    --radius:30px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito',-apple-system,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Baloo 2',cursive;line-height:1.12;font-weight:700}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 26px}
+  .accent{color:var(--coral-deep)}
+  section{position:relative}
+
+  /* ---------- HEADER ---------- */
+  header{position:relative;z-index:20}
+  .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;font-size:26px;color:var(--ink);text-decoration:none}
+  .brand .logo-sun{width:34px;height:34px;flex:none}
+  .brand b{color:var(--coral-deep)}
+  .nav-links{display:flex;gap:30px;list-style:none;justify-self:center}
+  .nav-links a{text-decoration:none;color:var(--ink);font-weight:700;font-size:16px;transition:color .2s}
+  .nav-links a:hover{color:var(--coral-deep)}
+  .nav-cta{display:flex;align-items:center;gap:16px;justify-self:end}
+  .nav-phone{font-family:'Baloo 2';font-weight:700;color:var(--ink);text-decoration:none;font-size:17px;white-space:nowrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Baloo 2';font-weight:700;font-size:17px;
+    border:none;cursor:pointer;text-decoration:none;
+    padding:14px 26px;border-radius:50px;transition:transform .18s,box-shadow .18s;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;box-shadow:0 12px 24px -10px rgba(251,107,69,.7)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(251,107,69,.8)}
+  .btn-ghost{background:#fff;color:var(--ink);box-shadow:var(--shadow-soft)}
+  .btn-ghost:hover{transform:translateY(-2px)}
+  .btn-sm{padding:11px 20px;font-size:15px}
+  .btn-wa{background:#25D366;color:#fff;box-shadow:0 12px 24px -10px rgba(37,211,102,.6)}
+  .btn-tg{background:#2AABEE;color:#fff;box-shadow:0 12px 24px -10px rgba(42,171,238,.6)}
+  .btn-wa:hover,.btn-tg:hover{transform:translateY(-2px)}
+  .form-btns{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+  .form-btns .btn{width:100%;justify-content:center;font-size:17px;padding:15px}
+  .consent{display:flex;align-items:flex-start;gap:10px;margin:4px 0 2px;font-weight:600;font-size:13px;line-height:1.4;color:var(--ink-soft);cursor:pointer}
+  .consent input{width:19px;height:19px;margin-top:1px;flex:none;accent-color:var(--coral-deep);cursor:pointer}
+  .consent a{color:var(--coral-deep);font-weight:700;text-decoration:none}
+  .consent a:hover{text-decoration:underline}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:30px 0 150px;
+    background:linear-gradient(180deg,#CDEEF7 0%,#E4F4F0 42%,var(--cream) 100%);
+    overflow:hidden;
+  }
+  .hero .sun-deco{position:absolute;top:30px;right:8%;width:120px;height:120px;animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .cloud{position:absolute;opacity:.92;animation:drift 24s ease-in-out infinite}
+  .cloud.c1{top:90px;left:6%;width:130px}
+  .cloud.c2{top:160px;right:24%;width:90px;animation-delay:-8s}
+  .cloud.c3{top:60px;left:42%;width:70px;animation-delay:-14s}
+  @keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(26px)}}
+  .balloon{position:absolute;width:54px;animation:float 7s ease-in-out infinite}
+  .balloon.b1{top:240px;left:3%}
+  .balloon.b2{top:300px;right:5%;animation-delay:-3s;width:46px}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-22px) rotate(3deg)}}
+
+  .hero-inner{position:relative;z-index:5;text-align:center;max-width:760px;margin:0 auto;padding-top:18px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;color:var(--mint-deep);font-weight:800;font-size:14px;
+    padding:9px 18px;border-radius:50px;box-shadow:var(--shadow-soft);
+    text-transform:uppercase;letter-spacing:.04em;margin-bottom:24px;
+  }
+  .eyebrow .dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px var(--mint-soft)}
+  .hero h1{font-size:clamp(38px,6vw,64px);font-weight:800;color:var(--ink);margin-bottom:20px}
+  .hero h1 .squiggle{position:relative;white-space:nowrap;color:var(--coral-deep)}
+  .hero h1 .squiggle svg{position:absolute;left:0;bottom:-4px;width:100%;height:16px}
+  .hero p.lead{font-size:clamp(17px,2.2vw,21px);color:var(--ink-soft);font-weight:600;max-width:600px;margin:0 auto 32px}
+  .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+
+  .rating-badge{
+    display:inline-flex;align-items:center;gap:12px;background:#fff;
+    padding:12px 22px;border-radius:50px;box-shadow:var(--shadow);
+  }
+  .rating-badge .stars{color:var(--yellow);font-size:19px;letter-spacing:2px}
+  .rating-badge .score{font-family:'Baloo 2';font-weight:800;color:var(--ink);font-size:18px}
+  .rating-badge .src{color:var(--ink-soft);font-weight:700;font-size:14px;border-left:2px solid #EADfD0;padding-left:12px}
+
+  .hill{position:absolute;left:0;right:0;bottom:-1px;width:100%;z-index:2;display:block}
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{background:var(--cream);padding:8px 0 70px}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:-40px;position:relative;z-index:8}
+  .trust-card{
+    background:#fff;border-radius:26px;padding:26px 22px;text-align:center;box-shadow:var(--shadow-soft);
+    border:1px solid #FBEFE0;transition:transform .2s;
+  }
+  .trust-card:hover{transform:translateY(-6px)}
+  .trust-ico{width:60px;height:60px;border-radius:20px;display:grid;place-items:center;margin:0 auto 14px}
+  .trust-ico svg{width:32px;height:32px}
+  .trust-card h3{font-size:19px;margin-bottom:6px;color:var(--ink)}
+  .trust-card p{font-size:14.5px;color:var(--ink-soft);font-weight:600;line-height:1.45}
+
+  /* ---------- SECTION SHELL ---------- */
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+  .sec-tag{font-family:'Baloo 2';font-weight:700;color:var(--coral-deep);font-size:16px;letter-spacing:.03em}
+  .sec-head h2{font-size:clamp(30px,4.5vw,46px);font-weight:800;color:var(--ink);margin-top:6px}
+  .sec-head p{color:var(--ink-soft);font-weight:600;font-size:17px;margin-top:12px}
+
+  /* ---------- GROUPS ---------- */
+  .groups{padding:30px 0 90px}
+  .group-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .group-card{
+    background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+    border:1px solid #F6E8D8;transition:transform .22s;display:flex;flex-direction:column;
+  }
+  .group-card:hover{transform:translateY(-8px)}
+  .group-photo{position:relative;height:200px;display:grid;place-items:center;overflow:hidden}
+  .group-photo svg.scene{width:96px;height:96px}
+  .group-photo .photo-chip{
+    position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);
+    color:var(--ink);font-weight:800;font-size:12.5px;padding:7px 13px;border-radius:50px;
+    display:flex;align-items:center;gap:6px;box-shadow:var(--shadow-soft);
+  }
+  .group-photo .photo-chip svg{width:15px;height:15px}
+  .g1 .group-photo{background:linear-gradient(150deg,#FFE2C9,#FFD0AE)}
+  .g2 .group-photo{background:linear-gradient(150deg,#D6F0E0,#B7E6CC)}
+  .g3 .group-photo{background:linear-gradient(150deg,#D7EEF8,#BFE4F2)}
+  .group-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column}
+  .age-pill{align-self:flex-start;font-family:'Baloo 2';font-weight:700;font-size:14px;padding:6px 15px;border-radius:50px;margin-bottom:12px}
+  .g1 .age-pill{background:#FFE9D6;color:#D9743E}
+  .g2 .age-pill{background:#D6F0E0;color:var(--mint-deep)}
+  .g3 .age-pill{background:#D7EEF8;color:var(--sky-deep)}
+  .group-body h3{font-size:23px;color:var(--ink);margin-bottom:8px}
+  .group-body p{color:var(--ink-soft);font-weight:600;font-size:15.5px;flex:1}
+  .group-body .seats{margin-top:16px;font-weight:800;font-size:14px;color:var(--mint-deep);display:flex;align-items:center;gap:7px}
+  .group-body .seats .ball{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px var(--mint-soft)}
+
+  /* ---------- DAY SCHEDULE ---------- */
+  .schedule{padding:80px 0;background:linear-gradient(180deg,var(--cream),#FFF1E2)}
+  .sched-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:54px;align-items:center}
+  .sched-illus{position:relative;display:grid;place-items:center}
+  .sched-card-illus{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:34px;width:100%;max-width:420px;position:relative}
+  .sched-card-illus .big-clock{width:100%;height:auto}
+  .sched-card-illus .pill-note{position:absolute;background:#fff;border-radius:18px;box-shadow:var(--shadow-soft);padding:12px 16px;font-weight:800;font-size:14px;display:flex;align-items:center;gap:9px}
+  .pn1{top:-18px;right:-10px;color:var(--coral-deep)}
+  .pn2{bottom:-16px;left:-14px;color:var(--mint-deep)}
+  .pill-note svg{width:20px;height:20px}
+
+  .timeline{list-style:none;position:relative;padding-left:8px}
+  .timeline:before{content:"";position:absolute;left:55px;top:14px;bottom:14px;width:3px;background:repeating-linear-gradient(var(--peach),var(--peach) 7px,transparent 7px,transparent 14px)}
+  .tl-item{display:flex;align-items:center;gap:20px;padding:9px 0;position:relative}
+  .tl-time{font-family:'Baloo 2';font-weight:700;color:var(--ink);width:64px;flex:none;font-size:16px;text-align:right}
+  .tl-node{width:40px;height:40px;border-radius:14px;flex:none;display:grid;place-items:center;z-index:2;box-shadow:0 6px 14px -6px rgba(120,90,70,.4)}
+  .tl-node svg{width:22px;height:22px}
+  .tl-text{font-weight:700;color:var(--ink);font-size:16.5px}
+  .tl-text small{display:block;font-weight:600;color:var(--ink-soft);font-size:13.5px}
+
+  /* ---------- PRICING ---------- */
+  .pricing{padding:90px 0;background:linear-gradient(180deg,#FFF1E2,var(--cream))}
+  .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch;max-width:760px;margin:0 auto}
+  .price-card{background:#fff;border-radius:var(--radius);padding:36px 28px 30px;box-shadow:var(--shadow-soft);border:1px solid #F6E8D8;display:flex;flex-direction:column;text-align:center;position:relative;transition:transform .2s}
+  .price-card:hover{transform:translateY(-6px)}
+  .price-card.popular{border:2px solid var(--coral);box-shadow:var(--shadow)}
+  .pc-badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;font-family:'Baloo 2';font-weight:700;font-size:13px;padding:7px 20px;border-radius:50px;box-shadow:0 8px 18px -8px rgba(251,107,69,.8);white-space:nowrap}
+  .pc-ico{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin:0 auto 16px}
+  .pc-ico svg{width:30px;height:30px}
+  .price-card h3{font-size:23px;color:var(--ink);margin-bottom:4px}
+  .pc-hours{color:var(--ink-soft);font-weight:700;font-size:14px}
+  .pc-amount{font-family:'Baloo 2';font-weight:800;font-size:42px;color:var(--ink);margin:16px 0 4px;line-height:1}
+  .pc-amount .per{font-size:17px;color:var(--ink-soft);font-weight:700}
+  .pc-feats{list-style:none;text-align:left;margin:20px 0 24px;flex:1}
+  .pc-feats li{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px;font-weight:600;color:var(--ink);font-size:15px}
+  .pc-feats li svg{width:20px;height:20px;flex:none;margin-top:1px}
+  .price-card .btn{width:100%;justify-content:center}
+  .price-note{text-align:center;margin-top:26px;color:var(--ink-soft);font-weight:600;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:8px}
+  .price-note svg{width:18px;height:18px;flex:none}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{padding:90px 0}
+  .rev-hero{
+    display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;
+    background:linear-gradient(135deg,#FFF3DF,#FFE7CC);border-radius:var(--radius);
+    padding:34px 40px;margin-bottom:44px;box-shadow:var(--shadow-soft);
+  }
+  .rev-hero .big-score{font-family:'Baloo 2';font-weight:800;font-size:64px;color:var(--coral-deep);line-height:1}
+  .rev-hero .rh-mid{text-align:left}
+  .rev-hero .rh-stars{color:var(--yellow);font-size:26px;letter-spacing:3px}
+  .rev-hero .rh-mid p{font-weight:800;color:var(--ink);font-size:18px;margin-top:4px}
+  .rev-hero .rh-mid span{font-weight:700;color:var(--ink-soft);font-size:15px}
+  .rev-hero .gis{display:flex;align-items:center;gap:10px;background:#fff;padding:12px 18px;border-radius:50px;box-shadow:var(--shadow-soft);font-weight:800;color:var(--mint-deep)}
+  .rev-hero .gis svg{width:24px;height:24px}
+
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rev-card{background:#fff;border-radius:26px;padding:28px;box-shadow:var(--shadow-soft);border:1px solid #F6E8D8;position:relative}
+  .rev-card .quote{position:absolute;top:18px;right:24px;font-family:'Baloo 2';font-size:60px;color:var(--peach);line-height:1}
+  .rev-card .rc-stars{color:var(--yellow);font-size:16px;letter-spacing:2px;margin-bottom:12px}
+  .rev-card p{font-weight:600;color:var(--ink);font-size:15.5px;margin-bottom:18px}
+  .rev-author{display:flex;align-items:center;gap:12px}
+  .rev-ava{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-family:'Baloo 2';font-weight:800;color:#fff;font-size:18px}
+  .rev-author b{display:block;color:var(--ink);font-size:15.5px}
+  .rev-author small{color:var(--ink-soft);font-weight:700}
+
+  /* ---------- BOOKING ---------- */
+  .booking{padding:30px 0 100px}
+  .book-wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow);background:#fff;
+  }
+  .book-left{background:linear-gradient(160deg,var(--mint),var(--mint-deep));padding:48px 44px;color:#fff;position:relative;overflow:hidden}
+  .book-left .blob{position:absolute;border-radius:50%;background:rgba(255,255,255,.13)}
+  .book-left .bl1{width:170px;height:170px;top:-50px;right:-40px}
+  .book-left .bl2{width:110px;height:110px;bottom:-30px;left:-30px;background:rgba(255,255,255,.1)}
+  .book-left h2{font-size:34px;font-weight:800;margin-bottom:16px;position:relative}
+  .book-left p{font-weight:600;font-size:16.5px;opacity:.95;margin-bottom:26px;position:relative}
+  .contact-list{list-style:none;position:relative}
+  .contact-list li{display:flex;align-items:center;gap:14px;margin-bottom:18px;font-weight:700;font-size:16px}
+  .contact-list .ci{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.2);display:grid;place-items:center;flex:none}
+  .contact-list .ci svg{width:22px;height:22px}
+  .contact-list small{display:block;font-weight:600;opacity:.85;font-size:13px}
+
+  .book-form{padding:48px 44px}
+  .book-form h3{font-size:26px;color:var(--ink);margin-bottom:8px}
+  .book-form .fsub{color:var(--ink-soft);font-weight:600;margin-bottom:24px;font-size:15.5px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:800;font-size:13.5px;color:var(--ink);margin-bottom:7px;margin-left:4px}
+  .field input{
+    width:100%;border:2px solid #F0E5D6;background:var(--cream-2);border-radius:16px;
+    padding:14px 18px;font-family:'Nunito';font-size:16px;font-weight:600;color:var(--ink);transition:border .2s;
+  }
+  .field input:focus{outline:none;border-color:var(--coral)}
+  .book-form .btn-primary{width:100%;justify-content:center;margin-top:8px;font-size:18px;padding:16px}
+  .book-form .small-note{text-align:center;color:var(--ink-soft);font-size:12.5px;font-weight:600;margin-top:14px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#4B4459;color:#fff;padding:54px 0 30px}
+  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .foot-brand .brand{color:#fff;font-size:28px}
+  .foot-brand p{color:rgba(255,255,255,.7);font-weight:600;max-width:280px;margin-top:14px;font-size:15px}
+  .foot-col h4{font-family:'Baloo 2';font-size:18px;margin-bottom:14px}
+  .foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.72);text-decoration:none;font-weight:600;margin-bottom:9px;font-size:15px}
+  .foot-socials{display:flex;gap:12px;margin-top:6px}
+  .foot-socials a{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.12);display:grid;place-items:center;transition:background .2s}
+  .foot-socials a:hover{background:var(--coral)}
+  .foot-socials svg{width:22px;height:22px}
+  .foot-bottom{padding-top:24px;text-align:center;color:rgba(255,255,255,.5);font-weight:600;font-size:13.5px}
+
+  /* ---------- LOGO IMG + REAL PHOTOS ---------- */
+  .logo-img{height:124px;width:auto;display:block;margin-left:-54px}
+  .foot-logo{display:inline-block;background:#fff;padding:12px 18px;border-radius:18px;box-shadow:var(--shadow-soft)}
+  .foot-logo img{height:46px;width:auto;display:block}
+  .group-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{padding:40px 0 90px}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .gal-grid figure{margin:0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-soft);aspect-ratio:4/3;position:relative;border:1px solid #F6E8D8}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .gal-grid figure:hover img{transform:scale(1.07)}
+  .gal-note{text-align:center;margin-top:26px;color:var(--ink-soft);font-weight:600;font-size:14.5px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:920px){
+    .nav-links{display:none}
+    .trust-grid{grid-template-columns:repeat(2,1fr)}
+    .group-grid{grid-template-columns:1fr;max-width:430px;margin:0 auto}
+    .price-grid{grid-template-columns:1fr;max-width:430px;margin:0 auto}
+    .gal-grid{grid-template-columns:repeat(2,1fr)}
+    .sched-wrap{grid-template-columns:1fr;gap:40px}
+    .sched-illus{order:-1}
+    .rev-grid{grid-template-columns:1fr;max-width:430px;margin:0 auto}
+    .book-wrap{grid-template-columns:1fr}
+  }
+  @media(max-width:620px){
+    .wrap{padding:0 18px}
+    .nav-phone{display:none}
+    .logo-img{height:62px;margin-left:-4px}
+    .balloon{display:none}
+    .hero .sun-deco{width:84px;top:64px;right:4%}
+    .hero{padding-bottom:120px}
+    .trust-grid{grid-template-columns:1fr;max-width:360px;margin:-40px auto 0}
+    .rev-hero{flex-direction:column;text-align:center;gap:18px;padding:28px}
+    .rev-hero .rh-mid{text-align:center}
+    .book-left,.book-form{padding:36px 26px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <img src="images/logo.png" alt="Bambini — детский сад" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#gallery">Фото</a></li>
+      <li><a href="#pricing">Цены</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#booking">Контакты</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+79881662333" class="nav-phone" data-cms="phone" data-cms-tel>+7 988 166-23-33</a>
+      <a href="#booking" class="btn btn-primary btn-sm">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <svg class="sun-deco" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="30" fill="#FFD66B"/>
+    <g stroke="#FFD66B" stroke-width="7" stroke-linecap="round">
+      <line x1="60" y1="6" x2="60" y2="20"/><line x1="60" y1="100" x2="60" y2="114"/>
+      <line x1="6" y1="60" x2="20" y2="60"/><line x1="100" y1="60" x2="114" y2="60"/>
+      <line x1="22" y1="22" x2="32" y2="32"/><line x1="88" y1="88" x2="98" y2="98"/>
+      <line x1="98" y1="22" x2="88" y2="32"/><line x1="32" y1="88" x2="22" y2="98"/>
+    </g>
+  </svg>
+  <svg class="cloud c1" viewBox="0 0 120 60"><g fill="#fff"><ellipse cx="40" cy="38" rx="34" ry="20"/><ellipse cx="70" cy="32" rx="28" ry="22"/><ellipse cx="92" cy="40" rx="22" ry="16"/></g></svg>
+  <svg class="cloud c2" viewBox="0 0 120 60"><g fill="#fff"><ellipse cx="40" cy="38" rx="34" ry="20"/><ellipse cx="70" cy="32" rx="28" ry="22"/><ellipse cx="92" cy="40" rx="22" ry="16"/></g></svg>
+  <svg class="cloud c3" viewBox="0 0 120 60"><g fill="#fff"><ellipse cx="40" cy="38" rx="34" ry="20"/><ellipse cx="70" cy="32" rx="28" ry="22"/><ellipse cx="92" cy="40" rx="22" ry="16"/></g></svg>
+  <svg class="balloon b1" viewBox="0 0 60 90"><ellipse cx="30" cy="32" rx="26" ry="30" fill="#FF8A66"/><path d="M30 62 l-4 6 h8 z" fill="#FB6B45"/><line x1="30" y1="68" x2="30" y2="88" stroke="#C9B6F0" stroke-width="2"/></svg>
+  <svg class="balloon b2" viewBox="0 0 60 90"><ellipse cx="30" cy="32" rx="26" ry="30" fill="#86CFE6"/><path d="M30 62 l-4 6 h8 z" fill="#52B5D7"/><line x1="30" y1="68" x2="30" y2="88" stroke="#FFB0C8" stroke-width="2"/></svg>
+
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><span class="dot"></span>Частный детский сад · Екатеринбург, Академический</span>
+    <h1>Второй дом, где малышу
+      <span class="squiggle">тепло и интересно
+        <svg viewBox="0 0 200 16" preserveAspectRatio="none"><path d="M2 11 Q50 2 100 8 T198 6" stroke="#FFC95B" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+      </span>
+    </h1>
+    <p class="lead" data-cms="heroLead">Уютные группы, своя кухня, заботливые педагоги и продуманный режим дня. Приходите познакомиться — покажем всё вживую.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn btn-primary">Записаться на просмотр</a>
+      <a href="#gallery" class="btn btn-ghost">Фото садика</a>
+    </div>
+    <div class="rating-badge">
+      <span class="stars">★★★★★</span>
+      <span class="src">76 отзывов в 2ГИС</span>
+    </div>
+  </div>
+
+  <svg class="hill" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path d="M0 60 C 240 10 480 10 720 50 C 960 90 1200 90 1440 40 L1440 120 L0 120 Z" fill="#FFF8EF"/>
+    <path d="M0 78 C 240 38 480 38 720 70 C 960 102 1200 102 1440 62 L1440 120 L0 120 Z" fill="#CDEFDD" opacity=".7"/>
+  </svg>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-ico" style="background:#FFE9D6">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 8c0-3 2-5 5-5 0 4-2 5-5 5z" fill="#46B985"/><path d="M12 21c-4 0-7-4-7-8 0-3 2-5 4-5 1.5 0 2 1 3 1s1.5-1 3-1c2 0 4 2 4 5 0 4-3 8-7 8z" fill="#FB6B45"/></svg>
+        </div>
+        <h3>Своя кухня</h3>
+        <p>5-разовое питание, готовим на месте из свежих продуктов.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-ico" style="background:#D6F0E0">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z" fill="#46B985"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Безопасность</h3>
+        <p>Видеонаблюдение, домофон и охрана территории.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-ico" style="background:#D7EEF8">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="4" fill="#52B5D7"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7" fill="#86CFE6"/></svg>
+        </div>
+        <h3>Опытные педагоги</h3>
+        <p>Малые группы и внимание каждому ребёнку.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-ico" style="background:#F0E6FA">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 100 18c1 0 2-1 2-2 0-.5-.3-1-.3-1.5 0-.8.7-1.5 1.5-1.5H17a4 4 0 004-4c0-4.5-4-9-9-9z" fill="#C6B4F0"/><circle cx="8" cy="11" r="1.4" fill="#fff"/><circle cx="11" cy="7.5" r="1.4" fill="#fff"/><circle cx="15" cy="8.5" r="1.4" fill="#fff"/></svg>
+        </div>
+        <h3>Развитие</h3>
+        <p>Английский, логопед, музыка, йога и весёлое творчество.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- секция «Группы» убрана: нет подтверждённых названий. Восстановить при получении данных (фото групп лежат в images/g-*.jpg) -->
+
+<!-- секция «Режим дня» убрана по согласованию; часы работы 7:30–19:00 указаны в контактах -->
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Жизнь в садике</span>
+      <h2>Каждый день — маленький праздник</h2>
+      <p>Занятия, прогулки, утренники и просто счастливые моменты наших малышей.</p>
+    </div>
+    <div class="gal-grid">
+      <figure><img src="images/gal-1.jpg" alt="Будни в детском саду Bambini" /></figure>
+      <figure><img src="images/gal-2.jpg" alt="Прогулка на площадке" /></figure>
+      <figure><img src="images/gal-4.jpg" alt="Дружба в садике" /></figure>
+      <figure><img src="images/gal-5.jpg" alt="Развивающие занятия" /></figure>
+      <figure><img src="images/gal-6.jpg" alt="Праздник в Bambini" /></figure>
+      <figure><img src="images/gal-3.jpg" alt="Игры на свежем воздухе" /></figure>
+    </div>
+    <p class="gal-note">Это лишь часть моментов — больше покажем на просмотре 🌿</p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Стоимость</span>
+      <h2>Понятные цены без сюрпризов</h2>
+      <p>Выберите формат, который удобен вашей семье. Всё включено, скрытых доплат нет.</p>
+    </div>
+    <div class="price-grid">
+      <!-- неполный -->
+      <div class="price-card">
+        <div class="pc-ico" style="background:#D7EEF8"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#52B5D7"/><path d="M12 7v5l3 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Неполный день</h3>
+        <div class="pc-hours">7:30 – 13:00</div>
+        <div class="pc-amount">20 000<span class="per"> ₽/мес</span></div>
+        <ul class="pc-feats">
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Завтрак и обед</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Занятия и прогулка</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Гибкий график</li>
+        </ul>
+        <a href="#booking" class="btn btn-ghost">Записаться</a>
+      </div>
+      <!-- полный (популярный) -->
+      <div class="price-card popular">
+        <span class="pc-badge">★ Выбирают чаще всего</span>
+        <div class="pc-ico" style="background:#FFE9D6"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" fill="#FB6B45"/><g stroke="#FB6B45" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="5" y1="5" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19" y2="19"/><line x1="19" y1="5" x2="17.6" y2="6.4"/><line x1="6.4" y1="17.6" x2="5" y2="19"/></g></svg></div>
+        <h3>Полный день</h3>
+        <div class="pc-hours">7:30 – 19:00</div>
+        <div class="pc-amount">25 000<span class="per"> ₽/мес</span></div>
+        <ul class="pc-feats">
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>5-разовое питание</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Сон и тихий час</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Все занятия и кружки</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Английский и логопед</li>
+        </ul>
+        <a href="#booking" class="btn btn-primary">Записаться</a>
+      </div>
+      <!-- почасовой тариф убран по согласованию с заказчиком -->
+    </div>
+    <p class="price-note"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#FFC95B"/><path d="M12 8h.01M11 12h1v4h1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Все развивающие занятия и питание уже включены в стоимость.</p>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Нам доверяют</span>
+      <h2>Что говорят родители</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <span class="quote">”</span>
+        <div class="rc-stars">★★★★★</div>
+        <p>Сын пошёл в сад очень рано, в 1.4 года, я очень переживала, как пройдёт адаптация. Но чудо-воспитатель младшей группы Юлия Викторовна сделала так, что малыш бежал в сад всегда с удовольствием. Спасибо, что так любите наших деток 🤍</p>
+        <div class="rev-author"><span class="rev-ava" style="background:#FB6B45">Ю</span><div><b>Юлия Власова</b><small>Отзыв в 2ГИС · апрель 2026</small></div></div>
+      </div>
+      <div class="rev-card">
+        <span class="quote">”</span>
+        <div class="rc-stars">★★★★★</div>
+        <p>От всей души благодарю садик Bambini! Дарья Сергеевна — отличный руководитель, всегда на связи. Лариса Дмитриевна, вы просто душа садика — детки к вам тянутся! Садик чистый, уютный, тёплый. А сколько занятий: йога, английский, логопед! Рекомендую!</p>
+        <div class="rev-author"><span class="rev-ava" style="background:#46B985">Е</span><div><b>Евгения Нагорная</b><small>Отзыв в 2ГИС · октябрь 2025</small></div></div>
+      </div>
+      <div class="rev-card">
+        <span class="quote">”</span>
+        <div class="rc-stars">★★★★★</div>
+        <p>Наш любимый детский сад, отходили 1 год и 8 месяцев, уходим с грустью… Прекрасная и любимая нами Лариса Дмитриевна — рады, что именно она наш первый воспитатель. Дарья Сергеевна всё организовала на высшем уровне. Спасибо всему персоналу!</p>
+        <div class="rev-author"><span class="rev-ava" style="background:#52B5D7">А</span><div><b>Анна Чигряева</b><small>Отзыв в 2ГИС · август 2025</small></div></div>
+      </div>
+    </div>
+    <p class="gal-note" style="margin-top:28px">Это настоящие отзывы родителей — <a href="https://2gis.ru/ekaterinburg/firm/70000001024455685/tab/reviews" target="_blank" rel="noopener" style="color:var(--coral-deep);font-weight:800;text-decoration:none">смотреть в 2ГИС</a></p>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="book-wrap">
+      <div class="book-left">
+        <span class="blob bl1"></span><span class="blob bl2"></span>
+        <h2>Приходите в гости</h2>
+        <p>Покажем группы, кухню и площадку, познакомим с педагогами и ответим на все вопросы. Запишитесь на удобное время.</p>
+        <ul class="contact-list">
+          <li><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-4-2-7-6-7-10a7 7 0 0114 0c0 4-3 8-7 10z" fill="#fff"/><circle cx="12" cy="11" r="2.6" fill="#46B985"/></svg></span><div><span data-cms="address">ул. Вильгельма де Геннина, 47</span><small data-cms="addressNote">Екатеринбург, р-н Академический</small></div></li>
+          <li><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 0 14 0 5c0-1 1-2 2-2" fill="#fff"/></svg></span><div><span data-cms="phone">+7 988 166-23-33</span><small>WhatsApp и звонки</small></div></li>
+          <li><span class="ci"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#fff"/><path d="M7 12l5 5 5-9" stroke="#46B985" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span><div>Работаем <span data-cms="hours">7:30 – 19:00</span><small>Понедельник – пятница</small></div></li>
+        </ul>
+      </div>
+      <div class="book-form">
+        <h3>Записаться на просмотр</h3>
+        <p class="fsub">Оставьте контакты — перезвоним в течение дня и подберём удобное время.</p>
+        <div class="field"><label>Ваше имя</label><input id="f-name" type="text" placeholder="Как к вам обращаться" /></div>
+        <div class="field"><label>Телефон</label><input id="f-phone" type="tel" placeholder="+7 (___) ___-__-__" /></div>
+        <div class="field"><label>Возраст ребёнка</label><input id="f-age" type="text" placeholder="Например, 3 года" /></div>
+        <label class="consent"><input type="checkbox" id="f-consent" /><span>Я даю согласие на <a href="privacy.html" target="_blank" rel="noopener">обработку персональных данных</a> и принимаю условия политики конфиденциальности</span></label>
+        <div class="form-btns">
+          <button class="btn btn-wa" type="button" onclick="bambiniSend('wa')"><svg viewBox="0 0 24 24" fill="#fff" style="width:21px;height:21px;flex:none"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7 7 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4c0-.1-.5-1.3-.7-1.7s-.4-.4-.5-.4h-.5a1 1 0 00-.7.3A2.8 2.8 0 006 9.3a4.8 4.8 0 001 2.6 11 11 0 004.3 3.8c.6.3 1.1.4 1.5.5a3.6 3.6 0 001.6.1c.5-.1 1.4-.6 1.6-1.1a2 2 0 00.1-1.1c0-.1-.2-.2-.4-.3z"/></svg>Записаться через WhatsApp</button>
+          <button class="btn btn-tg" type="button" onclick="bambiniSend('tg')"><svg viewBox="0 0 24 24" fill="#fff" style="width:21px;height:21px;flex:none"><path d="M21.9 4.3l-3.3 15.6c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L4.3 13.5l-4.9-1.5c-1-.3-1-1 .2-1.5l19.2-7.4c.9-.3 1.6.2 1.1 1.2z"/></svg>Написать в Telegram</button>
+        </div>
+        <p class="small-note">Заявка откроется в выбранном мессенджере — отправьте её одним сообщением.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="foot-logo"><img src="images/logo.png" alt="Bambini — детский сад" /></a>
+        <p>Частный детский сад, где малышам тепло, безопасно и интересно расти.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Разделы</h4>
+        <a href="#gallery">Фото</a>
+        <a href="#pricing">Цены</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#booking">Записаться</a>
+      </div>
+      <div class="foot-col">
+        <h4>Контакты</h4>
+        <p data-cms="address">ул. Вильгельма де Геннина, 47</p>
+        <p>Екатеринбург</p>
+        <a href="tel:+79881662333" data-cms="phone" data-cms-tel>+7 988 166-23-33</a>
+        <div class="foot-socials">
+          <a href="https://wa.me/79881662333" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7 7 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4c0-.1-.5-1.3-.7-1.7s-.4-.4-.5-.4h-.5a1 1 0 00-.7.3A2.8 2.8 0 006 9.3a4.8 4.8 0 001 2.6 11 11 0 004.3 3.8c.6.3 1.1.4 1.5.5a3.6 3.6 0 001.6.1c.5-.1 1.4-.6 1.6-1.1a2 2 0 00.1-1.1c0-.1-.2-.2-.4-.3z"/></svg></a>
+          <a href="https://t.me/+79881662333" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.9 4.3l-3.3 15.6c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L4.3 13.5l-4.9-1.5c-1-.3-1-1 .2-1.5l19.2-7.4c.9-.3 1.6.2 1.1 1.2z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Bambini · Частный детский сад в Екатеринбурге</div>
+  </div>
+</footer>
+
+<script>
+  function bambiniSend(channel){
+    var consent=document.getElementById('f-consent');
+    if(consent && !consent.checked){ alert('Пожалуйста, отметьте согласие на обработку персональных данных.'); try{consent.focus();}catch(e){} return; }
+    var n=(document.getElementById('f-name')||{}).value||'';
+    var p=(document.getElementById('f-phone')||{}).value||'';
+    var a=(document.getElementById('f-age')||{}).value||'';
+    n=n.trim(); p=p.trim(); a=a.trim();
+    var msg='Здравствуйте! Хочу записаться на просмотр в детский сад Bambini.';
+    if(n) msg+='\nИмя: '+n;
+    if(p) msg+='\nТелефон: '+p;
+    if(a) msg+='\nВозраст ребёнка: '+a;
+    var digits = window.BAMBINI_DIGITS || '79881662333';
+    if(channel==='wa'){
+      window.open('https://wa.me/'+digits+'?text='+encodeURIComponent(msg),'_blank');
+    } else {
+      if(navigator.clipboard){ navigator.clipboard.writeText(msg).catch(function(){}); }
+      window.open('https://t.me/+'+digits,'_blank');
+    }
+  }
+
+  // ---- Подстановка редактируемого контента из content.json (с fallback на дефолты в HTML) ----
+  window.BAMBINI_DIGITS = '79881662333';
+  (function loadContent(){
+    fetch('content.json', {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(d){
+      try{
+        document.querySelectorAll('[data-cms]').forEach(function(el){
+          var k = el.getAttribute('data-cms');
+          if(typeof d[k] === 'string') el.textContent = d[k];
+        });
+        if(d.phoneDigits){
+          window.BAMBINI_DIGITS = d.phoneDigits;
+          document.querySelectorAll('[data-cms-tel]').forEach(function(a){ a.setAttribute('href','tel:+'+d.phoneDigits); });
+          var wa=document.querySelector('a[aria-label="WhatsApp"]'); if(wa) wa.setAttribute('href','https://wa.me/'+d.phoneDigits);
+          var tg=document.querySelector('a[aria-label="Telegram"]'); if(tg) tg.setAttribute('href','https://t.me/+'+d.phoneDigits);
+        }
+        if(Array.isArray(d.advantages)){
+          var cards=document.querySelectorAll('.trust-card');
+          d.advantages.forEach(function(a,i){ if(cards[i]){ var h=cards[i].querySelector('h3'), p=cards[i].querySelector('p'); if(h&&a.title) h.textContent=a.title; if(p&&a.text) p.textContent=a.text; } });
+        }
+        if(Array.isArray(d.prices)){
+          var pcs=document.querySelectorAll('.price-card');
+          var chk='<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#CDEFDD"/><path d="M8 12l3 3 5-6" stroke="#46B985" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          d.prices.forEach(function(pr,i){
+            var card=pcs[i]; if(!card) return;
+            var h=card.querySelector('h3'); if(h&&pr.name) h.textContent=pr.name;
+            var hrs=card.querySelector('.pc-hours'); if(hrs&&pr.hours) hrs.textContent=pr.hours;
+            var amt=card.querySelector('.pc-amount'); if(amt&&pr.amount&&amt.firstChild) amt.firstChild.textContent=pr.amount;
+            var ul=card.querySelector('.pc-feats'); if(ul&&Array.isArray(pr.feats)) ul.innerHTML=pr.feats.map(function(f){ return '<li>'+chk+f+'</li>'; }).join('');
+          });
+        }
+        if(Array.isArray(d.gallery)){
+          var gg=document.querySelector('.gal-grid');
+          if(gg) gg.innerHTML=d.gallery.map(function(src){ return '<figure><img src="'+src+'" alt="Жизнь в детском саду Bambini" /></figure>'; }).join('');
+        }
+      }catch(e){}
+    }).catch(function(){});
+  })();
+</script>
+</body>
+</html>

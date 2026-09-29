@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Политика обработки персональных данных — Bambini</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="images/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--cream:#FFF8EF;--ink:#4B4459;--ink-soft:#857E92;--coral:#FB6B45}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 22px 70px}
+  .back{display:inline-flex;align-items:center;gap:7px;color:var(--coral);font-weight:800;text-decoration:none;font-size:15px;margin-bottom:26px}
+  .back:hover{text-decoration:underline}
+  h1{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(26px,5vw,38px);line-height:1.15;margin-bottom:8px;color:var(--ink)}
+  .upd{color:var(--ink-soft);font-weight:700;font-size:14px;margin-bottom:30px}
+  h2{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:20px;color:var(--ink);margin:26px 0 8px}
+  p{font-weight:600;color:#5f5870;font-size:16px;margin-bottom:10px}
+  a{color:var(--coral);font-weight:700}
+  .note{background:#FFF;border:1px solid #F2E6D6;border-radius:16px;padding:16px 18px;margin-top:30px;font-size:14.5px;color:var(--ink-soft);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back">← На главную</a>
+  <h1>Политика обработки персональных данных</h1>
+  <p class="upd">Детский сад «Bambini», г. Екатеринбург · обновлено 30 июня 2026 г.</p>
+
+  <h2>1. Общие положения</h2>
+  <p>Настоящая Политика определяет порядок обработки и защиты персональных данных посетителей сайта частного детского сада «Bambini». Оператор персональных данных: Индивидуальный предприниматель Тимуршина Дарья Сергеевна (ИНН <span data-cms="inn">______</span>, ОГРНИП <span data-cms="ogrnip">______</span>), адрес: г. Екатеринбург, ул. Вильгельма де Геннина, 47, офис 8, телефон +7 988 166-23-33.</p>
+
+  <h2>2. Какие данные мы обрабатываем</h2>
+  <p>При отправке заявки через форму на сайте вы добровольно передаёте: ваше имя, номер телефона и возраст ребёнка. Иные данные сайт не собирает.</p>
+
+  <h2>3. Цели обработки</h2>
+  <p>Данные используются исключительно для обработки вашей заявки: чтобы связаться с вами, ответить на вопросы и записать ребёнка на просмотр. Для рекламных рассылок и иных целей данные не используются.</p>
+
+  <h2>4. Правовое основание</h2>
+  <p>Обработка осуществляется на основании вашего согласия, которое вы даёте, отмечая соответствующую галочку при отправке заявки (ст. 6 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных»).</p>
+
+  <h2>5. Как передаются данные</h2>
+  <p>Заявка отправляется напрямую в мессенджер (WhatsApp или Telegram) на номер садика. Сайт не хранит ваши данные на сервере и не передаёт их третьим лицам, за исключением сервисов мессенджеров, через которые вы самостоятельно отправляете сообщение.</p>
+
+  <h2>6. Срок обработки</h2>
+  <p>Персональные данные обрабатываются до достижения целей обработки либо до момента отзыва вами согласия.</p>
+
+  <h2>7. Ваши права</h2>
+  <p>Вы вправе в любой момент отозвать согласие на обработку, а также запросить уточнение, блокирование или удаление своих персональных данных, обратившись к оператору по указанным контактам.</p>
+
+  <h2>8. Контакты оператора</h2>
+  <p>По всем вопросам обработки персональных данных: телефон +7 988 166-23-33, адрес: г. Екатеринбург, ул. Вильгельма де Геннина, 47, офис 8.</p>
+
+  <!-- TODO для Дарьи: вписать ИНН/ОГРНИП в п.1; подать уведомление об обработке ПДн в Роскомнадзор (152-ФЗ); при желании проверить текст у юриста -->
+</div>
+<script>
+  fetch('content.json', {cache:'no-store'}).then(function(r){ return r.json(); }).then(function(d){
+    try{ document.querySelectorAll('[data-cms]').forEach(function(el){ var k=el.getAttribute('data-cms'); if(d[k]) el.textContent=d[k]; }); }catch(e){}
+  }).catch(function(){});
+</script>
+</body>
+</html>

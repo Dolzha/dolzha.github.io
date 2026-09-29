@@ -1,0 +1,527 @@
+/* ═══════════════════════════════════════════════════════════
+   Правки: заголовки разделов, лесенка, сетка работ, стальной
+   наряд, контакты строкой, команда, подвал
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── шапка ── */
+.tnav{gap:clamp(14px,2.1vw,34px)}
+.tnav a{font-size:clamp(11px,.92vw,14px);letter-spacing:.14em;white-space:nowrap}
+@media(max-width:1280px){.top{gap:16px;padding:11px 16px}}
+
+/* ── свой курсор виден везде ── */
+@media (pointer:fine){
+  .cur{z-index:9999}
+  a,button,summary,label,.wcell,.mcell,.chips span,.day,.tm,
+  input[type=checkbox],input[type=radio]{cursor:none}
+}
+
+/* ── заголовок раздела: узкий гротеск крупно, пояснение обычным ── */
+.sect-h{font-family:var(--lab);font-weight:500;font-size:clamp(30px,5vw,58px);
+  letter-spacing:.05em;text-transform:uppercase;margin-top:0;line-height:1}
+.sect-s{margin-top:12px;font-family:var(--disp);font-weight:500;font-size:clamp(14px,1.4vw,17px);
+  letter-spacing:0;text-transform:none;color:var(--mute);max-width:660px}
+
+/* ── лесенка, вариант 02: крупный шаг и кнопка обводкой ── */
+.edge{padding:112px 0 104px}
+.edge::before{
+  --g:46px; --split:644px;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px var(--g))
+      left/var(--split) 100% no-repeat,
+    repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 1px,transparent 1px var(--g))
+      right/calc(100% - var(--split)) 100% no-repeat,
+    linear-gradient(90deg,#15181e 0 var(--split),#0C0C0E var(--split))}
+.edge .big{font-size:clamp(26px,4.9vw,64px);line-height:1.02}
+.edge .big span:nth-child(2){padding-left:6vw}
+.edge .big span:nth-child(3){padding-left:12vw}
+.edge .aside{margin-top:32px}
+.edge .aside p{max-width:none;font-size:clamp(15px,1.7vw,23px);line-height:1.45;
+  color:color-mix(in srgb,var(--ink) 80%,transparent)}
+.edge .aside p:nth-of-type(1){margin-left:18vw}
+.edge .aside p:nth-of-type(2){margin-left:24vw;margin-top:8px}
+/* та же кнопка, что «Записаться на осмотр»: обводка акцентом,
+   хром наезжает слева, текст темнеет */
+.edge .aside a{position:relative;overflow:hidden;display:inline-block;
+  margin-left:30vw;margin-top:24px;padding:0;border:1px solid var(--acc);
+  background:none;color:var(--acc);font-family:var(--lab);font-size:13px;
+  letter-spacing:.2em;text-transform:uppercase;transition:color .3s}
+.edge .aside a span{position:relative;z-index:2;display:block;padding:16px 40px}
+.edge .aside a::before{content:'';position:absolute;inset:0;z-index:1;
+  background:var(--chrome-face);transform:translateX(-101%);
+  transition:transform .42s cubic-bezier(.4,0,.2,1)}
+.edge .aside a:hover::before{transform:translateX(0)}
+.edge .aside a:hover{color:#12151a}
+
+/* ── работы: спокойная сетка из прямоугольников ── */
+.wgrid{grid-template-columns:repeat(2,1fr);gap:16px}
+.wcell:nth-child(n){grid-column:auto;grid-row:auto;aspect-ratio:3/2}
+.wcell figcaption{padding:18px 20px 20px}
+
+/* ── окна работ и материалов ── */
+.wview{position:relative;margin-top:24px;background:#0A0C10;overflow:hidden}
+.wview img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.warr{position:absolute;top:50%;translate:0 -50%;width:46px;height:64px;z-index:4;
+  background:rgba(8,10,14,.55);border:1px solid rgba(255,255,255,.2);color:#fff;
+  font-size:26px;line-height:1;cursor:pointer;transition:background .2s,color .2s;
+  backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.warr.p{left:0}
+.warr.n{right:0}
+.warr:hover{background:var(--acc);color:#0C0C0E;border-color:var(--acc)}
+.wcount{position:absolute;right:12px;bottom:12px;z-index:4;font-family:var(--lab);font-size:10px;
+  letter-spacing:.18em;color:#fff;background:rgba(8,10,14,.6);border:1px solid rgba(255,255,255,.2);
+  padding:5px 10px}
+.wthumbs{display:flex;gap:6px;margin-top:6px;overflow-x:auto;padding-bottom:4px}
+.wthumbs img{height:64px;width:auto;flex:none;cursor:pointer;opacity:.45;
+  transition:opacity .2s,outline-color .2s;outline:1px solid transparent;outline-offset:-1px}
+.wthumbs img:hover{opacity:.8}
+.wthumbs img.on{opacity:1;outline-color:var(--acc)}
+.wsteps{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding-top:18px;
+  border-top:1px solid var(--hair)}
+.wsteps span{display:flex;align-items:baseline;gap:9px;border:1px solid var(--hair);
+  padding:9px 13px;font-size:12.5px;color:color-mix(in srgb,var(--ink) 72%,transparent)}
+.wsteps i{font-family:var(--lab);font-style:normal;font-size:11px;color:var(--acc)}
+.mmfoot{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-top:24px;
+  padding-top:16px;border-top:1px solid var(--hair)}
+.mmfoot span{font-family:var(--lab);font-size:21px;letter-spacing:.03em;color:var(--acc)}
+.mmfoot i{font-style:normal;font-family:var(--lab);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--mute)}
+
+/* ── лента, фон 06: северное свечение ── */
+.marq{padding:24px 0;background:
+  radial-gradient(120% 90% at 12% 0%,rgba(166,192,212,.24),transparent 58%),
+  radial-gradient(90% 80% at 88% 100%,rgba(120,170,190,.18),transparent 62%),
+  #0A0B0D}
+.marq::after{display:none}
+.marq .line + .line{border-top:1px solid var(--hair)}
+
+/* ── материалы ── */
+.mcell{cursor:pointer}
+.mcell:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.mpic{position:relative;margin:-24px -22px 2px;overflow:hidden;background:#0F1116}
+.mpic img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;
+  transition:scale .7s cubic-bezier(.22,.61,.36,1)}
+.mcell:hover .mpic img{scale:1.05}
+.mcount{position:absolute;right:12px;top:12px;z-index:3;font-family:var(--lab);font-size:9.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(6,10,16,.55);
+  border:1px solid rgba(255,255,255,.22);padding:4px 9px;
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:background .25s,color .25s}
+.mcell:hover .mcount{background:var(--acc);color:#0C0C0E;border-color:var(--acc)}
+
+/* ── услуги ── */
+.rows summary{display:grid;grid-template-columns:1fr 26px;align-items:center;
+  gap:2px 24px;padding:22px 4px;font-size:inherit;font-weight:500}
+.rows summary .sname{grid-column:1;grid-row:1;font-weight:800;font-size:clamp(18px,2.3vw,28px)}
+.rows summary .ssub{grid-column:1;grid-row:2;font-family:var(--lab);font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rows summary .pl{grid-column:2;grid-row:1/3}
+.rows .in{display:grid;grid-template-columns:236px 1fr;gap:26px;align-items:start;
+  padding:2px 4px 28px}
+.sphoto{position:relative;display:block;overflow:hidden;background:#0F1116}
+.sphoto img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;
+  transition:scale .6s cubic-bezier(.22,.61,.36,1)}
+.sphoto:hover img{scale:1.06}
+.sphoto span{position:absolute;left:0;right:0;bottom:0;background:rgba(8,10,14,.74);color:var(--acc);
+  font-family:var(--lab);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;padding:8px 10px}
+.stext p{max-width:none}
+.slists{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.slists .h{font-family:var(--lab);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.slists .h.ok{color:#6FBF7E}
+.slists .h.no{color:#E5484D}
+.slists ul{list-style:none;margin-top:10px}
+.slists li{position:relative;padding:6px 0 6px 16px;font-size:13.5px;line-height:1.55;
+  color:color-mix(in srgb,var(--ink) 78%,transparent)}
+.slists li::before{content:'';position:absolute;left:0;top:15px;width:8px;height:1px;background:var(--mute)}
+.ssteps{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:16px;
+  border-top:1px solid var(--hair)}
+.ssteps span{display:flex;align-items:baseline;gap:9px;border:1px solid var(--hair);padding:8px 12px;
+  font-size:12.5px;color:color-mix(in srgb,var(--ink) 72%,transparent)}
+.ssteps i{font-family:var(--lab);font-style:normal;font-size:11px;color:var(--acc)}
+
+/* ── отзывы ── */
+.revs::before{background:
+  linear-gradient(90deg,transparent,#767D8A 16%,#F2F5F9 50%,#767D8A 84%,transparent) top/100% 2px no-repeat,
+  linear-gradient(90deg,transparent,#767D8A 16%,#F2F5F9 50%,#767D8A 84%,transparent) bottom/100% 2px no-repeat,
+  radial-gradient(120% 130% at 50% 0%,rgba(166,192,212,.10),transparent 62%),
+  #08080A}
+.rgrid{margin-top:40px}
+.rcell{display:grid;grid-template-columns:52px 1fr;gap:0 16px;
+  background:rgba(18,21,27,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.rcell .rav{grid-column:1;grid-row:1/3;align-self:start;width:52px;height:52px;border-radius:50%;
+  border:1px solid rgba(166,192,212,.45);object-fit:cover}
+.rcell blockquote{grid-column:2}
+.rcell figcaption{grid-column:2;display:block;margin-top:16px;padding-top:14px}
+.rcell figcaption b{font-family:var(--lab);font-weight:400;font-size:13px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--acc)}
+
+/* ── заявка ── */
+.own{width:100%;margin-top:12px;background:transparent;border:0;border-bottom:1px solid var(--hair);
+  color:var(--ink);font-family:var(--disp);font-size:14.5px;padding:13px 2px;transition:border-color .2s}
+.own:focus{outline:none;border-bottom-color:var(--acc)}
+.own::placeholder{color:color-mix(in srgb,var(--ink) 30%,transparent)}
+.form input.bad,.form textarea.bad{border-bottom-color:#E5484D}
+.agree.bad{color:#E5484D}
+.send{background:none;padding:0;border:1px solid var(--acc);color:var(--acc);text-shadow:none;
+  transition:color .3s}
+.send span{position:relative;z-index:2;display:block;padding:16px 40px}
+.send::before{content:'';position:absolute;inset:0;z-index:1;background:var(--chrome-face);
+  transform:translateX(-101%);transition:transform .42s cubic-bezier(.4,0,.2,1)}
+.send:hover:not(:disabled)::before{transform:translateX(0)}
+.send:hover:not(:disabled){color:#12151a}
+.send:disabled{cursor:default;opacity:.75;border-color:var(--hair);color:var(--mute)}
+.ok .again{background:none;border:0;color:var(--acc);text-decoration:underline;cursor:pointer;
+  font-family:var(--disp);font-size:14px;padding:0}
+
+/* наряд — стальная бирка: хром сверху и снизу, полка внизу */
+.ticket{position:static;font-family:var(--disp);font-size:inherit;line-height:inherit;
+  padding:0;border:0}
+.ticket .t{font-family:var(--lab);font-size:10px;letter-spacing:.24em;color:var(--acc);
+  text-transform:uppercase;border-bottom:0;padding-bottom:0;margin-bottom:14px}
+.tplate{position:relative;background:linear-gradient(180deg,#1B1F25,#141820);
+  border:1px solid rgba(255,255,255,.14);padding:20px 20px 0;
+  font-family:var(--mono);font-size:12.5px;line-height:1.75;color:#D8DEE6;
+  box-shadow:0 18px 44px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.tplate::before,.tplate::after{content:'';position:absolute;left:0;right:0;height:2px;
+  background:var(--chrome-line)}
+.tplate::before{top:0}
+.tplate::after{bottom:0}
+.tplate.done{transform:rotate(-.4deg) scale(.995)}
+.thd{font-family:var(--lab);font-size:11px;letter-spacing:.22em;color:#fff;
+  padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.16);margin-bottom:10px}
+.tl{display:flex;align-items:baseline;gap:7px;padding:4px 0}
+.tl i{font-style:normal;color:rgba(216,222,230,.45);white-space:nowrap}
+.tl s{flex:1;border-bottom:1px dotted rgba(216,222,230,.28);text-decoration:none;height:11px}
+.tl b{font-weight:400;text-align:right;max-width:62%;word-break:break-word;color:#EEF2F6}
+.tft{margin:14px -20px 0;padding:11px 20px;background:var(--chrome-face);color:#12151a;
+  font-family:var(--lab);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  display:flex;justify-content:space-between;gap:12px}
+.tft b{font-weight:400}
+.tstamp{position:absolute;right:18px;bottom:56px;border:2px solid #C15250;color:#E07C7A;
+  font-family:var(--lab);font-size:14px;letter-spacing:.22em;padding:6px 12px;
+  rotate:-11deg;opacity:0;scale:2.2;background:rgba(20,24,32,.4)}
+.tstamp.on{animation:hit .34s cubic-bezier(.2,.9,.3,1) both}
+@keyframes hit{from{opacity:0;scale:2.2}60%{opacity:1;scale:.94}to{opacity:1;scale:1}}
+
+/* ── команда ── */
+.team{padding:104px 0;position:relative;overflow:clip}
+.team::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 60% at 100% 10%,color-mix(in srgb,var(--acc) 14%,transparent),transparent 68%)}
+.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.crc{position:relative;border:1px solid var(--hair);background:color-mix(in srgb,var(--ink) 3%,transparent);
+  overflow:hidden;transition:border-color .3s,background .3s;
+  animation:wrise linear both;animation-timeline:view();animation-range:entry 2% entry 46%}
+.crc:hover{border-color:color-mix(in srgb,var(--acc) 55%,transparent);
+  background:color-mix(in srgb,var(--acc) 5%,transparent)}
+/* чёрно-белое до наведения, цветное после. Обесцвечивает слой поверх кадра,
+   и уходит он по прозрачности — меняется только opacity, поэтому оттенок
+   никуда не «плывёт», как было бы при переходе между фильтрами */
+.crp{display:block;position:relative;overflow:hidden;aspect-ratio:4/5;background:#0F1116;
+  isolation:isolate}
+.crp img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:scale .7s cubic-bezier(.22,.61,.36,1)}
+.crp::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:#808080;mix-blend-mode:saturation;opacity:1;transition:opacity .45s ease}
+.crc:hover .crp::after{opacity:0}
+.crc:hover .crp img{scale:1.03}
+/* если браузер не умеет смешивать слои — обесцвечиваем фильтром */
+@supports not (mix-blend-mode:saturation){
+  .crp img{filter:grayscale(1);transition:filter .45s ease,scale .7s cubic-bezier(.22,.61,.36,1)}
+  .crc:hover .crp img{filter:grayscale(0)}
+  .crp::after{display:none}
+}
+.crc figcaption{padding:20px 22px 22px}
+.crc b{display:block;font-weight:800;font-size:clamp(20px,2.2vw,26px);letter-spacing:.01em}
+.crc i{display:block;font-style:normal;font-family:var(--lab);font-size:10.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--acc);margin-top:8px}
+
+/* ── контакты: телефон в шапке блока, ниже одна ровная строка ── */
+.place{padding:104px 0 56px;position:relative;overflow:clip}
+.place::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(80% 60% at 0% 0%,color-mix(in srgb,var(--acc) 13%,transparent),transparent 66%)}
+.ptop{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.ptel{font-family:var(--lab);font-weight:400;font-size:clamp(22px,3vw,36px);letter-spacing:.03em;
+  white-space:nowrap}
+.ptel a{color:var(--acc);transition:opacity .2s}
+.ptel a:hover{opacity:.72}
+.dline{display:grid;grid-template-columns:repeat(5,1fr);align-items:start;
+  margin-top:34px;padding:22px 0;
+  border-top:2px solid;border-bottom:2px solid;border-image:var(--chrome-line) 1}
+.dline .it{padding:0 20px;border-right:1px solid var(--hair)}
+.dline .it:first-child{padding-left:0}
+.dline .it:last-child{border-right:0;padding-right:0}
+.dline .k{display:block;font-family:var(--lab);font-size:9.5px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--acc)}
+.dline p{margin-top:9px;font-size:13.5px;line-height:1.6;
+  color:color-mix(in srgb,var(--ink) 82%,transparent)}
+
+/* ── подвал ── */
+footer{margin-top:0;padding:44px 0 54px}
+.fgrid{display:grid;grid-template-columns:1.25fr .85fr 1fr;gap:34px}
+.fbrand .fsq{width:44px;height:44px;background:var(--chrome-face);display:grid;place-items:center}
+.fbrand .fsq svg{width:26px;height:26px;color:#12151a}
+.fbrand > b{display:block;font-weight:800;font-size:23px;letter-spacing:.06em;margin-top:15px}
+.fbrand > i{display:block;font-style:normal;font-family:var(--lab);font-size:9.5px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--acc);margin-top:7px}
+.fbrand p{margin-top:15px;font-size:13px;line-height:1.65;color:var(--mute);max-width:360px}
+.fnav{display:grid;grid-template-columns:1fr 1fr;gap:9px 22px;align-content:start}
+.fnav .lab{grid-column:1/3;margin-bottom:4px}
+.fnav a{font-family:var(--lab);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(244,242,238,.72);transition:color .2s}
+.fnav a:hover{color:var(--acc)}
+.fcon .lab{display:block;margin-bottom:10px}
+.fcon b{display:block;font-family:var(--lab);font-weight:400;font-size:20px;letter-spacing:.03em}
+.fcon b a{color:var(--acc)}
+.fcon p{margin-top:12px;font-size:13px;line-height:1.7;color:var(--mute)}
+.frow{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:36px;
+  padding-top:20px;border-top:1px solid var(--hair);font-size:13px;color:var(--mute)}
+.frow a{color:var(--acc)}
+footer .demo{margin-top:14px}
+
+@media(max-width:900px){
+  .edge::before{--split:276px}
+  .edge .aside p:nth-of-type(1){margin-left:22px}
+  .edge .aside p:nth-of-type(2){margin-left:44px}
+  .edge .aside a{margin-left:66px}
+  .wgrid{grid-template-columns:1fr}
+  .rows .in{grid-template-columns:1fr}
+  .slists{grid-template-columns:1fr}
+  .crew{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .rcell{grid-template-columns:44px 1fr;gap:0 12px}
+  .rcell .rav{width:44px;height:44px}
+  .rows summary{grid-template-columns:1fr auto 22px}
+  .wthumbs img{height:52px}
+  .team{padding:70px 0}
+  .crp{aspect-ratio:3/2}
+  .dline{grid-template-columns:1fr;padding:16px 0}
+  .dline .it{padding:14px 0;border-right:0;border-bottom:1px solid var(--hair)}
+  .dline .it:last-child{border-bottom:0;padding-bottom:0}
+}
+
+/* ── вопросы ── */
+.faq{padding:104px 0;position:relative;overflow:clip}
+.faq::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 60% at 8% 0%,color-mix(in srgb,var(--acc) 12%,transparent),transparent 64%)}
+.qs{margin-top:44px;display:flex;flex-direction:column;gap:8px}
+.qs details{border:1px solid var(--hair);background:rgba(30,33,40,.42);padding:0 22px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transition:border-color .25s,background .25s}
+.qs details:hover{border-color:color-mix(in srgb,var(--acc) 45%,transparent);
+  background:rgba(38,41,50,.5)}
+.qs details[open]{border-color:color-mix(in srgb,var(--acc) 40%,transparent)}
+.qs summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;
+  align-items:center;gap:20px;padding:21px 2px;font-weight:800;font-size:clamp(16px,1.8vw,21px);
+  transition:color .2s}
+.qs summary::-webkit-details-marker{display:none}
+.qs summary:hover{color:var(--acc)}
+.qs summary .pl{font-family:var(--lab);font-size:22px;color:var(--acc);font-weight:400;
+  transition:rotate .25s;flex:none}
+.qs details[open] summary{color:var(--acc)}
+.qs details[open] summary .pl{rotate:45deg}
+.qa{padding:0 2px 24px;animation:drop .3s ease both}
+.qa p{font-size:14.5px;line-height:1.8;max-width:840px;
+  color:color-mix(in srgb,var(--ink) 76%,transparent)}
+
+/* лесенка на узких экранах: длинная строка не должна уходить за край */
+@media(max-width:640px){
+  .edge .big{font-size:clamp(19px,6.2vw,34px)}
+  .edge .big span:nth-child(2){padding-left:5vw}
+  .edge .big span:nth-child(3){padding-left:10vw}
+  .edge .aside p{font-size:15px}
+}
+
+
+/* ── появление блоков, вариант 09 «ступенькой» ──────────────
+   Внутри блока элементы поднимаются по очереди: заголовок, подпись,
+   дальше содержимое. Шаг 90 мс, не больше восьми ступеней — иначе
+   длинный блок собирается слишком долго. Начальное состояние стоит
+   в CSS, поэтому до запуска скрипта ничего не мигает. */
+html.js :is(.sect-h,.sect-s,.edge .big span,.edge .aside p,.edge .aside a,.wcell,.mcell,.crc,.rcell,.rows>details,.qs>details,.step,.chips,.own,.slots,.form,.ticket,.ptel,.dline .it,.fgrid>*,.frow,.demo){
+  opacity:0;translate:0 30px;
+  transition:opacity .68s cubic-bezier(.22,.61,.36,1),
+             translate .68s cubic-bezier(.22,.61,.36,1);
+  transition-delay:calc(var(--i,0) * 90ms)}
+html.js .seen :is(.sect-h,.sect-s,.edge .big span,.edge .aside p,.edge .aside a,.wcell,.mcell,.crc,.rcell,.rows>details,.qs>details,.step,.chips,.own,.slots,.form,.ticket,.ptel,.dline .it,.fgrid>*,.frow,.demo){opacity:1;translate:0 0}
+
+/* страховка: скрипт не отработал — показываем всё как есть */
+html.rv-off :is(.sect-h,.sect-s,.edge .big span,.edge .aside p,.edge .aside a,.wcell,.mcell,.crc,.rcell,.rows>details,.qs>details,.step,.chips,.own,.slots,.form,.ticket,.ptel,.dline .it,.fgrid>*,.frow,.demo){opacity:1!important;translate:none!important;
+  transition:none!important}
+
+/* прежние появления выключаем, чтобы не спорили с новым */
+html.js .wcell,html.js .mcell,html.js .rcell,html.js .crc,
+html.js .ccell,html.js .edge .big span{animation:none}
+
+@media (prefers-reduced-motion:reduce){
+  html.js :is(.sect-h,.sect-s,.edge .big span,.edge .aside p,.edge .aside a,.wcell,.mcell,.crc,.rcell,.rows>details,.qs>details,.step,.chips,.own,.slots,.form,.ticket,.ptel,.dline .it,.fgrid>*,.frow,.demo){opacity:1;translate:none;transition:none}
+}
+
+/* ── кегль в «Заявке» и «Контактах» подтянут к остальным блокам ──
+   Правятся только размеры шрифта и связанные с ними отступы внутри
+   элементов. Сетки, колонки и структура блоков не тронуты. */
+
+/* контакты: подписи колонок и значения */
+.dline .it{padding:0 20px}
+.dline .k{font-size:10.5px;letter-spacing:.2em}
+.dline p{margin-top:10px;font-size:15px;line-height:1.6}
+
+/* заявка: подписи шагов */
+.step{font-size:12px;letter-spacing:.22em}
+.sl-h{font-size:11.5px;letter-spacing:.22em}
+
+/* выбор услуги и строка своими словами */
+.chips span{font-size:15px;padding:12px 17px}
+.own{font-size:15.5px}
+
+/* календарь записи */
+.day{padding:12px 4px 10px}
+.day b{font-size:21px}
+.day .dn{font-size:10px}
+.day .df{font-size:9.5px}
+.tm{font-size:14px;padding:12px 18px}
+.sl-pick{font-size:15px}
+
+/* поля и кнопка */
+.form input,.form textarea{font-size:17px}
+.form textarea{min-height:100px}
+.agree{font-size:13.5px}
+.send span{font-size:13px}
+.ok{font-size:15px}
+
+/* наряд-заказ */
+.ticket .t{font-size:12px}
+.tplate{font-size:13.5px;line-height:1.8}
+.thd{font-size:12px}
+.tl s{height:12px}
+.tft{font-size:11px}
+.tstamp{font-size:15px}
+
+/* ── починки ───────────────────────────────────────────────
+   Якорь из шапки прокручивал раздел ровно под фиксированную
+   шапку, и заголовок оказывался за ней. */
+main > section[id],footer{scroll-margin-top:92px}
+@media(max-width:900px){
+  main > section[id],footer{scroll-margin-top:132px}
+  .dline p{font-size:14.5px}
+}
+/* узкие ноутбуки: пять колонок контактов остаются пятью */
+@media(max-width:1150px){
+  .dline .it{padding:0 14px}
+  .dline p{font-size:14px}
+  .dline .k{letter-spacing:.16em}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   V10 · экран загрузки «проявка из зерна»
+   V13 · шапка сжимается при прокрутке
+   V15 · параллакс внутри кадров работ
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── экран загрузки ─────────────────────────────────────────
+   Знак наводится на резкость, зерно уходит. Экран снимается
+   скриптом, а если тот не отработает — таймером из <head>. */
+.pre{position:fixed;inset:0;z-index:9990;background:#08080A;display:grid;place-items:center;
+  transition:opacity .7s ease}
+.pre.off{opacity:0;pointer-events:none}
+.pre-grain{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.45) 1px,transparent 1px);
+  background-size:3px 3px;
+  animation:preGrain 1.6s .1s ease-out both}
+@keyframes preGrain{from{opacity:1}to{opacity:0}}
+.pre-in{position:relative;z-index:3;text-align:center;
+  filter:blur(18px);opacity:0;
+  animation:preFocus 1.7s cubic-bezier(.22,.61,.36,1) both}
+/* к 1,7 с кадр наведён на резкость, дальше он просто стоит:
+   секунда с лишним на то, чтобы знак прочитали */
+@keyframes preFocus{
+  from{filter:blur(18px);opacity:0}
+  55%{filter:blur(5px);opacity:.85}
+  to{filter:blur(0);opacity:1}}
+.pre-sq{width:62px;height:62px;background:var(--chrome-face);display:grid;place-items:center;
+  margin:0 auto}
+.pre-sq svg{width:36px;height:36px;color:#12151a;display:block}
+.pre-nm{font-weight:800;font-size:clamp(24px,4vw,38px);letter-spacing:.12em;margin-top:20px}
+.pre-cap{font-family:var(--lab);font-size:10px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--mute);margin-top:10px}
+@media (prefers-reduced-motion:reduce){
+  .pre-in{filter:none;opacity:1;animation:none}
+  .pre-grain{display:none}
+}
+
+/* ── шапка сжимается ────────────────────────────────────────
+   Следит не слушатель прокрутки, а наблюдатель за меткой
+   высотой 90 px в самом верху документа. */
+.tsent{position:absolute;left:0;top:0;width:1px;height:90px;pointer-events:none;opacity:0}
+.top{transition:padding .32s var(--ease,cubic-bezier(.22,.61,.36,1)),
+  background-color .32s ease}
+.brand{transition:padding .32s cubic-bezier(.22,.61,.36,1),background .4s,box-shadow .4s}
+.brand .sq{transition:width .32s cubic-bezier(.22,.61,.36,1),
+  height .32s cubic-bezier(.22,.61,.36,1),box-shadow .4s}
+.brand .sq svg{transition:width .32s cubic-bezier(.22,.61,.36,1),
+  height .32s cubic-bezier(.22,.61,.36,1)}
+.brand .n1,.brand .n2{transition:font-size .32s cubic-bezier(.22,.61,.36,1),
+  margin-top .32s cubic-bezier(.22,.61,.36,1),opacity .28s ease}
+.top.small{padding:6px 26px;background:rgba(10,12,16,.82)}
+.top.small .brand{padding:4px 12px 4px 6px}
+.top.small .brand .sq{width:26px;height:26px}
+.top.small .brand .sq svg{width:15px;height:15px}
+.top.small .brand .n1{font-size:13px}
+.top.small .brand .n2{font-size:0;margin-top:0;opacity:0}
+@media(max-width:900px){
+  .top.small{padding:6px 14px;gap:6px}
+  .top.small .brand .sq{width:24px;height:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  .top,.brand,.brand .sq,.brand .sq svg,.brand .n1,.brand .n2{transition:none}
+}
+
+/* ── параллакс в кадрах работ ───────────────────────────────
+   Кадр выше рамки, поэтому при сдвиге края не открываются. */
+.wcell img{height:112%;position:relative;top:-6%}
+@supports (animation-timeline:view()){
+  .wcell img{animation:parallax linear both;animation-timeline:view();
+    animation-range:cover 0% cover 100%}
+}
+@keyframes parallax{from{translate:0 -4%}to{translate:0 4%}}
+/* браузерам без таймлайна тот же сдвиг считает наблюдатель */
+html.no-vt .wcell img{transition:none}
+@media (prefers-reduced-motion:reduce){
+  .wcell img{animation:none;translate:none;height:100%;top:0}
+}
+
+/* ── H18 · плавающая кнопка записи: знак, линейка, слово ─────
+   Парит в правом нижнем углу с отступом от краёв. Внутри — знак
+   ателье на хромовом кружке и тонкая хромовая линейка, та же, что
+   разделяет блоки сайта. Прячется, когда блок заявки на экране. */
+.fab{position:fixed;right:28px;bottom:calc(var(--hstats-h,118px) + 28px);z-index:120;
+  display:flex;align-items:center;gap:12px;
+  padding:13px 28px 13px 13px;border-radius:99px;
+  background:rgba(16,19,25,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(166,192,212,.4);color:var(--acc);
+  box-shadow:0 16px 38px rgba(0,0,0,.55),0 4px 12px rgba(0,0,0,.4);
+  transition:opacity .35s ease,translate .3s cubic-bezier(.22,.61,.36,1),
+             box-shadow .3s ease,border-color .25s ease}
+.fab span{font-family:var(--lab);font-size:12.5px;letter-spacing:.18em;
+  text-transform:uppercase;white-space:nowrap}
+.fab .sq{width:34px;height:34px;flex:none;border-radius:50%;
+  background:var(--chrome-face);display:grid;place-items:center}
+.fab .sq svg{width:19px;height:19px;color:#12151a}
+.fab .ln{width:1px;height:22px;flex:none;
+  background:linear-gradient(180deg,transparent,#F2F5F9,transparent)}
+.fab:hover{border-color:var(--acc);translate:0 -4px;
+  box-shadow:0 24px 48px rgba(0,0,0,.62),0 6px 14px rgba(0,0,0,.45)}
+.fab.hide{opacity:0;translate:0 18px;pointer-events:none}
+/* Отступ снизу = высота полосы плиток первого экрана плюс воздух:
+   кнопка встаёт над «Стилем», а не поверх него. Высоту в переменную
+   кладёт наблюдатель размера в app.js, 118 — запасное значение.
+   На узких экранах плитки идут в три строки, перекрыть их всё равно
+   нельзя, поэтому там кнопка возвращается в угол. */
+@media(max-width:900px){
+  .fab{right:16px;bottom:18px;gap:9px;padding:10px 21px 10px 10px}
+  .fab span{font-size:11.5px;letter-spacing:.14em}
+  .fab .sq{width:29px;height:29px}
+  .fab .sq svg{width:16px;height:16px}
+  .fab .ln{height:19px}
+}
+@media (prefers-reduced-motion:reduce){
+  .fab{transition:opacity .35s ease}
+  .fab:hover{translate:0}
+}
