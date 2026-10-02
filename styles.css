@@ -1105,6 +1105,7 @@ footer {
   transition: color 0.3s ease;
 }
 .svc-meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted-foreground); white-space: nowrap; }
+@media (max-width: 520px) { .svc-line { gap: 12px; } .svc-meta { white-space: normal; flex: 0 0 92px; text-align: right; line-height: 1.35; } }
 .svc-arrow { color: var(--primary); display: inline-flex; opacity: 0; transform: translateX(-8px); transition: opacity 0.3s ease, transform 0.3s ease; }
 .svc-line:hover { padding-left: 14px; }
 .svc-line:hover .svc-name { color: var(--primary); }
