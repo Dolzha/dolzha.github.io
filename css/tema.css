@@ -1,0 +1,42 @@
+/* 5 единых цветовых тем (03.10, пятый круг). Весь сайт в одной гамме: шапка, фоны блоков, кнопки, текст.
+   Карточки и раскладку блоков не трогаем. Тема = класс .tg1…tg5 на #stage, вместе с .th */
+.tg1{--g1:#1FD8A4;--g2:#2F6BFF;--deep:#06172B;--deep2:#0A2140;--ink:#0B1B33;--mute:#4E6079;--soft:#EEF6F6;--soft2:#F1F5FF;--line:#DCE6EE;--muteD:#93A6C3}
+.tg2{--g1:#7C5CFF;--g2:#FF5FA2;--deep:#120D2E;--deep2:#1C1442;--ink:#15123A;--mute:#5E5A7D;--soft:#F5F2FF;--soft2:#FFF3F8;--line:#E6E0F5;--muteD:#ABA3D6}
+.tg3{--g1:#FFA53D;--g2:#FF3D6E;--deep:#22101A;--deep2:#311522;--ink:#2A1420;--mute:#7A5C66;--soft:#FFF4EC;--soft2:#FFF0F3;--line:#F1DFD9;--muteD:#CDA9B4}
+.tg4{--g1:#00C9FF;--g2:#4F46E5;--deep:#071433;--deep2:#0C1E4A;--ink:#0B1A3A;--mute:#4F5F82;--soft:#EEF8FF;--soft2:#F2F1FF;--line:#DCE5F2;--muteD:#94A3C8}
+.tg5{--g1:#B5E853;--g2:#11998E;--deep:#0B1F1B;--deep2:#10302A;--ink:#0F2621;--mute:#4E6A63;--soft:#F3F9EC;--soft2:#ECF7F5;--line:#DDEBE5;--muteD:#9DBDB4}
+.th{--grad:linear-gradient(120deg,var(--g1),var(--g2));--T-ink:var(--ink);--T-mute:var(--mute);--T-line:var(--line)}
+
+/* шапка */
+.stage.th .hdc{background:#fff;color:var(--T-ink);--ink:var(--T-ink);box-shadow:none}
+.stage.th .hdc::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--grad)}
+.stage.th .hdc.is-scrolled,.stage.th .hdc.open,.stage.th .hdc.open .hd-menu{background:#fff}
+.stage.th .hdc-l a:hover,.stage.th .hdc-r nav a:hover{color:var(--g2)}
+.stage.th .hdc .mark{color:var(--g2)}
+.stage.th .hdc .vbtn{--vb-bg:var(--deep);--vb-ink:#fff}
+
+/* кнопка-пилюля варианта 1: кружок со стрелкой всегда в градиенте темы */
+.stage.th .vbtn .i,.stage.th .m-hero .btn .i{background:var(--grad)!important;color:#fff!important}
+.stage.th .vbtn:hover .i,.stage.th .m-hero .btn:hover .i{background:var(--g2)!important}
+
+/* блоки: фоны и цвета (раскладка не меняется) */
+.stage.th [data-blk=hero],.stage.th [data-blk=hero]>*{--bg:var(--deep);--ink:#fff;--mute:var(--muteD);--line:rgba(255,255,255,.12);--acc:var(--g1);--planes:0;--bgimg:linear-gradient(112deg,transparent 0 34%,color-mix(in srgb,var(--g1) 16%,transparent) 34% 56%,transparent 56%),linear-gradient(66deg,transparent 0 64%,color-mix(in srgb,var(--g2) 18%,transparent) 64% 84%,transparent 84%),radial-gradient(45% 60% at 82% 30%,color-mix(in srgb,var(--g2) 32%,transparent),transparent 70%),radial-gradient(40% 50% at 8% 100%,color-mix(in srgb,var(--g1) 22%,transparent),transparent 70%)}
+.stage.th .m-hero .h1 .l2{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage.th [data-blk=works],.stage.th [data-blk=works]>*{--bg:var(--soft);--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line);--acc:var(--g2);--card:#fff}
+.stage.th [data-blk=phone],.stage.th [data-blk=phone]>*{--bg:var(--soft2);--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line);--acc:var(--g2)}
+.stage.th [data-blk=pick],.stage.th [data-blk=pick]>*{--bg:#fff;--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line);--acc:var(--g2)}
+.stage.th [data-blk=inc],.stage.th [data-blk=inc]>*{--bg:#fff;--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line)}
+.stage.th [data-blk=build],.stage.th [data-blk=build]>*{--bg:var(--deep2);--ink:#fff;--mute:var(--muteD);--line:rgba(255,255,255,.12);--acc:var(--g1)}
+.stage.th [data-blk=svc],.stage.th [data-blk=svc]>*{--bg:#fff;--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line);--acc:var(--g2);--card:var(--soft);--soft:var(--soft2);--vbg:var(--deep);--vink:#fff}
+.stage.th [data-blk=ap],.stage.th [data-blk=ap]>*{--bg:var(--soft);--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line);--acc:var(--g2);--acc-ink:#fff;--call:var(--deep);--call-ink:#fff;--call-btn:var(--g2);--call-btn-ink:#fff;--bgimg:none}
+.stage.th .m-ap .ap-call{background:var(--deep);background-image:radial-gradient(60% 120% at 100% 0,color-mix(in srgb,var(--g2) 40%,transparent),transparent 70%),radial-gradient(50% 100% at 0 100%,color-mix(in srgb,var(--g1) 30%,transparent),transparent 70%)}
+.stage.th .m-ap .ap-call .btn{background:var(--grad);color:#fff}
+.stage.th [data-blk=ab],.stage.th [data-blk=ab]>*{--bg:var(--deep2);--ink:#fff;--mute:var(--muteD);--line:rgba(255,255,255,.12);--acc:var(--g1);--card:color-mix(in srgb,#fff 8%,var(--deep2));--vbg:#fff;--vink:var(--deep);--bgimg:radial-gradient(45% 60% at 100% 0,color-mix(in srgb,var(--g2) 30%,transparent),transparent 70%),radial-gradient(40% 55% at 0 100%,color-mix(in srgb,var(--g1) 24%,transparent),transparent 70%)}
+.stage.th .m-ab .ab-facts dt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage.th [data-blk=faq],.stage.th [data-blk=faq]>*{--bg:var(--soft2);--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line);--acc:var(--g2);--acc-ink:#fff;--card:#fff}
+.stage.th [data-blk=ct],.stage.th [data-blk=ct]>*{--bg:#fff;--ink:var(--T-ink);--mute:var(--T-mute);--line:var(--T-line);--acc:var(--g2);--card:#fff;--field:var(--soft);--glow:radial-gradient(50% 60% at 85% 30%,color-mix(in srgb,var(--g2) 22%,transparent),transparent 70%),radial-gradient(45% 55% at 60% 95%,color-mix(in srgb,var(--g1) 22%,transparent),transparent 70%)}
+.stage.th [data-blk=ft],.stage.th [data-blk=ft]>*{--bg:var(--deep);--ink:#fff;--mute:var(--muteD);--line:rgba(255,255,255,.12);--acc:var(--g1)}
+.stage.th .m-ft .ft-big{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage.th .m-faq .fq[open] .fq-ic{background:var(--grad);border-color:transparent}
+.stage.th .m-svc .sv2-it summary:hover .sv2-ic{background:var(--grad);border-color:transparent}
+.stage.th .m-ap .ap-n{background:var(--grad)}

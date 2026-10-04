@@ -1,0 +1,85 @@
+/* Шестнадцатый круг (04.10): «Смотреть проекты» ×5, компоновка главной ×5, предпросмотр в окне ×5. */
+.p12 .p11-g.p15{display:none!important}
+.p12 .p11-g.p16{display:block!important}
+
+/* ---------- окно: паспорт без строки «Сайт», предпросмотр без адресной строки и точек ---------- */
+.mx2-dl>div:nth-child(2){display:none}
+.dm-15 .brw-bar{display:none!important}
+.dm-15 .brw{border-radius:16px}
+
+/* ---------- «Смотреть проекты» ×5 ---------- */
+body.v16 .stage .m-hero .h11 .actions .btn-2.sp17{display:inline-flex;align-items:center;justify-content:center;min-height:64px;font-size:17px;font-weight:600;color:#0F2621;text-decoration:none;transition:background .8s cubic-bezier(.45,0,.25,1),color .8s cubic-bezier(.45,0,.25,1),box-shadow .8s cubic-bezier(.45,0,.25,1)}
+.sp17 .sp-ic{display:inline-grid;place-items:center;flex:none;transition:background .8s cubic-bezier(.45,0,.25,1),color .8s cubic-bezier(.45,0,.25,1),transform .8s cubic-bezier(.45,0,.25,1)}
+.sp17 .sp-ic svg{width:20px;height:20px;transition:transform .8s cubic-bezier(.45,0,.25,1)}
+/* 1 контурная пилюля */
+body.v16.sp17-1 .stage .m-hero .h11 .actions .btn-2.sp17{padding:0 30px;gap:12px;border-radius:999px;box-shadow:inset 0 0 0 2px #0F2621}
+body.v16.sp17-1 .stage .m-hero .h11 .actions .btn-2.sp17:hover{background:#0F2621;color:#fff}
+body.v16.sp17-1 .stage .m-hero .h11 .actions .btn-2.sp17:hover svg{transform:translateX(4px)}
+/* 2 стеклянная с кружком (зеркало кнопки Telegram) */
+body.v16.sp17-2 .stage .m-hero .h11 .actions .btn-2.sp17{padding:0 7px 0 30px;gap:18px;border-radius:999px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:inset 0 0 0 1px rgba(15,38,33,.12),0 14px 30px -20px rgba(15,38,33,.45)}
+body.v16.sp17-2 .sp17 .sp-ic{width:50px;height:50px;border-radius:50%;background:#0F2621;color:#fff}
+body.v16.sp17-2 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:#11998E}
+body.v16.sp17-2 .stage .m-hero .h11 .actions .btn-2.sp17:hover svg{transform:rotate(90deg)}
+/* 3 тёмная */
+body.v16.sp17-3 .stage .m-hero .h11 .actions .btn-2.sp17{padding:0 30px;gap:12px;border-radius:999px;background:#0F2621;color:#fff}
+body.v16.sp17-3 .stage .m-hero .h11 .actions .btn-2.sp17:hover{background:#21443B}
+body.v16.sp17-3 .stage .m-hero .h11 .actions .btn-2.sp17:hover svg{transform:translateX(4px)}
+/* 4 ссылка с линией */
+body.v16.sp17-4 .stage .m-hero .h11 .actions .btn-2.sp17{position:relative;padding:0 4px;gap:14px}
+body.v16.sp17-4 .stage .m-hero .h11 .actions .btn-2.sp17::after{content:"";position:absolute;left:4px;right:58px;bottom:14px;height:2px;border-radius:2px;background:#0F2621;transform:scaleX(.3);transform-origin:0 50%;transition:transform .8s cubic-bezier(.45,0,.25,1)}
+body.v16.sp17-4 .stage .m-hero .h11 .actions .btn-2.sp17:hover::after{transform:none}
+body.v16.sp17-4 .sp17 .sp-ic{width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(15,38,33,.3)}
+body.v16.sp17-4 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:#0F2621;color:#fff;box-shadow:none}
+/* 5 круг со стрелкой вниз */
+body.v16.sp17-5 .stage .m-hero .h11 .actions .btn-2.sp17{padding:0;gap:14px;flex-direction:row-reverse}
+body.v16.sp17-5 .sp17 .sp-ic{width:64px;height:64px;border-radius:50%;background:linear-gradient(140deg,#C6F06A,#5CC6A4);color:#0B1F1B}
+body.v16.sp17-5 .sp17 .sp-ic svg{transform:rotate(90deg)}
+body.v16.sp17-5 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{transform:translateY(5px)}
+
+/* ---------- компоновка главной ×5 (поверх варианта 7) ---------- */
+/* 2 одна нижняя панель */
+body.cm17-2 .m-hero .hx10::after{content:"";position:absolute;z-index:1;left:max(16px,calc((100vw - 1280px) / 2 + 32px));right:max(16px,calc((100vw - 1280px) / 2 + 32px));bottom:36px;height:112px;border-radius:32px;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 24px 50px -30px rgba(15,38,33,.4)}
+body.cm17-2 .m-hero .hx10 .lead,body.cm17-2 .m-hero .hx10 .actions{z-index:2;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:0!important}
+body.cm17-2 .m-hero .hx10 .lead{bottom:62px!important;left:max(40px,calc((100vw - 1280px) / 2 + 64px))!important;max-width:420px}
+body.cm17-2 .m-hero .hx10 .actions{bottom:60px!important;right:max(40px,calc((100vw - 1280px) / 2 + 60px))!important}
+/* 3 под заголовком по центру */
+body.cm17-3 .m-hero .hx10 .lead,body.cm17-3 .m-hero .hx10 .actions{position:static!important;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:0!important}
+body.cm17-3 .m-hero .hx10 .lead{max-width:540px;margin:30px auto 32px!important;text-align:center}
+body.cm17-3 .m-hero .hx10 .actions{justify-content:center;gap:16px;margin:0 auto}
+/* 4 кнопки столбиком справа */
+body.cm17-4 .m-hero .hx10 .actions{flex-direction:column;align-items:stretch;gap:10px;padding:12px!important;border-radius:32px!important}
+body.cm17-4 .m-hero .hx10 .actions .btn,body.cm17-4 .m-hero .hx10 .actions .btn-2{justify-content:space-between}
+body.cm17-4 .m-hero .hx10 .lead{padding:20px 24px!important;border-radius:24px!important}
+/* 5 кнопки слева, текст справа */
+body.cm17-5 .m-hero .hx10 .actions{right:auto!important;left:max(16px,calc((100vw - 1280px) / 2 + 48px))!important}
+body.cm17-5 .m-hero .hx10 .lead{left:auto!important;right:max(16px,calc((100vw - 1280px) / 2 + 48px))!important;text-align:right}
+@media (max-width:900px){
+  body.cm17-2 .m-hero .hx10::after{display:none}
+  body.v16 .m-hero .hx10 .actions{flex-direction:row;flex-wrap:wrap;justify-content:center}
+}
+
+/* ---------- предпросмотр в окне ×5 ---------- */
+body.v16 .dm-15 .dm-stage:has(>.brw){position:relative}
+/* 1 чистый скриншот */
+body.pv17-1 .dm-15 .brw{box-shadow:0 30px 60px -30px rgba(15,38,33,.5),0 0 0 1px rgba(15,38,33,.06)}
+/* 2 ноутбук */
+body.pv17-2 .dm-15 .dm-stage:has(>.brw){padding:30px 10% 52px}
+body.pv17-2 .dm-15 .brw{padding:12px 12px 14px;border-radius:18px 18px 6px 6px;background:#121816;box-shadow:0 30px 60px -36px rgba(0,0,0,.6)}
+body.pv17-2 .dm-15 .brw-view{border-radius:4px}
+body.pv17-2 .dm-15 .dm-stage:has(>.brw)::after{content:"";position:absolute;left:6%;right:6%;bottom:34px;height:18px;border-radius:2px 2px 16px 16px;background:linear-gradient(#DCE3E0,#AAB6B2);box-shadow:0 16px 24px -14px rgba(0,0,0,.4)}
+body.pv17-2 .dm-15 .dm-stage:has(>.brw)::before{content:"";position:absolute;left:50%;bottom:46px;width:13%;height:6px;margin-left:-6.5%;border-radius:0 0 8px 8px;background:#97A39F;z-index:1}
+/* 3 монитор */
+body.pv17-3 .dm-15 .dm-stage:has(>.brw){padding:24px 7% 92px}
+body.pv17-3 .dm-15 .brw{padding:10px;border-radius:14px;background:#121816;box-shadow:0 30px 60px -36px rgba(0,0,0,.6)}
+body.pv17-3 .dm-15 .brw-view{border-radius:4px}
+body.pv17-3 .dm-15 .dm-stage:has(>.brw)::after{content:"";position:absolute;left:50%;bottom:30px;width:12%;height:64px;transform:translateX(-50%);background:linear-gradient(90deg,#AEB9B5,#DCE3E0 50%,#AEB9B5);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
+body.pv17-3 .dm-15 .dm-stage:has(>.brw)::before{content:"";position:absolute;left:50%;bottom:22px;width:26%;height:10px;transform:translateX(-50%);border-radius:6px;background:#C3CDC9;box-shadow:0 10px 16px -8px rgba(0,0,0,.35)}
+/* 4 паспарту */
+body.pv17-4 .dm-15 .dm-stage:has(>.brw){padding:26px}
+body.pv17-4 .dm-15 .brw{padding:18px;border-radius:24px;background:#fff;box-shadow:inset 0 0 0 1px #DDEBE5,0 24px 50px -36px rgba(15,38,33,.45)}
+body.pv17-4 .dm-15 .brw-view{border-radius:12px}
+/* 5 во всю панель */
+body.pv17-5 .dm-15 .dm-stage:has(>.brw){padding:0}
+body.pv17-5 .dm-15 .dm-prev-w{overflow:hidden}
+body.pv17-5 .dm-15 .brw{border-radius:0;box-shadow:none}
+body.pv17-5 .dm-15 .dm-sw{position:absolute;left:50%;top:14px;transform:translateX(-50%);margin:0}

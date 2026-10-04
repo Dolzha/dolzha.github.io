@@ -1,0 +1,167 @@
+/* Седьмой круг (03.10). Поверх site6.css. */
+
+/* ---------- шапка: пункты ближе к логотипу и крупнее, кнопка справа, при прокрутке полупрозрачная ---------- */
+.v5 .hdc-in{grid-template-columns:minmax(0,1fr) auto auto auto minmax(0,1fr);column-gap:clamp(26px,3vw,52px);height:76px}
+.v5 .hdc-sp{grid-column:1}
+.v5 .hdc-l{grid-column:2;justify-content:flex-end}
+.v5 .hdc-logo{grid-column:3}
+.v5 .hdc-r{grid-column:4;justify-self:start}
+.v5 .hdc-cta-x{grid-column:5;justify-self:end}
+.v5 .hdc-l a,.v5 .hdc-r nav a{font:500 17.5px/1 'Onest',sans-serif;opacity:.92}
+.v5 .hdc-l,.v5 .hdc-r nav{gap:clamp(20px,2.2vw,34px)}
+.v5 .lg6{width:48px;height:48px}
+.v5 .hdc-logo .wm{font-size:27px}
+.stage.th .hdc{transition:background .35s,box-shadow .35s,backdrop-filter .35s}
+.stage.th .hdc.is-scrolled{background:rgba(255,255,255,.6);-webkit-backdrop-filter:saturate(1.5) blur(16px);backdrop-filter:saturate(1.5) blur(16px)}
+@media (max-width:1080px){
+  .v5 .hdc-in{grid-template-columns:44px minmax(0,1fr) 44px;height:64px}
+  .v5 .hdc-cta-x{display:none}
+  .v5 .hdc-logo{grid-column:2;justify-self:center}
+}
+
+/* ---------- «Входит»: иконки с переливом, по центру ---------- */
+.v5 .ci-c{fill:url(#icoA)}
+.v5 .inc-p2 .ci-c{fill:url(#icoB)}
+.v5 .ci-p{stroke:#fff;stroke-width:2.2}
+.v5 .inc-rows li:hover .cico{transform:rotate(-8deg) scale(1.06)}
+.v5 .cico{transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+
+/* ---------- «Обо мне»: светлый широкий переход зелёного, стрелки с кольцом ---------- */
+.stage.th.tg5 [data-blk=ab],.stage.th.tg5 [data-blk=ab]>*{--bg:#ECF7E4;--ink:#0F2621;--mute:#47625B;--line:rgba(15,38,33,.13);--card:#fff;--vbg:#0F2621;--vink:#fff;--bgimg:linear-gradient(100deg,#F4FBEC 0%,#E6F5DE 30%,#D3EEDF 62%,#BCE3D4 100%)}
+.v5 .ab-v2 .car-stack .car-track img{box-shadow:0 30px 60px -24px rgba(15,38,33,.35)}
+.v5 .ab-v2 .car-stack .car-track img:not(.on){filter:saturate(.75) brightness(.95)}
+.v5 .ab-v2 .car-stack .car-b{width:56px;height:56px;padding:0;bottom:-76px;background:#fff;color:#0F2621;border-radius:50%;box-shadow:0 10px 24px -14px rgba(15,38,33,.5);display:grid;place-items:center;transition:background .3s,color .3s,transform .3s}
+.v5 .ab-v2 .car-stack .car-prev{left:0}.v5 .ab-v2 .car-stack .car-next{left:68px}
+.cb-ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.cb-ring circle{fill:none;stroke:url(#icoB);stroke-width:2.5;stroke-dasharray:166.5;stroke-dashoffset:166.5;transition:stroke-dashoffset .6s cubic-bezier(.3,0,.2,1)}
+.cb-ar{position:relative;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.v5 .ab-v2 .car-stack .car-b:hover{background:#0F2621;color:#fff}
+.v5 .ab-v2 .car-stack .car-b:hover .cb-ring circle{stroke-dashoffset:0}
+.v5 .ab-v2 .car-stack .car-prev:hover .cb-ar{transform:translateX(-4px)}
+.v5 .ab-v2 .car-stack .car-next:hover .cb-ar{transform:translateX(4px)}
+.car-cnt{position:absolute;left:146px;bottom:-60px;font:500 15px 'Onest',sans-serif;color:var(--mute);letter-spacing:.04em}
+.car-cnt b{font-weight:800;color:var(--ink);font-size:22px}
+
+/* ---------- анимации главного экрана (.ha-N) ---------- */
+.m-hero .hero{position:relative}
+/* 1. плоскости плывут */
+.ha-1 .m-hero .hero{background-size:160% 100%,160% 100%,160% 100%,100% 100%,100% 100%;animation:haDrift 24s ease-in-out infinite alternate}
+@keyframes haDrift{from{background-position:0% 0,100% 0,0% 0,0 0,0 0}to{background-position:70% 0,30% 0,60% 0,0 0,0 0}}
+/* 2. цветные пятна гуляют */
+.ha-2 .m-hero .hero-bg i{border-radius:50%;width:48vw;height:48vw;animation:haBlob 20s ease-in-out infinite alternate}
+.ha-2 .m-hero .hero-bg i:nth-child(1){left:52%;top:-10%;background:radial-gradient(closest-side,color-mix(in srgb,var(--g2) 26%,transparent),transparent)}
+.ha-2 .m-hero .hero-bg i:nth-child(2){left:-10%;top:40%;background:radial-gradient(closest-side,color-mix(in srgb,var(--g1) 55%,transparent),transparent);animation-duration:26s;animation-direction:alternate-reverse}
+.ha-2 .m-hero .hero-bg i:nth-child(3){left:30%;top:55%;width:36vw;height:36vw;background:radial-gradient(closest-side,color-mix(in srgb,#7BDBFF 40%,transparent),transparent);animation-duration:17s}
+@keyframes haBlob{0%{transform:translate(0,0)}50%{transform:translate(8vw,6vh)}100%{transform:translate(-6vw,-4vh)}}
+/* 3. сборка экрана при входе: полосы въезжают, строки заголовка поднимаются, карточки прилетают */
+.ha-3 .m-hero .hero-bg i{top:-20%;bottom:-20%;width:22%;transform:skewX(-18deg);background:color-mix(in srgb,var(--g1) 12%,transparent);animation:haBand 1.3s cubic-bezier(.2,.8,.2,1) both}
+.ha-3 .m-hero .hero-bg i:nth-child(1){left:40%}.ha-3 .m-hero .hero-bg i:nth-child(2){left:62%;background:color-mix(in srgb,var(--g2) 10%,transparent);animation-delay:.1s}.ha-3 .m-hero .hero-bg i:nth-child(3){left:84%;animation-delay:.2s}
+@keyframes haBand{from{transform:skewX(-18deg) translateX(-160%);opacity:0}}
+.ha-3 .m-hero .h1 .l{animation:haRise .9s cubic-bezier(.2,.8,.2,1) both}
+.ha-3 .m-hero .h1 .l2{animation-delay:.12s}.ha-3 .m-hero .h1 .l3{animation-delay:.24s}
+.ha-3 .m-hero .eyebrow,.ha-3 .m-hero .lead,.ha-3 .m-hero .actions,.ha-3 .m-hero .note{animation:haRise .8s cubic-bezier(.2,.8,.2,1) both}
+.ha-3 .m-hero .lead{animation-delay:.35s}.ha-3 .m-hero .actions{animation-delay:.45s}.ha-3 .m-hero .note{animation-delay:.55s}
+@keyframes haRise{from{opacity:0;transform:translateY(38px)}}
+.ha-3 .m-hero .hc-back{animation:haCardB 1.2s .4s cubic-bezier(.2,.8,.2,1) both}
+.ha-3 .m-hero .hc-front{animation:haCardF 1.2s .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes haCardB{from{opacity:0;transform:translate(60px,-40px) rotate(12deg)}to{transform:rotate(3deg)}}
+@keyframes haCardF{from{opacity:0;transform:translate(80px,60px) rotate(-12deg)}to{transform:rotate(-2.5deg)}}
+/* 4. карточки в 3D за курсором */
+.ha-4 .m-hero .hero-vis{perspective:1200px;transform-style:preserve-3d;animation:haBob 6s ease-in-out infinite}
+.ha-4 .m-hero .hc{transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.ha-4 .m-hero .hc-back{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotate(3deg) translateZ(-30px)}
+.ha-4 .m-hero .hc-front{transform:rotateX(calc(var(--rx,0deg) * 1.4)) rotateY(calc(var(--ry,0deg) * 1.4)) rotate(-2.5deg) translateZ(50px)}
+@keyframes haBob{50%{transform:translateY(-10px)}}
+/* 5. блик по заголовку и карточкам */
+.stage.ha-5 .m-hero .h1 .l2{background:linear-gradient(110deg,var(--g1) 0%,var(--g2) 38%,#fff 50%,var(--g2) 62%,var(--g1) 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:haShine 5.5s ease-in-out infinite}
+@keyframes haShine{0%,30%{background-position:100% 0}70%,100%{background-position:0% 0}}
+.ha-5 .m-hero .hc::after{content:"";position:absolute;inset:-10%;z-index:4;pointer-events:none;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%);transform:translateX(-100%);animation:haCard 5.5s ease-in-out infinite}
+.ha-5 .m-hero .hc-front::after{animation-delay:.25s}
+@keyframes haCard{0%,40%{transform:translateX(-100%)}75%,100%{transform:translateX(100%)}}
+@media (prefers-reduced-motion:reduce){.m-hero *,.m-hero .hero{animation:none!important}}
+
+/* ================= ФОРМА ЗАЯВКИ: 5 вариантов (.cf, .fv-N) ================= */
+.v5 .stage .m-ct .ct-form,.v5 .stage .m-ct .ct-old{display:none!important}
+.cf{font-family:'Onest',sans-serif;color:#0F2621;min-width:0}
+.cf-done{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:36px;border-radius:24px;background:#fff;box-shadow:0 30px 60px -40px rgba(15,38,33,.45)}
+.cf-done .i{width:52px;height:52px;padding:13px;border-radius:50%;background:linear-gradient(120deg,#B5E853,#11998E);color:#fff;stroke-width:2.6}
+.cf-done b{font:800 30px/1.1 'Onest',sans-serif;letter-spacing:-.03em}
+.cf-done p{color:#47625B;margin:0}
+.cf .vbtn{align-self:flex-start}
+/* 1. чат */
+.cf1{display:flex;flex-direction:column;border-radius:26px;background:#fff;box-shadow:0 40px 80px -50px rgba(15,38,33,.5),0 0 0 1px rgba(15,38,33,.06);overflow:hidden}
+.cf1-top{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #E4EEE9}
+.cf1-av .lg6{width:42px;height:42px}
+.cf1-top b{display:block;font-size:17px}.cf1-top span{font-size:13px;color:#6A8580}
+.cf1-log{height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:20px;background:linear-gradient(180deg,#F6FBF3,#EEF7F2);scrollbar-width:thin}
+.cf1-m{max-width:80%;margin:0!important;padding:11px 15px;border-radius:18px 18px 18px 6px;background:#fff;font-size:15.5px;line-height:1.45;box-shadow:0 2px 6px rgba(15,38,33,.06);animation:cfIn .3s ease}
+.cf1-m.me{align-self:flex-end;border-radius:18px 18px 6px 18px;background:#0F2621;color:#fff}
+@keyframes cfIn{from{opacity:0;transform:translateY(8px)}}
+.cf1-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px;background:#EEF7F2}
+.cf1-quick:not(:empty){padding-bottom:12px}
+.cf1-quick button{all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;background:#fff;font-size:14px;font-weight:500;box-shadow:inset 0 0 0 1.5px #CFE3DB;transition:box-shadow .2s,background .2s}
+.cf1-quick button:hover{box-shadow:inset 0 0 0 1.5px #11998E}
+.cf1-quick button:focus-visible{outline:2px solid #11998E}
+.cf1-in{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #E4EEE9}
+.cf1-in input{flex:1;min-width:0;font:inherit;font-size:16px;padding:12px 16px;border:0;border-radius:999px;background:#F1F6F3;outline:0}
+.cf1-in input:focus{box-shadow:inset 0 0 0 2px #11998E}
+.cf1-in button{all:unset;cursor:pointer;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(120deg,#B5E853,#11998E);color:#fff;font-size:20px}
+.cf1-in button:focus-visible{outline:2px solid #0F2621;outline-offset:2px}
+/* 2. заполните предложение */
+.cf2{display:flex;flex-direction:column;gap:28px}
+.cf2-t{margin:0!important;font:500 clamp(22px,2.1vw,32px)/1.75 'Onest',sans-serif;letter-spacing:-.02em;color:#0F2621}
+.cf2 input,.cf2 select{font:inherit;color:#11998E;font-weight:700;background:transparent;border:0;border-bottom:2px solid #9FD8C9;padding:0 2px;outline:0;border-radius:0;max-width:100%}
+.cf2 select{-webkit-appearance:none;appearance:none;padding-right:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='%2311998E' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") right 2px center/20px no-repeat}
+.cf2 input::placeholder{color:#9DBDB4;font-weight:500}
+.cf2 input:focus,.cf2 select:focus{border-bottom-color:#11998E}
+/* 3. Telegram с QR-кодом */
+.cf3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px}
+.cf3-tg{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:26px;border-radius:24px;background:linear-gradient(150deg,#E4F6DA,#BFE6DA);color:#0F2621;transition:transform .3s,box-shadow .3s}
+.cf3-tg:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(15,38,33,.5)}
+.cf3-qr{display:block;padding:14px;border-radius:18px;background:#fff;margin-bottom:10px;box-shadow:0 14px 30px -18px rgba(15,38,33,.5)}
+.cf3-qr img{display:block;width:150px;height:150px}
+.cf3-tg b{font:800 22px/1.15 'Onest',sans-serif;letter-spacing:-.02em}
+.cf3-tg span{font-size:14px;color:#47625B}
+.cf3-tg em{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:8px;font-style:normal;font-weight:700;color:#11998E}
+.cf3-f{display:flex;flex-direction:column;gap:16px;padding:26px;border-radius:24px;background:#fff;box-shadow:0 0 0 1px rgba(15,38,33,.08)}
+.cf3-h{margin:0!important;font:800 22px 'Onest',sans-serif;letter-spacing:-.02em}
+.cf3-f .fld{gap:4px}
+.cf3-f input{font:inherit;font-size:16px;color:#0F2621;background:transparent;border:0;border-bottom:1.5px solid #D8E6E0;padding:10px 0;outline:0;border-radius:0}
+.cf3-f input:focus{border-bottom-color:#11998E}
+/* 4. выбор кнопками и поля с поднимающейся подписью */
+.cf4{display:flex;flex-direction:column;gap:18px}
+.cf4-l{margin:0!important;font-size:14px;color:#47625B;font-weight:600}
+.cf4-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.cf4-chips button{all:unset;cursor:pointer;padding:12px 18px;border-radius:999px;background:#fff;font-weight:500;box-shadow:inset 0 0 0 1.5px #D3E3DD;transition:background .2s,color .2s,box-shadow .2s}
+.cf4-chips button:hover{box-shadow:inset 0 0 0 1.5px #11998E}
+.cf4-chips button[aria-pressed="true"]{background:#0F2621;color:#fff;box-shadow:none}
+.cf4-chips button[aria-pressed="true"]::before{content:"✓ "}
+.cf4-chips button:focus-visible{outline:2px solid #11998E;outline-offset:2px}
+.cf4-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ff{position:relative;display:block}
+.ff input,.ff textarea{width:100%;font:inherit;font-size:16px;color:#0F2621;padding:26px 16px 10px;border:0;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1.5px #DCE8E3;outline:0;resize:vertical;transition:box-shadow .2s}
+.ff input:focus,.ff textarea:focus{box-shadow:inset 0 0 0 2px #11998E}
+.ff span{position:absolute;left:16px;top:18px;font-size:16px;color:#6A8580;pointer-events:none;transition:top .2s,font-size .2s,color .2s}
+.ff input:focus+span,.ff input:not(:placeholder-shown)+span,.ff textarea:focus+span,.ff textarea:not(:placeholder-shown)+span{top:8px;font-size:12px;color:#11998E}
+/* 5. по одному вопросу */
+.cf5{display:flex;flex-direction:column;gap:22px;padding:30px;border-radius:26px;background:#fff;box-shadow:0 40px 80px -50px rgba(15,38,33,.5)}
+.cf5-dots{display:flex;gap:6px}
+.cf5-dots i{flex:1;height:5px;border-radius:9px;background:#E3EDE8;transition:background .3s}
+.cf5-dots i.on{background:linear-gradient(90deg,#B5E853,#11998E)}
+.cf5-q{display:none;flex-direction:column;gap:12px}
+.cf5-q.on{display:flex;animation:cfIn .35s ease}
+.cf5-n{font-size:13px;color:#6A8580;letter-spacing:.04em}
+.cf5-q b{font:800 clamp(28px,2.6vw,40px)/1.08 'Onest',sans-serif;letter-spacing:-.03em}
+.cf5-q input{font:500 clamp(20px,1.8vw,26px) 'Onest',sans-serif;color:#0F2621;background:transparent;border:0;border-bottom:2px solid #D3E3DD;padding:12px 0;outline:0;border-radius:0}
+.cf5-q input:focus{border-bottom-color:#11998E}
+.cf5-q input.err{border-bottom-color:#E5484D;animation:cfShake .4s}
+@keyframes cfShake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.cf5-act{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cf5-back{all:unset;cursor:pointer;font-weight:500;color:#47625B;padding:8px 4px}
+.cf5-back:focus-visible{outline:2px solid #11998E}
+.cf5-hint{font-size:13px;color:#8AA39C}
+@media (max-width:900px){
+  .cf3,.cf4-row{grid-template-columns:1fr}
+  .cf1-log{height:260px}
+  .cf2-t{font-size:21px}
+}

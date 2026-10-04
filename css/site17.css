@@ -1,0 +1,64 @@
+/* Семнадцатый круг (04.10): анимации «Смотреть проекты» ×5, выделение текста ×5, стрелка Telegram вправо, «Дальше» без чёрного текста. */
+.p12 .p11-g.p16{display:none!important}
+.p12 .p11-g.p17{display:block!important}
+
+/* ---------- «Написать в Telegram» на главной: стрелка вправо, не поворачивается; кружок темнеет, фон — градиент ---------- */
+body.v17 .stage.th .m-hero .h11 .actions .btn:hover .i,body.v17 .stage.th .m-hero .h11 .actions .btn .i{transform:none!important}
+body.v17 .stage.th .m-hero .h11 .actions .btn:hover .i{background:#0F2621!important;color:#fff!important}
+
+/* ---------- «Смотреть проекты»: без подчёркивания и без поворота стрелки ---------- */
+body.v17 .stage .m-hero .h11 .actions .btn-2.sp17::after,body.v17 .stage .m-hero .h11 .actions .btn-2.sp17::before{content:none!important;display:none!important}
+body.v17 .stage .m-hero .h11 .actions .btn-2.sp17 svg,body.v17 .stage .m-hero .h11 .actions .btn-2.sp17:hover svg{transform:none!important}
+body.v17 .stage .m-hero .h11 .actions .btn-2.sp17{position:relative;isolation:isolate;overflow:hidden}
+body.v17 .sp17 .sp-ic{position:relative;overflow:hidden}
+/* 1 градиент, как у Telegram: фон проявляется градиентом, кружок темнеет */
+body.sa18-1 .sp17 .sp-g{position:absolute;inset:0;z-index:0;border-radius:inherit;background:linear-gradient(120deg,#B5E853,#11998E);opacity:0;transition:opacity .8s cubic-bezier(.45,0,.25,1)}
+body.sa18-1 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-g{opacity:1}
+body.sa18-1 .stage .m-hero .h11 .actions .btn-2.sp17:hover{color:#0B1F1B}
+/* 2 заливка из кружка: кружок раздаётся на всю кнопку */
+body.sa18-2 .sp17 .sp-g{position:absolute;z-index:0;right:7px;top:50%;width:50px;height:50px;margin-top:-25px;border-radius:50%;background:#0F2621;transform:scale(1);transition:transform .8s cubic-bezier(.45,0,.25,1)}
+body.sa18-2 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-g{transform:scale(7)}
+body.sa18-2 .stage .m-hero .h11 .actions .btn-2.sp17:hover{color:#fff}
+body.sa18-2 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:linear-gradient(140deg,#C6F06A,#5CC6A4);color:#0B1F1B}
+/* 3 стрелка проезжает: уходит вправо и возвращается слева */
+body.sa18-3 .sp17 .sp-g{display:none}
+body.sa18-3 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic svg{animation:saRun .8s cubic-bezier(.45,0,.25,1)}
+@keyframes saRun{0%{transform:none}45%{transform:translateX(34px)}46%{transform:translateX(-34px)}100%{transform:none}}
+body.sa18-3 .stage .m-hero .h11 .actions .btn-2.sp17:hover{box-shadow:inset 0 0 0 1px rgba(17,153,142,.45),0 18px 34px -20px rgba(17,153,142,.55)}
+body.sa18-3 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:#11998E}
+/* 4 тёмная заливка: кнопка темнеет, кружок становится мятным */
+body.sa18-4 .sp17 .sp-g{position:absolute;inset:0;z-index:0;border-radius:inherit;background:#0F2621;opacity:0;transition:opacity .8s cubic-bezier(.45,0,.25,1)}
+body.sa18-4 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-g{opacity:1}
+body.sa18-4 .stage .m-hero .h11 .actions .btn-2.sp17:hover{color:#fff}
+body.sa18-4 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:linear-gradient(140deg,#C6F06A,#5CC6A4);color:#0B1F1B}
+/* 5 контур-градиент и подъём */
+body.sa18-5 .sp17 .sp-g{position:absolute;inset:0;z-index:0;border-radius:inherit;padding:2px;background:linear-gradient(120deg,#B5E853,#11998E);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .8s cubic-bezier(.45,0,.25,1)}
+body.sa18-5 .stage .m-hero .h11 .actions .btn-2.sp17{transition:transform .8s cubic-bezier(.45,0,.25,1),box-shadow .8s cubic-bezier(.45,0,.25,1)!important}
+body.sa18-5 .stage .m-hero .h11 .actions .btn-2.sp17:hover{transform:translateY(-3px);box-shadow:0 22px 36px -20px rgba(17,153,142,.6)}
+body.sa18-5 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-g{opacity:1}
+body.sa18-5 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:#11998E}
+body.v17 .sp17 .sp-txt,body.v17 .sp17 .sp-ic{position:relative;z-index:1}
+
+/* ---------- выделение текста «Помогаю бизнесу…» ×5 (карточка слева внизу, компоновка 4) ---------- */
+body.v17 .m-hero .hx10 .lead{transition:none}
+/* 1 мятный контур */
+body.la18-1 .m-hero .hx10 .lead{box-shadow:0 0 0 2px #7FD6B5,0 18px 36px -24px rgba(17,153,142,.55)!important;color:#0F2621!important}
+/* 2 тёмная карточка */
+body.la18-2 .m-hero .hx10 .lead{background:#0F2621!important;color:#E8F3EE!important;box-shadow:0 24px 44px -26px rgba(11,31,27,.7)!important}
+/* 3 мятная карточка */
+body.la18-3 .m-hero .hx10 .lead{background:linear-gradient(140deg,rgba(214,244,170,.95),rgba(170,226,206,.95))!important;color:#0B1F1B!important;box-shadow:0 18px 36px -24px rgba(17,153,142,.55)!important}
+/* 4 полоса слева */
+body.la18-4 .m-hero .hx10 .lead{border-left:4px solid #11998E;border-radius:6px 24px 24px 6px!important;color:#0F2621!important;box-shadow:0 18px 36px -26px rgba(15,38,33,.45)!important}
+/* 5 крупнее и темнее */
+body.la18-5 .m-hero .hx10 .lead{font-size:clamp(16px,1.2vw,19px)!important;font-weight:500;color:#0F2621!important;max-width:420px!important;line-height:1.5}
+
+/* ---------- «Дальше» в контактах: при наведении подсвечивается, текст остаётся белым (как «Написать в Telegram» слева) ---------- */
+body.v17 .x13-c .cf5-act .vbtn,body.v17 .x13-c .cf5-act .vbtn *{color:#fff!important}
+body.v17 .x13-c .cf5-act .vbtn:hover,body.v17 .c13-tg .vbtn.tb14:hover{background:#24463E!important}
+body.v17 .x13-c .cf5-act .vbtn:hover *,body.v17 .x13-c .cf5-act .vbtn:hover{color:#fff!important}
+/* правки: кружок-заливка в варианте 2 прячется под кнопкой-стрелкой и раздаётся на всю ширину; цвет кружка по вариантам */
+body.sa18-2 .sp17 .sp-g{transform:scale(.9)}
+body.v17.sa18-2 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-g{transform:scale(14)}
+body.v17.sa18-1 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:#0F2621;color:#fff}
+body.v17.sa18-2 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic,body.v17.sa18-4 .stage .m-hero .h11 .actions .btn-2.sp17:hover .sp-ic{background:linear-gradient(140deg,#C6F06A,#5CC6A4);color:#0B1F1B}
+body.sa18-2 .sp17 .sp-g{transform:scale(0)}

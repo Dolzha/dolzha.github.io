@@ -1,0 +1,93 @@
+/* 5 общих стилей сайта: каркас и правки те же, меняются шрифты, цвета и фон КАЖДОГО блока.
+   Стиль задаётся классом .sN на #stage, токены раскладываются по блокам [data-blk]. */
+
+/* ---- общий слой: блоки берут цвета из токенов стиля ---- */
+.styled{--hd-bg:#F7F6FB;--hd-ink:#121216}
+.styled [data-blk],.styled [data-blk]>*{--fd:var(--S-fd);--fb:var(--S-fb);--fu:var(--S-fb);--h1w:var(--S-hw);--h2w:var(--S-hw);--h1ls:var(--S-ls);--h2ls:var(--S-ls);--card-ink:var(--ink);--card-mute:var(--mute);--soft:var(--card);--field:rgba(127,127,140,.1);--vbg:#1E1E21;--vink:#F2F1EE}
+.styled .hdc{background:var(--hd-bg);color:var(--hd-ink);--ink:var(--hd-ink);box-shadow:0 1px 0 var(--hd-line,rgba(127,127,140,.18))}
+.styled .hdc.is-scrolled,.styled .hdc.open,.styled .hdc.open .hd-menu{background:var(--hd-bg)}
+.styled .hdc-l a:hover,.styled .hdc-r nav a:hover{color:var(--hd-acc)}
+.styled .hdc-logo .wm{font-family:var(--S-fd)}
+.styled .hdc .vbtn{--vb-bg:var(--hd-btn,#1E1E21);--vb-ink:var(--hd-btn-ink,#F2F1EE)}
+.styled .hdc .hd-mnav a{border-color:var(--hd-line,rgba(127,127,140,.18))}
+.styled [data-blk] .sec,.styled [data-blk] .hero,.styled [data-blk] .ft{background-color:var(--bg);background-image:var(--bgimg,none);background-size:var(--bgsize,auto);color:var(--ink)}
+.styled [data-blk] .vbtn{--vb-bg:var(--vbg);--vb-ink:var(--vink)}
+.styled .m-hero .hero-bg{opacity:var(--planes,1)}
+.styled .m-hero .eyebrow::before,.styled .m-hero .note .i{color:var(--acc)}
+.styled .m-works .wk{background:var(--card);color:var(--card-ink);--ink:var(--card-ink);--mute:var(--card-mute)}
+.styled .m-works .wk-tags span{background:var(--bg)}
+.styled .svc-v2 summary:hover,.styled .svc-v2 .sv2-extra{background:var(--soft)}
+.styled .svc-v2 .sv2-extra li{background:var(--card)}
+.styled .m-ap .ap-n{background:var(--acc);color:var(--acc-ink)}
+.styled .m-ap .ap:hover .ap-n{background:var(--ink);color:var(--bg)}
+.styled .m-ap .ap-call{background:var(--call);color:var(--call-ink)}
+.styled .m-ap .ap-call .btn{background:var(--call-btn);color:var(--call-btn-ink)}
+.styled .m-ap .ap-call .btn:hover{background:var(--call-ink);color:var(--call)}
+.styled .m-ab .car{--surf:var(--card)}
+.styled .m-faq .fq{background:var(--card);color:var(--card-ink);--ink:var(--card-ink);--mute:var(--card-mute)}
+.styled .m-ct .sec-bg{background:var(--glow,none)}
+.styled .m-ct .ct-form{background:var(--card);color:var(--card-ink);--ink:var(--card-ink);--mute:var(--card-mute);--line:rgba(127,127,140,.22)}
+.styled .m-ct .fld input,.styled .m-ct .fld textarea{background:var(--field)}
+.styled .m-ct .ct-form .vbtn{--vb-bg:var(--form-btn,#1E1E21);--vb-ink:var(--form-btn-ink,#F2F1EE)}
+.styled .m-ft .ft-big{color:var(--ink)}
+.styled .m-ft .ft-col a:hover,.styled .m-ft .ft-nav a:hover{color:var(--acc)}
+
+/* ============ 1. ЧЕРНИЛА И РОЗОВЫЙ (glitch: синий и розовый, как две рыбки) — Onest ============ */
+.s1{--S-fd:'Onest';--S-fb:'Onest';--S-hw:800;--S-ls:-.04em;--hd-bg:#FFFFFF;--hd-ink:#10164A;--hd-acc:#3D5AFE;--hd-btn:#10164A}
+.s1 [data-blk=hero],.s1 [data-blk=hero]>*{--bg:#10164A;--ink:#F4F5FF;--mute:#A9B0E0;--line:rgba(255,255,255,.14);--acc:#FF6B9A;--bgimg:radial-gradient(50% 60% at 85% 20%,rgba(255,107,154,.22),transparent 70%),radial-gradient(40% 50% at 70% 95%,rgba(61,90,254,.35),transparent 70%)}
+.s1 [data-blk=works],.s1 [data-blk=works]>*{--bg:#F3F4FF;--ink:#10164A;--mute:#5B6190;--line:#E2E4F5;--acc:#3D5AFE;--card:#FFFFFF}
+.s1 [data-blk=svc],.s1 [data-blk=svc]>*{--bg:#FFFFFF;--ink:#10164A;--mute:#5B6190;--line:#E2E4F5;--acc:#3D5AFE;--card:#F3F4FF;--soft:#F3F4FF;--vbg:#10164A}
+.s1 [data-blk=ap],.s1 [data-blk=ap]>*{--bg:#E9ECFF;--ink:#10164A;--mute:#5B6190;--line:#CBD1F5;--acc:#3D5AFE;--acc-ink:#fff;--call:#10164A;--call-ink:#fff;--call-btn:#FF6B9A;--call-btn-ink:#10164A;--bgimg:radial-gradient(circle,rgba(16,22,74,.09) 1px,transparent 1.5px);--bgsize:22px 22px}
+.s1 [data-blk=ab],.s1 [data-blk=ab]>*{--bg:#10164A;--ink:#F4F5FF;--mute:#A9B0E0;--line:rgba(255,255,255,.14);--acc:#FF6B9A;--card:#1B2260;--vbg:#F4F5FF;--vink:#10164A}
+.s1 [data-blk=faq],.s1 [data-blk=faq]>*{--bg:#FFF0F5;--ink:#10164A;--mute:#5B6190;--line:#F5D5E1;--acc:#FF6B9A;--acc-ink:#10164A;--card:#FFFFFF}
+.s1 [data-blk=ct],.s1 [data-blk=ct]>*{--bg:#F3F4FF;--ink:#10164A;--mute:#5B6190;--line:#E2E4F5;--acc:#3D5AFE;--card:#FFFFFF;--glow:radial-gradient(50% 60% at 85% 30%,rgba(255,107,154,.28),transparent 70%),radial-gradient(45% 55% at 60% 90%,rgba(61,90,254,.25),transparent 70%)}
+.s1 [data-blk=ft],.s1 [data-blk=ft]>*{--bg:#0B0F35;--ink:#FFFFFF;--mute:#9AA1D6;--line:rgba(255,255,255,.14);--acc:#FF6B9A}
+
+/* ============ 2. ГРАФИТ И ЯНТАРЬ (resn: тёмные плоскости, тёплый свет) — Geologica + Golos ============ */
+.s2{--S-fd:'Geologica';--S-fb:'Golos Text';--S-hw:600;--S-ls:-.045em;--hd-bg:#17171A;--hd-ink:#EDEDE9;--hd-acc:#FFB547;--hd-line:#2C2C31;--hd-btn:#FFB547;--hd-btn-ink:#17171A}
+.s2 [data-blk=hero],.s2 [data-blk=hero]>*{--bg:#17171A;--ink:#EDEDE9;--mute:#9A9AA1;--line:#2C2C31;--acc:#FFB547}
+.s2 [data-blk=works],.s2 [data-blk=works]>*{--bg:#212125;--ink:#EDEDE9;--mute:#9A9AA1;--line:#34343A;--acc:#FFB547;--card:#2A2A2F;--bgimg:linear-gradient(112deg,transparent 0 40%,rgba(255,255,255,.025) 40% 60%,transparent 60%)}
+.s2 [data-blk=svc],.s2 [data-blk=svc]>*{--bg:#F1F0EC;--ink:#17171A;--mute:#66666D;--line:#DDDBD4;--acc:#C7811F;--card:#FFFFFF;--soft:#E8E6E0}
+.s2 [data-blk=ap],.s2 [data-blk=ap]>*{--bg:#1C1C20;--ink:#EDEDE9;--mute:#9A9AA1;--line:#34343A;--acc:#FFB547;--acc-ink:#17171A;--call:#FFB547;--call-ink:#17171A;--call-btn:#17171A;--call-btn-ink:#FFB547}
+.s2 [data-blk=ab],.s2 [data-blk=ab]>*{--bg:#2A2A2F;--ink:#EDEDE9;--mute:#A3A3AA;--line:#3D3D44;--acc:#FFB547;--card:#34343A;--vbg:#EDEDE9;--vink:#17171A}
+.s2 [data-blk=faq],.s2 [data-blk=faq]>*{--bg:#F1F0EC;--ink:#17171A;--mute:#66666D;--line:#DDDBD4;--acc:#C7811F;--acc-ink:#fff;--card:#FFFFFF}
+.s2 [data-blk=ct],.s2 [data-blk=ct]>*{--bg:#17171A;--ink:#EDEDE9;--mute:#9A9AA1;--line:#2C2C31;--acc:#FFB547;--card:#232327;--card-ink:#EDEDE9;--card-mute:#9A9AA1;--field:#2C2C31;--vbg:#EDEDE9;--vink:#17171A;--form-btn:#FFB547;--form-btn-ink:#17171A;--glow:radial-gradient(40% 50% at 15% 85%,rgba(255,181,71,.12),transparent 70%)}
+.s2 [data-blk=ft],.s2 [data-blk=ft]>*{--bg:#0E0E10;--ink:#EDEDE9;--mute:#8A8A90;--line:#26262B;--acc:#FFB547}
+
+/* ============ 3. СИРЕНЬ И ПОДСОЛНУХ (dribbble: светлая витрина, яркий акцент) — Commissioner ============ */
+.s3{--S-fd:'Commissioner';--S-fb:'Commissioner';--S-hw:800;--S-ls:-.035em;--hd-bg:#FBF9FF;--hd-ink:#1B1530;--hd-acc:#6C4BFF;--hd-btn:#1B1530}
+.s3 [data-blk=hero],.s3 [data-blk=hero]>*{--bg:#1B1530;--ink:#F7F3FF;--mute:#B4A9D6;--line:rgba(255,255,255,.12);--acc:#FFD166;--bgimg:radial-gradient(45% 55% at 80% 30%,rgba(108,75,255,.45),transparent 70%)}
+.s3 [data-blk=works],.s3 [data-blk=works]>*{--bg:#F6F3FF;--ink:#1B1530;--mute:#635A80;--line:#E4DCFA;--acc:#6C4BFF;--card:#FFFFFF}
+.s3 [data-blk=svc],.s3 [data-blk=svc]>*{--bg:#FFFFFF;--ink:#1B1530;--mute:#635A80;--line:#ECE6FB;--acc:#6C4BFF;--card:#F6F3FF;--soft:#F6F3FF;--vbg:#1B1530}
+.s3 [data-blk=ap],.s3 [data-blk=ap]>*{--bg:#EFE8FF;--ink:#1B1530;--mute:#635A80;--line:#D9CDFA;--acc:#6C4BFF;--acc-ink:#fff;--call:#1B1530;--call-ink:#fff;--call-btn:#FFD166;--call-btn-ink:#1B1530}
+.s3 [data-blk=ab],.s3 [data-blk=ab]>*{--bg:#2A1F4D;--ink:#F7F3FF;--mute:#B4A9D6;--line:rgba(255,255,255,.14);--acc:#FFD166;--card:#3A2C66;--vbg:#F7F3FF;--vink:#1B1530}
+.s3 [data-blk=faq],.s3 [data-blk=faq]>*{--bg:#FFF8E5;--ink:#1B1530;--mute:#635A80;--line:#F3E5BC;--acc:#6C4BFF;--acc-ink:#fff;--card:#FFFFFF}
+.s3 [data-blk=ct],.s3 [data-blk=ct]>*{--bg:#F6F3FF;--ink:#1B1530;--mute:#635A80;--line:#E4DCFA;--acc:#6C4BFF;--card:#FFFFFF;--glow:radial-gradient(50% 60% at 85% 30%,rgba(108,75,255,.2),transparent 70%),radial-gradient(40% 50% at 65% 90%,rgba(255,209,102,.35),transparent 70%)}
+.s3 [data-blk=ft],.s3 [data-blk=ft]>*{--bg:#120E22;--ink:#F7F3FF;--mute:#9C92BC;--line:rgba(255,255,255,.12);--acc:#FFD166}
+
+/* ============ 4. ЧЁРНОЕ, БЕЛОЕ, КРАСНОЕ (строгий плакат) — Sofia Sans Condensed + Sofia Sans ============ */
+.s4{--S-fd:'Sofia Sans Condensed';--S-fb:'Sofia Sans';--S-hw:800;--S-ls:-.02em;--hd-bg:#FFFFFF;--hd-ink:#000000;--hd-acc:#E5251A;--hd-btn:#000}
+.s4 [data-blk]{font-size:17px}
+.s4 [data-blk=hero],.s4 [data-blk=hero]>*{--bg:#000000;--ink:#FFFFFF;--mute:#A0A0A0;--line:#262626;--acc:#FF3B30}
+.s4 [data-blk=works],.s4 [data-blk=works]>*{--bg:#FFFFFF;--ink:#000000;--mute:#5C5C5C;--line:#E6E6E6;--acc:#E5251A;--card:#F2F2F2}
+.s4 [data-blk=svc],.s4 [data-blk=svc]>*{--bg:#F2F2F2;--ink:#000000;--mute:#5C5C5C;--line:#DADADA;--acc:#E5251A;--card:#FFFFFF;--soft:#FFFFFF;--vbg:#000}
+.s4 [data-blk=ap],.s4 [data-blk=ap]>*{--bg:#000000;--ink:#FFFFFF;--mute:#A0A0A0;--line:#2B2B2B;--acc:#FF3B30;--acc-ink:#fff;--call:#FF3B30;--call-ink:#000;--call-btn:#000;--call-btn-ink:#fff}
+.s4 [data-blk=ab],.s4 [data-blk=ab]>*{--bg:#FFFFFF;--ink:#000000;--mute:#5C5C5C;--line:#E6E6E6;--acc:#E5251A;--card:#EEEEEE;--vbg:#000}
+.s4 [data-blk=faq],.s4 [data-blk=faq]>*{--bg:#000000;--ink:#FFFFFF;--mute:#A0A0A0;--line:#2B2B2B;--acc:#FF3B30;--acc-ink:#fff;--card:#161616;--vbg:#fff;--vink:#000}
+.s4 [data-blk=ct],.s4 [data-blk=ct]>*{--bg:#F2F2F2;--ink:#000000;--mute:#5C5C5C;--line:#DADADA;--acc:#E5251A;--card:#FFFFFF}
+.s4 [data-blk=ft],.s4 [data-blk=ft]>*{--bg:#FF3B30;--ink:#000000;--mute:#3D0A07;--line:rgba(0,0,0,.2);--acc:#FFFFFF}
+
+/* ============ 5. НЕБО И СОЛНЦЕ (calltoidea: синее небо, жёлтый свет маяка) — Manrope ============ */
+.s5{--S-fd:'Manrope';--S-fb:'Manrope';--S-hw:800;--S-ls:-.045em;--hd-bg:#FFFFFF;--hd-ink:#0B2A55;--hd-acc:#0B4DA2;--hd-btn:#0B4DA2}
+.s5 [data-blk=hero],.s5 [data-blk=hero]>*{--bg:#0A5DC4;--ink:#FFFFFF;--mute:#CFE2FA;--line:rgba(255,255,255,.2);--acc:#FFC83D;--planes:0;--bgimg:radial-gradient(30% 22% at 88% 8%,rgba(255,255,255,.85),transparent 70%),radial-gradient(22% 16% at 72% 18%,rgba(255,255,255,.55),transparent 70%),linear-gradient(180deg,#0A5DC4,#0B4DA2)}
+.s5 [data-blk=works],.s5 [data-blk=works]>*{--bg:#EAF3FF;--ink:#0B2A55;--mute:#4A6A96;--line:#D5E2F3;--acc:#0B4DA2;--card:#FFFFFF}
+.s5 [data-blk=svc],.s5 [data-blk=svc]>*{--bg:#FFFFFF;--ink:#0B2A55;--mute:#4A6A96;--line:#DCE7F5;--acc:#0B4DA2;--card:#EAF3FF;--soft:#EAF3FF;--vbg:#0B4DA2;--vink:#fff}
+.s5 [data-blk=ap],.s5 [data-blk=ap]>*{--bg:#0B4DA2;--ink:#FFFFFF;--mute:#CFE2FA;--line:rgba(255,255,255,.2);--acc:#FFC83D;--acc-ink:#0B2A55;--call:#FFC83D;--call-ink:#0B2A55;--call-btn:#0B2A55;--call-btn-ink:#fff}
+.s5 [data-blk=ab],.s5 [data-blk=ab]>*{--bg:#FFF7E0;--ink:#0B2A55;--mute:#5A6A80;--line:#F1E2B5;--acc:#D99A00;--card:#FFE9A8;--vbg:#0B4DA2;--vink:#fff}
+.s5 [data-blk=faq],.s5 [data-blk=faq]>*{--bg:#EAF3FF;--ink:#0B2A55;--mute:#4A6A96;--line:#D5E2F3;--acc:#0B4DA2;--acc-ink:#fff;--card:#FFFFFF}
+.s5 [data-blk=ct],.s5 [data-blk=ct]>*{--bg:#0A428C;--ink:#FFFFFF;--mute:#CFE2FA;--line:rgba(255,255,255,.2);--acc:#FFC83D;--card:#FFFFFF;--card-ink:#0B2A55;--card-mute:#4A6A96;--field:#EEF4FC;--vbg:#fff;--vink:#0B4DA2;--form-btn:#0B4DA2;--form-btn-ink:#fff}
+.s5 [data-blk=ft],.s5 [data-blk=ft]>*{--bg:#FFC83D;--ink:#0B2A55;--mute:#5A4A10;--line:rgba(11,42,85,.18);--acc:#0B4DA2}
+
+/* переключатель стилей в инструменте */
+.tool-st{display:flex;gap:3px;padding:0 4px;border-left:1px solid #2c2c31}
+.tool-st button[aria-pressed="true"]{background:#fff;color:#141416}
