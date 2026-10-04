@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Страница не найдена · Dolzha</title>
+<meta name="robots" content="noindex">
+<script>
+/* Zest и Porfum — одностраничные приложения: прямую ссылку /zest/about передаём в приложение как /zest/?/about */
+(function (l) {
+  var m = l.pathname.match(/^\/(zest|porfum)\/(.+)$/);
+  if (m) l.replace('/' + m[1] + '/?/' + m[2].replace(/&/g, '~and~') + (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') + l.hash);
+}(location));
+</script>
+<style>
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;text-align:center;font:16px/1.5 system-ui,-apple-system,'Segoe UI',sans-serif;color:#0F2621;background:#F4F9F6}
+  b{font-size:clamp(72px,20vw,140px);line-height:1;letter-spacing:-.05em;background:linear-gradient(120deg,#B5E853,#11998E);-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{margin:0;color:#4E6A63}
+  a{display:inline-flex;align-items:center;min-height:50px;padding:0 26px;border-radius:999px;background:#0F2621;color:#fff;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<b>404</b>
+<p>Такой страницы нет. Возможно, ссылка устарела.</p>
+<a href="/">На главную</a>
+</body>
+</html>

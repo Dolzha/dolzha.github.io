@@ -1,0 +1,6 @@
+:HL["/private/_next/static/chunks/0dfs2qfc2efc7.css","style"]
+:HL["/private/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/private/_next/static/media/b0947914c9718a1e-s.p.0l.9lak812di~.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/private/_next/static/media/b4a06a523f527a0e-s.p.12~5rgo65usnz.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/private/_next/static/media/cfdfbee4d6cf0a93-s.p.0hv9fgj3_s0zo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"kartiny","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"molchanie-kamnya","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"hvjtAqre1uOyVowH752kC"}
