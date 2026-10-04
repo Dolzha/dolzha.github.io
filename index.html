@@ -26,7 +26,9 @@
 <link rel="stylesheet" href="css/site17.css?v=3">
 <link rel="stylesheet" href="css/site18.css?v=3">
 <script>/* 18-й круг: панель вариантов убрана, у всех один и тот же выбор (FIX — то, что выбрано не по умолчанию). Старая панель и память браузера: адрес ?panel */
-(function(){var h=document.documentElement;if(/[?&]panel(=|&|$)/.test(location.search))return;h.classList.add('no-panel','v18-wait');setTimeout(function(){h.classList.remove('v18-wait')},4000);var FIX={'v14-m':'0'};try{var P=Storage.prototype,g=P.getItem,s=P.setItem,v=/^v\d+-/;P.getItem=function(k){return this===window.localStorage&&v.test(k)?(FIX.hasOwnProperty(k)?FIX[k]:null):g.call(this,k)};P.setItem=function(k,x){if(this===window.localStorage&&v.test(k))return;return s.call(this,k,x)}}catch(e){}})();</script>
+(function(){var h=document.documentElement;if(/[?&]panel(=|&|$)/.test(location.search))return;h.classList.add('no-panel','v18-wait');setTimeout(function(){h.classList.remove('v18-wait')},4000);var FIX={'v14-m':'7'};
+/* адрес без служебных знаков: коды вариантов (#w6-s7-p1-a0, #hl10-…) не пишем и не читаем, якоря разделов убираем после перехода */
+var H=history,R=H.replaceState,code=/^#(w\d+-s\d+-p\d+-a\d+|hl\d+-bg\d+-hh\d+-lp\d+)$/,clean=function(){R.call(H,H.state,'',location.pathname+location.search)};if(code.test(location.hash))clean();H.replaceState=function(st,t,u){if(typeof u==='string'&&code.test(u))return;return R.apply(H,arguments)};addEventListener('hashchange',function(){if(location.hash)setTimeout(clean,0)});addEventListener('load',function(){if(location.hash)setTimeout(clean,600)});try{var P=Storage.prototype,g=P.getItem,s=P.setItem,v=/^v\d+-/;P.getItem=function(k){return this===window.localStorage&&v.test(k)?(FIX.hasOwnProperty(k)?FIX[k]:null):g.call(this,k)};P.setItem=function(k,x){if(this===window.localStorage&&v.test(k))return;return s.call(this,k,x)}}catch(e){}})();</script>
 <script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/addons/"}}</script>
 </head>
 <body class="v5" data-page="site">
