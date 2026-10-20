@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Под капотом | Автозапчасти в Челябинске</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --acc:#0066D2; --acc-h:#0057B4; --acc-soft:#E6F0FB;
+  --ink:#15171A; --tx:#2A2D33; --tx2:#6B7079;
+  --bg:#F2F3F5; --card:#FFFFFF; --tile:#F2F3F5; --line:#E3E5E9;
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
+  --r-s:12px; --r-m:16px; --r-l:24px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 18px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,.ttl{font-family:Onest,Inter,sans-serif;color:var(--ink)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--s6)}
+.tnum{font-variant-numeric:tabular-nums lining-nums}
+
+/* ШАПКА: белая карточка как у autodoc */
+.hd{padding-top:var(--s3);position:relative;z-index:5}
+.hd .bar{background:var(--card);border-radius:var(--r-l);padding:var(--s3) var(--s4) var(--s2)}
+.hd .r1{display:flex;align-items:center;gap:var(--s4)}
+.hd .logo img{height:56px;width:auto}
+.btn-cat{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 var(--s4);border-radius:var(--r-s);
+  background:var(--acc);color:#fff;font:600 17px Inter;transition:background .2s var(--ease)}
+.btn-cat:hover{background:var(--acc-h)}
+.btn-cat svg{width:20px;height:20px}
+.srch{flex:1;display:flex;align-items:center;height:52px;background:var(--tile);border-radius:var(--r-s);padding-left:var(--s3)}
+.srch svg{width:20px;height:20px;color:var(--tx2);flex:none}
+.srch input{flex:1;border:0;background:none;outline:none;font:400 16px Inter;color:var(--ink);padding:0 var(--s2)}
+.srch input::placeholder{color:#8B9099}
+.srch .go{width:56px;height:52px;border-radius:var(--r-s);background:var(--ink);display:grid;place-items:center;color:#fff}
+.srch .go svg{color:#fff}
+.tel{display:flex;flex-direction:column;line-height:1.25}
+.tel b{font:700 19px Onest;color:var(--ink)}
+.tel span{font-size:14px;color:var(--tx2)}
+.soc{display:flex;gap:var(--s2)}
+.soc a{width:44px;height:44px;border-radius:50%;background:var(--tile);display:grid;place-items:center;transition:background .2s var(--ease)}
+.soc a:hover{background:var(--acc-soft)}
+.soc img{width:20px;height:20px}
+.hd .r2{display:flex;align-items:center;justify-content:space-between;margin-top:var(--s2);padding-top:var(--s2)}
+.hd nav{display:flex;gap:var(--s4)}
+.hd nav a{font:500 15px Inter;color:var(--tx);padding:var(--s1) 0;transition:color .2s var(--ease)}
+.hd nav a:hover{color:var(--acc)}
+.addr{display:inline-flex;align-items:center;gap:6px;font:500 15px Inter;color:var(--acc)}
+.addr svg{width:18px;height:18px}
+
+/* ГЛАВНЫЙ ЭКРАН: фото во всю ширину, текст и подбор по VIN поверх */
+.hero{position:relative;margin-top:var(--s3);min-height:640px;overflow:hidden;color:#fff}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(13,15,18,.92) 0%,rgba(13,15,18,.78) 42%,rgba(13,15,18,.25) 75%,rgba(13,15,18,.35) 100%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,680px) 1fr;gap:var(--s6);align-items:end;min-height:640px;padding-top:var(--s7);padding-bottom:var(--s7)}
+.hero h1{color:#fff;font-weight:800;font-size:58px;line-height:1.04;letter-spacing:-.03em}
+.hero .lead{margin-top:var(--s3);font-size:19px;color:rgba(255,255,255,.86);max-width:560px}
+.vin{margin-top:var(--s5);background:#fff;border-radius:var(--r-l);padding:var(--s4);color:var(--ink)}
+.vin .top{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3)}
+.vin .top b{font:700 22px Onest}
+.vin .top span{font-size:14px;color:var(--tx2)}
+.vin .row{display:flex;gap:var(--s2);margin-top:var(--s3)}
+.vin input{flex:1;height:60px;border:2px solid var(--line);border-radius:var(--r-m);padding:0 var(--s3);
+  font:500 18px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);outline:none;transition:border-color .2s var(--ease)}
+.vin input::placeholder{letter-spacing:0;text-transform:none;color:#9AA0A8;font-weight:400}
+.vin input:focus{border-color:var(--acc)}
+.vin .btn{height:60px;padding:0 var(--s5);border-radius:var(--r-m);background:var(--acc);color:#fff;font:600 18px Inter;border:0;cursor:pointer;transition:background .2s var(--ease)}
+.vin .btn:hover{background:var(--acc-h)}
+.vin .note{margin-top:var(--s2);font-size:14px;color:var(--tx2)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);align-self:end}
+.fact{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-radius:var(--r-m);padding:var(--s4)}
+.fact b{display:block;font:800 30px/1.1 Onest;color:#fff;letter-spacing:-.02em}
+.fact span{display:block;margin-top:var(--s2);font-size:15px;line-height:1.35;color:rgba(255,255,255,.78)}
+
+/* КАТАЛОГ: белая панель, плитки 4×2 */
+.panel{background:var(--card);border-radius:var(--r-l);padding:var(--s5) var(--s4) var(--s4)}
+.sec{margin-top:var(--s5)}
+.panel h2{display:flex;align-items:center;gap:var(--s2);font-weight:800;font-size:36px;letter-spacing:-.02em}
+.panel h2 svg{width:26px;height:26px;color:var(--ink)}
+.panel .sub{margin-top:var(--s2);color:var(--tx2);font-size:17px}
+.cat{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3);margin-top:var(--s4)}
+.tl{background:var(--tile);border-radius:var(--r-m);padding:var(--s4);min-height:216px;display:flex;flex-direction:column;
+  transition:background .2s var(--ease),transform .2s var(--ease)}
+.tl:hover{background:var(--acc-soft);transform:translateY(-2px)}
+.tl img{width:72px;height:72px}
+.tl h3{margin-top:auto;padding-top:var(--s4);font-weight:700;font-size:20px;letter-spacing:-.01em}
+.tl p{min-height:2.8em;margin-top:var(--s1);font-size:15px;line-height:1.4;color:var(--tx2)}
+
+/* МАГАЗИН: 1 большое + 4 */
+.shop{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:280px 280px;gap:var(--s3);margin-top:var(--s4)}
+.ph{position:relative;border-radius:var(--r-m);overflow:hidden;background:#222}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.big{grid-row:span 2}
+.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,12,15,.78))}
+.ph span{position:absolute;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:1;color:#fff;font:700 19px/1.25 Onest}
+.ph.big span{font-size:24px;left:var(--s4);bottom:var(--s4)}
+.ph small{display:block;margin-top:var(--s1);font:400 15px Inter;color:rgba(255,255,255,.8)}
+
+/* ПОДВАЛ одной строкой */
+.ft{margin-top:var(--s5);background:var(--ink);color:rgba(255,255,255,.72);font-size:15px}
+.ft .wrap{display:flex;align-items:center;gap:var(--s5);padding-top:var(--s4);padding-bottom:var(--s4)}
+.ft img{height:44px}
+.ft .sp{flex:1}
+.ft a:hover{color:#fff}
+
+.float-tg{position:fixed;right:var(--s4);bottom:var(--s4);z-index:20;width:60px;height:60px;border-radius:50%;background:var(--acc);
+  display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,102,210,.35);transition:transform .2s var(--ease)}
+.float-tg:hover{transform:scale(1.06)}
+.float-tg img{width:28px;height:28px}
+</style>
+</head>
+<body>
+
+<header class="hd">
+ <div class="wrap">
+  <div class="bar">
+   <div class="r1">
+    <a class="logo" href="#"><img src="img/logo_d.svg" alt="Под капотом"></a>
+    <a class="btn-cat" href="#catalog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h16"/></svg>Каталог</a>
+    <div class="srch">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+     <input type="text" placeholder="Номер детали или название, например «фильтр масляный»">
+     <a class="go" href="#" aria-label="Найти"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+    </div>
+    <a class="tel tnum" href="tel:+79935447008"><b>+7 993 544-70-08</b><span>ежедневно 9:00-20:00</span></a>
+    <div class="soc">
+     <a href="https://t.me/azarova02" target="_blank" rel="noopener" aria-label="Telegram"><img src="img/ic/telegram.svg" alt=""></a>
+     <a href="https://wa.me/79935447008" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="img/ic/whatsapp.svg" alt=""></a>
+    </div>
+   </div>
+   <div class="r2">
+    <nav>
+     <a href="#catalog">Запчасти для ТО</a>
+     <a href="#catalog">Масла и жидкости</a>
+     <a href="#catalog">Аккумуляторы</a>
+     <a href="#catalog">Шины</a>
+     <a href="#catalog">Автохимия</a>
+     <a href="#shop">Магазин</a>
+    </nav>
+    <a class="addr" href="https://2gis.ru/chelyabinsk/firm/70000001105989550" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Челябинск, ул. Гагарина, 38</a>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section class="hero">
+ <img src="img/hero.jpg" alt="Масла и технические жидкости на полках магазина «Под капотом»">
+ <div class="wrap">
+  <div>
+   <h1>Автозапчасти для&nbsp;иномарок в&nbsp;Челябинске</h1>
+   <p class="lead">Подберём запчасти по VIN-номеру вашей машины. Чего нет на полке, привезём под заказ.</p>
+   <div class="vin">
+    <div class="top"><b>Подбор по VIN</b><span>17 символов, указан в СТС и ПТС</span></div>
+    <div class="row">
+     <input type="text" maxlength="17" placeholder="Введите VIN-номер">
+     <button class="btn" type="button">Подобрать</button>
+    </div>
+    <div class="note">Пришлём варианты с ценой и сроком в Telegram или WhatsApp</div>
+   </div>
+  </div>
+  <div class="facts">
+   <div class="fact"><b class="tnum">9:00-20:00</b><span>Ежедневно, без выходных</span></div>
+   <div class="fact"><b class="tnum">5,0</b><span>Оценка в 2ГИС, 10 отзывов</span></div>
+   <div class="fact"><b>Под заказ</b><span>Привезём то, чего нет в наличии</span></div>
+   <div class="fact"><b>Б/у АКБ</b><span>Покупаем или принимаем в обмен на новый</span></div>
+  </div>
+ </div>
+</section>
+
+<main class="wrap">
+ <section class="panel sec" id="catalog">
+  <h2>Каталог <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></h2>
+  <p class="sub">Запчасти для иномарок и отечественных машин: в наличии и под заказ</p>
+  <div class="cat">
+   <a class="tl" href="#"><img src="img/ic/oil-filter.svg" alt=""><h3>Запчасти для ТО</h3><p>Фильтры, свечи, ремни</p></a>
+   <a class="tl" href="#"><img src="img/ic/oil-can-car.svg" alt=""><h3>Масла и жидкости</h3><p>Моторные, трансмиссионные, антифриз</p></a>
+   <a class="tl" href="#"><img src="img/ic/car-battery.svg" alt=""><h3>Аккумуляторы</h3><p>Подбор по ёмкости и полярности, приём б/у</p></a>
+   <a class="tl" href="#"><img src="img/ic/brake-disc.svg" alt=""><h3>Тормозная система</h3><p>Колодки, диски, тормозная жидкость</p></a>
+   <a class="tl" href="#"><img src="img/ic/shock-absorber.svg" alt=""><h3>Подвеска и ходовая</h3><p>Амортизаторы, рычаги, сайлентблоки</p></a>
+   <a class="tl" href="#"><img src="img/ic/tire.svg" alt=""><h3>Шины</h3><p>Легковые шины, подбор по размеру</p></a>
+   <a class="tl" href="#"><img src="img/ic/headlight.svg" alt=""><h3>Электрика и свет</h3><p>Лампы, предохранители, датчики</p></a>
+   <a class="tl" href="#"><img src="img/ic/spray-paint-can.svg" alt=""><h3>Автохимия</h3><p>Автокосметика и спецжидкости</p></a>
+  </div>
+ </section>
+
+ <section class="panel sec" id="shop">
+  <h2>Магазин на Гагарина, 38</h2>
+  <p class="sub">Открыто каждый день с 9 до 20. Можно заехать за деталью или забрать заказ</p>
+  <div class="shop">
+   <div class="ph big"><img src="img/akb.jpg" alt="Аккумуляторы в магазине"><span>Аккумуляторы в наличии<small>Подберём под вашу машину и примем старый</small></span></div>
+   <div class="ph"><img src="img/himiya.jpg" alt="Автохимия на стеллажах" style="object-position:50% 40%"><span>Автохимия и автокосметика</span></div>
+   <div class="ph"><img src="img/instrument.jpg" alt="Стенд с инструментом" style="object-position:50% 35%"><span>Инструмент</span></div>
+   <div class="ph"><img src="img/shchetki.jpg" alt="Щётки стеклоочистителя"><span>Щётки стеклоочистителя</span></div>
+   <div class="ph"><img src="img/vhod.jpg" alt="Вход в магазин с улицы Гагарина" style="object-position:50% 30%"><span>Вход с улицы Гагарина</span></div>
+  </div>
+ </section>
+</main>
+
+<footer class="ft">
+ <div class="wrap">
+  <img src="img/logo_w.svg" alt="Под капотом">
+  <span>Челябинск, ул. Гагарина, 38</span>
+  <span class="tnum">Ежедневно 9:00-20:00</span>
+  <span class="sp"></span>
+  <a class="tnum" href="tel:+79935447008">+7 993 544-70-08</a>
+ </div>
+</footer>
+
+<a class="float-tg" href="https://t.me/azarova02" target="_blank" rel="noopener" aria-label="Написать в Telegram"><img src="img/ic/telegram_w.svg" alt=""></a>
+</body>
+</html>
