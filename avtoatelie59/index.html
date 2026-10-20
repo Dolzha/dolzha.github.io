@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Автоателье 59 · перетяжка и ремонт салона в Перми</title>
+<meta name="description" content="Ремонт сидений, перетяжка салона, дверных карт, рулей и потолка в Перми. Автомобили, мото, катера, яхты и спецтехника. Расчёт по фото.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --acc:#F00311; --acc2:#C4020E;
+  --bg:#0B0B0D; --bg2:#131316; --card:#18181B;
+  --light:#EFEFEF; --ink:#141416; --ink2:#5E5E66;
+  --tx:#F4F4F5; --tx2:#A6A6AE; --line:rgba(255,255,255,.1);
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 18px/1.55 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+svg{display:block}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--s6)}
+h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-.01em}
+
+/* ===== ШАПКА: два этажа ===== */
+.top{background:var(--bg);border-bottom:1px solid var(--line)}
+.top1{display:grid;grid-template-columns:auto auto 1fr auto auto;align-items:center;gap:var(--s5);height:96px}
+.logo img{height:48px;width:auto}
+.where{display:flex;align-items:center;gap:var(--s3)}
+.plaque{background:#fff;color:var(--ink);font:800 12px/1.15 "Exo 2",sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:2px}
+.addr b{display:block;font-weight:700;font-size:15px;line-height:1.35}
+.addr span{display:block;font-size:13px;color:var(--tx2);line-height:1.4}
+.msg{display:flex;gap:var(--s4);justify-self:end}
+.msg a{display:flex;align-items:center;gap:var(--s2);font-size:14px;font-weight:600;color:var(--tx2);transition:color .2s var(--ease)}
+.msg a:hover{color:#fff}
+.msg svg{width:18px;height:18px}
+.msg .mx{width:18px;height:18px;border-radius:5px;border:1.6px solid currentColor;font:800 10px/15px "Exo 2";text-align:center}
+.tel{text-align:right}
+.tel a{display:block;font:700 22px/1.2 "Exo 2",sans-serif;letter-spacing:.01em}
+.tel span{display:block;font-size:13px;color:var(--tx2)}
+.top2{display:flex;align-items:center;height:52px;border-top:1px solid var(--line);gap:var(--s5)}
+.top2 .main{display:flex;align-items:center;gap:var(--s2);font-weight:700;font-size:16px}
+.top2 .main svg{width:18px;height:18px;color:var(--acc)}
+.top2 nav{display:flex;gap:var(--s5);margin-left:auto}
+.top2 nav a{font-size:15px;font-weight:600;color:var(--tx2);transition:color .2s var(--ease)}
+.top2 nav a:hover{color:#fff}
+
+/* ===== ГЛАВНЫЙ ЭКРАН ===== */
+.hero{position:relative;min-height:720px;height:calc(100vh - 150px);max-height:860px;overflow:hidden;display:flex;align-items:flex-end}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero:after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(11,11,13,.94) 0%,rgba(11,11,13,.72) 38%,rgba(11,11,13,.18) 70%,rgba(11,11,13,.05) 100%),
+  linear-gradient(0deg,rgba(11,11,13,.85) 0%,rgba(11,11,13,0) 40%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:var(--s7);display:grid;grid-template-columns:1fr auto;align-items:end;gap:var(--s6)}
+.hero h1{font-size:62px;line-height:1.06;max-width:780px}
+.hero h1 .u{display:inline-block;position:relative;padding-bottom:6px}
+.hero h1 .u:after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--acc)}
+.hero p{margin-top:var(--s4);max-width:620px;font-size:19px;color:#D6D6DB}
+.btns{display:flex;gap:var(--s3);margin-top:var(--s5)}
+.btn{display:inline-flex;align-items:center;gap:var(--s2);height:56px;padding:0 var(--s5);font-weight:700;font-size:16px;border-radius:3px;transition:background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease)}
+.btn svg{width:20px;height:20px}
+.btn.red{background:var(--acc);color:#fff}
+.btn.red:hover{background:var(--acc2)}
+.btn.line{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn.line:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.facts{display:flex;flex-direction:column;gap:var(--s3);width:340px}
+.fact{position:relative;background:var(--card);border-radius:6px;padding:var(--s4)}
+.fact:before{content:"";position:absolute;inset:0;border-radius:6px;padding:1.5px;background:linear-gradient(135deg,var(--acc),rgba(240,3,17,.15) 45%,rgba(255,255,255,.14));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.fact b{display:block;font:700 19px/1.25 "Exo 2",sans-serif}
+.fact span{display:block;margin-top:6px;font-size:15px;line-height:1.45;color:var(--tx2)}
+
+/* ===== УСЛУГИ ===== */
+.sec{padding:var(--s8) 0}
+.uslugi{background:var(--bg2)}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s6);margin-bottom:var(--s6)}
+.head h2{font-size:44px;line-height:1.08}
+.head p{max-width:560px;margin-top:var(--s3);color:var(--tx2)}
+.head .more{display:flex;align-items:center;gap:var(--s2);font-weight:700;font-size:16px;white-space:nowrap;padding-bottom:6px;border-bottom:2px solid var(--acc)}
+.head .more svg{width:18px;height:18px}
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+.tile{position:relative;height:420px;border-radius:4px;overflow:hidden;background:#222}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.tile:hover img{transform:scale(1.04)}
+.tile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,8,10,.94) 0%,rgba(8,8,10,.55) 38%,rgba(8,8,10,0) 64%)}
+.tile .price{position:absolute;z-index:1;top:var(--s3);left:var(--s3);background:#fff;color:var(--ink);font-size:13px;font-weight:700;padding:6px 10px;border-radius:2px}
+.tile .txt{position:absolute;z-index:1;left:var(--s4);right:var(--s4);bottom:var(--s4)}
+.tile h3{font-size:24px;line-height:1.2}
+.tile p{margin-top:var(--s2);font-size:15px;line-height:1.45;color:#C9C9CF}
+.note{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);margin-top:var(--s4);padding:var(--s4) var(--s5);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:4px;background:var(--bg)}
+.note p{font-size:17px;color:#D6D6DB}
+.note p b{color:#fff}
+.note .btn{height:48px;flex:none}
+
+/* ===== РАБОТЫ ===== */
+.raboty{background:var(--light);color:var(--ink)}
+.raboty .head p{color:var(--ink2)}
+.raboty .head .more{color:var(--ink)}
+.grid5{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:var(--s4)}
+.work{background:#fff;border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.work .ph{position:relative;height:270px;overflow:hidden}
+.work .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.work:hover .ph img{transform:scale(1.04)}
+.work .cap{padding:var(--s3) var(--s4) var(--s4)}
+.work .cap i{display:block;font-style:normal;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.work .cap b{display:block;margin-top:6px;font-weight:700;font-size:17px;line-height:1.35}
+.work.big{grid-row:span 2}
+.work.big .ph{flex:1;height:auto;display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#fff}
+.work.big .ph div{position:relative;overflow:hidden}
+.work.big .ph img{position:absolute;inset:0}
+.work.big .cap b{font-size:20px}
+.lbl{position:absolute;z-index:1;top:var(--s3);left:var(--s3);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:2px;background:rgba(20,20,22,.85);color:#fff}
+.lbl.after{background:var(--acc)}
+
+/* ===== ПОДВАЛ ===== */
+.foot{background:var(--bg);border-top:1px solid var(--line)}
+.foot .wrap{display:flex;align-items:center;gap:var(--s5);height:88px;font-size:14px;color:var(--tx2)}
+.foot img{height:30px;width:auto}
+.foot .sp{margin-left:auto}
+
+/* ===== ПЛАВАЮЩАЯ КНОПКА ===== */
+.float{position:fixed;right:var(--s5);bottom:var(--s5);z-index:20;width:64px;height:64px;border-radius:50%;background:var(--acc);display:grid;place-items:center;box-shadow:0 8px 24px rgba(240,3,17,.35);transition:transform .2s var(--ease)}
+.float:hover{transform:scale(1.06)}
+.float svg{width:30px;height:30px;color:#fff}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top1">
+    <a class="logo" href="#"><img src="img/logo_r.svg" alt="Автоателье 59"></a>
+    <div class="where">
+      <div class="plaque">Перетяжка<br>салона</div>
+      <div class="addr">
+        <b>Пермь, Дзержинского 59, офис А310</b>
+        <span>1 подъезд, 3 этаж · пн-пт 10:00-18:00, сб 11:00-16:00</span>
+      </div>
+    </div>
+    <div class="msg">
+      <a href="https://t.me/bykov_perm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.360 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.230c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345q-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663q5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg>Telegram</a>
+      <a href="https://max.ru/u/f9LHodD0cOImYuLgIq9EYs11XpUEVq_lsiiJnefGARwPEB5f1ndzuZaYaCk" target="_blank" rel="noopener"><span class="mx">M</span>MAX</a>
+      <a href="https://vk.com/avtoatelieperm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.830-4.41-4.110-5.010c1.28-.74 3.080-2.540 3.510-4.980h-2.580c-.56 1.98-2.220 3.780-3.800 3.950V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92"/></svg>ВКонтакте</a>
+    </div>
+    <div class="tel">
+      <a href="tel:+79955469897">+7 995 546-98-97</a>
+      <span>himperm59@yandex.ru</span>
+    </div>
+  </div>
+  <div class="wrap top2">
+    <a class="main" href="#uslugi"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>Услуги</a>
+    <nav>
+      <a href="#raboty">Работы</a>
+      <a href="#">Материалы</a>
+      <a href="#">Отзывы</a>
+      <a href="#">Как работаем</a>
+      <a href="#">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="img/hero.jpg" alt="Мастерская Автоателье 59 в Перми">
+  <div class="wrap">
+    <div>
+      <h1><span class="u">Автоателье 59.</span><br>Перетяжка и ремонт салона в Перми</h1>
+      <p>Ремонтируем сиденья, перетягиваем рули, дверные карты, потолок и стойки. Работаем с автомобилями, мотоциклами, снегоходами, катерами, яхтами и спецтехникой.</p>
+      <div class="btns">
+        <a class="btn red" href="tel:+79955469897"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"/></svg>Позвонить</a>
+        <a class="btn line" href="#raboty">Наши работы<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg></a>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>Меняем только повреждённые элементы</b><span>Порвалась боковина или центр сиденья: заменим элемент в оригинал, без перетяжки всего салона</span></div>
+      <div class="fact"><b>Материал и нитки в тон</b><span>Подбираем и заказываем материал в тон отделке вашего салона</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec uslugi" id="uslugi">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2>Услуги</h2>
+        <p>Пришлите фото в Telegram: Виталий оценит повреждение и рассчитает стоимость.</p>
+      </div>
+    </div>
+    <div class="grid6">
+      <div class="tile"><img src="img/s_remont.jpg" alt="Ремонт сиденья Mercedes" loading="lazy"><span class="price">Стоимость ремонта по фото</span><div class="txt"><h3>Ремонт сидений</h3><p>Замена порванных и протёртых элементов, восстановление поролона</p></div></div>
+      <div class="tile"><img src="img/s_peretyazhka.jpg" alt="Перетяжка сиденья" loading="lazy"><span class="price">Считаем по числу сидений</span><div class="txt"><h3>Перетяжка сидений</h3><p>Перетягиваем сиденья целиком, подбираем материал и нитки</p></div></div>
+      <div class="tile"><img src="img/s_dveri.jpg" alt="Накладка дверной карты в коже" loading="lazy"><span class="price">Стоимость по числу накладок</span><div class="txt"><h3>Дверные карты и ручки</h3><p>Перетяжка накладок дверных карт и дверных ручек</p></div></div>
+      <div class="tile"><img src="img/s_podlokotnik.jpg" alt="Подлокотник на швейной машине" loading="lazy"><span class="price">Считаем за каждую деталь</span><div class="txt"><h3>Рули и подлокотники</h3><p>Перетягиваем рули, подлокотники и ручки КПП</p></div></div>
+      <div class="tile"><img src="img/s_potolok.jpg" alt="Потолок в алькантаре" loading="lazy"><span class="price">Считаем по площади и материалу</span><div class="txt"><h3>Потолок и стойки</h3><p>Перетяжка потолка и стоек, в том числе алькантарой</p></div></div>
+      <div class="tile"><img src="img/s_moto.jpg" alt="Сиденье мотоцикла" loading="lazy"><span class="price">Цена по размеру сиденья</span><div class="txt"><h3>Мотоциклы, катера, спецтехника</h3><p>Перетяжка и ремонт сидений, в том числе снегоходов и яхт</p></div></div>
+    </div>
+    <div class="note">
+      <p><b>Фиксированного прайса нет:</b> стоимость зависит от модели, материала и объёма работ.</p>
+      <a class="btn red" href="https://t.me/bykov_perm" target="_blank" rel="noopener">Отправить фото</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec raboty" id="raboty">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2>Работы</h2>
+        <p>Последние работы мастерской на Дзержинского.</p>
+      </div>
+      <a class="more" href="https://t.me/detailing_perm59" target="_blank" rel="noopener">Все работы в Telegram-канале<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg></a>
+    </div>
+    <div class="grid5">
+      <div class="work big">
+        <div class="ph">
+          <div><span class="lbl">До</span><img src="img/w_glc_do.jpg" alt="Трещины на боковине сиденья Mercedes GLC" loading="lazy"></div>
+          <div><span class="lbl after">После</span><img src="img/w_glc_posle.jpg" alt="Сиденье Mercedes GLC после ремонта" loading="lazy"></div>
+        </div>
+        <div class="cap"><i>Сиденья</i><b>Mercedes-Benz GLC: ремонт водительского сиденья</b></div>
+      </div>
+      <div class="work"><div class="ph"><img src="img/w_potolok.jpg" alt="Потолок BMW X5 в алькантаре" loading="lazy"></div><div class="cap"><i>Потолок</i><b>BMW X5: перетяжка потолка и стоек итальянской алькантарой</b></div></div>
+      <div class="work"><div class="ph"><img src="img/w_dveri.jpg" alt="Накладка дверной карты до и после перетяжки" loading="lazy"></div><div class="cap"><i>Двери</i><b>Накладка дверной карты: до и после</b></div></div>
+      <div class="work"><div class="ph"><img src="img/w_remni.jpg" alt="Красные ремни безопасности в Mercedes GLC" loading="lazy"></div><div class="cap"><i>Ремни</i><b>Mercedes-Benz GLC: замена ремней безопасности на красные</b></div></div>
+      <div class="work"><div class="ph"><img style="object-position:50% 85%" src="img/w_kater.jpg" alt="Сиденье катера после перетяжки" loading="lazy"></div><div class="cap"><i>Катера</i><b>Перетяжка сидений катера</b></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="img/logo_r.svg" alt="Автоателье 59">
+    <span>Пермь, Дзержинского 59, офис А310</span>
+    <a href="tel:+79955469897">+7 995 546-98-97</a>
+    <span class="sp">© 2026 Автоателье 59</span>
+  </div>
+</footer>
+
+<a class="float" href="https://t.me/bykov_perm" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42"/></svg></a>
+
+</body>
+</html>
