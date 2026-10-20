@@ -1,0 +1,100 @@
+/* ВИЗУАЛЬНЫЙ СЛОЙ ЛЕКАЛА v1 — 12.09.2026
+   Подключать ПОСЛЕ :root макета. Не отменяет лекало btc, а убирает "почти собрано". */
+
+:root{
+  /* 1. ШКАЛА ОТСТУПОВ. Других чисел в макете быть не должно.
+        Было: 17px, 19px, 21px, 27px, 29px вперемешку. */
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px;
+  --s6:48px; --s7:64px; --s8:96px;
+
+  /* 2. РАДИУСЫ — вилка btc 13-17px */
+  --r-s:9px; --r-m:13px; --r-l:17px;
+
+  /* 3. ДВИЖЕНИЕ (Emil Kowalski: UI-анимация < 300ms, ease-in запрещён) */
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --t-fast:140ms; --t-base:200ms; --t-slow:280ms;
+
+  /* 4. СЕРЫЙ С ПОДТОНОМ. --acc задаёт макет (пипетка с лого клиента). */
+  --tx2:color-mix(in oklab, var(--acc) 22%, #8A8A8F);
+  --line:color-mix(in oklab, var(--acc) 12%, #1E1E22);
+}
+
+/* 5. ТИПОГРАФИКА: размер через clamp, трекинг зависит от кегля.
+      Крупное — сжимаем, мелкий капс — разряжаем. */
+h1{font-size:clamp(34px,6.2vw,62px); letter-spacing:-.03em; line-height:1.03}
+h2{font-size:clamp(26px,3.6vw,40px); letter-spacing:-.02em; line-height:1.1}
+h3{font-size:clamp(16px,1.6vw,19px); letter-spacing:-.01em}
+.tag{font-size:12px; letter-spacing:.24em; text-transform:uppercase}
+
+/* 6. ТАБУЛЯРНЫЕ ЦИФРЫ — цены, рейтинг, счётчики, телефон.
+      Без этого колонка цен "пляшет" по ширине. */
+.price,.rate,.num,.tel,.strip .s b,.uc .up{
+  font-variant-numeric:tabular-nums lining-nums;
+  font-feature-settings:"tnum" 1,"lnum" 1;
+}
+
+/* 7. ЗЕРНО. Тот самый приём из Noise & Texture, только без Figma.
+      Вешать на body или на секцию: class="grain". */
+.grain{position:relative}
+.grain::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
+  opacity:.038; mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* 8. MOON REFLECTION — свечение над героем.
+      Фон остаётся НАШ #0B0B0D, из материала берём только приём. */
+.moon{position:absolute; left:50%; top:-320px; transform:translateX(-50%);
+  width:min(1100px,140vw); height:520px; pointer-events:none; z-index:2;
+  background:radial-gradient(ellipse at 50% 100%,
+     rgba(255,255,255,.55) 0%,
+     color-mix(in oklab, var(--acc) 70%, transparent) 34%,
+     transparent 70%);
+  filter:blur(90px); opacity:.5; mix-blend-mode:screen;
+}
+.moonline{position:absolute; left:0; right:0; height:1px; pointer-events:none; z-index:3;
+  background:linear-gradient(90deg, transparent,
+     color-mix(in oklab, var(--acc) 55%, transparent) 50%, transparent);
+}
+
+/* 9. СОСТОЯНИЯ. Полная матрица, а не только hover. */
+a,button,.uc,.b1,.b2{transition:border-color var(--t-base) var(--ease),
+  transform var(--t-base) var(--ease), background var(--t-base) var(--ease),
+  opacity var(--t-base) var(--ease)}
+.b1:active,.b2:active{transform:translateY(1px) scale(.985)}
+:focus-visible{outline:2px solid var(--acc); outline-offset:3px; border-radius:var(--r-s)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+
+/* 10. ЖИВОЙ СТАТУС РАБОТЫ (LIVE STATUS BADGE) */
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.live-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.live-status-open {
+  background: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.live-status-closed {
+  background: #F59E0B;
+}
+.live-status-muted {
+  opacity: 0.6;
+}
+@keyframes livePulse {
+  0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  50% { transform: scale(1.15); opacity: 0.85; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+}

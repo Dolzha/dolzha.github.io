@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ИВА, цветы и букеты в Екатеринбурге</title>
+<meta name="description" content="Салоны цветов ИВА на 8 Марта, 101 и Кировградской, 4/2: онлайн-витрина готовых букетов, каталог, букеты невесты, оформление мероприятий и шары. Доставка по Екатеринбургу и самовывоз.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Comfortaa:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF5F2;
+  --surf:#FFFFFF;
+  --surf2:#F7E7E8;
+  --ink:#2F4A3E;
+  --tx:#4A4345;
+  --mut:#8A7F82;
+  --acc:#B83E70;
+  --acc2:#A0315F;
+  --acc-l:rgba(184,62,112,.08);
+  --pink:#F098B8;
+  --grn:#487058;
+  --rose-l:#FCE4EC;
+  --rose-lb:#F2B3C9;
+  --rose-hi:#E8508A;
+  --rose-h1:#D0628F;
+  --rose-nav:#8C3A5E;
+  --grn-btn:#4F7A63;
+  --grn-btn-b:#A3C4B0;
+  --line:rgba(59,39,48,.12);
+  --hh:140px;
+  --line-s:rgba(59,39,48,.12);
+  --glass:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,255,255,.3));
+  --glass-b:1px solid rgba(255,255,255,.95);
+  --glass-sh:inset 0 1px 0 rgba(255,255,255,.9),0 0 0 1px rgba(16,48,43,.1),0 20px 40px -24px rgba(16,48,43,.4);
+}
+</style>
+<link rel="stylesheet" href="visual-layer.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hh) + 16px)}
+body{background:var(--bg);color:var(--tx);font-family:'Golos Text',system-ui,sans-serif;font-size:17px;font-weight:500;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+.wrap{max-width:1600px;margin:0 auto;padding:0 48px}
+h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weight:700;letter-spacing:0}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.ico{width:20px;height:20px;flex-shrink:0}
+.glass{background:var(--glass);border:var(--glass-b);box-shadow:var(--glass-sh);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3)}
+
+/* КНОПКИ: зелёная с кольцом, белая с зелёной рамкой, стеклянная */
+.b1,.b2,.b3{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);height:58px;padding:0 var(--s5);border-radius:999px;font-size:16px;font-weight:700;line-height:1.2;text-align:center;white-space:nowrap;transition:background var(--t-base) var(--ease),color var(--t-base) var(--ease),border-color var(--t-base) var(--ease),transform var(--t-base) var(--ease)}
+.b1{background:var(--acc);color:#fff;border:2.5px solid #E58BAE;box-shadow:0 12px 26px -16px rgba(184,62,112,.7)}
+.b1:hover{background:var(--acc2);transform:translateY(-2px)}
+.b2{border:2.5px solid var(--acc);color:var(--acc);background:rgba(255,255,255,.7)}
+.b2:hover{background:#fff;color:var(--acc2);border-color:var(--acc2)}
+.bv{background:var(--rose-l);color:var(--acc);border:2.5px solid var(--rose-lb);box-shadow:0 12px 26px -18px rgba(184,62,112,.55)}
+.bv:hover{background:#F9D3E1;transform:translateY(-2px)}
+.bk{background:var(--grn-btn);color:#fff;border:3px solid var(--grn-btn-b);box-shadow:0 12px 26px -18px rgba(47,74,62,.6)}
+.bk:hover{background:#44705A;transform:translateY(-2px)}
+.b3{color:var(--ink);background:var(--glass);border:var(--glass-b);box-shadow:var(--glass-sh);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.b3:hover{color:var(--acc);transform:translateY(-2px)}
+
+/* ШАПКА */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:60}
+.top{position:relative;z-index:2;background:rgba(251,245,242,.55);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.6)}
+.top .wrap{display:flex;align-items:center;gap:var(--s4);height:88px}
+.brand{display:flex;align-items:center;gap:var(--s3);flex-shrink:0}
+.brand img{height:60px;width:60px}
+.brand b{font-weight:500;font-size:28px;letter-spacing:.16em;color:var(--ink)}
+.sep{width:1px;height:40px;background:var(--line);flex-shrink:0}
+.srch{position:relative;flex:1;max-width:620px;margin-left:var(--s4)}
+.srch .box{display:flex;align-items:center;height:54px;padding:0 var(--s4);gap:var(--s2);border-radius:999px;background:var(--glass);border:var(--glass-b);box-shadow:var(--glass-sh);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow var(--t-base) var(--ease)}
+.srch .box:focus-within{box-shadow:inset 0 1px 0 #fff,0 0 0 2px var(--acc),0 20px 40px -24px rgba(16,48,43,.4)}
+.srch .box>.ico{color:var(--acc)}
+.srch input{flex:1;min-width:0;height:100%;border:0;background:none;font-size:16px;font-weight:500;outline:none}
+.srch input::placeholder{color:var(--mut)}
+.srch input::-webkit-search-cancel-button{display:none}
+.srch .go{width:42px;height:42px;border-radius:50%;background:var(--rose-hi);color:#fff;display:grid;place-items:center;flex-shrink:0;transition:background var(--t-base) var(--ease)}
+.srch .go:hover{background:#D63F79}
+.sres{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:5;max-height:70vh;overflow:auto;border-radius:20px;padding:var(--s2);background:#FAF7F3;border:var(--glass-b);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(16,48,43,.1),0 30px 60px -20px rgba(16,48,43,.35);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.sres[hidden]{display:none}
+.sres .lbl{font-size:13px;color:var(--mut);padding:var(--s2) var(--s2) 6px}
+.sres .chips{display:flex;flex-wrap:wrap;gap:var(--s2);padding:0 var(--s2) var(--s2)}
+.sres .chips{gap:10px}
+.sres .chips button{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 18px 0 5px;border-radius:999px;font-size:15px;font-weight:600;color:var(--ink);background:#fff;box-shadow:0 0 0 1px var(--line-s),0 6px 14px -10px rgba(16,48,43,.4);transition:color var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease)}
+.sres .chips button img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.sres .chips button:hover{color:var(--acc);box-shadow:0 0 0 1.5px var(--acc),0 6px 14px -10px rgba(16,48,43,.4)}
+.sres a.it{display:flex;align-items:center;gap:var(--s3);padding:var(--s2);border-radius:14px}
+.sres a.it:hover{background:rgba(255,255,255,.9)}
+.sres a.it img{width:52px;height:52px;object-fit:cover;border-radius:10px;flex-shrink:0}
+.sres a.it span{flex:1;font-size:15px;color:var(--ink);line-height:1.3}
+.sres a.it span small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+.sres a.it b{font-weight:700;font-size:15px;white-space:nowrap;color:var(--ink)}
+.sres .all{display:block;width:100%;text-align:center;margin-top:4px;padding:12px;border-radius:14px;font-size:15px;font-weight:700;color:var(--acc);background:#F9E7EE}
+.sres .all:hover{background:#DCE7E0}
+.sres .none{padding:var(--s3);font-size:15px;color:var(--tx)}
+.sres .none a{color:var(--acc);font-weight:700;border-bottom:1px solid currentColor}
+.hinfo{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25;margin-left:auto;flex-shrink:0;white-space:nowrap}
+.hinfo a{font-weight:700;font-size:20px;color:var(--ink);font-variant-numeric:tabular-nums}
+.hinfo span{font-size:13px;color:var(--mut)}
+.soc{display:flex;gap:var(--s2);flex-shrink:0}
+.soc a,.cartb,.phm{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(16,48,43,.1),0 6px 16px rgba(16,48,43,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform var(--t-base) var(--ease)}
+.soc a:hover,.cartb:hover,.phm:hover{transform:translateY(-2px)}
+.soc .tg{color:#229ED9}.soc .vk{color:#0077FF}
+.soc svg{width:20px;height:20px}
+.soc img{width:22px;height:22px}
+.phm{display:none;color:var(--acc)}
+.cartb{position:relative;width:auto;padding:0 var(--s3) 0 6px;border-radius:999px;display:flex;align-items:center;gap:10px;color:var(--ink);flex-shrink:0}
+.cartb .l{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+.cartb .l b{font-size:15px;font-weight:700}
+.cartb .l span{font-size:12px;color:var(--mut);font-weight:500;white-space:nowrap}
+.cartb .ci2{position:relative;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center}
+.cartb .ci2 svg{width:18px;height:18px}
+.cartb .n{position:absolute;top:-6px;right:-8px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--pink);color:var(--ink);font-size:11px;font-weight:700;display:grid;place-items:center;box-shadow:0 0 0 2px #fff}
+.cartb .n[data-z]{display:none}
+.cartb.v4{height:56px;padding:0 18px 0 6px;gap:12px;background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.45));border:1.5px solid #F2B3C9;box-shadow:inset 0 1px 0 #fff,0 10px 24px -12px rgba(184,62,112,.55)}
+.cartb.v4 .ci2{width:44px;height:44px;background:linear-gradient(145deg,#F098B8,#E8508A)}.cartb.v4 .ci2 svg{width:24px;height:24px}
+.cartb.v4 .l b{font-size:17px;color:#B83E70;font-variant-numeric:tabular-nums}.cartb.v4 .l>span{font-size:12px;color:#8A7F82}
+.cartb.v4 #cartn{display:inline}
+.cartb.v4 .ce,.cartb.v4[data-z] .cq{display:none}.cartb.v4[data-z] .ce{display:inline}
+@media(max-width:760px){.cartb.v4{height:44px;padding:0 12px 0 4px;gap:8px}.cartb.v4 .ci2{width:34px;height:34px}.cartb.v4 .ci2 svg{width:19px;height:19px}.cartb.v4 .l{display:flex!important}.cartb.v4 .l b{font-size:14px}.cartb.v4 .l>span{font-size:11px}}
+
+/* ВТОРОЙ ЭТАЖ: разделы через линии */
+.bar{background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0) 60%),rgba(248,221,230,.92);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 30px -18px rgba(184,62,112,.45)}
+.bar .wrap{display:flex;height:52px}
+.bar .cells{display:flex;flex:1;border-left:1px solid rgba(255,255,255,.9)}
+.bar a{position:relative;flex:1;display:flex;align-items:center;justify-content:center;gap:var(--s2);color:var(--rose-nav);font-size:16px;font-weight:600;white-space:nowrap;padding:0 var(--s3);border-right:1px solid rgba(255,255,255,.9);transition:background var(--t-base) var(--ease)}
+.bar a::after{content:'';position:absolute;left:24px;right:24px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:var(--acc);transform:scaleX(0);display:none;transition:transform var(--t-base) var(--ease)}
+.bar a:hover{background:rgba(255,255,255,.45);color:var(--acc)}
+.bar a:hover::after{transform:scaleX(1)}
+.bar a.cat{background:rgba(255,255,255,.45);color:var(--acc)}
+.bar a.cat .ico{width:18px;height:18px;opacity:.9}
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;background:var(--bg) url('hero.jpg') 70% 55%/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,245,242,.97) 0%,rgba(251,245,242,.9) 34%,rgba(251,245,242,.35) 62%,rgba(251,245,242,.05)),linear-gradient(0deg,rgba(251,245,242,.75),rgba(251,245,242,0) 30%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:1600px;margin:0 auto;padding:calc(var(--hh) + 32px) 48px var(--s7);display:flex;align-items:center}
+.hero .main{max-width:760px}
+.hlogo img{width:120px;height:120px;margin-bottom:var(--s4);filter:drop-shadow(0 8px 20px rgba(16,48,43,.18))}
+.hero h1{font-size:clamp(46px,5vw,80px);line-height:1.05;letter-spacing:0}
+.hero h1 em{font-style:normal;color:var(--rose-h1)}
+.lead{font-size:20px;color:var(--tx);max-width:32em;margin:var(--s4) 0 var(--s5)}
+.acts{display:flex;gap:var(--s3);flex-wrap:wrap}
+
+/* БЛОКИ */
+.sec{padding:var(--s8) 0}
+.head{max-width:860px;margin-bottom:var(--s6)}
+.head h2{font-size:clamp(40px,4.2vw,60px);line-height:1.05}
+.head h2 em{font-style:normal;color:var(--acc)}
+.head p{font-size:18px;color:var(--mut);margin-top:var(--s3)}
+
+/* ВИТРИНА */
+.vitrina{background:var(--surf2);border-top:1px solid var(--line-s)}
+.vtop{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s5);margin-bottom:var(--s5);flex-wrap:wrap}
+.vtop .head{margin-bottom:0}
+/* переключатель салонов: розовая плашка переезжает к выбранному */
+.salsw{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.tabs{position:relative;display:grid;grid-template-columns:1fr 1fr;padding:6px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line-s),inset 0 2px 6px rgba(16,48,43,.06)}
+.tabs::before{content:'';position:absolute;top:6px;bottom:6px;left:6px;width:calc(50% - 6px);border-radius:999px;background:linear-gradient(145deg,#F098B8,#B83E70);box-shadow:0 10px 20px -10px rgba(184,62,112,.8);transition:transform var(--t-slow) var(--ease)}
+.tabs[data-i="1"]::before{transform:translateX(100%)}
+.tabs button{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;font-size:16px;font-weight:700;color:var(--ink);white-space:nowrap;transition:color var(--t-base) var(--ease)}
+.tabs button svg{width:18px;height:18px;flex-shrink:0}
+.tabs button[aria-selected=true]{color:#fff}
+.salsw p{font-size:15px;color:var(--tx)}
+.salsw p b{color:var(--acc)}
+
+/* БУКЕТЫ */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.card{position:relative;padding:10px;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px rgba(16,48,43,.1),0 24px 48px -24px rgba(16,48,43,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease)}
+.card .avs{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;font-weight:600;line-height:1.3;color:#B9F0CB;text-shadow:0 1px 6px rgba(0,0,0,.45)}.card .avs::before{content:'';flex:0 0 7px;height:7px;border-radius:50%;background:currentColor}.card .avs.ord{color:rgba(255,255,255,.88)}.card .avs.ord::before{background:#F2B3C9}
+@media(max-width:760px){.card .avs{font-size:12px;gap:5px}}
+.soc .vk svg{width:26px;height:26px}
+.card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(184,62,112,.35),0 28px 56px -24px rgba(16,48,43,.5)}
+.card .ph{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:var(--surf2)}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity var(--t-base) var(--ease),transform var(--t-slow) var(--ease)}
+.card .ph img.on{opacity:1}
+.card:hover .ph img{transform:scale(1.04)}
+.card .ph::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(16,48,43,.9),rgba(16,48,43,.42) 34%,rgba(16,48,43,0) 60%);pointer-events:none}
+.card .zones{position:absolute;inset:0;display:flex;z-index:2}
+.card .zones i{flex:1}
+.card .dots{position:absolute;left:var(--s4);right:var(--s4);top:var(--s3);z-index:3;display:flex;gap:4px;pointer-events:none}
+.card .dots i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.45)}
+.card .dots i.on{background:#fff}
+.card .b{position:absolute;left:10px;right:10px;bottom:10px;z-index:4;padding:var(--s4)}
+.card .tt{display:block;font-weight:600;font-size:24px;line-height:1.2;color:#fff}
+.card .ft{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s2) var(--s3);margin-top:var(--s2)}
+.card .pr{font-size:26px;font-weight:700;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
+.card .pr small{font-size:15px;font-weight:600;color:#FBE9EF}
+.card .pr.ask{font-size:16px;font-weight:600;white-space:normal;color:#FBE9EF;line-height:1.3}
+.card .go{display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:10px 18px;border-radius:999px;white-space:nowrap;transition:background var(--t-base) var(--ease),color var(--t-base) var(--ease)}
+.card .go:hover{background:rgba(255,255,255,.32)}
+.card .go.w{background:rgba(255,255,255,.92);color:var(--ink);border-color:#fff}
+.card .go.w:hover{background:#fff;color:var(--acc)}
+.card .gos{display:flex;gap:var(--s2);flex-shrink:0}
+.vnote{margin-top:var(--s6);display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;padding:var(--s4) var(--s5);background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,255,255,.35));border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px rgba(16,48,43,.1)}
+.vnote b{font-weight:600;font-size:24px;color:var(--ink)}
+.vnote span{display:block;font-size:16px;color:var(--tx);margin-top:4px}
+
+/* РАЗДЕЛЫ И КАТАЛОГ */
+.kat{background:var(--bg)}
+.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s4);margin-bottom:var(--s7)}
+.tile{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--surf2);display:block;transition:box-shadow var(--t-base) var(--ease)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease)}
+.tile:hover img{transform:scale(1.04)}
+.tile::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,48,43,.82),rgba(16,48,43,0) 62%)}
+.tile .t{position:absolute;left:var(--s4);right:var(--s4);bottom:var(--s4);z-index:2;color:#fff;display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s3)}
+.tile .t b{font-weight:600;font-size:22px;line-height:1.15}
+.tiles .tile .t{flex-direction:column;align-items:flex-start;gap:var(--s2)}
+.tile .t i{flex-shrink:0;font-style:normal;font-size:13px;font-weight:700;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;white-space:nowrap}
+.tile.empty{background:linear-gradient(150deg,#FDEEF3,#F6D3E0 60%,#EEF3EF)}
+.tile.empty::after{display:none}
+.tile.empty .t{color:var(--ink);text-align:left}
+.tile.empty .t i{color:var(--acc);background:rgba(255,255,255,.7);border-color:rgba(184,62,112,.35)}
+.tile.on{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--acc)}
+.tile.on .t i{background:#fff;color:var(--acc);border-color:#fff}
+.tiles.grp{display:block;margin-bottom:var(--s7)}
+.krw+.krw{margin-top:28px}
+.krl{margin:0 0 14px;font:600 13px/1 var(--bf,'Golos Text'),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9C7B67}
+.krg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.kc{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:16px;min-height:240px;padding:24px;overflow:hidden;color:var(--ink);background:linear-gradient(160deg,#F9F2EA,#F2E8DC);border:1px solid rgba(140,100,70,.14);border-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 24px -14px rgba(120,80,50,.35);transition:transform .25s,box-shadow .25s}
+.kc::before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.55),rgba(255,255,255,0) 40%);pointer-events:none}
+.kc:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 18px 32px -16px rgba(184,62,112,.35)}
+.kc.on{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc),0 10px 24px -14px rgba(184,62,112,.35)}
+.kc b{position:relative;z-index:2;max-width:100%;font-weight:600;font-size:24px;line-height:1.2}
+.kc i{position:relative;z-index:2;font-style:normal;font-weight:500;font-size:13px;line-height:1;color:var(--acc);background:rgba(255,255,255,.75);border:1px solid rgba(184,62,112,.22);border-radius:999px;padding:6px 10px}
+.kb{position:absolute;right:22px;bottom:22px;width:124px;height:124px;border-radius:50%;background:radial-gradient(circle at 32% 26%,#FFB3D2 0%,#F25C97 42%,#C42D6B 100%);box-shadow:0 14px 26px -8px rgba(232,70,127,.55),inset 0 -8px 16px rgba(60,10,70,.28);transition:transform .35s}
+.kc:hover .kb{transform:scale(1.04)}
+.kb::before{content:'';position:absolute;left:24px;top:12px;width:56px;height:28px;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,0));z-index:2}
+.kb span{position:absolute;inset:31px;background:#fff;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+@media (max-width:1200px){.krg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.krg{gap:12px}.kc{min-height:170px;padding:16px}.kc b{font-size:18px;max-width:100%}.kb{width:76px;height:76px;right:14px;bottom:14px}.kb::before{left:14px;top:7px;width:34px;height:17px}.kb span{inset:19px}}
+.kc[data-f="do3"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M3%2013a9%209%200%200%200%209%209a9%209%200%200%200-9-9m9%209a9%209%200%200%200%209-9a9%209%200%200%200-9%209m6-19v5a6%206%200%200%201-6%206a6%206%200%200%201-6-6V3c.74%200%201.47.12%202.16.39c.55.23%201.04.57%201.45%201L12%202l2.39%202.39c.41-.43.9-.77%201.45-1A5.9%205.9%200%200%201%2018%203%22/%3E%3Crect%20x%3D%2211.1%22%20y%3D%2213%22%20width%3D%221.8%22%20height%3D%2210.6%22%20rx%3D%22.9%22%20fill%3D%22black%22/%3E%3C/svg%3E");inset:28px}.kc[data-f="3do5"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221em%22%20height%3D%221em%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M13.075%2010.535a2.39%202.39%200%201%200%200%204.78a2.39%202.39%200%200%200%200-4.78m-1.39%202.39a1.39%201.39%200%201%201%202.78%200a1.39%201.39%200%200%201-2.78%200%22/%3E%3Cpath%20d%3D%22m21.885%203.873l-.708-1.699a1.13%201.13%200%200%200-.468-.546a.87.87%200%200%200-.776-.064c-.86.352-1.373%201.194-1.66%202.139a7.5%207.5%200%200%200-1.21-.621a1.127%201.127%200%200%200-1.459.61l-.001.002q-.255.62-.396%201.264c-.861-.454-1.805-.678-2.653-.325a.88.88%200%200%200-.51.592c-.065.235-.045.491.046.723l.947%202.285a2.5%202.5%200%200%200-.325.52q-.063.136-.113.252l-.126-.147a2.505%202.505%200%200%200-3.698-.1l-.002.002a2.513%202.513%200%200%200%20.2%203.658l.202.166q-.125.06-.275.135a2.5%202.5%200%200%200-.346.211l-2.597-1.077l-.009-.003a1.15%201.15%200%200%200-.723-.045a.88.88%200%200%200-.592.51c-.355.852-.127%201.803.333%202.669c-.455.112-.897.256-1.143.336l-.09.03c-.244.077-.52.237-.671.53c-.164.316-.124.666.038.983l.094.186c.135.27.317.63.525.98c-.951.285-1.8.798-2.155%201.664a.87.87%200%200%200%20.064.776c.12.207.316.374.546.468l1.921.8l-.06.058l-1.32%201.31c-.07.07-.06.17.01.24c1.258%201.13%203.202%201.13%204.437-.038c-.08.248-.123.51-.127.778v1.86c0%20.09.08.17.17.16c1.72-.09%203.11-1.51%203.11-3.26l-.02-.063l11.374%202.057a2%202%200%200%201%201.547%201.355l1.04%203.221c.12.59.86.74%201.34.26l4.12-4.12c.48-.48.33-1.22-.26-1.34l-3.303-.992a2%202%200%200%201-1.382-1.505l-2.3-10.977q.065-.105.124-.216c1.736-.016%203.14-1.4%203.23-3.11c.01-.09-.07-.17-.16-.17h-1.86a2.7%202.7%200%200%200-.76.121l-.002-.011c1.152-1.235%201.148-3.167.022-4.42a.17.17%200%200%200-.24-.01zm-8.866%201.706a.2.2%200%200%201-.012-.049c.52-.178%201.236-.017%202.083.514c.861.54%201.739%201.394%202.447%202.324c.225.294.618.51%201.027.342c.41-.168.537-.598.487-.963c-.16-1.161-.144-2.39.083-3.387c.222-.972.612-1.593%201.102-1.837l.016.03l1.25%203.002l.001.001c.327.799.63%202.007.622%202.703v.009c.009%201.717-.91%202.831-2.33%203.425q-.502.205-1%20.279a2.5%202.5%200%200%200-1.463-.685a8%208%200%200%200-.316-.023l.033-.048a2.51%202.51%200%200%200-.814-3.574a2.5%202.5%200%200%200-2.387-.065zm-1.37%2011.596c.045.377.171.722.358%201.021a4.1%204.1%200%200%201-.314%201.358c-.594%201.42-1.708%202.34-3.425%202.331h-.01c-.695.009-1.903-.295-2.702-.622h-.001l-2.998-1.25h-.003l-.03-.017c.243-.49.864-.88%201.836-1.102c.996-.227%202.225-.242%203.386-.084c.388.055.787-.112.943-.498c.154-.382-.012-.778-.32-1.014c-.93-.708-1.785-1.587-2.325-2.448c-.531-.847-.692-1.564-.514-2.083q.022.003.05.012l2.272.943c-.43.77-.44%201.75.07%202.56a2.483%202.483%200%200%200%203.594.663l.1-.076q.014.14.033.306m4.466-11.64c.08-.496.217-.985.412-1.457a.127.127%200%200%201%20.16-.07l.002.001c.484.195.939.446%201.356.745c-.12.823-.128%201.72-.047%202.587a11%2011%200%200%200-1.883-1.806M4.759%2017.805c-.25-.368-.476-.819-.662-1.187l-.107-.21a.4.4%200%200%201-.029-.072a.3.3%200%200%201%20.077-.035l.09-.03c.333-.107.916-.296%201.41-.391a11%2011%200%200%200%201.803%201.878a11.2%2011.2%200%200%200-2.582.046m10.976-9.297c.747.434.974%201.426.486%202.147l-.096.14c-.122.18-.226.334-.29.448a.9.9%200%200%200-.118.313a.57.57%200%200%200%20.236.557a.75.75%200%200%200%20.35.122c.08.01.172.012.255.014l.057.001c.167.004.369.009.623.033c.793.075%201.508.91%201.355%201.753v.003a1.51%201.51%200%200%201-1.847%201.191c-.182-.045-.315-.084-.43-.117l-.151-.043a1.5%201.5%200%200%200-.23-.047h-.003a.57.57%200%200%200-.507.201a.55.55%200%200%200-.118.316a.7.7%200%200%200%20.016.176c.016.074.044.153.065.21l.025.069c.043.118.096.261.153.453c.246.829-.27%201.7-1.118%201.889a1.497%201.497%200%200%201-1.806-1.281a11%2011%200%200%201-.051-.54l-.014-.168a2%202%200%200%200-.036-.27a.7.7%200%200%200-.196-.368a.59.59%200%200%200-.56-.132a1%201%200%200%200-.29.14a8%208%200%200%200-.415.303h-.001l-.165.125a1.48%201.48%200%200%201-2.146-.398a1.495%201.495%200%200%201%20.582-2.136c.182-.092.315-.153.432-.207q.102-.046.198-.093c.073-.036.163-.081.24-.137a.64.64%200%200%200%20.263-.392a.61.61%200%200%200-.128-.491a1.4%201.4%200%200%200-.2-.201q-.087-.073-.197-.16l-.037-.03q-.132-.104-.304-.248a1.513%201.513%200%200%201-.12-2.202a1.505%201.505%200%200%201%202.22.061l.248.294l.018.023c.061.074.12.144.17.2c.05.058.122.136.207.196c.083.059.278.17.523.093a.64.64%200%200%200%20.352-.286a2%202%200%200%200%20.116-.236q.03-.067.06-.144c.054-.13.117-.282.207-.475a1.5%201.5%200%200%201%202.117-.67%22/%3E%3C/g%3E%3C/svg%3E");inset:24px}.kc[data-f="ot5"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M248%2C80a28%2C28%2C0%2C1%2C0-51.12%2C15.77l-26.79%2C33L146%2C73.4a28%2C28%2C0%2C1%2C0-36.06%2C0L85.91%2C128.74l-26.79-33a28%2C28%2C0%2C1%2C0-26.6%2C12L47%2C194.63A16%2C16%2C0%2C0%2C0%2C62.78%2C208H193.22A16%2C16%2C0%2C0%2C0%2C209%2C194.63l14.47-86.85A28%2C28%2C0%2C0%2C0%2C248%2C80ZM128%2C40a12%2C12%2C0%2C1%2C1-12%2C12A12%2C12%2C0%2C0%2C1%2C128%2C40ZM24%2C80A12%2C12%2C0%2C1%2C1%2C36%2C92%2C12%2C12%2C0%2C0%2C1%2C24%2C80ZM220%2C92a12%2C12%2C0%2C1%2C1%2C12-12A12%2C12%2C0%2C0%2C1%2C220%2C92Z%22/%3E%3C/svg%3E")}.kc[data-f="mono"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cdefs%3E%3CclipPath%20id%3D%22hc%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22186%22/%3E%3C/clipPath%3E%3Cmask%20id%3D%22k%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%22-100%22%20y%3D%22-100%22%20width%3D%22500%22%20height%3D%22500%22%3E%3Crect%20x%3D%22-100%22%20y%3D%22-100%22%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22white%22/%3E%3Cg%20fill%3D%22black%22%3E%3Cg%20transform%3D%22translate%28128%2070%29%20rotate%280%29%20scale%280.54%29%20translate%28-128%20-100%29%22%3E%3Cg%20clip-path%3D%22url%28%23hc%29%22%20stroke%3D%22black%22%20stroke-width%3D%2218%22%3E%3Cpath%20d%3D%22M208%2C48a87.48%2C87.48%2C0%2C0%2C0-35.36%2C7.43c-15.1-25.37-39.92-38-41.06-38.59a8%2C8%2C0%2C0%2C0-7.16%2C0c-1.14.58-26%2C13.22-41.06%2C38.59A87.48%2C87.48%2C0%2C0%2C0%2C48%2C48a8%2C8%2C0%2C0%2C0-8%2C8V96a88.11%2C88.11%2C0%2C0%2C0%2C80%2C87.63v35.43L83.58%2C200.84a8%2C8%2C0%2C1%2C0-7.16%2C14.32l48%2C24a8%2C8%2C0%2C0%2C0%2C7.16%2C0l48-24a8%2C8%2C0%2C0%2C0-7.16-14.32L136%2C219.06V183.63A88.11%2C88.11%2C0%2C0%2C0%2C216%2C96V56A8%2C8%2C0%2C0%2C0%2C208%2C48ZM56%2C96V64.44A72.1%2C72.1%2C0%2C0%2C1%2C120%2C136v31.56A72.1%2C72.1%2C0%2C0%2C1%2C56%2C96Zm144%2C0a72.1%2C72.1%2C0%2C0%2C1-64%2C71.56V136a72.1%2C72.1%2C0%2C0%2C1%2C64-71.56Z%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/mask%3E%3C/defs%3E%3Cg%20fill%3D%22black%22%20mask%3D%22url%28%23k%29%22%3E%3Cg%20transform%3D%22translate%2854%20112%29%20rotate%28-28%29%20scale%280.46%29%20translate%28-128%20-100%29%22%3E%3Cg%20clip-path%3D%22url%28%23hc%29%22%3E%3Cpath%20d%3D%22M208%2C48a87.48%2C87.48%2C0%2C0%2C0-35.36%2C7.43c-15.1-25.37-39.92-38-41.06-38.59a8%2C8%2C0%2C0%2C0-7.16%2C0c-1.14.58-26%2C13.22-41.06%2C38.59A87.48%2C87.48%2C0%2C0%2C0%2C48%2C48a8%2C8%2C0%2C0%2C0-8%2C8V96a88.11%2C88.11%2C0%2C0%2C0%2C80%2C87.63v35.43L83.58%2C200.84a8%2C8%2C0%2C1%2C0-7.16%2C14.32l48%2C24a8%2C8%2C0%2C0%2C0%2C7.16%2C0l48-24a8%2C8%2C0%2C0%2C0-7.16-14.32L136%2C219.06V183.63A88.11%2C88.11%2C0%2C0%2C0%2C216%2C96V56A8%2C8%2C0%2C0%2C0%2C208%2C48ZM56%2C96V64.44A72.1%2C72.1%2C0%2C0%2C1%2C120%2C136v31.56A72.1%2C72.1%2C0%2C0%2C1%2C56%2C96Zm144%2C0a72.1%2C72.1%2C0%2C0%2C1-64%2C71.56V136a72.1%2C72.1%2C0%2C0%2C1%2C64-71.56Z%22/%3E%3C/g%3E%3C/g%3E%3Cg%20transform%3D%22translate%28202%20112%29%20rotate%2828%29%20scale%280.46%29%20translate%28-128%20-100%29%22%3E%3Cg%20clip-path%3D%22url%28%23hc%29%22%3E%3Cpath%20d%3D%22M208%2C48a87.48%2C87.48%2C0%2C0%2C0-35.36%2C7.43c-15.1-25.37-39.92-38-41.06-38.59a8%2C8%2C0%2C0%2C0-7.16%2C0c-1.14.58-26%2C13.22-41.06%2C38.59A87.48%2C87.48%2C0%2C0%2C0%2C48%2C48a8%2C8%2C0%2C0%2C0-8%2C8V96a88.11%2C88.11%2C0%2C0%2C0%2C80%2C87.63v35.43L83.58%2C200.84a8%2C8%2C0%2C1%2C0-7.16%2C14.32l48%2C24a8%2C8%2C0%2C0%2C0%2C7.16%2C0l48-24a8%2C8%2C0%2C0%2C0-7.16-14.32L136%2C219.06V183.63A88.11%2C88.11%2C0%2C0%2C0%2C216%2C96V56A8%2C8%2C0%2C0%2C0%2C208%2C48ZM56%2C96V64.44A72.1%2C72.1%2C0%2C0%2C1%2C120%2C136v31.56A72.1%2C72.1%2C0%2C0%2C1%2C56%2C96Zm144%2C0a72.1%2C72.1%2C0%2C0%2C1-64%2C71.56V136a72.1%2C72.1%2C0%2C0%2C1%2C64-71.56Z%22/%3E%3C/g%3E%3C/g%3E%3Cg%20stroke%3D%22black%22%20stroke-width%3D%2211%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M128%20115.36L128%20222M72.1404%20146.117L128%20216M183.86%20146.117L128%20216%22/%3E%3C/g%3E%3C/g%3E%3Cg%20fill%3D%22black%22%3E%3Cg%20transform%3D%22translate%28128%2070%29%20rotate%280%29%20scale%280.54%29%20translate%28-128%20-100%29%22%3E%3Cg%20clip-path%3D%22url%28%23hc%29%22%3E%3Cpath%20d%3D%22M208%2C48a87.48%2C87.48%2C0%2C0%2C0-35.36%2C7.43c-15.1-25.37-39.92-38-41.06-38.59a8%2C8%2C0%2C0%2C0-7.16%2C0c-1.14.58-26%2C13.22-41.06%2C38.59A87.48%2C87.48%2C0%2C0%2C0%2C48%2C48a8%2C8%2C0%2C0%2C0-8%2C8V96a88.11%2C88.11%2C0%2C0%2C0%2C80%2C87.63v35.43L83.58%2C200.84a8%2C8%2C0%2C1%2C0-7.16%2C14.32l48%2C24a8%2C8%2C0%2C0%2C0%2C7.16%2C0l48-24a8%2C8%2C0%2C0%2C0-7.16-14.32L136%2C219.06V183.63A88.11%2C88.11%2C0%2C0%2C0%2C216%2C96V56A8%2C8%2C0%2C0%2C0%2C208%2C48ZM56%2C96V64.44A72.1%2C72.1%2C0%2C0%2C1%2C120%2C136v31.56A72.1%2C72.1%2C0%2C0%2C1%2C56%2C96Zm144%2C0a72.1%2C72.1%2C0%2C0%2C1-64%2C71.56V136a72.1%2C72.1%2C0%2C0%2C1%2C64-71.56Z%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20stroke%3D%22black%22%20stroke-width%3D%2211%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M96%20200L128%20220L160%20200%22/%3E%3C/g%3E%3C/svg%3E");inset:18px}.kc[data-f="nev"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cg%20transform%3D%22translate%28128%20132%29%20rotate%280%29%20scale%280.92%29%20translate%28-128%20-128%29%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M128%20222%2040%20136c-30-30-26-78%2010-96%2026-13%2056-4%2078%2022%2022-26%2052-35%2078-22%2036%2018%2040%2066%2010%2096z%22/%3E%3C/g%3E%3C/svg%3E");inset:31px}.kc[data-f="prazd"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M216%2C72H180.92c.39-.33.79-.65%2C1.17-1A29.53%2C29.53%2C0%2C0%2C0%2C192%2C49.57%2C32.62%2C32.62%2C0%2C0%2C0%2C158.44%2C16%2C29.53%2C29.53%2C0%2C0%2C0%2C137%2C25.91a54.94%2C54.94%2C0%2C0%2C0-9%2C14.48%2C54.94%2C54.94%2C0%2C0%2C0-9-14.48A29.53%2C29.53%2C0%2C0%2C0%2C97.56%2C16%2C32.62%2C32.62%2C0%2C0%2C0%2C64%2C49.57%2C29.53%2C29.53%2C0%2C0%2C0%2C73.91%2C71c.38.33.78.65%2C1.17%2C1H40A16%2C16%2C0%2C0%2C0%2C24%2C88v32a16%2C16%2C0%2C0%2C0%2C16%2C16v64a16%2C16%2C0%2C0%2C0%2C16%2C16h60a4%2C4%2C0%2C0%2C0%2C4-4V120H40V88h80v32h16V88h80v32H136v92a4%2C4%2C0%2C0%2C0%2C4%2C4h60a16%2C16%2C0%2C0%2C0%2C16-16V136a16%2C16%2C0%2C0%2C0%2C16-16V88A16%2C16%2C0%2C0%2C0%2C216%2C72ZM84.51%2C59a13.69%2C13.69%2C0%2C0%2C1-4.5-10A16.62%2C16.62%2C0%2C0%2C1%2C96.59%2C32h.49a13.69%2C13.69%2C0%2C0%2C1%2C10%2C4.5c8.39%2C9.48%2C11.35%2C25.2%2C12.39%2C34.92C109.71%2C70.39%2C94%2C67.43%2C84.51%2C59Zm87%2C0c-9.49%2C8.4-25.24%2C11.36-35%2C12.4C137.7%2C60.89%2C141%2C45.5%2C149%2C36.51a13.69%2C13.69%2C0%2C0%2C1%2C10-4.5h.49A16.62%2C16.62%2C0%2C0%2C1%2C176%2C49.08%2C13.69%2C13.69%2C0%2C0%2C1%2C171.49%2C59Z%22/%3E%3C/svg%3E")}.kc[data-f="deti"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M134.16%2C24.1a4%2C4%2C0%2C0%2C0-3.56%2C1.81C120.3%2C41.48%2C120%2C55.79%2C120%2C56a8%2C8%2C0%2C0%2C0%2C9.68%2C7.79A8.24%2C8.24%2C0%2C0%2C0%2C136%2C55.68%2C8%2C8%2C0%2C0%2C1%2C144.8%2C48a8.14%2C8.14%2C0%2C0%2C1%2C7.2%2C8.23%2C24%2C24%2C0%2C0%2C1-48-.27c0-.63.09-10.78%2C5.44-24a4%2C4%2C0%2C0%2C0-4.59-5.39A104.16%2C104.16%2C0%2C0%2C0%2C24.07%2C131.66C26%2C186.72%2C71.23%2C231%2C126.32%2C231.9a104%2C104%2C0%2C0%2C0%2C7.84-207.8ZM80%2C127.91a12%2C12%2C0%2C1%2C1%2C12%2C12A12%2C12%2C0%2C0%2C1%2C80%2C127.91Zm80.27%2C54.77a61%2C61%2C0%2C0%2C1-64.54%2C0%2C8%2C8%2C0%2C0%2C1%2C8.54-13.54%2C45%2C45%2C0%2C0%2C0%2C47.46%2C0%2C8%2C8%2C0%2C0%2C1%2C8.54%2C13.54ZM164%2C139.91a12%2C12%2C0%2C1%2C1%2C12-12A12%2C12%2C0%2C0%2C1%2C164%2C139.91Z%22/%3E%3C/svg%3E")}.kc[data-f="svof"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M111.49%2C52.63a15.8%2C15.8%2C0%2C0%2C0-26%2C5.77L33%2C202.78A15.83%2C15.83%2C0%2C0%2C0%2C47.76%2C224a16%2C16%2C0%2C0%2C0%2C5.46-1l144.37-52.5a15.8%2C15.8%2C0%2C0%2C0%2C5.78-26ZM65.14%2C161.13l19.2-52.79%2C63.32%2C63.32-52.8%2C19.2ZM160%2C72a37.8%2C37.8%2C0%2C0%2C1%2C3.84-15.58C169.14%2C45.83%2C179.14%2C40%2C192%2C40c6.7%2C0%2C11-2.29%2C13.65-7.21A22%2C22%2C0%2C0%2C0%2C208%2C23.94%2C8%2C8%2C0%2C0%2C1%2C224%2C24c0%2C12.86-8.52%2C32-32%2C32-6.7%2C0-11%2C2.29-13.65%2C7.21A22%2C22%2C0%2C0%2C0%2C176%2C72.06%2C8%2C8%2C0%2C0%2C1%2C160%2C72ZM136%2C40V16a8%2C8%2C0%2C0%2C1%2C16%2C0V40a8%2C8%2C0%2C0%2C1-16%2C0Zm101.66%2C82.34a8%2C8%2C0%2C1%2C1-11.32%2C11.31l-16-16a8%2C8%2C0%2C0%2C1%2C11.32-11.32Zm4.87-42.75-24%2C8a8%2C8%2C0%2C0%2C1-5.06-15.18l24-8a8%2C8%2C0%2C0%2C1%2C5.06%2C15.18Z%22/%3E%3C/svg%3E")}.kc[data-f="shar"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M128%2C16a88.1%2C88.1%2C0%2C0%2C0-88%2C88c0%2C23.43%2C9.4%2C49.42%2C25.13%2C69.5%2C12.08%2C15.41%2C26.5%2C26%2C41.91%2C31.09L96.65%2C228.85A8%2C8%2C0%2C0%2C0%2C104%2C240h48a8%2C8%2C0%2C0%2C0%2C7.35-11.15L149%2C204.59c15.4-5.07%2C29.83-15.68%2C41.91-31.09C206.6%2C153.42%2C216%2C127.43%2C216%2C104A88.1%2C88.1%2C0%2C0%2C0%2C128%2C16Zm49.32%2C87.89A8.52%2C8.52%2C0%2C0%2C1%2C176%2C104a8%2C8%2C0%2C0%2C1-7.88-6.68%2C41.29%2C41.29%2C0%2C0%2C0-33.43-33.43%2C8%2C8%2C0%2C1%2C1%2C2.64-15.78%2C57.5%2C57.5%2C0%2C0%2C1%2C46.57%2C46.57A8%2C8%2C0%2C0%2C1%2C177.32%2C103.89Z%22/%3E%3C/svg%3E")}.kc[data-f="korz"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M238%2C82.73A8%2C8%2C0%2C0%2C0%2C232%2C80H187.63L134%2C18.73a8%2C8%2C0%2C0%2C0-12%2C0L68.37%2C80H24a8%2C8%2C0%2C0%2C0-7.93%2C9.06L31.14%2C202.12A16.06%2C16.06%2C0%2C0%2C0%2C47%2C216H209a16.06%2C16.06%2C0%2C0%2C0%2C15.86-13.88L239.93%2C89.06A8%2C8%2C0%2C0%2C0%2C238%2C82.73ZM81.6%2C184a7.32%2C7.32%2C0%2C0%2C1-.81%2C0%2C8%2C8%2C0%2C0%2C1-8-7.2l-5.6-56a8%2C8%2C0%2C0%2C1%2C15.92-1.6l5.6%2C56A8%2C8%2C0%2C0%2C1%2C81.6%2C184Zm54.4-8a8%2C8%2C0%2C0%2C1-16%2C0V120a8%2C8%2C0%2C0%2C1%2C16%2C0ZM89.63%2C80%2C128%2C36.15%2C166.37%2C80Zm99.13%2C40.8-5.6%2C56a8%2C8%2C0%2C0%2C1-7.95%2C7.2%2C7.32%2C7.32%2C0%2C0%2C1-.81%2C0%2C8%2C8%2C0%2C0%2C1-7.16-8.76l5.6-56a8%2C8%2C0%2C0%2C1%2C15.92%2C1.6Z%22/%3E%3C/svg%3E")}.kc[data-f="rast"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M200%2C144h-76.7l22.41-22.41a59.55%2C59.55%2C0%2C0%2C0%2C26.1%2C6.36%2C49.56%2C49.56%2C0%2C0%2C0%2C25.89-7.22c23.72-14.36%2C36.43-47.6%2C34-88.92a8%2C8%2C0%2C0%2C0-7.52-7.52c-41.32-2.43-74.56%2C10.28-88.93%2C34-9.35%2C15.45-9.59%2C34.11-.86%2C52L120%2C124.68l-12.21-12.21c6-13.25%2C5.57-27-1.39-38.48C95.53%2C56%2C70.61%2C46.41%2C39.73%2C48.22a8%2C8%2C0%2C0%2C0-7.51%2C7.51C30.4%2C86.6%2C40%2C111.52%2C58%2C122.4A38.22%2C38.22%2C0%2C0%2C0%2C78%2C128a45%2C45%2C0%2C0%2C0%2C18.52-4.19L108.69%2C136l-8%2C8H56a8%2C8%2C0%2C0%2C0%2C0%2C16h9.59L78.8%2C219.47A15.89%2C15.89%2C0%2C0%2C0%2C94.42%2C232h67.17a15.91%2C15.91%2C0%2C0%2C0%2C15.62-12.53L190.42%2C160H200a8%2C8%2C0%2C0%2C0%2C0-16Z%22/%3E%3C/svg%3E")}.kc[data-f="shtuk"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20256%20256%22%20fill%3D%22black%22%3E%3Cpath%20d%3D%22M210.35%2C129.36c-.81-.47-1.7-.92-2.62-1.36.92-.44%2C1.81-.89%2C2.62-1.36a40%2C40%2C0%2C1%2C0-40-69.28c-.81.47-1.65%2C1-2.48%2C1.59.08-1%2C.13-2%2C.13-3a40%2C40%2C0%2C0%2C0-80%2C0c0%2C.94%2C0%2C1.94.13%2C3-.83-.57-1.67-1.12-2.48-1.59a40%2C40%2C0%2C1%2C0-40%2C69.28c.81.47%2C1.7.92%2C2.62%2C1.36-.92.44-1.81.89-2.62%2C1.36a40%2C40%2C0%2C1%2C0%2C40%2C69.28c.81-.47%2C1.65-1%2C2.48-1.59-.08%2C1-.13%2C2-.13%2C2.95a40%2C40%2C0%2C0%2C0%2C80%2C0c0-.94-.05-1.94-.13-2.95.83.57%2C1.67%2C1.12%2C2.48%2C1.59A39.79%2C39.79%2C0%2C0%2C0%2C190.29%2C204a40.43%2C40.43%2C0%2C0%2C0%2C10.42-1.38%2C40%2C40%2C0%2C0%2C0%2C9.64-73.28ZM128%2C156a28%2C28%2C0%2C1%2C1%2C28-28A28%2C28%2C0%2C0%2C1%2C128%2C156Z%22/%3E%3C/svg%3E")}
+
+.khead{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s4);margin-bottom:var(--s5);flex-wrap:wrap}
+.khead h3{font-size:32px}
+.khead span{font-size:16px;color:var(--mut)}
+.khead button{font-size:16px;color:var(--acc);font-weight:700;border-bottom:1.5px solid currentColor;margin-left:var(--s2)}
+.morebtn{display:flex;justify-content:center;margin-top:var(--s6)}
+.morebtn[hidden]{display:none}
+
+/* ДОСТАВКА */
+.dost{background:var(--surf2);border-top:1px solid var(--line-s)}
+.kc[data-f="dop"] .kb span{--m:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M15.75%2019.13c-.83%200-1.5-.84-1.5-1.88c0-1.03.67-1.87%201.5-1.87s1.5.84%201.5%201.87c0%201.04-.67%201.88-1.5%201.88M12%2011.25c-1.24%200-2.25-.84-2.25-1.87c0-1.04%201.01-1.88%202.25-1.88s2.25.84%202.25%201.88c0%201.03-1.01%201.87-2.25%201.87m-3.75%207.88c-.83%200-1.5-.84-1.5-1.88c0-1.03.67-1.87%201.5-1.87s1.5.84%201.5%201.87c0%201.04-.67%201.88-1.5%201.88M12%208.25c.41%200%20.75.34.75.75s-.34.75-.75.75s-.75-.34-.75-.75s.34-.75.75-.75M18.75%2012c-.32%200-.63.07-.91.2c-.48-.61-1.13-1.13-1.91-1.53c.57-.8.91-1.77.91-2.82v-.06c1.09-.23%201.91-1.2%201.91-2.37c0-1.33-1.09-2.42-2.42-2.42c-.69%200-1.33.29-1.75.75a4.81%204.81%200%200%200-5.16%200C9%203.29%208.36%203%207.67%203C6.34%203%205.25%204.09%205.25%205.42c0%201.16.82%202.13%201.9%202.37v.06c0%201.05.35%202.03.91%202.82c-.77.4-1.42.92-1.9%201.53A2.24%202.24%200%200%200%203%2014.25c0%201.25%201%202.25%202.25%202.25h.06c-.04.24-.06.5-.06.75c0%202.07%201.34%203.75%203%203.75c1.01%200%201.9-.63%202.45-1.59c.42.06.85.09%201.3.09s.88-.03%201.3-.09c.55.96%201.44%201.59%202.45%201.59c1.66%200%203-1.68%203-3.75c0-.25-.02-.51-.06-.75h.06c1.25%200%202.25-1%202.25-2.25S20%2012%2018.75%2012%22%2F%3E%3C%2Fsvg%3E")}
+/* сопутствующие без фото: пустой пастельный фон */
+.nph{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(160deg,#F9F2EA,#F2E8DC)}
+.sres .it .nph{position:relative;inset:auto;width:56px;height:56px;flex-shrink:0;border-radius:12px}
+.addon{margin-top:var(--s7)}.addon h2{font-size:clamp(32px,3vw,44px);margin-bottom:var(--s2)}@media(min-width:1201px){.addon .grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.addon>p{margin-bottom:var(--s5);color:var(--tx);font-size:18px}
+/* статус товара: метка в углу фото, на странице полоса с цветной кромкой (выбор Роберта 17.10, вариант 3) */
+.card .ph .stag{position:absolute;left:14px;top:24px;z-index:3;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1.3;color:#fff;pointer-events:none}
+.buy .av[data-st]{display:block;padding:8px 14px;border:0;border-left:4px solid;border-radius:0 10px 10px 0;font-weight:700;font-size:15px;line-height:24px}
+.buy .av::before{display:none}
+.card .ph .stag[data-st="in"]{background:#2F6B4A}
+.buy .av[data-st="in"]{background:#E4F1E8;color:#2F6B4A;border-color:#2F6B4A}
+.card .ph .stag[data-st="zak"]{background:#B83E70}
+.buy .av[data-st="zak"]{background:#FBE7EF;color:#B83E70;border-color:#B83E70}
+.card .ph .stag[data-st="nk"]{background:#8A6420}
+.buy .av[data-st="nk"]{background:#F6EDDC;color:#8A6420;border-color:#8A6420}
+.card .ph .stag[data-st="na"]{background:#5E6B68}
+.buy .av[data-st="na"]{background:#EEF0EF;color:#5E6B68;border-color:#5E6B68}
+/* фильтры каталога */
+.fpr{display:flex;align-items:center;gap:8px}
+.frng{display:flex;flex-direction:column;gap:6px;width:300px;padding:6px 20px 10px;border-radius:24px;background:#fff;box-shadow:0 0 0 1px rgba(59,39,48,.16)}
+.frng.on{box-shadow:0 0 0 1.5px var(--acc)}
+.frng .ft{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--grn)}
+.frng .ft b{font-size:15px;letter-spacing:0;text-transform:none;color:var(--ink);font-variant-numeric:tabular-nums}
+.frng .tr{position:relative;height:22px;--a:0%;--b:100%}
+.frng .tr::before{content:"";position:absolute;left:0;right:0;top:50%;height:4px;margin-top:-2px;border-radius:2px;background:linear-gradient(90deg,rgba(59,39,48,.14) var(--a),var(--acc) var(--a),var(--acc) var(--b),rgba(59,39,48,.14) var(--b))}
+.frng input{position:absolute;inset:0;width:100%;margin:0;background:none;pointer-events:none;-webkit-appearance:none;appearance:none}
+.frng input::-webkit-slider-thumb{pointer-events:auto;-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--acc);box-shadow:0 2px 6px rgba(16,48,43,.25);cursor:grab}
+.frng input::-moz-range-thumb{pointer-events:auto;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--acc);box-shadow:0 2px 6px rgba(16,48,43,.25);cursor:grab}
+.frng input::-webkit-slider-runnable-track{background:none}.frng input::-moz-range-track{background:none}
+.fsv{position:relative}
+.kflt .fsb{padding:0 40px 0 18px;background:#fff url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%232F4A3E%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E") right 16px center/14px no-repeat}
+.kflt .fsb.on{background:#fff url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%232F4A3E%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E") right 16px center/14px no-repeat;color:var(--acc);box-shadow:0 0 0 1.5px var(--acc)}
+.fsp{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:6;width:300px;padding:8px;border-radius:20px;background:#FAF7F3;box-shadow:0 0 0 1px rgba(59,39,48,.16),0 24px 48px -20px rgba(16,48,43,.4)}
+.fsv.open .fsp{display:block}
+.fsl{max-height:320px;overflow:auto}
+.fsl label{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:12px;font-size:15px;color:var(--ink);cursor:pointer}
+.fsl label:hover{background:#fff}
+.fsl input{width:18px;height:18px;accent-color:var(--acc);flex-shrink:0}
+.kflt .fsc{width:100%;margin-top:6px;height:40px;background:none;box-shadow:none;color:var(--acc);font-size:14px}
+.kflt{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:calc(-1*var(--s3)) 0 var(--s5)}
+.kflt button{height:42px;padding:0 18px;border:0;border-radius:999px;background:#fff;box-shadow:0 0 0 1px rgba(59,39,48,.16);font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;transition:background var(--t-base) var(--ease),color var(--t-base) var(--ease)}
+@media(hover:hover){.kflt button:hover{color:var(--acc);box-shadow:0 0 0 1.5px var(--acc)}}
+.kflt button.on{background:var(--acc);color:#fff;box-shadow:0 0 0 1px var(--acc)}
+.kflt select{height:42px;max-width:240px;padding:0 40px 0 18px;border:0;border-radius:999px;background:#fff url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%232F4A3E%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E") right 16px center/14px no-repeat;box-shadow:0 0 0 1px rgba(59,39,48,.16);font:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;-webkit-appearance:none;appearance:none}
+.kflt select.on{box-shadow:0 0 0 1.5px var(--acc);color:var(--acc)}
+.pills button{padding:7px 14px;border:0;border-radius:999px;font-family:inherit;cursor:pointer;background:#fff;box-shadow:0 0 0 1px rgba(59,39,48,.16);font-size:15px;color:var(--ink);transition:color var(--t-base) var(--ease)}
+.binfo .hint-sv{margin:calc(-1*var(--s2)) 0 var(--s3);font-size:14px;color:var(--mut)}
+@media(hover:hover){.pills button:hover{color:var(--acc);box-shadow:0 0 0 1.5px var(--acc)}}
+.dgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
+.dc{padding:var(--s5);background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 0 0 1px rgba(16,48,43,.08),0 20px 40px -20px rgba(16,48,43,.3)}
+.dc .k{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grn)}
+.dc h3{font-size:30px;line-height:1.15;margin:var(--s2) 0}
+.dc p{font-size:17px;color:var(--tx)}
+.dnote{margin-top:var(--s5);display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;padding:var(--s4) var(--s5);background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,255,255,.35));border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px rgba(16,48,43,.1)}
+.dnote b{font-weight:600;font-size:24px;color:var(--ink)}
+.dnote span{display:block;font-size:16px;color:var(--tx);margin-top:4px}
+
+/* КОНТАКТЫ */
+.kont{background:var(--bg)}
+.kgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:var(--s5);align-items:stretch}
+.kgrid .pic{min-height:560px;background:url('img/fasad.jpg') center 45%/cover}
+.kgrid .info{padding:var(--s6);background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 0 0 1px rgba(16,48,43,.08),0 24px 48px -24px rgba(16,48,43,.35)}
+.kgrid .head{margin-bottom:var(--s5)}
+.salons{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);padding-bottom:var(--s5);border-bottom:1px solid var(--line-s)}
+.lab{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.salon b{display:block;font-size:24px;font-weight:600;color:var(--ink);margin:4px 0}
+.salon p{font-size:16px;color:var(--tx)}
+.lnk{display:inline-block;margin-top:var(--s2);font-size:16px;font-weight:700;color:var(--acc);border-bottom:1.5px solid currentColor}
+.kline{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);padding:var(--s5) 0}
+.kline .v{display:block;font-size:22px;font-weight:700;color:var(--ink);margin-top:4px}
+.kline p{font-size:15px;color:var(--tx);margin-top:2px}
+.maps{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);margin-top:var(--s5)}
+.map{display:flex;flex-direction:column;background:var(--glass);border:var(--glass-b);box-shadow:var(--glass-sh)}
+.map .fr{position:relative;height:360px;background:var(--surf2)}
+.map .lm{position:absolute;inset:0;z-index:0}
+.lm .leaflet-control-attribution{font-size:10px;background:rgba(255,255,255,.75)}
+.lm .leaflet-tile-pane{filter:saturate(.55) sepia(.12) brightness(1.03)}
+.lm .leaflet-tile{outline:1px solid transparent}
+.lm .leaflet-control-zoom a{color:var(--ink)}
+.pin{width:44px;height:44px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--acc);border:3px solid #fff;box-shadow:0 8px 18px -6px rgba(59,39,48,.55)}
+.pin::after{content:"";position:absolute;inset:11px;border-radius:50%;background:#fff}
+.map .cap{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s3);padding:var(--s4)}
+.map .cap b{display:block;font-size:22px;font-weight:600;color:var(--ink);margin:4px 0 2px}
+.map .cap p{font-size:15px;color:var(--tx)}
+.map .cap .lnk{margin-top:0;white-space:nowrap}
+
+/* ПОДВАЛ: светлый, четыре колонки */
+.foot{position:relative;overflow:hidden;background:linear-gradient(180deg,#F7E7E8,#F3DCE1);padding:var(--s7) 0 var(--s4);border-top:1px solid rgba(184,62,112,.2);color:var(--tx)}
+.foot .wrap{position:relative}
+.foot .g{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:var(--s6)}
+.foot .lg{display:flex;align-items:center;gap:var(--s3)}
+.foot .lg img{width:72px;height:72px}
+.foot .lg b{font-size:30px;font-weight:500;letter-spacing:.16em;color:var(--ink)}
+.foot .lg+p{font-size:15px;margin-top:var(--s3);max-width:24em;line-height:1.55}
+.foot h4{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:var(--s3)}
+.foot .s+.s{margin-top:var(--s3)}
+.foot .s b{display:block;font-size:18px;font-weight:600;color:var(--ink)}
+.foot .s span{font-size:14px}
+.foot ul{list-style:none;display:grid;gap:var(--s2);font-size:16px;color:var(--ink)}
+.foot ul a:hover{color:var(--acc)}
+.foot .tel{display:block;font-size:22px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.foot .tel:hover{color:var(--acc)}
+.foot .fl{margin-top:var(--s3)}
+.foot .fsoc{display:flex;gap:var(--s2);margin-top:var(--s3)}
+.foot .fsoc a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#fff;box-shadow:0 0 0 1px var(--line-s);transition:transform var(--t-base) var(--ease)}
+.foot .fsoc a:hover{transform:translateY(-2px)}
+.foot .fsoc svg{width:22px;height:22px}
+.foot .bt{display:flex;gap:var(--s4);flex-wrap:wrap;justify-content:space-between;margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid rgba(184,62,112,.2);font-size:13px;color:var(--mut)}
+.foot .bt a{border-bottom:1px solid currentColor}
+@media(min-width:761px){.foot .bt{padding-right:96px}}
+.foot .bt a:hover{color:var(--ink)}
+@media(max-width:1200px){.foot .g{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.foot{padding:var(--s6) 0 var(--s4)}.foot .g{grid-template-columns:1fr;gap:var(--s5)}.foot .lg img{width:56px;height:56px}.foot .lg b{font-size:24px}}
+
+.fab{position:fixed;right:var(--s4);bottom:var(--s4);z-index:50;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(255,255,255,.34));backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.95);display:grid;place-items:center;color:var(--acc);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 14px 30px -12px rgba(184,62,112,.45)}
+.fab svg{width:26px;height:26px}
+
+/* СТРАНИЦА БУКЕТА */
+.bpage{position:fixed;left:0;right:0;bottom:0;top:var(--hh);z-index:55;background:var(--bg);overflow-y:auto;overscroll-behavior:contain}
+.bpage[hidden]{display:none}
+.bpage .wrap{padding-top:var(--s5);padding-bottom:var(--s8)}
+.crumbs{display:flex;gap:var(--s2);flex-wrap:wrap;font-size:14px;color:var(--mut)}
+.crumbs a:hover{color:var(--acc)}
+.crumbs i{font-style:normal}
+.bpage h1{font-size:clamp(34px,3.2vw,52px);line-height:1.1;margin:var(--s3) 0 var(--s5)}
+.bgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) 380px;gap:var(--s4);align-items:start}
+.gal{display:grid;grid-template-columns:92px 1fr;gap:var(--s3);padding:10px}
+.gal.one{grid-template-columns:1fr}
+.thumbs{display:flex;flex-direction:column;gap:var(--s2)}
+.thumbs button{width:92px;aspect-ratio:1/1;overflow:hidden;opacity:.55;box-shadow:0 0 0 1px var(--line);transition:opacity var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease)}
+.thumbs button img{width:100%;height:100%;object-fit:cover}
+.thumbs button.on{opacity:1;box-shadow:0 0 0 2px var(--acc)}
+.big{position:relative;aspect-ratio:1/1;background:var(--surf2);overflow:hidden}
+.big img{width:100%;height:100%;object-fit:cover}
+.big .nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--ink);background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.5));border:1px solid #fff;box-shadow:0 6px 16px rgba(16,48,43,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.big .nav.p{left:14px}.big .nav.n{right:14px}
+.big .cnt{position:absolute;left:14px;bottom:14px;font-size:13px;font-weight:700;color:#fff;background:rgba(16,48,43,.35);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:5px 12px;border-radius:999px}
+.binfo{padding:var(--s5)}
+.binfo h3{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grn);margin-bottom:var(--s3)}
+.binfo .blk+.blk{margin-top:var(--s5);padding-top:var(--s5);border-top:1px solid var(--line-s)}
+.pills{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.pills span{padding:7px 14px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:15px;color:var(--ink)}
+.binfo ul{list-style:none;display:grid;gap:var(--s3)}
+.binfo li{font-size:16px;color:var(--tx);line-height:1.4}
+.binfo li b{display:block;color:var(--ink);font-weight:600}
+.binfo li.off{opacity:.4}
+.binfo p{font-size:16px;color:var(--tx)}
+.buy{padding:var(--s5);position:sticky;top:var(--s4)}
+.buy .pr{font-size:44px;font-weight:700;color:var(--ink);line-height:1}
+.buy .pr small{font-size:18px;font-weight:600;color:var(--mut)}
+.buy .pr.ask{font-size:26px;font-weight:600;line-height:1.25}
+.buy .av{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--tx);margin:var(--s3) 0 var(--s4);padding-bottom:var(--s4);border-bottom:1px solid var(--line-s)}
+.buy .av::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--grn);flex-shrink:0}
+.buy .av.ord::before{background:#D79AB0}
+.qrow{display:flex;gap:var(--s3);align-items:center}
+.qty{display:flex;align-items:center;height:52px;padding:0 4px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px var(--line);flex-shrink:0}
+.qty button{width:40px;height:40px;border-radius:50%;font-size:20px;color:var(--mut);transition:background var(--t-base) var(--ease),color var(--t-base) var(--ease)}
+.qty button:hover{color:var(--acc);background:var(--acc-l)}
+.qty span{min-width:26px;text-align:center;font-weight:700;color:var(--ink)}
+.qrow .b1{flex:1;height:52px;padding:0 var(--s3)}
+.buy .sum{display:flex;justify-content:space-between;align-items:baseline;margin:var(--s5) 0 var(--s4);font-size:16px;color:var(--tx)}
+.buy .sum b{font-size:26px;font-weight:700;color:var(--ink)}
+.buy .wide{width:100%;height:52px}
+.buy .hint{font-size:14px;color:var(--mut);margin-top:var(--s3);line-height:1.45}
+.also{margin-top:var(--s7)}
+.also h2{font-size:clamp(32px,3vw,44px);margin-bottom:var(--s5)}
+
+/* КОРЗИНА */
+.shade{position:fixed;inset:0;z-index:70;background:rgba(16,48,43,.35);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity var(--t-base) var(--ease)}
+.shade.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:71;width:min(500px,100%);display:flex;flex-direction:column;background:rgba(251,245,242,.9);backdrop-filter:blur(24px) saturate(1.3);-webkit-backdrop-filter:blur(24px) saturate(1.3);border-left:1px solid rgba(255,255,255,.9);box-shadow:-30px 0 60px -30px rgba(16,48,43,.4);transform:translateX(100%);transition:transform var(--t-slow) var(--ease)}
+.drawer.on{transform:none}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:var(--s4) var(--s5);border-bottom:1px solid var(--line-s)}
+.dh h2{font-size:30px}
+.dh button{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--ink);background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.3));border:1px solid #fff;box-shadow:0 0 0 1px rgba(16,48,43,.1)}
+.db{flex:1;overflow-y:auto;padding:var(--s4) var(--s5) var(--s5)}
+.empty{padding:var(--s6) 0;text-align:center;color:var(--tx)}
+.empty b{display:block;font-size:22px;font-weight:600;color:var(--ink);margin-bottom:var(--s2)}
+.empty .b1{margin-top:var(--s5)}
+.ci{display:grid;grid-template-columns:76px 1fr auto;gap:var(--s3);padding:var(--s3);margin-bottom:var(--s2);align-items:center;background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(255,255,255,.4));border:1px solid #fff;box-shadow:0 0 0 1px rgba(16,48,43,.08)}
+.ci img{width:76px;height:76px;object-fit:cover}
+.ci .t{font-size:15px;font-weight:600;color:var(--ink);line-height:1.3}
+.ci .t small{display:block;font-size:13px;color:var(--mut);font-weight:500;margin-top:2px}
+.ci .qty{height:36px;margin-top:var(--s2);width:max-content}
+.ci .qty button{width:30px;height:30px;font-size:17px}
+.ci .r{text-align:right}
+.ci .r b{display:block;font-weight:700;color:var(--ink);white-space:nowrap}
+.ci .r button{font-size:13px;color:var(--mut);margin-top:var(--s2);border-bottom:1px solid currentColor}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding:var(--s3) 0 var(--s2)}
+.total span{font-size:16px;color:var(--tx)}
+.total b{font-size:28px;font-weight:700;color:var(--ink)}
+.co h3{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:var(--s5) 0 var(--s3)}
+.fld{display:block;margin-bottom:var(--s3)}
+.fld[hidden]{display:none}
+.fld span{display:block;font-size:14px;color:var(--tx);margin-bottom:6px}
+.fld input,.fld textarea{width:100%;height:52px;border:0;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);padding:0 var(--s3);font-size:16px;font-weight:500;outline:none;transition:box-shadow var(--t-base) var(--ease)}
+.fld textarea{height:88px;padding:14px var(--s3);resize:vertical}
+.fld input:focus,.fld textarea:focus{box-shadow:0 0 0 2px var(--acc)}
+.fld.err input{box-shadow:0 0 0 2px #C0563F}
+.opts{display:grid;gap:var(--s2)}
+.opt{display:flex;gap:var(--s3);align-items:flex-start;padding:var(--s3);border-radius:14px;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px var(--line);cursor:pointer;transition:box-shadow var(--t-base) var(--ease),background var(--t-base) var(--ease)}
+.opt input{margin-top:4px;accent-color:var(--acc);width:18px;height:18px;flex-shrink:0}
+.opt b{display:block;font-size:16px;font-weight:600;color:var(--ink)}
+.opt small{display:block;font-size:14px;color:var(--mut);line-height:1.4;margin-top:2px}
+.opt.on{background:#fff;box-shadow:0 0 0 2px var(--acc)}
+.opt.dis{opacity:.4;pointer-events:none}
+.warn{font-size:14px;color:#6B4A1E;background:rgba(242,182,203,.28);border-radius:12px;padding:var(--s2) var(--s3);margin-top:var(--s2);line-height:1.45}
+.warn[hidden]{display:none}
+.agree{display:flex;gap:var(--s2);align-items:flex-start;font-size:14px;color:var(--tx);margin:var(--s3) 0 var(--s5);cursor:pointer}
+.agree input{accent-color:var(--acc);width:18px;height:18px;margin-top:2px;flex-shrink:0}
+.agree a{color:var(--acc);border-bottom:1px solid currentColor}
+.agree.err{color:#C0563F}
+.co .b1{width:100%}
+.co .note{font-size:14px;color:var(--mut);margin-top:var(--s4);text-align:center}
+.done{padding:var(--s6) 0}
+.done .ok{width:72px;height:72px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;margin-bottom:var(--s4);box-shadow:0 0 0 5px var(--bg),0 0 0 6.5px var(--acc)}
+.done h3{font-size:30px;margin-bottom:var(--s2)}
+.done p{font-size:16px;color:var(--tx)}
+.done .sum{padding:var(--s3) var(--s4);font-size:15px;color:var(--tx);margin:var(--s4) 0 var(--s5);background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(255,255,255,.4));border:1px solid #fff;box-shadow:0 0 0 1px rgba(16,48,43,.08)}
+.done .sum b{color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:var(--s5);z-index:80;transform:translate(-50%,24px);opacity:0;pointer-events:none;padding:12px 12px 12px var(--s4);border-radius:999px;background:rgba(16,48,43,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font-size:15px;display:flex;gap:var(--s3);align-items:center;box-shadow:0 20px 40px -16px rgba(16,48,43,.5);transition:opacity var(--t-base) var(--ease),transform var(--t-base) var(--ease)}
+.toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast button{padding:8px 16px;border-radius:999px;background:#fff;color:var(--acc);font-weight:700;font-size:14px}
+.toast button[hidden]{display:none}
+
+@media (max-width:1360px){
+  .hinfo span{display:none}
+  .srch{margin-left:0}
+}
+@media (max-width:1200px){
+  .soc,.sep.s2{display:none}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .buy{grid-column:1/-1;position:static}
+  .bar .wrap{overflow-x:auto;scrollbar-width:none;padding:0}
+  .bar .wrap::-webkit-scrollbar{display:none}
+  .bar a{flex:0 0 auto;padding:0 var(--s4)}
+  .dgrid{grid-template-columns:1fr}
+  .kgrid{grid-template-columns:1fr}
+  .kgrid .pic{min-height:360px}
+}
+@media (max-width:760px){
+  .wrap{padding:0 var(--s3)}
+  .top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:10px var(--s2)}
+  .brand img{width:44px;height:44px}
+  .brand b{font-size:22px}
+  .sep{display:none}
+  .srch{order:5;flex:0 0 100%;max-width:none}
+  .srch .box{height:48px}
+  .srch .go{width:36px;height:36px}
+  .hinfo{display:none}
+  .phm{display:grid;margin-left:auto}
+  .cartb{padding:0 6px}
+  .cartb .l{display:none}
+  .bar .wrap{height:48px}
+  .bar a{font-size:15px;padding:0 var(--s3)}
+  .bar a::after{left:12px;right:12px}
+  .hero{background-position:72% 50%}
+  .hero::before{background:linear-gradient(180deg,rgba(251,245,242,.92),rgba(251,245,242,.82) 55%,rgba(251,245,242,.96))}
+  .hero .in{padding:calc(var(--hh) + 24px) var(--s3) var(--s6)}
+  .hlogo img{width:88px;height:88px}
+  .hero h1{font-size:32px}
+  .lead{font-size:17px}
+  .acts .b1,.acts .b2,.acts .b3{width:100%}
+  .vnote .b3{white-space:normal;height:auto;min-height:52px;padding:12px var(--s4);max-width:100%}
+  .sec{padding:var(--s7) 0}
+  .head{margin-bottom:var(--s5)}
+  .head h2{font-size:36px}
+  .salsw{width:100%;align-items:stretch}
+  .salsw p{text-align:center}
+  .tabs button{height:46px;padding:0 8px;font-size:13px;gap:4px;white-space:normal;line-height:1.2}
+  .tabs button svg{width:14px;height:14px}
+  .grid{grid-template-columns:1fr;gap:var(--s3)}
+  .card .b{padding:var(--s3)}
+  .card .tt{font-size:21px}
+  .card .pr{font-size:22px}
+  .card .gos{width:100%}
+  .card .gos .go{flex:1}
+  .tiles{gap:var(--s3)}
+  .tile{aspect-ratio:1/1}
+  .tile .t{left:var(--s3);right:var(--s3);bottom:var(--s3);flex-direction:column;align-items:flex-start;gap:var(--s2)}
+  .tile .t b{font-size:18px}
+  .salons,.kline,.maps{grid-template-columns:1fr}
+  .map .fr{height:300px}
+  .map .cap{flex-direction:column;align-items:flex-start;gap:var(--s2)}
+  .kgrid .info{padding:var(--s4)}
+  .bgrid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr}
+  .thumbs{flex-direction:row;order:2;overflow-x:auto}
+  .thumbs button{width:64px;flex-shrink:0}
+  .binfo,.buy{padding:var(--s4)}
+  .dh,.db{padding-left:var(--s3);padding-right:var(--s3)}
+  /* телефон: каталог 2 в ряд, шапка прячет разделы при прокрутке вниз */
+  .bar{transition:transform var(--t-base) var(--ease)}
+  .hdr.up .bar{transform:translateY(-100%)}
+  .bar .wrap{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}
+  .card{padding:5px}
+  .card .ph .stag{left:8px;top:16px;padding:4px 8px;font-size:11px}
+  .kflt{gap:8px}.fpr{width:100%}.frng{flex:1;width:auto;padding:6px 14px 10px}.fsv{flex:1 1 40%}.kflt .fsb,.kflt .fsb.on{width:100%;text-align:left;padding:0 34px 0 14px;background-position:right 12px center;overflow:hidden;text-overflow:ellipsis}.fsp{width:min(320px,calc(100vw - 32px))}.kflt button{height:38px;padding:0 14px;font-size:14px}.kflt select{flex:1 1 40%;max-width:none;height:38px;font-size:14px;padding:0 34px 0 14px;background-position:right 12px center}
+  .card .ph{aspect-ratio:3/4}
+  .card .ph::after{background:linear-gradient(0deg,rgba(16,48,43,.95),rgba(16,48,43,.8) 45%,rgba(16,48,43,.35) 68%,rgba(16,48,43,0) 84%)}
+  .card .tt{text-shadow:0 1px 8px rgba(0,0,0,.45)}
+  .card .dots{left:var(--s2);right:var(--s2);top:var(--s2)}
+  .card .b{left:5px;right:5px;bottom:5px;padding:10px}
+  .card .tt{font-size:15px;line-height:1.25}
+  .card .ft{margin-top:6px;gap:var(--s2)}
+  .card .pr{font-size:18px}
+  .card .pr small{font-size:12px}
+  .card .pr.ask{font-size:13px}
+  .card .gos{width:100%}
+  .card .gos .go:not(.w){display:none}
+  .card .go{padding:9px 10px;font-size:13px;flex:1}
+  .fab{width:52px;height:52px;right:var(--s3);bottom:var(--s3)}
+}
+@media (max-width:380px){.top .wrap{gap:8px 6px}.brand b{font-size:20px;letter-spacing:.12em}.cartb.v4 .l>span{display:none}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="top">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="ИВА, цветы и букеты"><img src="logo.png" alt="Логотип салона цветов ИВА"><b>ИВА</b></a>
+      <div class="srch" id="srch">
+        <div class="box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Найти букет: розы, гортензия, подсолнухи" autocomplete="off" aria-label="Поиск по букетам"></div>
+        <div class="sres" id="sres" hidden></div>
+      </div>
+      <div class="hinfo"><a href="tel:+79041760166">+7 904 176-01-66</a><span>ежедневно 9:00-21:00</span></div>
+      <a class="phm" href="tel:+79041760166" aria-label="Позвонить"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+      <span class="sep s2"></span>
+      <div class="soc">
+        <a class="tg" href="https://t.me/iva_flowers" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13.1l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.9c.9-.3 1.6.2 1.4 1.4z"/></svg></a>
+        <a class="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.8 17.3c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.3h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.2.6 3.2 2.1 3.9 4.9h-2.8c-.6-1.9-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
+      </div>
+      <span class="sep"></span>
+      <button class="cartb v4" id="cartb" aria-label="Корзина" data-z><span class="ci2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M2.5 10h19l-2.1 9.2a2 2 0 0 1-2 1.6H6.6a2 2 0 0 1-2-1.6z"/><path d="M8.5 13.5v4M12 13.5v4M15.5 13.5v4"/></svg></span><span class="l"><b id="carts">Корзина</b><span class="cq"><span id="cartn">0</span> в корзине</span><span class="ce">пока пусто</span></span></button>
+    </div>
+  </div>
+  <nav class="bar" aria-label="Разделы">
+    <div class="wrap"><div class="cells">
+      <a class="cat" href="#katalog" data-f="all"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Каталог</a>
+      <a href="#vitrina">Онлайн-витрина</a>
+      <a href="#katalog" data-f="nev">Букет невесты</a>
+      <a href="#katalog" data-f="svof">Оформление мероприятий</a>
+      <a href="#katalog" data-f="shar">Шары</a>
+      <a href="#dostavka">Доставка и самовывоз</a>
+      <a href="#kontakty">Контакты</a>
+    </div></div>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="in">
+    <div class="main">
+      <div class="hlogo"><img src="logo.png" alt="Логотип салона цветов ИВА"></div>
+      <h1>Цветы с доставкой <em>по&nbsp;Екатеринбургу</em></h1>
+      <p class="lead">Современные букеты от 2 000 рублей. Быстрая и качественная сборка букетов. Бережная доставка по Екатеринбургу.</p>
+      <div class="acts">
+        <a class="b1 bv" href="#vitrina">Онлайн-витрина</a>
+        <a class="b1 bk" href="#katalog">Каталог букетов</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec vitrina" id="vitrina">
+  <div class="wrap">
+    <div class="vtop">
+      <div class="head">
+        <h2>Онлайн-<em>витрина</em></h2>
+        <p>Посмотрите, какие букеты можно собрать сегодня в каждом из наших салонов.</p>
+      </div>
+      <div class="salsw">
+        <div class="tabs" role="tablist" aria-label="Салон" data-i="0">
+          <button role="tab" aria-selected="true" data-s="m8"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>8 Марта, 101</button>
+          <button role="tab" aria-selected="false" data-s="kir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>Кировградская, 4/2</button>
+        </div>
+        <p id="salp">Ленинский район · <b>доставка и самовывоз</b></p>
+      </div>
+    </div>
+    <div class="grid" id="vgrid"></div>
+    <div class="vnote"><div><b id="vnt">Доставка и самовывоз</b><span id="vns"></span></div><a class="b3" href="https://t.me/+79041760166">Нужен другой букет? Напишите</a></div>
+  </div>
+</section>
+
+<section class="sec kat" id="katalog">
+  <div class="wrap">
+    <div class="head">
+      <h2>Каталог <em>букетов</em></h2>
+      <p>Букеты, которые собираем круглый год, и сезонные. Выберите раздел.</p>
+    </div>
+    <div class="tiles" id="tiles"></div>
+    <div class="khead"><h3 id="ktitle">Все букеты</h3><span id="kcount"></span></div>
+    <div class="kflt" id="kflt"></div>
+    <div class="grid" id="kgrid"></div>
+    <div class="morebtn" id="more"><button class="b2">Показать ещё</button></div>
+  </div>
+</section>
+
+<section class="sec dost" id="dostavka">
+  <div class="wrap">
+    <div class="head"><h2>Доставка <em>и самовывоз</em></h2><p>Способ получения выбираете в корзине.</p></div>
+    <div class="dgrid">
+      <div class="dc"><div class="k">Доставка</div><h3>По Екатеринбургу</h3><p>Отправляем из салона на 8 Марта, 101 по тарифу Яндекс Такси. Стоимость доставки менеджер назовёт при подтверждении заказа.</p></div>
+      <div class="dc"><div class="k">Самовывоз</div><h3>8 Марта, 101</h3><p>Ежедневно 9:00-21:00. Здесь выдаём заказы с сайта и шары.</p></div>
+      <div class="dc"><div class="k">Самовывоз</div><h3>Кировградская, 4/2</h3><p>Ежедневно 9:00-21:00. Букеты с витрины этого салона выдаём только здесь, без доставки.</p></div>
+    </div>
+    <div class="dnote"><div><b>Не нашли нужный букет?</b><span>Пришлите фото примера или напишите бюджет, флорист соберёт похожий.</span></div><a class="b1" href="https://t.me/+79041760166">Написать менеджеру</a></div>
+  </div>
+</section>
+
+<section class="sec kont" id="kontakty">
+  <div class="wrap">
+    <div class="kgrid">
+      <div class="pic" role="img" aria-label="Вывеска салона цветов ИВА"></div>
+      <div class="info">
+        <div class="head"><h2>Контакты</h2><p>Заказы принимаем по телефону, в Telegram и MAX.</p></div>
+        <div class="salons">
+          <div class="salon"><div class="lab">Салон</div><b>8 Марта, 101</b><p>ежедневно 9:00-21:00<br>доставка и самовывоз</p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/8%20Марта%20101">Маршрут в 2ГИС</a></div>
+          <div class="salon"><div class="lab">Салон</div><b>Кировградская, 4/2</b><p>ежедневно 9:00-21:00<br>самовывоз</p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/Кировградская%204%2F2">Маршрут в 2ГИС</a></div>
+        </div>
+        <div class="kline">
+          <div><div class="lab">Телефон</div><a class="v" href="tel:+79041760166">+7 904 176-01-66</a><p>тот же номер в Telegram и MAX</p></div>
+          <div><div class="lab">Канал с витриной</div><a class="v" href="https://t.me/iva_flowers">t.me/iva_flowers</a><p>новые букеты каждый день</p></div>
+        </div>
+        <div class="acts"><a class="b1" href="https://t.me/+79041760166">Написать в Telegram</a><a class="b2" href="tel:+79041760166">Позвонить</a></div>
+      </div>
+    </div>
+    <div class="maps">
+      <div class="map"><div class="fr"><div class="lm" data-ll="56.812725,60.609006" role="img" aria-label="Салон ИВА на карте: 8 Марта, 101"></div></div><div class="cap"><div><div class="lab">Ленинский район</div><b>8 Марта, 101</b><p>доставка и самовывоз, 9:00-21:00</p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.812725%2C60.609006&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
+      <div class="map"><div class="fr"><div class="lm" data-ll="56.888126,60.604844" role="img" aria-label="Салон ИВА на карте: Кировградская, 4/2"></div></div><div class="cap"><div><div class="lab">Уралмаш</div><b>Кировградская, 4/2</b><p>самовывоз, 9:00-21:00</p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.888126%2C60.604844&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="g">
+      <div><div class="lg"><img src="logo.png" alt="Логотип салона цветов ИВА"><b>ИВА</b></div><p>Цветы с доставкой по Екатеринбургу</p></div>
+      <div><h4>Салоны</h4><div class="s"><b>8 Марта, 101</b><span>9:00-21:00, доставка и самовывоз</span></div><div class="s"><b>Кировградская, 4/2</b><span>9:00-21:00, самовывоз</span></div></div>
+      <div><h4>Разделы</h4><ul><li><a href="#katalog" data-f="all">Каталог</a></li><li><a href="#vitrina">Онлайн-витрина</a></li><li><a href="#katalog" data-f="nev">Букет невесты</a></li><li><a href="#katalog" data-f="svof">Оформление мероприятий</a></li><li><a href="#katalog" data-f="shar">Шары</a></li><li><a href="#dostavka">Доставка и самовывоз</a></li><li><a href="#kontakty">Контакты</a></li></ul></div>
+      <div><h4>Связь</h4><a class="tel" href="tel:+79041760166">+7 904 176-01-66</a>
+        <ul class="fl"><li><a href="https://t.me/iva_flowers" target="_blank" rel="noopener">Telegram</a></li><li><a href="https://vk.com/club231914411" target="_blank" rel="noopener">ВКонтакте</a></li></ul></div>
+    </div>
+    <div class="bt"><span>ИП Кужина Ирина Ивановна · ИНН 661303864743 · ОГРНИП 325665800128599</span><a href="privacy.html">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<div class="bpage" id="bpage" hidden></div>
+
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer" aria-label="Корзина">
+  <div class="dh"><h2>Корзина</h2><button id="dclose" aria-label="Закрыть"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="db" id="db"></div>
+</aside>
+<div class="toast" id="toast"><span id="tt"></span><button id="topen">Открыть корзину</button></div>
+
+<a class="fab" href="tel:+79041760166" aria-label="Позвонить в салон"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+
+<script>
+var TG='https://t.me/+79041760166';
+var S={m8:'8 Марта, 101',kir:'Кировградская, 4/2'};
+/* s: витрина салона; без s = каталог. p:null = цену называет менеджер */
+var P=[
+ {id:'v1',s:'m8',n:'Букет с подсолнухами',p:4200,ph:['img/v1.jpg'],sv:['подсолнух','хризантема','роза','гвоздика','эвкалипт']},
+ {id:'v2',s:'m8',n:'Кустовые розы и хризантемы',p:4100,ph:['img/v2.jpg'],sv:['кустовая роза','хризантема','роза','эвкалипт']},
+ {id:'v3',s:'m8',n:'Розовый с антуриумом',p:4550,ph:['img/v3.jpg'],sv:['антуриум','пионовидная роза','хризантема','гвоздика']},
+ {id:'v4',s:'m8',n:'Гвоздики и гортензия',p:3800,ph:['img/v4.jpg'],sv:['гортензия','гвоздика','хризантема','эвкалипт']},
+ {id:'v5',s:'m8',n:'Гортензия и хризантемы',p:4550,ph:['img/v5.jpg'],sv:['гортензия','хризантема','кустовая роза']},
+ {id:'v6',s:'m8',n:'Антуриум и протея',p:4170,ph:['img/v6.jpg'],sv:['антуриум','протея','гвоздика','роза']},
+ {id:'k1',s:'kir',n:'Нежный букет с подсолнухом',p:3100,ph:['img/k1.jpg'],sv:['подсолнух','гвоздика','кустовая роза','хризантема']},
+ {id:'k2',s:'kir',n:'Авторский букет с антуриумом',p:5100,ph:['img/k2.jpg','img/b/1660_1.jpg'],sv:['антуриум','хризантема','гвоздика','пшеница']},
+ {id:'k3',s:'kir',n:'Букет с гортензией',p:3900,ph:['img/k3.jpg'],sv:['гортензия','пионовидная роза','хризантема']},
+ {id:'k4',s:'kir',n:'Букет с французскими розами',p:3800,ph:['img/k4.jpg'],sv:['французская роза','кустовая роза','хризантема']},
+ {id:'k5',s:'kir',n:'Розы и гвоздики',p:3250,ph:['img/b/1653_1.jpg','img/b/1653_2.jpg'],sv:['роза','гвоздика','хризантема','оксипеталум','эвкалипт']},
+ {id:'k6',s:'kir',n:'Левкой и кустовые розы',p:3200,ph:['img/k6.jpg'],sv:['левкой','кустовая роза','хризантема']},
+
+ {id:'b01',n:'Корзина с розами и хризантемами',p:5300,c:['korz'],ph:['img/b/1598_1.jpg','img/b/1598_0.jpg','img/b/1598_2.jpg'],sv:['пионовидная роза','кустовая роза','хризантема','амарант']},
+ {id:'b11',n:'101 роза',p:null,zak:1,c:['mono','ot5'],ph:['img/b/1644_2.jpg','img/b/1644_3.jpg','img/b/1644_0.jpg','img/b/1644_1.jpg'],sv:['роза']},
+ {id:'b02',n:'Цветы в сумочке с гортензией',p:2450,ph:['img/b/1579_3.jpg'],sv:['гортензия','гвоздика','хризантема','эустома']},
+ {id:'b05',n:'Кустовые розы и сантини',p:3650,ph:['img/b/1579_2.jpg'],sv:['кустовая роза','роза','хризантема сантини']},
+ {id:'b15',n:'Букет невесты белый',p:null,c:['nev'],ph:['img/b/1674_1.jpg','img/b/1674_0.jpg','img/b/1674_2.jpg'],sv:['эустома','роза','гвоздика','эвкалипт']},
+ {id:'b10',n:'Подсолнухи поштучно',p:400,u:'шт',c:['mono'],ph:['img/b/1602_1.jpg','img/b/1602_0.jpg','img/b/1634_3.jpg'],sv:['подсолнух']},
+ {id:'b06',n:'Розы с левкадендроном',p:4300,ph:['img/b/1579_5.jpg'],sv:['пионовидная роза','кустовая роза','левкадендрон','хризантема']},
+ {id:'b03',n:'Цветы в сумочке с эустомой',p:2000,ph:['img/b/1579_4.jpg'],sv:['эустома','гвоздика','эвкалипт']},
+ {id:'b17',n:'Коробка с цветами и конфетами',p:null,c:['prazd'],ph:['img/b/1612_0.jpg','img/b/1612_1.jpg'],sv:['хризантема','эустома','роза','гипсофила','конфеты']},
+ {id:'b07',n:'Белый букет с хризантемами',p:3700,ph:['img/b/1653_3.jpg'],sv:['хризантема','роза','гвоздика','эвкалипт']},
+ {id:'b04',n:'Букет из гвоздик',p:2750,ph:['img/b/1579_6.jpg'],sv:['гвоздика','диантус']},
+ {id:'b12',n:'Розы Фрутетта',p:null,c:['mono'],ph:['img/b/1595_1.jpg','img/b/1595_0.jpg'],sv:['роза Фрутетта']},
+ {id:'b08',n:'Кустовые розы в бирюзовом',p:3850,ph:['img/b/1653_5.jpg'],sv:['кустовая роза','эустома','хризантема','зелень']},
+ {id:'b09',n:'Букет в светлых тонах',p:3450,ph:['img/b/1653_6.jpg'],sv:['роза','гвоздика','эустома','эвкалипт']},
+ {id:'b13',n:'Антуриумы',p:null,c:['mono'],ph:['img/b/1632_1.jpg','img/b/1632_0.jpg'],sv:['антуриум']},
+ {id:'b18',n:'Гортензия и гвоздики',p:3500,ph:['img/b/1653_0.jpg'],sv:['гортензия','гвоздика','хризантема','эвкалипт']},
+ {id:'b14',n:'Каллы',p:null,c:['mono','nev'],ph:['img/b/1590_1.jpg','img/b/1590_0.jpg'],sv:['калла']},
+ {id:'b16',n:'Букет невесты розовый',p:null,c:['nev'],ph:['img/b/1627_1.jpg','img/b/1627_0.jpg'],sv:['эустома','гвоздика','роза']},
+ {id:'b23',n:'Букет невесты с эустомой и гвоздикой',p:null,c:['nev'],ph:['img/b/1627_2.jpg','img/b/1627_3.jpg'],sv:['эустома','гвоздика','эвкалипт']},
+ {id:'b24',n:'Букет невесты с каллами и георгинами',p:null,c:['nev'],ph:['img/b/1562_1.jpg','img/b/1562_2.jpg'],sv:['калла','георгин','эустома','амарант']},
+ {id:'b25',n:'Букет невесты из калл',p:null,c:['nev'],ph:['img/b/1588_0.jpg'],sv:['калла']},
+ {id:'b26',n:'Осенняя композиция в корзине',p:3700,c:['korz'],ph:['img/b/1560_0.jpg','img/b/1560_1.jpg'],sv:['роза','гвоздика','эвкалипт']},
+ {id:'b27',n:'Цветы в сумочке ко Дню учителя',p:null,c:['prazd'],ph:['img/b/1702_0.jpg'],sv:['гвоздика','кустовая роза','хризантема']},
+ {id:'b28',n:'Бюджетные сумочки ко Дню учителя',p:null,c:['prazd'],ph:['img/b/1701_0.jpg'],sv:['кустовая роза','хризантема','гвоздика']},
+ {id:'b19',n:'Набор шаров с цифрами',p:null,c:['shar'],ph:['img/b/1604_2.jpg','img/b/1604_4.jpg'],sv:['фольгированные цифры','латексные шары']},
+ {id:'b20',n:'Набор шаров с надписью',p:null,c:['shar'],ph:['img/b/1604_1.jpg','img/b/1604_0.jpg','img/b/1604_3.jpg'],sv:['шар с надписью','фольгированное сердце','латексные шары']},
+ {id:'b29',n:'Букет с зайчиками',p:null,c:['deti'],ph:['img/b/ir_2174.jpg','img/b/ir_2176.jpg'],sv:['гвоздика','диантус Грин трик','лагурус']},
+ {id:'b30',n:'Букет «Черепашки-ниндзя»',p:null,c:['deti'],ph:['img/b/ir_3592.jpg'],sv:['диантус Грин трик','ромашка']},
+ {id:'b31',n:'Миньон из хризантем',p:null,c:['deti'],ph:['img/b/ir_6693.jpg'],sv:['хризантема']},
+ {id:'b32',n:'Оформление конференции',p:null,o:1,c:['svof'],ph:['img/b/ir_2178.jpg','img/b/ir_2179.jpg','img/b/ir_2180.jpg'],sv:[]},
+ {id:'b33',n:'Оформление пикника',p:null,o:1,c:['svof'],ph:['img/b/ir_8469.jpg','img/b/ir_8470.jpg'],sv:[]},
+ {id:'b34',n:'Спатифиллум',p:1100,c:['rast'],ph:['img/b/rast_1.jpg'],sv:['спатифиллум']},
+ {id:'b35',n:'Фикус',p:1200,c:['rast'],ph:['img/b/rast_2.jpg'],sv:['фикус']},
+ {id:'b36',n:'Орхидея',p:2400,c:['rast'],ph:['img/b/rast_3.jpg'],sv:['орхидея']},
+ {id:'b37',n:'Орхидея',p:2400,c:['rast'],ph:['img/b/rast_4.jpg'],sv:['орхидея']},
+ {id:'b38',n:'Орхидея',p:null,c:['rast'],ph:['img/b/rast_5.jpg'],sv:['орхидея']},
+ {id:'b39',n:'Гвоздика розовая и белая',p:null,u:'шт',nk:1,c:['shtuk'],ph:['img/b/ir15_1803.jpg'],sv:['гвоздика']},
+ {id:'b50',n:'Гвоздика жёлтая и зелёная',p:null,u:'шт',nk:1,c:['shtuk'],ph:['img/b/ir15_1802.jpg'],sv:['гвоздика']},
+ {id:'b40',n:'Роза кустовая',p:null,u:'шт',nk:1,c:['shtuk'],ph:['img/b/ir15_1800.jpg'],sv:['роза кустовая']},
+ {id:'b45',n:'Букет-гигант из красных роз',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_4779.jpg'],sv:['роза']},
+ {id:'b46',n:'Букет-гигант из малиновых роз',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_1449.jpg'],sv:['роза']},
+ {id:'b47',n:'Персиковый букет-гигант',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_6839.jpg'],sv:[]},
+ {id:'b48',n:'Букет-гигант из малиновых и кремовых роз',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_5999.jpg'],sv:['роза']},
+ {id:'b49',n:'Хризантема кустовая',p:null,nk:1,c:['shtuk'],ph:['img/b/ir15_1801.jpg'],sv:['хризантема']},
+ /* сопутствующие: вазы и открытки от Ирины 17.10, игрушки пока заглушкой */
+ {id:'d2',n:'Розовая ваза',p:1600,dop:1,c:['dop'],ph:['img/b/ir17_2442.jpg'],sv:['ваза']},
+ {id:'d4',n:'Зелёная стеклянная ваза',p:2000,dop:1,c:['dop'],ph:['img/b/ir17_2441.jpg'],sv:['ваза']},
+ {id:'d5',n:'Сиреневая ваза',p:2000,dop:1,c:['dop'],ph:['img/b/ir17_2440.jpg'],sv:['ваза']},
+ {id:'d3',n:'Мини-открытка',p:50,dop:1,c:['dop'],ph:['img/b/ir17_2459.jpg','img/b/ir17_2460.jpg','img/b/ir17_2461.jpg','img/b/ir17_2462.jpg','img/b/ir17_2463.jpg'],sv:['открытка'],ds:'Мини-открытки «Для мамы», «Для неё» и «С любовью».'},
+ {id:'d1',n:'Мягкие игрушки',p:null,na:1,dop:1,c:['dop'],ph:[],sv:['игрушка','мишка','зайка']}
+];
+var CAT=[
+ {k:'do3',n:'Букеты и цветы до 3000 руб',img:'img/b/1579_4.jpg'},
+ {k:'3do5',n:'Букеты от 3000-5000 руб',img:'img/b/1653_6.jpg'},
+ {k:'ot5',n:'Букеты от 5000 руб',img:'img/b/1644_2.jpg'},
+ {k:'nev',n:'Букет невесты',img:'img/b/1674_1.jpg'},
+ {k:'svof',n:'Оформление мероприятий',img:'img/b/ir_2178.jpg'},
+ {k:'shar',n:'Шары',img:'img/b/1604_2.jpg'},
+ {k:'prazd',n:'Цветы на праздник',t:'Цветы на праздник: букеты к тематическим праздникам',img:'img/b/1702_0.jpg'},
+ {k:'deti',n:'Детские букеты',img:'img/b/ir_2174.jpg'},
+ {k:'korz',n:'Цветы в корзине',img:'img/b/1598_1.jpg'},
+ {k:'mono',n:'Монобукеты',img:'img/b/1595_1.jpg'},
+ {k:'rast',n:'Горшечные растения',img:'img/b/rast_3.jpg'},
+ {k:'shtuk',n:'Цветы без упаковки',t:'Цветы без упаковки: цена за штуку',img:'img/b/ir15_1800.jpg'},
+ {k:'dop',n:'Подарки к букету',t:'Подарки к букету: игрушки, вазы, открытки'}
+];
+/* «Часто ищут»: подпись, что ищем, фото букета из этой выдачи */
+var HOT=[['Розы','розы','img/v2.jpg'],['Гортензия','гортензия','img/v5.jpg'],['Подсолнухи','подсолнухи','img/v1.jpg'],['Антуриум','антуриум','img/v6.jpg'],['Букет невесты','букет невесты','img/b/1674_1.jpg'],['Монобукеты','монобукет','img/b/1595_1.jpg'],['Букеты-гиганты','гигант','img/b/ir15_4779.jpg'],['В корзине','корзина','img/b/1598_1.jpg'],['Шары','шары','img/b/1604_2.jpg'],['До 3 000 ₽','до 3000','img/b/1579_4.jpg']];
+var BY={};P.forEach(function(x){
+  BY[x.id]=x;x.c=x.c||[];
+  if(x.p&&!x.u&&!x.dop&&x.c.indexOf('rast')<0&&x.c.indexOf('shtuk')<0){x.c.push(x.p<3000?'do3':x.p<5000?'3do5':'ot5')}
+});
+function $(s,r){return (r||document).querySelector(s)}
+function f(n){return n.toLocaleString('ru-RU')+' ₽'}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function stk(x){return x.zak?'zak':x.nk?'nk':x.na?'na':'in'}
+function avail(x){return x.zak?'Под заказ':x.nk?'Соберём нужное количество':x.na?'Уточнить наличие у менеджера':'В наличии'+(x.st?': '+x.st+' шт':'')+(x.s?': '+S[x.s]:'')}
+
+function nph(x){return '<span class="nph"></span>'}
+function card(x){
+  var imgs=x.ph.length?'':nph(x);imgs+=x.ph.map(function(u,i){return '<img src="'+u+'" alt="'+esc(x.n)+'" loading="lazy"'+(i?'':' class="on"')+'>'}).join('');
+  var many=x.ph.length>1;
+  var zones=many?'<span class="zones">'+x.ph.map(function(){return '<i></i>'}).join('')+'</span><span class="dots">'+x.ph.map(function(u,i){return '<i'+(i?'':' class="on"')+'></i>'}).join('')+'</span>':'';
+  var pr=x.p?'<span class="pr">'+(x.u?'<small>от </small>':'')+f(x.p)+(x.u?'<small> / шт</small>':'')+'</span>':'<span class="pr ask">Цену назовёт менеджер</span>';
+  var b=x.p?'<button class="go w" data-add="'+x.id+'">В корзину</button>':'<a class="go w" href="'+TG+'">Узнать цену</a>';
+  return '<article class="card" data-id="'+x.id+'"><a class="ph" href="#b/'+x.id+'" data-open="'+x.id+'">'+imgs+zones+(x.o||x.dop?'':'<span class="stag" data-st="'+stk(x)+'">'+(x.zak?'Под заказ':x.nk?'Соберём нужное количество':x.na?'Уточнить наличие у менеджера':'В наличии'+(x.st?': '+x.st+' шт':''))+'</span>')+'</a>'+
+   '<div class="b"><a class="tt" href="#b/'+x.id+'" data-open="'+x.id+'">'+esc(x.n)+'</a>'+'<div class="ft">'+pr+
+   '<span class="gos"><a class="go" href="#b/'+x.id+'" data-open="'+x.id+'">'+(x.o||x.dop||x.c.indexOf('rast')>=0||x.c.indexOf('shtuk')>=0?'Смотреть':x.c.indexOf('shar')>=0?'Смотреть набор':'Смотреть букет')+'</a>'+b+'</span></div></div></article>';
+}
+function bindCards(root){
+  root.querySelectorAll('.card .zones').forEach(function(z){
+    var c=z.closest('.card'),im=c.querySelectorAll('.ph img'),d=c.querySelectorAll('.dots i');
+    z.querySelectorAll('i').forEach(function(zz,i){zz.addEventListener('mouseenter',function(){
+      im.forEach(function(e,j){e.classList.toggle('on',j===i)});d.forEach(function(e,j){e.classList.toggle('on',j===i)});
+    })});
+    z.addEventListener('mouseleave',function(){im.forEach(function(e,j){e.classList.toggle('on',!j)});d.forEach(function(e,j){e.classList.toggle('on',!j)})});
+  });
+}
+
+/* ВИТРИНА */
+var vs='m8';
+function drawV(){
+  var g=$('#vgrid');g.innerHTML=P.filter(function(x){return x.s===vs}).map(card).join('');bindCards(g);
+  $('#vnt').textContent=vs==='m8'?'Доставка и самовывоз':'Только самовывоз';
+  $('#vns').textContent=vs==='m8'?'Букеты с этой витрины доставим по тарифу Яндекс Такси или выдадим в салоне на 8 Марта.':'Букеты с витрины Кировградской выдаём только в этом салоне.';
+}
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+  vs=b.dataset.s;document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
+  $('.tabs').dataset.i=vs==='kir'?1:0;$('#salp').innerHTML=vs==='kir'?'Уралмаш · <b>только самовывоз</b>':'Ленинский район · <b>доставка и самовывоз</b>';drawV();
+})});
+
+/* КАТАЛОГ */
+var kf='all',kq='',kn=9;
+var GR=[['Букеты',['do3','3do5','ot5','mono']],['По поводу',['nev','prazd','deti','svof']],['Ещё в салонах',['shar','korz','rast','shtuk','dop']]];
+$('#tiles').className='tiles grp';
+$('#tiles').innerHTML='<div class="krg">'+GR.map(function(g){
+  return g[1].map(function(k){
+    var c=CAT.filter(function(x){return x.k===k})[0];
+    return '<a class="kc" href="#katalog" data-f="'+k+'"><b>'+c.n+'</b><span class="kb"><span></span></span></a>';
+  }).join('');
+}).join('')+'</div>';
+/* фильтры: цена ползунком, состав (несколько цветов), наличие, порядок. Витрина попадает в выдачу только при выборе цветов */
+var PMAX=Math.ceil(Math.max.apply(null,P.filter(function(x){return x.p&&!x.u}).map(function(x){return x.p}))/1000)*1000;
+var F0={lo:0,hi:PMAX,svs:[],nal:0,so:''},F=fz(),svOpen=false;
+function fz(o){return Object.assign({},F0,{svs:[]},o||{})}
+var SV=(function(){var m={};P.forEach(function(x){if(!x.dop)x.sv.forEach(function(v){m[v]=(m[v]||0)+1})});return Object.keys(m).sort(function(a,b){return m[b]-m[a]||a.localeCompare(b,'ru')})})();
+function kfPrice(){return kf==='do3'||kf==='3do5'||kf==='ot5'}
+function prOn(){return F.lo>0||F.hi<PMAX}
+function fOn(){return prOn()||F.svs.length||F.nal||F.so}
+function list(){
+  var L=kq?P.filter(function(x){return hit(x,kq)}):P.filter(function(x){return (!x.s||F.svs.length)&&(kf==='all'?!x.dop:x.c.indexOf(kf)>-1)});
+  L=L.filter(function(x){
+    if(prOn()&&(!x.p||x.u||x.p<F.lo||(F.hi<PMAX&&x.p>F.hi)))return false;
+    if(F.svs.length&&!F.svs.some(function(v){return x.sv.indexOf(v)>-1}))return false;
+    if(F.nal&&(x.zak||x.nk||x.na||x.o||x.dop))return false;
+    return true;
+  });
+  if(F.so)L=L.map(function(x,i){return [x,i]}).sort(function(a,b){
+    var pa=a[0].p,pb=b[0].p;if(!pa&&!pb)return a[1]-b[1];if(!pa)return 1;if(!pb)return -1;
+    return (F.so==='up'?pa-pb:pb-pa)||a[1]-b[1]}).map(function(z){return z[0]});
+  return L;
+}
+function fmt(n){return n.toLocaleString('ru-RU')}
+/* правый край ползунка = без верхнего предела (Ирина 19.10: цена может быть любой) */
+function prLbl(){return 'от '+fmt(F.lo)+(F.hi<PMAX?' до '+fmt(F.hi)+' ₽':' ₽ и выше')}
+function prFill(){var r=$('#frng');if(!r)return;r.style.setProperty('--a',F.lo/PMAX*100+'%');r.style.setProperty('--b',F.hi/PMAX*100+'%');$('#fprv').textContent=prLbl();r.classList.toggle('on',prOn());var a=$('#fany');if(a)a.classList.toggle('on',!prOn())}
+function svLbl(){return F.svs.length?'Состав: '+F.svs.slice(0,2).join(', ')+(F.svs.length>2?' +'+(F.svs.length-2):''):'Состав'}
+function drawF(){
+  if(kfPrice()){F.lo=0;F.hi=PMAX}
+  var sl=$('.fsl'),st=sl?sl.scrollTop:0;
+  $('#kflt').innerHTML=(kfPrice()?'':'<div class="fpr"><button class="fany'+(prOn()?'':' on')+'" id="fany">Любая цена</button><div class="frng" id="frng"><div class="ft"><span>Цена</span><b id="fprv"></b></div><div class="tr"><input type="range" id="flo" min="0" max="'+PMAX+'" step="100" value="'+F.lo+'" aria-label="Цена от"><input type="range" id="fhi" min="0" max="'+PMAX+'" step="100" value="'+F.hi+'" aria-label="Цена до"></div></div></div>')+
+   '<div class="fsv'+(svOpen?' open':'')+'" id="fsvw"><button class="fsb'+(F.svs.length?' on':'')+'" id="fsb" aria-expanded="'+svOpen+'">'+esc(svLbl())+'</button><div class="fsp"><div class="fsl">'+SV.map(function(v){return '<label><input type="checkbox" value="'+esc(v)+'"'+(F.svs.indexOf(v)>-1?' checked':'')+'><span>'+esc(v)+'</span></label>'}).join('')+'</div>'+(F.svs.length?'<button class="fsc" id="fsc">Очистить состав</button>':'')+'</div></div>'+
+   '<select id="fso" aria-label="Порядок"'+(F.so?' class="on"':'')+'>'+[['','Порядок каталога'],['up','Сначала дешевле'],['down','Сначала дороже']].map(function(o){return '<option value="'+o[0]+'"'+(F.so===o[0]?' selected':'')+'>'+o[1]+'</option>'}).join('')+'</select>'+
+   '<button class="fnal'+(F.nal?' on':'')+'" data-fn>Только в наличии</button>';
+  prFill();
+  if(st)$('.fsl').scrollTop=st;
+}
+/* ползунок: двигаем без перерисовки панели, выдачу обновляем сразу */
+$('#kflt').addEventListener('input',function(e){
+  if(e.target.id==='flo'||e.target.id==='fhi'){
+    var lo=+$('#flo').value,hi=+$('#fhi').value;
+    if(lo>hi-100){if(e.target.id==='flo'){lo=hi-100;$('#flo').value=lo}else{hi=lo+100;$('#fhi').value=hi}}
+    F.lo=Math.max(0,lo);F.hi=Math.min(PMAX,hi);prFill();kn=9;drawK(1);
+  }
+});
+$('#kflt').addEventListener('click',function(e){
+  if(e.target.closest('#fsb')){svOpen=!svOpen;$('#fsvw').classList.toggle('open',svOpen);$('#fsb').setAttribute('aria-expanded',svOpen);return}
+  if(e.target.closest('#fany')){F.lo=0;F.hi=PMAX;kn=9;drawK();return}
+  if(e.target.closest('#fsc')){F.svs=[];kn=9;drawK();return}
+  if(e.target.closest('[data-fn]')){F.nal=F.nal?0:1;kn=9;drawK()}
+});
+$('#kflt').addEventListener('change',function(e){
+  if(e.target.type==='checkbox'){var v=e.target.value,i=F.svs.indexOf(v);if(e.target.checked&&i<0)F.svs.push(v);if(!e.target.checked&&i>-1)F.svs.splice(i,1);kn=9;drawK();return}
+  if(e.target.id==='fso'){F.so=e.target.value;kn=9;drawK()}
+});
+document.addEventListener('click',function(e){if(svOpen&&!e.target.closest('#fsvw')){svOpen=false;var w=$('#fsvw');if(w){w.classList.remove('open');$('#fsb').setAttribute('aria-expanded',false)}}});
+function drawK(keepF){
+  var L=list(),c=CAT.filter(function(c){return c.k===kf})[0];
+  $('#ktitle').textContent=kq?'Поиск: «'+kq+'»':(c?(c.t||c.n):'Все букеты');
+  $('#kcount').innerHTML=L.length+' шт.'+((kq||kf!=='all'||fOn())?' <button id="kreset">Показать все</button>':'');
+  if(!keepF)drawF();
+  var g=$('#kgrid');
+  g.innerHTML=L.length?L.slice(0,kn).map(card).join(''):'<div class="vnote" style="grid-column:1/-1;margin:0"><div><b>Ничего не нашли</b><span>Напишите, какой букет ищете, флорист соберёт похожий.</span></div><a class="b1" href="'+TG+'">Написать менеджеру</a></div>';
+  bindCards(g);
+  $('#more').hidden=L.length<=kn;
+  document.querySelectorAll('.tile,.kc').forEach(function(t){t.classList.toggle('on',!kq&&t.dataset.f===kf)});
+  var r=$('#kreset');if(r)r.addEventListener('click',function(){kf='all';kq='';kn=9;F=fz();$('#q').value='';drawK()});
+}
+$('#more button').addEventListener('click',function(){kn+=9;drawK()});
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-f]');
+  if(t){kf=t.dataset.f;kq='';kn=9;F=fz();$('#q').value='';drawK();closeB();
+    /* пункт шапки и плитка каталога ведут к самим букетам раздела (плитка: Ирина 19.10, на телефоне казалось, что раздел пуст) */
+    if((t.closest('.bar,.foot')&&kf!=='all')||t.classList.contains('kc')){e.preventDefault();$('.khead').scrollIntoView({behavior:'smooth'})}}
+});
+
+/* ПОИСК */
+var q=$('#q'),sr=$('#sres');
+/* поиск по началу слова, окончание отбрасываем: «розы» найдёт «роза», «орхидеи» найдёт «Орхидея» */
+function norm(t){return String(t).toLowerCase().replace(/ё/g,'е')}
+function stem(w){return w.length>3?w.replace(/(ами|ями|ов|ев|ей|ой|ий|ый|ая|ое|ые|ие|ом|ем|ах|ях|а|я|ы|и|е|у|ю|о)$/,''):w}
+/* подарки ищутся только по своему названию, без слова «букет» из раздела «Подарки к букету» */
+function words(x){return norm(x.n+' '+x.sv.join(' ')+' '+(x.dop?[]:x.c).map(function(k){var c=CAT.filter(function(z){return z.k===k})[0];return c?c.n:''}).join(' ')).split(/[^a-zа-я0-9]+/)}
+function hit(x,v){var W=words(x);
+  /* подарок находится, только если в запросе есть его слово (ваза, открытка, игрушка): «розы» не должны находить «Розовую вазу» */
+  if(x.dop&&!norm(v).split(/\s+/).filter(Boolean).some(function(t){var s=stem(t);return x.sv.some(function(w){return norm(w).indexOf(s)===0})}))return false;
+  return norm(v).split(/\s+/).filter(Boolean).every(function(t){var s=stem(t);return W.some(function(w){return w.indexOf(s)===0})})}
+function find(v){v=v.trim();if(!v)return null;return P.filter(function(x){return hit(x,v)})}
+function drawS(){
+  var L=find(q.value);
+  sr.hidden=false;
+  if(!L){sr.innerHTML='<div class="lbl">Часто ищут</div><div class="chips">'+HOT.map(function(h){return '<button data-hot="'+h[1]+'"><img src="'+h[2]+'" alt="">'+h[0]+'</button>'}).join('')+'</div>';return}
+  if(!L.length){sr.innerHTML='<div class="none">Такого букета пока нет. <a href="'+TG+'">Спросите менеджера</a>, соберём.</div>';return}
+  sr.innerHTML=L.slice(0,6).map(function(x){return '<a class="it" href="#b/'+x.id+'" data-open="'+x.id+'">'+(x.ph.length?'<img src="'+x.ph[0]+'" alt="">':nph(x))+'<span>'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></span><b>'+(x.p?(x.u?'от ':'')+f(x.p):'')+'</b></a>'}).join('')+
+   '<button class="all" id="sall">Все результаты: '+L.length+'</button>';
+  $('#sall').addEventListener('click',goSearch);
+}
+sr.addEventListener('click',function(e){var h=e.target.closest('[data-hot]');if(h){q.value=h.dataset.hot;drawS();q.focus()}});
+function goSearch(){var v=q.value.trim();if(!v)return;kq=v;kn=30;sr.hidden=true;closeB();drawK();$('#katalog').scrollIntoView({behavior:'smooth'})}
+q.addEventListener('input',drawS);
+q.addEventListener('focus',drawS);
+q.addEventListener('keydown',function(e){if(e.key==='Enter')goSearch();if(e.key==='Escape'){sr.hidden=true;q.blur()}});
+document.addEventListener('click',function(e){if(!e.target.closest('#srch'))sr.hidden=true});
+
+/* СТРАНИЦА БУКЕТА */
+var bp=$('#bpage'),gi=0,cur=null,bq=1;
+function openB(id,push){
+  var x=BY[id];if(!x)return;cur=x;gi=0;bq=1;sr.hidden=true;
+  if(push)history.pushState({b:id},'','#b/'+id);
+  var many=x.ph.length>1;
+  var rec=P.filter(function(y){return y.id!==x.id&&(x.s?y.s===x.s:(!y.s&&y.c.some(function(c){return x.c.indexOf(c)>-1})))}).slice(0,3);
+  if(rec.length<3)rec=rec.concat(P.filter(function(y){return y.id!==x.id&&rec.indexOf(y)<0&&!y.s&&!y.dop}).slice(0,3-rec.length));
+  var dop=x.dop||x.o?[]:P.filter(function(y){return y.dop&&y.ph.length});
+  var kirOnly=x.s==='kir';
+  bp.innerHTML='<div class="wrap">'+
+   '<nav class="crumbs"><a href="#top" data-close>Главная</a><i>/</i><a href="#'+(x.s?'vitrina':'katalog')+'" data-close>'+(x.s?'Онлайн-витрина':'Каталог')+'</a><i>/</i><span>'+esc(x.n)+'</span></nav>'+
+   '<h1>'+esc(x.n)+'</h1>'+
+   '<div class="bgrid">'+
+    '<div class="gal glass'+(many?'':' one')+'">'+(many?'<div class="thumbs">'+x.ph.map(function(u,i){return '<button data-g="'+i+'"'+(i?'':' class="on"')+' aria-label="Фото '+(i+1)+'"><img src="'+u+'" alt=""></button>'}).join('')+'</div>':'')+
+     '<div class="big">'+(x.ph.length?'<img id="gimg" src="'+x.ph[0]+'" alt="'+esc(x.n)+'">':nph(x))+(many?'<button class="nav p" data-gn="-1" aria-label="Предыдущее фото"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 5-7 7 7 7"/></svg></button><button class="nav n" data-gn="1" aria-label="Следующее фото"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 5 7 7-7 7"/></svg></button><span class="cnt" id="gcnt">1 / '+x.ph.length+'</span>':'')+'</div></div>'+
+    '<div class="binfo glass">'+
+     (x.dop?'<div class="blk"><h3>Как добавить к букету</h3><p>'+(x.ds?esc(x.ds)+' ':'')+(x.p?'Положите в корзину вместе с букетом или напишите менеджеру, к какому букету добавить.':'Напишите менеджеру, к какому букету добавить. Он расскажет, что сейчас есть в салоне, и назовёт цену.')+'</p></div>':'')+
+     (x.sv.length&&!x.dop?'<div class="blk"><h3>Состав</h3><p class="hint-sv">Нажмите на цветок, чтобы увидеть все букеты с ним</p><div class="pills">'+x.sv.map(function(s){return '<button data-sv="'+esc(s)+'" title="Все букеты, где есть '+esc(s)+'">'+esc(s)+'</button>'}).join('')+'</div></div>':'')+
+     (x.o?'<div class="blk"><h3>Как заказать</h3><p>Расскажите в Telegram о мероприятии: дата, место и формат. Менеджер рассчитает стоимость.</p></div>':'<div class="blk"><h3>Получение</h3><ul>'+
+      '<li'+(kirOnly?' class="off"':'')+'><b>Доставка по Екатеринбургу</b>по тарифу Яндекс Такси, из салона на 8 Марта</li>'+
+      '<li'+(kirOnly?' class="off"':'')+'><b>Самовывоз: 8 Марта, 101</b>ежедневно 9:00-21:00</li>'+
+      '<li'+(x.s==='m8'?' class="off"':'')+'><b>Самовывоз: Кировградская, 4/2</b>ежедневно 9:00-21:00</li>'+
+     '</ul></div>')+
+     (x.zak?'<div class="blk"><h3>Собираем под заказ</h3><p>Букеты-гиганты собираем только под заказ. Напишите дату и сколько цветов нужно, менеджер назовёт цену и срок.</p></div>':'')+
+     (x.nk?'<div class="blk"><h3>Соберём нужное количество</h3><p>Менеджер подтвердит время, оплата после подтверждения.</p></div>':'')+
+     (x.na&&!x.dop?'<div class="blk"><h3>Уточнить наличие у менеджера</h3><p>Для этого букета сейчас нужно время, чтобы найти цветы. Менеджер подтвердит наличие, когда свяжется с вами по заказу.</p></div>':'')+
+    '</div>'+
+    '<div class="buy glass">'+
+     (x.p?'<div class="pr">'+(x.u?'<small>от </small>':'')+f(x.p)+(x.u?'<small> за штуку</small>':'')+'</div>':'<div class="pr ask">Цену назовёт менеджер</div>')+
+     (x.o||x.dop?'':'<div class="av'+(x.na||x.zak||x.nk?' ord':'')+'" data-st="'+stk(x)+'">'+avail(x)+'</div>')+
+     (x.p?'<div class="qrow"><div class="qty"><button data-q="-1" aria-label="Меньше">−</button><span id="bq">1</span><button data-q="1" aria-label="Больше">+</button></div><button class="b1" data-add="'+x.id+'" data-withq>В корзину</button></div>'+
+      '<div class="sum"><span>Итого</span><b id="bsum">'+f(x.p)+'</b></div>'+(x.st?'<p class="hint" id="stmax" hidden>Нужно больше '+x.st+' шт? <a href="'+TG+'">Уточните наличие у менеджера</a></p>':''):'<div style="height:8px"></div>')+
+     '<a class="'+(x.p?'b2':'b1')+' wide" href="'+TG+'">'+(x.p?'Спросить менеджера':'Узнать цену в Telegram')+'</a>'+
+     '<p class="hint">'+(kirOnly?'Букеты с витрины Кировградской выдаём только в этом салоне.':'Заказ придёт в салон, менеджер напишет в Telegram или позвонит и подтвердит время.')+'</p>'+
+    '</div>'+
+   '</div>'+
+   (dop.length?'<div class="addon"><h2>Добавить к букету</h2><p>Игрушка, ваза или открытка поедут вместе с букетом.</p><div class="grid">'+dop.map(card).join('')+'</div></div>':'')+
+   '<div class="also"><h2>'+(x.dop?'Ещё к букету':'Ещё букеты')+'</h2><div class="grid">'+rec.map(card).join('')+'</div></div>'+
+  '</div>';
+  bindCards(bp);
+  bp.hidden=false;bp.scrollTop=0;document.body.classList.add('lock');
+}
+function setG(i){var x=cur;gi=(i+x.ph.length)%x.ph.length;$('#gimg').src=x.ph[gi];bp.querySelectorAll('.thumbs button').forEach(function(b,j){b.classList.toggle('on',j===gi)});var c=$('#gcnt');if(c)c.textContent=(gi+1)+' / '+x.ph.length}
+function closeB(){
+  if(bp.hidden)return;bp.hidden=true;document.body.classList.remove('lock');cur=null;
+  if(location.hash.indexOf('#b/')===0)history.replaceState(null,'',location.pathname);
+}
+bp.addEventListener('click',function(e){
+  var g=e.target.closest('[data-g]');if(g){setG(+g.dataset.g);return}
+  var n=e.target.closest('[data-gn]');if(n){setG(gi+ +n.dataset.gn);return}
+  var sv=e.target.closest('[data-sv]');if(sv){closeB();kf='all';kq='';kn=9;$('#q').value='';F=fz({svs:[sv.dataset.sv]});drawK();$('.khead').scrollIntoView({behavior:'smooth'});return}
+  var qb=e.target.closest('[data-q]');if(qb){var mx=cur.st||1e9;if(+qb.dataset.q>0&&bq>=mx){var sm=$('#stmax');if(sm)sm.hidden=false;return}bq=Math.max(1,Math.min(mx,bq+ +qb.dataset.q));$('#bq').textContent=bq;$('#bsum').textContent=f(bq*cur.p);return}
+  if(e.target.closest('[data-close]'))closeB();
+});
+document.addEventListener('click',function(e){
+  var o=e.target.closest('[data-open]');
+  if(o){e.preventDefault();openB(o.dataset.open,true)}
+});
+window.addEventListener('popstate',function(){var m=location.hash.match(/^#b\/(\w+)/);if(m)openB(m[1],false);else closeB()});
+
+/* КОРЗИНА */
+var C=[],how='',done=false;
+try{C=JSON.parse(localStorage.getItem('iva_cart')||'[]').filter(function(i){return BY[i.id]&&BY[i.id].p})}catch(e){C=[]}
+function save(){try{localStorage.setItem('iva_cart',JSON.stringify(C))}catch(e){}}
+function count(){return C.reduce(function(a,i){return a+i.q},0)}
+function sumC(){return C.reduce(function(a,i){return a+BY[i.id].p*i.q},0)}
+function badge(){var n=count(),e=$('#cartb');$('#cartn').textContent=n;if(n)e.removeAttribute('data-z');else e.setAttribute('data-z','');$('#carts').textContent=n?f(sumC()):'Корзина'}
+function add(id,qn){var it=C.filter(function(i){return i.id===id})[0],mx=BY[id].st||1e9;if(it)it.q+=qn;else{it={id:id,q:qn};C.push(it)}var cut=it.q>mx;it.q=Math.min(mx,it.q);save();badge();done=false;toast(cut?'В наличии '+mx+' шт, больше уточните у менеджера':BY[id].n+' в корзине',1)}
+var tmr;
+function toast(t,a){$('#tt').textContent=t;$('#topen').hidden=!a;$('#toast').classList.add('on');clearTimeout(tmr);tmr=setTimeout(function(){$('#toast').classList.remove('on')},3200)}
+document.addEventListener('click',function(e){var a=e.target.closest('[data-add]');if(a){add(a.dataset.add,a.hasAttribute('data-withq')?bq:1)}});
+function hasS(s){return C.some(function(i){return BY[i.id].s===s})}
+function drawC(){
+  var db=$('#db');if(done)return;
+  if(!C.length){db.innerHTML='<div class="empty"><b>Корзина пуста</b>Выберите букет на витрине или в каталоге.<br><a class="b1" href="#vitrina" id="cgo">Онлайн-витрина</a></div>';$('#cgo').addEventListener('click',closeC);return}
+  var kir=hasS('kir'),other=C.some(function(i){return BY[i.id].s!=='kir'});
+  if(kir&&!other)how='kir';
+  if(!kir&&how==='kir')how='';
+  var opts=[
+   {k:'m8',b:'Самовывоз: 8 Марта, 101',s:'ежедневно 9:00-21:00',dis:kir&&!other},
+   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:'ежедневно 9:00-21:00',dis:!kir}
+  ];
+  db.innerHTML=C.map(function(i){var x=BY[i.id];return '<div class="ci"><img src="'+x.ph[0]+'" alt=""><div><div class="t">'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></div><div class="qty"><button data-cq="-1" data-id="'+x.id+'" aria-label="Меньше">−</button><span>'+i.q+'</span><button data-cq="1" data-id="'+x.id+'" aria-label="Больше">+</button></div></div><div class="r"><b>'+f(x.p*i.q)+'</b><button data-del="'+x.id+'">Убрать</button></div></div>'}).join('')+
+   '<div class="total"><span>Букеты</span><b>'+f(sumC())+'</b></div>'+
+   '<div class="co">'+
+    '<h3>Получатель</h3>'+
+    '<label class="fld" id="fn"><span>Ваше имя</span><input id="cn" autocomplete="name"></label>'+
+    '<label class="fld" id="fp"><span>Телефон</span><input id="cp" type="tel" autocomplete="tel" placeholder="+7"></label>'+
+    '<h3>Получение</h3><div class="opts">'+opts.map(function(o){return '<label class="opt'+(o.dis?' dis':'')+(how===o.k?' on':'')+'"><input type="radio" name="how" value="'+o.k+'"'+(how===o.k?' checked':'')+(o.dis?' disabled':'')+'><span><b>'+o.b+'</b><small>'+o.s+'</small></span></label>'}).join('')+'</div>'+
+    '<label class="fld" style="margin-top:16px"><span>Дата и время</span><input id="cw" placeholder="например, сегодня к 18:00"></label>'+
+    '<label class="fld"><span>Комментарий или текст открытки</span><textarea id="cc"></textarea></label>'+
+    '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a></span></label>'+
+    '<button class="b1" id="send">Отправить заказ</button>'+
+    '<p class="note">Заказ придёт в Telegram салона. Оплата после подтверждения.</p>'+
+   '</div>';
+}
+$('#db').addEventListener('click',function(e){
+  var b=e.target.closest('[data-cq]');if(b){var it=C.filter(function(i){return i.id===b.dataset.id})[0];it.q=Math.max(1,Math.min(BY[it.id].st||1e9,it.q+ +b.dataset.cq));if(BY[it.id].st&&+b.dataset.cq>0&&it.q>=BY[it.id].st)toast('В наличии '+BY[it.id].st+' шт, больше уточните у менеджера');save();badge();drawC();return}
+  var d=e.target.closest('[data-del]');if(d){C=C.filter(function(i){return i.id!==d.dataset.del});save();badge();drawC();return}
+  if(e.target.id==='send')send();
+});
+$('#db').addEventListener('change',function(e){if(e.target.name==='how'){how=e.target.value;var keep={n:$('#cn').value,p:$('#cp').value,w:$('#cw').value,c:$('#cc').value,g:$('#cg').checked};drawC();$('#cn').value=keep.n;$('#cp').value=keep.p;$('#cw').value=keep.w;$('#cc').value=keep.c;$('#cg').checked=keep.g}});
+function send(){
+  var ok=true;
+  [['#fn','#cn',2],['#fp','#cp',6]].forEach(function(a){var bad=$(a[1]).value.trim().length<a[2];$(a[0]).classList.toggle('err',bad);if(bad)ok=false});
+  if(!how){ok=false;$('.opts').scrollIntoView({block:'center',behavior:'smooth'});toast('Выберите способ получения')}
+  if(!$('#cg').checked){$('#fg').classList.add('err');ok=false}
+  if(!ok)return;
+  var names=C.map(function(i){return BY[i.id].n+(i.q>1?' × '+i.q:'')}).join(', ');
+  var sum=sumC();
+  var hw={m8:'самовывоз, 8 Марта, 101',kir:'самовывоз, Кировградская, 4/2'}[how];
+  var nm=esc($('#cn').value.trim()),ph=esc($('#cp').value.trim());
+  done=true;C=[];save();badge();
+  $('#db').innerHTML='<div class="done"><div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-10"/></svg></div><h3>Заказ отправлен</h3><p>'+nm+', спасибо! Менеджер напишет в Telegram или позвонит на '+ph+', подтвердит букет и время.</p><div class="sum"><b>'+esc(names)+'</b><br>'+hw+'<br>'+f(sum)+'</div><a class="b2" href="#katalog" id="cback">Вернуться в каталог</a></div>';
+  $('#cback').addEventListener('click',function(){done=false;closeC()});
+}
+function openC(){if(!done)drawC();$('#drawer').classList.add('on');$('#shade').classList.add('on');document.body.classList.add('lock')}
+function closeC(){$('#drawer').classList.remove('on');$('#shade').classList.remove('on');if(bp.hidden)document.body.classList.remove('lock')}
+$('#cartb').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});$('#topen').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});
+$('#dclose').addEventListener('click',closeC);$('#shade').addEventListener('click',closeC);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeC()});
+
+/* ШАПКА */
+function hh(){document.documentElement.style.setProperty('--hh',$('#hdr').offsetHeight+'px')}
+window.addEventListener('resize',hh);
+var ly=0;window.addEventListener('scroll',function(){var y=scrollY;if(Math.abs(y-ly)<8)return;$('#hdr').classList.toggle('up',y>ly&&y>300);ly=y},{passive:true});
+document.querySelectorAll('.bar a').forEach(function(a){a.addEventListener('click',closeB)});
+
+if(innerWidth<760)q.placeholder='Найти букет или цветы';
+badge();hh();drawV();drawK();
+var m=location.hash.match(/^#b\/(\w+)/);if(m)openB(m[1],false);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function(){if(!window.L)return;var ic=L.divIcon({className:"",html:'<div class="pin"></div>',iconSize:[44,44],iconAnchor:[22,44]});
+var go=function(el){if(el._m)return;var ll=el.dataset.ll.split(",").map(Number);
+ var m=L.map(el,{center:ll,zoom:16,scrollWheelZoom:false,dragging:!L.Browser.mobile,tap:false,attributionControl:true});
+ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(m);m.attributionControl.setPrefix(false);
+ L.marker(ll,{icon:ic,keyboard:false}).addTo(m);el._m=m};
+var els=document.querySelectorAll(".lm");
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:"400px"});els.forEach(function(e){io.observe(e)})}else els.forEach(go);
+})();
+</script>
+</body>
+</html>
