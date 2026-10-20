@@ -578,6 +578,9 @@ h2{font-size:var(--h2)}
 @media(max-width:1100px){.cz3 .wide .in{flex-direction:column;gap:8px}.cz3 .wh{width:auto}.cz3 .w5{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}.cz3 .w5 .it{margin-top:20px}}
 @media(max-width:760px){.cz3 .g3,.cz3 .g4{grid-template-columns:1fr;gap:16px}.cz3 .in{padding:24px 20px}.cz3 .ph2{margin:48px 0 24px}.cz3 .w5{grid-template-columns:1fr}}
 /* /ЦЕНЫ З3 */
+
+/* 20.10: рабочие дни и часы под телефоном в шапке (без отдельной верхней полосы) */
+.tinfo .ph .phz{display:block;margin-top:3px;font-size:13px;line-height:1.2;color:var(--tx2);letter-spacing:.02em;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -592,9 +595,6 @@ h2{font-size:var(--h2)}
 </defs></svg>
 
 <header class="hdr" id="hdr">
-  <div class="htop"><div class="htop-in">
-    <div class="l"><span><svg><use href="#i-pin"/></svg>Тюмень, Даудельная, 39/1</span><span><svg><use href="#i-clk"/></svg>пн-сб 10:00-20:00</span></div>
-  </div></div>
   <div class="wrap">
     <button class="burg" id="burg" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
     <a class="brand" href="#top" aria-label="Install Audio, автозвук и шумоизоляция в Тюмени"><span class="lg"><span class="lg-g">I<span class="lg-s">NSTALL</span></span><span class="lg-w"><span class="lg-a">A</span><span class="lg-s">UDIO</span></span></span></a>
@@ -602,7 +602,7 @@ h2{font-size:var(--h2)}
       <a href="#uslugi">Услуги</a><a href="#pochemu">Почему мы</a><a href="#ceny">Цены</a><a href="#tovary">Магазин</a><a href="#raboty">Работы</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a>
     </nav>
     <div class="tinfo">
-      <div class="ph"><a href="tel:+79221967777">+7 922 196-77-77</a></div>
+      <div class="ph"><a href="tel:+79221967777">+7 922 196-77-77</a><span class="phz">пн-сб 10:00-20:00</span></div>
       <div class="soc">
         <a class="phm" href="tel:+79221967777" aria-label="Позвонить"><svg><use href="#i-ph"/></svg></a>
         <a href="https://t.me/InstallAudio_tmn" target="_blank" rel="noopener" aria-label="Telegram"><svg><use href="#i-tg"/></svg></a>
