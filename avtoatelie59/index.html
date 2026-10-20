@@ -27,43 +27,35 @@ svg{display:block}
 .wrap{max-width:1440px;margin:0 auto;padding:0 var(--s6)}
 h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-.01em}
 
-/* ===== ШАПКА: два этажа ===== */
+/* ===== ШАПКА ===== */
+.bar{background:#fff}
+.bar nav{display:flex;gap:var(--s5);height:40px;align-items:center}
+.bar nav a{font-size:14px;font-weight:600;color:var(--ink);transition:color .2s var(--ease)}
+.bar nav a:hover{color:var(--acc)}
 .top{background:var(--bg);border-bottom:1px solid var(--line)}
-.top1{display:grid;grid-template-columns:auto auto 1fr auto auto;align-items:center;gap:var(--s5);height:96px}
-.logo img{height:48px;width:auto}
-.where{display:flex;align-items:center;gap:var(--s3)}
-.plaque{background:#fff;color:var(--ink);font:800 12px/1.15 "Exo 2",sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:2px}
-.addr b{display:block;font-weight:700;font-size:15px;line-height:1.35}
-.addr span{display:block;font-size:13px;color:var(--tx2);line-height:1.4}
-.msg{display:flex;gap:var(--s4);justify-self:end}
-.msg a{display:flex;align-items:center;gap:var(--s2);font-size:14px;font-weight:600;color:var(--tx2);transition:color .2s var(--ease)}
-.msg a:hover{color:#fff}
-.msg svg{width:18px;height:18px}
-.msg .mx{width:18px;height:18px;border-radius:5px;border:1.6px solid currentColor;font:800 10px/15px "Exo 2";text-align:center}
+.top1{display:flex;align-items:center;justify-content:space-between;height:96px}
+.logo img{height:50px;width:auto}
+.right{display:flex;align-items:center;gap:var(--s5)}
+.soc{display:flex;gap:12px}
+.soc a{width:32px;height:32px;color:#fff;opacity:.9;transition:color .2s var(--ease),opacity .2s var(--ease)}
+.soc a:hover{color:var(--acc);opacity:1}
+.soc svg{width:32px;height:32px}
 .tel{text-align:right}
-.tel a{display:block;font:700 22px/1.2 "Exo 2",sans-serif;letter-spacing:.01em}
-.tel span{display:block;font-size:13px;color:var(--tx2)}
-.top2{display:flex;align-items:center;height:52px;border-top:1px solid var(--line);gap:var(--s5)}
-.top2 .main{display:flex;align-items:center;gap:var(--s2);font-weight:700;font-size:16px}
-.top2 .main svg{width:18px;height:18px;color:var(--acc)}
-.top2 nav{display:flex;gap:var(--s5);margin-left:auto}
-.top2 nav a{font-size:15px;font-weight:600;color:var(--tx2);transition:color .2s var(--ease)}
-.top2 nav a:hover{color:#fff}
+.tel a{display:block;font:700 24px/1.2 "Exo 2",sans-serif;letter-spacing:.01em}
+.tel span{display:block;margin-top:2px;font-size:14px;color:var(--tx2)}
 
 /* ===== ГЛАВНЫЙ ЭКРАН ===== */
 .hero{position:relative;min-height:720px;height:calc(100vh - 150px);max-height:860px;overflow:hidden;display:flex;align-items:flex-end}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
 .hero:after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(11,11,13,.94) 0%,rgba(11,11,13,.72) 38%,rgba(11,11,13,.18) 70%,rgba(11,11,13,.05) 100%),
+  linear-gradient(90deg,rgba(11,11,13,.96) 0%,rgba(11,11,13,.9) 42%,rgba(11,11,13,.35) 66%,rgba(11,11,13,.05) 100%),
   linear-gradient(0deg,rgba(11,11,13,.85) 0%,rgba(11,11,13,0) 40%)}
 .hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:var(--s7);display:grid;grid-template-columns:1fr auto;align-items:end;gap:var(--s6)}
 .hero h1{font-size:62px;line-height:1.06;max-width:780px}
-.hero h1 .u{display:inline-block;position:relative;padding-bottom:6px}
-.hero h1 .u:after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--acc)}
+.hero h1 .name{display:inline-block;font-size:74px;color:var(--acc);margin-bottom:4px}
 .hero p{margin-top:var(--s4);max-width:620px;font-size:19px;color:#D6D6DB}
 .btns{display:flex;gap:var(--s3);margin-top:var(--s5)}
-.btn{display:inline-flex;align-items:center;gap:var(--s2);height:56px;padding:0 var(--s5);font-weight:700;font-size:16px;border-radius:3px;transition:background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease)}
-.btn svg{width:20px;height:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-width:200px;height:56px;padding:0 var(--s5);font-weight:700;font-size:16px;border-radius:3px;transition:background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease)}
 .btn.red{background:var(--acc);color:#fff}
 .btn.red:hover{background:var(--acc2)}
 .btn.line{border:1.5px solid rgba(255,255,255,.55);color:#fff}
@@ -76,7 +68,8 @@ h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-
 
 /* ===== УСЛУГИ ===== */
 .sec{padding:var(--s8) 0}
-.uslugi{background:var(--bg2)}
+.uslugi{background:#fff;color:var(--ink)}
+.uslugi .head p{color:var(--ink2)}
 .head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s6);margin-bottom:var(--s6)}
 .head h2{font-size:44px;line-height:1.08}
 .head p{max-width:560px;margin-top:var(--s3);color:var(--tx2)}
@@ -87,19 +80,14 @@ h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
 .tile:hover img{transform:scale(1.04)}
 .tile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,8,10,.94) 0%,rgba(8,8,10,.55) 38%,rgba(8,8,10,0) 64%)}
-.tile .price{position:absolute;z-index:1;top:var(--s3);left:var(--s3);background:#fff;color:var(--ink);font-size:13px;font-weight:700;padding:6px 10px;border-radius:2px}
+.tile .price{position:absolute;z-index:1;top:var(--s3);left:var(--s3);background:var(--ink);color:#fff;font-size:13px;font-weight:700;padding:6px 10px;border-radius:2px}
 .tile .txt{position:absolute;z-index:1;left:var(--s4);right:var(--s4);bottom:var(--s4)}
-.tile h3{font-size:24px;line-height:1.2}
+.tile h3{font-size:24px;line-height:1.2;color:#fff}
 .tile p{margin-top:var(--s2);font-size:15px;line-height:1.45;color:#C9C9CF}
-.note{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);margin-top:var(--s4);padding:var(--s4) var(--s5);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:4px;background:var(--bg)}
-.note p{font-size:17px;color:#D6D6DB}
-.note p b{color:#fff}
-.note .btn{height:48px;flex:none}
 
 /* ===== РАБОТЫ ===== */
-.raboty{background:var(--light);color:var(--ink)}
-.raboty .head p{color:var(--ink2)}
-.raboty .head .more{color:var(--ink)}
+.raboty{background:var(--bg);color:var(--tx)}
+.work{color:var(--ink)}
 .grid5{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:var(--s4)}
 .work{background:#fff;border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
 .work .ph{position:relative;height:270px;overflow:hidden}
@@ -117,8 +105,8 @@ h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-
 .lbl.after{background:var(--acc)}
 
 /* ===== ПОДВАЛ ===== */
-.foot{background:var(--bg);border-top:1px solid var(--line)}
-.foot .wrap{display:flex;align-items:center;gap:var(--s5);height:88px;font-size:14px;color:var(--tx2)}
+.foot{background:#fff}
+.foot .wrap{display:flex;align-items:center;gap:var(--s5);height:88px;font-size:14px;color:var(--ink2)}
 .foot img{height:30px;width:auto}
 .foot .sp{margin-left:auto}
 
@@ -130,35 +118,29 @@ h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-
 </head>
 <body>
 
+<div class="bar">
+  <div class="wrap"><nav>
+    <a href="#raboty">Работы</a>
+    <a href="#">Материалы</a>
+    <a href="#">Отзывы</a>
+    <a href="#">Как работаем</a>
+    <a href="#">Контакты</a>
+  </nav></div>
+</div>
 <header class="top">
   <div class="wrap top1">
     <a class="logo" href="#"><img src="img/logo_r.svg" alt="Автоателье 59"></a>
-    <div class="where">
-      <div class="plaque">Перетяжка<br>салона</div>
-      <div class="addr">
-        <b>Пермь, Дзержинского 59, офис А310</b>
-        <span>1 подъезд, 3 этаж · пн-пт 10:00-18:00, сб 11:00-16:00</span>
+    <div class="right">
+      <div class="soc">
+        <a href="https://t.me/bykov_perm" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.36 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.23c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345q-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663q5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg></a>
+        <a href="https://max.ru/u/f9LHodD0cOImYuLgIq9EYs11XpUEVq_lsiiJnefGARwPEB5f1ndzuZaYaCk" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="currentColor"/><text x="12" y="15.6" text-anchor="middle" font-family="Exo 2,Arial,sans-serif" font-weight="800" font-size="9.5" fill="#0B0B0D">MAX</text></svg></a>
+        <a href="https://vk.com/avtoatelieperm" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m9.489.004l.729-.003h3.564l.73.003l.914.01l.433.007l.418.011l.403.014l.388.016l.374.021l.36.025l.345.03l.333.033c1.74.196 2.933.616 3.833 1.516s1.32 2.092 1.516 3.833l.034.333l.029.346l.025.36l.02.373l.025.588l.012.41l.013.644l.009.915l.004.98l-.001 3.313l-.003.73l-.01.914l-.007.433l-.011.418l-.014.403l-.016.388l-.021.374l-.025.36l-.03.345l-.033.333c-.196 1.74-.616 2.933-1.516 3.833s-2.092 1.32-3.833 1.516l-.333.034l-.346.029l-.36.025l-.373.02l-.588.025l-.41.012l-.644.013l-.915.009l-.98.004l-3.313-.001l-.73-.003l-.914-.01l-.433-.007l-.418-.011l-.403-.014l-.388-.016l-.374-.021l-.36-.025l-.345-.03l-.333-.033c-1.74-.196-2.933-.616-3.833-1.516S.367 20.221.171 18.48l-.034-.333l-.029-.346l-.025-.36l-.02-.373l-.025-.588l-.012-.41l-.013-.644l-.009-.915l-.004-.98l.001-3.313l.003-.73l.01-.914l.007-.433l.011-.418l.014-.403l.016-.388l.021-.374l.025-.36l.03-.345l.033-.333c.196-1.74.616-2.933 1.516-3.833S3.779.367 5.52.171l.333-.034l.346-.029l.36-.025l.373-.02l.588-.025l.41-.012l.644-.013zM6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.83-4.41-4.11-5.01c1.28-.74 3.08-2.54 3.51-4.98h-2.58c-.56 1.98-2.22 3.78-3.8 3.95V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92"/></svg></a>
+      </div>
+      <div class="tel">
+        <a href="tel:+79955469897">+7 995 546-98-97</a>
+        <span>пн-пт 10:00-18:00, сб 11:00-16:00</span>
       </div>
     </div>
-    <div class="msg">
-      <a href="https://t.me/bykov_perm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.360 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.230c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345q-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663q5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg>Telegram</a>
-      <a href="https://max.ru/u/f9LHodD0cOImYuLgIq9EYs11XpUEVq_lsiiJnefGARwPEB5f1ndzuZaYaCk" target="_blank" rel="noopener"><span class="mx">M</span>MAX</a>
-      <a href="https://vk.com/avtoatelieperm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.830-4.41-4.110-5.010c1.28-.74 3.080-2.540 3.510-4.980h-2.580c-.56 1.98-2.220 3.780-3.800 3.950V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92"/></svg>ВКонтакте</a>
-    </div>
-    <div class="tel">
-      <a href="tel:+79955469897">+7 995 546-98-97</a>
-      <span>himperm59@yandex.ru</span>
-    </div>
-  </div>
-  <div class="wrap top2">
-    <a class="main" href="#uslugi"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>Услуги</a>
-    <nav>
-      <a href="#raboty">Работы</a>
-      <a href="#">Материалы</a>
-      <a href="#">Отзывы</a>
-      <a href="#">Как работаем</a>
-      <a href="#">Контакты</a>
-    </nav>
   </div>
 </header>
 
@@ -166,11 +148,11 @@ h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-
   <img src="img/hero.jpg" alt="Мастерская Автоателье 59 в Перми">
   <div class="wrap">
     <div>
-      <h1><span class="u">Автоателье 59.</span><br>Перетяжка и ремонт салона в Перми</h1>
+      <h1><span class="name">Автоателье 59</span><br>Перетяжка и ремонт салона в Перми</h1>
       <p>Ремонтируем сиденья, перетягиваем рули, дверные карты, потолок и стойки. Работаем с автомобилями, мотоциклами, снегоходами, катерами, яхтами и спецтехникой.</p>
       <div class="btns">
-        <a class="btn red" href="tel:+79955469897"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"/></svg>Позвонить</a>
-        <a class="btn line" href="#raboty">Наши работы<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg></a>
+        <a class="btn red" href="tel:+79955469897">Позвонить</a>
+        <a class="btn line" href="#raboty">Наши работы</a>
       </div>
     </div>
     <div class="facts">
@@ -195,10 +177,6 @@ h1,h2,h3{font-family:"Exo 2",Manrope,sans-serif;font-weight:800;letter-spacing:-
       <div class="tile"><img src="img/s_podlokotnik.jpg" alt="Подлокотник на швейной машине" loading="lazy"><span class="price">Считаем за каждую деталь</span><div class="txt"><h3>Рули и подлокотники</h3><p>Перетягиваем рули, подлокотники и ручки КПП</p></div></div>
       <div class="tile"><img src="img/s_potolok.jpg" alt="Потолок в алькантаре" loading="lazy"><span class="price">Считаем по площади и материалу</span><div class="txt"><h3>Потолок и стойки</h3><p>Перетяжка потолка и стоек, в том числе алькантарой</p></div></div>
       <div class="tile"><img src="img/s_moto.jpg" alt="Сиденье мотоцикла" loading="lazy"><span class="price">Цена по размеру сиденья</span><div class="txt"><h3>Мотоциклы, катера, спецтехника</h3><p>Перетяжка и ремонт сидений, в том числе снегоходов и яхт</p></div></div>
-    </div>
-    <div class="note">
-      <p><b>Фиксированного прайса нет:</b> стоимость зависит от модели, материала и объёма работ.</p>
-      <a class="btn red" href="https://t.me/bykov_perm" target="_blank" rel="noopener">Отправить фото</a>
     </div>
   </div>
 </section>
