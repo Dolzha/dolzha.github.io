@@ -1,0 +1,2 @@
+/* Ключ доступа панели к GitHub, зашифрован паролями. Пишет Инструменты/node/_iva_key.js, руками не править. */
+window.IVA_KEY=[{"s":"BUjfKug7mEUr1JqoI0LfMA==","i":"yOQFk4YPDB4cyExS","c":"I9XTB6yvEfIYaBPoklaW1GO3LZNpzqV3PbSL8dbM8ccnX83VwE8zof5k6xO7otTSc8dtXsAw1Ca1P5pVk+XUTwrclhWmRtdOArlArSuW+QQ+zTUDcpQtxGc5yZwRLWeWYbZX7/d7mToC8W+TAw==","n":600000},{"s":"ZUPXk5UGWl2GKSK7W1jdxQ==","i":"2Birzmyom++rCeK6","c":"W5qAvd0PZhtIQDGFppkxwZ2LWLgrQIr5LLV8HK17Q41bEt9C6vn9H4j5eWQkt+pMfLO7BkcjWkgyDpuXMB9ZL7hD9gyXLziFL69CIqjQKk1xcRnHAWCNrEzwzIPQ/IOr4jm0AiLL1aDztS41rQ==","n":600000}];
