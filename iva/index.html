@@ -178,6 +178,10 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 @media(max-width:760px){.card .avs{font-size:12px;gap:5px}}
 .soc .vk svg{width:26px;height:26px}
 .card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(184,62,112,.35),0 28px 56px -24px rgba(16,48,43,.5)}
+/* найденный через поиск букет: розовая обводка (Ирина 20.10: «при поиске прокрутка вниз»), держится до следующего выбора */
+.card.found,.card.found:hover{box-shadow:0 0 0 3px var(--rose-hi),0 0 0 9px rgba(232,80,138,.2),0 28px 56px -24px rgba(16,48,43,.5);animation:fnd 1.2s var(--ease) 2}
+@keyframes fnd{50%{box-shadow:0 0 0 3px var(--rose-hi),0 0 0 16px rgba(232,80,138,0),0 28px 56px -24px rgba(16,48,43,.5)}}
+@media(prefers-reduced-motion:reduce){.card.found{animation:none}}
 .card .ph{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:var(--surf2)}
 .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity var(--t-base) var(--ease),transform var(--t-slow) var(--ease)}
 .card .ph img.on{opacity:1}
@@ -301,6 +305,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .dc .k{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grn)}
 .dc h3{font-size:30px;line-height:1.15;margin:var(--s2) 0}
 .dc p{font-size:17px;color:var(--tx)}
+.dc .hrs{display:block;font-weight:600;color:var(--ink);margin-bottom:4px}.dc .hrs::first-letter{text-transform:uppercase}
 .dnote{margin-top:var(--s5);display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;padding:var(--s4) var(--s5);background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,255,255,.35));border:1px solid rgba(255,255,255,.95);box-shadow:0 0 0 1px rgba(16,48,43,.1)}
 .dnote b{font-weight:600;font-size:24px;color:var(--ink)}
 .dnote span{display:block;font-size:16px;color:var(--tx);margin-top:4px}
@@ -575,15 +580,15 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
     <div class="wrap">
       <a class="brand" href="#top" aria-label="ИВА, цветы и букеты"><img src="logo.png" alt="Логотип салона цветов ИВА"><b>ИВА</b></a>
       <div class="srch" id="srch">
-        <div class="box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Найти букет: розы, гортензия, подсолнухи" autocomplete="off" aria-label="Поиск по букетам"></div>
+        <div class="box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" data-sp="search_ph" placeholder="Найти букет: розы, гортензия, подсолнухи" autocomplete="off" aria-label="Поиск по букетам"></div>
         <div class="sres" id="sres" hidden></div>
       </div>
-      <div class="hinfo"><a href="tel:+79041760166">+7 904 176-01-66</a><span>ежедневно 9:00-21:00</span></div>
-      <a class="phm" href="tel:+79041760166" aria-label="Позвонить"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+      <div class="hinfo"><a href="tel:+79041760166" data-sh="tel" data-s="phone">+7 904 176-01-66</a><span data-s="h_m8">ежедневно 9:00-21:00</span></div>
+      <a class="phm" data-sh="tel" href="tel:+79041760166" aria-label="Позвонить"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
       <span class="sep s2"></span>
       <div class="soc">
-        <a class="tg" href="https://t.me/iva_flowers" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13.1l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.9c.9-.3 1.6.2 1.4 1.4z"/></svg></a>
-        <a class="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.8 17.3c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.3h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.2.6 3.2 2.1 3.9 4.9h-2.8c-.6-1.9-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
+        <a class="tg" data-sh="chan" href="https://t.me/iva_flowers" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13.1l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 2.9c.9-.3 1.6.2 1.4 1.4z"/></svg></a>
+        <a class="vk" data-sh="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.8 17.3c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.3h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.2.6 3.2 2.1 3.9 4.9h-2.8c-.6-1.9-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
       </div>
       <span class="sep"></span>
       <button class="cartb v4" id="cartb" aria-label="Корзина" data-z><span class="ci2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M2.5 10h19l-2.1 9.2a2 2 0 0 1-2 1.6H6.6a2 2 0 0 1-2-1.6z"/><path d="M8.5 13.5v4M12 13.5v4M15.5 13.5v4"/></svg></span><span class="l"><b id="carts">Корзина</b><span class="cq"><span id="cartn">0</span> в корзине</span><span class="ce">пока пусто</span></span></button>
@@ -603,12 +608,12 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero" data-sbg="hero_img">
   <div class="in">
     <div class="main">
       <div class="hlogo"><img src="logo.png" alt="Логотип салона цветов ИВА"></div>
-      <h1>Цветы с доставкой <em>по&nbsp;Екатеринбургу</em></h1>
-      <p class="lead">Современные букеты от 2 000 рублей. Быстрая и качественная сборка букетов. Бережная доставка по Екатеринбургу.</p>
+      <h1><span data-s="hero_a">Цветы с доставкой</span> <em data-s="hero_b">по Екатеринбургу</em></h1>
+      <p class="lead" data-s="hero_lead">Современные букеты от 2 000 рублей. Быстрая и качественная сборка букетов. Бережная доставка по Екатеринбургу.</p>
       <div class="acts">
         <a class="b1 bv" href="#vitrina">Онлайн-витрина</a>
         <a class="b1 bk" href="#katalog">Каталог букетов</a>
@@ -621,8 +626,8 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
   <div class="wrap">
     <div class="vtop">
       <div class="head">
-        <h2>Онлайн-<em>витрина</em></h2>
-        <p>Посмотрите, какие букеты можно собрать сегодня в каждом из наших салонов.</p>
+        <h2><span data-s="vit_a">Онлайн-</span><em data-s="vit_b">витрина</em></h2>
+        <p data-s="vit_p">Посмотрите, какие букеты можно собрать сегодня в каждом из наших салонов.</p>
       </div>
       <div class="salsw">
         <div class="tabs" role="tablist" aria-label="Салон" data-i="0">
@@ -633,15 +638,15 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
       </div>
     </div>
     <div class="grid" id="vgrid"></div>
-    <div class="vnote"><div><b id="vnt">Доставка и самовывоз</b><span id="vns"></span></div><a class="b3" href="https://t.me/+79041760166">Нужен другой букет? Напишите</a></div>
+    <div class="vnote"><div><b id="vnt">Доставка и самовывоз</b><span id="vns"></span></div><a class="b3" data-sh="tgp" data-s="vit_btn" href="https://t.me/+79041760166">Нужен другой букет? Напишите</a></div>
   </div>
 </section>
 
 <section class="sec kat" id="katalog">
   <div class="wrap">
     <div class="head">
-      <h2>Каталог <em>букетов</em></h2>
-      <p>Букеты, которые собираем круглый год, и сезонные. Выберите раздел.</p>
+      <h2><span data-s="kat_a">Каталог</span> <em data-s="kat_b">букетов</em></h2>
+      <p data-s="kat_p">Букеты, которые собираем круглый год, и сезонные. Выберите раздел.</p>
     </div>
     <div class="tiles" id="tiles"></div>
     <div class="khead"><h3 id="ktitle">Все букеты</h3><span id="kcount"></span></div>
@@ -653,36 +658,36 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 
 <section class="sec dost" id="dostavka">
   <div class="wrap">
-    <div class="head"><h2>Доставка <em>и самовывоз</em></h2><p>Способ получения выбираете в корзине.</p></div>
+    <div class="head"><h2><span data-s="dost_a">Доставка</span> <em data-s="dost_b">и самовывоз</em></h2><p data-s="dost_p">Способ получения выбираете в корзине.</p></div>
     <div class="dgrid">
-      <div class="dc"><div class="k">Доставка</div><h3>По Екатеринбургу</h3><p>Отправляем из салона на 8 Марта, 101 по тарифу Яндекс Такси. Стоимость доставки менеджер назовёт при подтверждении заказа.</p></div>
-      <div class="dc"><div class="k">Самовывоз</div><h3>8 Марта, 101</h3><p>Ежедневно 9:00-21:00. Здесь выдаём заказы с сайта и шары.</p></div>
-      <div class="dc"><div class="k">Самовывоз</div><h3>Кировградская, 4/2</h3><p>Ежедневно 9:00-21:00. Букеты с витрины этого салона выдаём только здесь, без доставки.</p></div>
+      <div class="dc"><div class="k">Доставка</div><h3 data-s="d1_h">По Екатеринбургу</h3><p data-s="d1_p">Отправляем из салона на 8 Марта, 101 по тарифу Яндекс Такси. Стоимость доставки менеджер назовёт при подтверждении заказа.</p></div>
+      <div class="dc"><div class="k">Самовывоз</div><h3>8 Марта, 101</h3><p><b class="hrs" data-s="h_m8">ежедневно 9:00-21:00</b><span data-s="d2_p">Здесь выдаём заказы с сайта и шары.</span></p></div>
+      <div class="dc"><div class="k">Самовывоз</div><h3>Кировградская, 4/2</h3><p><b class="hrs" data-s="h_kir">ежедневно 9:00-21:00</b><span data-s="d3_p">Букеты с витрины этого салона выдаём только здесь, без доставки.</span></p></div>
     </div>
-    <div class="dnote"><div><b>Не нашли нужный букет?</b><span>Пришлите фото примера или напишите бюджет, флорист соберёт похожий.</span></div><a class="b1" href="https://t.me/+79041760166">Написать менеджеру</a></div>
+    <div class="dnote"><div><b data-s="dn_t">Не нашли нужный букет?</b><span data-s="dn_s">Пришлите фото примера или напишите бюджет, флорист соберёт похожий.</span></div><a class="b1" data-sh="tgp" data-s="dn_btn" href="https://t.me/+79041760166">Написать менеджеру</a></div>
   </div>
 </section>
 
 <section class="sec kont" id="kontakty">
   <div class="wrap">
     <div class="kgrid">
-      <div class="pic" role="img" aria-label="Вывеска салона цветов ИВА"></div>
+      <div class="pic" data-sbg="kont_img" role="img" aria-label="Вывеска салона цветов ИВА"></div>
       <div class="info">
-        <div class="head"><h2>Контакты</h2><p>Заказы принимаем по телефону, в Telegram и MAX.</p></div>
+        <div class="head"><h2>Контакты</h2><p data-s="kont_p">Заказы принимаем по телефону, в Telegram и MAX.</p></div>
         <div class="salons">
-          <div class="salon"><div class="lab">Салон</div><b>8 Марта, 101</b><p>ежедневно 9:00-21:00<br>доставка и самовывоз</p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/8%20Марта%20101">Маршрут в 2ГИС</a></div>
-          <div class="salon"><div class="lab">Салон</div><b>Кировградская, 4/2</b><p>ежедневно 9:00-21:00<br>самовывоз</p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/Кировградская%204%2F2">Маршрут в 2ГИС</a></div>
+          <div class="salon"><div class="lab">Салон</div><b>8 Марта, 101</b><p><span data-s="h_m8">ежедневно 9:00-21:00</span><br><span data-s="srv_m8">доставка и самовывоз</span></p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/8%20Марта%20101">Маршрут в 2ГИС</a></div>
+          <div class="salon"><div class="lab">Салон</div><b>Кировградская, 4/2</b><p><span data-s="h_kir">ежедневно 9:00-21:00</span><br><span data-s="srv_kir">самовывоз</span></p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/Кировградская%204%2F2">Маршрут в 2ГИС</a></div>
         </div>
         <div class="kline">
-          <div><div class="lab">Телефон</div><a class="v" href="tel:+79041760166">+7 904 176-01-66</a><p>тот же номер в Telegram и MAX</p></div>
-          <div><div class="lab">Канал с витриной</div><a class="v" href="https://t.me/iva_flowers">t.me/iva_flowers</a><p>новые букеты каждый день</p></div>
+          <div><div class="lab">Телефон</div><a class="v" data-sh="tel" data-s="phone" href="tel:+79041760166">+7 904 176-01-66</a><p data-s="tel_note">тот же номер в Telegram и MAX</p></div>
+          <div><div class="lab">Канал с витриной</div><a class="v" data-sh="chan" data-s="chan" href="https://t.me/iva_flowers">t.me/iva_flowers</a><p data-s="chan_note">новые букеты каждый день</p></div>
         </div>
-        <div class="acts"><a class="b1" href="https://t.me/+79041760166">Написать в Telegram</a><a class="b2" href="tel:+79041760166">Позвонить</a></div>
+        <div class="acts"><a class="b1" data-sh="tgp" href="https://t.me/+79041760166">Написать в Telegram</a><a class="b2" data-sh="tel" href="tel:+79041760166">Позвонить</a></div>
       </div>
     </div>
     <div class="maps">
-      <div class="map"><div class="fr"><div class="lm" data-ll="56.812725,60.609006" role="img" aria-label="Салон ИВА на карте: 8 Марта, 101"></div></div><div class="cap"><div><div class="lab">Ленинский район</div><b>8 Марта, 101</b><p>доставка и самовывоз, 9:00-21:00</p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.812725%2C60.609006&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
-      <div class="map"><div class="fr"><div class="lm" data-ll="56.888126,60.604844" role="img" aria-label="Салон ИВА на карте: Кировградская, 4/2"></div></div><div class="cap"><div><div class="lab">Уралмаш</div><b>Кировградская, 4/2</b><p>самовывоз, 9:00-21:00</p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.888126%2C60.604844&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
+      <div class="map"><div class="fr"><div class="lm" data-ll="56.812725,60.609006" role="img" aria-label="Салон ИВА на карте: 8 Марта, 101"></div></div><div class="cap"><div><div class="lab" data-s="area_m8">Ленинский район</div><b>8 Марта, 101</b><p><span data-s="srv_m8">доставка и самовывоз</span>, <span data-s="h_m8">ежедневно 9:00-21:00</span></p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.812725%2C60.609006&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
+      <div class="map"><div class="fr"><div class="lm" data-ll="56.888126,60.604844" role="img" aria-label="Салон ИВА на карте: Кировградская, 4/2"></div></div><div class="cap"><div><div class="lab" data-s="area_kir">Уралмаш</div><b>Кировградская, 4/2</b><p><span data-s="srv_kir">самовывоз</span>, <span data-s="h_kir">ежедневно 9:00-21:00</span></p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.888126%2C60.604844&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
     </div>
   </div>
 </section>
@@ -691,13 +696,13 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 <footer class="foot">
   <div class="wrap">
     <div class="g">
-      <div><div class="lg"><img src="logo.png" alt="Логотип салона цветов ИВА"><b>ИВА</b></div><p>Цветы с доставкой по Екатеринбургу</p></div>
-      <div><h4>Салоны</h4><div class="s"><b>8 Марта, 101</b><span>9:00-21:00, доставка и самовывоз</span></div><div class="s"><b>Кировградская, 4/2</b><span>9:00-21:00, самовывоз</span></div></div>
+      <div><div class="lg"><img src="logo.png" alt="Логотип салона цветов ИВА"><b>ИВА</b></div><p data-s="foot_tag">Цветы с доставкой по Екатеринбургу</p></div>
+      <div><h4>Салоны</h4><div class="s"><b>8 Марта, 101</b><span class="sl"><span data-s="h_m8">ежедневно 9:00-21:00</span>, <span data-s="srv_m8">доставка и самовывоз</span></span></div><div class="s"><b>Кировградская, 4/2</b><span class="sl"><span data-s="h_kir">ежедневно 9:00-21:00</span>, <span data-s="srv_kir">самовывоз</span></span></div></div>
       <div><h4>Разделы</h4><ul><li><a href="#katalog" data-f="all">Каталог</a></li><li><a href="#vitrina">Онлайн-витрина</a></li><li><a href="#katalog" data-f="nev">Букет невесты</a></li><li><a href="#katalog" data-f="svof">Оформление мероприятий</a></li><li><a href="#katalog" data-f="shar">Шары</a></li><li><a href="#dostavka">Доставка и самовывоз</a></li><li><a href="#kontakty">Контакты</a></li></ul></div>
-      <div><h4>Связь</h4><a class="tel" href="tel:+79041760166">+7 904 176-01-66</a>
-        <ul class="fl"><li><a href="https://t.me/iva_flowers" target="_blank" rel="noopener">Telegram</a></li><li><a href="https://vk.com/club231914411" target="_blank" rel="noopener">ВКонтакте</a></li></ul></div>
+      <div><h4>Связь</h4><a class="tel" data-sh="tel" data-s="phone" href="tel:+79041760166">+7 904 176-01-66</a>
+        <ul class="fl"><li><a data-sh="chan" href="https://t.me/iva_flowers" target="_blank" rel="noopener">Telegram</a></li><li><a data-sh="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener">ВКонтакте</a></li></ul></div>
     </div>
-    <div class="bt"><span>ИП Кужина Ирина Ивановна · ИНН 661303864743 · ОГРНИП 325665800128599</span><a href="privacy.html">Политика конфиденциальности</a></div>
+    <div class="bt"><span data-s="req">ИП Кужина Ирина Ивановна · ИНН 661303864743 · ОГРНИП 325665800128599</span><a href="privacy.html">Политика конфиденциальности</a></div>
   </div>
 </footer>
 
@@ -710,94 +715,31 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 </aside>
 <div class="toast" id="toast"><span id="tt"></span><button id="topen">Открыть корзину</button></div>
 
-<a class="fab" href="tel:+79041760166" aria-label="Позвонить в салон"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+<a class="fab" data-sh="tel" href="tel:+79041760166" aria-label="Позвонить в салон"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
 
+<script src="data/site.js"></script>
+<script src="data/catalog.js"></script>
 <script>
-var TG='https://t.me/+79041760166';
+var IV=window.IVA_S||{};  /* тексты и контакты из data/site.js, их пишет панель */
+function iv(k,d){return IV[k]==null||IV[k]===''?d:IV[k]}
+function ivd(t){var d=String(t).replace(/\D/g,'');if(d.length===11&&d[0]==='8')d='7'+d.slice(1);return d}
+/* те же правила, что в admin/lib.php site_html(): data-s текст, data-sh ссылка, data-sbg фото, data-sp подсказка */
+function ivApply(){
+ if(!window.IVA_S)return;
+ document.querySelectorAll('[data-s]').forEach(function(el){var k=el.dataset.s,v=IV[k];if(v==null)return;el.textContent=(k==='chan'||k==='vk')?String(v).replace(/^https?:\/\//,''):v});
+ document.querySelectorAll('[data-sh]').forEach(function(el){var k=el.dataset.sh,v;
+  if(k==='tel')v='tel:+'+ivd(IV.phone);else if(k==='tgp')v='https://t.me/+'+ivd(IV.phone);else v=IV[k];if(v)el.setAttribute('href',v)});
+ document.querySelectorAll('[data-sbg]').forEach(function(el){var v=IV[el.dataset.sbg];if(v)el.style.backgroundImage="url('"+v+"')"});
+ document.querySelectorAll('[data-sp]').forEach(function(el){var v=IV[el.dataset.sp];if(v)el.setAttribute('placeholder',v)});
+}
+ivApply();
+var TG='https://t.me/+'+ivd(IV.phone||(document.querySelector('[data-s="phone"]')||{}).textContent||'');
 var S={m8:'8 Марта, 101',kir:'Кировградская, 4/2'};
 /* s: витрина салона; без s = каталог. p:null = цену называет менеджер */
-var P=[
- {id:'v1',s:'m8',n:'Букет с подсолнухами',p:4200,ph:['img/v1.jpg'],sv:['подсолнух','хризантема','роза','гвоздика','эвкалипт']},
- {id:'v2',s:'m8',n:'Кустовые розы и хризантемы',p:4100,ph:['img/v2.jpg'],sv:['кустовая роза','хризантема','роза','эвкалипт']},
- {id:'v3',s:'m8',n:'Розовый с антуриумом',p:4550,ph:['img/v3.jpg'],sv:['антуриум','пионовидная роза','хризантема','гвоздика']},
- {id:'v4',s:'m8',n:'Гвоздики и гортензия',p:3800,ph:['img/v4.jpg'],sv:['гортензия','гвоздика','хризантема','эвкалипт']},
- {id:'v5',s:'m8',n:'Гортензия и хризантемы',p:4550,ph:['img/v5.jpg'],sv:['гортензия','хризантема','кустовая роза']},
- {id:'v6',s:'m8',n:'Антуриум и протея',p:4170,ph:['img/v6.jpg'],sv:['антуриум','протея','гвоздика','роза']},
- {id:'k1',s:'kir',n:'Нежный букет с подсолнухом',p:3100,ph:['img/k1.jpg'],sv:['подсолнух','гвоздика','кустовая роза','хризантема']},
- {id:'k2',s:'kir',n:'Авторский букет с антуриумом',p:5100,ph:['img/k2.jpg','img/b/1660_1.jpg'],sv:['антуриум','хризантема','гвоздика','пшеница']},
- {id:'k3',s:'kir',n:'Букет с гортензией',p:3900,ph:['img/k3.jpg'],sv:['гортензия','пионовидная роза','хризантема']},
- {id:'k4',s:'kir',n:'Букет с французскими розами',p:3800,ph:['img/k4.jpg'],sv:['французская роза','кустовая роза','хризантема']},
- {id:'k5',s:'kir',n:'Розы и гвоздики',p:3250,ph:['img/b/1653_1.jpg','img/b/1653_2.jpg'],sv:['роза','гвоздика','хризантема','оксипеталум','эвкалипт']},
- {id:'k6',s:'kir',n:'Левкой и кустовые розы',p:3200,ph:['img/k6.jpg'],sv:['левкой','кустовая роза','хризантема']},
-
- {id:'b01',n:'Корзина с розами и хризантемами',p:5300,c:['korz'],ph:['img/b/1598_1.jpg','img/b/1598_0.jpg','img/b/1598_2.jpg'],sv:['пионовидная роза','кустовая роза','хризантема','амарант']},
- {id:'b11',n:'101 роза',p:null,zak:1,c:['mono','ot5'],ph:['img/b/1644_2.jpg','img/b/1644_3.jpg','img/b/1644_0.jpg','img/b/1644_1.jpg'],sv:['роза']},
- {id:'b02',n:'Цветы в сумочке с гортензией',p:2450,ph:['img/b/1579_3.jpg'],sv:['гортензия','гвоздика','хризантема','эустома']},
- {id:'b05',n:'Кустовые розы и сантини',p:3650,ph:['img/b/1579_2.jpg'],sv:['кустовая роза','роза','хризантема сантини']},
- {id:'b15',n:'Букет невесты белый',p:null,c:['nev'],ph:['img/b/1674_1.jpg','img/b/1674_0.jpg','img/b/1674_2.jpg'],sv:['эустома','роза','гвоздика','эвкалипт']},
- {id:'b10',n:'Подсолнухи поштучно',p:400,u:'шт',c:['mono'],ph:['img/b/1602_1.jpg','img/b/1602_0.jpg','img/b/1634_3.jpg'],sv:['подсолнух']},
- {id:'b06',n:'Розы с левкадендроном',p:4300,ph:['img/b/1579_5.jpg'],sv:['пионовидная роза','кустовая роза','левкадендрон','хризантема']},
- {id:'b03',n:'Цветы в сумочке с эустомой',p:2000,ph:['img/b/1579_4.jpg'],sv:['эустома','гвоздика','эвкалипт']},
- {id:'b17',n:'Коробка с цветами и конфетами',p:null,c:['prazd'],ph:['img/b/1612_0.jpg','img/b/1612_1.jpg'],sv:['хризантема','эустома','роза','гипсофила','конфеты']},
- {id:'b07',n:'Белый букет с хризантемами',p:3700,ph:['img/b/1653_3.jpg'],sv:['хризантема','роза','гвоздика','эвкалипт']},
- {id:'b04',n:'Букет из гвоздик',p:2750,ph:['img/b/1579_6.jpg'],sv:['гвоздика','диантус']},
- {id:'b12',n:'Розы Фрутетта',p:null,c:['mono'],ph:['img/b/1595_1.jpg','img/b/1595_0.jpg'],sv:['роза Фрутетта']},
- {id:'b08',n:'Кустовые розы в бирюзовом',p:3850,ph:['img/b/1653_5.jpg'],sv:['кустовая роза','эустома','хризантема','зелень']},
- {id:'b09',n:'Букет в светлых тонах',p:3450,ph:['img/b/1653_6.jpg'],sv:['роза','гвоздика','эустома','эвкалипт']},
- {id:'b13',n:'Антуриумы',p:null,c:['mono'],ph:['img/b/1632_1.jpg','img/b/1632_0.jpg'],sv:['антуриум']},
- {id:'b18',n:'Гортензия и гвоздики',p:3500,ph:['img/b/1653_0.jpg'],sv:['гортензия','гвоздика','хризантема','эвкалипт']},
- {id:'b14',n:'Каллы',p:null,c:['mono','nev'],ph:['img/b/1590_1.jpg','img/b/1590_0.jpg'],sv:['калла']},
- {id:'b16',n:'Букет невесты розовый',p:null,c:['nev'],ph:['img/b/1627_1.jpg','img/b/1627_0.jpg'],sv:['эустома','гвоздика','роза']},
- {id:'b23',n:'Букет невесты с эустомой и гвоздикой',p:null,c:['nev'],ph:['img/b/1627_2.jpg','img/b/1627_3.jpg'],sv:['эустома','гвоздика','эвкалипт']},
- {id:'b24',n:'Букет невесты с каллами и георгинами',p:null,c:['nev'],ph:['img/b/1562_1.jpg','img/b/1562_2.jpg'],sv:['калла','георгин','эустома','амарант']},
- {id:'b25',n:'Букет невесты из калл',p:null,c:['nev'],ph:['img/b/1588_0.jpg'],sv:['калла']},
- {id:'b26',n:'Осенняя композиция в корзине',p:3700,c:['korz'],ph:['img/b/1560_0.jpg','img/b/1560_1.jpg'],sv:['роза','гвоздика','эвкалипт']},
- {id:'b27',n:'Цветы в сумочке ко Дню учителя',p:null,c:['prazd'],ph:['img/b/1702_0.jpg'],sv:['гвоздика','кустовая роза','хризантема']},
- {id:'b28',n:'Бюджетные сумочки ко Дню учителя',p:null,c:['prazd'],ph:['img/b/1701_0.jpg'],sv:['кустовая роза','хризантема','гвоздика']},
- {id:'b19',n:'Набор шаров с цифрами',p:null,c:['shar'],ph:['img/b/1604_2.jpg','img/b/1604_4.jpg'],sv:['фольгированные цифры','латексные шары']},
- {id:'b20',n:'Набор шаров с надписью',p:null,c:['shar'],ph:['img/b/1604_1.jpg','img/b/1604_0.jpg','img/b/1604_3.jpg'],sv:['шар с надписью','фольгированное сердце','латексные шары']},
- {id:'b29',n:'Букет с зайчиками',p:null,c:['deti'],ph:['img/b/ir_2174.jpg','img/b/ir_2176.jpg'],sv:['гвоздика','диантус Грин трик','лагурус']},
- {id:'b30',n:'Букет «Черепашки-ниндзя»',p:null,c:['deti'],ph:['img/b/ir_3592.jpg'],sv:['диантус Грин трик','ромашка']},
- {id:'b31',n:'Миньон из хризантем',p:null,c:['deti'],ph:['img/b/ir_6693.jpg'],sv:['хризантема']},
- {id:'b32',n:'Оформление конференции',p:null,o:1,c:['svof'],ph:['img/b/ir_2178.jpg','img/b/ir_2179.jpg','img/b/ir_2180.jpg'],sv:[]},
- {id:'b33',n:'Оформление пикника',p:null,o:1,c:['svof'],ph:['img/b/ir_8469.jpg','img/b/ir_8470.jpg'],sv:[]},
- {id:'b34',n:'Спатифиллум',p:1100,c:['rast'],ph:['img/b/rast_1.jpg'],sv:['спатифиллум']},
- {id:'b35',n:'Фикус',p:1200,c:['rast'],ph:['img/b/rast_2.jpg'],sv:['фикус']},
- {id:'b36',n:'Орхидея',p:2400,c:['rast'],ph:['img/b/rast_3.jpg'],sv:['орхидея']},
- {id:'b37',n:'Орхидея',p:2400,c:['rast'],ph:['img/b/rast_4.jpg'],sv:['орхидея']},
- {id:'b38',n:'Орхидея',p:null,c:['rast'],ph:['img/b/rast_5.jpg'],sv:['орхидея']},
- {id:'b39',n:'Гвоздика розовая и белая',p:null,u:'шт',nk:1,c:['shtuk'],ph:['img/b/ir15_1803.jpg'],sv:['гвоздика']},
- {id:'b50',n:'Гвоздика жёлтая и зелёная',p:null,u:'шт',nk:1,c:['shtuk'],ph:['img/b/ir15_1802.jpg'],sv:['гвоздика']},
- {id:'b40',n:'Роза кустовая',p:null,u:'шт',nk:1,c:['shtuk'],ph:['img/b/ir15_1800.jpg'],sv:['роза кустовая']},
- {id:'b45',n:'Букет-гигант из красных роз',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_4779.jpg'],sv:['роза']},
- {id:'b46',n:'Букет-гигант из малиновых роз',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_1449.jpg'],sv:['роза']},
- {id:'b47',n:'Персиковый букет-гигант',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_6839.jpg'],sv:[]},
- {id:'b48',n:'Букет-гигант из малиновых и кремовых роз',p:null,zak:1,c:['mono','ot5'],ph:['img/b/ir15_5999.jpg'],sv:['роза']},
- {id:'b49',n:'Хризантема кустовая',p:null,nk:1,c:['shtuk'],ph:['img/b/ir15_1801.jpg'],sv:['хризантема']},
- /* сопутствующие: вазы и открытки от Ирины 17.10, игрушки пока заглушкой */
- {id:'d2',n:'Розовая ваза',p:1600,dop:1,c:['dop'],ph:['img/b/ir17_2442.jpg'],sv:['ваза']},
- {id:'d4',n:'Зелёная стеклянная ваза',p:2000,dop:1,c:['dop'],ph:['img/b/ir17_2441.jpg'],sv:['ваза']},
- {id:'d5',n:'Сиреневая ваза',p:2000,dop:1,c:['dop'],ph:['img/b/ir17_2440.jpg'],sv:['ваза']},
- {id:'d3',n:'Мини-открытка',p:50,dop:1,c:['dop'],ph:['img/b/ir17_2459.jpg','img/b/ir17_2460.jpg','img/b/ir17_2461.jpg','img/b/ir17_2462.jpg','img/b/ir17_2463.jpg'],sv:['открытка'],ds:'Мини-открытки «Для мамы», «Для неё» и «С любовью».'},
- {id:'d1',n:'Мягкие игрушки',p:null,na:1,dop:1,c:['dop'],ph:[],sv:['игрушка','мишка','зайка']}
-];
-var CAT=[
- {k:'do3',n:'Букеты и цветы до 3000 руб',img:'img/b/1579_4.jpg'},
- {k:'3do5',n:'Букеты от 3000-5000 руб',img:'img/b/1653_6.jpg'},
- {k:'ot5',n:'Букеты от 5000 руб',img:'img/b/1644_2.jpg'},
- {k:'nev',n:'Букет невесты',img:'img/b/1674_1.jpg'},
- {k:'svof',n:'Оформление мероприятий',img:'img/b/ir_2178.jpg'},
- {k:'shar',n:'Шары',img:'img/b/1604_2.jpg'},
- {k:'prazd',n:'Цветы на праздник',t:'Цветы на праздник: букеты к тематическим праздникам',img:'img/b/1702_0.jpg'},
- {k:'deti',n:'Детские букеты',img:'img/b/ir_2174.jpg'},
- {k:'korz',n:'Цветы в корзине',img:'img/b/1598_1.jpg'},
- {k:'mono',n:'Монобукеты',img:'img/b/1595_1.jpg'},
- {k:'rast',n:'Горшечные растения',img:'img/b/rast_3.jpg'},
- {k:'shtuk',n:'Цветы без упаковки',t:'Цветы без упаковки: цена за штуку',img:'img/b/ir15_1800.jpg'},
- {k:'dop',n:'Подарки к букету',t:'Подарки к букету: игрушки, вазы, открытки'}
-];
+var P=IVA.P.filter(function(x){return !x.off});  /* каталог в data/catalog.js, его пишет панель управления; off = скрыт с сайта */
+var CAT=IVA.CAT;
 /* «Часто ищут»: подпись, что ищем, фото букета из этой выдачи */
-var HOT=[['Розы','розы','img/v2.jpg'],['Гортензия','гортензия','img/v5.jpg'],['Подсолнухи','подсолнухи','img/v1.jpg'],['Антуриум','антуриум','img/v6.jpg'],['Букет невесты','букет невесты','img/b/1674_1.jpg'],['Монобукеты','монобукет','img/b/1595_1.jpg'],['Букеты-гиганты','гигант','img/b/ir15_4779.jpg'],['В корзине','корзина','img/b/1598_1.jpg'],['Шары','шары','img/b/1604_2.jpg'],['До 3 000 ₽','до 3000','img/b/1579_4.jpg']];
+var HOT=IVA.HOT?IVA.HOT.map(function(h){return [h.l,h.q,h.img]}):[['Розы','розы','img/v2.jpg'],['Гортензия','гортензия','img/v5.jpg'],['Подсолнухи','подсолнухи','img/v1.jpg'],['Антуриум','антуриум','img/v6.jpg'],['Букет невесты','букет невесты','img/b/1674_1.jpg'],['Монобукеты','монобукет','img/b/1595_1.jpg'],['Букеты-гиганты','гигант','img/b/ir15_4779.jpg'],['В корзине','корзина','img/b/1598_1.jpg'],['Шары','шары','img/b/1604_2.jpg'],['До 3 000 ₽','до 3000','img/b/1579_4.jpg']];
 var BY={};P.forEach(function(x){
   BY[x.id]=x;x.c=x.c||[];
   if(x.p&&!x.u&&!x.dop&&x.c.indexOf('rast')<0&&x.c.indexOf('shtuk')<0){x.c.push(x.p<3000?'do3':x.p<5000?'3do5':'ot5')}
@@ -833,12 +775,12 @@ function bindCards(root){
 var vs='m8';
 function drawV(){
   var g=$('#vgrid');g.innerHTML=P.filter(function(x){return x.s===vs}).map(card).join('');bindCards(g);
-  $('#vnt').textContent=vs==='m8'?'Доставка и самовывоз':'Только самовывоз';
-  $('#vns').textContent=vs==='m8'?'Букеты с этой витрины доставим по тарифу Яндекс Такси или выдадим в салоне на 8 Марта.':'Букеты с витрины Кировградской выдаём только в этом салоне.';
+  $('#vnt').textContent=vs==='m8'?iv('vit_m8_t','Доставка и самовывоз'):iv('vit_kir_t','Только самовывоз');
+  $('#vns').textContent=vs==='m8'?iv('vit_m8_s','Букеты с этой витрины доставим по тарифу Яндекс Такси или выдадим в салоне на 8 Марта.'):iv('vit_kir_s','Букеты с витрины Кировградской выдаём только в этом салоне.');
 }
 document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
   vs=b.dataset.s;document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
-  $('.tabs').dataset.i=vs==='kir'?1:0;$('#salp').innerHTML=vs==='kir'?'Уралмаш · <b>только самовывоз</b>':'Ленинский район · <b>доставка и самовывоз</b>';drawV();
+  $('.tabs').dataset.i=vs==='kir'?1:0;$('#salp').innerHTML=vs==='kir'?esc(iv('area_kir','Уралмаш'))+' · <b>'+esc(iv('vit_kir_t','Только самовывоз').toLowerCase())+'</b>':esc(iv('area_m8','Ленинский район'))+' · <b>'+esc(iv('vit_m8_t','Доставка и самовывоз').toLowerCase())+'</b>';drawV();
 })});
 
 /* КАТАЛОГ */
@@ -860,7 +802,7 @@ function kfPrice(){return kf==='do3'||kf==='3do5'||kf==='ot5'}
 function prOn(){return F.lo>0||F.hi<PMAX}
 function fOn(){return prOn()||F.svs.length||F.nal||F.so}
 function list(){
-  var L=kq?P.filter(function(x){return hit(x,kq)}):P.filter(function(x){return (!x.s||F.svs.length)&&(kf==='all'?!x.dop:x.c.indexOf(kf)>-1)});
+  var L=kq?find(kq):P.filter(function(x){return (!x.s||F.svs.length)&&(kf==='all'?!x.dop:x.c.indexOf(kf)>-1)});
   L=L.filter(function(x){
     if(prOn()&&(!x.p||x.u||x.p<F.lo||(F.hi<PMAX&&x.p>F.hi)))return false;
     if(F.svs.length&&!F.svs.some(function(v){return x.sv.indexOf(v)>-1}))return false;
@@ -933,22 +875,51 @@ function norm(t){return String(t).toLowerCase().replace(/ё/g,'е')}
 function stem(w){return w.length>3?w.replace(/(ами|ями|ов|ев|ей|ой|ий|ый|ая|ое|ые|ие|ом|ем|ах|ях|а|я|ы|и|е|у|ю|о)$/,''):w}
 /* подарки ищутся только по своему названию, без слова «букет» из раздела «Подарки к букету» */
 function words(x){return norm(x.n+' '+x.sv.join(' ')+' '+(x.dop?[]:x.c).map(function(k){var c=CAT.filter(function(z){return z.k===k})[0];return c?c.n:''}).join(' ')).split(/[^a-zа-я0-9]+/)}
-function hit(x,v){var W=words(x);
+/* слово запроса подходит к слову букета по началу; «роза» не находит «розовый»: это цвет, а не цветок (Роберт 21.10) */
+function wm(w,s){return w.indexOf(s)===0&&!(s==='роз'&&w.indexOf('розов')===0)}
+function toks(v){return norm(v).split(/\s+/).filter(Boolean).map(stem)}
+function hit(x,v){var W=words(x),T=toks(v);
   /* подарок находится, только если в запросе есть его слово (ваза, открытка, игрушка): «розы» не должны находить «Розовую вазу» */
-  if(x.dop&&!norm(v).split(/\s+/).filter(Boolean).some(function(t){var s=stem(t);return x.sv.some(function(w){return norm(w).indexOf(s)===0})}))return false;
-  return norm(v).split(/\s+/).filter(Boolean).every(function(t){var s=stem(t);return W.some(function(w){return w.indexOf(s)===0})})}
-function find(v){v=v.trim();if(!v)return null;return P.filter(function(x){return hit(x,v)})}
+  if(x.dop&&!T.some(function(s){return x.sv.some(function(w){return wm(norm(w),s)})}))return false;
+  return T.every(function(s){return W.some(function(w){return wm(w,s)})})}
+/* сначала букеты, где слово есть в названии, ниже те, где оно только в составе (Роберт 21.10) */
+function inName(x,T){var W=norm(x.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wm(w,s)})})}
+function find(v){v=v.trim();if(!v)return null;var T=toks(v),L=P.filter(function(x){return hit(x,v)});
+  return L.filter(function(x){return inName(x,T)}).concat(L.filter(function(x){return !inName(x,T)}))}
+/* запрос = название одного раздела («шары», «монобукеты»): первая строка подсказки и Enter открывают сам раздел */
+function findCat(v){var T=toks(v);if(!T.length)return null;
+  var M=CAT.filter(function(c){var W=norm(c.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wm(w,s)})})});
+  return M.length===1?M[0]:null}
+function inCat(k){return P.filter(function(x){return !x.s&&x.c.indexOf(k)>-1})}
 function drawS(){
-  var L=find(q.value);
+  var L=find(q.value),c=findCat(q.value);
   sr.hidden=false;
   if(!L){sr.innerHTML='<div class="lbl">Часто ищут</div><div class="chips">'+HOT.map(function(h){return '<button data-hot="'+h[1]+'"><img src="'+h[2]+'" alt="">'+h[0]+'</button>'}).join('')+'</div>';return}
-  if(!L.length){sr.innerHTML='<div class="none">Такого букета пока нет. <a href="'+TG+'">Спросите менеджера</a>, соберём.</div>';return}
-  sr.innerHTML=L.slice(0,6).map(function(x){return '<a class="it" href="#b/'+x.id+'" data-open="'+x.id+'">'+(x.ph.length?'<img src="'+x.ph[0]+'" alt="">':nph(x))+'<span>'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></span><b>'+(x.p?(x.u?'от ':'')+f(x.p):'')+'</b></a>'}).join('')+
-   '<button class="all" id="sall">Все результаты: '+L.length+'</button>';
-  $('#sall').addEventListener('click',goSearch);
+  if(!L.length&&!c){sr.innerHTML='<div class="none">Такого букета пока нет. <a href="'+TG+'">Спросите менеджера</a>, соберём.</div>';return}
+  var K=c?inCat(c.k):[],kx=K.filter(function(x){return x.ph.length})[0];
+  sr.innerHTML=(c?'<a class="it" href="#katalog" data-kat="'+c.k+'">'+(kx?'<img src="'+kx.ph[0]+'" alt="">':'<span class="nph"></span>')+'<span>'+esc(c.n)+'<small>раздел каталога</small></span><b>'+K.length+' шт.</b></a>':'')+
+   L.slice(0,6).map(function(x){return '<a class="it" href="#katalog" data-pick="'+x.id+'">'+(x.ph.length?'<img src="'+x.ph[0]+'" alt="">':nph(x))+'<span>'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></span><b>'+(x.p?(x.u?'от ':'')+f(x.p):'')+'</b></a>'}).join('')+
+   (L.length?'<button class="all" id="sall">Все результаты: '+L.length+'</button>':'');
+  var al=$('#sall');if(al)al.addEventListener('click',showAll);
 }
-sr.addEventListener('click',function(e){var h=e.target.closest('[data-hot]');if(h){q.value=h.dataset.hot;drawS();q.focus()}});
-function goSearch(){var v=q.value.trim();if(!v)return;kq=v;kn=30;sr.hidden=true;closeB();drawK();$('#katalog').scrollIntoView({behavior:'smooth'})}
+sr.addEventListener('click',function(e){var h=e.target.closest('[data-hot]');if(h){q.value=h.dataset.hot;drawS();q.focus();return}
+  var k=e.target.closest('[data-kat]');if(k){e.preventDefault();openCat(k.dataset.kat);return}
+  var o=e.target.closest('[data-pick]');if(o){e.preventDefault();pick(o.dataset.pick)}});
+/* выбор букета в подсказке: открывается его раздел (букет с витрины: вкладка его салона), страница едет к букету и обводит его розовым; карточку покупатель открывает сам (Ирина 20.10) */
+function pick(id){
+  var x=BY[id],c;if(!x)return;
+  sr.hidden=true;q.blur();closeB();
+  if(x.s){if(vs!==x.s)$('.tabs button[data-s="'+x.s+'"]').click();c=$('#vgrid .card[data-id="'+id+'"]')}
+  else{kq='';kf=x.c[0]||'all';F=fz();kn=Math.max(9,list().indexOf(x)+1);drawK();c=$('#kgrid .card[data-id="'+id+'"]')}
+  if(!c){openB(id,true);return}
+  document.querySelectorAll('.card.found').forEach(function(z){z.classList.remove('found')});
+  c.classList.add('found');c.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function openCat(k){kf=k;kq='';kn=9;F=fz();sr.hidden=true;q.blur();closeB();drawK();$('.khead').scrollIntoView({behavior:'smooth'})}
+/* «Все результаты»: сетка всего найденного, как было */
+function showAll(){var v=q.value.trim();if(!v)return;kq=v;kn=30;sr.hidden=true;closeB();drawK();$('#katalog').scrollIntoView({behavior:'smooth'})}
+/* Enter: название раздела открывает раздел, иначе первый найденный букет в своём разделе */
+function goSearch(){var v=q.value.trim();if(!v)return;var c=findCat(v);if(c){openCat(c.k);return}var L=find(v);if(L.length)pick(L[0].id);else showAll()}
 q.addEventListener('input',drawS);
 q.addEventListener('focus',drawS);
 q.addEventListener('keydown',function(e){if(e.key==='Enter')goSearch();if(e.key==='Escape'){sr.hidden=true;q.blur()}});
@@ -973,14 +944,14 @@ function openB(id,push){
     '<div class="binfo glass">'+
      (x.dop?'<div class="blk"><h3>Как добавить к букету</h3><p>'+(x.ds?esc(x.ds)+' ':'')+(x.p?'Положите в корзину вместе с букетом или напишите менеджеру, к какому букету добавить.':'Напишите менеджеру, к какому букету добавить. Он расскажет, что сейчас есть в салоне, и назовёт цену.')+'</p></div>':'')+
      (x.sv.length&&!x.dop?'<div class="blk"><h3>Состав</h3><p class="hint-sv">Нажмите на цветок, чтобы увидеть все букеты с ним</p><div class="pills">'+x.sv.map(function(s){return '<button data-sv="'+esc(s)+'" title="Все букеты, где есть '+esc(s)+'">'+esc(s)+'</button>'}).join('')+'</div></div>':'')+
-     (x.o?'<div class="blk"><h3>Как заказать</h3><p>Расскажите в Telegram о мероприятии: дата, место и формат. Менеджер рассчитает стоимость.</p></div>':'<div class="blk"><h3>Получение</h3><ul>'+
-      '<li'+(kirOnly?' class="off"':'')+'><b>Доставка по Екатеринбургу</b>по тарифу Яндекс Такси, из салона на 8 Марта</li>'+
-      '<li'+(kirOnly?' class="off"':'')+'><b>Самовывоз: 8 Марта, 101</b>ежедневно 9:00-21:00</li>'+
-      '<li'+(x.s==='m8'?' class="off"':'')+'><b>Самовывоз: Кировградская, 4/2</b>ежедневно 9:00-21:00</li>'+
+     (x.o?'<div class="blk"><h3>Как заказать</h3><p>'+esc(iv('b_o','Расскажите в Telegram о мероприятии: дата, место и формат. Менеджер рассчитает стоимость.'))+'</p></div>':'<div class="blk"><h3>Получение</h3><ul>'+
+      '<li'+(kirOnly?' class="off"':'')+'><b>Доставка по Екатеринбургу</b>'+esc(iv('deliv_line','по тарифу Яндекс Такси, из салона на 8 Марта'))+'</li>'+
+      '<li'+(kirOnly?' class="off"':'')+'><b>Самовывоз: 8 Марта, 101</b>'+esc(iv('h_m8','ежедневно 9:00-21:00'))+'</li>'+
+      '<li'+(x.s==='m8'?' class="off"':'')+'><b>Самовывоз: Кировградская, 4/2</b>'+esc(iv('h_kir','ежедневно 9:00-21:00'))+'</li>'+
      '</ul></div>')+
-     (x.zak?'<div class="blk"><h3>Собираем под заказ</h3><p>Букеты-гиганты собираем только под заказ. Напишите дату и сколько цветов нужно, менеджер назовёт цену и срок.</p></div>':'')+
-     (x.nk?'<div class="blk"><h3>Соберём нужное количество</h3><p>Менеджер подтвердит время, оплата после подтверждения.</p></div>':'')+
-     (x.na&&!x.dop?'<div class="blk"><h3>Уточнить наличие у менеджера</h3><p>Для этого букета сейчас нужно время, чтобы найти цветы. Менеджер подтвердит наличие, когда свяжется с вами по заказу.</p></div>':'')+
+     (x.zak?'<div class="blk"><h3>Собираем под заказ</h3><p>'+esc(iv('b_zak','Букеты-гиганты собираем только под заказ. Напишите дату и сколько цветов нужно, менеджер назовёт цену и срок.'))+'</p></div>':'')+
+     (x.nk?'<div class="blk"><h3>Соберём нужное количество</h3><p>'+esc(iv('b_nk','Менеджер подтвердит время, оплата после подтверждения.'))+'</p></div>':'')+
+     (x.na&&!x.dop?'<div class="blk"><h3>Уточнить наличие у менеджера</h3><p>'+esc(iv('b_na','Для этого букета сейчас нужно время, чтобы найти цветы. Менеджер подтвердит наличие, когда свяжется с вами по заказу.'))+'</p></div>':'')+
     '</div>'+
     '<div class="buy glass">'+
      (x.p?'<div class="pr">'+(x.u?'<small>от </small>':'')+f(x.p)+(x.u?'<small> за штуку</small>':'')+'</div>':'<div class="pr ask">Цену назовёт менеджер</div>')+
@@ -988,7 +959,7 @@ function openB(id,push){
      (x.p?'<div class="qrow"><div class="qty"><button data-q="-1" aria-label="Меньше">−</button><span id="bq">1</span><button data-q="1" aria-label="Больше">+</button></div><button class="b1" data-add="'+x.id+'" data-withq>В корзину</button></div>'+
       '<div class="sum"><span>Итого</span><b id="bsum">'+f(x.p)+'</b></div>'+(x.st?'<p class="hint" id="stmax" hidden>Нужно больше '+x.st+' шт? <a href="'+TG+'">Уточните наличие у менеджера</a></p>':''):'<div style="height:8px"></div>')+
      '<a class="'+(x.p?'b2':'b1')+' wide" href="'+TG+'">'+(x.p?'Спросить менеджера':'Узнать цену в Telegram')+'</a>'+
-     '<p class="hint">'+(kirOnly?'Букеты с витрины Кировградской выдаём только в этом салоне.':'Заказ придёт в салон, менеджер напишет в Telegram или позвонит и подтвердит время.')+'</p>'+
+     '<p class="hint">'+esc(kirOnly?iv('vit_kir_s','Букеты с витрины Кировградской выдаём только в этом салоне.'):iv('b_order','Заказ придёт в салон, менеджер напишет в Telegram или позвонит и подтвердит время.'))+'</p>'+
     '</div>'+
    '</div>'+
    (dop.length?'<div class="addon"><h2>Добавить к букету</h2><p>Игрушка, ваза или открытка поедут вместе с букетом.</p><div class="grid">'+dop.map(card).join('')+'</div></div>':'')+
@@ -1034,8 +1005,8 @@ function drawC(){
   if(kir&&!other)how='kir';
   if(!kir&&how==='kir')how='';
   var opts=[
-   {k:'m8',b:'Самовывоз: 8 Марта, 101',s:'ежедневно 9:00-21:00',dis:kir&&!other},
-   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:'ежедневно 9:00-21:00',dis:!kir}
+   {k:'m8',b:'Самовывоз: 8 Марта, 101',s:esc(iv('h_m8','ежедневно 9:00-21:00')),dis:kir&&!other},
+   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:!kir}
   ];
   db.innerHTML=C.map(function(i){var x=BY[i.id];return '<div class="ci"><img src="'+x.ph[0]+'" alt=""><div><div class="t">'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></div><div class="qty"><button data-cq="-1" data-id="'+x.id+'" aria-label="Меньше">−</button><span>'+i.q+'</span><button data-cq="1" data-id="'+x.id+'" aria-label="Больше">+</button></div></div><div class="r"><b>'+f(x.p*i.q)+'</b><button data-del="'+x.id+'">Убрать</button></div></div>'}).join('')+
    '<div class="total"><span>Букеты</span><b>'+f(sumC())+'</b></div>'+
@@ -1048,7 +1019,7 @@ function drawC(){
     '<label class="fld"><span>Комментарий или текст открытки</span><textarea id="cc"></textarea></label>'+
     '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a></span></label>'+
     '<button class="b1" id="send">Отправить заказ</button>'+
-    '<p class="note">Заказ придёт в Telegram салона. Оплата после подтверждения.</p>'+
+    '<p class="note">'+esc(iv('cart_note','Заказ придёт в Telegram салона. Оплата после подтверждения.'))+'</p>'+
    '</div>';
 }
 $('#db').addEventListener('click',function(e){
