@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Мастерская «Ананас»: гипс и аромасвечи, Омск</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Ubuntu:wght@400;500;700&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E1B18; --ink2:#5C554C; --line:#E4DDD2;
+  --bg:#FFFFFF; --bg2:#F6F3EE; --beige:#CEBFAA; --beige2:#E6DDD0; --beige3:#B8A68C;
+  --gold:#E4D2A6;
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
+  --wrap:1440px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Ubuntu,Arial,sans-serif;font-size:18px;line-height:1.55;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s6)}
+h1,h2,h3{font-family:Oswald,Arial,sans-serif;font-weight:500;line-height:1.12;letter-spacing:0}
+h2{font-size:48px;text-align:center}
+.lead{max-width:760px;margin:var(--s3) auto 0;text-align:center;color:var(--ink2)}
+
+/* кнопки: залитая, контурная, тёмная */
+.btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 var(--s5);border:2px solid var(--ink);border-radius:4px;font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:17px;letter-spacing:.04em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s;cursor:pointer;background:transparent;color:var(--ink)}
+.btn:hover{background:var(--ink);color:#fff}
+.btn-fill{background:var(--beige);border-color:var(--beige);color:var(--ink)}
+.btn-fill:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.btn-light{border-color:#fff;color:#fff}
+.btn-light:hover{background:#fff;color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff;width:100%}
+.btn-dark:hover{background:#000}
+
+/* ШАПКА */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:104px;gap:var(--s5)}
+.logo{display:flex;align-items:center;gap:var(--s3)}
+.logo .mk{height:60px}
+.logo .wd{height:34px;padding-left:var(--s3);border-left:1px solid var(--line)}
+.nav{display:flex;gap:var(--s5);font-size:17px}
+.nav a{padding:var(--s2) 0;border-bottom:1px solid transparent;transition:border-color .2s}
+.nav a:hover{border-color:var(--ink)}
+.tright{display:flex;align-items:center;gap:var(--s4)}
+.soc{display:flex;gap:var(--s2)}
+.soc a{width:44px;height:44px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;color:var(--ink);transition:background .2s}
+.soc a:hover{background:var(--beige)}
+.soc svg{width:22px;height:22px}
+.tel{text-align:right;line-height:1.3}
+.tel a{display:block;font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:22px;font-variant-numeric:tabular-nums}
+.tel span{font-size:14px;color:var(--ink2)}
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero{position:relative;height:760px;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 70% 65% at 50% 50%,rgba(30,27,24,.52) 0%,rgba(30,27,24,.36) 60%,rgba(30,27,24,.22) 100%)}
+.hero .in{position:relative;z-index:2;max-width:1200px;padding:0 var(--s6)}
+.hero h1{font-size:78px;font-weight:500;text-shadow:0 2px 24px rgba(30,27,24,.35)}
+.hero h1 b{font-weight:600;color:var(--gold)}
+.hero p{max-width:760px;margin:var(--s4) auto 0;font-size:21px;color:#fff;text-shadow:0 1px 12px rgba(30,27,24,.45)}
+.hero .acts{display:flex;gap:var(--s3);justify-content:center;margin-top:var(--s6)}
+
+/* МАСТЕР-КЛАССЫ */
+.mk-sec{padding:var(--s8) 0}
+.mk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s6);margin-top:var(--s7)}
+.card{display:flex;flex-direction:column;text-align:center}
+.card .ph{border-radius:16px;overflow:hidden;aspect-ratio:1/1}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card h3{font-size:30px;margin-top:var(--s4);min-height:68px;display:flex;align-items:center;justify-content:center}
+.card .price{font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:32px;margin-top:var(--s3);font-variant-numeric:tabular-nums}
+.card .price small{font-size:20px;font-weight:400;color:var(--ink2)}
+.acc{margin-top:var(--s4);text-align:left;border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:var(--s3) 0;cursor:pointer;font-size:18px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary svg{width:20px;height:20px;transition:transform .2s}
+.acc details[open] summary svg{transform:rotate(180deg)}
+.acc details p{padding:0 0 var(--s3);color:var(--ink2);font-size:17px}
+.card .btn{margin:var(--s5) auto 0}
+
+/* СЕРТИФИКАТЫ */
+.gift{position:relative;overflow:hidden;background:var(--beige);padding:var(--s8) 0}
+.gift .blobs{position:absolute;inset:0;width:100%;height:100%}
+.gift .wrap{position:relative;z-index:2}
+.gift .lead{color:var(--ink)}
+.gift ul{list-style:none;display:flex;justify-content:center;gap:var(--s6);margin-top:var(--s6)}
+.gift li{display:flex;align-items:center;gap:var(--s3);font-weight:500;font-size:19px}
+.gift li i{width:10px;height:10px;border-radius:50%;background:var(--ink);flex:none}
+.gift .c{text-align:center;margin-top:var(--s6)}
+
+/* ПРАЗДНИКИ */
+.ev{background:var(--bg2);padding:var(--s8) 0}
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s7)}
+.tile{position:relative;aspect-ratio:12/11;overflow:hidden;color:#fff}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.tile:hover img{transform:scale(1.04)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(30,27,24,.62) 0%,rgba(30,27,24,.18) 55%,rgba(30,27,24,.05) 100%)}
+.tile .t{position:absolute;left:var(--s5);top:var(--s5);right:var(--s5);z-index:2}
+.tile h3{font-size:40px;font-weight:600;line-height:1.05;display:inline;border-bottom:2px solid rgba(255,255,255,.85)}
+.tile p{margin-top:var(--s3);font-size:17px;max-width:320px;color:rgba(255,255,255,.95)}
+.nw{white-space:nowrap}
+.ev .c{text-align:center;margin-top:var(--s6)}
+
+/* ЗАПИСЬ */
+.zap{position:relative;padding:var(--s8) 0;overflow:hidden}
+.zap>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.zap::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(30,27,24,.5)}
+.zap .wrap{position:relative;z-index:2}
+.zap h2{color:#fff}
+.zap-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--s5);max-width:1120px;margin:var(--s6) auto 0}
+.fcard{background:rgba(238,231,220,.95);border-radius:16px;padding:var(--s6)}
+.fld{margin-bottom:var(--s4)}
+.fld label{display:block;font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:17px;margin-bottom:var(--s2)}
+.fld label em{font-family:Ubuntu,Arial,sans-serif;font-style:normal;font-weight:400;color:var(--ink2);font-size:15px}
+.inp{height:52px;border-bottom:1.5px solid var(--beige3);display:flex;align-items:center;justify-content:space-between;color:#8C8173;font-size:17px}
+.inp svg{width:20px;height:20px;color:var(--ink)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.agree{display:flex;gap:var(--s2);align-items:flex-start;font-size:15px;color:var(--ink2);margin:var(--s2) 0 var(--s4)}
+.agree i{width:20px;height:20px;border:1.5px solid var(--ink);border-radius:3px;flex:none;margin-top:2px}
+.agree a{text-decoration:underline}
+.ccard{background:#fff;border-radius:16px;padding:var(--s6);display:flex;flex-direction:column}
+.ccard h3{font-size:30px}
+.ci{margin-top:var(--s4)}
+.ci b{display:block;font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.ci span,.ci a{font-size:19px}
+.ci .big{font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:28px;font-variant-numeric:tabular-nums}
+.ccard .soc{margin-top:var(--s4)}
+.ccard .btn{margin-top:var(--s5)}
+
+/* ПОДВАЛ */
+.foot{border-top:1px solid var(--line);background:#fff}
+.foot .wrap{display:flex;align-items:center;justify-content:space-between;height:96px;font-size:15px;color:var(--ink2);gap:var(--s4)}
+.foot .logo .mk{height:44px}
+.foot .logo .wd{height:26px}
+.foot a:hover{color:var(--ink)}
+
+/* круглая кнопка записи */
+.fab{position:fixed;right:var(--s5);bottom:var(--s5);z-index:60;width:112px;height:112px;border-radius:50%;background:var(--beige);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:15px;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 10px 30px rgba(30,27,24,.22);border:3px solid #fff}
+.fab svg{width:26px;height:26px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><img class="mk" src="img/logo_mark_d.svg" alt="Мастерская «Ананас»"><img class="wd" src="img/logo_word_d.svg" alt=""></a>
+    <nav class="nav">
+      <a href="#mk">Мастер-классы</a>
+      <a href="#gift">Сертификаты</a>
+      <a href="#ev">Праздники</a>
+      <a href="#zap">Запись</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="tright">
+      <div class="soc">
+        <a href="https://t.me/ankacivic" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.36 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.23c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345q-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663q5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg></a>
+        <a href="https://wa.me/79659716020" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52s.198-.298.298-.497c.099-.198.05-.371-.025-.52s-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074s2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413s.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg></a>
+        <a href="https://vk.com/ananas_hm" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m9.489.004l.729-.003h3.564l.73.003l.914.01l.433.007l.418.011l.403.014l.388.016l.374.021l.36.025l.345.03l.333.033c1.74.196 2.933.616 3.833 1.516s1.32 2.092 1.516 3.833l.034.333l.029.346l.025.36l.02.373l.025.588l.012.41l.013.644l.009.915l.004.98l-.001 3.313l-.003.73l-.01.914l-.007.433l-.011.418l-.014.403l-.016.388l-.021.374l-.025.36l-.03.345l-.033.333c-.196 1.74-.616 2.933-1.516 3.833s-2.092 1.32-3.833 1.516l-.333.034l-.346.029l-.36.025l-.373.02l-.588.025l-.41.012l-.644.013l-.915.009l-.98.004l-3.313-.001l-.73-.003l-.914-.01l-.433-.007l-.418-.011l-.403-.014l-.388-.016l-.374-.021l-.36-.025l-.345-.03l-.333-.033c-1.74-.196-2.933-.616-3.833-1.516S.367 20.221.171 18.48l-.034-.333l-.029-.346l-.025-.36l-.02-.373l-.025-.588l-.012-.41l-.013-.644l-.009-.915l-.004-.98l.001-3.313l.003-.73l.01-.914l.007-.433l.011-.418l.014-.403l.016-.388l.021-.374l.025-.36l.03-.345l.033-.333c.196-1.74.616-2.933 1.516-3.833S3.779.367 5.52.171l.333-.034l.346-.029l.36-.025l.373-.02l.588-.025l.41-.012l.644-.013zM6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.83-4.41-4.11-5.01c1.28-.74 3.08-2.54 3.51-4.98h-2.58c-.56 1.98-2.22 3.78-3.8 3.95V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92"/></svg></a>
+      </div>
+      <div class="tel">
+        <a href="tel:+79659716020">+7 965 971-60-20</a>
+        <span>ежедневно 12:00–20:00</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="img/hero_c.jpg" alt="Ароматические свечи в гипсовых стаканах ручной работы">
+  <div class="in">
+    <h1>Мастерская <b>«Ананас»</b> в Омске</h1>
+    <p>Гипсовые изделия и ароматические свечи ручной работы. Групповые и индивидуальные мастер-классы для взрослых и детей.</p>
+    <div class="acts">
+      <a class="btn btn-fill" href="#mk">Выбрать мастер-класс</a>
+      <a class="btn btn-light" href="tel:+79659716020">Позвонить</a>
+    </div>
+  </div>
+</section>
+
+<section class="mk-sec" id="mk">
+  <div class="wrap">
+    <h2>Мастер-классы</h2>
+    <p class="lead">Цвета росписи и аромат свечи выбираете сами, а готовую работу забираете домой.</p>
+    <div class="mk-grid">
+      <div class="card">
+        <div class="ph"><img src="img/mk_nevalyashka.jpg" alt="Шкатулка «Неваляшка» с ароматической свечой"></div>
+        <h3>Шкатулка «Неваляшка»<br>с ароматической свечой</h3>
+        <div class="price">1 300 ₽<small> / чел.</small></div>
+        <div class="acc">
+          <details><summary>Что делаем<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></summary><p>Расписываете шкатулку-неваляшку из гипса и заливаете в неё ароматическую свечу.</p></details>
+          <details><summary>Как записаться<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></summary><p>Напишите в Telegram или позвоните. Место бронируется по предоплате.</p></details>
+        </div>
+        <a class="btn" href="#zap">Записаться</a>
+      </div>
+      <div class="card">
+        <div class="ph"><img src="img/mk_tykva.jpg" alt="Ароматическая свеча в шкатулке «Тыква»"></div>
+        <h3>Свеча в шкатулке «Тыква»</h3>
+        <div class="price">1 300 ₽<small> / чел.</small></div>
+        <div class="acc">
+          <details><summary>Что делаем<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></summary><p>Гипсовая тыква с крышкой: расписываете её и заливаете внутрь свечу с ароматом на выбор.</p></details>
+          <details><summary>Как записаться<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></summary><p>Напишите в Telegram или позвоните. Место бронируется по предоплате.</p></details>
+        </div>
+        <a class="btn" href="#zap">Записаться</a>
+      </div>
+      <div class="card">
+        <div class="ph"><img src="img/mk_konfetnica.jpg" alt="Гипсовая конфетница с объёмным декором"></div>
+        <h3>Конфетница<br>с гипсовым декором</h3>
+        <div class="price">1 000 ₽<small> / чел.</small></div>
+        <div class="acc">
+          <details><summary>Что делаем<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></summary><p>Украшаете гипсовую конфетницу объёмным декором и расписываете на свой вкус.</p></details>
+          <details><summary>Как записаться<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></summary><p>Напишите в Telegram или позвоните. Место бронируется по предоплате.</p></details>
+        </div>
+        <a class="btn" href="#zap">Записаться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gift" id="gift">
+  <svg class="blobs" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path fill="#E6DDD0" d="M-40 60c60-70 190-60 230 10s-10 160-100 170S-100 130-40 60z"/>
+    <path fill="#BFAE96" d="M180 380c50-40 150-30 170 30s-40 120-110 110s-110-100-60-140z"/>
+    <path fill="#DCD1C1" d="M420 -30c80-20 170 20 160 90s-110 90-170 60s-70-130 10-150z"/>
+    <path fill="#C4B49C" d="M610 430c70-50 190-30 200 40s-80 100-150 80s-110-80-50-120z"/>
+    <path fill="#E6DDD0" d="M900 20c60-40 160-10 160 60s-90 100-150 70s-70-90-10-130z"/>
+    <path fill="#BFAE96" d="M1080 300c80-60 210-30 220 50s-90 130-170 110s-130-100-50-160z"/>
+    <path fill="#DCD1C1" d="M1300 40c70-30 170 10 170 90s-100 110-160 80s-80-140-10-170z"/>
+    <path fill="#C4B49C" d="M1340 420c40-30 110-10 110 40s-60 70-100 50s-50-60-10-90z"/>
+  </svg>
+  <div class="wrap">
+    <h2>Подарочные сертификаты</h2>
+    <p class="lead">Подарите мастер-класс: человек сам выберет дату и изделие, которое захочет сделать.</p>
+    <ul>
+      <li><i></i>Номинал от 1 000 ₽</li>
+      <li><i></i>На любой мастер-класс</li>
+      <li><i></i>Оформим в мастерской или пришлём в Telegram</li>
+    </ul>
+    <div class="c"><a class="btn" href="#zap">Заказать сертификат</a></div>
+  </div>
+</section>
+
+<section class="ev" id="ev">
+  <div class="wrap">
+    <h2>Праздники</h2>
+    <div class="ev-grid">
+      <a class="tile" href="#zap"><img src="img/ev_dr.jpg" alt="День рождения в мастерской"><div class="t"><h3>Дни рождения</h3><p>Собираете подруг и вместе делаете картины с гипсовым декором</p></div></a>
+      <a class="tile" href="#zap"><img src="img/ev_kino.jpg" alt="Киновечер в мастерской"><div class="t"><h3>Киновечера</h3><p>Смотрим фильм и расписываем подносы и шкатулки</p></div></a>
+      <a class="tile" href="#zap"><img src="img/ev_svidanie.jpg" alt="Картины с мастер-класса «Свидание»"><div class="t"><h3>Свидание</h3><p>Мастер-класс на двоих: каждый делает свою картину</p></div></a>
+      <a class="tile" href="#zap"><img src="img/ev_deti.jpg" alt="Детский мастер-класс по росписи"><div class="t"><h3>Детские <span class="nw">мастер-классы</span></h3><p>Создание и роспись гипсовых изделий</p></div></a>
+      <a class="tile" href="#zap"><img src="img/ev_priroda.jpg" alt="Мастер-класс на природе"><div class="t"><h3><span class="nw">Мастер-класс</span> на природе</h3><p>Привозим мольберты и материалы в парк</p></div></a>
+      <a class="tile" href="#zap"><img src="img/ev_podarki.jpg" alt="Аромасаше в подарочной упаковке"><div class="t"><h3>Подарки клиентам и коллегам</h3><p>Аромасаше и свечи партиями в подарочной упаковке</p></div></a>
+    </div>
+    <div class="c"><a class="btn" href="#zap">Обсудить праздник</a></div>
+  </div>
+</section>
+
+<section class="zap" id="zap">
+  <img src="img/zapis_bg.jpg" alt="">
+  <div class="wrap">
+    <h2>Запись на мастер-класс</h2>
+    <div class="zap-grid">
+      <div class="fcard">
+        <div class="fld"><label>Ваше имя</label><div class="inp">Как к вам обращаться</div></div>
+        <div class="fld"><label>Телефон <em>(обязательно)</em></label><div class="inp">+7 (___) ___-__-__</div></div>
+        <div class="fld"><label>Мастер-класс</label><div class="inp">Выберите из списка<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div></div>
+        <div class="row2">
+          <div class="fld"><label>Сколько человек</label><div class="inp">1<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div></div>
+          <div class="fld"><label>Удобная дата</label><div class="inp">дд.мм.гггг</div></div>
+        </div>
+        <div class="agree"><i></i><span>Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html">политикой конфиденциальности</a></span></div>
+        <div class="btn btn-dark">Отправить заявку</div>
+      </div>
+      <div class="ccard" id="kontakty">
+        <h3>Контакты</h3>
+        <div class="ci"><b>Адрес</b><span>Омск, 2-я Транспортная, 61,<br>офис 106, 1 этаж</span></div>
+        <div class="ci"><b>Часы работы</b><span>Ежедневно 12:00–20:00</span></div>
+        <div class="ci"><b>Телефон</b><a class="big" href="tel:+79659716020">+7 965 971-60-20</a></div>
+        <div class="ci"><b>Расписание мастер-классов</b><a href="https://t.me/ananas_hm" target="_blank" rel="noopener">в Telegram-канале @ananas_hm</a></div>
+        <div class="soc">
+          <a href="https://t.me/ankacivic" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.36 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.23c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345q-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663q5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg></a>
+          <a href="https://wa.me/79659716020" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52s.198-.298.298-.497c.099-.198.05-.371-.025-.52s-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074s2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413s.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/></svg></a>
+          <a href="https://vk.com/ananas_hm" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m9.489.004l.729-.003h3.564l.73.003l.914.01l.433.007l.418.011l.403.014l.388.016l.374.021l.36.025l.345.03l.333.033c1.74.196 2.933.616 3.833 1.516s1.32 2.092 1.516 3.833l.034.333l.029.346l.025.36l.02.373l.025.588l.012.41l.013.644l.009.915l.004.98l-.001 3.313l-.003.73l-.01.914l-.007.433l-.011.418l-.014.403l-.016.388l-.021.374l-.025.36l-.03.345l-.033.333c-.196 1.74-.616 2.933-1.516 3.833s-2.092 1.32-3.833 1.516l-.333.034l-.346.029l-.36.025l-.373.02l-.588.025l-.41.012l-.644.013l-.915.009l-.98.004l-3.313-.001l-.73-.003l-.914-.01l-.433-.007l-.418-.011l-.403-.014l-.388-.016l-.374-.021l-.36-.025l-.345-.03l-.333-.033c-1.74-.196-2.933-.616-3.833-1.516S.367 20.221.171 18.48l-.034-.333l-.029-.346l-.025-.36l-.02-.373l-.025-.588l-.012-.41l-.013-.644l-.009-.915l-.004-.98l.001-3.313l.003-.73l.01-.914l.007-.433l.011-.418l.014-.403l.016-.388l.021-.374l.025-.36l.03-.345l.033-.333c.196-1.74.616-2.933 1.516-3.833S3.779.367 5.52.171l.333-.034l.346-.029l.36-.025l.373-.02l.588-.025l.41-.012l.644-.013zM6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.83-4.41-4.11-5.01c1.28-.74 3.08-2.54 3.51-4.98h-2.58c-.56 1.98-2.22 3.78-3.8 3.95V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92"/></svg></a>
+        </div>
+        <a class="btn" href="https://2gis.ru/omsk/firm/70000001090821226" target="_blank" rel="noopener">Как добраться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="#"><img class="mk" src="img/logo_mark_d.svg" alt="Мастерская «Ананас»"><img class="wd" src="img/logo_word_d.svg" alt=""></a>
+    <span>Мастерская «Ананас» · Омск, 2-я Транспортная, 61</span>
+    <a href="privacy.html">Политика конфиденциальности</a>
+    <a href="tel:+79659716020">+7 965 971-60-20</a>
+  </div>
+</footer>
+
+<a class="fab" href="https://t.me/ankacivic" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472c-.18 1.898-.962 6.502-1.36 8.627c-.168.9-.499 1.201-.82 1.23c-.696.065-1.225-.46-1.9-.902c-1.056-.693-1.653-1.124-2.678-1.8c-1.185-.78-.417-1.21.258-1.91c.177-.184 3.247-2.977 3.307-3.23c.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345q-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44c-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663q5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg>Записаться</a>
+
+</body>
+</html>
