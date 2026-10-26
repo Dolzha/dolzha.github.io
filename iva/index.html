@@ -987,6 +987,7 @@ document.addEventListener('click',function(e){
 window.addEventListener('popstate',function(){var m=location.hash.match(/^#b\/(\w+)/);if(m)openB(m[1],false);else closeB()});
 
 /* КОРЗИНА */
+var ORDER_URL='https://functions.yandexcloud.net/d4emlvlq7i0jv3fsr0bu';  /* посредник Клиенты/iva-relay: Яндекс Облако → Vercel → Telegram салона */
 var C=[],how='',done=false;
 try{C=JSON.parse(localStorage.getItem('iva_cart')||'[]').filter(function(i){return BY[i.id]&&BY[i.id].p})}catch(e){C=[]}
 function save(){try{localStorage.setItem('iva_cart',JSON.stringify(C))}catch(e){}}
@@ -1017,6 +1018,7 @@ function drawC(){
     '<h3>Получение</h3><div class="opts">'+opts.map(function(o){return '<label class="opt'+(o.dis?' dis':'')+(how===o.k?' on':'')+'"><input type="radio" name="how" value="'+o.k+'"'+(how===o.k?' checked':'')+(o.dis?' disabled':'')+'><span><b>'+o.b+'</b><small>'+o.s+'</small></span></label>'}).join('')+'</div>'+
     '<label class="fld" style="margin-top:16px"><span>Дата и время</span><input id="cw" placeholder="например, сегодня к 18:00"></label>'+
     '<label class="fld"><span>Комментарий или текст открытки</span><textarea id="cc"></textarea></label>'+
+    '<input id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">'+
     '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a></span></label>'+
     '<button class="b1" id="send">Отправить заказ</button>'+
     '<p class="note">'+esc(iv('cart_note','Заказ придёт в Telegram салона. Оплата после подтверждения.'))+'</p>'+
@@ -1037,10 +1039,33 @@ function send(){
   var names=C.map(function(i){return BY[i.id].n+(i.q>1?' × '+i.q:'')}).join(', ');
   var sum=sumC();
   var hw={m8:'самовывоз, 8 Марта, 101',kir:'самовывоз, Кировградская, 4/2'}[how];
-  var nm=esc($('#cn').value.trim()),ph=esc($('#cp').value.trim());
-  done=true;C=[];save();badge();
-  $('#db').innerHTML='<div class="done"><div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-10"/></svg></div><h3>Заказ отправлен</h3><p>'+nm+', спасибо! Менеджер напишет в Telegram или позвонит на '+ph+', подтвердит букет и время.</p><div class="sum"><b>'+esc(names)+'</b><br>'+hw+'<br>'+f(sum)+'</div><a class="b2" href="#katalog" id="cback">Вернуться в каталог</a></div>';
-  $('#cback').addEventListener('click',function(){done=false;closeC()});
+  var o={id:String(Math.floor(1000+Math.random()*9000)),how:how,name:$('#cn').value.trim(),phone:$('#cp').value.trim(),when:$('#cw').value.trim(),comment:$('#cc').value.trim(),hp:$('#chp').value,
+    items:C.map(function(i){return {n:BY[i.id].n,q:i.q,p:BY[i.id].p}})};
+  var nm=esc(o.name),ph=esc(o.phone),btn=$('#send');
+  btn.disabled=true;btn.textContent='Отправляем…';
+  function sent(){
+    done=true;C=[];save();badge();
+    $('#db').innerHTML='<div class="done"><div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-10"/></svg></div><h3>Заказ отправлен</h3><p>'+nm+', спасибо! Менеджер напишет в Telegram или позвонит на '+ph+', подтвердит букет и время.</p><div class="sum">Заказ №'+o.id+'<br><b>'+esc(names)+'</b><br>'+hw+'<br>'+f(sum)+'</div><a class="b2" href="#katalog" id="cback">Вернуться в каталог</a></div>';
+    $('#cback').addEventListener('click',function(){done=false;closeC()});
+  }
+  /* посредник не ответил (нет сети, провайдер режет адрес): заказ не теряем, покупатель шлёт его в чат салона сам */
+  function fail(){
+    var txt='Заказ с сайта №'+o.id+'\n'+o.items.map(function(i){return i.n+(i.q>1?' × '+i.q:'')+': '+f(i.p*i.q)}).join('\n')+'\nИтого: '+f(sum)+'\nПолучение: '+hw+(o.when?'\nКогда: '+o.when:'')+'\nИмя: '+o.name+'\nТелефон: '+o.phone+(o.comment?'\nКомментарий: '+o.comment:'');
+    done=true;
+    $('#db').innerHTML='<div class="done"><h3>Отправьте заказ в Telegram</h3><p>Сайт не смог передать заказ сам. Нажмите кнопку: текст заказа скопируется, откроется чат салона, вставьте его и отправьте.</p><textarea class="sum" id="otx" readonly rows="8" style="width:100%;resize:none;font:inherit;font-size:14px;line-height:1.45">'+esc(txt)+'</textarea><a class="b1" href="'+TG+'" target="_blank" rel="noopener" id="ctg">Скопировать и открыть чат</a><p class="note">Или позвоните: <a href="tel:+'+ivd(IV.phone||'79041760166')+'">'+esc(iv('phone','+7 904 176-01-66'))+'</a></p></div>';
+    $('#ctg').addEventListener('click',function(){
+      var t=$('#otx');t.select();
+      try{navigator.clipboard.writeText(txt)}catch(e){}
+      try{document.execCommand('copy')}catch(e){}
+      C=[];save();badge();
+    });
+  }
+  if(!ORDER_URL){fail();return}
+  var ac=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ac)ac.abort()},20000);
+  /* text/plain: простой запрос без предварительной проверки CORS */
+  fetch(ORDER_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(o),signal:ac?ac.signal:undefined})
+   .then(function(r){return r.json()}).then(function(d){clearTimeout(tm);if(d&&d.ok)sent();else fail()})
+   .catch(function(e){clearTimeout(tm);try{console.warn('order',e)}catch(x){}fail()});
 }
 function openC(){if(!done)drawC();$('#drawer').classList.add('on');$('#shade').classList.add('on');document.body.classList.add('lock')}
 function closeC(){$('#drawer').classList.remove('on');$('#shade').classList.remove('on');if(bp.hidden)document.body.classList.remove('lock')}
