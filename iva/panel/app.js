@@ -477,8 +477,26 @@
         URL.revokeObjectURL(u);
         c.toBlob(function (b) { ok(b || file); }, 'image/jpeg', 0.86);
       };
-      im.onerror = function () { URL.revokeObjectURL(u); ok(file); };
+      im.onerror = function () {
+        URL.revokeObjectURL(u);
+        /* фото с айфона (HEIC) Chrome на Windows не открывает: переводим в JPG и ужимаем уже его (26.10 Ирина) */
+        heic(file).then(function (j) { return j ? shrink(j, max) : file; }, function () { return file; }).then(ok);
+      };
       im.src = u;
+    });
+  }
+
+  /* heic-to.js весит 3 МБ, тянем только когда пришёл HEIC; лежит рядом с app.js */
+  var heicLib;
+  function heic(file) {
+    if (file.heicDone) { return Promise.resolve(null); }
+    heicLib = heicLib || new Promise(function (ok, bad) {
+      var s = document.createElement('script'); s.src = 'heic-to.js'; s.onload = ok;
+      s.onerror = function () { heicLib = null; bad(); }; document.body.appendChild(s);
+    });
+    return heicLib.then(function () { return window.HeicTo.isHeic(file); }).then(function (yes) {
+      if (!yes) { return null; }
+      return window.HeicTo({ blob: file, type: 'image/jpeg', quality: 0.92 }).then(function (j) { j.heicDone = true; return j; });
     });
   }
   function upload(files) {
