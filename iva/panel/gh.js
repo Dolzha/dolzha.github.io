@@ -386,7 +386,7 @@
         if (u[0] === 0xFF && u[1] === 0xD8 && u[2] === 0xFF) { ext = 'jpg'; }
         else if (u[0] === 0x89 && u[1] === 0x50 && u[2] === 0x4E && u[3] === 0x47) { ext = 'png'; }
         else if (String.fromCharCode.apply(null, u.subarray(0, 4)) === 'RIFF' && String.fromCharCode.apply(null, u.subarray(8, 12)) === 'WEBP') { ext = 'webp'; }
-        if (!ext) { return { ok: false, error: 'Нужен JPG, PNG или WEBP' }; }
+        if (!ext) { return { ok: false, error: 'Этот формат фото сайт не принимает (так бывает с фото с айфона). Сохраните фото как JPG или сделайте снимок экрана и загрузите его' }; }
         var t = new Date(), z = function (n) { return (n < 10 ? '0' : '') + n; };
         var rnd = Array.from(crypto.getRandomValues(new Uint8Array(3))).map(function (b) { return (b < 16 ? '0' : '') + b.toString(16); }).join('');
         var name = 'img/u/up-' + t.getFullYear() + z(t.getMonth() + 1) + z(t.getDate()) + '-' + z(t.getHours()) + z(t.getMinutes()) + z(t.getSeconds()) + '-' + rnd + '.' + ext;

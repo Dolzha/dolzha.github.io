@@ -89,7 +89,7 @@
   var tt;
   function say(t, err) {
     var el = $('#toast'); el.textContent = t; el.className = 'show' + (err ? ' err' : '');
-    clearTimeout(tt); tt = setTimeout(function () { el.className = ''; }, err ? 4200 : 2200);
+    clearTimeout(tt); tt = setTimeout(function () { el.className = ''; }, err ? 7000 : 2200);
   }
   function stChip(x, btn) {
     var k = stOf(x);
@@ -485,17 +485,23 @@
     var list = Array.prototype.slice.call(files || []);
     if (!list.length) { return; }
     var th = $('#thumbs'); th.insertAdjacentHTML('afterbegin', '<div class="th up" id="upl">Загрузка…</div>');
-    var chain = Promise.resolve();
+    var chain = Promise.resolve(), added = 0, bad = '';
     list.forEach(function (f) {
       chain = chain.then(function () { return shrink(f); }).then(function (blob) {
         var fd = new FormData(); fd.append('photo', blob, 'photo.jpg');
         return fetch('api.php?do=upload', { method: 'POST', body: fd, credentials: 'same-origin', headers: { 'X-CSRF': window.CSRF } }).then(function (r) { return r.json(); });
       }).then(function (r) {
-        if (!r.ok) { say(r.error, true); return; }
-        W.ph.push(r.src); dirty = true;
-      }, function () { say('Фото не загрузилось, проверьте интернет', true); });
+        if (!r.ok) { bad = r.error; return; }
+        W.ph.push(r.src); dirty = true; added++;
+      }, function () { bad = 'Фото не загрузилось, проверьте интернет'; });
     });
-    chain.then(function () { if (W) { drawPh(); say('Фото добавлено, не забудьте «Сохранить»'); } });
+    /* ошибку не перекрываем «Фото добавлено»: 26.10 Ирина видела «добавлено», а фото не загрузилось */
+    chain.then(function () {
+      if (!W) { return; }
+      drawPh();
+      if (bad) { say((added ? 'Добавлено фото: ' + added + '. Остальные не загрузились: ' : '') + bad, true); }
+      else { say('Фото добавлено, не забудьте «Сохранить»'); }
+    });
   }
 
   /* порядок фото перетаскиванием: тянем миниатюру, первая становится обложкой */
