@@ -4,15 +4,14 @@
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Byrmatovvv, LED-студия: установка Bi-LED линз в Новосибирске</title>
-<meta name="description" content="Установка Bi-LED линз, замена штатного ксенона, полировка и ремонт фар, настройка света на стенде. Новосибирск, ул. Ольги Жилиной, 12/1.">
+<title>Byrmatovvv, LED-студия: установка Bi-LED линз</title>
+<meta name="description" content="Установка Bi-LED линз, замена штатных линз, полировка фар, настройка света на стенде. Новосибирск, ул. Ольги Жилиной, 12/1.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
 <style>
 :root{
-  --acc:#8FB8FF;
-  --bg:#0B0B0D; --ink:#1C1C1F; --mute:#5C5C63; --paper:#FFFFFF; --paper2:#F3F3F1;
+  --bg:#0B0B0D; --ink:#1C1C1F; --mute:#5C5C63; --paper:#FFFFFF; --paper2:#F3F3F1; --line:#DADAD6;
   --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
   --ease:cubic-bezier(.2,.8,.2,1);
 }
@@ -21,18 +20,36 @@ html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,sans-serif;font-size:18px;line-height:1.55;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-h1,h2,h3,.wm b{font-family:"Inter Tight",Inter,sans-serif}
+h1,h2,h3,.name b{font-family:"Inter Tight",Inter,sans-serif}
 .wrap{max-width:1440px;margin:0 auto;padding:0 var(--s6)}
 svg{width:1em;height:1em}
+section{padding:var(--s8) 0}
+.dark{background:var(--bg);color:#fff}
+.soft{background:var(--paper2)}
 
-/* шапка поверх героя, как у Detail Dr; соцсети и телефон справа */
+/* заголовок блока = пункт меню, крупно (правило 26.10) */
+h2{font-size:72px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s6)}
+.hrow p{font-size:19px;color:var(--mute);max-width:560px;text-align:right}
+.dark .hrow p{color:rgba(255,255,255,.7)}
+
+/* кнопки как у Detail Dr: прямоугольные, залитая и с окантовкой */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 var(--s4);font-size:16px;font-weight:600;border:1px solid currentColor;transition:background .2s var(--ease)}
+.btn svg{font-size:19px}
+.btn.b-w{background:#fff;color:#0B0B0D;border-color:#fff}
+.btn.b-w:hover{background:#E6E6E6}
+.btn.b-wl{color:#fff;border-color:rgba(255,255,255,.75)}
+.btn.b-wl:hover{background:rgba(255,255,255,.1)}
+.btn.b-b{background:#0B0B0D;color:#fff;border-color:#0B0B0D}
+.btn.b-bl{color:#0B0B0D;border-color:#0B0B0D}
+.btn.b-bl:hover{background:rgba(0,0,0,.05)}
+
+/* шапка поверх героя; название текстом (логотипа нет), телефон и Telegram справа */
 header{position:absolute;inset:0 0 auto 0;z-index:5;color:#fff}
 header .wrap{display:flex;align-items:center;gap:var(--s5);height:112px}
-.logo{display:flex;align-items:center;gap:12px;line-height:1}
-.logo svg{width:34px;height:34px;color:#fff}
-.wm{display:flex;flex-direction:column}
-.wm i{font-style:normal;font-size:13px;font-weight:500;letter-spacing:.04em;opacity:.8;margin-bottom:5px}
-.wm b{font-size:28px;font-weight:800;letter-spacing:-.03em}
+.name{display:flex;flex-direction:column;line-height:1}
+.name i{font-style:normal;font-size:13px;font-weight:500;letter-spacing:.04em;opacity:.8;margin-bottom:5px}
+.name b{font-size:28px;font-weight:800;letter-spacing:-.03em}
 nav{display:flex;gap:var(--s5);margin-left:auto;font-size:16px;font-weight:500}
 nav a{opacity:.86;transition:opacity .2s var(--ease)}
 nav a:hover{opacity:1}
@@ -40,86 +57,87 @@ nav a:hover{opacity:1}
 .ph{text-align:right;line-height:1.25}
 .ph b{display:block;font-size:18px;font-weight:600}
 .ph span{font-size:13px;opacity:.7}
-.rnd{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.55);display:grid;place-items:center;font-size:20px;transition:background .2s var(--ease)}
+.rnd{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.55);display:grid;place-items:center;font-size:20px}
 .rnd:hover{background:rgba(255,255,255,.12)}
 
-/* главный экран */
-.hero{position:relative;min-height:880px;color:#fff;background:#000 url(img/hero.jpg) center 45%/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.62) 42%,rgba(0,0,0,.18) 78%),linear-gradient(0deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,0) 40%),linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 22%)}
-.hero .wrap{position:relative;width:100%;padding-bottom:var(--s7)}
-.hero h1{font-size:84px;font-weight:800;letter-spacing:-.035em;line-height:1.0;max-width:980px}
-.lead{font-size:21px;line-height:1.5;max-width:860px;margin-top:var(--s5);opacity:.92}
-.btns{display:flex;gap:var(--s3);margin-top:var(--s5)}
-.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 var(--s4);font-size:16px;font-weight:600;border:1px solid currentColor;transition:background .2s var(--ease),color .2s var(--ease)}
-.btn svg{font-size:19px}
-.btn.fill{background:#fff;color:#0B0B0D;border-color:#fff}
-.btn.fill:hover{background:#E6E6E6}
-.btn.line{color:#fff;border-color:rgba(255,255,255,.75)}
-.btn.line:hover{background:rgba(255,255,255,.1)}
-.facts{display:grid;grid-template-columns:repeat(3,300px);gap:var(--s3);margin-top:var(--s7)}
-.fact{border:1px solid rgba(255,255,255,.28);padding:var(--s3) var(--s4)}
-.fact b{display:block;font-family:"Inter Tight";font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
-.fact span{font-size:15px;opacity:.75}
+/* главный экран: работа в боксе, без карточек цифр */
+.hero{position:relative;min-height:860px;padding:0;color:#fff;background:#000 url(img/hero.jpg) center 50%/cover no-repeat;display:flex;align-items:flex-end}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,10,.85) 0%,rgba(8,8,10,.62) 36%,rgba(8,8,10,.08) 68%,rgba(8,8,10,0) 100%),linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 24%)}
+.hero .wrap{position:relative;width:100%;padding-bottom:var(--s8)}
+.hero h1{font-size:96px;font-weight:800;letter-spacing:-.04em;line-height:.98}
+.lead{font-size:21px;line-height:1.55;max-width:640px;margin-top:var(--s5);color:rgba(255,255,255,.9)}
+.btns{display:flex;gap:var(--s3);margin-top:var(--s6)}
 
-/* подбор по машине, устройство Morimoto */
-.pick{background:#000;color:#fff}
-.pick .wrap{display:grid;grid-template-columns:360px 1fr 1fr 1fr 220px;gap:var(--s3);align-items:center;padding-top:var(--s5);padding-bottom:var(--s5)}
-.pick h2{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
-.pick h2 small{display:block;font-family:Inter;font-size:14px;font-weight:400;opacity:.65;letter-spacing:0;margin-top:6px}
-.sel{height:54px;background:#fff;color:#6B6B72;display:flex;align-items:center;justify-content:space-between;padding:0 var(--s3);font-size:16px}
-.sel svg{color:#0B0B0D;font-size:18px}
-.sel.off{background:#2A2A2E;color:#8C8C93}
-.sel.off svg{color:#8C8C93}
-.pick .btn{justify-content:center;width:100%}
-
-/* общий заголовок блока, как у Detail Dr: строка-метка + жирный заголовок */
-.kick{font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--mute)}
-.sh h2{font-size:56px;font-weight:800;letter-spacing:-.035em;line-height:1.04;margin-top:var(--s3)}
-.sh p{font-size:19px;color:var(--mute);margin-top:var(--s3);max-width:760px}
-
-/* услуги: плитки Morimoto в шрифтах Detail Dr */
-#uslugi{padding:var(--s8) 0}
+/* услуги: плитки Morimoto, заголовок сверху по центру */
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s6)}
 .tile{position:relative;aspect-ratio:4/5;background:#000 center/cover no-repeat;color:#fff;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
-.tile:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.35) 30%,rgba(0,0,0,.1) 52%,rgba(0,0,0,.88) 100%)}
+.tile:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.3) 30%,rgba(0,0,0,.08) 55%,rgba(0,0,0,.85) 100%)}
 .tile>*{position:relative}
 .tile h3{font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1.05;text-align:center;padding:var(--s5) var(--s4) 0}
-.tb{padding:0 var(--s4) var(--s4)}
-.tb p{font-size:16px;line-height:1.45;opacity:.9}
-.tr{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid rgba(255,255,255,.22)}
-.price{font-size:15px;font-weight:600}
-.tr a{font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.7);padding:9px 16px;white-space:nowrap}
-.tr a:hover{background:rgba(255,255,255,.12)}
-.note{margin-top:var(--s4);border:1px solid #DADAD6;padding:var(--s4) var(--s5);display:flex;justify-content:space-between;align-items:center;gap:var(--s5)}
-.note b{font-family:"Inter Tight";font-size:22px;font-weight:700;letter-spacing:-.02em}
-.note span{color:var(--mute);font-size:16px}
-.note a{flex:none;height:50px;padding:0 var(--s4);display:inline-flex;align-items:center;gap:10px;background:#0B0B0D;color:#fff;font-size:15px;font-weight:600}
+.tile p{font-size:16px;line-height:1.5;color:rgba(255,255,255,.9);padding:0 var(--s4) var(--s5)}
 
-/* работы: 1 большая + 4, карточки Detail Dr с заголовком поверх фото справа */
-#raboty{background:var(--paper2);padding:var(--s8) 0}
-.quote{text-align:center;max-width:1100px;margin:0 auto}
-.quote q{display:block;font-family:"Inter Tight";font-size:52px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-top:var(--s3);quotes:"«" "»"}
-.quote span{display:block;font-size:16px;color:var(--mute);margin-top:var(--s3)}
-.works{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:330px 330px;gap:var(--s3);margin-top:var(--s7)}
+/* подбор линз: устройство «Shop by vehicle» Morimoto */
+.finder{margin-top:var(--s6);border:1px solid rgba(255,255,255,.2);padding:var(--s5);display:grid;grid-template-columns:1fr 1fr 1fr 240px;gap:var(--s3)}
+.sel{height:58px;background:#fff;color:#6B6B72;display:flex;align-items:center;justify-content:space-between;padding:0 var(--s3);font-size:16px}
+.sel svg{color:#0B0B0D;font-size:18px}
+.sel.off{background:#1E1E22;color:#8C8C93}
+.sel.off svg{color:#8C8C93}
+.finder .btn{height:58px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s3)}
+.step{border-top:1px solid rgba(255,255,255,.2);padding-top:var(--s4)}
+.step b{display:block;font-family:"Inter Tight";font-size:15px;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:var(--s2)}
+.step span{font-family:"Inter Tight";font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+
+/* работы: 1 большая + 4, подписи справа как у Detail Dr */
+.works{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:330px 330px;gap:var(--s3);margin-top:var(--s6)}
 .w{position:relative;overflow:hidden;color:#fff;background:#000 center/cover no-repeat}
-.w:before{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.2) 45%,rgba(0,0,0,.6) 100%)}
+.w:before{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.2) 45%,rgba(0,0,0,.55) 100%)}
 .w .cap{position:absolute;top:var(--s4);right:var(--s4);left:var(--s4);text-align:right}
 .w h3{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
-.w p{font-size:15px;opacity:.88;margin-top:6px}
+.w p{font-size:15px;color:rgba(255,255,255,.88);margin-top:6px}
 .w.big{grid-row:span 2;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;background:#0B0B0D}
+.w.big:before{display:none}
 .w.big .half{background:center/cover no-repeat;position:relative}
 .w.big .half+.half{border-left:2px solid #fff}
 .w.big .lbl{position:absolute;left:var(--s3);bottom:var(--s3);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,.7);padding:6px 12px;background:rgba(0,0,0,.35)}
 .w.big .cap{position:static;grid-column:1/-1;padding:var(--s4);text-align:right}
-.w.big:before{display:none}
-.w.big .cap,.w.big .lbl{z-index:2}
 .w.big h3{font-size:40px}
+
+/* цены: прайс строками */
+.plist{margin-top:var(--s6);border-top:2px solid var(--ink)}
+.prow{display:grid;grid-template-columns:1.1fr 1.4fr 300px;gap:var(--s5);align-items:center;padding:var(--s4) 0;border-bottom:1px solid var(--line)}
+.prow h3{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.prow p{font-size:17px;color:var(--mute)}
+.prow .price{font-family:"Inter Tight";font-size:20px;font-weight:700;text-align:right}
+.pfoot{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);margin-top:var(--s5)}
+.pfoot span{font-size:19px;font-weight:500}
+
+/* отзывы */
+.quote{font-family:"Inter Tight";font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.2;color:rgba(255,255,255,.72);margin-top:var(--s4);max-width:900px}
+.rate{display:flex;align-items:center;gap:var(--s3);font-size:17px;color:rgba(255,255,255,.75)}
+.rate b{font-family:"Inter Tight";font-size:40px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.stars{display:flex;gap:2px;color:#fff;font-size:18px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s6)}
+.rev{border:1px solid rgba(255,255,255,.18);padding:var(--s5);display:flex;flex-direction:column;gap:var(--s3)}
+.rev .stars{font-size:15px}
+.rev p{font-size:17px;line-height:1.55;color:rgba(255,255,255,.88);flex:1}
+.rev b{font-family:"Inter Tight";font-size:18px;font-weight:700}
+.rev span{font-size:14px;color:rgba(255,255,255,.5);margin-left:8px;font-weight:400}
+
+/* контакты */
+.kont{display:grid;grid-template-columns:1fr 1fr;gap:var(--s7);align-items:stretch}
+.kinfo{display:flex;flex-direction:column}
+.kl{margin-top:var(--s6);border-top:2px solid var(--ink)}
+.krow{display:grid;grid-template-columns:180px 1fr;gap:var(--s4);padding:var(--s4) 0;border-bottom:1px solid var(--line);align-items:baseline}
+.krow span{font-size:15px;color:var(--mute)}
+.krow b{font-family:"Inter Tight";font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.kinfo .btns{margin-top:var(--s6)}
+.kphoto{background:#000 center/cover no-repeat;min-height:640px}
 
 footer{background:#0B0B0D;color:#fff}
 footer .wrap{display:flex;align-items:center;gap:var(--s5);height:104px;font-size:15px}
-footer .wm b{font-size:22px}
-footer .logo svg{width:28px;height:28px}
-footer .fi{margin-left:auto;display:flex;gap:var(--s5);opacity:.75}
+footer .name b{font-size:22px}
+footer .fi{margin-left:auto;display:flex;gap:var(--s5);color:rgba(255,255,255,.7)}
 footer .fi a{text-decoration:underline;text-underline-offset:3px}
 
 .fab{position:fixed;right:32px;bottom:32px;z-index:9;width:62px;height:62px;border-radius:50%;background:#fff;color:#0B0B0D;display:grid;place-items:center;font-size:28px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
@@ -129,16 +147,13 @@ footer .fi a{text-decoration:underline;text-underline-offset:3px}
 
 <header>
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Byrmatovvv, LED-студия">
-      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="15" cy="20" r="11"/><circle cx="15" cy="20" r="4.5"/><path d="M30 13.5h8M31 20h7M30 26.5h8"/></svg>
-      <span class="wm"><i>LED-студия</i><b>Byrmatovvv</b></span>
-    </a>
+    <a class="name" href="#top"><i>LED-студия</i><b>Byrmatovvv</b></a>
     <nav>
       <a href="#uslugi">Услуги</a>
       <a href="#podbor">Подбор линз</a>
       <a href="#raboty">Работы</a>
-      <a href="#uslugi">Цены</a>
-      <a href="#raboty">Отзывы</a>
+      <a href="#ceny">Цены</a>
+      <a href="#otzyvy">Отзывы</a>
       <a href="#kontakty">Контакты</a>
     </nav>
     <div class="hc">
@@ -150,90 +165,77 @@ footer .fi a{text-decoration:underline;text-underline-offset:3px}
 
 <section class="hero" id="top">
   <div class="wrap">
-    <h1>Установка Bi-LED линз в&nbsp;Новосибирске</h1>
-    <p class="lead">Ставим Bi-LED линзы вместо штатной оптики, ремонтируем и&nbsp;полируем фары. После установки настраиваем свет на стенде: он яркий, с&nbsp;ровной светотеневой границей и&nbsp;не&nbsp;слепит встречных.</p>
+    <h1>Установка Bi&#8209;LED линз</h1>
+    <p class="lead">Ставим Bi-LED линзы в&nbsp;штатные фары, полируем стёкла и&nbsp;выставляем свет на стенде. Дорогу видно ярко и&nbsp;чётко, а&nbsp;встречных свет не&nbsp;слепит. На&nbsp;работу даём гарантию.</p>
     <div class="btns">
-      <a class="btn fill" href="https://t.me/byrmatovvv"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M19.777 4.93a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" clip-rule="evenodd"/></svg>Записаться в Telegram</a>
-      <a class="btn line" href="#raboty">Смотреть работы</a>
+      <a class="btn b-w" href="#podbor">Подобрать линзы</a>
+      <a class="btn b-wl" href="#raboty">Смотреть работы</a>
     </div>
-    <div class="facts">
-      <div class="fact"><b>5,0</b><span>19 отзывов в 2ГИС</span></div>
-      <div class="fact"><b>1 день</b><span>на комплекс работ по фарам</span></div>
-      <div class="fact"><b>Стенд</b><span>проверка света после установки</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="pick" id="podbor">
-  <div class="wrap">
-    <h2>Подбор линз под&nbsp;вашу машину<small>Подскажем, какие линзы подойдут к вашим фарам</small></h2>
-    <div class="sel">Марка<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div>
-    <div class="sel off">Модель<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div>
-    <div class="sel off">Год выпуска<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div>
-    <a class="btn line" href="https://t.me/byrmatovvv">Узнать цену</a>
   </div>
 </section>
 
 <section id="uslugi">
   <div class="wrap">
-    <div class="sh">
-      <div class="kick">Услуги</div>
-      <h2>Что делаем с фарами</h2>
-      <p>От замены линз до полировки стёкол и настройки светотеневой границы.</p>
-    </div>
+    <h2>Услуги</h2>
     <div class="tiles">
       <div class="tile" style="background-image:url(img/u1.jpg)">
         <h3>Установка Bi&#8209;LED линз</h3>
-        <div class="tb"><p>Ставим линзы в штатные фары. Ближний и дальний свет в одном модуле, чёткая светотеневая граница.</p>
-          <div class="tr"><span class="price">Зависит от модели линз</span></div></div>
+        <p>Ближний и дальний свет в одном модуле, ровная светотеневая граница. Светят ярко даже в сильный дождь.</p>
       </div>
       <div class="tile" style="background-image:url(img/u2.jpg)">
-        <h3>Замена ксенона на&nbsp;Bi&#8209;LED</h3>
-        <div class="tb"><p>Меняем штатные ксеноновые и биксеноновые линзы, а также слабые штатные LED-линзы.</p>
-          <div class="tr"><span class="price">Считаем по типу фары</span></div></div>
+        <h3>Замена штатных линз</h3>
+        <p>Выгоревший ксенон, уставший биксенон и слабые штатные LED-линзы меняем на Bi-LED.</p>
       </div>
       <div class="tile" style="background-image:url(img/u3.jpg)">
         <h3>Полировка фар</h3>
-        <div class="tb"><p>Убираем мутность и желтизну. Полируем стёкла фар с обеих сторон: снаружи и изнутри.</p>
-          <div class="tr"><span class="price">Цена за пару фар</span></div></div>
+        <p>Снимаем мутность и желтизну. Стёкла полируем с двух сторон: снаружи и изнутри.</p>
       </div>
       <div class="tile" style="background-image:url(img/u4.jpg)">
-        <h3>Ремонт фар</h3>
-        <div class="tb"><p>Переделываем неудачную установку линз, чиним корректоры фар.</p>
-          <div class="tr"><span class="price">Цена после осмотра</span></div></div>
+        <h3>Переделка чужой установки</h3>
+        <p>Перебираем фары после неудачной установки: выставляем линзы заново, чиним корректоры.</p>
       </div>
       <div class="tile" style="background-image:url(img/u5.jpg)">
         <h3>Противотуманные фары</h3>
-        <div class="tb"><p>Полируем стёкла туманок и ставим новые лампы.</p>
-          <div class="tr"><span class="price">По модели автомобиля</span></div></div>
+        <p>Полируем стёкла туманок и ставим новые лампы.</p>
       </div>
       <div class="tile" style="background-image:url(img/u6.jpg)">
         <h3>Настройка света на стенде</h3>
-        <div class="tb"><p>Настраиваем светотеневую границу: свет ложится на дорогу, а не в глаза встречным.</p>
-          <div class="tr"><span class="price">По объёму работ</span></div></div>
+        <p>Проверяем свет на стенде и выставляем границу: свет ложится на дорогу и не бьёт в глаза встречным.</p>
       </div>
-    </div>
-    <div class="note">
-      <div><b>Здесь будет таблица с ценами</b><br><span>Пришлите цены, я не стал придумывать их за вас.</span></div>
-      <a href="https://t.me/byrmatovvv"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M19.777 4.93a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" clip-rule="evenodd"/></svg>Написать в Telegram</a>
     </div>
   </div>
 </section>
 
-<section id="raboty">
+<section class="dark" id="podbor">
   <div class="wrap">
-    <div class="quote">
-      <div class="kick">Из отзыва в 2ГИС</div>
-      <q>Теперь каждый камушек на дороге видно</q>
-      <span>Денис, 15 октября</span>
+    <div class="hrow">
+      <h2>Подбор линз</h2>
+      <p>Перед работой показываем разные модели линз и объясняем разницу. Вариант выбираете под свои задачи и бюджет.</p>
     </div>
+    <div class="finder">
+      <div class="sel">Марка<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div>
+      <div class="sel off">Модель<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div>
+      <div class="sel off">Год выпуска<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></div>
+      <a class="btn b-w" href="https://t.me/byrmatovvv">Подобрать линзы</a>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><span>Пишете марку, модель и&nbsp;год машины</span></div>
+      <div class="step"><b>02</b><span>Подбираем линзы под вашу фару и&nbsp;называем цену</span></div>
+      <div class="step"><b>03</b><span>Ставим линзы и&nbsp;проверяем свет на стенде</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="raboty">
+  <div class="wrap">
+    <h2>Работы</h2>
     <div class="works">
       <div class="w big">
         <div class="half" style="background-image:url(img/r_do.jpg)"><span class="lbl">Было</span></div>
         <div class="half" style="background-image:url(img/r_posle.jpg)"><span class="lbl">Стало</span></div>
         <div class="cap"><h3>Bi-LED в штатных фарах</h3><p>Мутная штатная оптика → Bi-LED линзы и прозрачное стекло</p></div>
       </div>
-      <div class="w" style="background-image:url(img/r2.jpg)"><div class="cap"><h3>Subaru Legacy</h3><p>Вечерняя проверка света</p></div></div>
+      <div class="w" style="background-image:url(img/r2.jpg)"><div class="cap"><h3>Свет на дороге</h3><p>Ближний после установки линз</p></div></div>
       <div class="w" style="background-image:url(img/r3.jpg)"><div class="cap"><h3>Nissan Note 2014</h3><p>Граница ближнего света</p></div></div>
       <div class="w" style="background-image:url(img/r4.jpg)"><div class="cap"><h3>Вид с места водителя</h3><p>Ближний в гаражном проезде</p></div></div>
       <div class="w" style="background-image:url(img/r5.jpg)"><div class="cap"><h3>Проверка в боксе</h3><p>Свет на воротах</p></div></div>
@@ -241,9 +243,66 @@ footer .fi a{text-decoration:underline;text-underline-offset:3px}
   </div>
 </section>
 
-<footer id="kontakty">
+<section id="ceny">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Byrmatovvv, LED-студия"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="15" cy="20" r="11"/><circle cx="15" cy="20" r="4.5"/><path d="M30 13.5h8M31 20h7M30 26.5h8"/></svg><span class="wm"><i>LED-студия</i><b>Byrmatovvv</b></span></a>
+    <h2>Цены</h2>
+    <div class="plist">
+      <div class="prow"><h3>Установка Bi&#8209;LED линз</h3><p>Подбор линз, установка в штатные фары, настройка на стенде</p><span class="price">Зависит от модели линз</span></div>
+      <div class="prow"><h3>Замена штатных линз</h3><p>Ксенон, биксенон, штатные LED-линзы на Bi-LED</p><span class="price">Считаем по типу фары</span></div>
+      <div class="prow"><h3>Полировка фар</h3><p>Стёкла снаружи и изнутри, без мутности и желтизны</p><span class="price">За пару фар</span></div>
+      <div class="prow"><h3>Переделка чужой установки</h3><p>Перебор фар, линзы заново, ремонт корректоров</p><span class="price">После осмотра</span></div>
+      <div class="prow"><h3>Противотуманные фары</h3><p>Полировка стёкол, новые лампы</p><span class="price">По модели автомобиля</span></div>
+      <div class="prow"><h3>Настройка света на стенде</h3><p>Светотеневая граница, проверка ближнего и дальнего</p><span class="price">По объёму работ</span></div>
+    </div>
+    <div class="pfoot">
+      <span>На всю работу даём гарантию.</span>
+      <a class="btn b-b" href="#podbor">Узнать цену для своей машины</a>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="otzyvy">
+  <div class="wrap">
+    <div class="hrow">
+      <div>
+        <h2>Отзывы</h2>
+        <p class="quote">«Теперь каждый камушек на дороге видно»</p>
+      </div>
+      <div class="rate"><b>5,0</b><div><div class="stars"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg></div>19 отзывов в 2ГИС</div></div>
+    </div>
+    <div class="revs">
+      <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg></div><p>Однозначно рекомендую. Выгорели отражатели. Ближний свет светил как габаритные огни уже. Григорий установил Bi-LED-линзы D5 вместо штатного ксенона. Разница ощутимая, в дождь и сумерки дорога читается на 100 балов. Отдельно спасибо за полировку фар, аккуратную установку и настройку: на стенде проверили, всё в порядке. Отличная работа.</p><b>Александр Н<span>24 октября</span></b></div>
+      <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg></div><p>Недавно решил обновить свет, так как штатный биксенон уже очень устал. Очень сильно был удивлён результату: во-первых, очень быстро, во-вторых, качественно, в-третьих, очень доступная цена. Свет просто космос, яркий, с чёткой границей, дальний это вообще песня.</p><b>Никита А<span>14 марта</span></b></div>
+      <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg></div><p>Отличная работа! Переделали фары, установили линзы. Результат превзошёл ожидания, свет стал ярким. Ночью ездить стало намного комфортнее и безопаснее. Сделали быстро и качественно.</p><b>Анастасия Юрьевна<span>29 сентября</span></b></div>
+      <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg></div><p>Меняли линзы на Nissan Note, и результат супер. Понял, что на штатных LED-линзах ездил как слепой котёнок.</p><b>Виктор Михеев<span>8 октября</span></b></div>
+      <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg></div><p>Установили Bi-LED модули, сделали всё шикарно, отдельный респект Григорию. Всё очень быстро, качественно. Фары теперь светят просто шикарно. Обязательно буду рекомендовать знакомым, да и сам ещё заеду тоже.</p><b>Nikita Nedbaykin<span>9 октября</span></b></div>
+      <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"/></svg></div><p>Устанавливал линзы на Honda Freed. Работа выполнена на 10 из 10, свет стал отличный, работой остался доволен, однозначно рекомендую. Если ищете, где установить хороший и качественный свет, вам сюда.</p><b>Анатолий Меркулов<span>9 октября</span></b></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="kontakty">
+  <div class="wrap kont">
+    <div class="kinfo">
+      <h2>Контакты</h2>
+      <div class="kl">
+        <div class="krow"><span>Адрес</span><b>Новосибирск, ул. Ольги Жилиной, 12/1</b></div>
+        <div class="krow"><span>Телефон</span><b>+7 996 556-99-60</b></div>
+        <div class="krow"><span>Часы работы</span><b>Пн–Пт 10:00–21:00<br>Сб–Вс: выходные</b></div>
+        <div class="krow"><span>Telegram</span><b>@byrmatovvv</b></div>
+      </div>
+      <div class="btns">
+        <a class="btn b-b" href="tel:+79965569960">Позвонить</a>
+        <a class="btn b-bl" href="https://2gis.ru/novosibirsk/firm/70000001102527570">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="kphoto" style="background-image:url(img/kontakty.jpg)"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="name" href="#top"><i>LED-студия</i><b>Byrmatovvv</b></a>
     <div class="fi">
       <span>Новосибирск, ул. Ольги Жилиной, 12/1</span>
       <a href="tel:+79965569960">+7 996 556-99-60</a>
