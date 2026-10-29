@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Кожевенная мастерская Ольги Сафоновой: ремонт и пошив, Новосибирск</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#0E0C0A; --bg2:#15120F; --card:#1D1915; --line:rgba(236,226,212,.12);
+  --ink:#F1EAE0; --ink2:#B3A797; --ink3:#857a6c;
+  --acc:#C08A55; --acc2:#D9A673;
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
+  --wrap:1440px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;font-size:18px;line-height:1.55;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s6)}
+h1,h2,h3{font-family:Prata,Georgia,serif;font-weight:400;line-height:1.12;letter-spacing:0}
+h2{font-size:64px}
+
+/* кнопки: залитая, контурная */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);height:56px;padding:0 var(--s5);border-radius:2px;font-weight:500;font-size:17px;transition:background .2s,color .2s,border-color .2s}
+.btn-fill{background:var(--acc);color:#140F0A}
+.btn-fill:hover{background:var(--acc2)}
+.btn-line{border:1px solid rgba(241,234,224,.6);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+
+/* знак с бирки на её сумках: монограмма OS + OLGA SAFONOVA */
+.logo{display:flex;align-items:center;gap:var(--s3)}
+.mono{width:52px;height:52px;flex:none}
+.mono text{font-family:Prata,Georgia,serif;fill:var(--ink)}
+.word{display:flex;flex-direction:column;line-height:1.15}
+.word b{font-family:Prata,Georgia,serif;font-weight:400;font-size:21px;letter-spacing:.16em}
+.word span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin-top:var(--s1)}
+
+/* ШАПКА */
+.top{position:sticky;top:0;z-index:50;background:rgba(14,12,10,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:96px;gap:var(--s5)}
+.nav{display:flex;gap:var(--s5);font-size:17px}
+.nav a{padding:var(--s2) 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s;color:var(--ink2)}
+.nav a:hover{color:var(--ink);border-color:var(--acc)}
+.tright{display:flex;align-items:center;gap:var(--s4)}
+.soc{display:flex;gap:var(--s2)}
+.soc a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:background .2s,border-color .2s}
+.soc a:hover{background:var(--acc);border-color:var(--acc);color:#140F0A}
+.soc svg{width:20px;height:20px}
+.tel{text-align:right;line-height:1.3}
+.tel a{display:block;font-weight:600;font-size:21px;font-variant-numeric:tabular-nums}
+.tel span{font-size:14px;color:var(--ink2)}
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero{position:relative;height:760px;display:flex;align-items:center;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(14,12,10,.94) 0%,rgba(14,12,10,.82) 38%,rgba(14,12,10,.35) 70%,rgba(14,12,10,.15) 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;z-index:1;background:linear-gradient(0deg,var(--bg),transparent)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero .in{max-width:720px}
+.hero h1{font-size:72px}
+.hero h1 em{font-style:normal;color:var(--acc2);white-space:nowrap}
+.hero p{margin-top:var(--s4);font-size:21px;color:#E2D8CB;max-width:620px}
+.hero .acts{display:flex;gap:var(--s3);margin-top:var(--s6)}
+.hero .addr{display:flex;align-items:center;gap:var(--s2);margin-top:var(--s5);font-size:16px;color:var(--ink2)}
+.hero .addr svg{width:20px;height:20px;color:var(--acc)}
+.hero .addr a{color:var(--ink);border-bottom:1px solid rgba(241,234,224,.4);margin-left:var(--s2)}
+.hero .addr a:hover{border-color:var(--acc)}
+
+/* УСЛУГИ */
+.usl{padding:var(--s8) 0;background:var(--bg)}
+.usl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s6)}
+.u{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.u .ph{aspect-ratio:4/3;overflow:hidden}
+.u .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.u:hover .ph img{transform:scale(1.04)}
+.u .bd{padding:var(--s4) var(--s5) var(--s5);display:flex;flex-direction:column;flex:1}
+.u h3{font-size:28px}
+.u p{margin-top:var(--s2);font-size:17px;color:var(--ink2);flex:1}
+.u .price{display:flex;align-items:baseline;gap:var(--s3);margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--line)}
+.u .price b{font-family:Prata,Georgia,serif;font-weight:400;font-size:30px;color:var(--acc2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.u .price span{font-size:15px;color:var(--ink3)}
+.plan{display:flex;align-items:center;justify-content:space-between;gap:var(--s6);margin-top:var(--s4);padding:var(--s5) var(--s6);border:1px solid var(--acc);background:linear-gradient(90deg,rgba(192,138,85,.12),rgba(192,138,85,.03))}
+.plan p{font-size:18px;color:var(--ink)}
+.plan p small{display:block;margin-top:var(--s1);font-size:15px;color:var(--ink2)}
+.plan .btn{flex:none}
+
+/* РАБОТЫ */
+.rab{padding:var(--s8) 0;background:var(--bg2)}
+.rab-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:330px 330px;gap:var(--s4);margin-top:var(--s6)}
+.w{position:relative;overflow:hidden}
+.w img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.w:hover img{transform:scale(1.04)}
+.w::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,12,10,.88) 0%,rgba(14,12,10,.2) 45%,rgba(14,12,10,0) 70%)}
+.w .t{position:absolute;left:var(--s4);right:var(--s4);bottom:var(--s4);z-index:2}
+.w h3{font-size:24px}
+.w p{margin-top:var(--s1);font-size:15px;color:#D8CEC1}
+.w.big{grid-row:1/3}
+.w.big .t{left:var(--s5);bottom:var(--s5)}
+.w.big h3{font-size:34px}
+.w.big p{font-size:17px;max-width:460px}
+
+/* ПОДВАЛ */
+.foot{border-top:1px solid var(--line);background:var(--bg)}
+.foot .wrap{display:flex;align-items:center;justify-content:space-between;height:104px;font-size:15px;color:var(--ink2);gap:var(--s4)}
+.foot .mono{width:40px;height:40px}
+.foot .word b{font-size:17px}
+.foot a:hover{color:var(--ink)}
+
+/* плавающая кнопка Telegram */
+.fab{position:fixed;right:var(--s5);bottom:var(--s5);z-index:60;width:64px;height:64px;border-radius:50%;background:var(--acc);color:#140F0A;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .2s,background .2s}
+.fab:hover{transform:scale(1.06);background:var(--acc2)}
+.fab svg{width:30px;height:30px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><svg class="mono" viewBox="0 0 52 52" aria-hidden="true"><text x="0" y="44" font-size="50">O</text><text x="19" y="36" font-size="38">S</text></svg><span class="word"><b>OLGA SAFONOVA</b><span>кожевенная мастерская</span></span></a>
+    <nav class="nav">
+      <a href="#uslugi">Услуги</a>
+      <a href="#raboty">Работы</a>
+      <a href="#ceny">Цены</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="tright">
+      <div class="soc">
+        <a href="https://t.me/safonova_olay" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M19.777 4.93a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" clip-rule="evenodd"/></svg></a>
+        <a href="https://max.ru/join/R0FwPTDqZ2MDIo8I5t2-DD-Juksa3e7xiGZ3a7IMFOU" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50.7571 0.261719C78.2929 0.261719 99.8857 22.5974 99.8857 50.1474C99.8857 77.6974 77.6071 99.4903 51.0214 99.4903C41.5857 99.4903 37.0143 98.1617 29.65 92.9474C29.1429 92.5903 28.45 92.6831 28.0214 93.1403C22.3571 99.1831 7.85 103.426 7.18571 95.176C7.18571 80.7903 0 71.4474 0 49.876C0 21.5546 23.2214 0.261719 50.7571 0.261719ZM51.5286 24.8117C38.4643 24.126 28.2643 33.1974 26.0143 47.3831C24.15 59.1332 27.45 73.4546 30.2786 74.176C31.4786 74.4832 34.3571 72.276 36.4571 70.2974C36.85 69.926 37.45 69.8617 37.9071 70.1474C41.1786 72.1474 44.8786 73.6474 48.9571 73.8617C62.3714 74.5617 74.2571 64.0617 74.9643 50.6474C75.6643 37.2331 64.9429 25.5046 51.5286 24.8046V24.8117Z"/></svg></a>
+        <a href="https://vk.com/club232670559" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m9.489.004l.729-.003h3.564l.73.003l.914.01l.433.007l.418.011l.403.014l.388.016l.374.021l.36.025l.345.03l.333.033c1.74.196 2.933.616 3.833 1.516s1.32 2.092 1.516 3.833l.034.333l.029.346l.025.36l.02.373l.025.588l.012.41l.013.644l.009.915l.004.98l-.001 3.313l-.003.73l-.01.914l-.007.433l-.011.418l-.014.403l-.016.388l-.021.374l-.025.36l-.03.345l-.033.333c-.196 1.74-.616 2.933-1.516 3.833s-2.092 1.32-3.833 1.516l-.333.034l-.346.029l-.36.025l-.373.02l-.588.025l-.41.012l-.644.013l-.915.009l-.98.004l-3.313-.001l-.73-.003l-.914-.01l-.433-.007l-.418-.011l-.403-.014l-.388-.016l-.374-.021l-.36-.025l-.345-.03l-.333-.033c-1.74-.196-2.933-.616-3.833-1.516S.367 20.221.171 18.48l-.034-.333l-.029-.346l-.025-.36l-.02-.373l-.025-.588l-.012-.41l-.013-.644l-.009-.915l-.004-.98l.001-3.313l.003-.73l.01-.914l.007-.433l.011-.418l.014-.403l.016-.388l.021-.374l.025-.36l.03-.345l.033-.333c.196-1.74.616-2.933 1.516-3.833S3.779.367 5.52.171l.333-.034l.346-.029l.36-.025l.373-.02l.588-.025l.41-.012l.644-.013zM6.79 7.3H4.05c.13 6.24 3.25 9.99 8.72 9.99h.31v-3.57c2.01.2 3.53 1.67 4.14 3.57h2.84c-.78-2.84-2.83-4.41-4.11-5.01c1.28-.74 3.08-2.54 3.51-4.98h-2.58c-.56 1.98-2.22 3.78-3.8 3.95V7.3H10.5v6.92c-1.6-.4-3.62-2.34-3.71-6.92"/></svg></a>
+      </div>
+      <div class="tel">
+        <a href="tel:+79833197657">+7 983 319-76-57</a>
+        <span>пн-пт 11:00-18:00, по звонку</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="img/hero.jpg" alt="Сумки и аксессуары из кожи на полках мастерской">
+  <div class="wrap">
+    <div class="in">
+      <h1>Ремонт и пошив изделий из кожи <em>в Новосибирске</em></h1>
+      <p>Меняем молнии и фурнитуру, восстанавливаем куртки и сумки. Шьём сумки, ремни и картхолдеры по вашим размерам из натуральной кожи.</p>
+      <div class="acts">
+        <a class="btn btn-fill" href="#uslugi">Смотреть цены</a>
+        <a class="btn btn-line" href="tel:+79833197657">Позвонить</a>
+      </div>
+      <div class="addr"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M4 10.1433C4 5.64588 7.58172 2 12 2C16.4183 2 20 5.64588 20 10.1433C20 14.6055 17.4467 19.8124 13.4629 21.6744C12.5343 22.1085 11.4657 22.1085 10.5371 21.6744C6.55332 19.8124 4 14.6055 4 10.1433Z"/><circle cx="12" cy="10" r="3"/></g></svg>улица Дуси Ковальчук, 179а<a href="https://2gis.ru/novosibirsk/firm/70000001101462698" target="_blank" rel="noopener">Смотреть проезд</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="usl" id="uslugi">
+  <div class="wrap">
+    <h2>Услуги</h2>
+    <div class="usl-grid">
+      <div class="u">
+        <div class="ph"><img src="img/u_kurtka.jpg" alt="Кожаная куртка" style="object-position:50% 30%"></div>
+        <div class="bd">
+          <h3>Ремонт кожаных курток</h3>
+          <p>Восстанавливаем рукава после порывов, меняем молнии и детали.</p>
+          <div class="price"><b>по осмотру</b><span>смотрим вещь и называем цену</span></div>
+        </div>
+      </div>
+      <div class="u">
+        <div class="ph"><img src="img/u_molniya.jpg" alt="Клатч из кожи на молнии" style="object-position:50% 45%"></div>
+        <div class="bd">
+          <h3>Замена молнии</h3>
+          <p>На сумках, дорожных сумках, куртках и кошельках.</p>
+          <div class="price"><b>от&nbsp;2 000&nbsp;₽</b><span>за одну молнию</span></div>
+        </div>
+      </div>
+      <div class="u">
+        <div class="ph"><img src="img/u_furnitura.jpg" alt="Карабин и фурнитура на кожаном клатче" style="object-position:50% 65%"></div>
+        <div class="bd">
+          <h3>Фурнитура и кнопки</h3>
+          <p>Замки, карабины, кольца и пряжки. Кнопка входит в стоимость установки.</p>
+          <div class="price"><b>от&nbsp;800&nbsp;₽</b><span>кнопка 150&nbsp;₽ за штуку</span></div>
+        </div>
+      </div>
+      <div class="u">
+        <div class="ph"><img src="img/u_pokraska.jpg" alt="Сумка из коричневой кожи" style="object-position:50% 55%"></div>
+        <div class="bd">
+          <h3>Покраска и химчистка сумок</h3>
+          <p>Цена зависит от размера сумки: до 20×30 см или больше.</p>
+          <div class="price"><b>от&nbsp;3 000&nbsp;₽</b><span>покраска от&nbsp;4 000&nbsp;₽</span></div>
+        </div>
+      </div>
+      <div class="u">
+        <div class="ph"><img src="img/u_sumka.jpg" alt="Сумка из зелёной кожи" style="object-position:50% 50%"></div>
+        <div class="bd">
+          <h3>Сумка по фото и вашим размерам</h3>
+          <p>Присылаете фото модели, вместе выбираем кожу, подклад и фурнитуру.</p>
+          <div class="price"><b>от&nbsp;9 500&nbsp;₽</b><span>по вашим размерам</span></div>
+        </div>
+      </div>
+      <div class="u">
+        <div class="ph"><img src="img/u_kartholder.jpg" alt="Картхолдеры и обложки из цветной кожи"></div>
+        <div class="bd">
+          <h3>Картхолдеры, обложки, очечники</h3>
+          <p>Из гладкой и тиснёной кожи разных цветов. Лазерная гравировка от&nbsp;500&nbsp;₽.</p>
+          <div class="price"><b>от&nbsp;2 000&nbsp;₽</b><span>за изделие</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="plan">
+      <p>Ещё в прайсе: ремень на заказ от&nbsp;5 000&nbsp;₽, подогнать ремень по размеру от&nbsp;300&nbsp;₽, кошелёк от&nbsp;5 500&nbsp;₽, брелок от&nbsp;450&nbsp;₽.<small>Цены на работу, материалы считаются отдельно.</small></p>
+      <a class="btn btn-line" href="#ceny">Весь прайс</a>
+    </div>
+  </div>
+</section>
+
+<section class="rab" id="raboty">
+  <div class="wrap">
+    <h2>Работы</h2>
+    <div class="rab-grid">
+      <div class="w big">
+        <img src="img/w_kniga.jpg" alt="Кожаный чехол для электронной книги" style="object-position:50% 60%">
+        <div class="t"><h3>Чехол на нестандартную электронную книгу</h3><p>Кожу и материалы подбирали вместе с заказчиком.</p></div>
+      </div>
+      <div class="w">
+        <img src="img/w_remeshok.jpg" alt="Широкий ремешок для часов" style="object-position:50% 45%">
+        <div class="t"><h3>Ремешок для часов</h3><p>Широкий, с принтом зебры</p></div>
+      </div>
+      <div class="w">
+        <img src="img/w_telefon.jpg" alt="Сумка под телефон с жемчужной цепочкой" style="object-position:50% 40%">
+        <div class="t"><h3>Сумка под телефон</h3><p>С жемчужной цепочкой</p></div>
+      </div>
+      <div class="w">
+        <img src="img/w_ipad.jpg" alt="Чехол для iPad из кожи питона" style="object-position:50% 50%">
+        <div class="t"><h3>Чехол для iPad</h3><p>Питон и велюр</p></div>
+      </div>
+      <div class="w">
+        <img src="img/w_breloki.jpg" alt="Брелоки-бабочки из цветной кожи" style="object-position:50% 70%">
+        <div class="t"><h3>Брелоки-бабочки</h3><p>Из цветной кожи, от&nbsp;450&nbsp;₽</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="#"><svg class="mono" viewBox="0 0 52 52" aria-hidden="true"><text x="0" y="44" font-size="50">O</text><text x="19" y="36" font-size="38">S</text></svg><span class="word"><b>OLGA SAFONOVA</b></span></a>
+    <span>Новосибирск, улица Дуси Ковальчук, 179а</span>
+    <a href="tel:+79833197657">+7 983 319-76-57</a>
+    <a href="privacy.html">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<a class="fab" href="https://t.me/safonova_olay" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M19.777 4.93a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" clip-rule="evenodd"/></svg></a>
+
+</body>
+</html>
