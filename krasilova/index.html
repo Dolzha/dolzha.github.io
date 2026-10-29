@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Элеонора Красилова: детский психоанализ, Горячий Ключ</title>
+<meta name="description" content="Элеонора Красилова. Детский психоанализ в Горячем Ключе: работа с детьми и родителями.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wdth,wght@75,400;75,500;100,400&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  /* цвета сняты пипеткой с её постов в t.me/kleingroup */
+  --paper:#F0EBE8; --white:#FBF9F7; --ink:#24182F; --ink2:#5E5466; --line:#DCD3CD;
+  --plum:#43245F; --petrol:#155C62; --petrol2:#1F5758;
+  --yellow:#F2C335; --lilac:#B29DC8; --orange:#E8602A;
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:96px;
+  --wrap:1440px;
+  --serif:"Noto Serif Display",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;font-size:18px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s6)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;font-stretch:75%;line-height:1.05;letter-spacing:0}
+h2{font-size:80px}
+
+/* фирменные приёмы её постов */
+.hl{background:var(--yellow);color:var(--ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ul{background:linear-gradient(var(--lilac),var(--lilac)) 0 92%/100% .14em no-repeat}
+.plq{display:inline-block;background:var(--ink);color:var(--paper);font-weight:700;font-size:11px;letter-spacing:.28em;padding:5px 10px 4px;line-height:1}
+
+.btn{display:inline-flex;align-items:center;gap:var(--s2);height:58px;padding:0 var(--s5);border-radius:2px;font-weight:700;font-size:17px;transition:background .2s,color .2s}
+.btn svg{width:20px;height:20px}
+.btn-y{background:var(--yellow);color:var(--ink)}
+.btn-y:hover{background:var(--ink);color:var(--yellow)}
+
+/* ШАПКА */
+.top{position:sticky;top:0;z-index:50;background:rgba(240,235,232,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:96px;gap:var(--s5)}
+.brand{display:flex;flex-direction:column;gap:var(--s2);line-height:1}
+.brand b{font-family:var(--serif);font-weight:500;font-stretch:75%;font-size:32px}
+.nav{display:flex;gap:var(--s5);font-size:16px;font-weight:500}
+.nav a{padding:var(--s2) 0;color:var(--ink2);transition:color .2s}
+.nav a:hover{color:var(--ink);background:linear-gradient(var(--lilac),var(--lilac)) 0 100%/100% 3px no-repeat}
+.tright{display:flex;align-items:center;gap:var(--s3)}
+.tright .ct{text-align:right;line-height:1.35}
+.tright .ct b{display:block;font-weight:700;font-size:19px}
+.tright .ct span{font-size:14px;color:var(--ink2)}
+.tg{width:48px;height:48px;border-radius:50%;background:var(--petrol);color:#fff;display:grid;place-items:center;transition:background .2s}
+.tg:hover{background:var(--plum)}
+.tg svg{width:22px;height:22px}
+
+/* ГЛАВНЫЙ ЭКРАН: её портрет во всю высоту справа, текст поверх */
+.hero{position:relative;height:740px;overflow:hidden;background:var(--paper)}
+.hero>img{position:absolute;top:0;right:0;height:100%;width:58%;object-fit:cover;object-position:62% 30%;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%);mask-image:linear-gradient(90deg,transparent 0%,#000 38%)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center}
+.hero .in{max-width:780px;padding-bottom:var(--s6)}
+.hero .who{display:flex;align-items:center;gap:var(--s3);font-weight:800;font-size:15px;letter-spacing:.16em;text-transform:uppercase}
+.hero .who i{width:40px;height:3px;background:var(--orange)}
+.hero h1{font-size:70px;line-height:1.12}
+.hero .hl{white-space:nowrap}
+.hero p{margin-top:var(--s5);font-size:21px;line-height:1.55;color:var(--ink2);max-width:560px}
+.hero .acts{display:flex;align-items:center;gap:var(--s4);margin-top:var(--s6)}
+.hero .acts span{font-size:16px;color:var(--ink2)}
+.hero .acts span b{color:var(--ink)}
+.hero .curve{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:90px;z-index:3}
+
+/* С ЧЕМ ПРИХОДЯТ */
+.pov{background:var(--white);padding:var(--s7) 0 var(--s8)}
+.pov .say{font-family:var(--serif);font-stretch:75%;font-size:46px;line-height:1.15;max-width:1000px;margin-top:var(--s6)}
+.pov .body{max-width:720px;margin:var(--s4) 0 0 25%;font-size:19px;color:var(--ink2)}
+.pov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);margin-top:var(--s7)}
+.r{background:var(--paper);padding:var(--s5) var(--s4);border-top:4px solid var(--yellow)}
+.r:nth-child(4n+2){border-color:var(--lilac)}
+.r:nth-child(4n+3){border-color:var(--orange)}
+.r:nth-child(4n+4){border-color:var(--petrol)}
+.r b{display:block;font-weight:800;font-size:20px;line-height:1.3}
+.r span{display:block;margin-top:var(--s2);font-size:16px;color:var(--ink2)}
+.pov .end{font-family:var(--serif);font-stretch:75%;font-size:46px;line-height:1.15;text-align:right;margin-top:var(--s7)}
+
+/* КАК УСТРОЕНА РАБОТА */
+.rab{background:var(--petrol);color:var(--paper);padding:var(--s8) 0}
+.rab h2{color:#fff}
+.rab-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--s8);margin-top:var(--s6);align-items:start}
+.steps{list-style:none}
+.steps li{display:grid;grid-template-columns:72px 1fr;gap:var(--s4);padding:var(--s5) 0;border-top:1px solid rgba(240,235,232,.22)}
+.steps li:last-child{border-bottom:1px solid rgba(240,235,232,.22)}
+.steps .n{font-family:var(--serif);font-stretch:75%;font-size:56px;line-height:.9;color:var(--yellow)}
+.steps b{display:block;font-weight:800;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.steps p{margin-top:var(--s2);font-size:18px;color:rgba(240,235,232,.86)}
+.qbox{position:relative;margin:var(--s4) var(--s4) 0 0}
+.qbox::before{content:"";position:absolute;inset:0;transform:translate(24px,24px);background:var(--lilac)}
+.qcard{position:relative;background:var(--paper);color:var(--ink);padding:var(--s7) var(--s6) var(--s6)}
+.qcard .cor{position:absolute;width:56px;height:56px;border:4px solid var(--orange)}
+.qcard .cor.a{top:var(--s4);left:var(--s4);border-right:0;border-bottom:0}
+.qcard .cor.b{bottom:var(--s4);right:var(--s4);border-left:0;border-top:0}
+.qcard q{display:block;font-family:var(--serif);font-stretch:75%;font-size:44px;line-height:1.15;quotes:none}
+.qcard p{margin-top:var(--s4);font-size:17px;color:var(--ink2)}
+.qcard .plq{margin-top:var(--s5)}
+
+/* ПОДВАЛ */
+.foot{background:var(--paper);border-top:1px solid var(--line)}
+.foot .wrap{display:flex;align-items:center;justify-content:space-between;height:112px;gap:var(--s4);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.foot .brand b{font-size:26px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.foot a{text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--lilac)}
+.foot a:hover{color:var(--ink)}
+.foot a.brand{text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><b>Элеонора Красилова</b><span class="plq">ПСИХОАНАЛИЗ</span></a>
+    <nav class="nav">
+      <a href="#povody">С чем приходят</a>
+      <a href="#rabota">Как устроена работа</a>
+      <a href="#igra">Почему игра</a>
+      <a href="#teksty">Тексты</a>
+      <a href="#kontakt">Связаться</a>
+    </nav>
+    <div class="tright">
+      <div class="ct"><b>@e_krasilova</b><span>Горячий Ключ, ул. Кучеряева, 50Б</span></div>
+      <a class="tg" href="https://t.me/e_krasilova" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M19.777 4.93a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" clip-rule="evenodd"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="img/eleonora.jpg" alt="Элеонора Красилова в кабинете">
+  <div class="wrap">
+    <div class="in">
+      <h1>Я занимаюсь <span class="hl">детским психоанализом</span></h1>
+      <p>Ребёнок редко может рассказать, что с ним происходит. Зато он показывает это в игре, в рисунке, в симптоме. Моя работа: понять, о чём он говорит.</p>
+      <div class="acts">
+        <a class="btn btn-y" href="https://t.me/e_krasilova" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M19.777 4.93a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z" clip-rule="evenodd"/></svg>Написать в Telegram</a>
+      </div>
+    </div>
+  </div>
+  <svg class="curve" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#FBF9F7" d="M0 90V40C320 92 1100 92 1440 0V90Z"/></svg>
+</section>
+
+<section class="pov" id="povody">
+  <div class="wrap">
+    <h2>С чем приходят</h2>
+    <p class="say">Родители обычно приходят с вопросом, на который у них <span class="ul">уже нет ответа.</span></p>
+    <p class="body">Детский психоанализ подходит не только для тяжёлых случаев. Часто поводом становится то, что ребёнок изменился, и взрослые больше не понимают почему.</p>
+    <div class="pov-grid">
+      <div class="r"><b>Страхи и ночные кошмары</b><span>Не засыпает один, боится темноты, разлуки, смерти.</span></div>
+      <div class="r"><b>Вспышки агрессии</b><span>Дерётся, ломает вещи, нападает на брата или сестру.</span></div>
+      <div class="r"><b>Трудности расставания</b><span>Не отпускает маму, плачет в саду или школе.</span></div>
+      <div class="r"><b>Регресс</b><span>Снова просится на руки, теряет навыки после рождения младшего.</span></div>
+      <div class="r"><b>Развод, переезд, утрата</b><span>То, о чём ребёнок молчит, но что меняет его поведение.</span></div>
+      <div class="r"><b>Тело вместо слов</b><span>Боли и недомогания, у которых нет медицинской причины.</span></div>
+      <div class="r"><b>Замкнутость</b><span>Уходит в себя, не играет, не дружит.</span></div>
+      <div class="r"><b>Трудности в учёбе</b><span>Когда дело не в способностях, а в том, что мешает думать.</span></div>
+    </div>
+    <p class="end">Первая встреча проходит <span class="hl">с родителями,</span> без ребёнка.</p>
+  </div>
+</section>
+
+<section class="rab" id="rabota">
+  <div class="wrap">
+    <h2>Как устроена работа</h2>
+    <div class="rab-grid">
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Встреча с родителями</b><p>Без ребёнка. Вы рассказываете, что вас тревожит, как он рос, что происходит в семье.</p></div></li>
+        <li><span class="n">2</span><div><b>Несколько встреч с ребёнком</b><p>Он играет, рисует, разговаривает. Я наблюдаю, что и как он мне показывает.</p></div></li>
+        <li><span class="n">3</span><div><b>Обсуждение с родителями</b><p>Я делюсь своим пониманием и говорю, нужна ли регулярная работа и какой она может быть.</p></div></li>
+        <li><span class="n">4</span><div><b>Регулярные сессии</b><p>В одно и то же время, в одном и том же месте. Встречи с родителями продолжаются.</p></div></li>
+      </ol>
+      <div class="qbox">
+        <div class="qcard">
+          <span class="cor a"></span><span class="cor b"></span>
+          <q>Постоянство рамки здесь часть лечения.</q>
+          <p>Одно время и одно место. У каждого ребёнка свой ящик с игрушками, и он хранится только для него.</p>
+          <span class="plq">ПСИХОАНАЛИЗ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#"><b>Элеонора Красилова</b></a>
+    <span>© Элеонора Красилова · детский психоанализ</span>
+    <span>Горячий Ключ, ул. Кучеряева, 50Б</span>
+    <a href="privacy.html">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+</body>
+</html>
