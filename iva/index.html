@@ -1016,6 +1016,8 @@ function drawC(){
     '<label class="fld" id="fn"><span>Ваше имя</span><input id="cn" autocomplete="name"></label>'+
     '<label class="fld" id="fp"><span>Телефон</span><input id="cp" type="tel" autocomplete="tel" placeholder="+7"></label>'+
     '<h3>Получение</h3><div class="opts">'+opts.map(function(o){return '<label class="opt'+(o.dis?' dis':'')+(how===o.k?' on':'')+'"><input type="radio" name="how" value="'+o.k+'"'+(how===o.k?' checked':'')+(o.dis?' disabled':'')+'><span><b>'+o.b+'</b><small>'+o.s+'</small></span></label>'}).join('')+'</div>'+
+    /* 29.10 оплата онлайн только для 8 Марта (решение Ирины): ссылку пришлёт менеджер, чек ЮKassa уходит на почту */
+    (how==='m8'?'<label class="fld" id="fe" style="margin-top:16px"><span>Почта для чека, если будете платить онлайн</span><input id="ce" type="email" autocomplete="email" placeholder="name@mail.ru"></label><p class="note" style="margin:-4px 0 0;text-align:left">Менеджер подтвердит букет и пришлёт ссылку на оплату картой или СБП.</p>':'')+
     '<label class="fld" style="margin-top:16px"><span>Дата и время</span><input id="cw" placeholder="например, сегодня к 18:00"></label>'+
     '<label class="fld"><span>Комментарий или текст открытки</span><textarea id="cc"></textarea></label>'+
     '<input id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">'+
@@ -1029,18 +1031,20 @@ $('#db').addEventListener('click',function(e){
   var d=e.target.closest('[data-del]');if(d){C=C.filter(function(i){return i.id!==d.dataset.del});save();badge();drawC();return}
   if(e.target.id==='send')send();
 });
-$('#db').addEventListener('change',function(e){if(e.target.name==='how'){how=e.target.value;var keep={n:$('#cn').value,p:$('#cp').value,w:$('#cw').value,c:$('#cc').value,g:$('#cg').checked};drawC();$('#cn').value=keep.n;$('#cp').value=keep.p;$('#cw').value=keep.w;$('#cc').value=keep.c;$('#cg').checked=keep.g}});
+$('#db').addEventListener('change',function(e){if(e.target.name==='how'){how=e.target.value;var keep={n:$('#cn').value,p:$('#cp').value,w:$('#cw').value,c:$('#cc').value,g:$('#cg').checked,e:$('#ce')?$('#ce').value:''};drawC();$('#cn').value=keep.n;$('#cp').value=keep.p;$('#cw').value=keep.w;$('#cc').value=keep.c;$('#cg').checked=keep.g;if($('#ce'))$('#ce').value=keep.e}});
 function send(){
   var ok=true;
   [['#fn','#cn',2],['#fp','#cp',6]].forEach(function(a){var bad=$(a[1]).value.trim().length<a[2];$(a[0]).classList.toggle('err',bad);if(bad)ok=false});
   if(!how){ok=false;$('.opts').scrollIntoView({block:'center',behavior:'smooth'});toast('Выберите способ получения')}
   if(!$('#cg').checked){$('#fg').classList.add('err');ok=false}
+  var em=$('#ce')?$('#ce').value.trim():'';
+  if($('#fe')){var badE=em!==''&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);$('#fe').classList.toggle('err',badE);if(badE)ok=false}
   if(!ok)return;
   var names=C.map(function(i){return BY[i.id].n+(i.q>1?' × '+i.q:'')}).join(', ');
   var sum=sumC();
   var hw={m8:'самовывоз, 8 Марта, 101',kir:'самовывоз, Кировградская, 4/2'}[how];
-  var o={id:String(Math.floor(1000+Math.random()*9000)),how:how,name:$('#cn').value.trim(),phone:$('#cp').value.trim(),when:$('#cw').value.trim(),comment:$('#cc').value.trim(),hp:$('#chp').value,
-    items:C.map(function(i){return {n:BY[i.id].n,q:i.q,p:BY[i.id].p}})};
+  var o={id:String(Math.floor(1000+Math.random()*9000)),how:how,name:$('#cn').value.trim(),phone:$('#cp').value.trim(),when:$('#cw').value.trim(),comment:$('#cc').value.trim(),hp:$('#chp').value,email:how==='m8'?em:'',
+    items:C.map(function(i){return {id:i.id,n:BY[i.id].n,q:i.q,p:BY[i.id].p}})};
   var nm=esc(o.name),ph=esc(o.phone),btn=$('#send');
   btn.disabled=true;btn.textContent='Отправляем…';
   function sent(){

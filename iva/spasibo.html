@@ -39,6 +39,16 @@ p.mut{color:var(--mut);font-size:15px}
 <p>Менеджер свяжется с вами по телефону или в Telegram: подтвердит букет, время и способ получения.</p>
 <p class="mut">Если заказ срочный, позвоните нам, так будет быстрее.</p>
 <div class="acts"><a class="b1" href="index.html#katalog">Вернуться в каталог</a><a class="b2" data-sh="tel" href="tel:+79041760166">Позвонить</a></div>
+<script>
+/* 29.10: сюда же возвращает оплата ЮKassa (Клиенты/iva-relay/pay.js): ?paid=1 | wait | 0, ?pay=old */
+(function(){var q=location.search,T={
+ 'paid=1':['Спасибо, <em>оплата прошла</em>','Чек придёт на почту. Букет ждёт вас в салоне на 8 Марта, 101 в назначенное время.'],
+ 'paid=wait':['Проверяем <em>оплату</em>','Банк ещё подтверждает платёж, обычно это пара минут. Менеджер напишет, как только деньги придут.'],
+ 'paid=0':['Оплата <em>не прошла</em>','Деньги не списаны. Откройте ссылку от менеджера ещё раз или позвоните нам, поможем.'],
+ 'pay=old':['Ссылка на оплату <em>устарела</em>','Напишите или позвоните в салон, пришлём новую.']};
+ for(var k in T)if(q.indexOf(k)>-1){var h=document.querySelector('h1'),p=document.querySelectorAll('main p');h.innerHTML=T[k][0];p[0].textContent=T[k][1];if(p[1])p[1].hidden=k==='paid=1';document.title=h.textContent+' | ИВА';break}
+})();
+</script>
 <div class="ct">Салоны: 8 Марта, 101, <span data-s="h_m8">ежедневно 9:00-21:00</span> · Кировградская, 4/2, <span data-s="h_kir">ежедневно 9:00-21:00</span><br><a data-sh="tel" data-s="phone" href="tel:+79041760166">+7 904 176-01-66</a> · Telegram и MAX</div>
 </main>
 </body>
