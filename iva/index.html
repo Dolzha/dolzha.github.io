@@ -102,6 +102,25 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .sres .all:hover{background:#DCE7E0}
 .sres .none{padding:var(--s3);font-size:15px;color:var(--tx)}
 .sres .none a{color:var(--acc);font-weight:700;border-bottom:1px solid currentColor}
+/* поиск 30.10: подсказки текстом, недавние запросы, выбор стрелками, затемнение страницы */
+.sres .sg{display:flex;align-items:center;gap:var(--s3);min-height:44px;padding:6px var(--s2) 6px 14px;border-radius:14px;font-size:16px;color:var(--mut);cursor:pointer}
+.sres .sg>.ico{width:18px;height:18px;flex-shrink:0;color:var(--mut)}
+.sres .sg span{flex:1;min-width:0}
+.sres .sg b{font-weight:700;color:var(--ink)}
+.sres .sg.rq span{color:var(--ink)}
+.sres .sg:hover,.sres .cur{background:#fff;box-shadow:0 0 0 1px var(--line-s)}
+.sres .chips button.cur{color:var(--acc);box-shadow:0 0 0 1.5px var(--acc)}
+.sres .rx{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:20px;line-height:1;color:var(--mut);flex-shrink:0}
+.sres .rx:hover{background:#F9E7EE;color:var(--acc)}
+.sres .rqh{display:flex;justify-content:space-between;align-items:center}
+.sres .rqh button{font-size:13px;font-weight:600;color:var(--acc)}
+.sres a.it.kat{background:#F1EAE4;margin:4px 0}
+.sres a.it.kat small{color:var(--acc);font-weight:600}
+.sres .fix{padding:var(--s2) var(--s2) 4px;font-size:14px;color:var(--mut)}
+.sres .fix b{color:var(--ink)}
+.sres .sep{height:1px;background:var(--line-s);margin:6px var(--s2)}
+.sdim{position:fixed;inset:0;z-index:59;background:rgba(16,48,43,.32);opacity:0;pointer-events:none;transition:opacity var(--t-base) var(--ease)}
+.sdim.on{opacity:1;pointer-events:auto}
 .hinfo{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25;margin-left:auto;flex-shrink:0;white-space:nowrap}
 .hinfo a{font-weight:700;font-size:20px;color:var(--ink);font-variant-numeric:tabular-nums}
 .hinfo span{font-size:13px;color:var(--mut)}
@@ -940,8 +959,8 @@ function drawK(keepF){
   $('#ktitle').textContent=kq?'Поиск: «'+kq+'»':(c?(c.t||c.n):'Все букеты');
   $('#kcount').innerHTML=L.length+' шт.'+((kq||kf!=='all'||fOn())?' <button id="kreset">Показать все</button>':'');
   if(!keepF)drawF();
-  var g=$('#kgrid');
-  g.innerHTML=L.length?L.slice(0,kn).map(card).join(''):'<div class="vnote" style="grid-column:1/-1;margin:0"><div><b>Ничего не нашли</b><span>Напишите, какой букет ищете, флорист соберёт похожий.</span></div><a class="b1" href="'+TG+'">Написать менеджеру</a></div>';
+  var g=$('#kgrid'),nw;
+  g.innerHTML=L.length?L.slice(0,kn).map(card).join(''):'<div class="vnote" style="grid-column:1/-1;margin:0"><div><b>Ничего не нашли</b><span>Напишите, какой букет ищете, флорист соберёт похожий.'+((kq&&(nw=near(kq)))?' Возможно, вы искали: <a href="#" data-near="'+esc(nw)+'">'+esc(nw)+'</a>':'')+'</span></div><a class="b1" href="'+TG+'">Написать менеджеру</a></div>';
   bindCards(g);
   $('#more').hidden=L.length<=kn;
   document.querySelectorAll('.tile,.kc').forEach(function(t){t.classList.toggle('on',!kq&&t.dataset.f===kf)});
@@ -960,38 +979,105 @@ var q=$('#q'),sr=$('#sres');
 /* поиск по началу слова, окончание отбрасываем: «розы» найдёт «роза», «орхидеи» найдёт «Орхидея» */
 function norm(t){return String(t).toLowerCase().replace(/ё/g,'е')}
 function stem(w){return w.length>3?w.replace(/(ами|ями|ов|ев|ей|ой|ий|ый|ая|ое|ые|ие|ом|ем|ах|ях|а|я|ы|и|е|у|ю|о)$/,''):w}
+/* синонимы (30.10): «подсолнечник» найдёт подсолнухи, «большой» найдёт букеты-гиганты, «латекс» найдёт «шар латокс» из каталога */
+var SYN=[['подсолнух','подсолнечник'],['пион','пионовидн'],['гигант','больш','огромн'],['гвоздик','диантус'],['эустом','лизиантус'],['гипсофил','качим'],['невест','свадеб'],['мишк','медвед'],['зайк','зайч','заяц'],['латекс','латокс']];
+function alts(s){var A=[s];SYN.forEach(function(g){if(g.some(function(m){return s.indexOf(m)===0||(s.length>3&&m.indexOf(s)===0)}))g.forEach(function(m){if(A.indexOf(m)<0)A.push(m)})});return A}
 /* подарки ищутся только по своему названию, без слова «букет» из раздела «Подарки к букету» */
 function words(x){return norm(x.n+' '+x.sv.join(' ')+' '+(x.dop?[]:x.c).map(function(k){var c=CAT.filter(function(z){return z.k===k})[0];return c?c.n:''}).join(' ')).split(/[^a-zа-я0-9]+/)}
 /* слово запроса подходит к слову букета по началу; «роза» не находит «розовый»: это цвет, а не цветок (Роберт 21.10) */
 function wm(w,s){return w.indexOf(s)===0&&!(s==='роз'&&w.indexOf('розов')===0)}
+function wa(w,s){return alts(s).some(function(a){return wm(w,a)})}
 function toks(v){return norm(v).split(/\s+/).filter(Boolean).map(stem)}
 function hit(x,v){var W=words(x),T=toks(v);
   /* подарок находится, только если в запросе есть его слово (ваза, открытка, игрушка): «розы» не должны находить «Розовую вазу» */
-  if(x.dop&&!T.some(function(s){return x.sv.some(function(w){return wm(norm(w),s)})}))return false;
-  return T.every(function(s){return W.some(function(w){return wm(w,s)})})}
+  if(x.dop&&!T.some(function(s){return x.sv.some(function(w){return wa(norm(w),s)})}))return false;
+  return T.every(function(s){return W.some(function(w){return wa(w,s)})})}
 /* сначала букеты, где слово есть в названии, ниже те, где оно только в составе (Роберт 21.10) */
-function inName(x,T){var W=norm(x.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wm(w,s)})})}
+function inName(x,T){var W=norm(x.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wa(w,s)})})}
 function find(v){v=v.trim();if(!v)return null;var T=toks(v),L=P.filter(function(x){return hit(x,v)});
   return L.filter(function(x){return inName(x,T)}).concat(L.filter(function(x){return !inName(x,T)}))}
 /* запрос = название одного раздела («шары», «монобукеты»): первая строка подсказки и Enter открывают сам раздел */
 function findCat(v){var T=toks(v);if(!T.length)return null;
-  var M=CAT.filter(function(c){var W=norm(c.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wm(w,s)})})});
+  var M=CAT.filter(function(c){var W=norm(c.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wa(w,s)})})});
   return M.length===1?M[0]:null}
 function inCat(k){return P.filter(function(x){return !x.s&&x.c.indexOf(k)>-1})}
+
+/* ОШИБКИ ПОКУПАТЕЛЯ (30.10): раскладка «hjps» = «розы», опечатка в одну букву у слов от 5 букв */
+var EN='qwertyuiop[]asdfghjkl;\'zxcvbnm,.`',RU='йцукенгшщзхъфывапролджэячсмитьбюё';
+function lay(v){return String(v).toLowerCase().replace(/./g,function(ch){var i=EN.indexOf(ch);return i<0?ch:RU[i]})}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j,c;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1)}
+  return d[m][n]}
+/* словарь сайта: слова из названий, состава и разделов */
+/* сначала слова состава (они в начальной форме: «гортензия», а не «гортензией»), потом разделы и названия */
+var VOC=(function(){var o={};function add(t){norm(t).split(/[^a-zа-я0-9]+/).forEach(function(w){if(w.length>3&&!/\d/.test(w))o[w]=1})}
+  P.forEach(function(x){x.sv.forEach(add)});CAT.forEach(function(c){add(c.n)});P.forEach(function(x){add(x.n)});return Object.keys(o)})();
+function fixWord(t){var s=stem(t),k,d;if(t.length<5||s.length<4||VOC.some(function(w){return wa(w,s)}))return t;
+  for(d=0;d<3;d++)for(k=0;k<VOC.length;k++)if(lev(s,VOC[k].slice(0,s.length+[0,-1,1][d]))<=1)return VOC[k];
+  return t}
+/* запрос, как его понял сайт: свой, в другой раскладке или с исправленной опечаткой; fix = показать «Показываем по запросу» */
+function resolve(v){v=v.trim();var L=find(v)||[];if(!v||L.length||findCat(v))return {v:v,L:L};
+  var r=lay(v),R;if(r!==v.toLowerCase()){R=find(r);if(R.length||findCat(r))return {v:r,L:R,fix:1}}
+  [v,r].forEach(function(z){if(R&&R.fix)return;var t=norm(z).split(/\s+/).filter(Boolean).map(fixWord).join(' '),T=find(t);
+    if(t!==norm(z)&&(T.length||findCat(t)))R={v:t,L:T,fix:1}});
+  return R&&R.fix?R:{v:v,L:L}}
+/* «Возможно, вы искали»: ближайшее слово сайта, до 2 ошибок */
+function near(v){var best=null,bd=3;[norm(v),norm(lay(v))].forEach(function(z){z.split(/[^a-zа-я0-9]+/).forEach(function(t){if(t.length<4)return;var s=stem(t);
+  VOC.forEach(function(w){var d=Math.min(lev(s,w.slice(0,s.length)),lev(t,w));if(d<bd&&find(w).length){bd=d;best=w}})})});return best}
+
+/* ПОДСКАЗКИ ТЕКСТОМ: состав, разделы, «Часто ищут»; набранное обычным, продолжение жирным (урок №17, Baymard) */
+var SUG=(function(){var o={},seen={};function add(t){t=norm(t).replace(/\s+/g,' ').trim();var key=t.split(' ').map(stem).sort().join(' ');if(t.length<3||/\d/.test(t)||seen[key])return;seen[key]=1;o[t]=1}
+  HOT.forEach(function(h){add(h[1])});P.forEach(function(x){if(!x.dop)x.sv.forEach(add)});CAT.forEach(function(c){add(c.n)});
+  return Object.keys(o).map(function(t){return {t:t,n:(find(t)||[]).length+(findCat(t)?1:0)}}).filter(function(z){return z.n})})();
+function sugg(v,n){var s=norm(v).replace(/\s+/g,' ').replace(/^ /,''),a=s.trim();if(a.length<2)return {s:s,L:[]};
+  function pick(s){return SUG.filter(function(z){return z.t!==a&&(z.t.indexOf(s)===0||z.t.indexOf(' '+s)>-1)})}
+  var L=pick(s);if(!L.length&&stem(a)!==a){s=stem(a);L=pick(s)}
+  L.sort(function(x,y){return (y.t.indexOf(s)===0)-(x.t.indexOf(s)===0)||y.n-x.n});
+  return {s:s,L:L.slice(0,n)}}
+function hl(t,s){var i=t.indexOf(s)===0?0:t.indexOf(' '+s)+1;return (i?'<b>'+esc(t.slice(0,i))+'</b>':'')+esc(t.slice(i,i+s.length))+'<b>'+esc(t.slice(i+s.length))+'</b>'}
+
+/* НЕДАВНИЕ ЗАПРОСЫ: до 5 на этом устройстве, только те, что что-то нашли (урок №17) */
+var RK='iva_sq';
+function rget(){try{return JSON.parse(localStorage.getItem(RK)||'[]')}catch(e){return []}}
+function rset(R){try{localStorage.setItem(RK,JSON.stringify(R.slice(0,5)))}catch(e){}}
+function rput(v){v=String(v||'').trim();if(!v||!(find(v)||[]).length&&!findCat(v))return;var R=rget().filter(function(x){return norm(x)!==norm(v)});R.unshift(v);rset(R)}
+function rdel(v){rset(rget().filter(function(x){return x!==v}))}
+
+/* ВЫПАДАЮЩИЙ СПИСОК: не больше 10 строк на ПК и 8 на телефоне, без прокрутки внутри (Baymard) */
+var R0=null,ix=-1,typed='';
+var LUP='<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
+var CLK='<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+function lim(){return innerWidth>760?4:3}
+function rowS(t,s){return '<div class="sg" data-sq="'+esc(t)+'">'+LUP+'<span>'+(s?hl(t,s):'<b>'+esc(t)+'</b>')+'</span></div>'}
+function hotH(n){return '<div class="lbl">Часто ищут</div><div class="chips">'+HOT.slice(0,n||HOT.length).map(function(h){return '<button type="button" data-hot="'+h[1]+'"><img src="'+h[2]+'" alt="">'+h[0]+'</button>'}).join('')+'</div>'}
 function drawS(){
-  var L=find(q.value),c=findCat(q.value);
-  sr.hidden=false;
-  if(!L){sr.innerHTML='<div class="lbl">Часто ищут</div><div class="chips">'+HOT.map(function(h){return '<button data-hot="'+h[1]+'"><img src="'+h[2]+'" alt="">'+h[0]+'</button>'}).join('')+'</div>';return}
-  if(!L.length&&!c){sr.innerHTML='<div class="none">Такого букета пока нет. <a href="'+TG+'">Спросите менеджера</a>, соберём.</div>';return}
-  var K=c?inCat(c.k):[],kx=K.filter(function(x){return x.ph.length})[0];
-  sr.innerHTML=(c?'<a class="it" href="#katalog" data-kat="'+c.k+'">'+(kx?'<img src="'+kx.ph[0]+'" alt="">':'<span class="nph"></span>')+'<span>'+esc(c.n)+'<small>раздел каталога</small></span><b>'+K.length+' шт.</b></a>':'')+
-   L.slice(0,6).map(function(x){return '<a class="it" href="#katalog" data-pick="'+x.id+'">'+(x.ph.length?'<img src="'+x.ph[0]+'" alt="">':nph(x))+'<span>'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></span><b>'+(x.p?(x.u?'от ':'')+f(x.p):'')+'</b></a>'}).join('')+
-   (L.length?'<button class="all" id="sall">Все результаты: '+L.length+'</button>':'');
+  ix=-1;typed=q.value;
+  var v=q.value.trim();
+  sr.hidden=false;R0=null;
+  if(!v){var Rq=rget().slice(0,innerWidth>760?5:3);
+    sr.innerHTML=(Rq.length?'<div class="lbl rqh">Вы искали<button type="button" data-rclr>Очистить</button></div>'+Rq.map(function(t){return '<div class="sg rq" data-sq="'+esc(t)+'">'+CLK+'<span>'+esc(t)+'</span><button type="button" class="rx" data-rx="'+esc(t)+'" aria-label="Убрать из истории">×</button></div>'}).join(''):'')+hotH();
+    return}
+  var r=R0=resolve(v),L=r.L,c=findCat(r.v),n=lim();
+  if(!L.length&&!c){var w=near(v);
+    sr.innerHTML='<div class="none">Такого букета пока нет.</div>'+(w?'<div class="lbl">Возможно, вы искали</div>'+rowS(w):'')+hotH(innerWidth>760?0:6)+'<div class="none">Не нашли нужное? <a href="'+TG+'">Спросите менеджера</a>, соберём.</div>';
+    return}
+  var SG=sugg(r.fix?r.v:q.value,n),K=c?inCat(c.k):[],kx=K.filter(function(x){return x.ph.length})[0];
+  sr.innerHTML=(r.fix?'<div class="fix">Показываем по запросу <b>«'+esc(r.v)+'»</b></div>':'')+
+   SG.L.map(function(z){return rowS(z.t,SG.s)}).join('')+(SG.L.length?'<div class="sep"></div>':'')+
+   (c?'<a class="it kat" href="#katalog" data-kat="'+c.k+'">'+(kx?'<img src="'+kx.ph[0]+'" alt="">':'<span class="nph"></span>')+'<span>'+esc(c.n)+'<small>раздел каталога</small></span><b>'+K.length+' шт.</b></a>':'')+
+   L.slice(0,n).map(function(x){return '<a class="it" href="#katalog" data-pick="'+x.id+'">'+(x.ph.length?'<img src="'+x.ph[0]+'" alt="">':nph(x))+'<span>'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></span><b>'+(x.p?(x.u?'от ':'')+f(x.p):'')+'</b></a>'}).join('')+
+   (L.length?'<button type="button" class="all" id="sall">Все результаты: '+L.length+'</button>':'');
   var al=$('#sall');if(al)al.addEventListener('click',showAll);
 }
-sr.addEventListener('click',function(e){var h=e.target.closest('[data-hot]');if(h){q.value=h.dataset.hot;drawS();q.focus();return}
-  var k=e.target.closest('[data-kat]');if(k){e.preventDefault();openCat(k.dataset.kat);return}
-  var o=e.target.closest('[data-pick]');if(o){e.preventDefault();pick(o.dataset.pick)}});
+sr.addEventListener('click',function(e){
+  /* строки, после которых список перерисовывается: клик не должен закрыть его как «мимо» */
+  var x=e.target.closest('[data-rx]');if(x){e.stopPropagation();rdel(x.dataset.rx);drawS();q.focus();return}
+  if(e.target.closest('[data-rclr]')){e.stopPropagation();rset([]);drawS();q.focus();return}
+  var h=e.target.closest('[data-hot]');if(h){e.stopPropagation();q.value=h.dataset.hot;drawS();q.focus();return}
+  var g=e.target.closest('[data-sq]');if(g){runQ(g.dataset.sq);return}
+  var k=e.target.closest('[data-kat]');if(k){e.preventDefault();if(R0)rput(R0.v);openCat(k.dataset.kat);return}
+  var o=e.target.closest('[data-pick]');if(o){e.preventDefault();if(R0)rput(R0.v);pick(o.dataset.pick)}});
 /* выбор букета в подсказке: открывается его раздел (букет с витрины: вкладка его салона), страница едет к букету и обводит его розовым; карточку покупатель открывает сам (Ирина 20.10) */
 function pick(id){
   var x=BY[id],c;if(!x)return;
@@ -1003,13 +1089,28 @@ function pick(id){
   c.classList.add('found');c.scrollIntoView({behavior:'smooth',block:'center'});
 }
 function openCat(k){kf=k;kq='';kn=9;F=fz();sr.hidden=true;q.blur();closeB();drawK();$('.khead').scrollIntoView({behavior:'smooth'})}
-/* «Все результаты»: сетка всего найденного, как было */
-function showAll(){var v=q.value.trim();if(!v)return;kq=v;kn=30;sr.hidden=true;closeB();drawK();$('#katalog').scrollIntoView({behavior:'smooth'})}
+/* «Все результаты»: сетка всего найденного, как было; запрос исправленный (раскладка, опечатка) */
+function showAll(){var v=q.value.trim();if(!v)return;var r=resolve(v);kq=r.v;q.value=r.v;rput(r.v);kn=30;sr.hidden=true;closeB();drawK();$('#katalog').scrollIntoView({behavior:'smooth'})}
 /* Enter: название раздела открывает раздел, иначе первый найденный букет в своём разделе */
-function goSearch(){var v=q.value.trim();if(!v)return;var c=findCat(v);if(c){openCat(c.k);return}var L=find(v);if(L.length)pick(L[0].id);else showAll()}
+function goSearch(){var v=q.value.trim();if(!v)return;var r=resolve(v),c=findCat(r.v);rput(r.v);if(c){openCat(c.k);return}if(r.L.length)pick(r.L[0].id);else showAll()}
+/* строка-подсказка и недавний запрос: раздел открывает раздел, один букет едет к нему, иначе сетка всего найденного */
+function runQ(v){q.value=v;var r=resolve(v),c=findCat(r.v);rput(r.v);if(c){openCat(c.k);return}if(r.L.length===1){pick(r.L[0].id);return}showAll()}
+/* стрелки на ПК: строка подсвечивается, текст подсказки сразу в поле, его можно дописать (Baymard п.6) */
+function opts(){return [].slice.call(sr.querySelectorAll('.sg,.it,.all,.chips button'))}
+function mark(d){var O=opts();if(!O.length)return;ix+=d;if(ix<-1)ix=O.length-1;if(ix>=O.length)ix=-1;
+  O.forEach(function(o,i){o.classList.toggle('cur',i===ix)});
+  var o=O[ix];q.value=o?(o.dataset.sq||o.dataset.hot||typed):typed;
+  if(o)o.scrollIntoView({block:'nearest'})}
 q.addEventListener('input',drawS);
 q.addEventListener('focus',drawS);
-q.addEventListener('keydown',function(e){if(e.key==='Enter')goSearch();if(e.key==='Escape'){sr.hidden=true;q.blur()}});
+q.addEventListener('keydown',function(e){
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(sr.hidden)drawS();mark(e.key==='ArrowDown'?1:-1);return}
+  if(e.key==='Enter'){var o=sr.hidden?null:opts()[ix];e.preventDefault();if(o)o.click();else goSearch();return}
+  if(e.key==='Escape'){if(ix>-1)q.value=typed;sr.hidden=true;q.blur()}});
+document.addEventListener('click',function(e){var n=e.target.closest('[data-near]');if(n){e.preventDefault();runQ(n.dataset.near)}});
+/* страница за подсказками затемняется, пока они открыты (Baymard п.7); клик по затемнению закрывает */
+var sdim=document.createElement('div');sdim.className='sdim';document.body.appendChild(sdim);
+new MutationObserver(function(){sdim.classList.toggle('on',!sr.hidden)}).observe(sr,{attributes:true,attributeFilter:['hidden']});
 document.addEventListener('click',function(e){if(!e.target.closest('#srch'))sr.hidden=true});
 
 /* СТРАНИЦА БУКЕТА */
