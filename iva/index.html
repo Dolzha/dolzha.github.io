@@ -1130,6 +1130,7 @@ function send(){
 function openC(){if(!done)drawC();$('#drawer').classList.add('on');$('#shade').classList.add('on');document.body.classList.add('lock')}
 function closeC(){$('#drawer').classList.remove('on');$('#shade').classList.remove('on');if(bp.hidden)document.body.classList.remove('lock')}
 $('#cartb').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});$('#topen').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});
+$('#lkb').addEventListener('click',function(e){e.preventDefault();toast('Личный кабинет скоро появится: история заказов и повтор заказа в одно нажатие')});
 $('#dclose').addEventListener('click',closeC);$('#shade').addEventListener('click',closeC);
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeC()});
 
