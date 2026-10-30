@@ -569,6 +569,58 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
   .fab{width:52px;height:52px;right:var(--s3);bottom:var(--s3)}
 }
 @media (max-width:380px){.top .wrap{gap:8px 6px}.brand b{font-size:20px;letter-spacing:.12em}.cartb.v4 .l>span{display:none}}
+
+/* 30.10 Роберт выбрал К3 «Фото целиком»: без стеклянной рамки, фото 3:4 во всю карточку, белая «+» в углу; 5/4/3/2 в ряд */
+.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+@media (max-width:1399px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:1200px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.card{padding:0;background:none;border:0;border-radius:20px;overflow:hidden;box-shadow:0 18px 36px -22px rgba(16,48,43,.55);backdrop-filter:none;-webkit-backdrop-filter:none}
+.card:hover{box-shadow:0 24px 44px -22px rgba(16,48,43,.6)}
+.card .ph{aspect-ratio:3/4}
+.card .ph::after{background:linear-gradient(0deg,rgba(16,48,43,.92),rgba(16,48,43,.55) 26%,rgba(16,48,43,0) 48%)}
+.card .b{left:0;right:0;bottom:0;padding:16px;pointer-events:none}
+.card .b a,.card .b button{pointer-events:auto}
+.card .tt{font-size:15px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ft{margin-top:6px;min-height:44px;padding-right:52px}
+.card .pr{font-size:19px}
+.card .gos{position:absolute;right:12px;bottom:14px;width:auto}
+.card .gos .go:not(.w){display:none}
+.card .go.w[data-add]{width:44px;height:44px;padding:0;border-radius:50%;background:#fff;color:var(--acc);border:0;flex:0 0 44px}
+.card .go.w[data-add] svg{width:22px;height:22px}
+.card .go.w:not([data-add]){padding:8px 12px;font-size:12px}
+@media (max-width:760px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .card{padding:0;border-radius:16px}
+  .card .b{left:0;right:0;bottom:0;padding:10px 10px 10px 12px}
+  .card .tt{font-size:13px}
+  .card .pr{font-size:16px}
+  .card .ft{min-height:38px;padding-right:44px}
+  .card .gos{right:8px;bottom:8px;width:auto}
+  .card .go.w[data-add]{width:38px;height:38px;flex-basis:38px}
+  .card .go.w[data-add] svg{width:19px;height:19px}
+}
+
+/* 30.10 Т1 «Шторка»: белая плашка с фото букета и кнопкой «Корзина»; телефон сверху во всю ширину, ПК справа под шапкой */
+.toast{left:auto;right:24px;top:100px;bottom:auto;width:380px;transform:translateY(-16px);padding:10px;border-radius:18px;background:rgba(255,255,255,.96);color:var(--ink);border:1px solid var(--rose-lb);box-shadow:0 18px 40px -14px rgba(16,48,43,.45);gap:12px}
+.toast.on{transform:translateY(0)}
+.toast img{width:52px;height:52px;border-radius:12px;object-fit:cover;flex:0 0 52px}
+.toast img[hidden],.toast small[hidden]{display:none}
+.toast .vt{flex:1;min-width:0;line-height:1.25;padding-left:4px}
+.toast .vt small{display:block;font-size:12px;color:var(--grn);font-weight:700}
+.toast .vt b{display:block;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toast button{flex:0 0 auto;height:40px;padding:0 16px;background:var(--acc);color:#fff}
+@media (max-width:760px){.toast{left:10px;right:10px;top:10px;width:auto;transform:translateY(-140%)}}
+
+/* 30.10 личный кабинет: формат Л5 (две строки как у корзины), значок Л1; на телефоне круглая кнопка. До запуска кабинета виден только по ?lk=1 */
+.lkb{height:56px;padding:0 20px 0 6px;border-radius:999px;display:flex;align-items:center;gap:12px;flex-shrink:0;color:var(--ink);background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(16,48,43,.1),0 6px 16px rgba(16,48,43,.12)}
+.lkb[hidden]{display:none}
+.lkb i{width:44px;height:44px;border-radius:50%;background:var(--rose-l);color:var(--acc);display:grid;place-items:center}
+.lkb svg{width:22px;height:22px}
+.lkb .l{display:flex;flex-direction:column;line-height:1.15}
+.lkb .l b{font-size:16px;font-weight:700}
+.lkb .l span{font-size:12px;color:var(--mut);font-weight:500;white-space:nowrap}
+@media (max-width:760px){.lkb{width:46px;height:46px;padding:0;gap:0;justify-content:center}.lkb .l{display:none}.lkb i{width:auto;height:auto;background:none}}
+@media (max-width:380px){.phm,.lkb{width:40px;height:40px}.brand img{width:38px;height:38px}.brand b{font-size:18px;letter-spacing:.08em}.cartb.v4{padding:0 10px 0 4px;gap:6px}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
@@ -590,6 +642,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
         <a class="vk" data-sh="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.8 17.3c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.3h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.2.6 3.2 2.1 3.9 4.9h-2.8c-.6-1.9-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
       </div>
       <span class="sep"></span>
+      <a class="lkb" id="lkb" href="#" aria-label="Личный кабинет, мои заказы" hidden><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i><span class="l"><b>Кабинет</b><span>мои заказы</span></span></a>
       <button class="cartb v4" id="cartb" aria-label="Корзина" data-z><span class="ci2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M2.5 10h19l-2.1 9.2a2 2 0 0 1-2 1.6H6.6a2 2 0 0 1-2-1.6z"/><path d="M8.5 13.5v4M12 13.5v4M15.5 13.5v4"/></svg></span><span class="l"><b id="carts">Корзина</b><span class="cq"><span id="cartn">0</span> в корзине</span><span class="ce">пока пусто</span></span></button>
     </div>
   </div>
@@ -712,7 +765,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
   <div class="dh"><h2>Корзина</h2><button id="dclose" aria-label="Закрыть"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="db" id="db"></div>
 </aside>
-<div class="toast" id="toast"><span id="tt"></span><button id="topen">Открыть корзину</button></div>
+<div class="toast" id="toast"><img id="ti" alt="" hidden><span class="vt"><small id="tk" hidden>✓ Добавлено в корзину</small><b id="tt"></b></span><button id="topen">Корзина</button></div>
 
 <a class="fab" data-sh="tel" href="tel:+79041760166" aria-label="Позвонить в салон"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
 
@@ -755,7 +808,7 @@ function card(x){
   var many=x.ph.length>1;
   var zones=many?'<span class="zones">'+x.ph.map(function(){return '<i></i>'}).join('')+'</span><span class="dots">'+x.ph.map(function(u,i){return '<i'+(i?'':' class="on"')+'></i>'}).join('')+'</span>':'';
   var pr=x.p?'<span class="pr">'+(x.u?'<small>от </small>':'')+f(x.p)+(x.u?'<small> / шт</small>':'')+'</span>':'<span class="pr ask">Цену назовёт менеджер</span>';
-  var b=x.p?'<button class="go w" data-add="'+x.id+'">В корзину</button>':'<a class="go w" href="'+TG+'">Узнать цену</a>';
+  var b=x.p?'<button class="go w" data-add="'+x.id+'" aria-label="В корзину"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>':'<a class="go w" href="'+TG+'">Узнать цену</a>';
   return '<article class="card" data-id="'+x.id+'"><a class="ph" href="#b/'+x.id+'" data-open="'+x.id+'">'+imgs+zones+(x.o||x.dop?'':'<span class="stag" data-st="'+stk(x)+'">'+(x.zak?'Под заказ':x.nk?'Соберём нужное количество':x.na?'Уточнить наличие у менеджера':'В наличии'+(x.st?': '+x.st+' шт':''))+'</span>')+'</a>'+
    '<div class="b"><a class="tt" href="#b/'+x.id+'" data-open="'+x.id+'">'+esc(x.n)+'</a>'+'<div class="ft">'+pr+
    '<span class="gos"><a class="go" href="#b/'+x.id+'" data-open="'+x.id+'">'+(x.o||x.dop||x.c.indexOf('rast')>=0||x.c.indexOf('shtuk')>=0?'Смотреть':x.c.indexOf('shar')>=0?'Смотреть набор':'Смотреть букет')+'</a>'+b+'</span></div></div></article>';
@@ -993,9 +1046,9 @@ function save(){try{localStorage.setItem('iva_cart',JSON.stringify(C))}catch(e){
 function count(){return C.reduce(function(a,i){return a+i.q},0)}
 function sumC(){return C.reduce(function(a,i){return a+BY[i.id].p*i.q},0)}
 function badge(){var n=count(),e=$('#cartb');$('#cartn').textContent=n;if(n)e.removeAttribute('data-z');else e.setAttribute('data-z','');$('#carts').textContent=n?f(sumC()):'Корзина'}
-function add(id,qn){var it=C.filter(function(i){return i.id===id})[0],mx=BY[id].st||1e9;if(it)it.q+=qn;else{it={id:id,q:qn};C.push(it)}var cut=it.q>mx;it.q=Math.min(mx,it.q);save();badge();done=false;toast(cut?'В наличии '+mx+' шт, больше уточните у менеджера':BY[id].n+' в корзине',1)}
+function add(id,qn){var it=C.filter(function(i){return i.id===id})[0],mx=BY[id].st||1e9;if(it)it.q+=qn;else{it={id:id,q:qn};C.push(it)}var cut=it.q>mx;it.q=Math.min(mx,it.q);save();badge();done=false;toast(cut?'В наличии '+mx+' шт, больше уточните у менеджера':BY[id].n,1,cut?'':BY[id].ph[0])}
 var tmr;
-function toast(t,a){$('#tt').textContent=t;$('#topen').hidden=!a;$('#toast').classList.add('on');clearTimeout(tmr);tmr=setTimeout(function(){$('#toast').classList.remove('on')},3200)}
+function toast(t,a,im){$('#tt').textContent=t;$('#topen').hidden=!a;var i=$('#ti');i.hidden=!im;if(im)i.src=im;$('#tk').hidden=!im;$('#toast').classList.add('on');clearTimeout(tmr);tmr=setTimeout(function(){$('#toast').classList.remove('on')},3200)}
 document.addEventListener('click',function(e){var a=e.target.closest('[data-add]');if(a){add(a.dataset.add,a.hasAttribute('data-withq')?bq:1)}});
 function hasS(s){return C.some(function(i){return BY[i.id].s===s})}
 function drawC(){
@@ -1073,6 +1126,7 @@ function send(){
 function openC(){if(!done)drawC();$('#drawer').classList.add('on');$('#shade').classList.add('on');document.body.classList.add('lock')}
 function closeC(){$('#drawer').classList.remove('on');$('#shade').classList.remove('on');if(bp.hidden)document.body.classList.remove('lock')}
 $('#cartb').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});$('#topen').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});
+if(/[?&]lk=1/.test(location.search))$('#lkb').hidden=false;
 $('#dclose').addEventListener('click',closeC);$('#shade').addEventListener('click',closeC);
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeC()});
 
