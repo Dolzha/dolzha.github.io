@@ -582,9 +582,13 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .card .tt{font-size:15px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card .ft{margin-top:6px;min-height:44px;padding-right:52px}
 .card .pr{font-size:19px}
+/* 30.10 цена и кнопка корзины оформлены как в варианте К2: тёмная цена на белом, розовая круглая кнопка с корзиной */
+.card .pr:not(.ask){padding:5px 12px;border-radius:999px;background:#fff;color:var(--ink);font-size:17px;line-height:1.3}
+.card .pr:not(.ask) small{color:var(--mut)}
 .card .gos{position:absolute;right:12px;bottom:14px;width:auto}
 .card .gos .go:not(.w){display:none}
-.card .go.w[data-add]{width:44px;height:44px;padding:0;border-radius:50%;background:#fff;color:var(--acc);border:0;flex:0 0 44px}
+.card .go.w[data-add]{width:44px;height:44px;padding:0;border-radius:50%;background:var(--acc);color:#fff;border:0;flex:0 0 44px;box-shadow:0 8px 18px -8px rgba(184,62,112,.7)}
+.card .go.w[data-add]:hover{background:var(--acc2);color:#fff}
 .card .go.w[data-add] svg{width:22px;height:22px}
 .card .go.w:not([data-add]){padding:8px 12px;font-size:12px}
 @media (max-width:760px){
@@ -593,6 +597,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
   .card .b{left:0;right:0;bottom:0;padding:10px 10px 10px 12px}
   .card .tt{font-size:13px}
   .card .pr{font-size:16px}
+  .card .pr:not(.ask){padding:4px 10px;font-size:14px}
   .card .ft{min-height:38px;padding-right:44px}
   .card .gos{right:8px;bottom:8px;width:auto}
   .card .go.w[data-add]{width:38px;height:38px;flex-basis:38px}
@@ -613,7 +618,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 /* 30.10 личный кабинет: формат Л5 (две строки как у корзины), значок Л1; на телефоне круглая кнопка */
 .lkb{height:56px;padding:0 20px 0 6px;border-radius:999px;display:flex;align-items:center;gap:12px;flex-shrink:0;color:var(--ink);background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(16,48,43,.1),0 6px 16px rgba(16,48,43,.12)}
 .lkb[hidden]{display:none}
-.lkb i{width:44px;height:44px;border-radius:50%;background:var(--rose-l);color:var(--acc);display:grid;place-items:center}
+.lkb i{width:36px;height:36px;color:var(--acc);display:grid;place-items:center}
 .lkb svg{width:22px;height:22px}
 .lkb .l{display:flex;flex-direction:column;line-height:1.15}
 .lkb .l b{font-size:16px;font-weight:700}
@@ -807,7 +812,7 @@ function card(x){
   var many=x.ph.length>1;
   var zones=many?'<span class="zones">'+x.ph.map(function(){return '<i></i>'}).join('')+'</span><span class="dots">'+x.ph.map(function(u,i){return '<i'+(i?'':' class="on"')+'></i>'}).join('')+'</span>':'';
   var pr=x.p?'<span class="pr">'+(x.u?'<small>от </small>':'')+f(x.p)+(x.u?'<small> / шт</small>':'')+'</span>':'<span class="pr ask">Цену назовёт менеджер</span>';
-  var b=x.p?'<button class="go w" data-add="'+x.id+'" aria-label="В корзину"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>':'<a class="go w" href="'+TG+'">Узнать цену</a>';
+  var b=x.p?'<button class="go w" data-add="'+x.id+'" aria-label="В корзину"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M2.5 10h19l-2.1 9.2a2 2 0 0 1-2 1.6H6.6a2 2 0 0 1-2-1.6z"/><path d="M12 13v5M9.5 15.5h5"/></svg></button>':'<a class="go w" href="'+TG+'">Узнать цену</a>';
   return '<article class="card" data-id="'+x.id+'"><a class="ph" href="#b/'+x.id+'" data-open="'+x.id+'">'+imgs+zones+(x.o||x.dop?'':'<span class="stag" data-st="'+stk(x)+'">'+(x.zak?'Под заказ':x.nk?'Соберём нужное количество':x.na?'Уточнить наличие у менеджера':'В наличии'+(x.st?': '+x.st+' шт':''))+'</span>')+'</a>'+
    '<div class="b"><a class="tt" href="#b/'+x.id+'" data-open="'+x.id+'">'+esc(x.n)+'</a>'+'<div class="ft">'+pr+
    '<span class="gos"><a class="go" href="#b/'+x.id+'" data-open="'+x.id+'">'+(x.o||x.dop||x.c.indexOf('rast')>=0||x.c.indexOf('shtuk')>=0?'Смотреть':x.c.indexOf('shar')>=0?'Смотреть набор':'Смотреть букет')+'</a>'+b+'</span></div></div></article>';
