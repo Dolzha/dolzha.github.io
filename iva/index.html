@@ -570,9 +570,8 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 }
 @media (max-width:380px){.top .wrap{gap:8px 6px}.brand b{font-size:20px;letter-spacing:.12em}.cartb.v4 .l>span{display:none}}
 
-/* 30.10 Роберт выбрал К3 «Фото целиком»: без стеклянной рамки, фото 3:4 во всю карточку, белая «+» в углу; 5/4/3/2 в ряд */
-.grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-@media (max-width:1399px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* 30.10 Роберт выбрал К3 «Фото целиком»: без стеклянной рамки, фото 3:4 во всю карточку, белая «+» в углу; ПК 4 в ряд (Роберт: «для начала 4»), планшет 3, телефон 2 */
+.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 @media (max-width:1200px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .card{padding:0;background:none;border:0;border-radius:20px;overflow:hidden;box-shadow:0 18px 36px -22px rgba(16,48,43,.55);backdrop-filter:none;-webkit-backdrop-filter:none}
 .card:hover{box-shadow:0 24px 44px -22px rgba(16,48,43,.6)}
@@ -611,7 +610,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .toast button{flex:0 0 auto;height:40px;padding:0 16px;background:var(--acc);color:#fff}
 @media (max-width:760px){.toast{left:10px;right:10px;top:10px;width:auto;transform:translateY(-140%)}}
 
-/* 30.10 личный кабинет: формат Л5 (две строки как у корзины), значок Л1; на телефоне круглая кнопка. До запуска кабинета виден только по ?lk=1 */
+/* 30.10 личный кабинет: формат Л5 (две строки как у корзины), значок Л1; на телефоне круглая кнопка */
 .lkb{height:56px;padding:0 20px 0 6px;border-radius:999px;display:flex;align-items:center;gap:12px;flex-shrink:0;color:var(--ink);background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(16,48,43,.1),0 6px 16px rgba(16,48,43,.12)}
 .lkb[hidden]{display:none}
 .lkb i{width:44px;height:44px;border-radius:50%;background:var(--rose-l);color:var(--acc);display:grid;place-items:center}
@@ -642,7 +641,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
         <a class="vk" data-sh="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.8 17.3c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.3h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.2.6 3.2 2.1 3.9 4.9h-2.8c-.6-1.9-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
       </div>
       <span class="sep"></span>
-      <a class="lkb" id="lkb" href="#" aria-label="Личный кабинет, мои заказы" hidden><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i><span class="l"><b>Кабинет</b><span>мои заказы</span></span></a>
+      <a class="lkb" id="lkb" href="#" aria-label="Личный кабинет, мои заказы"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i><span class="l"><b>Кабинет</b><span>мои заказы</span></span></a>
       <button class="cartb v4" id="cartb" aria-label="Корзина" data-z><span class="ci2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M2.5 10h19l-2.1 9.2a2 2 0 0 1-2 1.6H6.6a2 2 0 0 1-2-1.6z"/><path d="M8.5 13.5v4M12 13.5v4M15.5 13.5v4"/></svg></span><span class="l"><b id="carts">Корзина</b><span class="cq"><span id="cartn">0</span> в корзине</span><span class="ce">пока пусто</span></span></button>
     </div>
   </div>
@@ -1126,7 +1125,6 @@ function send(){
 function openC(){if(!done)drawC();$('#drawer').classList.add('on');$('#shade').classList.add('on');document.body.classList.add('lock')}
 function closeC(){$('#drawer').classList.remove('on');$('#shade').classList.remove('on');if(bp.hidden)document.body.classList.remove('lock')}
 $('#cartb').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});$('#topen').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});
-if(/[?&]lk=1/.test(location.search))$('#lkb').hidden=false;
 $('#dclose').addEventListener('click',closeC);$('#shade').addEventListener('click',closeC);
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeC()});
 
