@@ -178,7 +178,7 @@ h2{font-size:var(--h2)}
 .zb{display:flex;gap:8px;flex-wrap:wrap;margin-top:32px}
 .zs{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 16px;border-radius:var(--rs);background:rgba(255,255,255,.08);border:var(--ln) solid rgba(255,255,255,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-weight:600;font-size:15px;transition:background .2s,border-color .2s}
 .zs:hover{background:var(--acc);border-color:var(--acc)}
-.zs svg{width:18px;height:18px;fill:#fff}
+.zs svg{width:18px;height:18px;fill:#fff}.zs.zi svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .form{padding:48px;border-radius:var(--r);background:rgba(10,11,12,.55);border:var(--ln) solid rgba(255,255,255,.16);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 24px 64px rgba(0,0,0,.45)}
 .form h2{font-size:var(--h3l)}
 .form .fs{color:#C9CDD1;margin:16px 0 32px}
@@ -244,7 +244,7 @@ h2{font-size:var(--h2)}
   .soc .phm{display:grid}
   .soc a{width:40px;height:40px}
   .hero .in{padding-top:112px}
-  .sec{padding:64px 0}
+  .sec{padding:40px 0}
   .sh{flex-direction:column;align-items:flex-start;margin-bottom:32px}
   .hero .in{padding:120px 16px 64px}
   .hlogo{height:72px}
@@ -279,7 +279,7 @@ h2{font-size:var(--h2)}
   .m.big figcaption{font-size:18px;padding:48px 16px 16px}
   .m figcaption{font-size:13px;padding:32px 12px 10px}
   .form{padding:24px}
-  .zap{padding-top:64px;padding-bottom:64px}
+  .zap{padding-top:40px;padding-bottom:48px}
   .zp{font-size:24px}
   .f2{grid-template-columns:1fr}
 }
@@ -361,6 +361,7 @@ h2{font-size:var(--h2)}
   .zcall{display:flex;width:100%;height:56px;margin-top:20px;gap:10px}.zcall svg{width:20px;height:20px;fill:#fff}
   .zb{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
   .zs{justify-content:center;height:48px}
+  .zs.zi{grid-column:1/-1}
 }
 
 /* 16.10 выбор Роберта: услуги «Паспорт», почему мы «Маршрут», магазин «Плитки и шторка» — на всех ширинах */
@@ -736,6 +737,8 @@ h2{font-size:var(--h2)}
         <a class="zs" href="https://vk.com/installaudio72" target="_blank" rel="noopener"><svg><use href="#i-vk"/></svg>ВКонтакте</a>
         <a class="zs" href="https://max.ru/u/f9LHodD0cOLRIO-z_N3kVSS5NlPJEpeSrIuKcoKvtFQR-lrwQEjOJml5bMs" target="_blank" rel="noopener"><svg><use href="#i-max"/></svg>MAX</a>
         <a class="zs" href="https://2gis.ru/tyumen/firm/70000001029878914" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Маршрут</a>
+        <!-- 02.11 кнопка Instagram (вариант 3, без значка Meta): включить, когда Дмитрий пришлёт ссылку, вместо ССЫЛКА
+        <a class="zs zi" href="ССЫЛКА" target="_blank" rel="noopener">Наши работы в Instagram<svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a> -->
       </div>
     </div>
     <div class="form">
