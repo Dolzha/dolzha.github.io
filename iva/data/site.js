@@ -13,7 +13,7 @@ window.IVA_S={
 "chan_note":"новые букеты каждый день",
 "vk":"https://vk.com/club231914411",
 "kont_p":"Заказы принимаем по телефону, в Telegram и MAX.",
-"kont_img":"img/fasad.jpg",
+"kont_img":"img/kont.jpg",
 "search_ph":"Найти букет или цветы",
 "hero_a":"Цветы с доставкой",
 "hero_b":"по Екатеринбургу",
