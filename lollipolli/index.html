@@ -630,7 +630,6 @@ body .hero .ttl em{font-size:inherit;text-transform:none;font-style:normal;color
 <div class="mtop"><img class="mL" src="img/logo_polina_L.png" alt=""><img class="mw" src="img/logo_polina_slovo_y.svg" alt="lollipolli"><button class="mx" type="button" aria-label="Закрыть">×</button></div>
 <div class="mlinks"></div>
 <a class="mtel" href="tel:+79500561081">+7 950 056-10-81</a>
-<div class="mcap"></div>
 </nav><style id="tel_itog11">
 .brg,.mnav,.mshade{display:none}
 @media (max-width:760px){
@@ -647,7 +646,7 @@ body .hero .ttl em{font-size:inherit;text-transform:none;font-style:normal;color
  background:#E07852 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2'/%3E%3C/svg%3E") center/18px no-repeat}
 .xcap{display:flex;align-items:center;gap:4px;background:#F3E3D3;border-radius:999px;padding:3px}
 #hd .xcap .xi{width:34px;height:34px;font-size:17px;border:0;background:#fff;color:#E07852;box-shadow:0 3px 0 rgba(224,120,82,.35)}
-#hd.xh::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:5px;background:linear-gradient(90deg,#E07852 0 33.3%,#F8B400 33.3% 66.6%,#FFBE9C 66.6%)}
+#hd.xh::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(90deg,#E07852,#F8B400 35%,#E91E78 70%,#E07852)}
 body .hero{padding-top:66px}
 section,.shelf{scroll-margin-top:72px}
 /* ГЛАВНЫЙ: кнопки стеклом и подпись с линиями, как на компьютере */
@@ -680,9 +679,6 @@ body.mopen{overflow:hidden}
 .mlinks a{padding:13px 4px;font:800 20px "Montserrat Alternates",Nunito,sans-serif;color:#3B332A;border-bottom:1px solid rgba(59,51,42,.08)}
 .mlinks a:active{color:#E07852}
 .mtel{display:flex;justify-content:center;align-items:center;height:52px;border-radius:999px;background:#E07852;color:#fff;font-weight:800;font-size:18px;margin-bottom:14px}
-.mcap{display:flex;justify-content:center}
-.mcap .xcap{gap:10px;padding:6px}
-.mcap .xi{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;font-size:22px;background:#fff;color:#E07852;box-shadow:0 3px 0 rgba(224,120,82,.35)}
 #hd.xh.hide{transform:none}
 }
 @media (max-width:374px){#hd .xw{display:none}}
@@ -690,11 +686,34 @@ body.mopen{overflow:hidden}
 <script>
 (function(){var b=document.querySelector('.brg'),n=document.querySelector('.mnav');if(!b||!n)return;
 var L=n.querySelector('.mlinks');document.querySelectorAll('#hd .xn a').forEach(function(a){var c=a.cloneNode(true);c.removeAttribute('style');L.appendChild(c)});
-var cap=document.querySelector('#hd .xcap');if(cap)n.querySelector('.mcap').appendChild(cap.cloneNode(true));
 var op=function(v){document.body.classList.toggle('mopen',v);b.setAttribute('aria-expanded',v?'true':'false')};
 b.onclick=function(){op(!document.body.classList.contains('mopen'))};
 n.querySelector('.mx').onclick=function(){op(false)};document.querySelector('.mshade').onclick=function(){op(false)};
 L.addEventListener('click',function(e){if(e.target.closest('a'))op(false)});
+})();
+</script>
+<div class="fv" id="fv" hidden><button class="fv-x" type="button" aria-label="Закрыть">×</button><button class="fv-p" type="button" aria-label="Назад">‹</button><img alt=""><button class="fv-n" type="button" aria-label="Вперёд">›</button><div class="fv-c"></div></div>
+<style>
+#foto figure{cursor:zoom-in}
+.fv{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:#14100C}
+.fv[hidden]{display:none}
+.fv img{max-width:100vw;max-height:100vh;object-fit:contain;user-select:none}
+.fv button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:50%;width:48px;height:48px;font-size:32px;line-height:1;cursor:pointer}
+.fv-x{top:14px;right:14px}.fv-p{left:14px;top:50%;margin-top:-24px}.fv-n{right:14px;top:50%;margin-top:-24px}
+.fv-c{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.8);font:700 15px Nunito,sans-serif}
+@media (max-width:760px){.fv-p,.fv-n{display:none}}
+</style>
+<script>
+(function(){var v=document.getElementById('fv');if(!v)return;var im=v.querySelector('img'),c=v.querySelector('.fv-c'),L=[].slice.call(document.querySelectorAll('#foto figure img')),i=0;
+function show(k){i=(k+L.length)%L.length;im.src=L[i].currentSrc||L[i].src;im.alt=L[i].alt;c.textContent=(i+1)+' из '+L.length}
+function op(k){show(k);v.hidden=false;document.body.style.overflow='hidden'}
+function cl(){v.hidden=true;document.body.style.overflow=''}
+L.forEach(function(e,k){e.closest('figure').addEventListener('click',function(){op(k)})});
+v.querySelector('.fv-x').onclick=cl;v.querySelector('.fv-p').onclick=function(e){e.stopPropagation();show(i-1)};v.querySelector('.fv-n').onclick=function(e){e.stopPropagation();show(i+1)};
+v.addEventListener('click',function(e){if(e.target===v)cl()});
+document.addEventListener('keydown',function(e){if(v.hidden)return;if(e.key==='Escape')cl();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
+var x0=null;v.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+v.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)show(i+(d<0?1:-1));x0=null});
 })();
 </script></body>
 </html>
