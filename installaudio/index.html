@@ -821,7 +821,7 @@ h2{font-size:var(--h2)}
 document.querySelectorAll('.sv[data-o]').forEach(function(c){c.tabIndex=0;c.setAttribute('role','link');var h=c.querySelector('h3');c.setAttribute('aria-label','Заявка: '+(h?h.textContent:''));function go(){var f=document.querySelector('#zapis select');if(f){for(var j=0;j<f.options.length;j++)if(f.options[j].text===c.dataset.o){f.selectedIndex=j;break}}document.getElementById('zapis').scrollIntoView({behavior:'smooth'})}c.addEventListener('click',go);c.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go()}})});
 </script>
 <script>
-/* 05.11: заявка с формы уходит в Telegram Install Audio через бота @installauidio_bot
+/* 05.11 (публикация 2): заявка с формы уходит в Telegram Install Audio через бота @installauidio_bot
    (Клиенты/ia-relay: Яндекс Облако → Vercel → Telegram). Бот не ответил: ссылка на WhatsApp с готовым текстом, как было с 20.10 */
 (function(){var $=function(i){return document.getElementById(i)},b=$('fSend');if(!b)return;
 var URL_Z='https://functions.yandexcloud.net/d4elsl7s4i1q7ib7595g',busy=false;
