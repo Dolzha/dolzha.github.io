@@ -53,7 +53,7 @@ li b{white-space:nowrap;color:var(--ink)}
  <h1>Оплата заказа <em id="num"></em></h1>
  <ul id="list"></ul>
  <div class="sum"><span>Итого</span><span id="sum"></span></div>
- <p class="mut">Чек придёт на <b id="mail"></b>. Самовывоз: салон ИВА, 8 Марта, 101.</p>
+ <p class="mut">Чек придёт на <b id="mail"></b>. <span id="how">Самовывоз: салон ИВА, 8 Марта, 101</span>.</p>
  <div id="payment-form"></div>
  <p class="hint">Оплатили в приложении банка? Вернитесь на эту страницу: подтверждение появится здесь само.</p>
 </section>
@@ -63,7 +63,7 @@ li b{white-space:nowrap;color:var(--ink)}
 <section id="s-ok" hidden class="c">
  <div class="ok"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
  <h1>Спасибо, <em>оплата прошла</em></h1>
- <p>Чек придёт на почту. Букет ждёт вас в салоне на 8 Марта, 101 в назначенное время.</p>
+ <p id="oktx">Чек придёт на почту. Букет будет готов к назначенному времени.</p>
  <div class="acts"><a class="b1" href="index.html#katalog">Вернуться в каталог</a></div>
 </section>
 
@@ -102,7 +102,7 @@ function start(){
     if(d.s==='1'){paid();return}
     if(d.s==='old'){show('s-old');return}
     if(!d.t||!window.YooMoneyCheckoutWidget){show('s-err');return}
-    $('num').textContent='№'+d.o;$('mail').textContent=d.e;$('sum').textContent=rub(d.sum);
+    $('num').textContent='№'+d.o;if(d.w)$('how').textContent=d.w;$('oktx').textContent=d.d?'Чек придёт на почту. Привезём букет в назначенное время.':'Чек придёт на почту. Букет будет ждать вас в салоне в назначенное время.';$('mail').textContent=d.e;$('sum').textContent=rub(d.sum);
     $('list').innerHTML=d.i.map(function(x){return '<li><span>'+esc(x[0])+(x[1]>1?' × '+x[1]:'')+'</span><b>'+rub(x[1]*x[2])+'</b></li>'}).join('');
     show('s-pay');
     /* return_url не задаём: тогда форма сообщает об успехе событием и покупатель остаётся здесь */
