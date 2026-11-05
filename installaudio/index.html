@@ -749,6 +749,7 @@ h2{font-size:var(--h2)}
       <div class="mt"><input id="fCar" placeholder="Машина: марка, модель, год"></div>
       <div class="mt"><select id="fJob"><option value="">Что нужно сделать</option><option>Акустика в двери</option><option>Сабвуфер и усилитель</option><option>Короб стелс</option><option>Настроить то, что уже стоит</option><option>Шумоизоляция дверей</option><option>Шумоизоляция всего салона</option><option>Магнитола или головное устройство</option><option>Камера или регистратор</option><option>Охранный комплекс, автозапуск</option><option>Доводчики дверей</option><option>Электробагажник</option><option>Силовая проводка и питание</option><option>Подсветка</option><option>Другое, нужен совет</option></select></div>
       <div class="mt"><textarea id="fMsg" placeholder="Что хотите получить в итоге. Если оборудование уже куплено, напишите модель"></textarea></div>
+      <input id="fHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <button class="b1" id="fSend" type="button">Получить консультацию</button><p class="ferr" id="fErr" role="alert"></p>
       <label class="chk"><input type="checkbox" id="fOk"><span>Я согласен на обработку персональных данных и принимаю <a href="privacy.html">политику обработки персональных данных</a></span></label>
     </div>
@@ -820,18 +821,29 @@ h2{font-size:var(--h2)}
 document.querySelectorAll('.sv[data-o]').forEach(function(c){c.tabIndex=0;c.setAttribute('role','link');var h=c.querySelector('h3');c.setAttribute('aria-label','Заявка: '+(h?h.textContent:''));function go(){var f=document.querySelector('#zapis select');if(f){for(var j=0;j<f.options.length;j++)if(f.options[j].text===c.dataset.o){f.selectedIndex=j;break}}document.getElementById('zapis').scrollIntoView({behavior:'smooth'})}c.addEventListener('click',go);c.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go()}})});
 </script>
 <script>
-/* 20.10: заявка с формы уходит в WhatsApp Install Audio готовым сообщением (на github.io сервера нет; на хостинге клиента — на почту по договору) */
+/* 05.11: заявка с формы уходит в Telegram Install Audio через бота @installauidio_bot
+   (Клиенты/ia-relay: Яндекс Облако → Vercel → Telegram). Бот не ответил: ссылка на WhatsApp с готовым текстом, как было с 20.10 */
 (function(){var $=function(i){return document.getElementById(i)},b=$('fSend');if(!b)return;
-b.addEventListener('click',function(){var n=$('fName').value.trim(),tel=$('fTel').value.trim(),e=$('fErr'),d=tel.replace(/\D/g,'');
- [$('fName'),$('fTel')].forEach(function(x){x.classList.remove('bad')});
+var URL_Z='https://functions.yandexcloud.net/d4elsl7s4i1q7ib7595g',busy=false;
+b.addEventListener('click',function(){if(busy)return;var n=$('fName').value.trim(),tel=$('fTel').value.trim(),e=$('fErr'),d=tel.replace(/\D/g,'');
+ [$('fName'),$('fTel')].forEach(function(x){x.classList.remove('bad')});e.classList.remove('ok');
  if(!n){$('fName').classList.add('bad');e.textContent='Напишите, как к вам обращаться';return}
  if(d.length<10){$('fTel').classList.add('bad');e.textContent='Проверьте номер телефона';return}
  if(!$('fOk').checked){e.textContent='Отметьте согласие на обработку персональных данных';return}
- e.textContent='';var L=['Здравствуйте! Заявка с сайта.','Имя: '+n,'Телефон: '+tel];
- if($('fCar').value.trim())L.push('Машина: '+$('fCar').value.trim());if($('fJob').value)L.push('Что нужно: '+$('fJob').value);
- if($('fMsg').value.trim())L.push('Комментарий: '+$('fMsg').value.trim());
- window.open('https://wa.me/79221967777?text='+encodeURIComponent(L.join('\n')),'_blank','noopener');
- e.textContent='Открыли WhatsApp с вашей заявкой, осталось нажать «Отправить»';e.classList.add('ok')});
+ var car=$('fCar').value.trim(),job=$('fJob').value,msg=$('fMsg').value.trim();
+ var L=['Здравствуйте! Заявка с сайта.','Имя: '+n,'Телефон: '+tel];
+ if(car)L.push('Машина: '+car);if(job)L.push('Что нужно: '+job);if(msg)L.push('Комментарий: '+msg);
+ var wa='https://wa.me/79221967777?text='+encodeURIComponent(L.join('\n'));
+ busy=true;b.disabled=true;var t0=b.textContent;b.textContent='Отправляем…';e.textContent='';
+ function fail(){e.innerHTML='Не получилось отправить. <a href="'+wa+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Отправьте заявку в WhatsApp</a>, текст уже готов.'}
+ var ctl=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ctl)ctl.abort()},15000);
+ fetch(URL_Z,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,tel:tel,car:car,job:job,msg:msg,hp:$('fHp').value}),signal:ctl?ctl.signal:undefined})
+  .then(function(r){return r.json()}).then(function(x){
+   if(!x||!x.ok)return fail();
+   e.textContent='Заявка отправлена. Перезвоним в рабочее время.';e.classList.add('ok');
+   ['fName','fTel','fCar','fMsg'].forEach(function(i){$(i).value=''});$('fJob').selectedIndex=0;
+  }).catch(fail).then(function(){clearTimeout(tm);busy=false;b.disabled=false;b.textContent=t0});
+});
 })();
 </script>
 </body>
