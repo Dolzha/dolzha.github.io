@@ -805,7 +805,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
     <div class="dgrid">
       <div class="dc"><div class="k">Доставка</div><h3 data-s="d1_h">По Екатеринбургу</h3><p data-s="d1_p">Отправляем из салона, где собран букет, по тарифу Яндекс Такси. Стоимость доставки менеджер назовёт при подтверждении заказа.</p></div>
       <div class="dc"><div class="k">Самовывоз</div><h3>8 Марта, 101</h3><p><b class="hrs" data-s="h_m8">ежедневно 9:00-21:00</b><span data-s="d2_p">Здесь выдаём заказы с сайта и шары.</span></p></div>
-      <div class="dc"><div class="k">Самовывоз</div><h3>Кировградская, 4/2</h3><p><b class="hrs" data-s="h_kir">ежедневно 9:00-21:00</b><span data-s="d3_p">Букеты с витрины этого салона выдаём здесь или доставляем по городу.</span></p></div>
+      <div class="dc"><div class="k">Самовывоз</div><h3>Кировградская, 4/2</h3><p><b class="hrs" data-s="h_kir">ежедневно 9:00-21:00</b><span data-s="d3_p">Здесь выдаём заказы с сайта.</span></p></div>
     </div>
     <div class="dnote"><div><b data-s="dn_t">Не нашли нужный букет?</b><span data-s="dn_s">Пришлите фото примера или напишите бюджет, флорист соберёт похожий.</span></div><a class="b1" data-sh="tgp" data-s="dn_btn" href="https://t.me/+79041760166">Написать менеджеру</a></div>
   </div>
@@ -1224,11 +1224,13 @@ function drawC(){
   /* 05.11 Ирина: доставка из обоих салонов и оплата онлайн для обоих. Самовывоз с витрины, как раньше, только в своём салоне */
   var kir=hasS('kir'),other=C.some(function(i){return BY[i.id].s!=='kir'});
   if(kir&&!other&&how==='m8')how='';
-  if(!kir&&how==='kir')how='';
+  /* 05.11 Роберт: самовывоз с Кировградской как с 8 Марта. Серый только если в корзине одни букеты с витрины другого салона */
+  var m8v=hasS('m8'),only8=m8v&&!C.some(function(i){return BY[i.id].s!=='m8'});
+  if(only8&&how==='kir')how='';
   var opts=[
    {k:'dost',b:'Доставка по Екатеринбургу',s:esc(iv('deliv_line','по тарифу Яндекс Такси, стоимость назовёт менеджер')),dis:false},
    {k:'m8',b:'Самовывоз: 8 Марта, 101',s:esc(iv('h_m8','ежедневно 9:00-21:00')),dis:kir&&!other},
-   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:!kir}
+   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:only8}
   ];
   db.innerHTML=C.map(function(i){var x=BY[i.id];return '<div class="ci"><img src="'+x.ph[0]+'" alt=""><div><div class="t">'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></div><div class="qty"><button data-cq="-1" data-id="'+x.id+'" aria-label="Меньше">−</button><span>'+i.q+'</span><button data-cq="1" data-id="'+x.id+'" aria-label="Больше">+</button></div></div><div class="r"><b>'+f(x.p*i.q)+'</b><button data-del="'+x.id+'">Убрать</button></div></div>'}).join('')+
    '<div class="total"><span>Букеты</span><b>'+f(sumC())+'</b></div>'+
