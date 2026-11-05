@@ -159,7 +159,7 @@
     var pic = { m8: '../hero.jpg', kir: '../img/b/1598_0.jpg' };
     var sal = Object.keys(SAL).map(function (k) {
       return '<button class="sc' + (vsal === k ? ' on' : '') + '" data-sal="' + k + '"><img src="' + pic[k] + '" alt=""><div class="tx"><small>Салон</small><b>' + esc(SAL[k]) + '</b>' +
-        '<div class="nums"><span>' + cnt(k) + ' на витрине</span><span>' + (k === 'm8' ? 'доставка и самовывоз' : 'только самовывоз') + '</span></div></div></button>';
+        '<div class="nums"><span>' + cnt(k) + ' на витрине</span><span>' + 'доставка и самовывоз' + '</span></div></div></button>';
     }).join('');
     var att = [];
     if (noph) { att.push('<button data-flt="noph">' + I('ph:image-broken', '#B83E70') + 'Букеты без фото<em>' + noph + '</em></button>'); }

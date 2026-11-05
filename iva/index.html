@@ -1165,8 +1165,8 @@ function openB(id,push){
      (x.sv.length&&!x.dop?'<div class="blk"><h3>Состав</h3><p class="hint-sv">Нажмите на цветок, чтобы увидеть все букеты с ним</p><div class="pills">'+x.sv.map(function(s){return '<button data-sv="'+esc(s)+'" title="Все букеты, где есть '+esc(s)+'">'+esc(s)+'</button>'}).join('')+'</div></div>':'')+
      (x.o?'<div class="blk"><h3>Как заказать</h3><p>'+esc(iv('b_o','Расскажите в Telegram о мероприятии: дата, место и формат. Менеджер рассчитает стоимость.'))+'</p></div>':'<div class="blk"><h3>Получение</h3><ul>'+
       '<li><b>Доставка по Екатеринбургу</b>'+esc(iv('deliv_line','по тарифу Яндекс Такси, стоимость назовёт менеджер'))+'</li>'+
-      '<li'+(kirOnly?' class="off"':'')+'><b>Самовывоз: 8 Марта, 101</b>'+esc(iv('h_m8','ежедневно 9:00-21:00'))+'</li>'+
-      '<li'+(x.s==='m8'?' class="off"':'')+'><b>Самовывоз: Кировградская, 4/2</b>'+esc(iv('h_kir','ежедневно 9:00-21:00'))+'</li>'+
+      '<li><b>Самовывоз: 8 Марта, 101</b>'+esc(iv('h_m8','ежедневно 9:00-21:00'))+'</li>'+
+      '<li><b>Самовывоз: Кировградская, 4/2</b>'+esc(iv('h_kir','ежедневно 9:00-21:00'))+'</li>'+
      '</ul></div>')+
      (x.zak?'<div class="blk"><h3>Собираем под заказ</h3><p>'+esc(iv('b_zak','Букеты-гиганты собираем только под заказ. Напишите дату и сколько цветов нужно, менеджер назовёт цену и срок.'))+'</p></div>':'')+
      (x.nk?'<div class="blk"><h3>Соберём нужное количество</h3><p>'+esc(iv('b_nk','Менеджер подтвердит время, оплата после подтверждения.'))+'</p></div>':'')+
@@ -1221,16 +1221,11 @@ function hasS(s){return C.some(function(i){return BY[i.id].s===s})}
 function drawC(){
   var db=$('#db');if(done)return;
   if(!C.length){db.innerHTML='<div class="empty"><b>Корзина пуста</b>Выберите букет на витрине или в каталоге.<br><a class="b1" href="#vitrina" id="cgo">Онлайн-витрина</a></div>';$('#cgo').addEventListener('click',closeC);return}
-  /* 05.11 Ирина: доставка из обоих салонов и оплата онлайн для обоих. Самовывоз с витрины, как раньше, только в своём салоне */
-  var kir=hasS('kir'),other=C.some(function(i){return BY[i.id].s!=='kir'});
-  if(kir&&!other&&how==='m8')how='';
-  /* 05.11 Роберт: самовывоз с Кировградской как с 8 Марта. Серый только если в корзине одни букеты с витрины другого салона */
-  var m8v=hasS('m8'),only8=m8v&&!C.some(function(i){return BY[i.id].s!=='m8'});
-  if(only8&&how==='kir')how='';
+  /* 05.11 Ирина: Кировградская то же самое, что 8 Марта. Доставка и самовывоз из обоих салонов всегда, при любом букете */
   var opts=[
    {k:'dost',b:'Доставка по Екатеринбургу',s:esc(iv('deliv_line','по тарифу Яндекс Такси, стоимость назовёт менеджер')),dis:false},
-   {k:'m8',b:'Самовывоз: 8 Марта, 101',s:esc(iv('h_m8','ежедневно 9:00-21:00')),dis:kir&&!other},
-   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:only8}
+   {k:'m8',b:'Самовывоз: 8 Марта, 101',s:esc(iv('h_m8','ежедневно 9:00-21:00')),dis:false},
+   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:false}
   ];
   db.innerHTML=C.map(function(i){var x=BY[i.id];return '<div class="ci"><img src="'+x.ph[0]+'" alt=""><div><div class="t">'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></div><div class="qty"><button data-cq="-1" data-id="'+x.id+'" aria-label="Меньше">−</button><span>'+i.q+'</span><button data-cq="1" data-id="'+x.id+'" aria-label="Больше">+</button></div></div><div class="r"><b>'+f(x.p*i.q)+'</b><button data-del="'+x.id+'">Убрать</button></div></div>'}).join('')+
    '<div class="total"><span>Букеты</span><b>'+f(sumC())+'</b></div>'+
