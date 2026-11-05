@@ -1169,7 +1169,7 @@ function openB(id,push){
       '<li'+(x.s==='m8'?' class="off"':'')+'><b>Самовывоз: Кировградская, 4/2</b>'+esc(iv('h_kir','ежедневно 9:00-21:00'))+'</li>'+
      '</ul></div>')+
      (x.zak?'<div class="blk"><h3>Собираем под заказ</h3><p>'+esc(iv('b_zak','Букеты-гиганты собираем только под заказ. Напишите дату и сколько цветов нужно, менеджер назовёт цену и срок.'))+'</p></div>':'')+
-     (x.nk?'<div class="blk"><h3>Соберём нужное количество</h3><p>'+esc(iv('b_nk','Менеджер подтвердит время.'))+'</p></div>':'')+
+     (x.nk?'<div class="blk"><h3>Соберём нужное количество</h3><p>'+esc(iv('b_nk','Менеджер подтвердит время, оплата после подтверждения.'))+'</p></div>':'')+
      (x.na&&!x.dop?'<div class="blk"><h3>Уточнить наличие у менеджера</h3><p>'+esc(iv('b_na','Для этого букета сейчас нужно время, чтобы найти цветы. Менеджер подтвердит наличие, когда свяжется с вами по заказу.'))+'</p></div>':'')+
     '</div>'+
     '<div class="buy glass">'+
@@ -1217,8 +1217,6 @@ function add(id,qn){var it=C.filter(function(i){return i.id===id})[0],mx=BY[id].
 var tmr;
 function toast(t,a,im){$('#tt').textContent=t;$('#topen').hidden=!a;var i=$('#ti');i.hidden=!im;if(im)i.src=im;$('#tk').hidden=!im;$('#toast').classList.add('on');clearTimeout(tmr);tmr=setTimeout(function(){$('#toast').classList.remove('on')},3200)}
 document.addEventListener('click',function(e){var a=e.target.closest('[data-add]');if(a){add(a.dataset.add,a.hasAttribute('data-withq')?bq:1)}});
-/* цена доставки из панели (data/site.js deliv_price); нет цены: доставку называет менеджер. Посредник берёт её оттуда же */
-function dp(){var v=+String(IV.deliv_price||'').replace(/\D/g,'');return v>0&&v<1e5?v:0}
 function hasS(s){return C.some(function(i){return BY[i.id].s===s})}
 function drawC(){
   var db=$('#db');if(done)return;
@@ -1233,7 +1231,7 @@ function drawC(){
    {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:!kir}
   ];
   db.innerHTML=C.map(function(i){var x=BY[i.id];return '<div class="ci"><img src="'+x.ph[0]+'" alt=""><div><div class="t">'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></div><div class="qty"><button data-cq="-1" data-id="'+x.id+'" aria-label="Меньше">−</button><span>'+i.q+'</span><button data-cq="1" data-id="'+x.id+'" aria-label="Больше">+</button></div></div><div class="r"><b>'+f(x.p*i.q)+'</b><button data-del="'+x.id+'">Убрать</button></div></div>'}).join('')+
-   '<div class="total"><span>Букеты</span><b>'+f(sumC())+'</b></div>'+(how==='dost'&&dp()?'<div class="total"><span>Доставка</span><b>'+f(dp())+'</b></div><div class="total"><span>Итого</span><b>'+f(sumC()+dp())+'</b></div>':'')+
+   '<div class="total"><span>Букеты</span><b>'+f(sumC())+'</b></div>'+
    '<div class="co">'+
     '<h3>Получатель</h3>'+
     '<label class="fld" id="fn"><span>Ваше имя</span><input id="cn" autocomplete="name"></label>'+
@@ -1241,13 +1239,13 @@ function drawC(){
     '<h3>Получение</h3><div class="opts">'+opts.map(function(o){return '<label class="opt'+(o.dis?' dis':'')+(how===o.k?' on':'')+'"><input type="radio" name="how" value="'+o.k+'"'+(how===o.k?' checked':'')+(o.dis?' disabled':'')+'><span><b>'+o.b+'</b><small>'+o.s+'</small></span></label>'}).join('')+'</div>'+
     (how==='dost'?'<label class="fld" id="fa" style="margin-top:16px"><span>Адрес доставки</span><input id="ca" autocomplete="street-address" placeholder="улица, дом, квартира"></label><label class="fld"><span>Получатель, если это не вы: имя и телефон</span><input id="cr"></label>':'')+
     /* оплата онлайн: ссылку пришлёт менеджер, чек ЮKassa уходит на почту (29.10 только 8 Марта, с 05.11 любой способ получения) */
-    (how?'<label class="fld" id="fe" style="margin-top:'+(how==='dost'?'0':'16px')+'"><span>Почта для чека</span><input id="ce" type="email" autocomplete="email" placeholder="name@mail.ru"></label><p class="note" style="margin:-4px 0 0;text-align:left">'+(how==='dost'&&!dp()?'После заказа откроется оплата букета картой, через СБП или SberPay. Стоимость доставки назовёт менеджер.':'После заказа откроется оплата картой, через СБП или SberPay.')+'</p>':'')+
+    (how?'<label class="fld" id="fe" style="margin-top:'+(how==='dost'?'0':'16px')+'"><span>Почта для чека, если будете платить онлайн</span><input id="ce" type="email" autocomplete="email" placeholder="name@mail.ru"></label><p class="note" style="margin:-4px 0 0;text-align:left">'+(how==='dost'?'Менеджер подтвердит букет, назовёт стоимость доставки и пришлёт ссылку на оплату картой или СБП.':'Менеджер подтвердит букет и пришлёт ссылку на оплату картой или СБП.')+'</p>':'')+
     '<label class="fld" style="margin-top:16px"><span>Дата и время</span><input id="cw" placeholder="например, сегодня к 18:00"></label>'+
     '<label class="fld"><span>Комментарий или текст открытки</span><textarea id="cc"></textarea></label>'+
     '<input id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">'+
     '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен с <a href="oferta.html" target="_blank">публичной офертой</a> и на обработку персональных данных по <a href="privacy.html" target="_blank">политике конфиденциальности</a></span></label>'+
-    '<button class="b1" id="send">Перейти к оплате</button>'+
-    '<p class="note">'+esc(iv('cart_note','Оплата картой, через СБП или SberPay сразу после заказа. Чек придёт на почту.'))+'</p>'+
+    '<button class="b1" id="send">Отправить заказ</button>'+
+    '<p class="note">'+esc(iv('cart_note','Заказ придёт в Telegram салона. Оплата после подтверждения.'))+'</p>'+
    '</div>';
 }
 $('#db').addEventListener('click',function(e){
@@ -1264,7 +1262,7 @@ function send(){
   if(!how){ok=false;$('.opts').scrollIntoView({block:'center',behavior:'smooth'});toast('Выберите способ получения')}
   if(!$('#cg').checked){$('#fg').classList.add('err');ok=false}
   var em=$('#ce')?$('#ce').value.trim():'';
-  if($('#fe')){var badE=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);$('#fe').classList.toggle('err',badE);if(badE)ok=false}
+  if($('#fe')){var badE=em!==''&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);$('#fe').classList.toggle('err',badE);if(badE)ok=false}
   var ad=$('#ca')?$('#ca').value.trim():'';
   if(how==='dost'){var badA=ad.length<5;$('#fa').classList.toggle('err',badA);if(badA)ok=false}
   if(!ok)return;
@@ -1297,7 +1295,7 @@ function send(){
   var ac=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ac)ac.abort()},20000);
   /* text/plain: простой запрос без предварительной проверки CORS */
   fetch(ORDER_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(o),signal:ac?ac.signal:undefined})
-   .then(function(r){return r.json()}).then(function(d){clearTimeout(tm);if(d&&d.ok){if(d.pay){done=true;C=[];save();badge();location.href='oplata.html?t='+encodeURIComponent(d.pay)}else sent()}else fail()})
+   .then(function(r){return r.json()}).then(function(d){clearTimeout(tm);if(d&&d.ok)sent();else fail()})
    .catch(function(e){clearTimeout(tm);try{console.warn('order',e)}catch(x){}fail()});
 }
 function openC(){if(!done)drawC();$('#drawer').classList.add('on');$('#shade').classList.add('on');document.body.classList.add('lock')}
