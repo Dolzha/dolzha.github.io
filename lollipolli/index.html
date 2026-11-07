@@ -568,7 +568,7 @@ footer .flogo{flex-wrap:wrap;justify-content:center}
       <div class="lbl">Телефон</div>
       <input class="inp" id="zt" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><input id="zhp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div class="lbl">Пожелания</div><textarea class="inp ta" id="zw" rows="3" maxlength="1500" placeholder="Возраст именинника, сколько детей, дата и где праздник"></textarea><a class="btn btn-main" id="zs" href="javascript:void(0)">Отправить заявку</a><div id="zm" class="zm" role="status" aria-live="polite"></div>
-      <div class="agree"><span class="bx on"></span><span>Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">политикой обработки персональных данных</a></span></div>
+      <div class="agree"><span class="bx"></span><span>Даю согласие на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank">политикой обработки персональных данных</a></span></div>
     </div>
   </div>
 </section>
@@ -871,5 +871,22 @@ function set(o){w.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"t
 b.addEventListener("click",function(e){e.stopPropagation();set(!w.classList.contains("open"))});
 document.addEventListener("click",function(e){if(!w.contains(e.target))set(false)});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)});
-w.querySelectorAll(".fm a").forEach(function(a){a.addEventListener("click",function(){set(false)})})})()</script></body>
+w.querySelectorAll(".fm a").forEach(function(a){a.addEventListener("click",function(){set(false)})})})()</script><style id="itog20_07_11">
+/* «А также»: квадраты, бежевый на весь квадрат, значок по центру */
+.k3{grid-template-columns:repeat(2,244px);justify-content:center;column-gap:150px;max-width:none}
+.k3 .kc{width:244px;aspect-ratio:1/1;min-height:0;padding:18px;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;background:#FBF0E4;border-radius:26px}
+.k3 .kc+.kc{margin-top:-76px}
+.k3 .ki{width:auto;height:auto;background:none;border-radius:0}
+.k3 .ki .ic{width:108px;height:108px}
+.k3 .kc b{font-size:19px;line-height:1.25}
+@media(max-width:1100px){.k3{grid-template-columns:repeat(2,190px);column-gap:90px}.k3 .kc{width:190px}.k3 .ki .ic{width:84px;height:84px}.k3 .kc b{font-size:17px}}
+@media(max-width:760px){.k3{grid-template-columns:1fr;justify-content:stretch}.k3 .kc,.k3 .kc+.kc{width:58%;margin:0}.k3 .kc:nth-child(odd){justify-self:end}.k3 .ki .ic{width:76px;height:76px}.k3 .kc b{font-size:16px}}
+/* «К нам обращаются»: наведение медленнее */
+.pv-i{transition:transform .7s cubic-bezier(.22,.61,.36,1),box-shadow .7s cubic-bezier(.22,.61,.36,1)!important}
+.pv-i .ic{transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+.pv-i:hover{transform:translateY(-3px)}
+.pv-i:hover .ic{transform:rotate(0deg) scale(1.04)}
+/* афиши: место сверху, чтобы приподнятая афиша не обрезалась */
+.sh-tr{padding-top:12px;margin-top:-12px}
+</style></body>
 </html>
