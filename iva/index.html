@@ -485,6 +485,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .agree input{accent-color:var(--acc);width:18px;height:18px;margin-top:2px;flex-shrink:0}
 .agree a{color:var(--acc);border-bottom:1px solid currentColor}
 .agree.err{color:#C0563F}
+#fg{margin-bottom:var(--s2)}
 .co .b1{width:100%}
 .co .note{font-size:14px;color:var(--mut);margin-top:var(--s4);text-align:center}
 .done{padding:var(--s6) 0}
@@ -1240,7 +1241,7 @@ function drawC(){
     '<label class="fld" style="margin-top:16px"><span>Дата и время</span><input id="cw" placeholder="например, сегодня к 18:00"></label>'+
     '<label class="fld"><span>Комментарий или текст открытки</span><textarea id="cc"></textarea></label>'+
     '<input id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">'+
-    '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен с <a href="oferta.html" target="_blank">публичной офертой</a> и на обработку персональных данных по <a href="privacy.html" target="_blank">политике конфиденциальности</a></span></label>'+
+    '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен с <a href="oferta.html" target="_blank">публичной офертой</a></span></label>'+'<label class="agree" id="fg2"><input type="checkbox" id="cg2"><span>Согласен на обработку персональных данных по <a href="privacy.html" target="_blank">политике конфиденциальности</a></span></label>'+
     '<button class="b1" id="send">Отправить заказ</button>'+
     '<p class="note">'+esc(iv('cart_note','Заказ придёт в Telegram салона. Оплата после подтверждения.'))+'</p>'+
    '</div>';
@@ -1252,12 +1253,12 @@ $('#db').addEventListener('click',function(e){
 });
 /* 05.11: красная рамка снимается, как только поле поправили */
 $('#db').addEventListener('input',function(e){var f=e.target.closest('.fld,.agree');if(f)f.classList.remove('err')});
-$('#db').addEventListener('change',function(e){if(e.target.name==='how'){how=e.target.value;var keep={n:$('#cn').value,p:$('#cp').value,w:$('#cw').value,c:$('#cc').value,g:$('#cg').checked,e:$('#ce')?$('#ce').value:'',a:$('#ca')?$('#ca').value:'',r:$('#cr')?$('#cr').value:''};drawC();$('#cn').value=keep.n;$('#cp').value=keep.p;$('#cw').value=keep.w;$('#cc').value=keep.c;$('#cg').checked=keep.g;if($('#ce'))$('#ce').value=keep.e;if($('#ca'))$('#ca').value=keep.a;if($('#cr'))$('#cr').value=keep.r}});
+$('#db').addEventListener('change',function(e){if(e.target.name==='how'){how=e.target.value;var keep={n:$('#cn').value,p:$('#cp').value,w:$('#cw').value,c:$('#cc').value,g:$('#cg').checked,g2:$('#cg2').checked,e:$('#ce')?$('#ce').value:'',a:$('#ca')?$('#ca').value:'',r:$('#cr')?$('#cr').value:''};drawC();$('#cn').value=keep.n;$('#cp').value=keep.p;$('#cw').value=keep.w;$('#cc').value=keep.c;$('#cg').checked=keep.g;$('#cg2').checked=keep.g2;if($('#ce'))$('#ce').value=keep.e;if($('#ca'))$('#ca').value=keep.a;if($('#cr'))$('#cr').value=keep.r}});
 function send(){
   var ok=true;
   [['#fn','#cn',2],['#fp','#cp',6]].forEach(function(a){var bad=$(a[1]).value.trim().length<a[2];$(a[0]).classList.toggle('err',bad);if(bad)ok=false});
   if(!how){ok=false;$('.opts').scrollIntoView({block:'center',behavior:'smooth'});toast('Выберите способ получения')}
-  if(!$('#cg').checked){$('#fg').classList.add('err');ok=false}
+  if(!$('#cg').checked){$('#fg').classList.add('err');ok=false}   if(!$('#cg2').checked){$('#fg2').classList.add('err');ok=false}
   var em=$('#ce')?$('#ce').value.trim():'';
   if($('#fe')){var badE=em!==''&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);$('#fe').classList.toggle('err',badE);if(badE)ok=false}
   var ad=$('#ca')?$('#ca').value.trim():'';
