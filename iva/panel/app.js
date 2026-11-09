@@ -466,6 +466,8 @@
   }
 
   /* фото: ужимаем в браузере до 1600 px, иначе снимок с телефона весит 5 МБ и упирается в лимиты хостинга */
+  /* 09.11 Ирина: с телефона грузились 2 фото и всё. Холсты на телефоне не освобождались, память кончалась,
+     toBlob отдавал null и уходил исходник 5-10 МБ. Теперь холст обнуляем, а при null пробуем меньший размер */
   function shrink(file, max) {
     max = max || 1600;
     return new Promise(function (ok) {
@@ -474,8 +476,11 @@
         var k = Math.min(1, max / Math.max(im.width, im.height));
         var c = document.createElement('canvas'); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
         c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
-        URL.revokeObjectURL(u);
-        c.toBlob(function (b) { ok(b || file); }, 'image/jpeg', 0.86);
+        URL.revokeObjectURL(u); im.src = '';
+        c.toBlob(function (b) {
+          c.width = 0; c.height = 0;
+          if (b) { ok(b); } else if (max > 1000) { shrink(file, 1000).then(ok); } else { ok(file); }
+        }, 'image/jpeg', 0.86);
       };
       im.onerror = function () {
         URL.revokeObjectURL(u);
@@ -504,10 +509,17 @@
     if (!list.length) { return; }
     var th = $('#thumbs'); th.insertAdjacentHTML('afterbegin', '<div class="th up" id="upl">Загрузка…</div>');
     var chain = Promise.resolve(), added = 0, bad = '';
-    list.forEach(function (f) {
-      chain = chain.then(function () { return shrink(f); }).then(function (blob) {
+    list.forEach(function (f, n) {
+      chain = chain.then(function () {
+        var el = $('#upl'); if (el) { el.textContent = 'Загрузка ' + (n + 1) + ' из ' + list.length + '…'; }
+        return shrink(f);
+      }).then(function (blob) {
         var fd = new FormData(); fd.append('photo', blob, 'photo.jpg');
-        return fetch('api.php?do=upload', { method: 'POST', body: fd, credentials: 'same-origin', headers: { 'X-CSRF': window.CSRF } }).then(function (r) { return r.json(); });
+        /* одно зависшее фото больше не держит очередь: 90 секунд и идём дальше */
+        return Promise.race([
+          fetch('api.php?do=upload', { method: 'POST', body: fd, credentials: 'same-origin', headers: { 'X-CSRF': window.CSRF } }).then(function (r) { return r.json(); }),
+          new Promise(function (ok, no) { setTimeout(no, 90000); })
+        ]);
       }).then(function (r) {
         if (!r.ok) { bad = r.error; return; }
         W.ph.push(r.src); dirty = true; added++;
