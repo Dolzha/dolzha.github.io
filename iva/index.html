@@ -102,6 +102,25 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .sres .all:hover{background:#DCE7E0}
 .sres .none{padding:var(--s3);font-size:15px;color:var(--tx)}
 .sres .none a{color:var(--acc);font-weight:700;border-bottom:1px solid currentColor}
+/* поиск 30.10: подсказки текстом, недавние запросы, выбор стрелками, затемнение страницы */
+.sres .sg{display:flex;align-items:center;gap:var(--s3);min-height:44px;padding:6px var(--s2) 6px 14px;border-radius:14px;font-size:16px;color:var(--mut);cursor:pointer}
+.sres .sg>.ico{width:18px;height:18px;flex-shrink:0;color:var(--mut)}
+.sres .sg span{flex:1;min-width:0}
+.sres .sg b{font-weight:700;color:var(--ink)}
+.sres .sg.rq span{color:var(--ink)}
+.sres .sg:hover,.sres .cur{background:#fff;box-shadow:0 0 0 1px var(--line-s)}
+.sres .chips button.cur{color:var(--acc);box-shadow:0 0 0 1.5px var(--acc)}
+.sres .rx{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:20px;line-height:1;color:var(--mut);flex-shrink:0}
+.sres .rx:hover{background:#F9E7EE;color:var(--acc)}
+.sres .rqh{display:flex;justify-content:space-between;align-items:center}
+.sres .rqh button{font-size:13px;font-weight:600;color:var(--acc)}
+.sres a.it.kat{background:#F1EAE4;margin:4px 0}
+.sres a.it.kat small{color:var(--acc);font-weight:600}
+.sres .fix{padding:var(--s2) var(--s2) 4px;font-size:14px;color:var(--mut)}
+.sres .fix b{color:var(--ink)}
+.sres .sep{height:1px;background:var(--line-s);margin:6px var(--s2)}
+.sdim{position:fixed;inset:0;z-index:59;background:rgba(16,48,43,.32);opacity:0;pointer-events:none;transition:opacity var(--t-base) var(--ease)}
+.sdim.on{opacity:1;pointer-events:auto}
 .hinfo{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25;margin-left:auto;flex-shrink:0;white-space:nowrap}
 .hinfo a{font-weight:700;font-size:20px;color:var(--ink);font-variant-numeric:tabular-nums}
 .hinfo span{font-size:13px;color:var(--mut)}
@@ -179,8 +198,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .soc .vk svg{width:26px;height:26px}
 .card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(184,62,112,.35),0 28px 56px -24px rgba(16,48,43,.5)}
 /* найденный через поиск букет: розовая обводка (Ирина 20.10: «при поиске прокрутка вниз»), держится до следующего выбора */
-.card.found,.card.found:hover{box-shadow:0 0 0 3px var(--rose-hi),0 0 0 9px rgba(232,80,138,.2),0 28px 56px -24px rgba(16,48,43,.5);animation:fnd 1.2s var(--ease) 2}
-@keyframes fnd{50%{box-shadow:0 0 0 3px var(--rose-hi),0 0 0 16px rgba(232,80,138,0),0 28px 56px -24px rgba(16,48,43,.5)}}
+.card.found,.card.found:hover{box-shadow:0 0 0 3px var(--rose-hi),0 28px 56px -24px rgba(16,48,43,.5)}
 @media(prefers-reduced-motion:reduce){.card.found{animation:none}}
 .card .ph{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:var(--surf2)}
 .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity var(--t-base) var(--ease),transform var(--t-slow) var(--ease)}
@@ -222,7 +240,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .tile.empty::after{display:none}
 .tile.empty .t{color:var(--ink);text-align:left}
 .tile.empty .t i{color:var(--acc);background:rgba(255,255,255,.7);border-color:rgba(184,62,112,.35)}
-.tile.on{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--acc)}
+.tile.on{box-shadow:0 0 0 2px var(--acc)}
 .tile.on .t i{background:#fff;color:var(--acc);border-color:#fff}
 .tiles.grp{display:block;margin-bottom:var(--s7)}
 .krw+.krw{margin-top:28px}
@@ -364,6 +382,8 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .foot .bt a{border-bottom:1px solid currentColor}
 @media(min-width:761px){.foot .bt{padding-right:96px}}
 .foot .bt a:hover{color:var(--ink)}
+.bt .bl{display:flex;gap:var(--s4);flex-wrap:wrap}
+@media(max-width:720px){.bt .bl{flex-direction:column;gap:8px}}
 @media(max-width:1200px){.foot .g{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.foot{padding:var(--s6) 0 var(--s4)}.foot .g{grid-template-columns:1fr;gap:var(--s5)}.foot .lg img{width:56px;height:56px}.foot .lg b{font-size:24px}}
 
@@ -465,10 +485,11 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 .agree input{accent-color:var(--acc);width:18px;height:18px;margin-top:2px;flex-shrink:0}
 .agree a{color:var(--acc);border-bottom:1px solid currentColor}
 .agree.err{color:#C0563F}
+#fg{margin-bottom:var(--s2)}
 .co .b1{width:100%}
 .co .note{font-size:14px;color:var(--mut);margin-top:var(--s4);text-align:center}
 .done{padding:var(--s6) 0}
-.done .ok{width:72px;height:72px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;margin-bottom:var(--s4);box-shadow:0 0 0 5px var(--bg),0 0 0 6.5px var(--acc)}
+.done .ok{width:72px;height:72px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;margin-bottom:var(--s4)}
 .done h3{font-size:30px;margin-bottom:var(--s2)}
 .done p{font-size:16px;color:var(--tx)}
 .done .sum{padding:var(--s3) var(--s4);font-size:15px;color:var(--tx);margin:var(--s4) 0 var(--s5);background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(255,255,255,.4));border:1px solid #fff;box-shadow:0 0 0 1px rgba(16,48,43,.08)}
@@ -570,6 +591,128 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
   .fab{width:52px;height:52px;right:var(--s3);bottom:var(--s3)}
 }
 @media (max-width:380px){.top .wrap{gap:8px 6px}.brand b{font-size:20px;letter-spacing:.12em}.cartb.v4 .l>span{display:none}}
+
+/* 30.10 Роберт выбрал К3 «Фото целиком»: без стеклянной рамки, фото 3:4 во всю карточку, белая «+» в углу; ПК 4 в ряд (Роберт: «для начала 4»), планшет 3, телефон 2 */
+.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:1200px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.card{padding:0;background:none;border:0;border-radius:20px;overflow:hidden;box-shadow:0 18px 36px -22px rgba(16,48,43,.55);backdrop-filter:none;-webkit-backdrop-filter:none}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s cubic-bezier(.2,.7,.2,1)}
+/* 30.10 наведение: розовая обводка, мягкий подъём, фото медленно приближается, смена фото плавным растворением */
+.card:hover{transform:translateY(-4px);box-shadow:0 0 0 2px var(--rose-hi),0 26px 46px -22px rgba(16,48,43,.55)}
+.card .ph img{transition:opacity .7s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.05)}
+.card .zones{display:none}
+@media (hover:none){.card:hover{transform:none;box-shadow:0 18px 36px -22px rgba(16,48,43,.55)}.card:hover .ph img{transform:none}}
+@media (prefers-reduced-motion:reduce){.card,.card .ph img{transition:none}.card:hover{transform:none}.card:hover .ph img{transform:none}}
+.card .ph{aspect-ratio:3/4}
+.card .ph::after{background:linear-gradient(0deg,rgba(16,48,43,.92),rgba(16,48,43,.55) 26%,rgba(16,48,43,0) 48%)}
+.card .b{left:0;right:0;bottom:0;padding:16px;pointer-events:none}
+.card .b a,.card .b button{pointer-events:auto}
+.card .tt{font-size:15px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ft{margin-top:6px;min-height:44px;padding-right:52px}
+.card .pr{font-size:19px}
+/* 30.10 цена и кнопка корзины оформлены как в варианте К2: тёмная цена на белом, розовая круглая кнопка с корзиной */
+.card .pr:not(.ask){padding:5px 12px;border-radius:999px;background:#fff;color:var(--ink);font-size:17px;line-height:1.3}
+.card .pr:not(.ask) small{color:var(--mut)}
+.card .gos{position:absolute;right:12px;bottom:14px;width:auto}
+.card .gos .go:not(.w){display:none}
+.card .go.w[data-add]{width:44px;height:44px;padding:0;border-radius:50%;background:var(--acc);color:#fff;border:0;flex:0 0 44px;box-shadow:0 8px 18px -8px rgba(184,62,112,.7)}
+.card .go.w[data-add]:hover{background:var(--acc2);color:#fff}
+.card .go.w[data-add] svg{width:22px;height:22px}
+.card .go.w:not([data-add]){padding:8px 12px;font-size:12px}
+@media (max-width:760px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .card{padding:0;border-radius:16px}
+  .card .b{left:0;right:0;bottom:0;padding:10px 10px 10px 12px}
+  .card .tt{font-size:13px}
+  .card .pr{font-size:16px}
+  .card .pr:not(.ask){padding:4px 10px;font-size:14px}
+  .card .ft{min-height:38px;padding-right:44px}
+  .card .gos{right:8px;bottom:8px;width:auto}
+  .card .go.w[data-add]{width:38px;height:38px;flex-basis:38px}
+  .card .go.w[data-add] svg{width:19px;height:19px}
+}
+
+/* 30.10 Т1 «Шторка»: белая плашка с фото букета и кнопкой «Корзина»; телефон сверху во всю ширину, ПК справа под шапкой */
+.toast{left:auto;right:24px;top:100px;bottom:auto;width:380px;transform:translateY(-16px);padding:10px;border-radius:18px;background:rgba(255,255,255,.96);color:var(--ink);border:1px solid var(--rose-lb);box-shadow:0 18px 40px -14px rgba(16,48,43,.45);gap:12px}
+.toast.on{transform:translateY(0)}
+.toast img{width:52px;height:52px;border-radius:12px;object-fit:cover;flex:0 0 52px}
+.toast img[hidden],.toast small[hidden]{display:none}
+.toast .vt{flex:1;min-width:0;line-height:1.25;padding-left:4px}
+.toast .vt small{display:block;font-size:12px;color:var(--grn);font-weight:700}
+.toast .vt b{display:block;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toast button{flex:0 0 auto;height:40px;padding:0 16px;background:var(--acc);color:#fff}
+@media (max-width:760px){.toast{left:10px;right:10px;top:10px;width:auto;transform:translateY(-140%)}}
+
+/* 30.10 личный кабинет: формат Л5 (две строки как у корзины), значок Л1; на телефоне круглая кнопка */
+.lkb{height:56px;padding:0 20px 0 6px;border-radius:999px;display:flex;align-items:center;gap:12px;flex-shrink:0;color:var(--ink);background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.3));border:1px solid rgba(255,255,255,.95);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(16,48,43,.1),0 6px 16px rgba(16,48,43,.12)}
+.lkb[hidden]{display:none}
+.lkb i{width:36px;height:36px;color:var(--acc);display:grid;place-items:center}
+.lkb svg{width:22px;height:22px}
+.lkb .l{display:flex;flex-direction:column;line-height:1.15}
+.lkb .l b{font-size:16px;font-weight:700}
+.lkb .l span{font-size:12px;color:var(--mut);font-weight:500;white-space:nowrap}
+@media (max-width:760px){.lkb{width:46px;height:46px;padding:0;gap:0;justify-content:center}.lkb .l{display:none}.lkb i{width:auto;height:auto;background:none}}
+@media (max-width:380px){.phm,.lkb{width:40px;height:40px}.brand img{width:38px;height:38px}.brand b{font-size:18px;letter-spacing:.08em}.cartb.v4{padding:0 10px 0 4px;gap:6px}}
+/* 30.10 страница товара: П1 «Белая колонка» (выбор Роберта), карточка покупки шириной 420 как тёмная панель П3; фото меньше на 40% (Роберт), состав в средней колонке; без стеклянных коробок; на телефоне фото, покупка, состав */
+.bpage .glass{background:none;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.bgrid{grid-template-columns:minmax(0,3fr) minmax(0,2fr) 420px;gap:40px}
+.bpage .gal{grid-column:1;grid-row:1;grid-template-columns:1fr;gap:12px;padding:0}
+.bpage .gal .thumbs{flex-direction:row;order:2}
+.bpage .thumbs button{width:84px;border-radius:14px;box-shadow:none;opacity:.55}
+.bpage .thumbs button.on{opacity:1;outline:2px solid var(--rose-hi);outline-offset:2px}
+.bpage .big{border-radius:24px}
+.bpage .buy.glass{grid-column:3;grid-row:1;position:static;padding:28px;border-radius:24px;background:#fff;box-shadow:0 20px 44px -26px rgba(16,48,43,.45)}
+.bpage .binfo.glass{grid-column:2;grid-row:1;padding:8px 4px}
+.bpage .buy .pr{font-size:40px}
+.bpage .buy .av[data-st]{display:inline-flex;margin:14px 0 18px;padding:6px 14px;border-left:0;border-radius:999px;font-size:14px}
+.bpage .also .grid,.bpage .addon .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1200px){.bgrid{grid-template-columns:minmax(0,1fr) 380px;gap:28px}.bpage .gal{grid-row:1/span 2}.bpage .buy.glass{grid-column:2}.bpage .binfo.glass{grid-row:2}.bpage .also .grid,.bpage .addon .grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){
+  .bgrid{grid-template-columns:1fr;gap:16px}
+  .bpage .gal,.bpage .buy.glass,.bpage .binfo.glass{grid-column:auto;grid-row:auto}
+  .bgrid>.gal{order:1}.bgrid>.buy{order:2}.bgrid>.binfo{order:3}
+  .bpage .buy.glass{padding:20px}
+  .bpage .big{border-radius:18px}
+  .bpage .thumbs button{width:64px}
+  .bpage .also .grid,.bpage .addon .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* 03.11 КОНТАКТЫ по выбору Роберта: плашка из варианта 3, карты из варианта 5, адрес справа сверху */
+.kban{position:relative;border-radius:28px;overflow:hidden;background:#3a2a2f url('img/kont.jpg') center/cover;color:#fff}
+.kban::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,22,26,.8),rgba(32,22,26,.5) 55%,rgba(32,22,26,.15))}
+.kin{position:relative;z-index:1;padding:var(--s7) var(--s6)}
+.kban h2{color:#fff}
+.kban .kin>p{color:rgba(255,255,255,.86);font-size:18px;margin:var(--s2) 0 var(--s5)}
+.kban .kline{display:grid;grid-template-columns:repeat(3,max-content);gap:var(--s4) var(--s6);margin-bottom:var(--s5);padding:0;border:0}
+.kban .lab{color:rgba(255,255,255,.7)}
+.kban .kline .v{display:block;font-size:22px;font-weight:700;color:#fff;margin:4px 0 2px;border-bottom:1.5px solid rgba(255,255,255,.35);width:max-content}
+.kban .kline p{font-size:14px;color:rgba(255,255,255,.75)}
+.kban .acts{display:flex;gap:var(--s2);flex-wrap:wrap}
+.kban .b2{color:#fff;border-color:#fff;background:transparent}
+.kmaps{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);margin-top:var(--s5)}
+.kmap{padding:8px;border-radius:28px;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(59,39,48,.1),0 16px 32px -24px rgba(16,48,43,.35)}
+.kmap .fr{position:relative;height:400px;border-radius:22px;overflow:hidden;background:var(--surf2)}
+.kmap .lm{position:absolute;inset:0;z-index:0}
+.kmap .chip{position:absolute;z-index:500;top:14px;right:14px;display:flex;gap:12px;align-items:center;padding:10px 18px 10px 10px;border-radius:999px;background:#fff;box-shadow:0 10px 24px -10px rgba(59,39,48,.45)}
+.kmap .chip b{display:block;font-size:18px;color:var(--ink);line-height:1.25}
+.kmap .chip small{font-size:13px;color:var(--tx)}
+.kmap .num{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;color:#fff;font-weight:800;font-size:17px}
+.kmap .num.n1{background:var(--acc)}
+.kmap .num.n2{background:var(--grn)}
+.kmap .ksb{display:flex;gap:var(--s4);flex-wrap:wrap;padding:12px 12px 6px}
+.kmap .ksb .lnk{margin-top:0}
+/* 03.11 СКРУГЛЕНИЕ, вариант 2: 28 px, полосы «Не нашли букет» капсулой */
+.dc,.card{border-radius:28px}
+.dnote,.vnote{border-radius:999px}
+@media(max-width:760px){
+.kin{padding:var(--s5) var(--s4)}
+.kban .kline{grid-template-columns:1fr;gap:var(--s3)}
+.kmaps{grid-template-columns:1fr}
+.kmap .fr{height:340px}
+.kmap .chip{left:10px;right:10px;top:10px}
+.dnote,.vnote{border-radius:28px}
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
@@ -580,7 +723,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
     <div class="wrap">
       <a class="brand" href="#top" aria-label="ИВА, цветы и букеты"><img src="logo.png" alt="Логотип салона цветов ИВА"><b>ИВА</b></a>
       <div class="srch" id="srch">
-        <div class="box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" data-sp="search_ph" placeholder="Найти букет: розы, гортензия, подсолнухи" autocomplete="off" aria-label="Поиск по букетам"></div>
+        <div class="box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" data-sp="search_ph" placeholder="Найти букет или цветы" autocomplete="off" aria-label="Поиск по букетам"></div>
         <div class="sres" id="sres" hidden></div>
       </div>
       <div class="hinfo"><a href="tel:+79041760166" data-sh="tel" data-s="phone">+7 904 176-01-66</a><span data-s="h_m8">ежедневно 9:00-21:00</span></div>
@@ -591,6 +734,7 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
         <a class="vk" data-sh="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.8 17.3c-5.5 0-8.6-3.8-8.7-10h2.7c.1 4.6 2.1 6.5 3.7 6.9V7.3h2.6v3.9c1.6-.2 3.2-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.2.6 3.2 2.1 3.9 4.9h-2.8c-.6-1.9-2.1-3.3-4.1-3.5v3.5h-.3z"/></svg></a>
       </div>
       <span class="sep"></span>
+      <a class="lkb" id="lkb" href="#" aria-label="Личный кабинет, мои заказы"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i><span class="l"><b>Кабинет</b><span>мои заказы</span></span></a>
       <button class="cartb v4" id="cartb" aria-label="Корзина" data-z><span class="ci2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M2.5 10h19l-2.1 9.2a2 2 0 0 1-2 1.6H6.6a2 2 0 0 1-2-1.6z"/><path d="M8.5 13.5v4M12 13.5v4M15.5 13.5v4"/></svg></span><span class="l"><b id="carts">Корзина</b><span class="cq"><span id="cartn">0</span> в корзине</span><span class="ce">пока пусто</span></span></button>
     </div>
   </div>
@@ -658,11 +802,11 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 
 <section class="sec dost" id="dostavka">
   <div class="wrap">
-    <div class="head"><h2><span data-s="dost_a">Доставка</span> <em data-s="dost_b">и самовывоз</em></h2><p data-s="dost_p">Способ получения выбираете в корзине.</p></div>
+    <div class="head"><h2><span data-s="dost_a">Доставка</span> <em data-s="dost_b">и самовывоз</em></h2><p data-s="dost_p">Доставляем по Екатеринбургу из обоих салонов. Способ получения выбираете в корзине.</p></div>
     <div class="dgrid">
-      <div class="dc"><div class="k">Доставка</div><h3 data-s="d1_h">По Екатеринбургу</h3><p data-s="d1_p">Отправляем из салона на 8 Марта, 101 по тарифу Яндекс Такси. Стоимость доставки менеджер назовёт при подтверждении заказа.</p></div>
+      <div class="dc"><div class="k">Доставка</div><h3 data-s="d1_h">По Екатеринбургу</h3><p data-s="d1_p">Отправляем из салона, где собран букет, по тарифу Яндекс Такси. Стоимость доставки менеджер назовёт при подтверждении заказа.</p></div>
       <div class="dc"><div class="k">Самовывоз</div><h3>8 Марта, 101</h3><p><b class="hrs" data-s="h_m8">ежедневно 9:00-21:00</b><span data-s="d2_p">Здесь выдаём заказы с сайта и шары.</span></p></div>
-      <div class="dc"><div class="k">Самовывоз</div><h3>Кировградская, 4/2</h3><p><b class="hrs" data-s="h_kir">ежедневно 9:00-21:00</b><span data-s="d3_p">Букеты с витрины этого салона выдаём только здесь, без доставки.</span></p></div>
+      <div class="dc"><div class="k">Самовывоз</div><h3>Кировградская, 4/2</h3><p><b class="hrs" data-s="h_kir">ежедневно 9:00-21:00</b><span data-s="d3_p">Здесь выдаём заказы с сайта.</span></p></div>
     </div>
     <div class="dnote"><div><b data-s="dn_t">Не нашли нужный букет?</b><span data-s="dn_s">Пришлите фото примера или напишите бюджет, флорист соберёт похожий.</span></div><a class="b1" data-sh="tgp" data-s="dn_btn" href="https://t.me/+79041760166">Написать менеджеру</a></div>
   </div>
@@ -670,25 +814,18 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
 
 <section class="sec kont" id="kontakty">
   <div class="wrap">
-    <div class="kgrid">
-      <div class="pic" data-sbg="kont_img" role="img" aria-label="Вывеска салона цветов ИВА"></div>
-      <div class="info">
-        <div class="head"><h2>Контакты</h2><p data-s="kont_p">Заказы принимаем по телефону, в Telegram и MAX.</p></div>
-        <div class="salons">
-          <div class="salon"><div class="lab">Салон</div><b>8 Марта, 101</b><p><span data-s="h_m8">ежедневно 9:00-21:00</span><br><span data-s="srv_m8">доставка и самовывоз</span></p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/8%20Марта%20101">Маршрут в 2ГИС</a></div>
-          <div class="salon"><div class="lab">Салон</div><b>Кировградская, 4/2</b><p><span data-s="h_kir">ежедневно 9:00-21:00</span><br><span data-s="srv_kir">самовывоз</span></p><a class="lnk" href="https://2gis.ru/ekaterinburg/search/Кировградская%204%2F2">Маршрут в 2ГИС</a></div>
-        </div>
+    <div class="kban" data-sbg="kont_img" role="img" aria-label="Цветы в салоне ИВА">
+      <div class="kin">
+        <h2>Контакты</h2><p data-s="kont_p">Заказы принимаем по телефону, в Telegram и MAX.</p>
         <div class="kline">
           <div><div class="lab">Телефон</div><a class="v" data-sh="tel" data-s="phone" href="tel:+79041760166">+7 904 176-01-66</a><p data-s="tel_note">тот же номер в Telegram и MAX</p></div>
-          <div><div class="lab">Канал с витриной</div><a class="v" data-sh="chan" data-s="chan" href="https://t.me/iva_flowers">t.me/iva_flowers</a><p data-s="chan_note">новые букеты каждый день</p></div>
+          <div><div class="lab">Telegram</div><a class="v" data-sh="tgp" href="https://t.me/+79041760166" target="_blank" rel="noopener">Написать в Telegram</a><p>по номеру салона</p></div>
+          <div><div class="lab">Канал с витриной</div><a class="v" data-sh="chan" data-s="chan" href="https://t.me/iva_flowers" target="_blank" rel="noopener">t.me/iva_flowers</a><p data-s="chan_note">новые букеты каждый день</p></div>
         </div>
         <div class="acts"><a class="b1" data-sh="tgp" href="https://t.me/+79041760166">Написать в Telegram</a><a class="b2" data-sh="tel" href="tel:+79041760166">Позвонить</a></div>
       </div>
     </div>
-    <div class="maps">
-      <div class="map"><div class="fr"><div class="lm" data-ll="56.812725,60.609006" role="img" aria-label="Салон ИВА на карте: 8 Марта, 101"></div></div><div class="cap"><div><div class="lab" data-s="area_m8">Ленинский район</div><b>8 Марта, 101</b><p><span data-s="srv_m8">доставка и самовывоз</span>, <span data-s="h_m8">ежедневно 9:00-21:00</span></p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.812725%2C60.609006&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
-      <div class="map"><div class="fr"><div class="lm" data-ll="56.888126,60.604844" role="img" aria-label="Салон ИВА на карте: Кировградская, 4/2"></div></div><div class="cap"><div><div class="lab" data-s="area_kir">Уралмаш</div><b>Кировградская, 4/2</b><p><span data-s="srv_kir">самовывоз</span>, <span data-s="h_kir">ежедневно 9:00-21:00</span></p></div><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.888126%2C60.604844&amp;rtt=auto" target="_blank" rel="noopener">Построить маршрут</a></div></div>
-    </div>
+    <div class="kmaps"><div class="kmap"><div class="fr"><div class="lm" data-ll="56.812725,60.609006" role="img" aria-label="Салон ИВА на карте: 8 Марта, 101"></div><div class="chip"><span class="num n1">1</span><span><b>8 Марта, 101</b><small><span data-s="h_m8">ежедневно 9:00-21:00</span>, <span data-s="srv_m8">доставка и самовывоз</span></small></span></div></div><div class="ksb"><a class="lnk" href="https://2gis.ru/ekaterinburg/search/8%20Марта%20101" target="_blank" rel="noopener">Маршрут в 2ГИС</a><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.812725%2C60.609006&amp;rtt=auto" target="_blank" rel="noopener">Маршрут в Яндекс Картах</a></div></div><div class="kmap"><div class="fr"><div class="lm" data-ll="56.888126,60.604844" role="img" aria-label="Салон ИВА на карте: Кировградская, 4/2"></div><div class="chip"><span class="num n2">2</span><span><b>Кировградская, 4/2</b><small><span data-s="h_kir">ежедневно 9:00-21:00</span>, <span data-s="srv_kir">доставка и самовывоз</span></small></span></div></div><div class="ksb"><a class="lnk" href="https://2gis.ru/ekaterinburg/search/Кировградская%204%2F2" target="_blank" rel="noopener">Маршрут в 2ГИС</a><a class="lnk" href="https://yandex.ru/maps/?rtext=~56.888126%2C60.604844&amp;rtt=auto" target="_blank" rel="noopener">Маршрут в Яндекс Картах</a></div></div></div>
   </div>
 </section>
 </main>
@@ -697,12 +834,12 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
   <div class="wrap">
     <div class="g">
       <div><div class="lg"><img src="logo.png" alt="Логотип салона цветов ИВА"><b>ИВА</b></div><p data-s="foot_tag">Цветы с доставкой по Екатеринбургу</p></div>
-      <div><h4>Салоны</h4><div class="s"><b>8 Марта, 101</b><span class="sl"><span data-s="h_m8">ежедневно 9:00-21:00</span>, <span data-s="srv_m8">доставка и самовывоз</span></span></div><div class="s"><b>Кировградская, 4/2</b><span class="sl"><span data-s="h_kir">ежедневно 9:00-21:00</span>, <span data-s="srv_kir">самовывоз</span></span></div></div>
+      <div><h4>Салоны</h4><div class="s"><b>8 Марта, 101</b><span class="sl"><span data-s="h_m8">ежедневно 9:00-21:00</span>, <span data-s="srv_m8">доставка и самовывоз</span></span></div><div class="s"><b>Кировградская, 4/2</b><span class="sl"><span data-s="h_kir">ежедневно 9:00-21:00</span>, <span data-s="srv_kir">доставка и самовывоз</span></span></div></div>
       <div><h4>Разделы</h4><ul><li><a href="#katalog" data-f="all">Каталог</a></li><li><a href="#vitrina">Онлайн-витрина</a></li><li><a href="#katalog" data-f="nev">Букет невесты</a></li><li><a href="#katalog" data-f="svof">Оформление мероприятий</a></li><li><a href="#katalog" data-f="shar">Шары</a></li><li><a href="#dostavka">Доставка и самовывоз</a></li><li><a href="#kontakty">Контакты</a></li></ul></div>
       <div><h4>Связь</h4><a class="tel" data-sh="tel" data-s="phone" href="tel:+79041760166">+7 904 176-01-66</a>
         <ul class="fl"><li><a data-sh="chan" href="https://t.me/iva_flowers" target="_blank" rel="noopener">Telegram</a></li><li><a data-sh="vk" href="https://vk.com/club231914411" target="_blank" rel="noopener">ВКонтакте</a></li></ul></div>
     </div>
-    <div class="bt"><span data-s="req">ИП Кужина Ирина Ивановна · ИНН 661303864743 · ОГРНИП 325665800128599</span><a href="privacy.html">Политика конфиденциальности</a></div>
+    <div class="bt"><span data-s="req">ИП Кужина Ирина Ивановна · ИНН 661303864743 · ОГРНИП 325665800128599</span><span class="bl"><a href="oferta.html">Публичная оферта</a><a href="privacy.html">Политика конфиденциальности</a></span></div>
   </div>
 </footer>
 
@@ -713,12 +850,12 @@ h1,h2,h3{color:var(--ink);font-family:'Comfortaa',system-ui,sans-serif;font-weig
   <div class="dh"><h2>Корзина</h2><button id="dclose" aria-label="Закрыть"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="db" id="db"></div>
 </aside>
-<div class="toast" id="toast"><span id="tt"></span><button id="topen">Открыть корзину</button></div>
+<div class="toast" id="toast"><img id="ti" alt="" hidden><span class="vt"><small id="tk" hidden>✓ Добавлено в корзину</small><b id="tt"></b></span><button id="topen">Корзина</button></div>
 
 <a class="fab" data-sh="tel" href="tel:+79041760166" aria-label="Позвонить в салон"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
 
-<script src="data/site.js"></script>
-<script src="data/catalog.js"></script>
+<script>/* 06.11: версия меняется раз в 10 минут, чтобы браузер не держал старые тексты и каталог (Роберт видел «по тарифу Яндекс Такси» после правки) */
+(function(){var v=Math.floor(Date.now()/6e5);document.write('<script src="data/site.js?v='+v+'"><\/script><script src="data/catalog.js?v='+v+'"><\/script>')})();</script>
 <script>
 var IV=window.IVA_S||{};  /* тексты и контакты из data/site.js, их пишет панель */
 function iv(k,d){return IV[k]==null||IV[k]===''?d:IV[k]}
@@ -756,18 +893,19 @@ function card(x){
   var many=x.ph.length>1;
   var zones=many?'<span class="zones">'+x.ph.map(function(){return '<i></i>'}).join('')+'</span><span class="dots">'+x.ph.map(function(u,i){return '<i'+(i?'':' class="on"')+'></i>'}).join('')+'</span>':'';
   var pr=x.p?'<span class="pr">'+(x.u?'<small>от </small>':'')+f(x.p)+(x.u?'<small> / шт</small>':'')+'</span>':'<span class="pr ask">Цену назовёт менеджер</span>';
-  var b=x.p?'<button class="go w" data-add="'+x.id+'">В корзину</button>':'<a class="go w" href="'+TG+'">Узнать цену</a>';
+  var b=x.p?'<button class="go w" data-add="'+x.id+'" aria-label="В корзину"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M2.5 10h19l-2.1 9.2a2 2 0 0 1-2 1.6H6.6a2 2 0 0 1-2-1.6z"/><path d="M12 13v5M9.5 15.5h5"/></svg></button>':'<a class="go w" href="'+TG+'">Узнать цену</a>';
   return '<article class="card" data-id="'+x.id+'"><a class="ph" href="#b/'+x.id+'" data-open="'+x.id+'">'+imgs+zones+(x.o||x.dop?'':'<span class="stag" data-st="'+stk(x)+'">'+(x.zak?'Под заказ':x.nk?'Соберём нужное количество':x.na?'Уточнить наличие у менеджера':'В наличии'+(x.st?': '+x.st+' шт':''))+'</span>')+'</a>'+
    '<div class="b"><a class="tt" href="#b/'+x.id+'" data-open="'+x.id+'">'+esc(x.n)+'</a>'+'<div class="ft">'+pr+
    '<span class="gos"><a class="go" href="#b/'+x.id+'" data-open="'+x.id+'">'+(x.o||x.dop||x.c.indexOf('rast')>=0||x.c.indexOf('shtuk')>=0?'Смотреть':x.c.indexOf('shar')>=0?'Смотреть набор':'Смотреть букет')+'</a>'+b+'</span></div></div></article>';
 }
 function bindCards(root){
-  root.querySelectorAll('.card .zones').forEach(function(z){
-    var c=z.closest('.card'),im=c.querySelectorAll('.ph img'),d=c.querySelectorAll('.dots i');
-    z.querySelectorAll('i').forEach(function(zz,i){zz.addEventListener('mouseenter',function(){
-      im.forEach(function(e,j){e.classList.toggle('on',j===i)});d.forEach(function(e,j){e.classList.toggle('on',j===i)});
-    })});
-    z.addEventListener('mouseleave',function(){im.forEach(function(e,j){e.classList.toggle('on',!j)});d.forEach(function(e,j){e.classList.toggle('on',!j)})});
+  /* 30.10 Роберт: фото не бегают за мышкой, а при наведении сами листаются раз в 1,4 с; ушли с карточки, вернулась первая */
+  root.querySelectorAll('.card').forEach(function(c){
+    var im=c.querySelectorAll('.ph img'),d=c.querySelectorAll('.dots i'),t=0,k=0;
+    if(im.length<2)return;
+    function show(i){k=i;im.forEach(function(e,j){e.classList.toggle('on',j===i)});d.forEach(function(e,j){e.classList.toggle('on',j===i)})}
+    c.addEventListener('mouseenter',function(){if(!matchMedia('(hover:hover)').matches)return;clearInterval(t);t=setInterval(function(){show((k+1)%im.length)},1400)});
+    c.addEventListener('mouseleave',function(){clearInterval(t);show(0)});
   });
 }
 
@@ -775,12 +913,12 @@ function bindCards(root){
 var vs='m8';
 function drawV(){
   var g=$('#vgrid');g.innerHTML=P.filter(function(x){return x.s===vs}).map(card).join('');bindCards(g);
-  $('#vnt').textContent=vs==='m8'?iv('vit_m8_t','Доставка и самовывоз'):iv('vit_kir_t','Только самовывоз');
-  $('#vns').textContent=vs==='m8'?iv('vit_m8_s','Букеты с этой витрины доставим по тарифу Яндекс Такси или выдадим в салоне на 8 Марта.'):iv('vit_kir_s','Букеты с витрины Кировградской выдаём только в этом салоне.');
+  $('#vnt').textContent=vs==='m8'?iv('vit_m8_t','Доставка и самовывоз'):iv('vit_kir_t','Доставка и самовывоз');
+  $('#vns').textContent=vs==='m8'?iv('vit_m8_s','Букеты с этой витрины доставим по тарифу Яндекс Такси или выдадим в салоне на 8 Марта.'):iv('vit_kir_s','Букеты с этой витрины доставим по тарифу Яндекс Такси или выдадим в салоне на Кировградской.');
 }
 document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
   vs=b.dataset.s;document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
-  $('.tabs').dataset.i=vs==='kir'?1:0;$('#salp').innerHTML=vs==='kir'?esc(iv('area_kir','Уралмаш'))+' · <b>'+esc(iv('vit_kir_t','Только самовывоз').toLowerCase())+'</b>':esc(iv('area_m8','Ленинский район'))+' · <b>'+esc(iv('vit_m8_t','Доставка и самовывоз').toLowerCase())+'</b>';drawV();
+  $('.tabs').dataset.i=vs==='kir'?1:0;$('#salp').innerHTML=vs==='kir'?esc(iv('area_kir','Уралмаш'))+' · <b>'+esc(iv('vit_kir_t','Доставка и самовывоз').toLowerCase())+'</b>':esc(iv('area_m8','Ленинский район'))+' · <b>'+esc(iv('vit_m8_t','Доставка и самовывоз').toLowerCase())+'</b>';drawV();
 })});
 
 /* КАТАЛОГ */
@@ -853,8 +991,8 @@ function drawK(keepF){
   $('#ktitle').textContent=kq?'Поиск: «'+kq+'»':(c?(c.t||c.n):'Все букеты');
   $('#kcount').innerHTML=L.length+' шт.'+((kq||kf!=='all'||fOn())?' <button id="kreset">Показать все</button>':'');
   if(!keepF)drawF();
-  var g=$('#kgrid');
-  g.innerHTML=L.length?L.slice(0,kn).map(card).join(''):'<div class="vnote" style="grid-column:1/-1;margin:0"><div><b>Ничего не нашли</b><span>Напишите, какой букет ищете, флорист соберёт похожий.</span></div><a class="b1" href="'+TG+'">Написать менеджеру</a></div>';
+  var g=$('#kgrid'),nw;
+  g.innerHTML=L.length?L.slice(0,kn).map(card).join(''):'<div class="vnote" style="grid-column:1/-1;margin:0"><div><b>Ничего не нашли</b><span>Напишите, какой букет ищете, флорист соберёт похожий.'+((kq&&(nw=near(kq)))?' Возможно, вы искали: <a href="#" data-near="'+esc(nw)+'">'+esc(nw)+'</a>':'')+'</span></div><a class="b1" href="'+TG+'">Написать менеджеру</a></div>';
   bindCards(g);
   $('#more').hidden=L.length<=kn;
   document.querySelectorAll('.tile,.kc').forEach(function(t){t.classList.toggle('on',!kq&&t.dataset.f===kf)});
@@ -873,38 +1011,105 @@ var q=$('#q'),sr=$('#sres');
 /* поиск по началу слова, окончание отбрасываем: «розы» найдёт «роза», «орхидеи» найдёт «Орхидея» */
 function norm(t){return String(t).toLowerCase().replace(/ё/g,'е')}
 function stem(w){return w.length>3?w.replace(/(ами|ями|ов|ев|ей|ой|ий|ый|ая|ое|ые|ие|ом|ем|ах|ях|а|я|ы|и|е|у|ю|о)$/,''):w}
+/* синонимы (30.10): «подсолнечник» найдёт подсолнухи, «большой» найдёт букеты-гиганты, «латекс» найдёт «шар латокс» из каталога */
+var SYN=[['подсолнух','подсолнечник'],['пион','пионовидн'],['гигант','больш','огромн'],['гвоздик','диантус'],['эустом','лизиантус'],['гипсофил','качим'],['невест','свадеб'],['мишк','медвед'],['зайк','зайч','заяц'],['латекс','латокс']];
+function alts(s){var A=[s];SYN.forEach(function(g){if(g.some(function(m){return s.indexOf(m)===0||(s.length>3&&m.indexOf(s)===0)}))g.forEach(function(m){if(A.indexOf(m)<0)A.push(m)})});return A}
 /* подарки ищутся только по своему названию, без слова «букет» из раздела «Подарки к букету» */
 function words(x){return norm(x.n+' '+x.sv.join(' ')+' '+(x.dop?[]:x.c).map(function(k){var c=CAT.filter(function(z){return z.k===k})[0];return c?c.n:''}).join(' ')).split(/[^a-zа-я0-9]+/)}
 /* слово запроса подходит к слову букета по началу; «роза» не находит «розовый»: это цвет, а не цветок (Роберт 21.10) */
 function wm(w,s){return w.indexOf(s)===0&&!(s==='роз'&&w.indexOf('розов')===0)}
+function wa(w,s){return alts(s).some(function(a){return wm(w,a)})}
 function toks(v){return norm(v).split(/\s+/).filter(Boolean).map(stem)}
 function hit(x,v){var W=words(x),T=toks(v);
   /* подарок находится, только если в запросе есть его слово (ваза, открытка, игрушка): «розы» не должны находить «Розовую вазу» */
-  if(x.dop&&!T.some(function(s){return x.sv.some(function(w){return wm(norm(w),s)})}))return false;
-  return T.every(function(s){return W.some(function(w){return wm(w,s)})})}
+  if(x.dop&&!T.some(function(s){return x.sv.some(function(w){return wa(norm(w),s)})}))return false;
+  return T.every(function(s){return W.some(function(w){return wa(w,s)})})}
 /* сначала букеты, где слово есть в названии, ниже те, где оно только в составе (Роберт 21.10) */
-function inName(x,T){var W=norm(x.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wm(w,s)})})}
+function inName(x,T){var W=norm(x.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wa(w,s)})})}
 function find(v){v=v.trim();if(!v)return null;var T=toks(v),L=P.filter(function(x){return hit(x,v)});
   return L.filter(function(x){return inName(x,T)}).concat(L.filter(function(x){return !inName(x,T)}))}
 /* запрос = название одного раздела («шары», «монобукеты»): первая строка подсказки и Enter открывают сам раздел */
 function findCat(v){var T=toks(v);if(!T.length)return null;
-  var M=CAT.filter(function(c){var W=norm(c.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wm(w,s)})})});
+  var M=CAT.filter(function(c){var W=norm(c.n).split(/[^a-zа-я0-9]+/);return T.every(function(s){return W.some(function(w){return wa(w,s)})})});
   return M.length===1?M[0]:null}
 function inCat(k){return P.filter(function(x){return !x.s&&x.c.indexOf(k)>-1})}
+
+/* ОШИБКИ ПОКУПАТЕЛЯ (30.10): раскладка «hjps» = «розы», опечатка в одну букву у слов от 5 букв */
+var EN='qwertyuiop[]asdfghjkl;\'zxcvbnm,.`',RU='йцукенгшщзхъфывапролджэячсмитьбюё';
+function lay(v){return String(v).toLowerCase().replace(/./g,function(ch){var i=EN.indexOf(ch);return i<0?ch:RU[i]})}
+function lev(a,b){var m=a.length,n=b.length,d=[],i,j,c;for(i=0;i<=m;i++)d[i]=[i];for(j=1;j<=n;j++)d[0][j]=j;
+  for(i=1;i<=m;i++)for(j=1;j<=n;j++){c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+    if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1)}
+  return d[m][n]}
+/* словарь сайта: слова из названий, состава и разделов */
+/* сначала слова состава (они в начальной форме: «гортензия», а не «гортензией»), потом разделы и названия */
+var VOC=(function(){var o={};function add(t){norm(t).split(/[^a-zа-я0-9]+/).forEach(function(w){if(w.length>3&&!/\d/.test(w))o[w]=1})}
+  P.forEach(function(x){x.sv.forEach(add)});CAT.forEach(function(c){add(c.n)});P.forEach(function(x){add(x.n)});return Object.keys(o)})();
+function fixWord(t){var s=stem(t),k,d;if(t.length<5||s.length<4||VOC.some(function(w){return wa(w,s)}))return t;
+  for(d=0;d<3;d++)for(k=0;k<VOC.length;k++)if(lev(s,VOC[k].slice(0,s.length+[0,-1,1][d]))<=1)return VOC[k];
+  return t}
+/* запрос, как его понял сайт: свой, в другой раскладке или с исправленной опечаткой; fix = показать «Показываем по запросу» */
+function resolve(v){v=v.trim();var L=find(v)||[];if(!v||L.length||findCat(v))return {v:v,L:L};
+  var r=lay(v),R;if(r!==v.toLowerCase()){R=find(r);if(R.length||findCat(r))return {v:r,L:R,fix:1}}
+  [v,r].forEach(function(z){if(R&&R.fix)return;var t=norm(z).split(/\s+/).filter(Boolean).map(fixWord).join(' '),T=find(t);
+    if(t!==norm(z)&&(T.length||findCat(t)))R={v:t,L:T,fix:1}});
+  return R&&R.fix?R:{v:v,L:L}}
+/* «Возможно, вы искали»: ближайшее слово сайта, до 2 ошибок */
+function near(v){var best=null,bd=3;[norm(v),norm(lay(v))].forEach(function(z){z.split(/[^a-zа-я0-9]+/).forEach(function(t){if(t.length<4)return;var s=stem(t);
+  VOC.forEach(function(w){var d=Math.min(lev(s,w.slice(0,s.length)),lev(t,w));if(d<bd&&find(w).length){bd=d;best=w}})})});return best}
+
+/* ПОДСКАЗКИ ТЕКСТОМ: состав, разделы, «Часто ищут»; набранное обычным, продолжение жирным (урок №17, Baymard) */
+var SUG=(function(){var o={},seen={};function add(t){t=norm(t).replace(/\s+/g,' ').trim();var key=t.split(' ').map(stem).sort().join(' ');if(t.length<3||/\d/.test(t)||seen[key])return;seen[key]=1;o[t]=1}
+  HOT.forEach(function(h){add(h[1])});P.forEach(function(x){if(!x.dop)x.sv.forEach(add)});CAT.forEach(function(c){add(c.n)});
+  return Object.keys(o).map(function(t){return {t:t,n:(find(t)||[]).length+(findCat(t)?1:0)}}).filter(function(z){return z.n})})();
+function sugg(v,n){var s=norm(v).replace(/\s+/g,' ').replace(/^ /,''),a=s.trim();if(a.length<2)return {s:s,L:[]};
+  function pick(s){return SUG.filter(function(z){return z.t!==a&&(z.t.indexOf(s)===0||z.t.indexOf(' '+s)>-1)})}
+  var L=pick(s);if(!L.length&&stem(a)!==a){s=stem(a);L=pick(s)}
+  L.sort(function(x,y){return (y.t.indexOf(s)===0)-(x.t.indexOf(s)===0)||y.n-x.n});
+  return {s:s,L:L.slice(0,n)}}
+function hl(t,s){var i=t.indexOf(s)===0?0:t.indexOf(' '+s)+1;return (i?'<b>'+esc(t.slice(0,i))+'</b>':'')+esc(t.slice(i,i+s.length))+'<b>'+esc(t.slice(i+s.length))+'</b>'}
+
+/* НЕДАВНИЕ ЗАПРОСЫ: до 5 на этом устройстве, только те, что что-то нашли (урок №17) */
+var RK='iva_sq';
+function rget(){try{return JSON.parse(localStorage.getItem(RK)||'[]')}catch(e){return []}}
+function rset(R){try{localStorage.setItem(RK,JSON.stringify(R.slice(0,5)))}catch(e){}}
+function rput(v){v=String(v||'').trim();if(!v||!(find(v)||[]).length&&!findCat(v))return;var R=rget().filter(function(x){return norm(x)!==norm(v)});R.unshift(v);rset(R)}
+function rdel(v){rset(rget().filter(function(x){return x!==v}))}
+
+/* ВЫПАДАЮЩИЙ СПИСОК: не больше 10 строк на ПК и 8 на телефоне, без прокрутки внутри (Baymard) */
+var R0=null,ix=-1,typed='';
+var LUP='<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
+var CLK='<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+function lim(){return innerWidth>760?4:3}
+function rowS(t,s){return '<div class="sg" data-sq="'+esc(t)+'">'+LUP+'<span>'+(s?hl(t,s):'<b>'+esc(t)+'</b>')+'</span></div>'}
+function hotH(n){return '<div class="lbl">Часто ищут</div><div class="chips">'+HOT.slice(0,n||HOT.length).map(function(h){return '<button type="button" data-hot="'+h[1]+'"><img src="'+h[2]+'" alt="">'+h[0]+'</button>'}).join('')+'</div>'}
 function drawS(){
-  var L=find(q.value),c=findCat(q.value);
-  sr.hidden=false;
-  if(!L){sr.innerHTML='<div class="lbl">Часто ищут</div><div class="chips">'+HOT.map(function(h){return '<button data-hot="'+h[1]+'"><img src="'+h[2]+'" alt="">'+h[0]+'</button>'}).join('')+'</div>';return}
-  if(!L.length&&!c){sr.innerHTML='<div class="none">Такого букета пока нет. <a href="'+TG+'">Спросите менеджера</a>, соберём.</div>';return}
-  var K=c?inCat(c.k):[],kx=K.filter(function(x){return x.ph.length})[0];
-  sr.innerHTML=(c?'<a class="it" href="#katalog" data-kat="'+c.k+'">'+(kx?'<img src="'+kx.ph[0]+'" alt="">':'<span class="nph"></span>')+'<span>'+esc(c.n)+'<small>раздел каталога</small></span><b>'+K.length+' шт.</b></a>':'')+
-   L.slice(0,6).map(function(x){return '<a class="it" href="#katalog" data-pick="'+x.id+'">'+(x.ph.length?'<img src="'+x.ph[0]+'" alt="">':nph(x))+'<span>'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></span><b>'+(x.p?(x.u?'от ':'')+f(x.p):'')+'</b></a>'}).join('')+
-   (L.length?'<button class="all" id="sall">Все результаты: '+L.length+'</button>':'');
+  ix=-1;typed=q.value;
+  var v=q.value.trim();
+  sr.hidden=false;R0=null;
+  if(!v){var Rq=rget().slice(0,innerWidth>760?5:3);
+    sr.innerHTML=(Rq.length?'<div class="lbl rqh">Вы искали<button type="button" data-rclr>Очистить</button></div>'+Rq.map(function(t){return '<div class="sg rq" data-sq="'+esc(t)+'">'+CLK+'<span>'+esc(t)+'</span><button type="button" class="rx" data-rx="'+esc(t)+'" aria-label="Убрать из истории">×</button></div>'}).join(''):'')+hotH();
+    return}
+  var r=R0=resolve(v),L=r.L,c=findCat(r.v),n=lim();
+  if(!L.length&&!c){var w=near(v);
+    sr.innerHTML='<div class="none">Такого букета пока нет.</div>'+(w?'<div class="lbl">Возможно, вы искали</div>'+rowS(w):'')+hotH(innerWidth>760?0:6)+'<div class="none">Не нашли нужное? <a href="'+TG+'">Спросите менеджера</a>, соберём.</div>';
+    return}
+  var SG=sugg(r.fix?r.v:q.value,n),K=c?inCat(c.k):[],kx=K.filter(function(x){return x.ph.length})[0];
+  sr.innerHTML=(r.fix?'<div class="fix">Показываем по запросу <b>«'+esc(r.v)+'»</b></div>':'')+
+   SG.L.map(function(z){return rowS(z.t,SG.s)}).join('')+(SG.L.length?'<div class="sep"></div>':'')+
+   (c?'<a class="it kat" href="#katalog" data-kat="'+c.k+'">'+(kx?'<img src="'+kx.ph[0]+'" alt="">':'<span class="nph"></span>')+'<span>'+esc(c.n)+'<small>раздел каталога</small></span><b>'+K.length+' шт.</b></a>':'')+
+   L.slice(0,n).map(function(x){return '<a class="it" href="#katalog" data-pick="'+x.id+'">'+(x.ph.length?'<img src="'+x.ph[0]+'" alt="">':nph(x))+'<span>'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></span><b>'+(x.p?(x.u?'от ':'')+f(x.p):'')+'</b></a>'}).join('')+
+   (L.length?'<button type="button" class="all" id="sall">Все результаты: '+L.length+'</button>':'');
   var al=$('#sall');if(al)al.addEventListener('click',showAll);
 }
-sr.addEventListener('click',function(e){var h=e.target.closest('[data-hot]');if(h){q.value=h.dataset.hot;drawS();q.focus();return}
-  var k=e.target.closest('[data-kat]');if(k){e.preventDefault();openCat(k.dataset.kat);return}
-  var o=e.target.closest('[data-pick]');if(o){e.preventDefault();pick(o.dataset.pick)}});
+sr.addEventListener('click',function(e){
+  /* строки, после которых список перерисовывается: клик не должен закрыть его как «мимо» */
+  var x=e.target.closest('[data-rx]');if(x){e.stopPropagation();rdel(x.dataset.rx);drawS();q.focus();return}
+  if(e.target.closest('[data-rclr]')){e.stopPropagation();rset([]);drawS();q.focus();return}
+  var h=e.target.closest('[data-hot]');if(h){e.stopPropagation();q.value=h.dataset.hot;drawS();q.focus();return}
+  var g=e.target.closest('[data-sq]');if(g){runQ(g.dataset.sq);return}
+  var k=e.target.closest('[data-kat]');if(k){e.preventDefault();if(R0)rput(R0.v);openCat(k.dataset.kat);return}
+  var o=e.target.closest('[data-pick]');if(o){e.preventDefault();if(R0)rput(R0.v);pick(o.dataset.pick)}});
 /* выбор букета в подсказке: открывается его раздел (букет с витрины: вкладка его салона), страница едет к букету и обводит его розовым; карточку покупатель открывает сам (Ирина 20.10) */
 function pick(id){
   var x=BY[id],c;if(!x)return;
@@ -916,13 +1121,28 @@ function pick(id){
   c.classList.add('found');c.scrollIntoView({behavior:'smooth',block:'center'});
 }
 function openCat(k){kf=k;kq='';kn=9;F=fz();sr.hidden=true;q.blur();closeB();drawK();$('.khead').scrollIntoView({behavior:'smooth'})}
-/* «Все результаты»: сетка всего найденного, как было */
-function showAll(){var v=q.value.trim();if(!v)return;kq=v;kn=30;sr.hidden=true;closeB();drawK();$('#katalog').scrollIntoView({behavior:'smooth'})}
+/* «Все результаты»: сетка всего найденного, как было; запрос исправленный (раскладка, опечатка) */
+function showAll(){var v=q.value.trim();if(!v)return;var r=resolve(v);kq=r.v;q.value=r.v;rput(r.v);kn=30;sr.hidden=true;closeB();drawK();$('#katalog').scrollIntoView({behavior:'smooth'})}
 /* Enter: название раздела открывает раздел, иначе первый найденный букет в своём разделе */
-function goSearch(){var v=q.value.trim();if(!v)return;var c=findCat(v);if(c){openCat(c.k);return}var L=find(v);if(L.length)pick(L[0].id);else showAll()}
+function goSearch(){var v=q.value.trim();if(!v)return;var r=resolve(v),c=findCat(r.v);rput(r.v);if(c){openCat(c.k);return}if(r.L.length)pick(r.L[0].id);else showAll()}
+/* строка-подсказка и недавний запрос: раздел открывает раздел, один букет едет к нему, иначе сетка всего найденного */
+function runQ(v){q.value=v;var r=resolve(v),c=findCat(r.v);rput(r.v);if(c){openCat(c.k);return}if(r.L.length===1){pick(r.L[0].id);return}showAll()}
+/* стрелки на ПК: строка подсвечивается, текст подсказки сразу в поле, его можно дописать (Baymard п.6) */
+function opts(){return [].slice.call(sr.querySelectorAll('.sg,.it,.all,.chips button'))}
+function mark(d){var O=opts();if(!O.length)return;ix+=d;if(ix<-1)ix=O.length-1;if(ix>=O.length)ix=-1;
+  O.forEach(function(o,i){o.classList.toggle('cur',i===ix)});
+  var o=O[ix];q.value=o?(o.dataset.sq||o.dataset.hot||typed):typed;
+  if(o)o.scrollIntoView({block:'nearest'})}
 q.addEventListener('input',drawS);
 q.addEventListener('focus',drawS);
-q.addEventListener('keydown',function(e){if(e.key==='Enter')goSearch();if(e.key==='Escape'){sr.hidden=true;q.blur()}});
+q.addEventListener('keydown',function(e){
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(sr.hidden)drawS();mark(e.key==='ArrowDown'?1:-1);return}
+  if(e.key==='Enter'){var o=sr.hidden?null:opts()[ix];e.preventDefault();if(o)o.click();else goSearch();return}
+  if(e.key==='Escape'){if(ix>-1)q.value=typed;sr.hidden=true;q.blur()}});
+document.addEventListener('click',function(e){var n=e.target.closest('[data-near]');if(n){e.preventDefault();runQ(n.dataset.near)}});
+/* страница за подсказками затемняется, пока они открыты (Baymard п.7); клик по затемнению закрывает */
+var sdim=document.createElement('div');sdim.className='sdim';document.body.appendChild(sdim);
+new MutationObserver(function(){sdim.classList.toggle('on',!sr.hidden)}).observe(sr,{attributes:true,attributeFilter:['hidden']});
 document.addEventListener('click',function(e){if(!e.target.closest('#srch'))sr.hidden=true});
 
 /* СТРАНИЦА БУКЕТА */
@@ -945,9 +1165,9 @@ function openB(id,push){
      (x.dop?'<div class="blk"><h3>Как добавить к букету</h3><p>'+(x.ds?esc(x.ds)+' ':'')+(x.p?'Положите в корзину вместе с букетом или напишите менеджеру, к какому букету добавить.':'Напишите менеджеру, к какому букету добавить. Он расскажет, что сейчас есть в салоне, и назовёт цену.')+'</p></div>':'')+
      (x.sv.length&&!x.dop?'<div class="blk"><h3>Состав</h3><p class="hint-sv">Нажмите на цветок, чтобы увидеть все букеты с ним</p><div class="pills">'+x.sv.map(function(s){return '<button data-sv="'+esc(s)+'" title="Все букеты, где есть '+esc(s)+'">'+esc(s)+'</button>'}).join('')+'</div></div>':'')+
      (x.o?'<div class="blk"><h3>Как заказать</h3><p>'+esc(iv('b_o','Расскажите в Telegram о мероприятии: дата, место и формат. Менеджер рассчитает стоимость.'))+'</p></div>':'<div class="blk"><h3>Получение</h3><ul>'+
-      '<li'+(kirOnly?' class="off"':'')+'><b>Доставка по Екатеринбургу</b>'+esc(iv('deliv_line','по тарифу Яндекс Такси, из салона на 8 Марта'))+'</li>'+
-      '<li'+(kirOnly?' class="off"':'')+'><b>Самовывоз: 8 Марта, 101</b>'+esc(iv('h_m8','ежедневно 9:00-21:00'))+'</li>'+
-      '<li'+(x.s==='m8'?' class="off"':'')+'><b>Самовывоз: Кировградская, 4/2</b>'+esc(iv('h_kir','ежедневно 9:00-21:00'))+'</li>'+
+      '<li><b>Доставка по Екатеринбургу</b>'+esc(iv('deliv_line','Стоимость назовёт менеджер'))+'</li>'+
+      '<li><b>Самовывоз: 8 Марта, 101</b>'+esc(iv('h_m8','ежедневно 9:00-21:00'))+'</li>'+
+      '<li><b>Самовывоз: Кировградская, 4/2</b>'+esc(iv('h_kir','ежедневно 9:00-21:00'))+'</li>'+
      '</ul></div>')+
      (x.zak?'<div class="blk"><h3>Собираем под заказ</h3><p>'+esc(iv('b_zak','Букеты-гиганты собираем только под заказ. Напишите дату и сколько цветов нужно, менеджер назовёт цену и срок.'))+'</p></div>':'')+
      (x.nk?'<div class="blk"><h3>Соберём нужное количество</h3><p>'+esc(iv('b_nk','Менеджер подтвердит время, оплата после подтверждения.'))+'</p></div>':'')+
@@ -959,7 +1179,7 @@ function openB(id,push){
      (x.p?'<div class="qrow"><div class="qty"><button data-q="-1" aria-label="Меньше">−</button><span id="bq">1</span><button data-q="1" aria-label="Больше">+</button></div><button class="b1" data-add="'+x.id+'" data-withq>В корзину</button></div>'+
       '<div class="sum"><span>Итого</span><b id="bsum">'+f(x.p)+'</b></div>'+(x.st?'<p class="hint" id="stmax" hidden>Нужно больше '+x.st+' шт? <a href="'+TG+'">Уточните наличие у менеджера</a></p>':''):'<div style="height:8px"></div>')+
      '<a class="'+(x.p?'b2':'b1')+' wide" href="'+TG+'">'+(x.p?'Спросить менеджера':'Узнать цену в Telegram')+'</a>'+
-     '<p class="hint">'+esc(kirOnly?iv('vit_kir_s','Букеты с витрины Кировградской выдаём только в этом салоне.'):iv('b_order','Заказ придёт в салон, менеджер напишет в Telegram или позвонит и подтвердит время.'))+'</p>'+
+     '<p class="hint">'+esc(kirOnly?iv('vit_kir_s','Букеты с этой витрины доставим по тарифу Яндекс Такси или выдадим в салоне на Кировградской.'):iv('b_order','Заказ придёт в салон, менеджер напишет в Telegram или позвонит и подтвердит время.'))+'</p>'+
     '</div>'+
    '</div>'+
    (dop.length?'<div class="addon"><h2>Добавить к букету</h2><p>Игрушка, ваза или открытка поедут вместе с букетом.</p><div class="grid">'+dop.map(card).join('')+'</div></div>':'')+
@@ -994,20 +1214,19 @@ function save(){try{localStorage.setItem('iva_cart',JSON.stringify(C))}catch(e){
 function count(){return C.reduce(function(a,i){return a+i.q},0)}
 function sumC(){return C.reduce(function(a,i){return a+BY[i.id].p*i.q},0)}
 function badge(){var n=count(),e=$('#cartb');$('#cartn').textContent=n;if(n)e.removeAttribute('data-z');else e.setAttribute('data-z','');$('#carts').textContent=n?f(sumC()):'Корзина'}
-function add(id,qn){var it=C.filter(function(i){return i.id===id})[0],mx=BY[id].st||1e9;if(it)it.q+=qn;else{it={id:id,q:qn};C.push(it)}var cut=it.q>mx;it.q=Math.min(mx,it.q);save();badge();done=false;toast(cut?'В наличии '+mx+' шт, больше уточните у менеджера':BY[id].n+' в корзине',1)}
+function add(id,qn){var it=C.filter(function(i){return i.id===id})[0],mx=BY[id].st||1e9;if(it)it.q+=qn;else{it={id:id,q:qn};C.push(it)}var cut=it.q>mx;it.q=Math.min(mx,it.q);save();badge();done=false;toast(cut?'В наличии '+mx+' шт, больше уточните у менеджера':BY[id].n,1,cut?'':BY[id].ph[0])}
 var tmr;
-function toast(t,a){$('#tt').textContent=t;$('#topen').hidden=!a;$('#toast').classList.add('on');clearTimeout(tmr);tmr=setTimeout(function(){$('#toast').classList.remove('on')},3200)}
+function toast(t,a,im){$('#tt').textContent=t;$('#topen').hidden=!a;var i=$('#ti');i.hidden=!im;if(im)i.src=im;$('#tk').hidden=!im;$('#toast').classList.add('on');clearTimeout(tmr);tmr=setTimeout(function(){$('#toast').classList.remove('on')},3200)}
 document.addEventListener('click',function(e){var a=e.target.closest('[data-add]');if(a){add(a.dataset.add,a.hasAttribute('data-withq')?bq:1)}});
 function hasS(s){return C.some(function(i){return BY[i.id].s===s})}
 function drawC(){
   var db=$('#db');if(done)return;
   if(!C.length){db.innerHTML='<div class="empty"><b>Корзина пуста</b>Выберите букет на витрине или в каталоге.<br><a class="b1" href="#vitrina" id="cgo">Онлайн-витрина</a></div>';$('#cgo').addEventListener('click',closeC);return}
-  var kir=hasS('kir'),other=C.some(function(i){return BY[i.id].s!=='kir'});
-  if(kir&&!other)how='kir';
-  if(!kir&&how==='kir')how='';
+  /* 05.11 Ирина: Кировградская то же самое, что 8 Марта. Доставка и самовывоз из обоих салонов всегда, при любом букете */
   var opts=[
-   {k:'m8',b:'Самовывоз: 8 Марта, 101',s:esc(iv('h_m8','ежедневно 9:00-21:00')),dis:kir&&!other},
-   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:!kir}
+   {k:'dost',b:'Доставка по Екатеринбургу',s:esc(iv('deliv_line','Стоимость назовёт менеджер')),dis:false},
+   {k:'m8',b:'Самовывоз: 8 Марта, 101',s:esc(iv('h_m8','ежедневно 9:00-21:00')),dis:false},
+   {k:'kir',b:'Самовывоз: Кировградская, 4/2',s:esc(iv('h_kir','ежедневно 9:00-21:00')),dis:false}
   ];
   db.innerHTML=C.map(function(i){var x=BY[i.id];return '<div class="ci"><img src="'+x.ph[0]+'" alt=""><div><div class="t">'+esc(x.n)+'<small>'+(x.s?'витрина, '+S[x.s]:'каталог')+'</small></div><div class="qty"><button data-cq="-1" data-id="'+x.id+'" aria-label="Меньше">−</button><span>'+i.q+'</span><button data-cq="1" data-id="'+x.id+'" aria-label="Больше">+</button></div></div><div class="r"><b>'+f(x.p*i.q)+'</b><button data-del="'+x.id+'">Убрать</button></div></div>'}).join('')+
    '<div class="total"><span>Букеты</span><b>'+f(sumC())+'</b></div>'+
@@ -1016,10 +1235,13 @@ function drawC(){
     '<label class="fld" id="fn"><span>Ваше имя</span><input id="cn" autocomplete="name"></label>'+
     '<label class="fld" id="fp"><span>Телефон</span><input id="cp" type="tel" autocomplete="tel" placeholder="+7"></label>'+
     '<h3>Получение</h3><div class="opts">'+opts.map(function(o){return '<label class="opt'+(o.dis?' dis':'')+(how===o.k?' on':'')+'"><input type="radio" name="how" value="'+o.k+'"'+(how===o.k?' checked':'')+(o.dis?' disabled':'')+'><span><b>'+o.b+'</b><small>'+o.s+'</small></span></label>'}).join('')+'</div>'+
+    (how==='dost'?'<label class="fld" id="fa" style="margin-top:16px"><span>Адрес доставки</span><input id="ca" autocomplete="street-address" placeholder="улица, дом, квартира"></label><label class="fld"><span>Получатель, если это не вы: имя и телефон</span><input id="cr"></label>':'')+
+    /* оплата онлайн: ссылку пришлёт менеджер, чек ЮKassa уходит на почту (29.10 только 8 Марта, с 05.11 любой способ получения) */
+    (how?'<label class="fld" id="fe" style="margin-top:'+(how==='dost'?'0':'16px')+'"><span>Почта для чека, если будете платить онлайн</span><input id="ce" type="email" autocomplete="email" placeholder="name@mail.ru"></label><p class="note" style="margin:-4px 0 0;text-align:left">'+(how==='dost'?'Менеджер подтвердит букет, назовёт стоимость доставки и пришлёт ссылку на оплату картой или СБП.':'Менеджер подтвердит букет и пришлёт ссылку на оплату картой или СБП.')+'</p>':'')+
     '<label class="fld" style="margin-top:16px"><span>Дата и время</span><input id="cw" placeholder="например, сегодня к 18:00"></label>'+
     '<label class="fld"><span>Комментарий или текст открытки</span><textarea id="cc"></textarea></label>'+
     '<input id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">'+
-    '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a></span></label>'+
+    '<label class="agree" id="fg"><input type="checkbox" id="cg"><span>Согласен с <a href="oferta.html" target="_blank">публичной офертой</a></span></label>'+'<label class="agree" id="fg2"><input type="checkbox" id="cg2"><span>Согласен на обработку персональных данных по <a href="privacy.html" target="_blank">политике конфиденциальности</a></span></label>'+
     '<button class="b1" id="send">Отправить заказ</button>'+
     '<p class="note">'+esc(iv('cart_note','Заказ придёт в Telegram салона. Оплата после подтверждения.'))+'</p>'+
    '</div>';
@@ -1029,18 +1251,25 @@ $('#db').addEventListener('click',function(e){
   var d=e.target.closest('[data-del]');if(d){C=C.filter(function(i){return i.id!==d.dataset.del});save();badge();drawC();return}
   if(e.target.id==='send')send();
 });
-$('#db').addEventListener('change',function(e){if(e.target.name==='how'){how=e.target.value;var keep={n:$('#cn').value,p:$('#cp').value,w:$('#cw').value,c:$('#cc').value,g:$('#cg').checked};drawC();$('#cn').value=keep.n;$('#cp').value=keep.p;$('#cw').value=keep.w;$('#cc').value=keep.c;$('#cg').checked=keep.g}});
+/* 05.11: красная рамка снимается, как только поле поправили */
+$('#db').addEventListener('input',function(e){var f=e.target.closest('.fld,.agree');if(f)f.classList.remove('err')});
+$('#db').addEventListener('change',function(e){if(e.target.name==='how'){how=e.target.value;var keep={n:$('#cn').value,p:$('#cp').value,w:$('#cw').value,c:$('#cc').value,g:$('#cg').checked,g2:$('#cg2').checked,e:$('#ce')?$('#ce').value:'',a:$('#ca')?$('#ca').value:'',r:$('#cr')?$('#cr').value:''};drawC();$('#cn').value=keep.n;$('#cp').value=keep.p;$('#cw').value=keep.w;$('#cc').value=keep.c;$('#cg').checked=keep.g;$('#cg2').checked=keep.g2;if($('#ce'))$('#ce').value=keep.e;if($('#ca'))$('#ca').value=keep.a;if($('#cr'))$('#cr').value=keep.r}});
 function send(){
   var ok=true;
   [['#fn','#cn',2],['#fp','#cp',6]].forEach(function(a){var bad=$(a[1]).value.trim().length<a[2];$(a[0]).classList.toggle('err',bad);if(bad)ok=false});
   if(!how){ok=false;$('.opts').scrollIntoView({block:'center',behavior:'smooth'});toast('Выберите способ получения')}
-  if(!$('#cg').checked){$('#fg').classList.add('err');ok=false}
+  if(!$('#cg').checked){$('#fg').classList.add('err');ok=false}   if(!$('#cg2').checked){$('#fg2').classList.add('err');ok=false}
+  var em=$('#ce')?$('#ce').value.trim():'';
+  if($('#fe')){var badE=em!==''&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);$('#fe').classList.toggle('err',badE);if(badE)ok=false}
+  var ad=$('#ca')?$('#ca').value.trim():'';
+  if(how==='dost'){var badA=ad.length<5;$('#fa').classList.toggle('err',badA);if(badA)ok=false}
   if(!ok)return;
   var names=C.map(function(i){return BY[i.id].n+(i.q>1?' × '+i.q:'')}).join(', ');
   var sum=sumC();
-  var hw={m8:'самовывоз, 8 Марта, 101',kir:'самовывоз, Кировградская, 4/2'}[how];
-  var o={id:String(Math.floor(1000+Math.random()*9000)),how:how,name:$('#cn').value.trim(),phone:$('#cp').value.trim(),when:$('#cw').value.trim(),comment:$('#cc').value.trim(),hp:$('#chp').value,
-    items:C.map(function(i){return {n:BY[i.id].n,q:i.q,p:BY[i.id].p}})};
+  var hw=how==='dost'?'доставка: '+ad:{m8:'самовывоз, 8 Марта, 101',kir:'самовывоз, Кировградская, 4/2'}[how];
+  var km=hasS('kir'),mm=hasS('m8');
+  var o={id:String(Math.floor(1000+Math.random()*9000)),how:how,name:$('#cn').value.trim(),phone:$('#cp').value.trim(),when:$('#cw').value.trim(),comment:$('#cc').value.trim(),hp:$('#chp').value,email:em,addr:how==='dost'?ad:'',rcp:how==='dost'&&$('#cr')?$('#cr').value.trim():'',from:km&&mm?'both':km?'kir':mm?'m8':'',
+    items:C.map(function(i){return {id:i.id,n:BY[i.id].n,q:i.q,p:BY[i.id].p}})};
   var nm=esc(o.name),ph=esc(o.phone),btn=$('#send');
   btn.disabled=true;btn.textContent='Отправляем…';
   function sent(){
@@ -1050,7 +1279,7 @@ function send(){
   }
   /* посредник не ответил (нет сети, провайдер режет адрес): заказ не теряем, покупатель шлёт его в чат салона сам */
   function fail(){
-    var txt='Заказ с сайта №'+o.id+'\n'+o.items.map(function(i){return i.n+(i.q>1?' × '+i.q:'')+': '+f(i.p*i.q)}).join('\n')+'\nИтого: '+f(sum)+'\nПолучение: '+hw+(o.when?'\nКогда: '+o.when:'')+'\nИмя: '+o.name+'\nТелефон: '+o.phone+(o.comment?'\nКомментарий: '+o.comment:'');
+    var txt='Заказ с сайта №'+o.id+'\n'+o.items.map(function(i){return i.n+(i.q>1?' × '+i.q:'')+': '+f(i.p*i.q)}).join('\n')+'\nИтого: '+f(sum)+'\nПолучение: '+hw+(o.when?'\nКогда: '+o.when:'')+'\nИмя: '+o.name+'\nТелефон: '+o.phone+(o.rcp?'\nПолучатель: '+o.rcp:'')+(o.comment?'\nКомментарий: '+o.comment:'');
     done=true;
     $('#db').innerHTML='<div class="done"><h3>Отправьте заказ в Telegram</h3><p>Сайт не смог передать заказ сам. Нажмите кнопку: текст заказа скопируется, откроется чат салона, вставьте его и отправьте.</p><textarea class="sum" id="otx" readonly rows="8" style="width:100%;resize:none;font:inherit;font-size:14px;line-height:1.45">'+esc(txt)+'</textarea><a class="b1" href="'+TG+'" target="_blank" rel="noopener" id="ctg">Скопировать и открыть чат</a><p class="note">Или позвоните: <a href="tel:+'+ivd(IV.phone||'79041760166')+'">'+esc(iv('phone','+7 904 176-01-66'))+'</a></p></div>';
     $('#ctg').addEventListener('click',function(){
@@ -1070,6 +1299,7 @@ function send(){
 function openC(){if(!done)drawC();$('#drawer').classList.add('on');$('#shade').classList.add('on');document.body.classList.add('lock')}
 function closeC(){$('#drawer').classList.remove('on');$('#shade').classList.remove('on');if(bp.hidden)document.body.classList.remove('lock')}
 $('#cartb').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});$('#topen').addEventListener('click',function(){$('#toast').classList.remove('on');openC()});
+$('#lkb').addEventListener('click',function(e){e.preventDefault();toast('Личный кабинет скоро появится: история заказов и повтор заказа в одно нажатие')});
 $('#dclose').addEventListener('click',closeC);$('#shade').addEventListener('click',closeC);
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeC()});
 
@@ -1079,7 +1309,6 @@ window.addEventListener('resize',hh);
 var ly=0;window.addEventListener('scroll',function(){var y=scrollY;if(Math.abs(y-ly)<8)return;$('#hdr').classList.toggle('up',y>ly&&y>300);ly=y},{passive:true});
 document.querySelectorAll('.bar a').forEach(function(a){a.addEventListener('click',closeB)});
 
-if(innerWidth<760)q.placeholder='Найти букет или цветы';
 badge();hh();drawV();drawK();
 var m=location.hash.match(/^#b\/(\w+)/);if(m)openB(m[1],false);
 </script>
