@@ -26,6 +26,27 @@
     off: function (b) { snap(); D.A.forEach(function (x) { if (x.id === b.id) { if (b.off) { x.off = 1; } else { delete x.off; } } }); return ok(); },
     del: function (b) { snap(); D.A = D.A.filter(function (x) { return x.id !== b.id; }); D.SH.forEach(function (s) { s.o = (s.o || []).filter(function (v) { return v !== b.id; }); }); return ok(); },
     order: function (b) { snap(); D.SH.forEach(function (s) { if (s.k === b.k) { s.o = b.ids; } }); return ok(); },
+    shname: function (b) {
+      var n = (b.n || '').trim(); if (!n) { return err('Напишите название раздела'); }
+      var s = D.SH.filter(function (x) { return x.k === b.k; })[0]; if (!s) { return err('Раздел не найден'); }
+      snap(); s.n = n; delete s.s;
+      if (b.k !== 'ng' && (b.s || '').trim()) { s.s = b.s.trim(); }
+      if (b.k === 'ng' || b.k === 's3' || b.k === 's4') { s.m = (b.m || '').trim() || n; }
+      return ok();
+    },
+    shadd: function (b) {
+      var n = (b.n || '').trim(); if (!n) { return err('Напишите название раздела'); }
+      if (D.SH.length >= 12) { return err('Разделов уже 12, больше не помещается'); }
+      var j = 1; while (D.SH.some(function (x) { return x.k === 'r' + j; })) { j++; }
+      snap(); var s = { k: 'r' + j, n: n }; if ((b.s || '').trim()) { s.s = b.s.trim(); } s.o = []; D.SH.push(s);
+      return ok();
+    },
+    shdel: function (b) {
+      if (['ng', 's1', 's2', 's3', 's4'].indexOf(b.k) >= 0) { return err('Этот раздел можно только выключить'); }
+      snap(); D.SH = D.SH.filter(function (x) { return x.k !== b.k; });
+      D.A.forEach(function (x) { var i = x.sh.indexOf(b.k); if (i >= 0) { x.sh.splice(i, 1); if (!x.sh.length) { x.off = 1; } } });
+      return ok();
+    },
     shelf: function (b) { snap(); D.SH.forEach(function (s) { if (s.k === b.k) { if (b.off) { s.off = 1; } else { delete s.off; } } }); return ok(); },
     photos: function (b) { snap(); D.F = b.list; return ok(); },
     reviews: function (b) { snap(); D.R = b.list; return ok(); },

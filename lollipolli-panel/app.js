@@ -6,8 +6,9 @@
   var FP = null, RV = null;            // черновики фото и отзывов до «Сохранить»
   var pane = document.getElementById('pane');
   var TABS = [['af', 'Афиши', 'af'], ['sh', 'Разделы', 'sh'], ['ph', 'Фото', 'ph'], ['rv', 'Отзывы', 'rv'], ['tx', 'Тексты', 'tx'], ['bk', 'Копии', 'bk']];
-  var SHN = { ng: 'Новогодние', s1: '2-5 лет', s2: '6-10 лет', s3: 'Шоу и мастер-классы', s4: 'Выпускные' };
-  var SHFULL = { ng: 'Новогодние программы', s1: 'Первые праздники, 2-5 лет', s2: 'Большие приключения, 6-10 лет', s3: 'Шоу-программы и мастер-классы', s4: 'Выпускные' };
+  /* названия разделов берутся из данных: Полина меняет их во вкладке «Разделы» (11.11) */
+  var BASE = ['ng', 's1', 's2', 's3', 's4'], MENU = { ng: 1, s3: 1, s4: 1 };
+  function shn(s) { return s.n || s.k; }
   var LAG = window.LP_LAG || 'на сайте уже видно';
 
   function $(s, r) { return (r || document).querySelector(s); }
@@ -69,7 +70,7 @@
   }
   function afishi() {
     var list = flt === 'all' ? D.A.slice() : onShelf(flt, true);
-    var chips = [['all', 'Все', D.A.length]].concat(D.SH.map(function (s) { return [s.k, SHN[s.k], onShelf(s.k, true).length]; }));
+    var chips = [['all', 'Все', D.A.length]].concat(D.SH.map(function (s) { return [s.k, esc(shn(s)), onShelf(s.k, true).length]; }));
     pane.innerHTML = '<div class="ph"><div><h2>Афиши</h2><p>' + (flt === 'all' ? 'Нажмите на афишу, чтобы поменять цену, картинку или раздел' : 'Стрелками на афише меняется порядок на полке, как на сайте') + '</p></div>' +
       '<button class="bmain" id="newaf">' + (I.add || '') + 'Новая афиша</button></div>' +
       '<div class="chips" style="margin:0 4px 16px">' + chips.map(function (c) { return '<button class="chip' + (c[0] === flt ? ' on' : '') + '" data-flt="' + c[0] + '">' + c[1] + ' <i>' + c[2] + '</i></button>'; }).join('') + '</div>' +
@@ -107,7 +108,7 @@
       '<div class="hint">Видно под афишей и в окне программы</div>' +
       '<label class="lbl" for="fp">Цена</label><input class="inp" id="fp" maxlength="40" value="' + esc(W.p || '') + '" placeholder="от 6 500 ₽">' +
       '<div class="hint">Пишите как на сайте: «от 6 500 ₽» или «750 ₽ за ребёнка». У новогодних цена не показывается</div>' +
-      '<span class="lbl">Раздел</span><div class="chips" id="fsh">' + D.SH.map(function (s) { return '<button type="button" class="chip' + (W.sh.indexOf(s.k) >= 0 ? ' on' : '') + '" data-sh="' + s.k + '">' + SHN[s.k] + '</button>'; }).join('') + '</div>' +
+      '<span class="lbl">Раздел</span><div class="chips" id="fsh">' + D.SH.map(function (s) { return '<button type="button" class="chip' + (W.sh.indexOf(s.k) >= 0 ? ' on' : '') + '" data-sh="' + s.k + '">' + esc(shn(s)) + '</button>'; }).join('') + '</div>' +
       '<div class="hint">Можно выбрать два раздела, афиша встанет на обе полки</div>' +
       '<div class="shw" id="fof">Показывать на сайте<div class="sw' + (W.off ? '' : ' on') + '"></div></div>' +
       '<div class="act"><button class="bmain" id="fsave">' + (I.ok || '') + 'Сохранить</button>' + (isNew ? '' : '<button class="bdel" id="fdel" aria-label="Удалить">' + (I.del || '') + '</button>') + '</div>' +
@@ -158,21 +159,71 @@
 
   /* ───── Разделы ───── */
   function shelves() {
-    pane.innerHTML = '<div class="ph"><div><h2>Разделы</h2><p>Выключенный раздел пропадает с сайта вместе с пунктом меню. Афиши в нём сохраняются, раздел возвращается одним касанием</p></div></div>' +
+    pane.innerHTML = '<div class="ph"><div><h2>Разделы</h2><p>Название раздела можно поменять, новый раздел добавить. Выключенный раздел пропадает с сайта вместе с пунктом меню, афиши в нём сохраняются</p></div>' +
+      '<button class="bmain" id="newsh">' + (I.add || '') + 'Новый раздел</button></div>' +
       '<div class="rows">' + D.SH.map(function (s) {
         var on = onShelf(s.k), th = on.slice(0, 3).map(function (x) { return '<img src="' + esc(src(x.img)) + '" alt="" loading="lazy">'; }).join('');
-        return '<div class="row gl"><div class="th">' + th + '</div><div class="tx"><b>' + SHFULL[s.k] + '</b><small>' + on.length + ' ' + plural(on.length) + ' на сайте' +
-          (s.k === 'ng' ? '. В январе выключите, к декабрю включите снова' : '') + '</small></div>' +
+        var note = /новогод/i.test(s.n || '') ? '. В январе выключите, к декабрю включите снова' : (!on.length && !s.off ? '. На сайте появится с первой афишей' : '');
+        return '<div class="row gl"><div class="th">' + th + '</div><div class="tx"><b>' + esc(shn(s)) + (s.s ? ' <span class="shs">' + esc(s.s) + '</span>' : '') + '</b><small>' + on.length + ' ' + plural(on.length) + ' на сайте' + note + '</small>' +
+          '<button class="ren" data-ren="' + s.k + '">Изменить название</button></div>' +
           '<div class="sv" data-shk="' + s.k + '">На сайте<div class="sw' + (s.off ? '' : ' on') + '"></div></div></div>';
       }).join('') + '</div>';
   }
   function plural(n) { var a = n % 10, b = n % 100; return a === 1 && b !== 11 ? 'афиша' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'афиши' : 'афиш'; }
   pane.addEventListener('click', function (e) {
     if (tab !== 'sh') { return; }
-    var b = e.target.closest('[data-shk]'); if (!b) { return; }
+    var b;
+    if (e.target.closest('#newsh')) { shEd(null); return; }
+    if ((b = e.target.closest('[data-ren]'))) { shEd(b.dataset.ren); return; }
+    b = e.target.closest('[data-shk]'); if (!b) { return; }
     var s = shelfOf(b.dataset.shk), off = s.off ? 0 : 1;
     api('shelf', { k: s.k, off: off }).then(function () { shelves(); say((off ? 'Раздел скрыт, ' : 'Раздел снова на сайте, ') + LAG); }, function () {});
   });
+
+  /* окно раздела: название, подпись, имя в меню; новый раздел; удалить добавленный */
+  function shEd(k) {
+    var s = k ? shelfOf(k) : null, isNg = k === 'ng', menu = k && MENU[k], own = s && BASE.indexOf(k) < 0;
+    var dim = document.createElement('div');
+    dim.className = 'dim'; dim.id = 'ed';
+    dim.innerHTML = '<div class="modal sm gl"><div class="fm">' +
+      '<button class="x" id="edx" aria-label="Закрыть">' + (I.x || '×') + '</button>' +
+      '<h3>' + (s ? 'Раздел «' + esc(s.n) + '»' : 'Новый раздел') + '</h3>' +
+      '<label class="lbl" for="sn">Название</label><input class="inp" id="sn" maxlength="60" value="' + esc(s ? s.n : '') + '" placeholder="Самые популярные">' +
+      '<div class="hint">Крупный заголовок над афишами на сайте</div>' +
+      (isNg ? '' : '<label class="lbl" for="ss">Подпись под названием</label><input class="inp" id="ss" maxlength="80" value="' + esc(s && s.s || '') + '" placeholder="для детей 2-5 лет">' +
+        '<div class="hint">Можно оставить пустой</div>') +
+      (menu ? '<label class="lbl" for="sm">В верхнем меню сайта</label><input class="inp" id="sm" maxlength="30" value="' + esc(s.m || '') + '">' +
+        '<div class="hint">Коротко, одно-два слова: меню в одну строку</div>' : '') +
+      (s ? '' : '<div class="hint">Раздел встанет на сайте после «Выпускных» и появится, когда в нём будет первая афиша. Афишу в раздел добавляют во вкладке «Афиши»</div>') +
+      '<div class="act"><button class="bmain" id="ssave">' + (I.ok || '') + (s ? 'Сохранить' : 'Добавить раздел') + '</button>' +
+      (own ? '<button class="bdel" id="sdel" aria-label="Удалить раздел">' + (I.del || '') + '</button>' : '') + '</div>' +
+      '</div></div>';
+    document.body.appendChild(dim);
+    document.body.style.overflow = 'hidden';
+    var nm0 = s ? s.n : '';
+    dim.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t.id === 'ed' || t.closest('#edx')) { closeEd(true); return; }
+      if (t.closest('#sdel')) {
+        if (!confirm('Удалить раздел «' + s.n + '»? Афиши, которые стояли только в нём, скроются с сайта, но останутся во вкладке «Афиши». Вернуть можно во вкладке «Копии».')) { return; }
+        api('shdel', { k: k }).then(function () { closeEd(true); flt = 'all'; shelves(); say('Раздел удалён, ' + LAG); }, function () {});
+        return;
+      }
+      if (!t.closest('#ssave')) { return; }
+      var n = $('#sn').value.trim();
+      if (!n) { $('#sn').classList.add('bad'); say('Напишите название раздела', true); return; }
+      var body = { k: k, n: n, s: $('#ss') ? $('#ss').value.trim() : '' };
+      if ($('#sm')) {
+        /* меню не трогали, а название поменяли: в меню тоже новое название */
+        var m = $('#sm').value.trim();
+        body.m = (m === (s.m || '') && n !== nm0) ? n : m;
+      }
+      var btn = $('#ssave'); btn.disabled = true;
+      api(k ? 'shname' : 'shadd', body).then(function () {
+        closeEd(true); shelves(); say((k ? 'Сохранено, ' : 'Раздел добавлен. Теперь поставьте в него афиши во вкладке «Афиши»') + (k ? LAG : ''));
+      }, function () { btn.disabled = false; });
+    });
+  }
 
   /* ───── Фото с праздников ───── */
   function photos() {
