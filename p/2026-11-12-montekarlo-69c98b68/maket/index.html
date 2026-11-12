@@ -29,8 +29,12 @@ header .btn{padding:13px 22px;font-size:13px;margin-left:clamp(4px,.8vw,14px)}
 @media(max-width:1440px){header{gap:14px}.hl,.hr{gap:16px}.hl a,.hr a:not(.btn){font-size:12.5px;letter-spacing:.05em}}
 
 /* главный экран */
-.hero{position:relative;height:calc(100svh - var(--hdr));min-height:560px;background:#0B0B0D url(img/hero.jpg) 72% 0/cover}
-.hero .card{position:absolute;left:var(--pad);top:50%;transform:translateY(-50%);width:fit-content;max-width:calc(100% - 2*var(--pad));
+.hero{position:relative;height:calc(100svh - var(--hdr));min-height:560px;background:#0B0B0D url(img/hero1.jpg) 72% 0/cover}
+html[data-bg="2"] .hero{background-image:url(img/hero2.jpg);background-position:100% 0}
+html[data-bg="3"] .hero{background-image:url(img/hero3.jpg);background-position:60% 55%}
+html[data-bg="4"] .hero{background-image:url(img/hero4.jpg);background-position:60% 40%}
+html[data-bg="5"] .hero{background-image:url(img/hero5.jpg);background-position:60% 45%}
+.hero .card{position:absolute;left:var(--pad);bottom:clamp(32px,7vh,80px);width:fit-content;max-width:calc(100% - 2*var(--pad));
 background:rgba(11,11,13,.38);padding:clamp(24px,2.2vw,38px)}
 .hero h1{font-size:clamp(36px,3.5vw,64px);white-space:nowrap}
 .hero p{margin:16px 0 26px;font-size:clamp(16px,1.15vw,19px);color:#e2e2e6;max-width:520px}
@@ -71,7 +75,7 @@ section{padding:clamp(72px,8vw,128px) var(--pad);position:relative}
 .pr{padding:clamp(26px,2.2vw,38px);display:flex;flex-direction:column;min-height:270px}
 .pr h3{font-size:clamp(24px,1.8vw,30px);padding-bottom:14px;border-bottom:1px solid var(--line)}
 .pr .what{margin:14px 0 0;color:#c9c9ce}
-.pr .sum{margin-top:auto;padding-top:28px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pr .sum{margin-top:auto;padding-top:28px;display:flex;justify-content:flex-start;align-items:baseline;gap:14px}
 .pr .sum small{font:500 13px/1 Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
 .pr .sum b{font:700 clamp(32px,2.6vw,46px)/1 'Roboto Condensed';white-space:nowrap}
 
@@ -100,7 +104,7 @@ section{padding:clamp(72px,8vw,128px) var(--pad);position:relative}
 .ci .row:first-child{padding-top:0}
 .ci iconify-icon{font-size:26px;color:var(--acc)}
 .ci b{display:block;font-weight:600}.ci span{color:#c9c9ce}
-.soc{display:flex;gap:12px;margin:26px 0}.soc a{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:24px;transition:border-color .5s,color .5s}
+.soc{display:flex;gap:12px;margin:26px 0}.soc a{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:22px;color:#fff;transition:border-color .5s,color .5s}
 .soc a:hover{border-color:var(--acc);color:var(--acc)}
 .ci .btn{width:100%}
 
@@ -206,7 +210,7 @@ footer .logo{justify-content:center;margin-bottom:14px}
 <div class="row"><iconify-icon icon="ph:map-pin"></iconify-icon><div><b>Адрес</b><span>Набережные Челны, 6-й комплекс, 1</span></div></div>
 <div class="row"><iconify-icon icon="ph:clock"></iconify-icon><div><b>Часы</b><span>Пн с 12:00 до 02:00<br>Вт–Пт и Вс с 10:00 до 01:00<br>Сб с 10:00 до 03:00</span></div></div>
 <div class="row"><iconify-icon icon="ph:phone"></iconify-icon><div><b>Телефон</b><a href="tel:+79375751313"><span>+7 937 575-13-13</span></a></div></div>
-<div class="soc"><a href="https://t.me/timurmontecarlo" aria-label="Telegram"><iconify-icon icon="ph:telegram-logo"></iconify-icon></a><a href="https://wa.me/79375751313" aria-label="WhatsApp"><iconify-icon icon="ph:whatsapp-logo"></iconify-icon></a><a href="https://vk.com/empiremafclub" aria-label="ВКонтакте"><iconify-icon icon="simple-icons:vk"></iconify-icon></a></div>
+<div class="soc"><a href="https://t.me/timurmontecarlo" aria-label="Telegram"><iconify-icon icon="simple-icons:telegram"></iconify-icon></a><a href="https://wa.me/79375751313" aria-label="WhatsApp"><iconify-icon icon="simple-icons:whatsapp"></iconify-icon></a><a href="https://vk.com/empiremafclub" aria-label="ВКонтакте"><iconify-icon icon="simple-icons:vk"></iconify-icon></a></div>
 <a class="btn" href="https://t.me/timurmontecarlo">Забронировать</a>
 </div></div>
 </section>
@@ -215,6 +219,7 @@ footer .logo{justify-content:center;margin-bottom:14px}
 Клуб мафии и антикафе в Набережных Челнах</footer>
 
 <script>
+{const b=new URLSearchParams(location.search).get('bg');if(b)document.documentElement.dataset.bg=b}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('rv');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.glass:not(.card),.split img,.ttl').forEach((el,i)=>{el.style.animationDelay=(i%4)*90+'ms';io.observe(el)});
 </script>
