@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ru" data-hero="a">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ЛедАвто: студия автосвета в Екатеринбурге</title>
+<meta name="description" content="Bi-LED линзы, ремонт, полировка и тюнинг фар, регулировка света. Екатеринбург, проспект Космонавтов, 103А, корпус 1">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Tektur:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root{
+  --bg:#060607;--surf:#0F0F11;--surf2:#141417;--line:rgba(255,255,255,.09);--ink:#F4F5F7;--mut:#A3A6AD;
+  --red:#FF2630;--glow:0 0 18px rgba(255,38,48,.7);
+  --fh:'Tektur',sans-serif;--fhw:700;
+  --pad:clamp(20px,2.5vw,56px);--hdr:84px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.h{font-family:var(--fh);font-weight:var(--fhw);letter-spacing:-.005em;line-height:1.02}
+svg{width:1em;height:1em}
+
+/* ШАПКА */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;gap:clamp(20px,3vw,56px);padding:18px var(--pad);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+.top.s{background:rgba(6,6,7,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-block:12px;border-color:var(--line)}
+.logo img{height:48px;width:auto;transition:height .4s}
+.top.s .logo img{height:40px}
+.menu{display:flex;gap:clamp(18px,2.2vw,40px);font-weight:500;font-size:16px}
+.menu a{position:relative;opacity:.86;transition:opacity .3s}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);box-shadow:var(--glow)}
+.menu a:hover{opacity:1}.menu a:hover::after{transform:scaleX(1)}
+.top .right{margin-left:auto;display:flex;align-items:center;gap:22px}
+.tel{font-weight:600;font-size:17px;white-space:nowrap}
+.burger{all:unset;display:none;cursor:pointer;width:44px;height:44px;place-items:center;font-size:30px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:12px;font:600 16px/1 Inter,sans-serif;cursor:pointer;border:0;transition:transform .6s var(--ease),box-shadow .6s var(--ease),background .4s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn.r{background:var(--red);color:#fff;box-shadow:var(--glow)}
+.btn.r:hover{box-shadow:0 10px 30px rgba(255,38,48,.5)}
+.btn.g{background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(10px)}
+.btn.g:hover{background:rgba(255,255,255,.2)}
+.btn svg{width:20px;height:20px}
+
+/* меню на телефоне */
+.drawer{position:fixed;inset:0;z-index:70;background:rgba(6,6,7,.96);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:24px var(--pad);transform:translateX(-100%);transition:transform .6s var(--ease)}
+.drawer.on{transform:none}
+.drawer .x{all:unset;cursor:pointer;font-size:32px;align-self:flex-start}
+.drawer nav{margin-top:40px;display:flex;flex-direction:column;gap:18px}
+.drawer nav a{font-family:var(--fh);font-weight:700;font-size:38px}
+.drawer .btn{margin-top:auto;justify-content:center}
+
+/* движение с его сайта: красная черта сверху экрана растёт, текст всплывает */
+.sec{position:relative}
+.sec::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--red);transform:scaleX(.2);transform-origin:left;transition:transform 1.4s var(--ease);z-index:5;box-shadow:var(--glow)}
+.sec.in::before{transform:scaleX(1)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0) * 110ms)}
+.rv.up{transform:translateY(50px)}
+.in .rv{opacity:1;transform:none}
+.dots{position:fixed;right:clamp(12px,1.4vw,26px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:14px}
+.dots a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.28);transition:transform .5s var(--ease),background .4s;position:relative}
+.dots a.on{background:#fff;transform:scale(1.5)}
+.dots a span{position:absolute;right:22px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;font-size:13px;opacity:0;transition:.4s;pointer-events:none;background:rgba(0,0,0,.7);padding:4px 10px;border-radius:6px}
+.dots a:hover span{opacity:1;transform:translateY(-50%)}
+
+/* заголовок блока = слово меню */
+.ttl{font-size:clamp(64px,9vw,170px)}
+.sub{margin-top:14px;color:var(--mut);font-size:clamp(16px,1.15vw,19px);max-width:640px}
+.blk{padding:clamp(100px,13vh,150px) var(--pad) clamp(80px,10vh,120px)}
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero{height:100svh;min-height:640px;overflow:hidden}
+.hero .ph{position:absolute;inset:0}
+.hero .ph img{width:100%;height:100%;object-fit:cover;transition:transform 2.6s var(--ease)}
+.neon{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--red);transform:scaleX(.2);transform-origin:left;transition:transform 1.8s var(--ease) .3s;z-index:4;box-shadow:0 0 24px 4px rgba(255,38,48,.7),0 -30px 80px 10px rgba(255,38,48,.2)}
+.in .neon{transform:scaleX(1)}
+:root[data-hero="a"] #heroB,:root[data-hero="b"] #heroA{display:none}
+.heroA{display:flex;align-items:flex-end;padding:0 var(--pad) clamp(70px,9vh,120px)}
+.heroA .ph img{object-position:70% 55%;transform:scale(1.08)}
+.heroA.in .ph img{transform:scale(1)}
+.heroA .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.15) 55%,transparent),linear-gradient(0deg,rgba(0,0,0,.5),transparent 40%)}
+.card{position:relative;z-index:3;width:fit-content;max-width:min(800px,100%);padding:clamp(28px,3vw,48px);border-radius:18px;background:rgba(12,12,14,.46);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1px solid rgba(255,255,255,.1)}
+.card h1{font-size:clamp(38px,4.4vw,76px)}
+.card h1 em{font-style:normal;color:var(--red)}
+.card p{margin-top:22px;font-size:clamp(17px,1.2vw,20px);color:#D9DBE0;max-width:600px}
+.acts{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.ot{margin-left:8px;font-size:15px;color:var(--mut)}
+.ot b{color:#fff;font-weight:600}
+.heroB{display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--pad) clamp(64px,9vh,110px)}
+.heroB .ph img{object-position:60% 40%;transform:scale(1.1) translateX(2%)}
+.heroB.in .ph img{transform:none}
+.heroB .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.86),rgba(0,0,0,.45) 38%,rgba(0,0,0,.05) 70%)}
+.heroB .t{position:relative;z-index:3}
+.k1{font-family:var(--fh);font-weight:500;text-transform:uppercase;font-size:clamp(22px,2.6vw,46px);letter-spacing:.04em;color:#E9EAEE}
+.k2{font-family:var(--fh);font-weight:700;text-transform:uppercase;font-size:clamp(64px,12.5vw,230px);line-height:.9;margin-top:6px;background:linear-gradient(180deg,#fff 30%,#B9BCC4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.heroB .row{position:relative;z-index:3;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(20px,3vw,56px);margin-top:clamp(26px,3.5vh,44px)}
+.ic{display:flex;align-items:center;gap:16px;font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+.ic i{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--red);display:grid;place-items:center;flex:none;box-shadow:var(--glow);transition:background .5s,transform .6s var(--ease)}
+.ic i svg{width:30px;height:30px}
+.ic:hover i{background:var(--red);transform:translateY(-2px)}
+.heroB .row .btn{margin-left:auto}
+
+/* ЦЕНЫ */
+.prices{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,110px)}
+.tabs{margin-top:clamp(28px,4vh,48px);display:flex;flex-direction:column;gap:4px}
+.tabs button{all:unset;cursor:pointer;position:relative;padding:8px 0;font-family:var(--fh);font-weight:700;font-size:clamp(26px,2.3vw,42px);line-height:1.15;color:rgba(255,255,255,.32);transition:color .4s,padding .6s var(--ease)}
+.tabs button::before{content:"";position:absolute;left:0;top:50%;width:34px;height:3px;margin-top:-1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease);box-shadow:var(--glow)}
+.tabs button:hover{color:rgba(255,255,255,.7)}
+.tabs button.on{color:#fff;padding-left:52px}
+.tabs button.on::before{transform:scaleX(1)}
+.pr-r{display:flex;flex-direction:column}
+.pic{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--surf)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .8s var(--ease),transform 1.6s var(--ease)}
+.pic img.on{opacity:1;transform:scale(1)}
+.pic:hover img.on{transform:scale(1.05)}
+.list{margin-top:clamp(18px,2.5vh,30px)}
+.it{position:relative;overflow:hidden;display:flex;align-items:baseline;gap:24px;padding:18px 4px;border-bottom:1px solid var(--line);animation:rise .7s var(--ease) both;animation-delay:calc(var(--d) * 70ms)}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.it::before{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);transform:translateX(-120%);transition:transform 1s var(--ease)}
+.it:hover::before{transform:translateX(260%)}
+.it .nm{font-size:clamp(17px,1.25vw,21px);font-weight:500}
+.it .pr{margin-left:auto;white-space:nowrap;font-family:var(--fh);font-weight:700;font-size:clamp(20px,1.6vw,28px);transition:color .4s}
+.it .pr small{font:500 15px Inter;color:var(--mut);margin-right:6px}
+.it:hover .pr{color:var(--red)}
+.pr-r .btn{margin-top:30px;align-self:flex-start}
+
+/* РАБОТЫ: ползунок до/после */
+.grid2{margin-top:clamp(36px,5vh,56px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.4vw,26px)}
+.ba{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;cursor:ew-resize;user-select:none;touch-action:pan-y;--p:50%;background:var(--surf)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .po{clip-path:inset(0 0 0 var(--p))}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:var(--red);box-shadow:var(--glow);pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--p);width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:var(--red);box-shadow:var(--glow);display:grid;place-items:center;color:#fff;font:700 18px Inter;pointer-events:none;transition:transform .4s var(--ease)}
+.ba:hover .knob{transform:scale(1.08)}
+.ba .lb{position:absolute;bottom:14px;font:600 13px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.8);pointer-events:none}
+.ba .lb.l{left:18px}.ba .lb.r{right:18px}
+
+/* ОТЗЫВЫ */
+.revs{margin-top:clamp(36px,5vh,56px);columns:4 300px;column-gap:clamp(14px,1.4vw,26px)}
+.rev{break-inside:avoid;margin-bottom:clamp(14px,1.4vw,26px);padding:28px 26px;border-radius:18px;background:var(--surf2);border:1px solid var(--line);transition:border-color .5s,transform .6s var(--ease)}
+.rev:hover{border-color:rgba(255,38,48,.5);transform:translateY(-2px)}
+.rev p{font-size:16.5px;line-height:1.65;color:#E3E4E8}
+.rev b{display:block;margin-top:18px;font-weight:600;font-size:15px;color:#fff}
+.rev b::before{content:"";display:inline-block;width:22px;height:2px;background:var(--red);vertical-align:middle;margin-right:10px;box-shadow:var(--glow)}
+
+/* КОНТАКТЫ */
+.cont{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vh,44px) clamp(32px,5vw,110px);align-items:start}
+.cl{margin-top:0;display:flex;flex-direction:column;gap:22px}
+.cl .row{display:flex;gap:16px;align-items:flex-start}
+.cl .row i{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--red);display:grid;place-items:center;flex:none;font-size:22px;box-shadow:var(--glow)}
+.cl .row div{padding-top:2px}
+.cl .row small{display:block;color:var(--mut);font-size:14px}
+.cl .row span,.cl .row a{font-size:clamp(18px,1.3vw,22px);font-weight:500}
+.cl .row a:hover{color:var(--red)}
+.cbtn{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
+#map{height:min(70vh,640px);border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surf)}
+.leaflet-container{background:#0d0d0f;font:inherit}
+.leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.8) contrast(.92) saturate(.6)}
+.leaflet-control-attribution{background:rgba(0,0,0,.6)!important;color:#999!important}.leaflet-control-attribution a{color:#ccc!important}
+.pinm{width:22px;height:22px;border-radius:50%;background:var(--red);border:3px solid #fff;box-shadow:0 0 0 6px rgba(255,38,48,.25),var(--glow)}
+
+/* ПОДВАЛ */
+.foot{padding:48px var(--pad) 40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:20px 48px;color:var(--mut);font-size:15px}
+.foot img{height:44px;width:auto}
+.foot a:hover{color:#fff}
+.foot .rt{margin-left:auto}
+
+/* выбор главного экрана для Роберта */
+.panel{position:fixed;right:16px;top:96px;z-index:60;background:rgba(20,20,22,.9);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 12px;font:500 13px/1.2 Inter;display:flex;align-items:center;gap:8px}
+.panel button{all:unset;cursor:pointer;min-width:26px;height:26px;padding:0 8px;border-radius:7px;display:grid;place-items:center;background:rgba(255,255,255,.08)}
+.panel button.on{background:#fff;color:#000}
+
+@media (max-width:1100px){.menu{display:none}.prices,.cont{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+@media (max-width:760px){
+  :root{--pad:16px}
+  .burger{display:grid}.top{gap:10px}.top .logo img{height:36px}.top.s .logo img{height:32px}
+  .tel{display:none}.top .right .btn{padding:12px 16px;font-size:15px}
+  .dots{display:none}.panel{top:auto;bottom:12px;right:12px}
+  .card{padding:22px}.card h1{font-size:clamp(26px,8.2vw,36px)}.k1{font-size:18px}.k2{font-size:clamp(44px,14.5vw,64px)}.ttl{font-size:clamp(52px,15vw,72px)}.acts .btn{flex:1;justify-content:center}.ot{margin:4px 0 0;width:100%}
+  .heroB .row{gap:14px}.ic{width:100%}.ic i{width:52px;height:52px}.heroB .row .btn{margin-left:0;width:100%;justify-content:center}
+  .tabs{flex-direction:row;flex-wrap:wrap;gap:8px}
+  .tabs button{font-size:20px;padding:10px 16px;border-radius:12px;background:var(--surf2)}
+  .tabs button.on{padding-left:16px;background:var(--red)}
+  .tabs button::before{display:none}
+  .it{flex-wrap:wrap;gap:4px 16px}.it .pr{margin-left:0}
+  .ba .knob{width:44px;height:44px;margin:-22px 0 0 -22px}
+  .cbtn .btn{flex:1;justify-content:center}
+  #map{height:380px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <button class="burger" id="burg" aria-label="Меню"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M222 128a6 6 0 0 1-6 6H40a6 6 0 0 1 0-12h176a6 6 0 0 1 6 6M40 70h176a6 6 0 0 0 0-12H40a6 6 0 0 0 0 12m176 116H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12"/></svg></button>
+  <a class="logo" href="#glavnaya"><img src="img/logo.png" alt="ЛедАвто"></a>
+  <nav class="menu"><a href="#ceny">Цены</a><a href="#raboty">Работы</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
+  <div class="right">
+    <a class="tel" href="tel:+79505516240">+7 950 551-62-40</a>
+    <a class="btn r" href="https://t.me/ledavtoekb" target="_blank" rel="noopener">Записаться</a>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <button class="x" id="dx" aria-label="Закрыть"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M204.24 195.76a6 6 0 1 1-8.48 8.48L128 136.49l-67.76 67.75a6 6 0 0 1-8.48-8.48L119.51 128L51.76 60.24a6 6 0 0 1 8.48-8.48L128 119.51l67.76-67.75a6 6 0 0 1 8.48 8.48L136.49 128Z"/></svg></button>
+  <nav><a href="#ceny">Цены</a><a href="#raboty">Работы</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
+  <a class="btn r" href="tel:+79505516240"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="m221.59 160.3l-47.24-21.17a14 14 0 0 0-13.28 1.22a5 5 0 0 0-.56.42l-24.69 21a1.88 1.88 0 0 1-1.68.06c-15.87-7.66-32.31-24-40-39.65a1.91 1.91 0 0 1 0-1.68l21.07-25a6 6 0 0 0 .42-.58a14 14 0 0 0 1.12-13.27L95.73 34.49a14 14 0 0 0-14.56-8.38A54.24 54.24 0 0 0 34 80c0 78.3 63.7 142 142 142a54.25 54.25 0 0 0 53.89-47.17a14 14 0 0 0-8.3-14.53M176 210c-71.68 0-130-58.32-130-130a42.23 42.23 0 0 1 36.67-42h.23a2 2 0 0 1 1.84 1.31l21.1 47.11a2 2 0 0 1 0 1.67l-21.11 25.06a5 5 0 0 0-.43.57a14 14 0 0 0-.91 13.73c8.87 18.16 27.17 36.32 45.53 45.19a14 14 0 0 0 13.77-1c.19-.13.38-.27.56-.42l24.68-21a1.92 1.92 0 0 1 1.6-.1l47.25 21.17a2 2 0 0 1 1.21 2A42.24 42.24 0 0 1 176 210"/></svg>+7 950 551-62-40</a>
+</div>
+
+<nav class="dots" id="dots"></nav>
+
+<span id="glavnaya"></span>
+<!-- Главный экран А -->
+<section class="sec hero heroA" id="heroA" data-name="Главная">
+  <div class="ph"><img src="img/hero_a.jpg" alt=""></div>
+  <div class="card">
+    <h1 class="h rv up">Профессиональный автосвет в&nbsp;<em>Екатеринбурге</em></h1>
+    <p class="rv" style="--d:2">Ставим Bi-LED линзы, чиним и полируем фары, настраиваем свет. Проспект Космонавтов, 103А, корпус&nbsp;1</p>
+    <div class="acts rv" style="--d:3">
+      <a class="btn r" href="https://t.me/ledavtoekb" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M227.57 27.7a7 7 0 0 0-7.13-1.22L17.78 105.79a12.23 12.23 0 0 0 2.1 23.39L74 139.81V200a14 14 0 0 0 24.08 9.71l26.64-27.63l41.58 36.45a13.9 13.9 0 0 0 9.2 3.49a14.3 14.3 0 0 0 4.36-.69a13.86 13.86 0 0 0 9.34-10.17l40.62-176.59a7 7 0 0 0-2.25-6.87M22.05 117.37a.46.46 0 0 1 0-.32a.5.5 0 0 1 .15-.08l159.71-62.52l-103.3 74l-56.41-11.04Zm67.39 84A2 2 0 0 1 86 200v-51.89l29.69 26Zm88.07 7.08a1.93 1.93 0 0 1-1.34 1.44a2 2 0 0 1-2-.4l-84.53-74.15L215 45.5Z"/></svg>Записаться</a>
+      <a class="btn g" href="#ceny">Цены</a>
+      <span class="ot">Установка линз <b>от 12&nbsp;000&nbsp;Р</b></span>
+    </div>
+  </div>
+  <div class="neon"></div>
+</section>
+
+<!-- Главный экран Б -->
+<section class="sec hero heroB" id="heroB" data-name="Главная">
+  <div class="ph"><img src="img/hero_b.jpg" alt=""></div>
+  <div class="t">
+    <div class="k1 rv up">Профессиональный</div>
+    <h1 class="k2 rv up" style="--d:1">Автосвет</h1>
+  </div>
+  <div class="row">
+    <div class="ic rv" style="--d:3"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M122 40V16a6 6 0 0 1 12 0v24a6 6 0 0 1-12 0m68 88a62 62 0 1 1-62-62a62.07 62.07 0 0 1 62 62m-12 0a50 50 0 1 0-50 50a50.06 50.06 0 0 0 50-50M59.76 68.24a6 6 0 1 0 8.48-8.48l-16-16a6 6 0 0 0-8.48 8.48Zm0 119.52l-16 16a6 6 0 1 0 8.48 8.48l16-16a6 6 0 1 0-8.48-8.48M192 70a6 6 0 0 0 4.24-1.76l16-16a6 6 0 0 0-8.48-8.48l-16 16A6 6 0 0 0 192 70m4.24 117.76a6 6 0 0 0-8.48 8.48l16 16a6 6 0 0 0 8.48-8.48ZM46 128a6 6 0 0 0-6-6H16a6 6 0 0 0 0 12h24a6 6 0 0 0 6-6m82 82a6 6 0 0 0-6 6v24a6 6 0 0 0 12 0v-24a6 6 0 0 0-6-6m112-88h-24a6 6 0 0 0 0 12h24a6 6 0 0 0 0-12"/></svg></i>Яркий<br>свет</div>
+    <div class="ic rv" style="--d:4"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M208 42H48a14 14 0 0 0-14 14v56c0 51.94 25.12 83.4 46.2 100.64c22.73 18.6 45.27 24.89 46.22 25.15a6 6 0 0 0 3.16 0c.95-.26 23.49-6.55 46.22-25.15C196.88 195.4 222 163.94 222 112V56a14 14 0 0 0-14-14m2 70c0 37.76-13.94 68.39-41.44 91.06A131.2 131.2 0 0 1 128 225.72a131 131 0 0 1-40.56-22.66C59.94 180.39 46 149.76 46 112V56a2 2 0 0 1 2-2h160a2 2 0 0 1 2 2Zm-37.76-12.24a6 6 0 0 1 0 8.48l-56 56a6 6 0 0 1-8.48 0l-24-24a6 6 0 0 1 8.48-8.48L112 151.51l51.76-51.75a6 6 0 0 1 8.48 0"/></svg></i>Надёжные<br>решения</div>
+    <div class="ic rv" style="--d:5"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46m0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34m108-54.4a6 6 0 0 0-2.92-4l-30.44-17.38l-.42-.71l-.12-34.31a6 6 0 0 0-2.1-4.56a110.1 110.1 0 0 0-36.07-20.31a6 6 0 0 0-4.84.45l-30.63 17.08h-1l-30.55-17.1a6 6 0 0 0-4.86-.44A109.9 109.9 0 0 0 56 46.68a6 6 0 0 0-2.12 4.55l-.16 34.34c-.14.23-.28.47-.41.71l-30.4 17.29a6 6 0 0 0-2.91 4.05a104.8 104.8 0 0 0 0 40.78a6 6 0 0 0 2.92 4l30.42 17.33l.42.71l.12 34.31a6 6 0 0 0 2.12 4.61a110.1 110.1 0 0 0 36.07 20.31a6 6 0 0 0 4.84-.45l30.61-17.08h1l30.56 17.1a6.1 6.1 0 0 0 2.92.76a5.8 5.8 0 0 0 1.93-.32a109.9 109.9 0 0 0 36-20.36a6 6 0 0 0 2.12-4.55l.16-34.34c.14-.23.28-.47.41-.71l30.42-17.29a6 6 0 0 0 2.92-4.05a104.8 104.8 0 0 0 .04-40.78m-11.25 35.79l-29.43 16.71a6.07 6.07 0 0 0-2.28 2.3c-.59 1-1.21 2.11-1.86 3.14a6 6 0 0 0-.91 3.16l-.16 33.21a98.2 98.2 0 0 1-27.52 15.53L133 200.88a6 6 0 0 0-2.93-.77h-3.88a6 6 0 0 0-3.07.76l-29.67 16.56a98 98 0 0 1-27.56-15.49l-.12-33.17a6 6 0 0 0-.91-3.16c-.64-1-1.27-2.08-1.86-3.14a6 6 0 0 0-2.27-2.3L31.3 143.4a93 93 0 0 1 0-30.79L60.68 95.9A6.07 6.07 0 0 0 63 93.6c.59-1 1.21-2.11 1.86-3.14a6 6 0 0 0 .91-3.16l.16-33.21a98.2 98.2 0 0 1 27.48-15.53L123 55.12a5.8 5.8 0 0 0 3.07.76h3.74a6 6 0 0 0 3.07-.76l29.65-16.56a98 98 0 0 1 27.56 15.49l.12 33.17a6 6 0 0 0 .91 3.16c.64 1 1.27 2.08 1.86 3.14a6 6 0 0 0 2.27 2.3l29.45 16.78a93 93 0 0 1 .03 30.79Z"/></svg></i>Профессиональная<br>установка</div>
+    <a class="btn r rv" style="--d:6" href="https://t.me/ledavtoekb" target="_blank" rel="noopener">Записаться</a>
+  </div>
+  <div class="neon"></div>
+</section>
+
+<!-- Цены -->
+<section class="sec blk prices" id="ceny" data-name="Цены">
+  <div>
+    <h2 class="h ttl rv up">Цены</h2>
+    <div class="tabs rv" style="--d:2" id="tabs"></div>
+  </div>
+  <div class="pr-r rv" style="--d:3">
+    <div class="pic" id="pic"></div>
+    <div class="list" id="list"></div>
+    <a class="btn r" href="https://t.me/ledavtoekb" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M227.57 27.7a7 7 0 0 0-7.13-1.22L17.78 105.79a12.23 12.23 0 0 0 2.1 23.39L74 139.81V200a14 14 0 0 0 24.08 9.71l26.64-27.63l41.58 36.45a13.9 13.9 0 0 0 9.2 3.49a14.3 14.3 0 0 0 4.36-.69a13.86 13.86 0 0 0 9.34-10.17l40.62-176.59a7 7 0 0 0-2.25-6.87M22.05 117.37a.46.46 0 0 1 0-.32a.5.5 0 0 1 .15-.08l159.71-62.52l-103.3 74l-56.41-11.04Zm67.39 84A2 2 0 0 1 86 200v-51.89l29.69 26Zm88.07 7.08a1.93 1.93 0 0 1-1.34 1.44a2 2 0 0 1-2-.4l-84.53-74.15L215 45.5Z"/></svg>Записаться</a>
+  </div>
+</section>
+
+<!-- Работы -->
+<section class="sec blk" id="raboty" data-name="Работы">
+  <h2 class="h ttl rv up">Работы</h2>
+  <p class="sub rv" style="--d:1">Тяните красную черту: слева фара до работы, справа после</p>
+  <div class="grid2" id="ba"></div>
+</section>
+
+<!-- Отзывы -->
+<section class="sec blk" id="otzyvy" data-name="Отзывы">
+  <h2 class="h ttl rv up">Отзывы</h2>
+  <div class="revs" id="revs"></div>
+</section>
+
+<!-- Контакты -->
+<section class="sec blk cont" id="kontakty" data-name="Контакты">
+  <h2 class="h ttl rv up" style="grid-column:1/-1">Контакты</h2>
+  <div>
+    <div class="cl">
+      <div class="row rv" style="--d:1"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128 66a38 38 0 1 0 38 38a38 38 0 0 0-38-38m0 64a26 26 0 1 1 26-26a26 26 0 0 1-26 26m0-112a86.1 86.1 0 0 0-86 86c0 30.91 14.34 63.74 41.47 94.94a252.3 252.3 0 0 0 41.09 38a6 6 0 0 0 6.88 0a252.3 252.3 0 0 0 41.09-38c27.13-31.2 41.47-64 41.47-94.94a86.1 86.1 0 0 0-86-86m0 206.51C113 212.93 54 163.62 54 104a74 74 0 0 1 148 0c0 59.62-59 108.93-74 120.51"/></svg></i><div><small>Адрес</small><span>Екатеринбург, проспект Космонавтов, 103А, корпус&nbsp;1</span></div></div>
+      <div class="row rv" style="--d:2"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="m221.59 160.3l-47.24-21.17a14 14 0 0 0-13.28 1.22a5 5 0 0 0-.56.42l-24.69 21a1.88 1.88 0 0 1-1.68.06c-15.87-7.66-32.31-24-40-39.65a1.91 1.91 0 0 1 0-1.68l21.07-25a6 6 0 0 0 .42-.58a14 14 0 0 0 1.12-13.27L95.73 34.49a14 14 0 0 0-14.56-8.38A54.24 54.24 0 0 0 34 80c0 78.3 63.7 142 142 142a54.25 54.25 0 0 0 53.89-47.17a14 14 0 0 0-8.3-14.53M176 210c-71.68 0-130-58.32-130-130a42.23 42.23 0 0 1 36.67-42h.23a2 2 0 0 1 1.84 1.31l21.1 47.11a2 2 0 0 1 0 1.67l-21.11 25.06a5 5 0 0 0-.43.57a14 14 0 0 0-.91 13.73c8.87 18.16 27.17 36.32 45.53 45.19a14 14 0 0 0 13.77-1c.19-.13.38-.27.56-.42l24.68-21a1.92 1.92 0 0 1 1.6-.1l47.25 21.17a2 2 0 0 1 1.21 2A42.24 42.24 0 0 1 176 210"/></svg></i><div><small>Телефон</small><a href="tel:+79505516240">+7 950 551-62-40</a></div></div>
+      <div class="row rv" style="--d:3"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128 26a102 102 0 1 0 102 102A102.12 102.12 0 0 0 128 26m0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90m62-90a6 6 0 0 1-6 6h-56a6 6 0 0 1-6-6V72a6 6 0 0 1 12 0v50h50a6 6 0 0 1 6 6"/></svg></i><div><small>Часы работы</small><span>Пн-пт 10:00-19:00, по предварительной записи</span></div></div>
+      <div class="row rv" style="--d:4"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216 66H56a10 10 0 0 1 0-20h136a6 6 0 0 0 0-12H56a22 22 0 0 0-22 22v128a22 22 0 0 0 22 22h160a14 14 0 0 0 14-14V80a14 14 0 0 0-14-14m2 126a2 2 0 0 1-2 2H56a10 10 0 0 1-10-10V75.59A21.84 21.84 0 0 0 56 78h160a2 2 0 0 1 2 2Zm-28-60a10 10 0 1 1-10-10a10 10 0 0 1 10 10"/></svg></i><div><small>Оплата</small><span>Наличные, карта, СБП, перевод</span></div></div>
+    </div>
+    <div class="cbtn rv" style="--d:5">
+      <a class="btn r" href="https://t.me/ledavtoekb" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M227.57 27.7a7 7 0 0 0-7.13-1.22L17.78 105.79a12.23 12.23 0 0 0 2.1 23.39L74 139.81V200a14 14 0 0 0 24.08 9.71l26.64-27.63l41.58 36.45a13.9 13.9 0 0 0 9.2 3.49a14.3 14.3 0 0 0 4.36-.69a13.86 13.86 0 0 0 9.34-10.17l40.62-176.59a7 7 0 0 0-2.25-6.87M22.05 117.37a.46.46 0 0 1 0-.32a.5.5 0 0 1 .15-.08l159.71-62.52l-103.3 74l-56.41-11.04Zm67.39 84A2 2 0 0 1 86 200v-51.89l29.69 26Zm88.07 7.08a1.93 1.93 0 0 1-1.34 1.44a2 2 0 0 1-2-.4l-84.53-74.15L215 45.5Z"/></svg>Telegram</a>
+      <a class="btn g" href="https://max.ru/u/f9LHodD0cOI7b1s8TAHR2EXL1_C3CW7mLK0Dfa7ZbCJ5jEbTiCitnHyOABM" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128 26a102 102 0 0 0-89.65 150.69l-11.62 34.87a14 14 0 0 0 17.71 17.71l34.87-11.62A102 102 0 1 0 128 26m0 192a90 90 0 0 1-45.06-12.08a6.1 6.1 0 0 0-3-.81a6.2 6.2 0 0 0-1.9.31l-37.39 12.46a2 2 0 0 1-2.53-2.53L50.58 178a6 6 0 0 0-.5-4.91A90 90 0 1 1 128 218"/></svg>MAX</a>
+      <a class="btn g" href="https://yandex.ru/maps/org/led_avto/160399067449/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128 66a38 38 0 1 0 38 38a38 38 0 0 0-38-38m0 64a26 26 0 1 1 26-26a26 26 0 0 1-26 26m0-112a86.1 86.1 0 0 0-86 86c0 30.91 14.34 63.74 41.47 94.94a252.3 252.3 0 0 0 41.09 38a6 6 0 0 0 6.88 0a252.3 252.3 0 0 0 41.09-38c27.13-31.2 41.47-64 41.47-94.94a86.1 86.1 0 0 0-86-86m0 206.51C113 212.93 54 163.62 54 104a74 74 0 0 1 148 0c0 59.62-59 108.93-74 120.51"/></svg>Маршрут</a>
+    </div>
+  </div>
+  <div id="map" class="rv" style="--d:2"></div>
+</section>
+
+<footer class="foot">
+  <img src="img/logo.png" alt="ЛедАвто">
+  <span>Студия автосвета в Екатеринбурге</span>
+  <a href="tel:+79505516240">+7 950 551-62-40</a>
+  <a class="rt" href="privacy.html">Политика конфиденциальности</a>
+</footer>
+
+<div class="panel" id="panel">Главный экран <button data-h="a" class="on">А</button><button data-h="b">Б</button></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// цены из карточки Яндекс Карт (обновлено 23.10, источник: представитель организации)
+const G=[
+ ['Линзы','img/linzy.jpg',[['Установка линз',12000],['Замена линз',10000]]],
+ ['Тюнинг','img/fary.jpg',[['Кастомный тюнинг фар',15000],['Авторская покраска масок фар',5000],['Покраска масок фар',2000]]],
+ ['Ремонт фар','img/ptf.jpg',[['Замена корпуса фары',5000],['Замена стекла фары',4000],['Устранение запотевания фар',5000],['Ремонт штатных светодиодов фар и фонарей',5000],['Ремонт проводки фар',1000],['Пайка корпуса фары',500],['Пайка стекла фары',500]]],
+ ['Полировка','img/polir.jpg',[['Полировка стекла фар снаружи',1000],['Полировка стекла фар изнутри',6000]]],
+ ['Свет','img/svet.jpg',[['Замена ламп',500],['Регулировка света',500],['Ремонт регулировки света',1000],['Замена ПТФ',4000],['Замена оптики',1000]]],
+ ['Допоборудование','img/r6_po.jpg',[['Установка камеры заднего вида',2500],['Установка магнитолы',2500],['Установка парктроников',5000],['Установка сигнализации',9000]]],
+];
+const fmt=n=>n.toLocaleString('ru-RU').replace(/\s/g,' ');
+const tabs=document.getElementById('tabs'),list=document.getElementById('list'),pic=document.getElementById('pic');
+G.forEach((g,i)=>{const b=document.createElement('button');b.textContent=g[0];b.onclick=()=>show(i);tabs.appendChild(b);
+ const im=new Image();im.src=g[1];im.alt=g[0];im.loading='lazy';pic.appendChild(im);});
+function show(i){[...tabs.children].forEach((b,k)=>b.classList.toggle('on',k===i));[...pic.children].forEach((m,k)=>m.classList.toggle('on',k===i));
+ list.innerHTML=G[i][2].map((r,k)=>`<div class="it" style="--d:${k}"><span class="nm">${r[0]}</span><span class="pr"><small>от</small>${fmt(r[1])} Р</span></div>`).join('');}
+show(0);
+
+// работы: 6 пар до/после из фото студии в 2ГИС
+const BA=document.getElementById('ba');
+for(let k=1;k<=6;k++){const d=document.createElement('div');d.className='ba rv';d.style.setProperty('--d',k);
+ d.innerHTML=`<img src="img/r${k}_do.jpg" alt="Фара до работы" loading="lazy"><img class="po" src="img/r${k}_po.jpg" alt="Фара после работы" loading="lazy"><div class="bar"></div><div class="knob">&#8596;</div><span class="lb l">До</span><span class="lb r">После</span>`;
+ BA.appendChild(d);
+ const set=x=>{const r=d.getBoundingClientRect();d.style.setProperty('--p',Math.max(0,Math.min(100,(x-r.left)/r.width*100))+'%')};
+ let drag=false;
+ d.addEventListener('pointerdown',e=>{drag=true;d.setPointerCapture(e.pointerId);set(e.clientX)});
+ d.addEventListener('pointermove',e=>{if(drag||e.pointerType==='mouse')set(e.clientX)});
+ d.addEventListener('pointerup',()=>drag=false);d.addEventListener('pointercancel',()=>drag=false);
+ d.addEventListener('mouseleave',()=>{if(!drag)glide(d,50)});}
+function glide(el,to){const from=parseFloat(getComputedStyle(el).getPropertyValue('--p'))||50,t0=performance.now();
+ const step=t=>{const q=Math.min(1,(t-t0)/900),e=1-Math.pow(1-q,3);el.style.setProperty('--p',(from+(to-from)*e)+'%');if(q<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+// при появлении черта проезжает слева направо и встаёт посередине
+const ioBA=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.style.setProperty('--p','92%');setTimeout(()=>glide(el,50),300+Number(el.style.getPropertyValue('--d'))*120);ioBA.unobserve(el)}}),{threshold:.5});
+document.querySelectorAll('.ba').forEach(x=>ioBA.observe(x));
+
+// отзывы из Яндекс Карт и 2ГИС (дословно, без смайлов)
+const R=[
+ ['Александр Сеначин','Парни реально профессионалы своего дела. Обновляю свет их золотыми руками уже на пятом автомобиле. Подходом, работой и результатом очень доволен. Делают качественно. Всё необходимое всегда есть в наличии. Свет становится просто пушка. Берутся даже за сложные проекты. Обращайтесь, не пожалеете! Однозначно рекомендую!'],
+ ['Александр Хайдаршин','Спасибо большое ребятам, сделали улучшение света на новой машине 23 года. Разница до и после колоссальная, качество на высшем уровне, даже не понятно, что туда лазили, за что переживал больше всего, потому что машина новая и на гарантии'],
+ ['Роберт Хаматов','Обновили мне фары, очень понравился свет. По сравнению со штатным, свет стал очень прямым, направлен на обочины. Ночью ездить кайф. Зря откладывал почти год визит к ребятам.'],
+ ['Самвел Саакян','Ребята, всем рекомендую обращаться к Владиславу. Обращаюсь неоднократно. Ни одного запотевания, работу выполняет чётко, предлагает заранее креативные решения, выполняется всё в срок. Обращайтесь, не пожалеете.'],
+ ['Никита Тахирович','Устанавливал у Влада линзы на а/м Марк2 110, свет шикарный. Далеко, широко и никого не слепит. Рекомендую'],
+ ['Семён Полозов','Спасибо огромное специалистам за качественную и яркую установку автосвета. В моём авто был максимально плохой штатный свет, мне заменили линзы и сейчас я отлично вижу дорогу в тёмное время суток'],
+ ['Кирилл Т.','Заказывал услугу установки линз в Шкода Рапид. По моей очень срочной просьбе установили в течение одного дня! Рекомендую!'],
+ ['Анастасия Мымрина','Приехала в студию с плохим светом фар, ребята поменяли мне линзы, теперь в тёмное время суток ездить не страшно. Спасибо ребятам, рекомендую'],
+];
+document.getElementById('revs').innerHTML=R.map((r,k)=>`<div class="rev rv" style="--d:${k%4+1}"><p>${r[1]}</p><b>${r[0]}</b></div>`).join('');
+
+// карта OSM (тёмные тайлы CARTO) по координатам с Яндекс Карт
+try{const m=L.map('map',{scrollWheelZoom:false,zoomControl:true,attributionControl:true}).setView([56.926745,60.61209],16);
+ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap'}).addTo(m);
+ L.marker([56.926745,60.61209],{icon:L.divIcon({className:'',html:'<div class="pinm"></div>',iconSize:[22,22],iconAnchor:[11,11]})}).addTo(m);}catch(e){}
+
+// появление экранов, точки справа, шапка
+const secs=[...document.querySelectorAll('.sec')],dots=document.getElementById('dots');
+function vis(){return secs.filter(s=>getComputedStyle(s).display!=='none')}
+function mkDots(){dots.innerHTML='';vis().forEach(s=>{const a=document.createElement('a');a.href='#'+s.id;a.innerHTML='<span>'+s.dataset.name+'</span>';dots.appendChild(a)})}
+mkDots();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.15});
+secs.forEach(s=>io.observe(s));
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=vis().indexOf(e.target);[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))}}),{threshold:.4});
+secs.forEach(s=>io2.observe(s));
+const hdr=document.getElementById('top');addEventListener('scroll',()=>hdr.classList.toggle('s',scrollY>40),{passive:true});
+const dr=document.getElementById('drawer');
+document.getElementById('burg').onclick=()=>dr.classList.add('on');document.getElementById('dx').onclick=()=>dr.classList.remove('on');
+dr.querySelectorAll('nav a').forEach(a=>a.onclick=()=>dr.classList.remove('on'));
+document.querySelectorAll('[data-h]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.hero=b.dataset.h;document.querySelectorAll('[data-h]').forEach(x=>x.classList.toggle('on',x===b));mkDots();
+ const s=document.getElementById(b.dataset.h==='a'?'heroA':'heroB');s.classList.add('in')});
+</script>
+</body>
+</html>
