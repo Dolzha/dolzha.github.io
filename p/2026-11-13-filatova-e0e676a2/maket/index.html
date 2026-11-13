@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700&family=Inter:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 <style>
 :root{--g:clamp(20px,2.5vw,56px);--ease:cubic-bezier(.22,.61,.36,1);
@@ -35,28 +34,28 @@ img{display:block}
  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 26px rgba(30,30,40,.10)}
 
 /* шапка-капсула */
-.hdr{position:fixed;z-index:50;top:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:clamp(18px,2vw,34px);width:max-content;max-width:calc(100% - 2*var(--g));
- padding:8px 8px 8px 26px;border-radius:999px;background:rgba(255,253,251,.74);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
+.hdr{position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:clamp(18px,2vw,34px);width:max-content;max-width:calc(100% - 2*var(--g));
+ padding:10px 10px 10px 34px;border-radius:999px;background:rgba(255,253,251,.74);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
  border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 40px rgba(40,44,60,.10)}
-.logo{display:flex;align-items:center;gap:6px;font-family:var(--fh);font-weight:700;font-size:19px;white-space:nowrap}
-.logo svg{width:19px;height:19px;fill:var(--acc)}
-.menu{display:flex;gap:clamp(16px,1.6vw,28px);font-size:15px;font-weight:500}
+.logo{display:flex;align-items:center;gap:7px;font-family:var(--fh);font-weight:700;font-size:24px;white-space:nowrap}
+.logo svg{width:24px;height:24px;fill:var(--acc)}
+.menu{display:flex;gap:clamp(20px,2.2vw,40px);font-size:18px;font-weight:500}
 .menu a{opacity:.78;transition:opacity .3s}
 .menu a:hover{opacity:1}
-.tel{font-weight:600;font-size:15px;white-space:nowrap;color:var(--acc)}
-.hdr .btn{height:46px;padding:0 24px;font-size:15px}
+.tel{font-weight:600;font-size:18px;white-space:nowrap;color:var(--acc)}
+.hdr .btn{height:58px;padding:0 32px;font-size:18px}
 
 /* меню связи */
 .svyaz{position:fixed;z-index:60;right:var(--g);bottom:28px;display:flex;flex-direction:column;align-items:center;gap:12px}
 .svyaz .list{display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .5s var(--ease),transform .6s var(--ease)}
 .svyaz.on .list,.svyaz:hover .list{opacity:1;transform:none;pointer-events:auto}
-.svyaz .list a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font:700 12px Inter,sans-serif;color:var(--ink);
+.svyaz .list a{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;font:700 14px Inter,sans-serif;color:var(--ink);
  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.6)) padding-box,linear-gradient(135deg,#fff,rgba(255,255,255,.3)) border-box;border:2px solid transparent;
  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 22px rgba(30,30,40,.14);transition:transform .6s var(--ease)}
 .svyaz .list a:hover{transform:translateY(-2px) scale(1.05)}
-.svyaz .list iconify-icon{font-size:26px;color:var(--acc)}
-.svyaz .main{width:66px;height:66px;padding:0;border-radius:50%}
-.svyaz .main iconify-icon{font-size:30px}
+.svyaz .list iconify-icon{font-size:32px;color:var(--acc)}
+.svyaz .main{width:84px;height:84px;padding:0;border-radius:50%}
+.svyaz .main iconify-icon{font-size:40px}
 
 /* листы: каждый следующий наезжает на предыдущий */
 main{position:relative}
@@ -65,7 +64,7 @@ main{position:relative}
 .sheet:first-child{border-radius:0;margin-top:0;box-shadow:none}
 .sheet.stud{padding-bottom:clamp(64px,6vw,110px)}
 .h2{font-size:clamp(54px,6.2vw,120px);line-height:.98}
-.sub{font-size:clamp(18px,1.35vw,23px);max-width:680px;margin-top:18px;color:var(--soft)}
+.sub{font-size:clamp(21px,1.7vw,30px);line-height:1.45;max-width:780px;margin-top:20px;color:var(--soft)}
 .sheet.dark{background:var(--graph);color:#fff}
 .sheet.dark .sub{color:rgba(255,255,255,.75)}
 
@@ -73,9 +72,9 @@ main{position:relative}
 .hero{background:var(--bg);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);padding:0 !important;overflow:hidden}
 .hero .txt{display:flex;flex-direction:column;justify-content:center;padding:120px var(--g) 90px;gap:28px}
 .hero h1{font-size:clamp(38px,3.9vw,72px);line-height:1.1;max-width:760px}
-.hero .txt p{font-size:clamp(18px,1.35vw,23px);color:var(--soft);max-width:560px}
-.hero .btn{align-self:flex-start;height:62px;padding:0 38px;font-size:18px}
-.strips{position:relative;display:flex;align-items:flex-end;height:100svh;padding:104px calc(var(--g) + 70px) 0 0}
+.hero .txt p{font-size:clamp(20px,1.6vw,28px);color:var(--soft);max-width:560px}
+.hero .btn{align-self:flex-start;height:76px;padding:0 50px;font-size:22px}
+.strips{position:relative;display:flex;align-items:flex-end;height:100svh;padding:118px calc(var(--g) + 70px) 0 0}
 .strip{position:relative;flex:1;height:100%;margin-left:-52px;border-radius:999px 999px 0 0;padding-top:clamp(30px,3.4vw,58px);display:flex;flex-direction:column;align-items:center;
  box-shadow:-20px 0 44px rgba(30,30,50,.13);transition:flex-grow .8s var(--ease)}
 .strip:first-child{margin-left:0}
@@ -93,26 +92,28 @@ main{position:relative}
 .napr .h2{color:#fff}
 .napr .sub{color:var(--ink)}
 .top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
-.ctrl{display:flex;align-items:center;gap:14px;padding-right:90px}
-.cnt{font-family:var(--fh);font-weight:600;font-size:22px;min-width:84px;text-align:right}
-.arr{width:64px;height:64px;padding:0;border-radius:50%}
-.arr iconify-icon{font-size:28px}
+.ctrl{display:flex;align-items:center;gap:16px;padding-right:110px}
+.cnt{font-family:var(--fh);font-weight:600;font-size:26px;min-width:84px;text-align:right}
+.arr{width:76px;height:76px;padding:0;border-radius:50%}
+.arr iconify-icon{font-size:34px}
 .view{overflow:hidden;margin-top:clamp(30px,3vw,56px);padding:0 4px 44px;margin-bottom:-44px;margin-left:-4px}
 .track{display:flex;transition:transform .8s var(--ease)}
-.card{flex:0 0 100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(32px,4vw,90px);align-items:center;padding-right:90px}
-.card h3{font-size:clamp(32px,3vw,56px);line-height:1.08}
-.card p{font-size:clamp(18px,1.3vw,23px);margin-top:20px;max-width:clamp(560px,40vw,760px)}
-.card dl{margin:26px 0 0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:17px}
+.card{flex:0 0 100%;padding-right:4px}
+.card .t{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,110px);align-items:start;background:rgba(255,255,255,.42);border:2px solid rgba(255,255,255,.75);border-radius:clamp(32px,3vw,52px);padding:clamp(36px,4vw,80px)}
+.card .t .r{display:flex;flex-direction:column}
+.card h3{font-size:clamp(42px,4.1vw,80px);line-height:1.05;hyphens:manual}
+.card p{font-size:clamp(21px,1.75vw,32px);line-height:1.45}
+.card dl{margin:30px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 22px;font-size:clamp(19px,1.4vw,25px)}
 .card dt{color:var(--soft)}
 .card dd{margin:0;font-weight:500}
-.card .btn{margin-top:32px}
-.card figure{margin:0;height:clamp(380px,56svh,640px);width:clamp(340px,30vw,600px);border-radius:clamp(28px,3vw,48px);overflow:hidden;box-shadow:0 24px 60px rgba(30,40,50,.18)}
+.card .btn{margin-top:38px;align-self:flex-start;height:70px;padding:0 46px;font-size:20px}
+.card figure{display:none;height:clamp(380px,56svh,640px);width:clamp(340px,30vw,600px);border-radius:clamp(28px,3vw,48px);overflow:hidden;box-shadow:0 24px 60px rgba(30,40,50,.18)}
 .card figure img{width:100%;height:100%;object-fit:cover}
 .card.nofoto{grid-template-columns:1fr}
-.card.on .t>*{animation:up .7s var(--ease) both}
-.card.on .t>*:nth-child(2){animation-delay:.08s}
-.card.on .t>*:nth-child(3){animation-delay:.16s}
-.card.on .t>*:nth-child(4){animation-delay:.24s}
+.card.on h3,.card.on .r>*{animation:up .7s var(--ease) both}
+.card.on .r>*:nth-child(1){animation-delay:.08s}
+.card.on .r>*:nth-child(2){animation-delay:.16s}
+.card.on .r>*:nth-child(3){animation-delay:.24s}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .dots{display:flex;gap:10px;margin-top:30px}
 .dots i{width:12px;height:12px;border-radius:6px;background:#fff;opacity:.55;cursor:pointer;transition:opacity .4s,width .6s var(--ease)}
@@ -121,75 +122,43 @@ main{position:relative}
 /* диагностика */
 .diag{background:var(--white)}
 .diag .h2{color:var(--acc)}
-.diag .cols{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(32px,4vw,90px);margin-top:clamp(36px,3.6vw,64px);align-items:start}
-.diag h3{font-size:clamp(24px,1.9vw,34px);margin-bottom:26px}
+.diag .cols{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.diag .ht{font-size:clamp(28px,2.4vw,44px);margin:clamp(40px,4vw,70px) 0 28px}
 .priz{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.priz div{background:var(--bg);border-radius:28px;padding:32px 22px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;font-size:17px;line-height:1.45;
+.priz div{background:var(--bg);border-radius:30px;padding:36px 24px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;font-size:clamp(18px,1.35vw,23px);line-height:1.4;
  transition:transform .6s var(--ease),background .4s}
 .priz div:hover{transform:translateY(-3px);background:#FBE6DC}
 .priz iconify-icon{font-size:64px;color:var(--acc)}
-.diag .side{background:var(--peach);border-radius:36px;padding:clamp(28px,2.6vw,48px);display:flex;flex-direction:column;gap:22px}
-.diag .side p{font-size:clamp(18px,1.3vw,22px)}
-.diag .side .q{font-family:var(--fh);font-weight:600;font-size:clamp(22px,1.7vw,30px);line-height:1.25}
-.diag .side .btn{align-self:flex-start}
-
-/* почерк */
-.poch{background:var(--sand)}
-.poch .cols{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:clamp(24px,3vw,60px);align-items:start;margin-top:clamp(36px,3.6vw,64px)}
-.poch .t p{font-size:clamp(18px,1.35vw,23px);max-width:620px}
-.poch .dp{margin:0}
-.poch .dp2{width:clamp(340px,26vw,460px);display:flex;flex-direction:column;gap:14px}
-.poch .dp2 div{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 20px 44px rgba(60,40,20,.16)}
-.poch .dp2 img{width:100%;height:auto}
-.poch .dp2 i{position:absolute;left:16px;top:16px;font:600 15px/1 var(--fh);font-style:normal;padding:10px 16px;border-radius:999px;color:#fff;background:linear-gradient(135deg,#F7A585,#DD5737) padding-box,linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.25)) border-box;border:2px solid transparent}
-.poch .dp2 div:first-child i{background:linear-gradient(135deg,#6b7074,#3A3F42) padding-box,linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.2)) border-box}
-.poch .dp figcaption{font-size:15px;color:var(--soft);margin-top:12px}
-.poch .t .q{font-family:var(--fh);font-weight:600;font-size:clamp(22px,1.7vw,30px);line-height:1.3;margin-top:28px}
-.tetr{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.tetr img{width:100%;height:calc((clamp(420px,58svh,620px) - 18px)/2);object-fit:cover;border-radius:24px;transition:transform .7s var(--ease)}
-.tetr img:hover{transform:scale(1.02)}
-
-/* наталья */
-.nat .cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,4vw,90px);align-items:center}
-.nat .h2{color:var(--peach)}
-.nat .big{font-family:var(--fh);font-weight:600;font-size:clamp(28px,2.4vw,44px);line-height:1.2;margin-top:30px;max-width:820px}
-.nat .ps{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px;margin-top:30px;max-width:900px}
-.nat .ps p{font-size:clamp(17px,1.2vw,20px);color:rgba(255,255,255,.82)}
-.nums{display:flex;gap:clamp(24px,3vw,60px);margin-top:44px;flex-wrap:wrap}
-.nums div{display:flex;flex-direction:column;gap:6px;max-width:230px}
-.nums b{font-family:var(--fh);font-weight:600;font-size:clamp(40px,3.6vw,64px);line-height:1;color:var(--mint)}
-.nums span{font-size:16px;color:rgba(255,255,255,.75)}
-.nat figure{margin:0;border-radius:40px;overflow:hidden;height:clamp(460px,72svh,760px);box-shadow:0 30px 70px rgba(0,0,0,.35)}
-.nat figure img{width:100%;height:100%;object-fit:cover;object-position:70% 30%}
+.diag .side{background:var(--peach);border-radius:30px;padding:clamp(32px,3vw,56px);display:flex;flex-direction:column;justify-content:center;gap:26px}
+.diag .side p{font-size:clamp(20px,1.5vw,26px)}
+.diag .side .q{font-family:var(--fh);font-weight:600;font-size:clamp(26px,2.1vw,40px);line-height:1.22}
+.diag .side .btn{align-self:flex-start;height:70px;padding:0 42px;font-size:20px}
 
 /* отзывы */
 .otz{background:var(--peach)}
 .otz .h2{color:#fff}
 .otz .sub{color:var(--ink)}
 .rev{columns:3;column-gap:20px;margin-top:clamp(36px,3.6vw,60px)}
-.rev article{break-inside:avoid;background:var(--white);border-radius:30px;padding:30px 30px 28px;margin-bottom:20px;box-shadow:0 14px 34px rgba(120,60,40,.10)}
-.rev p{font-size:17px;line-height:1.6}
-.rev b{display:block;margin-top:18px;font-family:var(--fh);font-weight:600;font-size:18px}
+.rev article{position:relative;break-inside:avoid;background:linear-gradient(160deg,rgba(255,255,255,.96),rgba(255,255,255,.78)) padding-box,linear-gradient(135deg,#fff,rgba(255,255,255,.35)) border-box;border:2px solid transparent;border-radius:34px;padding:64px 34px 32px;margin-bottom:22px;box-shadow:0 16px 38px rgba(120,60,40,.12);transition:transform .6s var(--ease)}
+.rev article:hover{transform:translateY(-3px)}
+.rev article::before{content:"\201C";position:absolute;left:30px;top:6px;font:700 84px/1 var(--fh);color:var(--acc);opacity:.85}
+.rev p{font-size:clamp(18px,1.25vw,21px);line-height:1.6}
+.rev b{display:block;margin-top:22px;font-family:var(--fh);font-weight:600;font-size:20px;color:var(--acc)}
 
-/* студии */
-.stud{background:var(--mint)}
-.stud .h2{color:#fff}
-.stud .sub{color:var(--ink)}
-.stud .cols{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,3vw,56px);margin-top:clamp(36px,3.6vw,60px);align-items:stretch}
-.adr{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start}
-.adr>[data-i]{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.85);border-radius:26px;padding:24px;cursor:pointer;transition:transform .6s var(--ease),background .4s}
-.adr>[data-i]:hover,.adr>[data-i].on{transform:translateY(-2px);background:#fff}
-.adr b{font-family:var(--fh);font-weight:600;font-size:21px;display:block}
-.adr span{font-size:15px;color:var(--soft)}
-.zap{grid-column:1/-1;background:var(--graph);color:#fff;border-radius:30px;padding:30px;display:flex;flex-direction:column;gap:18px}
-.zap p{font-size:clamp(18px,1.3vw,22px)}
-.zap .tel2{font-family:var(--fh);font-weight:600;font-size:clamp(26px,2vw,36px)}
-.zap .row{display:flex;gap:12px;flex-wrap:wrap}
-.zap .btn{height:52px;padding:0 24px;font-size:16px}
-#map{border-radius:34px;min-height:560px;box-shadow:0 20px 50px rgba(30,60,50,.18);z-index:1}
-.leaflet-container{font-family:Inter,sans-serif}
-.pin{width:22px;height:22px;border-radius:50%;background:var(--acc);border:4px solid #fff;box-shadow:0 4px 14px rgba(221,87,55,.5)}
-
+/* контакты */
+.kont{background:var(--mint);text-align:center;display:flex;flex-direction:column;align-items:center;padding-bottom:clamp(70px,7vw,120px) !important}
+.kont .h2{color:#fff}
+.kont .sub{color:var(--ink);margin-left:auto;margin-right:auto}
+.adr{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;width:100%;margin-top:clamp(40px,4vw,70px)}
+.adr div{background:rgba(255,255,255,.62);border:2px solid rgba(255,255,255,.85);border-radius:32px;padding:clamp(28px,2.6vw,44px) 20px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:transform .6s var(--ease),background .4s}
+.adr div:hover{transform:translateY(-3px);background:#fff}
+.adr b{font-family:var(--fh);font-weight:600;font-size:clamp(24px,2vw,36px)}
+.adr span{font-size:clamp(17px,1.2vw,20px);color:var(--soft)}
+.zap{margin-top:20px;width:100%;background:var(--graph);color:#fff;border-radius:36px;padding:clamp(40px,4vw,70px) 24px;display:flex;flex-direction:column;align-items:center;gap:24px}
+.zap p{font-size:clamp(21px,1.7vw,30px)}
+.zap .tel2{font-family:var(--fh);font-weight:600;font-size:clamp(34px,3vw,56px)}
+.zap .row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.zap .btn{height:68px;padding:0 40px;font-size:20px}
 /* подвал */
 .foot{position:relative;z-index:5;background:var(--graph);color:#fff;padding:clamp(60px,6vw,100px) var(--g) 40px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
 .foot .big{font-family:var(--fh);font-weight:600;font-size:clamp(32px,3.2vw,60px);line-height:1.1;max-width:900px}
@@ -198,16 +167,16 @@ main{position:relative}
 .foot nav a:hover{color:#fff}
 .foot small{grid-column:1/-1;color:rgba(255,255,255,.5);font-size:14px;border-top:1px solid rgba(255,255,255,.12);padding-top:24px}
 
-@media (max-width:1100px){.priz{grid-template-columns:repeat(2,1fr)}.rev{columns:2}}
-@media (max-width:900px){.hdr .menu{display:none}.hero,.diag .cols,.poch .cols,.nat .cols,.stud .cols,.foot{grid-template-columns:1fr}.strips{height:76svh;padding-right:0}.card{grid-template-columns:1fr;padding-right:0}.rev{columns:1}.ctrl{padding-right:0}}
+@media (max-width:1100px){.priz{grid-template-columns:repeat(2,1fr)}.rev{columns:2}.adr{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.hdr .menu{display:none}.hero,.diag .cols,.foot{grid-template-columns:1fr}.strips{height:76svh;padding-right:0}.card .t{grid-template-columns:1fr}.rev{columns:1}.ctrl{padding-right:0}}
 </style>
 </head>
 <body>
 <header class="hdr">
  <a class="logo" href="#top"><span>Я</span><svg viewBox="0 0 24 24"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg><span>учиться</span></a>
- <nav class="menu"><a href="#napr">Направления</a><a href="#diag">Диагностика</a><a href="#poch">Почерк</a><a href="#nat">Наталья</a><a href="#otz">Отзывы</a><a href="#stud">Студии</a></nav>
+ <nav class="menu"><a href="#napr">Направления</a><a href="#diag">Диагностика</a><a href="#otz">Отзывы</a><a href="#kont">Контакты</a></nav>
  <a class="tel" href="tel:+79231301230">+7 923 130-12-30</a>
- <a class="btn" href="#stud">Записаться</a>
+ <a class="btn" href="#kont">Записаться</a>
 </header>
 
 <div class="svyaz" id="svyaz">
@@ -242,14 +211,14 @@ main{position:relative}
    <button class="btn glass arr" id="nextb" aria-label="Вперёд"><iconify-icon icon="tabler:chevron-right"></iconify-icon></button></div>
  </div>
  <div class="view"><div class="track" id="track">
-  <article class="card"><div class="t"><h3>Полная нейродиагностика</h3><p>Разбираемся, как работают внимание, память, контроль и обработка информации. По запросу Наталья пишет заключение для невролога или школы.</p><dl><dt>Ведёт</dt><dd>только Наталья Филатова</dd><dt>Где</dt><dd>Красина 54, Танковая 24</dd></dl><a class="btn" href="#stud">Записаться</a></div><figure><img src="img/n1.jpg" alt="Наталья на занятии с девочкой"></figure></article>
-  <article class="card"><div class="t"><h3>Краткая диагностика учебных трудностей</h3><p>Выясняем, почему ребёнку трудно читать, писать, считать или выполнять задания.</p><dl><dt>Ведут</dt><dd>Анастасия, Наталья</dd><dt>Где</dt><dd>во всех студиях</dd></dl><a class="btn" href="#stud">Записаться</a></div><figure><img src="img/n2.jpg" alt="Занятие за столом" style="object-position:60% 50%"></figure></article>
-  <article class="card"><div class="t"><h3>Коррекция учебных трудностей</h3><p>Занимаемся индивидуально, потом закрепляем навык в мини-группе на 2-3 человека. Работаем с трудностями чтения, письма и счёта.</p><dl><dt>Формат</dt><dd>абонемент</dd><dt>Где</dt><dd>во всех студиях</dd></dl><a class="btn" href="#stud">Записаться</a></div><figure><img src="img/n3.jpg" alt="Игра-упражнение на занятии"></figure></article>
-  <article class="card nofoto"><div class="t"><h3>Почерк у взрослых</h3><p>Работаем с почерком, который трудно разобрать, и с движениями руки при письме. Красиво писать можно научиться в любом возрасте.</p><dl><dt>Ведёт</dt><dd>Наталья Филатова</dd><dt>Где</dt><dd>Танковая 24</dd></dl><a class="btn" href="#stud">Записаться</a></div></article>
-  <article class="card"><div class="t"><h3>Нейрофитнес на балансбордах</h3><p>Тренируем внимание, самоконтроль и скорость мышления через движение. В конце играем на необычных музыкальных инструментах.</p><dl><dt>Ведёт</dt><dd>Мария</dd><dt>Где</dt><dd>Красина 54, воскресенье и понедельник</dd></dl><a class="btn" href="#stud">Записаться</a></div><figure><img src="img/n5.jpg" alt="Дети на балансбордах"></figure></article>
-  <article class="card"><div class="t"><h3>Творческая каллиграфия</h3><p>Пишем пером и другими необычными инструментами. Главная задача не просто писать, а полюбить письмо.</p><dl><dt>Ведёт</dt><dd>Полина</dd><dt>Где</dt><dd>Красина 54, среда и суббота</dd></dl><a class="btn" href="#stud">Записаться</a></div><figure><img src="img/n6.jpg" alt="Ребёнок пишет пером" style="object-position:50% 60%"></figure></article>
-  <article class="card"><div class="t"><h3>Мячики для мозга</h3><p>Онлайн-занятия для детей и взрослых. Упражнения с мячами, которые можно делать дома.</p><dl><dt>Формат</dt><dd>онлайн</dd></dl><a class="btn" href="#stud">Записаться</a></div><figure><img src="img/n7.jpg" alt="Мячи для упражнений"></figure></article>
-  <article class="card"><div class="t"><h3>Консультации для педагогов и родителей</h3><p>Разбираем трудности обучения на конкретных случаях. В детский сад Наталья может прийти с практикумом.</p><dl><dt>Ведёт</dt><dd>Наталья Филатова</dd><dt>Где</dt><dd>по запросу</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Написать Наталье</a></div><figure><img src="img/n8.jpg" alt="Наталья выступает на форуме" style="object-position:72% 50%"></figure></article>
+  <article class="card"><div class="t"><h3>Полная нейро&shy;диагностика</h3><div class="r"><p>Разбираемся, как работают внимание, память, контроль и обработка информации. По запросу Наталья пишет заключение для невролога или школы.</p><dl><dt>Ведёт</dt><dd>только Наталья Филатова</dd><dt>Где</dt><dd>Красина 54, Танковая 24</dd></dl><a class="btn" href="#kont">Записаться</a></div></div></article>
+  <article class="card"><div class="t"><h3>Краткая диагностика учебных трудностей</h3><div class="r"><p>Выясняем, почему ребёнку трудно читать, писать, считать или выполнять задания.</p><dl><dt>Ведут</dt><dd>Анастасия, Наталья</dd><dt>Где</dt><dd>во всех студиях</dd></dl><a class="btn" href="#kont">Записаться</a></div></div></article>
+  <article class="card"><div class="t"><h3>Коррекция учебных трудностей</h3><div class="r"><p>Занимаемся индивидуально, потом закрепляем навык в мини-группе на 2-3 человека. Работаем с трудностями чтения, письма и счёта.</p><dl><dt>Формат</dt><dd>абонемент</dd><dt>Где</dt><dd>во всех студиях</dd></dl><a class="btn" href="#kont">Записаться</a></div></div></article>
+  <article class="card"><div class="t"><h3>Почерк у взрослых</h3><div class="r"><p>Работаем с почерком, который трудно разобрать, и с движениями руки при письме. Красиво писать можно научиться в любом возрасте.</p><dl><dt>Ведёт</dt><dd>Наталья Филатова</dd><dt>Где</dt><dd>Танковая 24</dd></dl><a class="btn" href="#kont">Записаться</a></div></div></article>
+  <article class="card"><div class="t"><h3>Нейрофитнес на балансбордах</h3><div class="r"><p>Тренируем внимание, самоконтроль и скорость мышления через движение. В конце играем на необычных музыкальных инструментах.</p><dl><dt>Ведёт</dt><dd>Мария</dd><dt>Где</dt><dd>Красина 54, воскресенье и понедельник</dd></dl><a class="btn" href="#kont">Записаться</a></div></div></article>
+  <article class="card"><div class="t"><h3>Творческая каллиграфия</h3><div class="r"><p>Пишем пером и другими необычными инструментами. Главная задача не просто писать, а полюбить письмо.</p><dl><dt>Ведёт</dt><dd>Полина</dd><dt>Где</dt><dd>Красина 54, среда и суббота</dd></dl><a class="btn" href="#kont">Записаться</a></div></div></article>
+  <article class="card"><div class="t"><h3>Мячики для мозга</h3><div class="r"><p>Онлайн-занятия для детей и взрослых. Упражнения с мячами, которые можно делать дома.</p><dl><dt>Формат</dt><dd>онлайн</dd></dl><a class="btn" href="#kont">Записаться</a></div></div></article>
+  <article class="card"><div class="t"><h3>Консультации для педагогов и родителей</h3><div class="r"><p>Разбираем трудности обучения на конкретных случаях. В детский сад Наталья может прийти с практикумом.</p><dl><dt>Ведёт</dt><dd>Наталья Филатова</dd><dt>Где</dt><dd>по запросу</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Написать Наталье</a></div></div></article>
  </div></div>
  <div class="dots" id="dots"></div>
 </section>
@@ -257,9 +226,8 @@ main{position:relative}
 <section class="sheet diag" id="diag">
  <h2 class="h2">Диагностика</h2>
  <p class="sub">Ребёнок старается, а учёба всё равно не даётся?</p>
+ <h3 class="ht">Когда нужен нейропсихолог, а не репетитор</h3>
  <div class="cols">
-  <div>
-   <h3>Когда нужен нейропсихолог, а не репетитор</h3>
    <div class="priz">
     <div><iconify-icon icon="tabler:ear"></iconify-icon>Не слышит задание с первого раза</div>
     <div><iconify-icon icon="tabler:speakerphone"></iconify-icon>Выкрикивает ответы, не дослушав вопрос</div>
@@ -268,48 +236,15 @@ main{position:relative}
     <div><iconify-icon icon="tabler:battery-1"></iconify-icon>Через 15 минут занятий выключается</div>
     <div><iconify-icon icon="tabler:flip-horizontal"></iconify-icon>Путает б и д, пишет буквы зеркально</div>
    </div>
-  </div>
   <div class="side">
    <p class="q">Уроки по 3 часа, а результата нет. Значит, дело не в старании.</p>
    <p>На диагностике Наталья проверяет внимание, память, контроль и обработку информации. Объясняет, над чем работать, и подбирает упражнения.</p>
-   <a class="btn" href="#stud">Записаться на диагностику</a>
+   <a class="btn" href="#kont">Записаться на диагностику</a>
   </div>
  </div>
 </section>
 
-<section class="sheet poch" id="poch">
- <h2 class="h2">Почерк</h2>
- <p class="sub">Голова знает, как писать, а рука не слушается.</p>
- <div class="cols">
-  <div class="t">
-   <p>Наталья называет это заиканием рук. Мозг даёт команду писать плавно, а рука путает движения. Отсюда разрывы, слишком длинные соединения, лишние элементы, пропущенные и переставленные буквы. Почерк складывается в 7-10 лет, в этом возрасте и лучше начинать.</p>
-   <p class="q">Поэтому на занятиях не только пишем. Много упражнений на моторику, координацию, баланс и ритм.</p>
-  </div>
-  <figure class="dp"><div class="dp2"><div><i>До</i><img src="img/p_do.jpg" alt="Тетрадь до занятий"></div><div><i>После</i><img src="img/p_posle.jpg" alt="Тетрадь после занятий"></div></div><figcaption>Тетрадь одного ученика до и после занятий</figcaption></figure>
-  <div class="tetr"><img src="img/p1.jpg" alt="Тетрадь ученика"><img src="img/p2.jpg" alt="Тетрадь ученика"><img src="img/p3.jpg" alt="Тетрадь ученика"><img src="img/p4.jpg" alt="Тетрадь ученика"></div>
- </div>
-</section>
 
-<section class="sheet dark nat" id="nat">
- <div class="cols">
-  <div>
-   <h2 class="h2">Наталья</h2>
-   <p class="big">Я не учу ребёнка стараться ещё сильнее. Я ищу причину.</p>
-   <div class="ps">
-    <p>Педагог и нейропсихолог, руковожу студиями «Я люблю учиться». Если ребёнок три часа сидит над пятью примерами, я хочу понять, почему.</p>
-    <p>Училась в МГУ у Т. В. Ахутиной, основателя детской нейропсихологии в России. Учусь у московских коллег и вместе с НГПУ веду курс для педагогов по коррекции почерка.</p>
-    <p>Люблю быстрый результат. Честно говорю родителям, что происходит с ребёнком и что мы будем делать.</p>
-    <p>На занятиях дети играют в специальные игры и делают упражнения. А оценки при этом растут.</p>
-   </div>
-   <div class="nums">
-    <div><b>90%</b><span>детей подняли средний балл на 1</span></div>
-    <div><b>70</b><span>детей занимались в 2025 году</span></div>
-    <div><b>4</b><span>студии в Новосибирске</span></div>
-   </div>
-  </div>
-  <figure><img src="img/nat.jpg" alt="Наталья Филатова"></figure>
- </div>
-</section>
 
 <section class="sheet otz" id="otz">
  <h2 class="h2">Отзывы</h2>
@@ -327,22 +262,19 @@ main{position:relative}
  </div>
 </section>
 
-<section class="sheet stud" id="stud">
- <h2 class="h2">Студии</h2>
+<section class="sheet kont" id="kont">
+ <h2 class="h2">Контакты</h2>
  <p class="sub">Четыре студии в Новосибирске. Выбирайте ближайшую.</p>
- <div class="cols">
-  <div class="adr" id="adr">
-   <div data-i="0"><b>Красина 54</b><span>офис 504, Дзержинский район</span></div>
-   <div data-i="1"><b>Танковая 24</b><span>Калининский район</span></div>
-   <div data-i="2"><b>Горский 8</b><span>Ленинский район</span></div>
-   <div data-i="3"><b>Энгельса 12</b><span>ОбьГЭС, Советский район</span></div>
-   <div class="zap">
-    <p>Запишитесь на диагностику и расскажите, что беспокоит.</p>
-    <a class="tel2" href="tel:+79231301230">+7 923 130-12-30</a>
-    <div class="row"><a class="btn" href="https://t.me/natalya_feelatova">Telegram</a><a class="btn glass" href="https://wa.me/79231301230">WhatsApp</a><a class="btn glass" href="https://max.ru/id540697181743_biz">MAX</a></div>
-   </div>
-  </div>
-  <div id="map"></div>
+ <div class="adr">
+  <div><b>Красина 54</b><span>офис 504, Дзержинский район</span></div>
+  <div><b>Танковая 24</b><span>Калининский район</span></div>
+  <div><b>Горский 8</b><span>Ленинский район</span></div>
+  <div><b>Энгельса 12</b><span>ОбьГЭС, Советский район</span></div>
+ </div>
+ <div class="zap">
+  <p>Запишитесь на диагностику и расскажите, что беспокоит.</p>
+  <a class="tel2" href="tel:+79231301230">+7 923 130-12-30</a>
+  <div class="row"><a class="btn" href="https://t.me/natalya_feelatova">Telegram</a><a class="btn glass" href="https://wa.me/79231301230">WhatsApp</a><a class="btn glass" href="https://max.ru/id540697181743_biz">MAX</a></div>
  </div>
 </section>
 </main>
@@ -354,7 +286,6 @@ main{position:relative}
  <small>Сеть студий коррекции почерка и помощи в обучении «Я люблю учиться», Новосибирск</small>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 // слайдер направлений
 const tr=document.getElementById('track'),cards=[...tr.children],dots=document.getElementById('dots'),cnt=document.getElementById('cnt');let i=0;
@@ -365,14 +296,6 @@ go(+(new URLSearchParams(location.search).get('s')||0));
 // высокий лист прилипает низом, чтобы его было видно целиком до наезда следующего
 function stick(){document.querySelectorAll('.sheet').forEach((s,k)=>{s.style.zIndex=k+1;s.style.top=Math.min(0,innerHeight-s.offsetHeight)+'px'})}
 addEventListener('load',stick);addEventListener('resize',stick);stick();
-// карта
-const P=[[55.0426036,82.9629825,'Красина 54, офис 504'],[55.0598207,82.9254745,'Танковая 24'],[54.995069,82.9092349,'Горский микрорайон 8'],[54.8604159,82.9798978,'Энгельса 12']];
-const map=L.map('map',{scrollWheelZoom:false});map.attributionControl.setPrefix(false);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
-const ic=L.divIcon({className:'',html:'<div class="pin"></div>',iconSize:[22,22],iconAnchor:[11,11]});
-const M=P.map(p=>L.marker([p[0],p[1]],{icon:ic}).addTo(map).bindPopup(p[2]));
-map.fitBounds(L.latLngBounds(P.map(p=>[p[0],p[1]])),{padding:[50,50]});
-document.querySelectorAll('#adr [data-i]').forEach(d=>d.onclick=()=>{const k=+d.dataset.i;document.querySelectorAll('#adr [data-i]').forEach(x=>x.classList.toggle('on',x===d));map.flyTo([P[k][0],P[k][1]],15,{duration:.8});M[k].openPopup()});
 </script>
 </body>
 </html>
