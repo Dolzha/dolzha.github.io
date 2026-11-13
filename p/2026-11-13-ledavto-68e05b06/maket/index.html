@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" data-hero="a">
+<html lang="ru" data-dots="1" data-btn="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -29,16 +29,16 @@ img{display:block;max-width:100%}
 svg{width:1em;height:1em}
 
 /* ШАПКА */
-.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;gap:clamp(20px,3vw,56px);padding:18px var(--pad);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;gap:clamp(24px,3.4vw,64px);padding:22px var(--pad);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
 .top.s{background:rgba(6,6,7,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-block:12px;border-color:var(--line)}
-.logo img{height:48px;width:auto;transition:height .4s}
-.top.s .logo img{height:40px}
-.menu{display:flex;gap:clamp(18px,2.2vw,40px);font-weight:500;font-size:16px}
+.logo img{height:64px;width:auto;transition:height .4s}
+.top.s .logo img{height:52px}
+.menu{display:flex;gap:clamp(22px,2.6vw,48px);font-weight:600;font-size:clamp(18px,1.3vw,22px)}
 .menu a{position:relative;opacity:.86;transition:opacity .3s}
 .menu a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);box-shadow:var(--glow)}
 .menu a:hover{opacity:1}.menu a:hover::after{transform:scaleX(1)}
 .top .right{margin-left:auto;display:flex;align-items:center;gap:22px}
-.tel{font-weight:600;font-size:17px;white-space:nowrap}
+.tel{font-weight:600;font-size:clamp(18px,1.3vw,22px);white-space:nowrap}
 .burger{all:unset;display:none;cursor:pointer;width:44px;height:44px;place-items:center;font-size:30px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:12px;font:600 16px/1 Inter,sans-serif;cursor:pointer;border:0;transition:transform .6s var(--ease),box-shadow .6s var(--ease),background .4s;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
@@ -47,6 +47,7 @@ svg{width:1em;height:1em}
 .btn.g{background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(10px)}
 .btn.g:hover{background:rgba(255,255,255,.2)}
 .btn svg{width:20px;height:20px}
+.btn.big-h{padding:18px 32px;font-size:18px}
 
 /* меню на телефоне */
 .drawer{position:fixed;inset:0;z-index:70;background:rgba(6,6,7,.96);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:24px var(--pad);transform:translateX(-100%);transition:transform .6s var(--ease)}
@@ -58,16 +59,32 @@ svg{width:1em;height:1em}
 
 /* движение с его сайта: красная черта сверху экрана растёт, текст всплывает */
 .sec{position:relative}
-.sec::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--red);transform:scaleX(.2);transform-origin:left;transition:transform 1.4s var(--ease);z-index:5;box-shadow:var(--glow)}
-.sec.in::before{transform:scaleX(1)}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0) * 110ms)}
 .rv.up{transform:translateY(50px)}
 .in .rv{opacity:1;transform:none}
-.dots{position:fixed;right:clamp(12px,1.4vw,26px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:14px}
-.dots a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.28);transition:transform .5s var(--ease),background .4s;position:relative}
-.dots a.on{background:#fff;transform:scale(1.5)}
-.dots a span{position:absolute;right:22px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;font-size:13px;opacity:0;transition:.4s;pointer-events:none;background:rgba(0,0,0,.7);padding:4px 10px;border-radius:6px}
+.dots{position:fixed;right:clamp(14px,1.6vw,30px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;align-items:flex-end}
+.dots a{position:relative;display:block;transition:all .6s var(--ease)}
+.dots a span{position:absolute;right:calc(100% + 16px);top:50%;transform:translateY(-50%) translateX(8px);white-space:nowrap;font:600 14px/1 Inter;letter-spacing:.06em;text-transform:uppercase;opacity:0;transition:.5s var(--ease);pointer-events:none;text-shadow:0 1px 8px rgba(0,0,0,.8)}
 .dots a:hover span{opacity:1;transform:translateY(-50%)}
+/* 1: вертикальные черты, текущая длинная красная с подсветкой и подписью */
+:root[data-dots="1"] .dots{gap:12px}
+:root[data-dots="1"] .dots a{width:4px;height:22px;border-radius:2px;background:rgba(255,255,255,.3)}
+:root[data-dots="1"] .dots a:hover{background:rgba(255,255,255,.7)}
+:root[data-dots="1"] .dots a.on{height:56px;background:var(--red);box-shadow:var(--glow)}
+:root[data-dots="1"] .dots a.on span{opacity:1;transform:translateY(-50%);color:#fff}
+/* 2: кольца, текущее горит красным, его название видно всегда */
+:root[data-dots="2"] .dots{gap:20px}
+:root[data-dots="2"] .dots a{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.45)}
+:root[data-dots="2"] .dots a:hover{border-color:#fff}
+:root[data-dots="2"] .dots a.on{width:22px;height:22px;margin-right:-3px;border-color:var(--red);background:var(--red);box-shadow:0 0 0 6px rgba(255,38,48,.18),var(--glow)}
+:root[data-dots="2"] .dots a.on span{opacity:1;transform:translateY(-50%);color:#fff}
+/* 3: подписи блоков столбиком на стекле, текущая белая с красной чертой */
+:root[data-dots="3"] .dots{gap:16px;padding:18px 18px 18px 22px;border-radius:16px;background:rgba(10,10,12,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08)}
+:root[data-dots="3"] .dots a{display:flex;align-items:center;gap:12px;flex-direction:row-reverse}
+:root[data-dots="3"] .dots a span{position:static;transform:none;opacity:1;color:rgba(255,255,255,.45);font-size:13px;transition:color .4s}
+:root[data-dots="3"] .dots a::before{content:"";width:10px;height:3px;border-radius:2px;background:rgba(255,255,255,.3);transition:all .6s var(--ease)}
+:root[data-dots="3"] .dots a:hover span,:root[data-dots="3"] .dots a.on span{color:#fff}
+:root[data-dots="3"] .dots a.on::before{width:30px;background:var(--red);box-shadow:var(--glow)}
 
 /* заголовок блока = слово меню */
 .ttl{font-size:clamp(64px,9vw,170px)}
@@ -80,7 +97,6 @@ svg{width:1em;height:1em}
 .hero .ph img{width:100%;height:100%;object-fit:cover;transition:transform 2.6s var(--ease)}
 .neon{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--red);transform:scaleX(.2);transform-origin:left;transition:transform 1.8s var(--ease) .3s;z-index:4;box-shadow:0 0 24px 4px rgba(255,38,48,.7),0 -30px 80px 10px rgba(255,38,48,.2)}
 .in .neon{transform:scaleX(1)}
-:root[data-hero="a"] #heroB,:root[data-hero="b"] #heroA{display:none}
 .heroA{display:flex;align-items:flex-end;padding:0 var(--pad) clamp(70px,9vh,120px)}
 .heroA .ph img{object-position:70% 55%;transform:scale(1.08)}
 .heroA.in .ph img{transform:scale(1)}
@@ -99,12 +115,29 @@ svg{width:1em;height:1em}
 .heroB .t{position:relative;z-index:3}
 .k1{font-family:var(--fh);font-weight:500;text-transform:uppercase;font-size:clamp(22px,2.6vw,46px);letter-spacing:.04em;color:#E9EAEE}
 .k2{font-family:var(--fh);font-weight:700;text-transform:uppercase;font-size:clamp(64px,12.5vw,230px);line-height:.9;margin-top:6px;background:linear-gradient(180deg,#fff 30%,#B9BCC4);-webkit-background-clip:text;background-clip:text;color:transparent}
-.heroB .row{position:relative;z-index:3;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(20px,3vw,56px);margin-top:clamp(26px,3.5vh,44px)}
-.ic{display:flex;align-items:center;gap:16px;font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
-.ic i{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--red);display:grid;place-items:center;flex:none;box-shadow:var(--glow);transition:background .5s,transform .6s var(--ease)}
-.ic i svg{width:30px;height:30px}
+.heroB .row{position:relative;z-index:3;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(24px,3.4vw,64px);margin-top:clamp(26px,3.5vh,44px)}
+.ic{display:flex;align-items:center;gap:20px;font-weight:600;font-size:clamp(16px,1.25vw,21px);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+.ic i{width:clamp(72px,5.6vw,96px);height:clamp(72px,5.6vw,96px);border-width:2px;border-radius:50%;border:1.5px solid var(--red);display:grid;place-items:center;flex:none;box-shadow:var(--glow);transition:background .5s,transform .6s var(--ease)}
+.ic i svg{width:46%;height:46%}
 .ic:hover i{background:var(--red);transform:translateY(-2px)}
 .heroB .row .btn{margin-left:auto}
+
+
+/* кнопка главного экрана, 3 варианта (высота = круги значков) */
+.hb{position:relative;overflow:hidden;height:clamp(72px,5.6vw,96px);padding:0 clamp(30px,2.6vw,48px);border-radius:16px;font:700 clamp(19px,1.45vw,24px)/1 Inter,sans-serif;gap:18px}
+.hb .hb-s,.hb .hb-a{display:none}
+/* 1: крупная, стрелка в квадрате справа сдвигается при наведении */
+:root[data-btn="1"] .hb{padding-right:12px}
+:root[data-btn="1"] .hb .hb-a{display:grid;place-items:center;width:calc(clamp(72px,5.6vw,96px) - 24px);height:calc(clamp(72px,5.6vw,96px) - 24px);border-radius:12px;background:rgba(0,0,0,.28);transition:transform .6s var(--ease),background .4s}
+:root[data-btn="1"] .hb .hb-a svg{width:26px;height:26px}
+:root[data-btn="1"] .hb:hover .hb-a{transform:translateX(4px);background:rgba(0,0,0,.45)}
+/* 2: блик фары пробегает по кнопке раз в 4 секунды */
+:root[data-btn="2"] .hb{text-transform:uppercase;letter-spacing:.08em;font-family:var(--fh);font-weight:700}
+:root[data-btn="2"] .hb::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:38%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-160%) skewX(-18deg);animation:blik 4s var(--ease) 1.5s infinite}
+@keyframes blik{0%{transform:translateX(-160%) skewX(-18deg)}35%,100%{transform:translateX(380%) skewX(-18deg)}}
+/* 3: две строки, «Записаться» и телефон */
+:root[data-btn="3"] .hb{flex-direction:column;align-items:flex-start;justify-content:center;gap:8px}
+:root[data-btn="3"] .hb .hb-s{display:block;font:500 clamp(14px,1vw,17px)/1 Inter;opacity:.85;letter-spacing:.02em}
 
 /* ЦЕНЫ */
 .prices{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,110px)}
@@ -179,11 +212,11 @@ svg{width:1em;height:1em}
 @media (max-width:1100px){.menu{display:none}.prices,.cont{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
 @media (max-width:760px){
   :root{--pad:16px}
-  .burger{display:grid}.top{gap:10px}.top .logo img{height:36px}.top.s .logo img{height:32px}
+  .burger{display:grid}.top{gap:10px;padding:14px var(--pad)}.top .logo img{height:40px}.top.s .logo img{height:36px}.btn.big-h{padding:13px 16px;font-size:15px}
   .tel{display:none}.top .right .btn{padding:12px 16px;font-size:15px}
   .dots{display:none}.panel{top:auto;bottom:12px;right:12px}
   .card{padding:22px}.card h1{font-size:clamp(26px,8.2vw,36px)}.k1{font-size:18px}.k2{font-size:clamp(44px,14.5vw,64px)}.ttl{font-size:clamp(52px,15vw,72px)}.acts .btn{flex:1;justify-content:center}.ot{margin:4px 0 0;width:100%}
-  .heroB .row{gap:14px}.ic{width:100%}.ic i{width:52px;height:52px}.heroB .row .btn{margin-left:0;width:100%;justify-content:center}
+  .heroB .row{gap:14px}.ic{width:100%;font-size:15px}.ic i{width:58px;height:58px}.heroB .row .btn{margin-left:0;width:100%;justify-content:center;height:68px}:root[data-btn="1"] .hb{justify-content:space-between;padding-left:28px}:root[data-btn="3"] .hb{align-items:center}
   .tabs{flex-direction:row;flex-wrap:wrap;gap:8px}
   .tabs button{font-size:20px;padding:10px 16px;border-radius:12px;background:var(--surf2)}
   .tabs button.on{padding-left:16px;background:var(--red)}
@@ -204,7 +237,7 @@ svg{width:1em;height:1em}
   <nav class="menu"><a href="#ceny">Цены</a><a href="#raboty">Работы</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
   <div class="right">
     <a class="tel" href="tel:+79505516240">+7 950 551-62-40</a>
-    <a class="btn r" href="https://t.me/ledavtoekb" target="_blank" rel="noopener">Записаться</a>
+    <a class="btn r big-h" href="https://t.me/ledavtoekb" target="_blank" rel="noopener">Записаться</a>
   </div>
 </header>
 
@@ -216,24 +249,8 @@ svg{width:1em;height:1em}
 
 <nav class="dots" id="dots"></nav>
 
-<span id="glavnaya"></span>
-<!-- Главный экран А -->
-<section class="sec hero heroA" id="heroA" data-name="Главная">
-  <div class="ph"><img src="img/hero_a.jpg" alt=""></div>
-  <div class="card">
-    <h1 class="h rv up">Профессиональный автосвет в&nbsp;<em>Екатеринбурге</em></h1>
-    <p class="rv" style="--d:2">Ставим Bi-LED линзы, чиним и полируем фары, настраиваем свет. Проспект Космонавтов, 103А, корпус&nbsp;1</p>
-    <div class="acts rv" style="--d:3">
-      <a class="btn r" href="https://t.me/ledavtoekb" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M227.57 27.7a7 7 0 0 0-7.13-1.22L17.78 105.79a12.23 12.23 0 0 0 2.1 23.39L74 139.81V200a14 14 0 0 0 24.08 9.71l26.64-27.63l41.58 36.45a13.9 13.9 0 0 0 9.2 3.49a14.3 14.3 0 0 0 4.36-.69a13.86 13.86 0 0 0 9.34-10.17l40.62-176.59a7 7 0 0 0-2.25-6.87M22.05 117.37a.46.46 0 0 1 0-.32a.5.5 0 0 1 .15-.08l159.71-62.52l-103.3 74l-56.41-11.04Zm67.39 84A2 2 0 0 1 86 200v-51.89l29.69 26Zm88.07 7.08a1.93 1.93 0 0 1-1.34 1.44a2 2 0 0 1-2-.4l-84.53-74.15L215 45.5Z"/></svg>Записаться</a>
-      <a class="btn g" href="#ceny">Цены</a>
-      <span class="ot">Установка линз <b>от 12&nbsp;000&nbsp;Р</b></span>
-    </div>
-  </div>
-  <div class="neon"></div>
-</section>
-
 <!-- Главный экран Б -->
-<section class="sec hero heroB" id="heroB" data-name="Главная">
+<section class="sec hero heroB" id="glavnaya" data-name="Главная">
   <div class="ph"><img src="img/hero_b.jpg" alt=""></div>
   <div class="t">
     <div class="k1 rv up">Профессиональный</div>
@@ -243,7 +260,7 @@ svg{width:1em;height:1em}
     <div class="ic rv" style="--d:3"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M122 40V16a6 6 0 0 1 12 0v24a6 6 0 0 1-12 0m68 88a62 62 0 1 1-62-62a62.07 62.07 0 0 1 62 62m-12 0a50 50 0 1 0-50 50a50.06 50.06 0 0 0 50-50M59.76 68.24a6 6 0 1 0 8.48-8.48l-16-16a6 6 0 0 0-8.48 8.48Zm0 119.52l-16 16a6 6 0 1 0 8.48 8.48l16-16a6 6 0 1 0-8.48-8.48M192 70a6 6 0 0 0 4.24-1.76l16-16a6 6 0 0 0-8.48-8.48l-16 16A6 6 0 0 0 192 70m4.24 117.76a6 6 0 0 0-8.48 8.48l16 16a6 6 0 0 0 8.48-8.48ZM46 128a6 6 0 0 0-6-6H16a6 6 0 0 0 0 12h24a6 6 0 0 0 6-6m82 82a6 6 0 0 0-6 6v24a6 6 0 0 0 12 0v-24a6 6 0 0 0-6-6m112-88h-24a6 6 0 0 0 0 12h24a6 6 0 0 0 0-12"/></svg></i>Яркий<br>свет</div>
     <div class="ic rv" style="--d:4"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M208 42H48a14 14 0 0 0-14 14v56c0 51.94 25.12 83.4 46.2 100.64c22.73 18.6 45.27 24.89 46.22 25.15a6 6 0 0 0 3.16 0c.95-.26 23.49-6.55 46.22-25.15C196.88 195.4 222 163.94 222 112V56a14 14 0 0 0-14-14m2 70c0 37.76-13.94 68.39-41.44 91.06A131.2 131.2 0 0 1 128 225.72a131 131 0 0 1-40.56-22.66C59.94 180.39 46 149.76 46 112V56a2 2 0 0 1 2-2h160a2 2 0 0 1 2 2Zm-37.76-12.24a6 6 0 0 1 0 8.48l-56 56a6 6 0 0 1-8.48 0l-24-24a6 6 0 0 1 8.48-8.48L112 151.51l51.76-51.75a6 6 0 0 1 8.48 0"/></svg></i>Надёжные<br>решения</div>
     <div class="ic rv" style="--d:5"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46m0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34m108-54.4a6 6 0 0 0-2.92-4l-30.44-17.38l-.42-.71l-.12-34.31a6 6 0 0 0-2.1-4.56a110.1 110.1 0 0 0-36.07-20.31a6 6 0 0 0-4.84.45l-30.63 17.08h-1l-30.55-17.1a6 6 0 0 0-4.86-.44A109.9 109.9 0 0 0 56 46.68a6 6 0 0 0-2.12 4.55l-.16 34.34c-.14.23-.28.47-.41.71l-30.4 17.29a6 6 0 0 0-2.91 4.05a104.8 104.8 0 0 0 0 40.78a6 6 0 0 0 2.92 4l30.42 17.33l.42.71l.12 34.31a6 6 0 0 0 2.12 4.61a110.1 110.1 0 0 0 36.07 20.31a6 6 0 0 0 4.84-.45l30.61-17.08h1l30.56 17.1a6.1 6.1 0 0 0 2.92.76a5.8 5.8 0 0 0 1.93-.32a109.9 109.9 0 0 0 36-20.36a6 6 0 0 0 2.12-4.55l.16-34.34c.14-.23.28-.47.41-.71l30.42-17.29a6 6 0 0 0 2.92-4.05a104.8 104.8 0 0 0 .04-40.78m-11.25 35.79l-29.43 16.71a6.07 6.07 0 0 0-2.28 2.3c-.59 1-1.21 2.11-1.86 3.14a6 6 0 0 0-.91 3.16l-.16 33.21a98.2 98.2 0 0 1-27.52 15.53L133 200.88a6 6 0 0 0-2.93-.77h-3.88a6 6 0 0 0-3.07.76l-29.67 16.56a98 98 0 0 1-27.56-15.49l-.12-33.17a6 6 0 0 0-.91-3.16c-.64-1-1.27-2.08-1.86-3.14a6 6 0 0 0-2.27-2.3L31.3 143.4a93 93 0 0 1 0-30.79L60.68 95.9A6.07 6.07 0 0 0 63 93.6c.59-1 1.21-2.11 1.86-3.14a6 6 0 0 0 .91-3.16l.16-33.21a98.2 98.2 0 0 1 27.48-15.53L123 55.12a5.8 5.8 0 0 0 3.07.76h3.74a6 6 0 0 0 3.07-.76l29.65-16.56a98 98 0 0 1 27.56 15.49l.12 33.17a6 6 0 0 0 .91 3.16c.64 1 1.27 2.08 1.86 3.14a6 6 0 0 0 2.27 2.3l29.45 16.78a93 93 0 0 1 .03 30.79Z"/></svg></i>Профессиональная<br>установка</div>
-    <a class="btn r rv" style="--d:6" href="https://t.me/ledavtoekb" target="_blank" rel="noopener">Записаться</a>
+    <a class="btn r rv hb" style="--d:6" href="https://t.me/ledavtoekb" target="_blank" rel="noopener"><span class="hb-t">Записаться</span><span class="hb-s">+7 950 551-62-40</span><span class="hb-a"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48"/></svg></span></a>
   </div>
   <div class="neon"></div>
 </section>
@@ -300,7 +317,7 @@ svg{width:1em;height:1em}
   <a class="rt" href="privacy.html">Политика конфиденциальности</a>
 </footer>
 
-<div class="panel" id="panel">Главный экран <button data-h="a" class="on">А</button><button data-h="b">Б</button></div>
+<div class="panel" id="panel"><span>Точки</span><button data-v="dots" data-n="1" class="on">1</button><button data-v="dots" data-n="2">2</button><button data-v="dots" data-n="3">3</button><span style="margin-left:10px">Кнопка</span><button data-v="btn" data-n="1" class="on">1</button><button data-v="btn" data-n="2">2</button><button data-v="btn" data-n="3">3</button></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
@@ -369,8 +386,7 @@ const hdr=document.getElementById('top');addEventListener('scroll',()=>hdr.class
 const dr=document.getElementById('drawer');
 document.getElementById('burg').onclick=()=>dr.classList.add('on');document.getElementById('dx').onclick=()=>dr.classList.remove('on');
 dr.querySelectorAll('nav a').forEach(a=>a.onclick=()=>dr.classList.remove('on'));
-document.querySelectorAll('[data-h]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.hero=b.dataset.h;document.querySelectorAll('[data-h]').forEach(x=>x.classList.toggle('on',x===b));mkDots();
- const s=document.getElementById(b.dataset.h==='a'?'heroA':'heroB');s.classList.add('in')});
+document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{document.documentElement.dataset[b.dataset.v]=b.dataset.n;document.querySelectorAll('[data-v="'+b.dataset.v+'"]').forEach(x=>x.classList.toggle('on',x===b))});
 </script>
 </body>
 </html>
