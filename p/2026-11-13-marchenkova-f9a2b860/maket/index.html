@@ -59,14 +59,15 @@ a{color:inherit}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* ===== ОБО МНЕ: разворот журнала в три колонки ===== */
-.spread{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr) minmax(0,1fr);gap:clamp(28px,3.4vw,64px);align-items:end}
+.spread{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,3.4vw,64px);align-items:center}
 .spread .l .q{margin:28px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(32px,2.9vw,50px);line-height:1.16}
 .spread .l .q em{color:var(--acc)}
-.spread .ph{position:relative;aspect-ratio:3/4.4;overflow:hidden;background:var(--bg3);margin:0}
+.spread .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg3);margin:0}
 .spread .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;opacity:0;transition:opacity .6s ease}
 .spread .ph img.on{opacity:1}
 .spread .ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(0deg,rgba(20,10,8,.85),rgba(20,10,8,0));font:600 13px/1.3 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase}
-.spread .r p{margin:0 0 20px;font-size:clamp(18px,1.3vw,21px);color:var(--muted)}
+.spread .r p{margin:0 0 26px;font-size:clamp(22px,1.85vw,31px);line-height:1.45;color:var(--muted)}
+.spread .r p:last-child{margin-bottom:0}
 .spread .r p:first-child{color:var(--text)}
 .facts{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line)}
 .facts li{display:flex;justify-content:space-between;gap:24px;padding:16px 0;border-bottom:1px solid var(--line);font-size:17px}
@@ -123,8 +124,8 @@ a{color:inherit}
 .kon{position:relative;overflow:hidden;padding:clamp(90px,9vw,150px) var(--pad);min-height:720px;display:flex;align-items:center}
 .kon>img{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(34px) brightness(.4) sepia(.3)}
 .card{position:relative;z-index:2;width:100%;padding:clamp(34px,3.4vw,64px);border-radius:24px;background:rgba(26,15,13,.42);border:1px solid rgba(243,230,216,.22);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
-.card .top2{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:40px}
-.card .top2 p{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.2vw,38px);line-height:1.2;max-width:620px}
+.card .top2{margin-bottom:40px}
+.card .top2 p{margin:18px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.2vw,38px);line-height:1.2;max-width:620px}
 .card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin:0 0 40px;padding-top:30px;border-top:1px solid var(--line)}
 .card dt{margin-bottom:8px;font:600 13px/1.3 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
 .card dd{margin:0;font-size:clamp(18px,1.35vw,22px)}
@@ -188,10 +189,6 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
       <p>Я Марина Марченкова. Клинический психолог и сексолог. Работаю онлайн и очно в Красноярске.</p>
       <p>Я не ищу, что с тобой не так. Мне важнее понять, почему ты поступаешь именно так. И чего хочешь на самом деле.</p>
       <p>Психика не перестраивается по инструкции. Разбираемся постепенно, терапия за терапией. Без гонки за быстрым результатом.</p>
-      <ul class="facts">
-        <li><b>Образование</b><span>Диплом клинического психолога</span></li>
-        <li><b>Канал</b><span>«SexsualnaЯженщина», эфиры каждую неделю</span></li>
-      </ul>
     </div>
   </div>
 </section>
