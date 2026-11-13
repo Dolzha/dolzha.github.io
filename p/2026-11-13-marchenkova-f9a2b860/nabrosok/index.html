@@ -7,15 +7,15 @@
 <title>Марина Марченкова: набросок</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Prata&family=Yeseva+One&family=Forum&family=Old+Standard+TT:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;800&display=swap&subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Prata&family=Yeseva+One&family=Forum&family=Old+Standard+TT:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;800&display=swap&subset=cyrillic" rel="stylesheet">
 <style>
 :root{
-  --bg:#1A0F0D; --bg2:#2A1714; --text:#F3E6D8; --muted:#C9B6A6; --acc:#D29A8A; --line:rgba(243,230,216,.28);
+  --bg:#1A0F0D; --bg2:#2A1714; --text:#F3E6D8; --muted:#C9B6A6; --acc:#D29A8A; --line:rgba(243,230,216,.22);
   --serif:'Playfair Display',serif; --ital:'Playfair Display',serif;
   --pad:clamp(20px,2.5vw,56px);
 }
-body[data-pal="2"]{--bg:#2B0B12;--bg2:#3D121C;--text:#F6E9E4;--muted:#D8BDBF;--acc:#E7A3AE;--line:rgba(246,233,228,.28)}
-body[data-pal="3"]{--bg:#0E0B0B;--bg2:#3A0D18;--text:#F2EBE3;--muted:#BFB2A6;--acc:#C9A27A;--line:rgba(242,235,227,.26)}
+body[data-pal="2"]{--bg:#2B0B12;--bg2:#3D121C;--text:#F6E9E4;--muted:#D8BDBF;--acc:#E7A3AE;--line:rgba(246,233,228,.22)}
+body[data-pal="3"]{--bg:#0E0B0B;--bg2:#3A0D18;--text:#F2EBE3;--muted:#BFB2A6;--acc:#C9A27A;--line:rgba(242,235,227,.2)}
 body[data-font="2"]{--serif:'Prata',serif;--ital:'Old Standard TT',serif}
 body[data-font="3"]{--serif:'Yeseva One',serif;--ital:'Playfair Display',serif}
 body[data-font="4"]{--serif:'Forum',serif;--ital:'Old Standard TT',serif}
@@ -25,35 +25,72 @@ html{color-scheme:dark}
 body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.55 Inter,system-ui,sans-serif;transition:background .5s ease}
 
 /* ГЛАВНЫЙ ЭКРАН: имя во всю ширину поверх фото, меню под ним (устройство Fleur du Mal) */
-.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;background:#000}
+.hero{position:relative;height:100svh;min-height:680px;overflow:hidden;background:var(--bg)}
 .hero .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
 .hero .ph.on{opacity:1}
 .hero .ph.flip{transform:scaleX(-1)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 52%,rgba(0,0,0,.72) 100%);pointer-events:none}
+/* вариант В: её портрет справа, края растворены, позади размытая копия кадра */
+.hero .ona{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.hero .ona.on{opacity:1}
+.hero .ona .blur{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(46px) saturate(1.1);opacity:.42}
+.hero .ona .pw{position:absolute;right:9vw;top:0;bottom:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24%,#000 76%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 24%,#000 76%,transparent 100%)}
+.hero .ona .por{display:block;height:100%;width:auto;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 16%,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 16%,#000 82%,transparent 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 50%,rgba(0,0,0,.7) 100%);pointer-events:none}
 .top{position:absolute;left:0;right:0;top:0;z-index:2;padding:10px var(--pad) 0}
 .name{display:inline-block;margin:0;padding-top:.04em;font-family:var(--serif);font-weight:400;line-height:.92;white-space:nowrap;text-transform:uppercase;letter-spacing:-.01em;color:var(--text)}
-.menu{display:flex;align-items:center;gap:clamp(18px,2vw,34px);padding:12px 0;border-bottom:1px solid var(--line);font:600 13px/1 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase}
+.menu{display:flex;align-items:center;gap:clamp(18px,2vw,34px);padding:10px 0 12px;border-bottom:1px solid var(--line);font:600 13px/1 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase}
 .menu a{color:var(--text);text-decoration:none;opacity:.92;transition:opacity .4s ease}
 .menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
-.menu .tg{margin-left:auto;padding:11px 20px;border-radius:999px;background:var(--text);color:var(--bg);opacity:1}
-.lead{position:absolute;z-index:2;left:var(--pad);bottom:clamp(36px,6vh,72px);max-width:760px}
-.lead h1{margin:0 0 18px;font:800 clamp(34px,4.2vw,68px)/1.02 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
-.lead h1 i{font-family:var(--ital);font-style:italic;font-weight:400;text-transform:none;color:var(--acc);letter-spacing:0}
-.lead p{margin:0 0 26px;font-size:clamp(18px,1.35vw,22px);color:var(--muted);max-width:620px}
-.btn{display:inline-block;padding:17px 30px;border-radius:999px;background:var(--acc);color:#1a0f0d;font:600 15px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:transform .5s ease-out,box-shadow .5s ease-out}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
 
-/* БЛОК НОВОГО ВИДА: «С чем приходят» карточками с подчёркнутой подписью (категории Fleur du Mal) */
-.sec{padding:clamp(64px,8vw,120px) var(--pad)}
-.sec h2{margin:0 0 10px;font:800 clamp(36px,4vw,64px)/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
-.sec .sub{margin:0 0 clamp(32px,3.5vw,52px);font-size:clamp(20px,1.5vw,23px);color:var(--muted);max-width:760px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.4vw,24px)}
-.card{display:block;color:var(--text);text-decoration:none}
-.card .im{aspect-ratio:3/4;overflow:hidden;background:var(--bg2)}
-.card img{width:100%;height:100%;object-fit:cover;transition:transform .9s ease-out}
-.card:hover img{transform:scale(1.04)}
-.card b{display:inline-block;margin:18px 0 10px;font:600 15px/1.2 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
-.card span{display:block;font-family:var(--ital);font-style:italic;font-size:clamp(19px,1.35vw,22px);line-height:1.35;color:var(--muted)}
+/* СТЕКЛЯННЫЕ КНОПКИ: свой цвет (акцент), не цвет текста */
+.glass{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#fff;text-decoration:none;font:600 15px/1 Inter,sans-serif;letter-spacing:.07em;text-transform:uppercase;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 48%,transparent),color-mix(in srgb,var(--acc) 22%,transparent));
+  border:1px solid color-mix(in srgb,var(--acc) 80%,#fff 20%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 8px 30px color-mix(in srgb,var(--acc) 22%,transparent);
+  -webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);
+  transition:transform .5s ease-out,box-shadow .5s ease-out,background .5s ease-out}
+.glass:hover{transform:translateY(-2px);background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 62%,transparent),color-mix(in srgb,var(--acc) 32%,transparent));box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 12px 36px color-mix(in srgb,var(--acc) 34%,transparent)}
+.menu .glass{margin-left:auto;padding:17px 34px;font-size:15px;opacity:1}
+.menu .glass:hover{text-decoration:none}
+.lead .glass{padding:21px 38px;font-size:16px}
+
+.lead{position:absolute;z-index:2;left:var(--pad);bottom:clamp(40px,7vh,80px);max-width:820px}
+.lead h1{margin:0 0 20px;font-weight:400}
+.lead h1 .a{display:block;font:800 clamp(38px,4.4vw,72px)/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
+.lead h1 .b{display:block;margin-top:.06em;font-family:var(--ital);font-style:italic;font-size:clamp(46px,5.4vw,90px);line-height:1.02;letter-spacing:-.005em}
+.lead h1 .b em{color:var(--acc)}
+.lead p{margin:0 0 30px;font-size:clamp(18px,1.35vw,22px);color:var(--muted);max-width:620px}
+
+/* С ЧЕМ ПРИХОДЯТ */
+.sec{padding:clamp(72px,8vw,128px) var(--pad)}
+.sec h2{margin:0 0 12px;font:800 clamp(38px,4.2vw,68px)/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
+.sec h2 i{font-family:var(--ital);font-style:italic;font-weight:400;text-transform:none;color:var(--acc);font-size:1.12em}
+.sec .sub{margin:0 0 clamp(36px,4vw,60px);font-size:clamp(20px,1.5vw,23px);color:var(--muted);max-width:760px}
+.blk{display:none}
+body[data-blk="1"] .blk1,body[data-blk="2"] .blk2{display:block}
+
+/* блок 1: одно большое фото слева, темы крупным курсивом справа; наведение меняет фото */
+.b1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,80px);align-items:stretch}
+.b1 .fr{position:relative;min-height:620px;overflow:hidden;background:var(--bg2)}
+.b1 .fr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .7s ease,transform 1.2s ease-out}
+.b1 .fr img.on{opacity:1;transform:scale(1)}
+.b1 ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);align-self:center}
+.b1 li{padding:clamp(22px,2.4vw,34px) 0;border-bottom:1px solid var(--line);cursor:default}
+.b1 li h3{margin:0 0 8px;font-family:var(--ital);font-style:italic;font-weight:400;font-size:clamp(32px,3vw,52px);line-height:1.05;color:var(--muted);transition:color .5s ease,transform .5s ease-out}
+.b1 li p{margin:0;max-width:600px;font-size:clamp(18px,1.3vw,21px);color:var(--muted);opacity:.75;transition:opacity .5s ease}
+.b1 li.on h3{color:var(--text);transform:translateX(10px)}
+.b1 li.on h3 em{color:var(--acc)}
+.b1 li.on p{opacity:1}
+
+/* блок 2: темы огромным курсивом во всю ширину, фото всплывает у курсора */
+.b2{position:relative;border-top:1px solid var(--line)}
+.b2 .row{display:flex;align-items:baseline;justify-content:space-between;gap:40px;padding:clamp(18px,2vw,30px) 0;border-bottom:1px solid var(--line)}
+.b2 .row h3{margin:0;font-family:var(--ital);font-style:italic;font-weight:400;font-size:clamp(44px,5.6vw,104px);line-height:1;color:var(--text);transition:color .5s ease,transform .6s ease-out}
+.b2 .row p{margin:0;max-width:380px;text-align:right;font-size:clamp(17px,1.2vw,20px);color:var(--muted)}
+.b2 .row:hover h3{color:var(--acc);transform:translateX(14px)}
+.b2 .fl{position:absolute;left:0;top:0;width:clamp(220px,20vw,320px);aspect-ratio:3/4;pointer-events:none;opacity:0;transition:opacity .4s ease;z-index:3;overflow:hidden}
+.b2 .fl img{width:100%;height:100%;object-fit:cover}
+.b2 .fl.on{opacity:1}
 
 /* ПАНЕЛЬ ВЫБОРА (только для Роберта) */
 .panel{position:fixed;right:16px;bottom:16px;z-index:50;background:rgba(255,255,255,.96);color:#111;border-radius:14px;padding:12px 14px;font:500 13px/1.3 Inter,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.4)}
@@ -61,15 +98,16 @@ body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.55 Inter,sy
 .panel em{font-style:normal;width:74px;color:#555}
 .panel button{border:1px solid #bbb;background:#fff;border-radius:8px;min-width:30px;height:30px;cursor:pointer;font:600 13px Inter,sans-serif}
 .panel button.on{background:#111;color:#fff;border-color:#111}
-.panel small{display:block;color:#777;margin-top:6px;max-width:260px}
-@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.menu a:not(.tg){display:none}}
+.panel small{display:block;color:#777;margin-top:6px;max-width:270px}
+@media(max-width:900px){.b1{grid-template-columns:1fr}.menu a:not(.glass){display:none}}
 </style>
 </head>
-<body data-pal="1" data-font="1" data-hero="a">
+<body data-pal="1" data-font="1" data-hero="v" data-blk="1">
 
 <section class="hero" id="glavnaya">
-  <img class="ph flip on" data-h="a" src="img/h_12042532.jpg" alt="">
+  <img class="ph flip" data-h="a" src="img/h_12042532.jpg" alt="">
   <img class="ph" data-h="b" src="img/h_9663180.jpg" alt="">
+  <div class="ona on" data-h="v"><img class="blur" src="img/h_ona_128.jpg" alt=""><div class="pw"><img class="por" src="img/h_ona_128.jpg" alt="Марина Марченкова"></div></div>
   <div class="top">
     <span class="name" id="name">Марина Марченкова</span>
     <nav class="menu">
@@ -79,53 +117,74 @@ body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.55 Inter,sy
       <a href="#efiry">Эфиры</a>
       <a href="#otzyvy">Отзывы</a>
       <a href="#kontakty">Контакты</a>
-      <a class="tg" href="https://t.me/marinamarchenkova">Записаться</a>
+      <a class="glass" href="https://t.me/marinamarchenkova">Записаться</a>
     </nav>
   </div>
   <div class="lead">
-    <h1>Я хочу, но не&nbsp;разрешаю <i>себе</i></h1>
+    <h1><span class="a">Я хочу,</span><span class="b">но не разрешаю <em>себе</em></span></h1>
     <p>Клинический психолог и сексолог. Помогаю услышать свои желания, выстроить отношения и раскрыть сексуальность</p>
-    <a class="btn" href="https://t.me/marinamarchenkova">Записаться на консультацию</a>
+    <a class="glass" href="https://t.me/marinamarchenkova">Записаться на консультацию</a>
   </div>
 </section>
 
 <section class="sec" id="s-chem">
-  <h2>С чем приходят</h2>
+  <h2>С чем <i>приходят</i></h2>
   <p class="sub">Об этом мне пишут чаще всего. Можно прийти с любой из этих тем или с той, которую пока сложно назвать</p>
-  <div class="cards">
-    <a class="card" href="#"><div class="im"><img src="img/c_8333634.jpg" alt=""></div><b>Ревность и измены</b><span>Иногда измена бывает попыткой стать другой собой</span></a>
-    <a class="card" href="#"><div class="im"><img src="img/c_8481500.jpg" alt=""></div><b>Нет желания</b><span>Когда секс случается из чувства долга, а не потому, что хочется</span></a>
-    <a class="card" href="#"><div class="im"><img src="img/c_9663182.jpg" alt=""></div><b>Хочу, но не разрешаю себе</b><span>Почему мы хотим одного, выбираем другое и живём не так, как хочется</span></a>
-    <a class="card" href="#"><div class="im"><img src="img/c_9985637.jpg" alt=""></div><b>Деньги в отношениях</b><span>Где заканчивается забота и начинается взаиморасчёт</span></a>
-  </div>
+
+  <div class="blk blk1"><div class="b1">
+    <div class="fr">
+      <img class="on" src="img/c_8333634.jpg" alt=""><img src="img/c_8481500.jpg" alt=""><img src="img/c_9663182.jpg" alt=""><img src="img/c_9985637.jpg" alt="">
+    </div>
+    <ul>
+      <li class="on"><h3>Ревность и <em>измены</em></h3><p>Иногда измена бывает попыткой стать другой собой</p></li>
+      <li><h3>Нет <em>желания</em></h3><p>Когда секс случается из чувства долга, а не потому, что хочется</p></li>
+      <li><h3>Хочу, но не разрешаю <em>себе</em></h3><p>Почему мы хотим одного, выбираем другое и живём не так, как хочется</p></li>
+      <li><h3>Деньги в <em>отношениях</em></h3><p>Где заканчивается забота и начинается взаиморасчёт</p></li>
+    </ul>
+  </div></div>
+
+  <div class="blk blk2"><div class="b2" id="b2">
+    <div class="fl" id="fl"><img src="img/c_8333634.jpg" alt=""></div>
+    <div class="row" data-i="img/c_8333634.jpg"><h3>Ревность и измены</h3><p>Иногда измена бывает попыткой стать другой собой</p></div>
+    <div class="row" data-i="img/c_8481500.jpg"><h3>Нет желания</h3><p>Когда секс случается из чувства долга, а не потому, что хочется</p></div>
+    <div class="row" data-i="img/c_9663182.jpg"><h3>Хочу, но не разрешаю себе</h3><p>Почему мы хотим одного, выбираем другое и живём не так, как хочется</p></div>
+    <div class="row" data-i="img/c_9985637.jpg"><h3>Деньги в отношениях</h3><p>Где заканчивается забота и начинается взаиморасчёт</p></div>
+  </div></div>
 </section>
 
 <div class="panel" id="panel">
-  <div><em>Главный</em><button data-k="hero" data-v="a" class="on">А</button><button data-k="hero" data-v="b">Б</button></div>
+  <div><em>Главный</em><button data-k="hero" data-v="v" class="on">В</button><button data-k="hero" data-v="a">А</button><button data-k="hero" data-v="b">Б</button></div>
   <div><em>Палитра</em><button data-k="pal" data-v="1" class="on">1</button><button data-k="pal" data-v="2">2</button><button data-k="pal" data-v="3">3</button></div>
   <div><em>Шрифт</em><button data-k="font" data-v="1" class="on">1</button><button data-k="font" data-v="2">2</button><button data-k="font" data-v="3">3</button><button data-k="font" data-v="4">4</button><button data-k="font" data-v="5">5</button></div>
-  <small id="fname">1 Playfair Display</small>
+  <div><em>Блок</em><button data-k="blk" data-v="1" class="on">1</button><button data-k="blk" data-v="2">2</button></div>
+  <small id="fname"></small>
 </div>
 
 <script>
 const FN={1:'1 Playfair Display',2:'2 Prata + курсив Old Standard',3:'3 Yeseva One',4:'4 Forum + курсив Old Standard',5:'5 Old Standard TT'};
-const PN={1:'шоколад + розовое золото',2:'бордо + розовый (как «СЕБЕ» на афише)',3:'чёрный + винный + золото'};
+const PN={1:'шоколад + розовое золото',2:'бордо + розовый',3:'чёрный + винный + золото'};
+const HN={v:'В её фото (из афиши)',a:'А сток, красный атлас',b:'Б сток, свечи'};
 const nm=document.getElementById('name');
-function fit(){ // имя ровно во всю ширину, как у Fleur du Mal
-  const w=document.querySelector('.menu').clientWidth; nm.style.fontSize='100px';
-  const k=w/nm.getBoundingClientRect().width; nm.style.fontSize=(100*k*0.995)+'px';
-}
-function upd(){document.getElementById('fname').textContent=FN[document.body.dataset.font]+', палитра '+PN[document.body.dataset.pal]}
+function fit(){const w=document.querySelector('.menu').clientWidth;nm.style.fontSize='100px';nm.style.fontSize=(100*w/nm.getBoundingClientRect().width*0.995)+'px'}
+function upd(){const d=document.body.dataset;document.getElementById('fname').textContent=HN[d.hero]+', '+FN[d.font]+', палитра '+PN[d.pal]}
 document.querySelectorAll('.panel button').forEach(b=>b.onclick=()=>{
-  const k=b.dataset.k,v=b.dataset.v; document.body.dataset[k]=v;
+  const k=b.dataset.k,v=b.dataset.v;document.body.dataset[k]=v;
   document.querySelectorAll(`.panel button[data-k="${k}"]`).forEach(x=>x.classList.toggle('on',x===b));
-  if(k==='hero') document.querySelectorAll('.hero .ph').forEach(i=>i.classList.toggle('on',i.dataset.h===v));
-  upd(); document.fonts.ready.then(fit);
+  if(k==='hero')document.querySelectorAll('.hero [data-h]').forEach(i=>i.classList.toggle('on',i.dataset.h===v));
+  upd();document.fonts.ready.then(fit);
 });
+// блок 1: наведение на тему меняет фото
+const li=[...document.querySelectorAll('.b1 li')],im=[...document.querySelectorAll('.b1 .fr img')];
+li.forEach((l,i)=>l.addEventListener('mouseenter',()=>{li.forEach(x=>x.classList.toggle('on',x===l));im.forEach((x,j)=>x.classList.toggle('on',j===i))}));
+// блок 2: фото у курсора
+const b2=document.getElementById('b2'),fl=document.getElementById('fl');
+b2.querySelectorAll('.row').forEach(r=>{r.addEventListener('mouseenter',()=>{fl.querySelector('img').src=r.dataset.i;fl.classList.add('on')});});
+b2.addEventListener('mouseleave',()=>fl.classList.remove('on'));
+b2.addEventListener('mousemove',e=>{const r=b2.getBoundingClientRect();fl.style.transform=`translate(${e.clientX-r.left+30}px,${e.clientY-r.top-fl.offsetHeight/2}px)`});
 const q=new URLSearchParams(location.search);
-['hero','pal','font'].forEach(k=>{if(q.get(k)){const b=document.querySelector(`.panel button[data-k="${k}"][data-v="${q.get(k)}"]`); b&&b.click()}});
-if(q.has('nopanel')) document.getElementById('panel').style.display='none';
-document.fonts.ready.then(fit); addEventListener('resize',fit); upd();
+['hero','pal','font','blk'].forEach(k=>{if(q.get(k)){const b=document.querySelector(`.panel button[data-k="${k}"][data-v="${q.get(k)}"]`);b&&b.click()}});
+if(q.has('nopanel'))document.getElementById('panel').style.display='none';
+document.fonts.ready.then(fit);addEventListener('resize',fit);upd();
 </script>
 </body>
 </html>
