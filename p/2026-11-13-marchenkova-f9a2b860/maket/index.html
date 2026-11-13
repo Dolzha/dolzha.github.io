@@ -141,12 +141,6 @@ footer nav{display:flex;gap:28px;flex-wrap:wrap;font:600 13px/1 Inter,sans-serif
 footer nav a{text-decoration:none;opacity:.9}
 footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
 
-/* панель выбора фото «Обо мне» (только для Роберта) */
-.panel{position:fixed;right:16px;bottom:16px;z-index:50;background:rgba(255,255,255,.96);color:#111;border-radius:14px;padding:12px 14px;font:500 13px/1.3 Inter,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.4)}
-.panel div{display:flex;align-items:center;gap:6px}
-.panel button{border:1px solid #bbb;background:#fff;border-radius:8px;min-width:30px;height:30px;cursor:pointer;font:600 13px Inter,sans-serif}
-.panel button.on{background:#111;color:#fff;border-color:#111}
-.panel small{display:block;color:#777;margin-top:6px}
 @media(max-width:1000px){.spread,.b1{grid-template-columns:1fr}.row{grid-template-columns:1fr}.row .c{text-align:left}.otz{grid-template-columns:1fr}.o.w2{grid-column:auto}.card dl{grid-template-columns:1fr 1fr}.menu a:not(.glass){display:none}}
 </style>
 </head>
@@ -181,8 +175,6 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
     </div>
     <figure class="ph rv">
       <img class="on" data-o="a" src="img/obo_a.jpg" alt="Марина Марченкова">
-      <img data-o="b" src="img/obo_b.jpg" alt="Марина Марченкова">
-      <img data-o="v" src="img/obo_v.jpg" alt="Марина Марченкова">
       <figcaption>Марина Марченкова</figcaption>
     </figure>
     <div class="r rv">
@@ -283,11 +275,7 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
 const nm=document.getElementById('name');
 function fit(){const w=document.querySelector('.menu').clientWidth;nm.style.fontSize='100px';nm.style.fontSize=(100*w/nm.getBoundingClientRect().width*0.995)+'px'}
 document.fonts.ready.then(fit);addEventListener('resize',fit);
-const HN={a:'А: портрет в белом жакете',b:'Б: бордовое платье у окна',v:'В: в ресторане'};
-document.querySelectorAll('.panel button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.panel button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.spread .ph img').forEach(h=>h.classList.toggle('on',h.dataset.o===b.dataset.v));document.getElementById('hn').textContent=HN[b.dataset.v]});
 const q=new URLSearchParams(location.search);
-if(q.get('obo')){const b=document.querySelector(`.panel button[data-v="${q.get('obo')}"]`);b&&b.click()}
-if(q.has('nopanel'))document.getElementById('panel').style.display='none';
 const li=[...document.querySelectorAll('.b1 li')],im=[...document.querySelectorAll('.b1 .fr img')];
 li.forEach((l,i)=>l.addEventListener('mouseenter',()=>{li.forEach(x=>x.classList.toggle('on',x===l));im.forEach((x,j)=>x.classList.toggle('on',j===i))}));
 const tr=document.getElementById('track'),st=()=>tr.querySelector('.ef').offsetWidth+20;
