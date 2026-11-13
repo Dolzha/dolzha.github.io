@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Марина Марченкова: набросок</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Prata&family=Yeseva+One&family=Forum&family=Old+Standard+TT:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;800&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#1A0F0D; --bg2:#2A1714; --text:#F3E6D8; --muted:#C9B6A6; --acc:#D29A8A; --line:rgba(243,230,216,.28);
+  --serif:'Playfair Display',serif; --ital:'Playfair Display',serif;
+  --pad:clamp(20px,2.5vw,56px);
+}
+body[data-pal="2"]{--bg:#2B0B12;--bg2:#3D121C;--text:#F6E9E4;--muted:#D8BDBF;--acc:#E7A3AE;--line:rgba(246,233,228,.28)}
+body[data-pal="3"]{--bg:#0E0B0B;--bg2:#3A0D18;--text:#F2EBE3;--muted:#BFB2A6;--acc:#C9A27A;--line:rgba(242,235,227,.26)}
+body[data-font="2"]{--serif:'Prata',serif;--ital:'Old Standard TT',serif}
+body[data-font="3"]{--serif:'Yeseva One',serif;--ital:'Playfair Display',serif}
+body[data-font="4"]{--serif:'Forum',serif;--ital:'Old Standard TT',serif}
+body[data-font="5"]{--serif:'Old Standard TT',serif;--ital:'Old Standard TT',serif}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.55 Inter,system-ui,sans-serif;transition:background .5s ease}
+
+/* ГЛАВНЫЙ ЭКРАН: имя во всю ширину поверх фото, меню под ним (устройство Fleur du Mal) */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;background:#000}
+.hero .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.hero .ph.on{opacity:1}
+.hero .ph.flip{transform:scaleX(-1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 52%,rgba(0,0,0,.72) 100%);pointer-events:none}
+.top{position:absolute;left:0;right:0;top:0;z-index:2;padding:10px var(--pad) 0}
+.name{display:inline-block;margin:0;padding-top:.04em;font-family:var(--serif);font-weight:400;line-height:.92;white-space:nowrap;text-transform:uppercase;letter-spacing:-.01em;color:var(--text)}
+.menu{display:flex;align-items:center;gap:clamp(18px,2vw,34px);padding:12px 0;border-bottom:1px solid var(--line);font:600 13px/1 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase}
+.menu a{color:var(--text);text-decoration:none;opacity:.92;transition:opacity .4s ease}
+.menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+.menu .tg{margin-left:auto;padding:11px 20px;border-radius:999px;background:var(--text);color:var(--bg);opacity:1}
+.lead{position:absolute;z-index:2;left:var(--pad);bottom:clamp(36px,6vh,72px);max-width:760px}
+.lead h1{margin:0 0 18px;font:800 clamp(34px,4.2vw,68px)/1.02 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
+.lead h1 i{font-family:var(--ital);font-style:italic;font-weight:400;text-transform:none;color:var(--acc);letter-spacing:0}
+.lead p{margin:0 0 26px;font-size:clamp(18px,1.35vw,22px);color:var(--muted);max-width:620px}
+.btn{display:inline-block;padding:17px 30px;border-radius:999px;background:var(--acc);color:#1a0f0d;font:600 15px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:transform .5s ease-out,box-shadow .5s ease-out}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+/* БЛОК НОВОГО ВИДА: «С чем приходят» карточками с подчёркнутой подписью (категории Fleur du Mal) */
+.sec{padding:clamp(64px,8vw,120px) var(--pad)}
+.sec h2{margin:0 0 10px;font:800 clamp(36px,4vw,64px)/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
+.sec .sub{margin:0 0 clamp(32px,3.5vw,52px);font-size:clamp(20px,1.5vw,23px);color:var(--muted);max-width:760px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.4vw,24px)}
+.card{display:block;color:var(--text);text-decoration:none}
+.card .im{aspect-ratio:3/4;overflow:hidden;background:var(--bg2)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .9s ease-out}
+.card:hover img{transform:scale(1.04)}
+.card b{display:inline-block;margin:18px 0 10px;font:600 15px/1.2 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.card span{display:block;font-family:var(--ital);font-style:italic;font-size:clamp(19px,1.35vw,22px);line-height:1.35;color:var(--muted)}
+
+/* ПАНЕЛЬ ВЫБОРА (только для Роберта) */
+.panel{position:fixed;right:16px;bottom:16px;z-index:50;background:rgba(255,255,255,.96);color:#111;border-radius:14px;padding:12px 14px;font:500 13px/1.3 Inter,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.panel div{display:flex;align-items:center;gap:6px;margin:4px 0}
+.panel em{font-style:normal;width:74px;color:#555}
+.panel button{border:1px solid #bbb;background:#fff;border-radius:8px;min-width:30px;height:30px;cursor:pointer;font:600 13px Inter,sans-serif}
+.panel button.on{background:#111;color:#fff;border-color:#111}
+.panel small{display:block;color:#777;margin-top:6px;max-width:260px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.menu a:not(.tg){display:none}}
+</style>
+</head>
+<body data-pal="1" data-font="1" data-hero="a">
+
+<section class="hero" id="glavnaya">
+  <img class="ph flip on" data-h="a" src="img/h_12042532.jpg" alt="">
+  <img class="ph" data-h="b" src="img/h_9663180.jpg" alt="">
+  <div class="top">
+    <span class="name" id="name">Марина Марченкова</span>
+    <nav class="menu">
+      <a href="#obo-mne">Обо мне</a>
+      <a href="#s-chem">С чем приходят</a>
+      <a href="#formaty">Форматы</a>
+      <a href="#efiry">Эфиры</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+      <a class="tg" href="https://t.me/marinamarchenkova">Записаться</a>
+    </nav>
+  </div>
+  <div class="lead">
+    <h1>Я хочу, но не&nbsp;разрешаю <i>себе</i></h1>
+    <p>Клинический психолог и сексолог. Помогаю услышать свои желания, выстроить отношения и раскрыть сексуальность</p>
+    <a class="btn" href="https://t.me/marinamarchenkova">Записаться на консультацию</a>
+  </div>
+</section>
+
+<section class="sec" id="s-chem">
+  <h2>С чем приходят</h2>
+  <p class="sub">Об этом мне пишут чаще всего. Можно прийти с любой из этих тем или с той, которую пока сложно назвать</p>
+  <div class="cards">
+    <a class="card" href="#"><div class="im"><img src="img/c_8333634.jpg" alt=""></div><b>Ревность и измены</b><span>Иногда измена бывает попыткой стать другой собой</span></a>
+    <a class="card" href="#"><div class="im"><img src="img/c_8481500.jpg" alt=""></div><b>Нет желания</b><span>Когда секс случается из чувства долга, а не потому, что хочется</span></a>
+    <a class="card" href="#"><div class="im"><img src="img/c_9663182.jpg" alt=""></div><b>Хочу, но не разрешаю себе</b><span>Почему мы хотим одного, выбираем другое и живём не так, как хочется</span></a>
+    <a class="card" href="#"><div class="im"><img src="img/c_9985637.jpg" alt=""></div><b>Деньги в отношениях</b><span>Где заканчивается забота и начинается взаиморасчёт</span></a>
+  </div>
+</section>
+
+<div class="panel" id="panel">
+  <div><em>Главный</em><button data-k="hero" data-v="a" class="on">А</button><button data-k="hero" data-v="b">Б</button></div>
+  <div><em>Палитра</em><button data-k="pal" data-v="1" class="on">1</button><button data-k="pal" data-v="2">2</button><button data-k="pal" data-v="3">3</button></div>
+  <div><em>Шрифт</em><button data-k="font" data-v="1" class="on">1</button><button data-k="font" data-v="2">2</button><button data-k="font" data-v="3">3</button><button data-k="font" data-v="4">4</button><button data-k="font" data-v="5">5</button></div>
+  <small id="fname">1 Playfair Display</small>
+</div>
+
+<script>
+const FN={1:'1 Playfair Display',2:'2 Prata + курсив Old Standard',3:'3 Yeseva One',4:'4 Forum + курсив Old Standard',5:'5 Old Standard TT'};
+const PN={1:'шоколад + розовое золото',2:'бордо + розовый (как «СЕБЕ» на афише)',3:'чёрный + винный + золото'};
+const nm=document.getElementById('name');
+function fit(){ // имя ровно во всю ширину, как у Fleur du Mal
+  const w=document.querySelector('.menu').clientWidth; nm.style.fontSize='100px';
+  const k=w/nm.getBoundingClientRect().width; nm.style.fontSize=(100*k*0.995)+'px';
+}
+function upd(){document.getElementById('fname').textContent=FN[document.body.dataset.font]+', палитра '+PN[document.body.dataset.pal]}
+document.querySelectorAll('.panel button').forEach(b=>b.onclick=()=>{
+  const k=b.dataset.k,v=b.dataset.v; document.body.dataset[k]=v;
+  document.querySelectorAll(`.panel button[data-k="${k}"]`).forEach(x=>x.classList.toggle('on',x===b));
+  if(k==='hero') document.querySelectorAll('.hero .ph').forEach(i=>i.classList.toggle('on',i.dataset.h===v));
+  upd(); document.fonts.ready.then(fit);
+});
+const q=new URLSearchParams(location.search);
+['hero','pal','font'].forEach(k=>{if(q.get(k)){const b=document.querySelector(`.panel button[data-k="${k}"][data-v="${q.get(k)}"]`); b&&b.click()}});
+if(q.has('nopanel')) document.getElementById('panel').style.display='none';
+document.fonts.ready.then(fit); addEventListener('resize',fit); upd();
+</script>
+</body>
+</html>
