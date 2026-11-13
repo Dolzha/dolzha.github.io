@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru" data-p="1" data-f="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Я люблю учиться: набросок</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat+Alternates:wght@500;600;700&family=Unbounded:wght@400;500;600&family=Rubik:wght@400;500;600&family=Jost:wght@400;500;600&family=Inter:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{--g:clamp(20px,2.5vw,56px);--ease:cubic-bezier(.22,.61,.36,1)}
+html[data-p="1"]{--bg:#F4F5F7;--c1:#F6A98F;--c2:#8ED0C0;--c3:#93B5F4;--c4:#B9A7F3;--acc:#FF7448;--ink:#2A2D38;--soft:#5D6170}
+html[data-p="2"]{--bg:#F6F3EE;--c1:#F2B8A2;--c2:#A8D6CA;--c3:#3A3F42;--c4:#E5D3BA;--acc:#E8684A;--ink:#22262A;--soft:#5E615F}
+html[data-p="3"]{--bg:#FBF8F1;--c1:#F28A9B;--c2:#9FD3C6;--c3:#6E8DEB;--c4:#F3D06B;--acc:#4F6FE0;--ink:#1F2A44;--soft:#56607A}
+html[data-f="1"]{--fh:'Comfortaa',sans-serif;--hw:700}
+html[data-f="2"]{--fh:'Montserrat Alternates',sans-serif;--hw:600}
+html[data-f="3"]{--fh:'Unbounded',sans-serif;--hw:500}
+html[data-f="4"]{--fh:'Rubik',sans-serif;--hw:500}
+html[data-f="5"]{--fh:'Jost',sans-serif;--hw:500}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 18px/1.55 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--fh);font-weight:var(--hw);margin:0;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+
+/* шапка-капсула */
+.hdr{position:fixed;z-index:50;top:18px;left:var(--g);right:calc(var(--g) + 76px);display:flex;align-items:center;gap:clamp(16px,2vw,36px);
+ padding:10px 10px 10px 28px;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
+ box-shadow:0 10px 40px rgba(40,44,60,.10)}
+.logo{display:flex;align-items:center;gap:6px;font-family:var(--fh);font-weight:var(--hw);font-size:22px;white-space:nowrap}
+.logo svg{width:22px;height:22px;fill:var(--acc)}
+.menu{display:flex;gap:clamp(14px,1.6vw,30px);font-size:16px;flex:1;justify-content:center}
+.menu a{opacity:.8;transition:opacity .3s}
+.menu a:hover{opacity:1}
+.tel{font-weight:500;font-size:17px;white-space:nowrap;color:var(--acc)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 30px;border-radius:999px;background:var(--acc);color:#fff;font-weight:600;font-size:17px;
+ border:0;cursor:pointer;box-shadow:0 10px 26px color-mix(in srgb,var(--acc) 35%,transparent);transition:transform .6s var(--ease),box-shadow .6s var(--ease),filter .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px color-mix(in srgb,var(--acc) 42%,transparent);filter:brightness(1.05)}
+.btn:active{transform:translateY(0)}
+
+/* кнопки связи справа */
+.side{position:fixed;z-index:60;right:var(--g);top:18px;display:flex;flex-direction:column;gap:12px}
+.side a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--acc);box-shadow:0 8px 22px color-mix(in srgb,var(--acc) 35%,transparent);transition:transform .6s var(--ease)}
+.side a:hover{transform:translateY(-2px) scale(1.05)}
+.side a:active{transform:scale(.96)}
+.side svg{width:26px;height:26px;fill:#fff}
+
+/* листы: следующий наезжает на предыдущий */
+.sheet{position:sticky;top:0;min-height:100svh}
+
+/* главный экран */
+.hero{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);background:var(--bg);overflow:hidden}
+.hero .txt{display:flex;flex-direction:column;justify-content:center;padding:120px var(--g) 80px;gap:28px}
+.hero h1{font-size:clamp(40px,4.3vw,78px);line-height:1.08;max-width:760px}
+.hero p{font-size:clamp(18px,1.35vw,22px);color:var(--soft);margin:0;max-width:600px}
+.hero .btn{align-self:flex-start;height:60px;padding:0 36px;font-size:18px}
+.strips{display:flex;align-items:flex-end;height:100svh;padding:112px calc(var(--g) + 76px) 0 0}
+.strip{position:relative;flex:1;height:calc(100% - 0px);margin-left:-36px;border-radius:999px 999px 0 0;padding:clamp(28px,3.2vw,52px) 0 0;display:flex;flex-direction:column;align-items:center;
+ transition:flex-grow .7s var(--ease);box-shadow:-18px 0 40px rgba(30,30,50,.10);overflow:hidden}
+.strip:first-child{margin-left:0}
+.strip:nth-child(1){background:var(--c1);height:100%}
+.strip:nth-child(2){background:var(--c2);height:100%}
+.strip:nth-child(3){background:var(--c3);height:100%}
+.strip:hover{flex-grow:1.45}
+.strip b{font-family:var(--fh);font-weight:var(--hw);color:#fff;font-size:clamp(22px,1.95vw,40px);white-space:nowrap;line-height:1;letter-spacing:-.01em}
+.strip small{color:#fff;opacity:.92;font-size:clamp(13px,.95vw,16px);line-height:1.35;margin-top:8px;text-align:center;padding:0 clamp(22px,2.4vw,44px)}
+.strip .ph{margin-top:clamp(22px,2.4vw,40px);flex:1;width:calc(100% - 24px);border-radius:999px 999px 0 0;overflow:hidden}
+.strip .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.strip:hover .ph img{transform:scale(1.04)}
+
+/* направления */
+.napr{background:var(--c2);border-radius:50% 50% 0 0 / clamp(90px,10vw,170px) clamp(90px,10vw,170px) 0 0;margin-top:-1px;padding:clamp(110px,8.5vw,170px) var(--g) clamp(44px,4vw,72px);
+ box-shadow:0 -20px 60px rgba(30,40,50,.12);display:flex;flex-direction:column}
+.napr .top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-right:76px}
+.napr h2{font-size:clamp(56px,6.2vw,124px);line-height:.95;color:#fff}
+.napr .sub{font-size:clamp(17px,1.25vw,21px);max-width:560px;margin:18px 0 0}
+.ctrl{display:flex;align-items:center;gap:14px}
+.cnt{font-family:var(--fh);font-weight:var(--hw);font-size:22px;min-width:84px;text-align:right}
+.arr{width:64px;height:64px;border-radius:50%;border:0;background:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 22px rgba(30,40,50,.12);transition:transform .6s var(--ease)}
+.arr:hover{transform:translateY(-2px)}
+.arr:active{transform:scale(.96)}
+.arr svg{width:30px;height:30px;fill:var(--ink)}
+.view{overflow:hidden;margin-top:clamp(28px,2.8vw,52px)}
+.track{display:flex;transition:transform .8s var(--ease)}
+.card{flex:0 0 100%;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,3.5vw,72px);align-items:center;padding-right:76px}
+.card h3{font-size:clamp(32px,3vw,54px);line-height:1.08}
+.card p{font-size:clamp(18px,1.3vw,21px);margin:20px 0 0;max-width:640px}
+.card dl{margin:28px 0 0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:17px}
+.card dt{color:var(--soft)}
+.card dd{margin:0;font-weight:500}
+.card .btn{margin-top:34px}
+.card figure{margin:0;border-radius:clamp(28px,3vw,48px);overflow:hidden;height:clamp(320px,47svh,600px);box-shadow:0 24px 60px rgba(30,40,50,.18)}
+.card figure img{width:100%;height:100%;object-fit:cover}
+.dots{display:flex;gap:10px;margin-top:28px}
+.dots i{width:12px;height:12px;border-radius:50%;background:#fff;opacity:.5;cursor:pointer;transition:opacity .4s,width .6s var(--ease)}
+.dots i.on{opacity:1;width:36px;border-radius:6px}
+.card .txt>*{animation:none}
+.card.on .txt>*{animation:up .7s var(--ease) both}
+.card.on .txt>*:nth-child(2){animation-delay:.08s}
+.card.on .txt>*:nth-child(3){animation-delay:.16s}
+.card.on .txt>*:nth-child(4){animation-delay:.24s}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.next{background:var(--c4);border-radius:50% 50% 0 0 / clamp(90px,10vw,170px) clamp(90px,10vw,170px) 0 0;min-height:60svh;display:grid;place-items:center;
+ box-shadow:0 -20px 60px rgba(30,40,50,.12);position:relative;z-index:2}
+.next span{font-family:var(--fh);font-weight:var(--hw);font-size:clamp(40px,5vw,90px);color:#fff;opacity:.85}
+
+/* панель выбора */
+.pan{position:fixed;z-index:90;left:16px;bottom:16px;background:#fff;border-radius:18px;padding:14px 16px;box-shadow:0 12px 40px rgba(0,0,0,.18);font:500 14px/1.3 Inter,sans-serif;color:#222;display:grid;gap:10px}
+.pan .r{display:flex;align-items:center;gap:6px}
+.pan .r span{width:70px;color:#777}
+.pan button{min-width:34px;height:34px;border-radius:10px;border:1px solid #ddd;background:#fff;cursor:pointer;font:600 14px Inter,sans-serif}
+.pan button.on{background:#222;color:#fff;border-color:#222}
+.pan .sw{display:flex;gap:3px;padding:0 6px}
+.pan .sw i{width:12px;height:22px;border-radius:4px}
+html.nopanel .pan{display:none}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.strips{height:70svh;padding-right:0}.menu{display:none}.card{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hdr">
+ <a class="logo" href="#"><span>Я</span><svg viewBox="0 0 24 24"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg><span>учиться</span></a>
+ <nav class="menu"><a href="#napr">Направления</a><a href="#">Диагностика</a><a href="#">Почерк</a><a href="#">Наталья</a><a href="#">Отзывы</a><a href="#">Студии</a></nav>
+ <a class="tel" href="tel:+79231301230">+7 923 130-12-30</a>
+ <a class="btn" href="https://t.me/natalya_feelatova">Записаться</a>
+</header>
+
+<div class="side">
+ <a href="https://t.me/natalya_feelatova" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/></svg></a>
+ <a href="https://wa.me/79231301230" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.050 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.290C4.24 15 3.8 13.47 3.8 11.910C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.090 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z"/></svg></a>
+ <a href="tel:+79231301230" aria-label="Позвонить"><svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg></a>
+</div>
+
+<section class="sheet hero" id="top">
+ <div class="txt">
+  <h1>Устраняем причины, по которым ребёнок плохо учится</h1>
+  <p>Коррекция почерка, дислексии и помощь в обучении. Четыре студии «Я люблю учиться» в Новосибирске.</p>
+  <a class="btn" href="https://t.me/natalya_feelatova">Записаться на диагностику</a>
+ </div>
+ <div class="strips">
+  <a class="strip" href="#napr"><b>Детям</b><small>почерк, чтение, внимание</small><div class="ph"><img src="img/s_deti.jpg" alt="Дети на занятии"></div></a>
+  <a class="strip" href="#napr"><b>Взрослым</b><small>внимание, память, почерк</small><div class="ph"><img src="img/s_vzr.jpg" alt="Занятие для взрослых" style="object-position:60% 50%"></div></a>
+  <a class="strip" href="#napr"><b>Педагогам</b><small>курс с НГПУ, практикумы</small><div class="ph"><img src="img/s_ped.jpg" alt="Наталья на практикуме для педагогов" style="object-position:50% 40%"></div></a>
+ </div>
+</section>
+
+<section class="sheet napr" id="napr">
+ <div class="top">
+  <div><h2>Направления</h2><p class="sub">Занятия для детей и взрослых во всех четырёх студиях. С&nbsp;чего начать, подскажет диагностика.</p></div>
+  <div class="ctrl"><span class="cnt" id="cnt">1 / 8</span>
+   <button class="arr" id="prev" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/></svg></button>
+   <button class="arr" id="nextb" aria-label="Вперёд"><svg viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg></button></div>
+ </div>
+ <div class="view"><div class="track" id="track">
+  <article class="card"><div class="txt"><h3>Полная нейродиагностика</h3><p>Находим причину, по которой ребёнку трудно учиться. Проводит только Наталья. По запросу пишет заключение для невролога или школы.</p><dl><dt>Ведёт</dt><dd>Наталья Филатова</dd><dt>Где</dt><dd>Красина 54, Танковая 24</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Записаться</a></div><figure><img src="img/n_diag.jpg" alt="Наталья на занятии" style="object-position:50% 45%"></figure></article>
+  <article class="card"><div class="txt"><h3>Краткая нейродиагностика</h3><p>Короткая проверка учебных трудностей. После неё понятно, над чем работать на занятиях.</p><dl><dt>Ведут</dt><dd>Анастасия, Наталья</dd><dt>Где</dt><dd>во всех студиях</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Записаться</a></div><figure><img src="img/n_kratk.jpg" alt="Ребёнок на занятии"></figure></article>
+  <article class="card"><div class="txt"><h3>Коррекция учебных трудностей</h3><p>Индивидуальные занятия для детей, в том числе при дислексии и дисграфии. Ребёнок играет в специальные игры и упражнения, а оценки растут.</p><dl><dt>Формат</dt><dd>абонемент, потом мини-группа 2-3 человека</dd><dt>Где</dt><dd>во всех студиях</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Записаться</a></div><figure><img src="img/n_korr.jpg" alt="Ребёнок читает книгу"></figure></article>
+  <article class="card"><div class="txt"><h3>Почерк у взрослых</h3><p>Индивидуальные занятия с нейропсихологическим подходом. Научиться писать красиво можно в любом возрасте.</p><dl><dt>Ведёт</dt><dd>Наталья Филатова</dd><dt>Где</dt><dd>Танковая 24</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Записаться</a></div><figure><img src="img/n_pocherk.jpg" alt="Письмо в тетради"></figure></article>
+  <article class="card"><div class="txt"><h3>Нейрофитнес</h3><p>Групповые занятия: дети развивают внимание, самоконтроль и скорость мышления через тело. В конце игра на необычных музыкальных инструментах.</p><dl><dt>Ведёт</dt><dd>Мария</dd><dt>Где</dt><dd>Красина 54, воскресенье и понедельник</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Записаться</a></div><figure><img src="img/n_myach.jpg" alt="Мальчик собирает головоломку"></figure></article>
+  <article class="card"><div class="txt"><h3>Творческая каллиграфия</h3><p>Главная задача курса: полюбить писать. Для этого творчество и необычные инструменты, например перо.</p><dl><dt>Ведёт</dt><dd>Полина</dd><dt>Где</dt><dd>Красина 54, среда и суббота</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Записаться</a></div><figure><img src="img/n_kalli.jpg" alt="Тетрадь с каллиграфией"></figure></article>
+  <article class="card"><div class="txt"><h3>Мячики для мозга</h3><p>Упражнения с мячами, полезные и детям, и взрослым.</p><dl><dt>Формат</dt><dd>онлайн</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Записаться</a></div><figure><img src="img/n_fit.jpg" alt="Упражнения с мячами"></figure></article>
+  <article class="card"><div class="txt"><h3>Консультации и супервизии</h3><p>Для педагогов, родителей и воспитателей. Наталья может прийти с практикумом в ваш детский сад.</p><dl><dt>Ведёт</dt><dd>Наталья Филатова</dd><dt>Где</dt><dd>по запросу</dd></dl><a class="btn" href="https://t.me/natalya_feelatova">Написать Наталье</a></div><figure><img src="img/n_super.jpg" alt="Практикум для педагогов" style="object-position:50% 35%"></figure></article>
+ </div></div>
+ <div class="dots" id="dots"></div>
+</section>
+<section class="next"><span>дальше: Диагностика</span></section>
+
+<div class="pan">
+ <div class="r"><span>Палитра</span>
+  <button data-k="p" data-v="1" class="on">1</button><div class="sw"><i style="background:#F6A98F"></i><i style="background:#8ED0C0"></i><i style="background:#93B5F4"></i><i style="background:#FF7448"></i></div>
+  <button data-k="p" data-v="2">2</button><div class="sw"><i style="background:#F2B8A2"></i><i style="background:#A8D6CA"></i><i style="background:#3A3F42"></i><i style="background:#E8684A"></i></div>
+  <button data-k="p" data-v="3">3</button><div class="sw"><i style="background:#F28A9B"></i><i style="background:#9FD3C6"></i><i style="background:#6E8DEB"></i><i style="background:#4F6FE0"></i></div>
+ </div>
+ <div class="r"><span>Шрифт</span>
+  <button data-k="f" data-v="1" class="on" style="font-family:Comfortaa">1</button><button data-k="f" data-v="2" style="font-family:'Montserrat Alternates'">2</button><button data-k="f" data-v="3" style="font-family:Unbounded">3</button><button data-k="f" data-v="4" style="font-family:Rubik">4</button><button data-k="f" data-v="5" style="font-family:Jost">5</button>
+ </div>
+</div>
+
+<script>
+const H=document.documentElement,q=new URLSearchParams(location.search);
+if(q.has('nopanel'))H.classList.add('nopanel');
+['p','f'].forEach(k=>{if(q.get(k))H.dataset[k]=q.get(k)});
+document.querySelectorAll('.pan button').forEach(b=>{
+ if(H.dataset[b.dataset.k]===b.dataset.v)document.querySelectorAll(`.pan button[data-k="${b.dataset.k}"]`).forEach(x=>x.classList.toggle('on',x===b));
+ b.onclick=()=>{H.dataset[b.dataset.k]=b.dataset.v;document.querySelectorAll(`.pan button[data-k="${b.dataset.k}"]`).forEach(x=>x.classList.toggle('on',x===b))}});
+const tr=document.getElementById('track'),cards=[...tr.children],dots=document.getElementById('dots'),cnt=document.getElementById('cnt');let i=0;
+cards.forEach((c,n)=>{const d=document.createElement('i');d.onclick=()=>go(n);dots.appendChild(d)});
+function go(n){i=(n+cards.length)%cards.length;tr.style.transform=`translateX(-${i*100}%)`;cards.forEach((c,k)=>c.classList.toggle('on',k===i));[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));cnt.textContent=`${i+1} / ${cards.length}`}
+document.getElementById('prev').onclick=()=>go(i-1);document.getElementById('nextb').onclick=()=>go(i+1);
+if(q.get('s'))go(+q.get('s'));else go(0);
+</script>
+</body>
+</html>
