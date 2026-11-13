@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap&subset=cyrillic" rel="stylesheet">
 <style>
 :root{
-  --bg:#1A0F0D; --bg2:#24140F; --bg3:#2E1A15; --wine:#3A1219;
+  --bg:#1A0F0D; --bg2:#24140F; --bg3:#2E1A15; --brown:#3A2219;
   --text:#F3E6D8; --muted:#C9B6A6; --acc:#D29A8A; --line:rgba(243,230,216,.18);
   --serif:'Playfair Display',serif;
   --pad:clamp(20px,2.5vw,56px);
@@ -22,15 +22,9 @@ img{display:block;max-width:100%}
 a{color:inherit}
 
 /* ===== ГЛАВНЫЙ ЭКРАН (устройство Fleur du Mal) ===== */
-.hero{position:relative;height:100svh;min-height:700px;overflow:hidden;background:var(--bg)}
-.hv{position:absolute;inset:0;opacity:0;transition:opacity .7s ease}
-.hv.on{opacity:1}
-.hv .blur{position:absolute;inset:-80px;width:calc(100% + 160px);height:calc(100% + 160px);object-fit:cover;filter:blur(50px) saturate(1.05);opacity:.4}
-.hv .pw{position:absolute;right:8vw;top:0;bottom:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 20%,#000 80%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 20%,#000 80%,transparent 100%)}
-.hv[data-h="b"] .pw img,.hv[data-h="v"] .pw img{filter:brightness(.82)}
-.hv[data-h="b"] .pw,.hv[data-h="v"] .pw{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%,#000 68%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 32%,#000 68%,transparent 100%)}
-.hv .pw img{height:100%;width:auto;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18%,#000 84%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 18%,#000 84%,transparent 100%)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 50%,rgba(0,0,0,.65) 100%);pointer-events:none}
+.hero{position:relative;height:100svh;min-height:700px;overflow:hidden;background:#000}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 50%,rgba(0,0,0,.7) 100%);pointer-events:none}
 .top{position:absolute;left:0;right:0;top:0;z-index:3;padding:10px var(--pad) 0}
 .name{display:inline-block;padding-top:.04em;font-family:var(--serif);font-weight:400;line-height:.92;white-space:nowrap;text-transform:uppercase;letter-spacing:-.01em}
 .menu{display:flex;align-items:center;gap:clamp(18px,2vw,34px);padding:10px 0 12px;border-bottom:1px solid var(--line);font:600 13px/1 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase}
@@ -41,7 +35,7 @@ a{color:inherit}
 .lead h1 .a{display:block;font:800 clamp(38px,4.4vw,72px)/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
 .lead h1 .b{display:block;margin-top:.04em;font-family:var(--serif);font-style:italic;font-size:clamp(48px,5.6vw,94px);line-height:1.02}
 .lead h1 .b em{color:var(--acc)}
-.lead p{margin:0 0 30px;font-size:clamp(18px,1.35vw,22px);color:var(--muted);max-width:620px}
+.lead p{margin:0 0 30px;font-size:clamp(19px,1.45vw,24px);color:var(--text);max-width:620px}
 
 /* стеклянные кнопки в цвете акцента */
 .glass{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#fff;text-decoration:none;font:600 15px/1 Inter,sans-serif;letter-spacing:.07em;text-transform:uppercase;
@@ -55,26 +49,29 @@ a{color:inherit}
 .menu .glass:hover{text-decoration:none}
 .big{padding:21px 38px;font-size:16px}
 
-/* ===== общие блоки ===== */
+/* ===== общие ===== */
 .sec{padding:clamp(80px,8vw,136px) var(--pad);position:relative}
 .sec.alt{background:var(--bg2)}
 .h2{margin:0 0 12px;font:800 clamp(40px,4.4vw,72px)/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
-.sub{margin:0 0 clamp(40px,4vw,64px);font-size:clamp(20px,1.5vw,23px);color:var(--muted);max-width:780px}
-.rv{opacity:0;transform:translateY(2px);animation:none}
+.sub{margin:0 0 clamp(40px,4vw,64px);font-size:clamp(20px,1.5vw,24px);color:var(--muted);max-width:780px}
+.rv{opacity:0}
 .rv.in{animation:up .7s ease-out both}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-/* ===== ОБО МНЕ ===== */
-.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,5vw,96px);align-items:center}
-.about .ph{position:relative;aspect-ratio:534/760;overflow:hidden;max-height:86vh}
-.about .ph img{width:100%;height:100%;object-fit:cover}
-.about .q{margin:0 0 30px;font-family:var(--serif);font-style:italic;font-size:clamp(30px,2.8vw,48px);line-height:1.18}
-.about .q em{color:var(--acc)}
-.about p{margin:0 0 18px;font-size:clamp(18px,1.3vw,21px);color:var(--muted);max-width:680px}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
-.facts div{padding:22px 20px 0 0}
-.facts b{display:block;margin-bottom:6px;font:600 13px/1.3 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
-.facts span{font-size:17px;line-height:1.45;color:var(--text)}
+/* ===== ОБО МНЕ: разворот журнала в три колонки ===== */
+.spread{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr) minmax(0,1fr);gap:clamp(28px,3.4vw,64px);align-items:end}
+.spread .l .q{margin:28px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(32px,2.9vw,50px);line-height:1.16}
+.spread .l .q em{color:var(--acc)}
+.spread .ph{position:relative;aspect-ratio:3/4.4;overflow:hidden;background:var(--bg3);margin:0}
+.spread .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;opacity:0;transition:opacity .6s ease}
+.spread .ph img.on{opacity:1}
+.spread .ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(0deg,rgba(20,10,8,.85),rgba(20,10,8,0));font:600 13px/1.3 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase}
+.spread .r p{margin:0 0 20px;font-size:clamp(18px,1.3vw,21px);color:var(--muted)}
+.spread .r p:first-child{color:var(--text)}
+.facts{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line)}
+.facts li{display:flex;justify-content:space-between;gap:24px;padding:16px 0;border-bottom:1px solid var(--line);font-size:17px}
+.facts b{font:600 13px/1.7 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--acc);white-space:nowrap}
+.facts span{text-align:right}
 
 /* ===== С ЧЕМ ПРИХОДЯТ ===== */
 .b1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,80px);align-items:stretch}
@@ -89,23 +86,16 @@ a{color:inherit}
 .b1 li.on h3 em{color:var(--acc)}
 .b1 li.on p{opacity:1}
 
-/* ===== ФОРМАТЫ ===== */
-.fmt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,4vw,80px);align-items:start}
-.main{position:relative;overflow:hidden;min-height:640px;display:flex;align-items:flex-end;background:var(--bg3)}
-.main>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,8,.35) 0%,rgba(20,10,8,.2) 35%,rgba(20,10,8,.92) 100%)}
-.main .in{position:relative;z-index:2;padding:clamp(26px,2.6vw,44px)}
-.main h3{margin:0 0 10px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(36px,3.2vw,56px);line-height:1.05}
-.main p{margin:0 0 8px;color:var(--muted);font-size:clamp(18px,1.3vw,21px);max-width:520px}
-.main .pr{margin:14px 0 24px;font:600 15px/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
-.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.list li{display:grid;grid-template-columns:1fr auto;gap:8px 30px;padding:clamp(20px,2vw,30px) 0;border-bottom:1px solid var(--line);transition:padding .5s ease-out}
-.list li:hover{padding-left:10px}
-.list h4{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(26px,2.2vw,38px);line-height:1.1}
-.list .c{align-self:center;white-space:nowrap;font:600 15px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
-.list p{grid-column:1/-1;margin:0;color:var(--muted);font-size:clamp(17px,1.2vw,20px);max-width:720px}
+/* ===== ФОРМАТЫ: огромный курсив строками, без фото ===== */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) auto;gap:20px clamp(24px,3vw,56px);align-items:center;padding:clamp(20px,2.2vw,34px) 0;border-bottom:1px solid var(--line)}
+.row h3{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(34px,3.5vw,62px);line-height:1.04;transition:color .5s ease,transform .6s ease-out}
+.row p{margin:0;font-size:clamp(17px,1.2vw,20px);color:var(--muted)}
+.row .c{white-space:nowrap;font:600 15px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);min-width:90px;text-align:right}
+.row:hover h3{color:var(--acc);transform:translateX(14px)}
+.fmt-cta{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:44px;font-size:clamp(18px,1.3vw,21px);color:var(--muted)}
 
-/* ===== ЭФИРЫ: лента как New Arrivals ===== */
+/* ===== ЭФИРЫ ===== */
 .hd{display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
 .arr{display:flex;gap:10px;margin-bottom:clamp(40px,4vw,64px)}
 .arr button{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;font-size:22px;transition:background .4s ease,border-color .4s ease}
@@ -124,44 +114,45 @@ a{color:inherit}
 .otz{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,24px)}
 .o{padding:clamp(26px,2.4vw,40px);background:rgba(243,230,216,.04);border:1px solid var(--line);display:flex;flex-direction:column}
 .o.w2{grid-column:span 2}
-.o p{margin:0 0 22px;font-family:var(--serif);font-style:italic;font-size:clamp(21px,1.6vw,26px);line-height:1.4}
-.o small{margin-top:auto;font:600 13px/1.3 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
+.o p{margin:0 0 24px;font-family:var(--serif);font-style:italic;font-size:clamp(21px,1.6vw,26px);line-height:1.4}
+.o .who{margin-top:auto}
+.o .who b{display:block;font:600 18px/1.3 Inter,sans-serif;margin-bottom:4px}
+.o .who small{font:600 12px/1.3 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
 
 /* ===== КОНТАКТЫ ===== */
 .kon{position:relative;overflow:hidden;padding:clamp(90px,9vw,150px) var(--pad);min-height:720px;display:flex;align-items:center}
-.kon>img{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(34px) brightness(.38) sepia(.35)}
-.card{position:relative;z-index:2;width:min(100%,760px);padding:clamp(30px,3vw,56px);border-radius:24px;background:rgba(26,15,13,.42);border:1px solid rgba(243,230,216,.22);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
-.card .h2{margin-bottom:26px}
-.card dl{display:grid;grid-template-columns:auto 1fr;gap:16px 34px;margin:0 0 34px}
-.card dt{font:600 13px/1.9 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
+.kon>img{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(34px) brightness(.4) sepia(.3)}
+.card{position:relative;z-index:2;width:100%;padding:clamp(34px,3.4vw,64px);border-radius:24px;background:rgba(26,15,13,.42);border:1px solid rgba(243,230,216,.22);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.card .top2{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:40px}
+.card .top2 p{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.2vw,38px);line-height:1.2;max-width:620px}
+.card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin:0 0 40px;padding-top:30px;border-top:1px solid var(--line)}
+.card dt{margin-bottom:8px;font:600 13px/1.3 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
 .card dd{margin:0;font-size:clamp(18px,1.35vw,22px)}
 .card dd a{text-decoration:none;border-bottom:1px solid var(--line)}
 
-/* ===== ПОДВАЛ (винный, как у Fleur du Mal) ===== */
-footer{background:var(--wine);padding:clamp(60px,6vw,100px) var(--pad) 36px;position:relative;overflow:hidden}
+/* ===== ПОДВАЛ: коричневый ===== */
+footer{background:var(--brown);padding:clamp(60px,6vw,100px) var(--pad) 36px}
 footer .big2{margin:0 0 50px;font:800 clamp(40px,5vw,86px)/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:-.01em;max-width:1300px}
 footer .big2 i{font-family:var(--serif);font-weight:400;text-transform:none;color:var(--acc)}
-footer .row{display:flex;flex-wrap:wrap;gap:20px 60px;align-items:flex-end;justify-content:space-between;border-top:1px solid rgba(243,230,216,.2);padding-top:28px}
+footer .rowf{display:flex;flex-wrap:wrap;gap:20px 60px;align-items:flex-end;justify-content:space-between;border-top:1px solid rgba(243,230,216,.2);padding-top:28px}
 footer .nm{font-family:var(--serif);font-size:clamp(28px,2.4vw,40px);text-transform:uppercase;line-height:1}
 footer nav{display:flex;gap:28px;flex-wrap:wrap;font:600 13px/1 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase}
 footer nav a{text-decoration:none;opacity:.9}
 footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
 
-/* панель выбора главного (только для Роберта) */
+/* панель выбора фото «Обо мне» (только для Роберта) */
 .panel{position:fixed;right:16px;bottom:16px;z-index:50;background:rgba(255,255,255,.96);color:#111;border-radius:14px;padding:12px 14px;font:500 13px/1.3 Inter,sans-serif;box-shadow:0 10px 40px rgba(0,0,0,.4)}
 .panel div{display:flex;align-items:center;gap:6px}
 .panel button{border:1px solid #bbb;background:#fff;border-radius:8px;min-width:30px;height:30px;cursor:pointer;font:600 13px Inter,sans-serif}
 .panel button.on{background:#111;color:#fff;border-color:#111}
 .panel small{display:block;color:#777;margin-top:6px}
-@media(max-width:1000px){.about,.b1,.fmt{grid-template-columns:1fr}.otz{grid-template-columns:1fr}.o.w2{grid-column:auto}.menu a:not(.glass){display:none}.facts{grid-template-columns:1fr}}
+@media(max-width:1000px){.spread,.b1{grid-template-columns:1fr}.row{grid-template-columns:1fr}.row .c{text-align:left}.otz{grid-template-columns:1fr}.o.w2{grid-column:auto}.card dl{grid-template-columns:1fr 1fr}.menu a:not(.glass){display:none}}
 </style>
 </head>
 <body>
 
 <section class="hero" id="glavnaya">
-  <div class="hv on" data-h="a"><img class="blur" src="img/h_a.jpg" alt=""><div class="pw"><img src="img/h_a.jpg" alt="Марина Марченкова"></div></div>
-  <div class="hv" data-h="b"><img class="blur" src="img/h_b.jpg" alt=""><div class="pw"><img src="img/h_b.jpg" alt="Марина Марченкова"></div></div>
-  <div class="hv" data-h="v"><img class="blur" src="img/h_v.jpg" alt=""><div class="pw"><img src="img/h_v.jpg" alt="Марина Марченкова"></div></div>
+  <img src="img/hero.jpg" alt="">
   <div class="top">
     <span class="name" id="name" data-logo="net">Марина Марченкова</span>
     <nav class="menu">
@@ -176,69 +167,67 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
   </div>
   <div class="lead">
     <h1><span class="a">Я хочу, но</span><span class="b">не разрешаю <em>себе</em></span></h1>
-    <p>Клинический психолог и сексолог. Помогаю услышать свои желания, выстроить отношения и раскрыть сексуальность</p>
-    <a class="glass big" href="https://t.me/marinamarchenkova">Записаться на консультацию</a>
+    <p>Ты привыкла спрашивать себя, как правильно. А чего хочется тебе?</p>
+    <a class="glass big" href="https://t.me/marinamarchenkova">Хочу разобраться</a>
   </div>
 </section>
 
 <section class="sec" id="obo-mne">
-  <div class="about">
-    <div class="ph rv"><img src="img/obo.jpg" alt="Марина Марченкова"></div>
-    <div class="rv">
+  <div class="spread">
+    <div class="l rv">
       <h2 class="h2">Обо мне</h2>
-      <p class="q">Придя ко мне, вы не получаете огромный список того, что с вами <em>«не так»</em></p>
-      <p>Мы шаг за шагом выстраиваем путь. Потихоньку, терапия за терапией. И то, что ещё вчера казалось непосильным, постепенно становится возможным</p>
-      <p>Я клинический психолог и сексолог. Работаю с женщинами, которые устали быть хорошими, удобными и сильными и хотят снова слышать свои желания</p>
-      <div class="facts">
-        <div><b>Образование</b><span>Диплом клинического психолога</span></div>
-        <div><b>Формат</b><span>Онлайн из любого города или очно в Красноярске</span></div>
-        <div><b>Канал</b><span>«SexsualnaЯженщина», прямые эфиры каждую неделю</span></div>
-      </div>
+      <p class="q">Мне интересно, что стоит за твоим <em>«не хочу»</em>, <em>«не могу»</em> и <em>«мне нельзя»</em></p>
+    </div>
+    <figure class="ph rv">
+      <img class="on" data-o="a" src="img/obo_a.jpg" alt="Марина Марченкова">
+      <img data-o="b" src="img/obo_b.jpg" alt="Марина Марченкова">
+      <img data-o="v" src="img/obo_v.jpg" alt="Марина Марченкова">
+      <figcaption>Марина Марченкова</figcaption>
+    </figure>
+    <div class="r rv">
+      <p>Я Марина Марченкова. Клинический психолог и сексолог. Работаю онлайн и очно в Красноярске.</p>
+      <p>Я не ищу, что с тобой не так. Мне важнее понять, почему ты поступаешь именно так. И чего хочешь на самом деле.</p>
+      <p>Психика не перестраивается по инструкции. Разбираемся постепенно, терапия за терапией. Без гонки за быстрым результатом.</p>
+      <ul class="facts">
+        <li><b>Образование</b><span>Диплом клинического психолога</span></li>
+        <li><b>Канал</b><span>«SexsualnaЯженщина», эфиры каждую неделю</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="sec alt" id="s-chem">
   <h2 class="h2 rv">С чем приходят</h2>
-  <p class="sub rv">Об этом мне пишут чаще всего. Можно прийти с любой из этих тем или с той, которую пока сложно назвать</p>
+  <p class="sub rv">О чём ты думаешь, но не всегда решаешься сказать вслух?</p>
   <div class="b1">
     <div class="fr rv"><img class="on" src="img/c_8333634.jpg" alt=""><img src="img/c_8481500.jpg" alt=""><img src="img/c_9663182.jpg" alt=""><img src="img/c_9985637.jpg" alt=""></div>
     <ul class="rv">
-      <li class="on"><h3>Ревность и <em>измены</em></h3><p>Иногда измена бывает попыткой стать другой собой</p></li>
-      <li><h3>Нет <em>желания</em></h3><p>Когда секс случается из чувства долга, а не потому, что хочется</p></li>
-      <li><h3>Хочу, но не разрешаю <em>себе</em></h3><p>Почему мы хотим одного, выбираем другое и живём не так, как хочется</p></li>
-      <li><h3>Деньги в <em>отношениях</em></h3><p>Где заканчивается забота и начинается взаиморасчёт</p></li>
+      <li class="on"><h3>Ревность и <em>измены</em></h3><p>Как снова доверять, когда внутри столько вопросов?</p></li>
+      <li><h3>Нет <em>желания</em></h3><p>Почему секс стал обязанностью, а не желанием?</p></li>
+      <li><h3>Хочу, но не разрешаю <em>себе</em></h3><p>Кто решил, что тебе нельзя?</p></li>
+      <li><h3>Деньги в <em>отношениях</em></h3><p>Где забота, а где уже взаиморасчёт?</p></li>
     </ul>
   </div>
 </section>
 
 <section class="sec" id="formaty">
   <h2 class="h2 rv">Форматы</h2>
-  <p class="sub rv">Начать можно с личной встречи или с группы, где проще сделать первый шаг</p>
-  <div class="fmt">
-    <div class="main rv">
-      <img src="img/h_v.jpg" alt="">
-      <div class="in">
-        <h3>Личная консультация</h3>
-        <p>Разговор один на один о том, что происходит в вашей жизни, отношениях и сексе. Можно остаться в долгосрочной терапии</p>
-        <div class="pr">Онлайн или очно в Красноярске</div>
-        <a class="glass big" href="https://t.me/marinamarchenkova">Записаться</a>
-      </div>
-    </div>
-    <ul class="list rv">
-      <li><h4>Онлайн-курс «SexsualnaЯженщина»</h4><span class="c">[ ]</span><p>Модули с заданиями: внутренние родители, образ себя, границы, желания</p></li>
-      <li><h4>Киномарафон «Субличности»</h4><span class="c">1 000 р</span><p>Исследуем разные части себя через кино и видим, как они влияют на жизнь</p></li>
-      <li><h4>Марафон «Привычка наслаждаться»</h4><span class="c">[ ]</span><p>Учимся замечать удовольствие в обычном дне</p></li>
-      <li><h4>Трансформационная игра</h4><span class="c">1 500 р</span><p>Игра о природе сексуальности в небольшой группе, за большим столом в кабинете</p></li>
-      <li><h4>Женские танцевальные практики</h4><span class="c">2 500 р</span><p>Свободная одежда, босиком, музыка. Здесь нет продаж, только ваш внутренний отклик</p></li>
-      <li><h4>Лекции, кино и ужин с сексологом</h4><span class="c">[ ]</span><p>Встречи в Красноярске: лекции с практикой, просмотр фильма с разбором, ужин в ресторане с темой вечера</p></li>
-    </ul>
+  <p class="sub rv">Не обязательно сразу понимать, что тебе подходит. Начни с интереса.</p>
+  <div class="rows rv">
+    <div class="row"><h3>Личная консультация</h3><p>Онлайн или очно в Красноярске. Разберём то, что волнует именно тебя.</p><span class="c">[ ]</span></div>
+    <div class="row"><h3>Курс «SexsualnaЯженщина»</h3><p>Внутренние родители, образ себя, границы и желания.</p><span class="c">[ ]</span></div>
+    <div class="row"><h3>Киномарафон «Субличности»</h3><p>Через кино посмотрим на разные части твоей личности.</p><span class="c">1 000 р</span></div>
+    <div class="row"><h3>Привычка наслаждаться</h3><p>Марафон о том, как замечать свои желания и позволять себе больше.</p><span class="c">[ ]</span></div>
+    <div class="row"><h3>Трансформационная игра</h3><p>Небольшая группа и разговор о природе женской сексуальности.</p><span class="c">1 500 р</span></div>
+    <div class="row"><h3>Танцевальные практики</h3><p>Свободная одежда, босые ноги. И никому ничего не нужно доказывать.</p><span class="c">2 500 р</span></div>
+    <div class="row"><h3>Встречи в Красноярске</h3><p>Лекции, кино с обсуждением, практика и тематические ужины.</p><span class="c">[ ]</span></div>
   </div>
+  <div class="fmt-cta rv"><span>Не знаешь, с чего начать? Напиши, подскажу.</span><a class="glass big" href="https://t.me/marinamarchenkova">Записаться</a></div>
 </section>
 
 <section class="sec alt" id="efiry">
   <div class="hd">
-    <div><h2 class="h2 rv">Эфиры</h2><p class="sub rv">Бесплатные прямые эфиры в Telegram-канале. Говорим честно и по-настоящему</p></div>
+    <div><h2 class="h2 rv">Эфиры</h2><p class="sub rv">Каждую неделю говорим о том, о чём обычно молчат.</p></div>
     <div class="arr"><button id="pr" aria-label="Назад">&#8592;</button><button id="nx" aria-label="Вперёд">&#8594;</button></div>
   </div>
   <div class="track" id="track">
@@ -255,25 +244,25 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
 
 <section class="sec" id="otzyvy">
   <h2 class="h2 rv">Отзывы</h2>
-  <p class="sub rv">Слова клиенток из переписки после эфиров, курса и личной терапии</p>
+  <p class="sub rv">Что пишут после эфиров, курса и личной терапии</p>
   <div class="otz">
-    <div class="o w2 rv"><p>Я стала спокойнее, внутри появилась тишина, теперь в голове разложено всё по полочкам. С мужем отношения стали налаживаться, мы стали больше проводить время вместе. Теперь я с уверенностью могу сказать: меня достаточно</p><small>После первого модуля курса</small></div>
-    <div class="o rv"><p>Мы уже затрагивали тему принятия с Мариной в личной терапии. И вот теперь этот пазл сложился. Принятие не равно терпению</p><small>Из личной терапии</small></div>
-    <div class="o rv"><p>Благодарю, тема была очень полезная. Я наконец-то разобралась со своими фантазиями, узнала причины их возникновения, теперь больше принятия к этой теме и к себе в том числе</p><small>После эфира</small></div>
-    <div class="o rv"><p>Спасибо за полезную информацию, всегда думала, что нужно стрип танцевать, но это не моё состояние</p><small>Анастасия</small></div>
-    <div class="o rv"><p>Благодарю за эфир! Стало понятнее про сексуальные фантазии. Что это не только не стыдно, но ещё и полезно</p><small>После эфира</small></div>
+    <div class="o w2 rv"><p>Я стала спокойнее, внутри появилась тишина, теперь в голове всё разложено по полочкам. С мужем отношения стали налаживаться, мы стали больше проводить время вместе. Теперь я с уверенностью могу сказать: меня достаточно</p><div class="who"><b>Екатерина</b><small>Онлайн-курс, первый модуль</small></div></div>
+    <div class="o rv"><p>Мы уже затрагивали тему принятия с Мариной в личной терапии. И вот теперь этот пазл сложился. Принятие не равно терпению</p><div class="who"><b>[ Имя ]</b><small>Личная терапия</small></div></div>
+    <div class="o rv"><p>Спасибо за полезную информацию. Всегда думала, что нужно стрип танцевать, но это не моё состояние</p><div class="who"><b>Анастасия</b><small>Прямой эфир</small></div></div>
+    <div class="o rv"><p>Марина, спасибо большое, что поделились на своём конкретном примере! Теперь ясно, что вы имели в виду</p><div class="who"><b>Ольга</b><small>Прямой эфир</small></div></div>
+    <div class="o rv"><p>Благодарю за эфир. Тема интересная, очень откликается</p><div class="who"><b>Надежда</b><small>Прямой эфир</small></div></div>
   </div>
 </section>
 
 <section class="kon" id="kontakty">
-  <img src="img/h_a.jpg" alt="">
+  <img src="img/obo_a.jpg" alt="">
   <div class="card rv">
-    <h2 class="h2">Контакты</h2>
+    <div class="top2"><h2 class="h2" style="margin:0">Контакты</h2><p>Хочешь обсудить то, о чём давно думаешь?</p></div>
     <dl>
-      <dt>Telegram</dt><dd><a href="https://t.me/marinamarchenkova">@marinamarchenkova</a></dd>
-      <dt>Канал</dt><dd><a href="https://t.me/mari_sostoyanie">t.me/mari_sostoyanie</a></dd>
-      <dt>Формат</dt><dd>Онлайн из любого города или очно в Красноярске</dd>
-      <dt>Встречи</dt><dd>Красноярск, проспект Свободный, 59а</dd>
+      <div><dt>Telegram</dt><dd><a href="https://t.me/marinamarchenkova">@marinamarchenkova</a></dd></div>
+      <div><dt>Канал</dt><dd><a href="https://t.me/mari_sostoyanie">t.me/mari_sostoyanie</a></dd></div>
+      <div><dt>Формат</dt><dd>Онлайн из любого города или очно в Красноярске</dd></div>
+      <div><dt>Встречи</dt><dd>Красноярск, проспект Свободный, 59а</dd></div>
     </dl>
     <a class="glass big" href="https://t.me/marinamarchenkova">Записаться на консультацию</a>
   </div>
@@ -281,7 +270,7 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
 
 <footer>
   <p class="big2">Устала быть хорошей, удобной и сильной? <i>Напиши мне</i></p>
-  <div class="row">
+  <div class="rowf">
     <span class="nm" data-logo="net">Марина Марченкова</span>
     <nav><a href="#obo-mne">Обо мне</a><a href="#formaty">Форматы</a><a href="#efiry">Эфиры</a><a href="#kontakty">Контакты</a><a href="https://t.me/marinamarchenkova">Telegram</a></nav>
   </div>
@@ -289,7 +278,7 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
 </footer>
 
 <div class="panel" id="panel">
-  <div>Главный <button data-v="a" class="on">А</button><button data-v="b">Б</button><button data-v="v">В</button></div>
+  <div>Фото «Обо мне» <button data-v="a" class="on">А</button><button data-v="b">Б</button><button data-v="v">В</button></div>
   <small id="hn">А: портрет в белом жакете</small>
 </div>
 
@@ -297,20 +286,16 @@ footer small{display:block;margin-top:26px;color:var(--muted);font-size:14px}
 const nm=document.getElementById('name');
 function fit(){const w=document.querySelector('.menu').clientWidth;nm.style.fontSize='100px';nm.style.fontSize=(100*w/nm.getBoundingClientRect().width*0.995)+'px'}
 document.fonts.ready.then(fit);addEventListener('resize',fit);
-// выбор главного
 const HN={a:'А: портрет в белом жакете',b:'Б: бордовое платье у окна',v:'В: в ресторане'};
-document.querySelectorAll('.panel button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.panel button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.hv').forEach(h=>h.classList.toggle('on',h.dataset.h===b.dataset.v));document.getElementById('hn').textContent=HN[b.dataset.v]});
+document.querySelectorAll('.panel button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.panel button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.spread .ph img').forEach(h=>h.classList.toggle('on',h.dataset.o===b.dataset.v));document.getElementById('hn').textContent=HN[b.dataset.v]});
 const q=new URLSearchParams(location.search);
-if(q.get('hero')){const b=document.querySelector(`.panel button[data-v="${q.get('hero')}"]`);b&&b.click()}
+if(q.get('obo')){const b=document.querySelector(`.panel button[data-v="${q.get('obo')}"]`);b&&b.click()}
 if(q.has('nopanel'))document.getElementById('panel').style.display='none';
-// с чем приходят: наведение меняет фото
 const li=[...document.querySelectorAll('.b1 li')],im=[...document.querySelectorAll('.b1 .fr img')];
 li.forEach((l,i)=>l.addEventListener('mouseenter',()=>{li.forEach(x=>x.classList.toggle('on',x===l));im.forEach((x,j)=>x.classList.toggle('on',j===i))}));
-// эфиры: стрелки
 const tr=document.getElementById('track'),st=()=>tr.querySelector('.ef').offsetWidth+20;
 document.getElementById('nx').onclick=()=>tr.scrollBy({left:st(),behavior:'smooth'});
 document.getElementById('pr').onclick=()=>tr.scrollBy({left:-st(),behavior:'smooth'});
-// мягкое появление
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(x=>io.observe(x));
 if(q.has('nopanel')||q.has('shot'))document.querySelectorAll('.rv').forEach(x=>x.classList.add('in'));
