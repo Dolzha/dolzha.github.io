@@ -84,8 +84,11 @@ main{position:relative}
 .strip:hover{flex-grow:1.35}
 .strip b{font-family:var(--fh);font-weight:600;color:#fff;font-size:clamp(22px,1.9vw,38px);line-height:1;white-space:nowrap}
 .strip small{color:#fff;opacity:.92;font-size:clamp(13px,.95vw,16px);line-height:1.35;margin-top:10px;text-align:center;padding:0 clamp(24px,2.6vw,48px)}
-.strip img{position:absolute;z-index:5;bottom:calc(var(--arc) - 40px);left:50%;transform:translateX(-50%);height:var(--h);width:auto;max-width:none;transition:transform .9s var(--ease);filter:drop-shadow(0 18px 30px rgba(20,20,30,.18))}
+.strip img{position:absolute;z-index:5;bottom:calc(var(--arc) - 75px);left:50%;transform:translateX(-50%);height:var(--h);width:auto;max-width:none;transition:transform .9s var(--ease);filter:drop-shadow(0 18px 30px rgba(20,20,30,.18))}
 .strip:hover img{transform:translateX(-50%) translateY(-6px)}
+.strip.s3{overflow:hidden}
+.strip img.ped{left:auto;right:0;bottom:0;transform:none;filter:none}
+.strip:hover img.ped{transform:translateY(-6px)}
 
 /* направления */
 .napr{background:var(--mint)}
@@ -198,8 +201,8 @@ main{position:relative}
  </div>
  <div class="strips">
   <a class="strip s1" href="#napr"><b>Детям</b><small>Читать, писать, запоминать</small><img src="img/h_deti.webp" alt="Девочки на занятии" style="--h:54%"></a>
-  <a class="strip s2" href="#napr"><b>Взрослым</b><small>Почерк в любом возрасте</small><img src="img/h_vzr.webp" alt="Наталья с дипломом МГУ" style="--h:60%"></a>
-  <a class="strip s3" href="#napr"><b>Педагогам</b><small>Курс с НГПУ и практикумы</small><img src="img/h_ped.webp" alt="Наталья на занятии с ученицей" style="--h:47%;margin-left:-14px"></a>
+  <a class="strip s2" href="#napr"><b>Взрослым</b><small>Почерк в любом возрасте</small><img src="img/h_vzr.webp" alt="Наталья Филатова" style="--h:50%"></a>
+  <a class="strip s3" href="#napr"><b>Педагогам</b><small>Курс с НГПУ и практикумы</small><img class="ped" src="img/h_ped.webp" alt="Наталья выступает перед педагогами" style="--h:64%"></a>
  </div>
 </section>
 
