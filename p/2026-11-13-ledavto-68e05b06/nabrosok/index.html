@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru" data-pal="1" data-font="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ЛедАвто: набросок</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;800;900&family=Unbounded:wght@400;700;800&family=Exo+2:wght@500;800;900&family=Russo+One&family=Tektur:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0B0D;--surf:#141518;--line:rgba(255,255,255,.09);--ink:#F4F5F7;--mut:#A3A6AD;--red:#D61016;--glow:0 0 0 transparent;
+  --fh:'Montserrat',sans-serif;--fhw:800;
+  --pad:clamp(20px,2.5vw,56px);
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:dark;
+}
+:root[data-pal="2"]{--bg:#17181B;--surf:#202226;--line:rgba(255,255,255,.1);--red:#E3121B}
+:root[data-pal="3"]{--bg:#060607;--surf:#0F0F11;--red:#FF2630;--glow:0 0 18px rgba(255,38,48,.75)}
+:root[data-font="1"]{--fh:'Montserrat',sans-serif;--fhw:800}
+:root[data-font="2"]{--fh:'Unbounded',sans-serif;--fhw:700;--k:.8}
+:root[data-font="3"]{--fh:'Exo 2',sans-serif;--fhw:800}
+:root[data-font="4"]{--fh:'Russo One',sans-serif;--fhw:400}
+:root[data-font="5"]{--fh:'Tektur',sans-serif;--fhw:700}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .5s}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.h{font-family:var(--fh);font-weight:var(--fhw);letter-spacing:-.01em;line-height:1.02}
+
+/* шапка */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;gap:clamp(20px,3vw,56px);padding:18px var(--pad);transition:background .4s,backdrop-filter .4s,padding .4s}
+.top.s{background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-block:12px;border-bottom:1px solid var(--line)}
+.top .logo img{height:48px;width:auto;transition:height .4s}
+.top.s .logo img{height:40px}
+.menu{display:flex;gap:clamp(18px,2.2vw,40px);font-weight:500;font-size:16px}
+.menu a{position:relative;opacity:.86;transition:opacity .3s}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);box-shadow:var(--glow)}
+.menu a:hover{opacity:1}.menu a:hover::after{transform:scaleX(1)}
+.top .right{margin-left:auto;display:flex;align-items:center;gap:22px}
+.tel{font-weight:600;font-size:17px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:12px;font:600 16px/1 Inter,sans-serif;cursor:pointer;border:0;transition:transform .6s var(--ease),box-shadow .6s var(--ease),background .4s}
+.btn:hover{transform:translateY(-2px)}
+.btn.r{background:var(--red);color:#fff;box-shadow:var(--glow)}
+.btn.r:hover{box-shadow:0 10px 28px color-mix(in srgb,var(--red) 45%,transparent)}
+.btn.g{background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(10px)}
+.btn.g:hover{background:rgba(255,255,255,.2)}
+.btn svg{width:20px;height:20px}
+
+/* экран и движение с его сайта: красная черта сверху растёт, текст всплывает */
+.sec{position:relative;scroll-snap-align:start}
+.sec::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--red);transform:scaleX(.2);transform-origin:left;transition:transform 1.4s var(--ease);z-index:5;box-shadow:var(--glow)}
+.sec.in::before{transform:scaleX(1)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0) * 110ms)}
+.rv.up{transform:translateY(50px)}
+.in .rv{opacity:1;transform:none}
+
+/* точки справа (с его сайта) */
+.dots{position:fixed;right:clamp(12px,1.4vw,26px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:14px}
+.dots a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.28);transition:transform .5s var(--ease),background .4s;position:relative}
+.dots a.on{background:#fff;transform:scale(1.5)}
+.dots a span{position:absolute;right:22px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;font-size:13px;opacity:0;transition:.4s;pointer-events:none;background:rgba(0,0,0,.6);padding:4px 10px;border-radius:6px}
+.dots a:hover span{opacity:1;transform:translateY(-50%)}
+
+/* метка варианта для Роберта */
+.tag{position:absolute;left:var(--pad);bottom:22px;z-index:6;font:600 12px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* ГЛАВНЫЙ ЭКРАН А: фото во всю ширину, стеклянная карточка */
+.heroA{height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;padding:0 var(--pad) clamp(70px,9vh,120px)}
+.heroA .ph{position:absolute;inset:0}
+.heroA .ph img{width:100%;height:100%;object-fit:cover;object-position:70% 55%;transform:scale(1.08);transition:transform 2.6s var(--ease)}
+.heroA.in .ph img{transform:scale(1)}
+.heroA .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.15) 55%,transparent 100%),linear-gradient(0deg,rgba(0,0,0,.5),transparent 40%)}
+.neon{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--red);transform:scaleX(.2);transform-origin:left;transition:transform 1.8s var(--ease) .3s;z-index:4;box-shadow:0 0 24px 4px color-mix(in srgb,var(--red) 70%,transparent),0 -30px 80px 10px color-mix(in srgb,var(--red) 22%,transparent)}
+.in .neon{transform:scaleX(1)}
+.card{position:relative;z-index:3;width:fit-content;max-width:min(760px,100%);padding:clamp(28px,3vw,48px);border-radius:18px;background:rgba(12,12,14,.46);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1px solid rgba(255,255,255,.1)}
+.card h1{font-size:calc(clamp(40px,4.6vw,78px) * var(--k,1))}
+.card h1 em{font-style:normal;color:var(--red);text-shadow:var(--glow)}
+.card p{margin-top:22px;font-size:clamp(17px,1.2vw,20px);color:#D9DBE0;max-width:600px}
+.card .acts{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.card .ot{margin-left:8px;font-size:15px;color:var(--mut)}
+.card .ot b{color:#fff;font-weight:600}
+
+/* ГЛАВНЫЙ ЭКРАН Б: как превью, крупно капсом и три значка в красных кругах */
+.heroB{height:100svh;min-height:640px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--pad) clamp(64px,9vh,110px)}
+.heroB .ph{position:absolute;inset:0}
+.heroB .ph img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;transform:scale(1.1) translateX(2%);transition:transform 2.8s var(--ease)}
+.heroB.in .ph img{transform:none}
+.heroB .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,.05) 70%)}
+.heroB .t{position:relative;z-index:3}
+.heroB .k1{font-family:var(--fh);font-weight:500;text-transform:uppercase;font-size:clamp(24px,2.6vw,46px);letter-spacing:.04em;color:#E9EAEE}
+.heroB .k2{font-family:var(--fh);font-weight:var(--fhw);text-transform:uppercase;font-size:calc(clamp(80px,12.5vw,230px) * var(--k,1));line-height:.9;letter-spacing:-.01em;margin-top:6px;background:linear-gradient(180deg,#fff 30%,#B9BCC4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.heroB .row{position:relative;z-index:3;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(24px,3vw,56px);margin-top:clamp(26px,3.5vh,44px)}
+.ic{display:flex;align-items:center;gap:16px;font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+.ic i{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--red);display:grid;place-items:center;flex:none;box-shadow:var(--glow);transition:background .5s,transform .6s var(--ease)}
+.ic i svg{width:30px;height:30px}
+.ic:hover i{background:var(--red);transform:translateY(-2px)}
+.heroB .row .btn{margin-left:auto}
+
+/* ШРИФТЫ: рабочий лист для Роберта */
+.fonts{padding:clamp(90px,12vh,140px) var(--pad) clamp(70px,9vh,110px);background:var(--bg)}
+.fonts h2{font-size:clamp(52px,7vw,120px)}
+.fonts .sub{color:var(--mut);margin-top:14px;max-width:700px}
+.fl{margin-top:48px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.2vw,22px)}
+.fl button{all:unset;cursor:pointer;padding:28px 24px 26px;border-radius:16px;background:var(--surf);border:1px solid var(--line);transition:border-color .4s,transform .6s var(--ease)}
+.fl button:hover{transform:translateY(-2px)}
+.fl button.on{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red)}
+.fl .n{font-size:13px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+.fl .s1{margin-top:18px;font-size:clamp(14px,1.15vw,22px);text-transform:uppercase;line-height:1.05}
+.fl .s2{margin-top:6px;font-size:clamp(28px,2.35vw,46px);text-transform:uppercase;line-height:.95}
+.fl .s3{margin-top:16px;font-size:clamp(14px,1.05vw,19px);white-space:nowrap}
+.fl .s3 span{color:var(--red)}
+.fl button[data-f="2"] .s1,.fl button[data-f="2"] .s2,.fl button[data-f="2"] .s3{zoom:.84}
+
+/* ЦЕНЫ: новый блок */
+.prices{min-height:100svh;padding:clamp(90px,12vh,140px) var(--pad) clamp(70px,9vh,110px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,110px);background:var(--bg)}
+.prices h2{font-size:calc(clamp(64px,9vw,170px) * var(--k,1))}
+.tabs{margin-top:clamp(28px,4vh,48px);display:flex;flex-direction:column;gap:4px}
+.tabs button{all:unset;cursor:pointer;position:relative;padding:8px 0 8px 0;font-family:var(--fh);font-weight:var(--fhw);font-size:clamp(26px,2.3vw,42px);line-height:1.15;color:rgba(255,255,255,.32);transition:color .4s,padding .6s var(--ease)}
+.tabs button::before{content:"";position:absolute;left:0;top:50%;width:34px;height:3px;margin-top:-1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease);box-shadow:var(--glow)}
+.tabs button:hover{color:rgba(255,255,255,.7)}
+.tabs button.on{color:#fff;padding-left:52px}
+.tabs button.on::before{transform:scaleX(1)}
+.pr-r{display:flex;flex-direction:column}
+.pic{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--surf)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .8s var(--ease),transform 1.6s var(--ease)}
+.pic img.on{opacity:1;transform:scale(1)}
+.pic:hover img.on{transform:scale(1.05)}
+.pic::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent 45%)}
+.list{margin-top:clamp(18px,2.5vh,30px)}
+.it{position:relative;overflow:hidden;display:flex;align-items:baseline;gap:24px;padding:18px 4px;border-bottom:1px solid var(--line);opacity:0;transform:translateY(20px);animation:rise .7s var(--ease) both;animation-delay:calc(var(--d) * 70ms)}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.it::before{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);transform:translateX(-120%);transition:transform 1s var(--ease)}
+.it:hover::before{transform:translateX(260%)}
+.it .nm{font-size:clamp(17px,1.25vw,21px);font-weight:500}
+.it .pr{margin-left:auto;white-space:nowrap;font-family:var(--fh);font-weight:var(--fhw);font-size:clamp(20px,1.6vw,28px);transition:color .4s}
+.it .pr small{font:500 15px Inter;color:var(--mut);margin-right:6px}
+.it:hover .pr{color:var(--red);text-shadow:var(--glow)}
+.pr-r .btn{margin-top:30px;align-self:flex-start}
+
+/* панель выбора для Роберта */
+.panel{position:fixed;right:16px;top:96px;z-index:60;background:rgba(20,20,22,.88);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;font:500 13px/1.2 Inter;display:flex;flex-direction:column;gap:8px}
+.panel .r{display:flex;align-items:center;gap:6px}
+.panel .r>b{width:62px;color:#aaa;font-weight:500}
+.panel button{all:unset;cursor:pointer;min-width:26px;height:26px;padding:0 6px;border-radius:7px;display:grid;place-items:center;background:rgba(255,255,255,.08)}
+.panel button.on{background:#fff;color:#000}
+.panel .sw{width:26px;padding:0}
+.panel .sw i{width:16px;height:16px;border-radius:50%;display:block;border:2px solid rgba(255,255,255,.35)}
+
+@media (max-width:1100px){.menu{display:none}.fl{grid-template-columns:repeat(2,minmax(0,1fr))}.prices{grid-template-columns:1fr}}
+@media (max-width:640px){.tel{display:none}.top .logo img{height:36px}.heroB .row .btn{margin-left:0}.fl{grid-template-columns:1fr}.dots{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv,.it{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="logo" href="#a"><img src="img/logo.png" alt="ЛедАвто"></a>
+  <nav class="menu"><a href="#ceny">Цены</a><a href="#ceny">Работы</a><a href="#ceny">Отзывы</a><a href="#ceny">Контакты</a></nav>
+  <div class="right">
+    <a class="tel" href="tel:+79505516240">+7 950 551-62-40</a>
+    <a class="btn r" href="https://t.me/ledavtoekb">Записаться</a>
+  </div>
+</header>
+
+<nav class="dots" id="dots"></nav>
+
+<!-- А -->
+<section class="sec heroA" id="a" data-name="Главный экран А">
+  <div class="ph"><img src="img/hero_a.jpg" alt=""></div>
+  <div class="card">
+    <h1 class="h rv up">Профессиональный автосвет в&nbsp;<em>Екатеринбурге</em></h1>
+    <p class="rv" style="--d:2">Ставим Bi-LED линзы, чиним и полируем фары, настраиваем свет. Проспект Космонавтов, 103А, корпус&nbsp;1</p>
+    <div class="acts rv" style="--d:3">
+      <a class="btn r" href="https://t.me/ledavtoekb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M227.57 27.7a7 7 0 0 0-7.13-1.22L17.78 105.79a12.23 12.23 0 0 0 2.1 23.39L74 139.81V200a14 14 0 0 0 24.08 9.71l26.64-27.63l41.58 36.45a13.9 13.9 0 0 0 9.2 3.49a14.3 14.3 0 0 0 4.36-.69a13.86 13.86 0 0 0 9.34-10.17l40.62-176.59a7 7 0 0 0-2.25-6.87M22.05 117.37a.46.46 0 0 1 0-.32a.5.5 0 0 1 .15-.08l159.71-62.52l-103.3 74l-56.41-11.04Zm67.39 84A2 2 0 0 1 86 200v-51.89l29.69 26Zm88.07 7.08a1.93 1.93 0 0 1-1.34 1.44a2 2 0 0 1-2-.4l-84.53-74.15L215 45.5Z"/></svg>Записаться</a>
+      <a class="btn g" href="#ceny">Цены</a>
+      <span class="ot">Установка линз <b>от 12&nbsp;000&nbsp;Р</b></span>
+    </div>
+  </div>
+  <div class="neon"></div>
+  <div class="tag">Вариант А</div>
+</section>
+
+<!-- Б -->
+<section class="sec heroB" id="b" data-name="Главный экран Б">
+  <div class="ph"><img src="img/hero_b.jpg" alt=""></div>
+  <div class="t">
+    <div class="k1 rv up">Профессиональный</div>
+    <div class="k2 rv up" style="--d:1">Автосвет</div>
+  </div>
+  <div class="row">
+    <div class="ic rv" style="--d:3"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M122 40V16a6 6 0 0 1 12 0v24a6 6 0 0 1-12 0m68 88a62 62 0 1 1-62-62a62.07 62.07 0 0 1 62 62m-12 0a50 50 0 1 0-50 50a50.06 50.06 0 0 0 50-50M59.76 68.24a6 6 0 1 0 8.48-8.48l-16-16a6 6 0 0 0-8.48 8.48Zm0 119.52l-16 16a6 6 0 1 0 8.48 8.48l16-16a6 6 0 1 0-8.48-8.48M192 70a6 6 0 0 0 4.24-1.76l16-16a6 6 0 0 0-8.48-8.48l-16 16A6 6 0 0 0 192 70m4.24 117.76a6 6 0 0 0-8.48 8.48l16 16a6 6 0 0 0 8.48-8.48ZM46 128a6 6 0 0 0-6-6H16a6 6 0 0 0 0 12h24a6 6 0 0 0 6-6m82 82a6 6 0 0 0-6 6v24a6 6 0 0 0 12 0v-24a6 6 0 0 0-6-6m112-88h-24a6 6 0 0 0 0 12h24a6 6 0 0 0 0-12"/></svg></i>Яркий<br>свет</div>
+    <div class="ic rv" style="--d:4"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M208 42H48a14 14 0 0 0-14 14v56c0 51.94 25.12 83.4 46.2 100.64c22.73 18.6 45.27 24.89 46.22 25.15a6 6 0 0 0 3.16 0c.95-.26 23.49-6.55 46.22-25.15C196.88 195.4 222 163.94 222 112V56a14 14 0 0 0-14-14m2 70c0 37.76-13.94 68.39-41.44 91.06A131.2 131.2 0 0 1 128 225.72a131 131 0 0 1-40.56-22.66C59.94 180.39 46 149.76 46 112V56a2 2 0 0 1 2-2h160a2 2 0 0 1 2 2Zm-37.76-12.24a6 6 0 0 1 0 8.48l-56 56a6 6 0 0 1-8.48 0l-24-24a6 6 0 0 1 8.48-8.48L112 151.51l51.76-51.75a6 6 0 0 1 8.48 0"/></svg></i>Надёжные<br>решения</div>
+    <div class="ic rv" style="--d:5"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46m0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34m108-54.4a6 6 0 0 0-2.92-4l-30.44-17.38l-.42-.71l-.12-34.31a6 6 0 0 0-2.1-4.56a110.1 110.1 0 0 0-36.07-20.31a6 6 0 0 0-4.84.45l-30.63 17.08h-1l-30.55-17.1a6 6 0 0 0-4.86-.44A109.9 109.9 0 0 0 56 46.68a6 6 0 0 0-2.12 4.55l-.16 34.34c-.14.23-.28.47-.41.71l-30.4 17.29a6 6 0 0 0-2.91 4.05a104.8 104.8 0 0 0 0 40.78a6 6 0 0 0 2.92 4l30.42 17.33l.42.71l.12 34.31a6 6 0 0 0 2.12 4.61a110.1 110.1 0 0 0 36.07 20.31a6 6 0 0 0 4.84-.45l30.61-17.08h1l30.56 17.1a6.1 6.1 0 0 0 2.92.76a5.8 5.8 0 0 0 1.93-.32a109.9 109.9 0 0 0 36-20.36a6 6 0 0 0 2.12-4.55l.16-34.34c.14-.23.28-.47.41-.71l30.42-17.29a6 6 0 0 0 2.92-4.05a104.8 104.8 0 0 0 .04-40.78m-11.25 35.79l-29.43 16.71a6.07 6.07 0 0 0-2.28 2.3c-.59 1-1.21 2.11-1.86 3.14a6 6 0 0 0-.91 3.16l-.16 33.21a98.2 98.2 0 0 1-27.52 15.53L133 200.88a6 6 0 0 0-2.93-.77h-3.88a6 6 0 0 0-3.07.76l-29.67 16.56a98 98 0 0 1-27.56-15.49l-.12-33.17a6 6 0 0 0-.91-3.16c-.64-1-1.27-2.08-1.86-3.14a6 6 0 0 0-2.27-2.3L31.3 143.4a93 93 0 0 1 0-30.79L60.68 95.9A6.07 6.07 0 0 0 63 93.6c.59-1 1.21-2.11 1.86-3.14a6 6 0 0 0 .91-3.16l.16-33.21a98.2 98.2 0 0 1 27.48-15.53L123 55.12a5.8 5.8 0 0 0 3.07.76h3.74a6 6 0 0 0 3.07-.76l29.65-16.56a98 98 0 0 1 27.56 15.49l.12 33.17a6 6 0 0 0 .91 3.16c.64 1 1.27 2.08 1.86 3.14a6 6 0 0 0 2.27 2.3l29.45 16.78a93 93 0 0 1 .03 30.79Z"/></svg></i>Профессиональная<br>установка</div>
+    <a class="btn r rv" style="--d:6" href="https://t.me/ledavtoekb">Записаться</a>
+  </div>
+  <div class="neon"></div>
+  <div class="tag">Вариант Б</div>
+</section>
+
+<!-- Шрифты -->
+<section class="sec fonts" id="f" data-name="Шрифты">
+  <h2 class="h rv up">Шрифты</h2>
+  <p class="sub rv" style="--d:1">Нажми на образец, и он встанет во все заголовки страницы. Текст везде Inter</p>
+  <div class="fl" id="fl">
+    <button data-f="1" class="rv" style="--d:2"><div class="n">1. Montserrat</div><div class="s1" style="font:500 1em Montserrat">Профессиональный</div><div class="s2" style="font-family:Montserrat;font-weight:800">Автосвет</div><div class="s3" style="font-family:Montserrat;font-weight:800">Установка линз <span>от 12 000 Р</span></div></button>
+    <button data-f="2" class="rv" style="--d:3"><div class="n">2. Unbounded</div><div class="s1" style="font:400 1em Unbounded">Профессиональный</div><div class="s2" style="font-family:Unbounded;font-weight:700">Автосвет</div><div class="s3" style="font-family:Unbounded;font-weight:700">Установка линз <span>от 12 000 Р</span></div></button>
+    <button data-f="3" class="rv" style="--d:4"><div class="n">3. Exo 2</div><div class="s1" style="font:500 1em 'Exo 2'">Профессиональный</div><div class="s2" style="font-family:'Exo 2';font-weight:800">Автосвет</div><div class="s3" style="font-family:'Exo 2';font-weight:800">Установка линз <span>от 12 000 Р</span></div></button>
+    <button data-f="4" class="rv" style="--d:5"><div class="n">4. Russo One</div><div class="s1" style="font:400 1em 'Russo One'">Профессиональный</div><div class="s2" style="font-family:'Russo One'">Автосвет</div><div class="s3" style="font-family:'Russo One'">Установка линз <span>от 12 000 Р</span></div></button>
+    <button data-f="5" class="rv" style="--d:6"><div class="n">5. Tektur</div><div class="s1" style="font:500 1em Tektur">Профессиональный</div><div class="s2" style="font-family:Tektur;font-weight:700">Автосвет</div><div class="s3" style="font-family:Tektur;font-weight:700">Установка линз <span>от 12 000 Р</span></div></button>
+  </div>
+</section>
+
+<!-- Цены -->
+<section class="sec prices" id="ceny" data-name="Цены">
+  <div>
+    <h2 class="h rv up">Цены</h2>
+    <div class="tabs rv" style="--d:2" id="tabs"></div>
+  </div>
+  <div class="pr-r rv" style="--d:3">
+    <div class="pic" id="pic"></div>
+    <div class="list" id="list"></div>
+    <a class="btn r" href="https://t.me/ledavtoekb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M227.57 27.7a7 7 0 0 0-7.13-1.22L17.78 105.79a12.23 12.23 0 0 0 2.1 23.39L74 139.81V200a14 14 0 0 0 24.08 9.71l26.64-27.63l41.58 36.45a13.9 13.9 0 0 0 9.2 3.49a14.3 14.3 0 0 0 4.36-.69a13.86 13.86 0 0 0 9.34-10.17l40.62-176.59a7 7 0 0 0-2.25-6.87M22.05 117.37a.46.46 0 0 1 0-.32a.5.5 0 0 1 .15-.08l159.71-62.52l-103.3 74l-56.41-11.04Zm67.39 84A2 2 0 0 1 86 200v-51.89l29.69 26Zm88.07 7.08a1.93 1.93 0 0 1-1.34 1.44a2 2 0 0 1-2-.4l-84.53-74.15L215 45.5Z"/></svg>Записаться</a>
+  </div>
+</section>
+
+<div class="panel" id="panel">
+  <div class="r"><b>Палитра</b><button class="sw on" data-p="1" title="Чёрный и красный, как превью"><i style="background:linear-gradient(90deg,#0B0B0D 50%,#D61016 50%)"></i></button><button class="sw" data-p="2" title="Графит и красный"><i style="background:linear-gradient(90deg,#17181B 50%,#E3121B 50%)"></i></button><button class="sw" data-p="3" title="Чёрный и неон"><i style="background:linear-gradient(90deg,#060607 50%,#FF2630 50%);box-shadow:0 0 8px #FF2630"></i></button></div>
+  <div class="r"><b>Шрифт</b><button data-f="1" class="on">1</button><button data-f="2">2</button><button data-f="3">3</button><button data-f="4">4</button><button data-f="5">5</button></div>
+</div>
+
+<script>
+// цены из карточки Яндекс Карт (обновлено 23.10, источник: представитель организации)
+const G=[
+ ['Линзы','img/linzy.jpg',[['Установка линз',12000],['Замена линз',10000]]],
+ ['Тюнинг','img/fary.jpg',[['Кастомный тюнинг фар',15000],['Авторская покраска масок фар',5000],['Покраска масок фар',2000]]],
+ ['Ремонт фар','img/ptf.jpg',[['Замена корпуса фары',5000],['Замена стекла фары',4000],['Устранение запотевания фар',5000],['Ремонт штатных светодиодов фар и фонарей',5000],['Ремонт проводки фар',1000],['Пайка корпуса фары',500],['Пайка стекла фары',500]]],
+ ['Полировка','img/polir.jpg',[['Полировка стекла фар снаружи',1000],['Полировка стекла фар изнутри',6000]]],
+ ['Свет','img/svet.jpg',[['Замена ламп',500],['Регулировка света',500],['Ремонт регулировки света',1000],['Замена ПТФ',4000],['Замена оптики',1000]]],
+ ['Допоборудование','img/hero_b.jpg',[['Установка камеры заднего вида',2500],['Установка магнитолы',2500],['Установка парктроников',5000],['Установка сигнализации',9000]]],
+];
+const fmt=n=>n.toLocaleString('ru-RU').replace(/\s/g,' ');
+const tabs=document.getElementById('tabs'),list=document.getElementById('list'),pic=document.getElementById('pic');
+G.forEach((g,i)=>{const b=document.createElement('button');b.textContent=g[0];b.onclick=()=>show(i);tabs.appendChild(b);
+ const im=new Image();im.src=g[1];im.alt='';pic.appendChild(im);});
+function show(i){[...tabs.children].forEach((b,k)=>b.classList.toggle('on',k===i));[...pic.children].forEach((m,k)=>m.classList.toggle('on',k===i));
+ list.innerHTML=G[i][2].map((r,k)=>`<div class="it" style="--d:${k}"><span class="nm">${r[0]}</span><span class="pr"><small>от</small>${fmt(r[1])} Р</span></div>`).join('');}
+show(0);
+
+// появление экранов (движение с его сайта)
+const secs=[...document.querySelectorAll('.sec')],dots=document.getElementById('dots');
+secs.forEach(s=>{const a=document.createElement('a');a.href='#'+s.id;a.innerHTML='<span>'+s.dataset.name+'</span>';dots.appendChild(a)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.25});
+secs.forEach(s=>io.observe(s));
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=secs.indexOf(e.target);[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))}}),{threshold:.55});
+secs.forEach(s=>io2.observe(s));
+addEventListener('scroll',()=>document.getElementById('top').classList.toggle('s',scrollY>40),{passive:true});
+
+// панель палитры и шрифта
+const R=document.documentElement;
+function setF(f){R.dataset.font=f;document.querySelectorAll('[data-f]').forEach(b=>b.classList.toggle('on',b.dataset.f==f))}
+document.querySelectorAll('[data-f]').forEach(b=>b.addEventListener('click',()=>setF(b.dataset.f)));
+document.querySelectorAll('[data-p]').forEach(b=>b.addEventListener('click',()=>{R.dataset.pal=b.dataset.p;document.querySelectorAll('[data-p]').forEach(x=>x.classList.toggle('on',x===b))}));
+setF(1);
+</script>
+</body>
+</html>
