@@ -47,7 +47,6 @@ button{font:inherit}
 .menu a:hover{opacity:1}
 .menu a:hover::after{transform:scaleX(1)}
 .tel{font-weight:600;font-size:clamp(18px,1.3vw,21px);white-space:nowrap}
-.hbt{display:flex;gap:12px}
 .hdr .btn{height:clamp(52px,3.9vw,60px);padding:0 clamp(22px,1.8vw,32px);font-size:clamp(16px,1.2vw,19px)}
 
 /* ЛИСТЫ: перелистывание из прошлой версии */
@@ -61,15 +60,16 @@ main{position:relative}
 
 /* ГЛАВНЫЙ */
 .hero{padding:0 !important;height:100svh;min-height:640px;overflow:hidden;background:var(--graph)}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%;animation:zoom 9s var(--ease) both}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;animation:zoom 9s var(--ease) both}
 @keyframes zoom{from{transform:scale(1.06)}to{transform:scale(1)}}
-.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,34,38,.66) 0%,rgba(30,34,38,.32) 44%,rgba(30,34,38,0) 68%),linear-gradient(0deg,rgba(30,34,38,.5) 0%,rgba(30,34,38,0) 46%)}
-.htxt{position:absolute;left:var(--g);bottom:calc(var(--arc) + clamp(40px,5vh,80px));z-index:5;color:#fff}
-.htxt h1{font-size:clamp(40px,4.4vw,86px);line-height:1.02;font-weight:700;text-transform:uppercase;letter-spacing:-.01em}
+.shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,34,38,.82) 0%,rgba(30,34,38,.62) 22%,rgba(30,34,38,.18) 40%,rgba(30,34,38,0) 52%)}
+.htxt{position:absolute;left:var(--g);right:var(--g);bottom:calc(var(--arc) + clamp(24px,3vh,48px));z-index:5;color:#fff;display:grid;grid-template-columns:auto minmax(0,600px);grid-template-rows:auto auto;column-gap:clamp(32px,4vw,90px);align-items:end;justify-content:space-between}
+.htxt h1{grid-row:1/3}
+.htxt h1{font-size:clamp(38px,4vw,78px);line-height:1.02;font-weight:700;text-transform:uppercase;letter-spacing:-.01em}
 .htxt h1 span{display:block}
 .htxt h1 em{font-style:normal;color:var(--peach);display:block}
-.htxt p{font-size:clamp(19px,1.5vw,26px);line-height:1.45;margin-top:22px;max-width:640px;opacity:.95}
-.htxt .btn{margin-top:34px;height:74px;padding:0 48px;font-size:21px}
+.htxt p{font-size:clamp(18px,1.35vw,24px);line-height:1.45;text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.htxt .btn{justify-self:start;margin-top:22px;height:70px;padding:0 44px;font-size:21px}
 .hero .up{opacity:0;transform:translateY(16px);animation:up .9s var(--ease) forwards}
 .hero .d1{animation-delay:.15s}.hero .d2{animation-delay:.3s}.hero .d3{animation-delay:.45s}
 @keyframes up{to{opacity:1;transform:none}}
@@ -181,6 +181,16 @@ main{position:relative}
 .foot ul a:hover{color:var(--acc)}
 .copy{grid-column:1/-1;border-top:1px solid rgba(34,38,42,.12);padding-top:22px;font-size:15px;color:var(--soft)}
 
+/* плавающая кнопка «Написать» справа внизу */
+.pis{position:fixed;z-index:120;right:var(--g);bottom:28px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.pis .pb{height:68px;padding:0 30px 0 24px;font-size:20px}
+.pis .pb iconify-icon{font-size:28px}
+.pl{display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.pis.on .pl,.pis:hover .pl{opacity:1;transform:none;pointer-events:auto}
+.pl a{display:flex;align-items:center;gap:10px;height:54px;padding:0 22px 0 14px;border-radius:999px;background:#fff;font-weight:600;font-size:17px;box-shadow:0 8px 24px rgba(30,30,40,.16);transition:transform .6s var(--ease)}
+.pl a:hover{transform:translateX(-3px)}
+.pl iconify-icon,.pl b{width:32px;text-align:center;font-size:26px;color:var(--acc)}
+.pl b{font-size:12px;font-weight:800}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 </style>
@@ -191,13 +201,23 @@ main{position:relative}
  <a class="logo" href="#top"><span>Я</span><svg viewBox="0 0 24 24"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg><span>учиться</span></a>
  <nav class="menu"><a href="#napr">Направления</a><a href="#diag">Диагностика</a><a href="#otz">Отзывы</a><a href="#kont">Контакты</a></nav>
  <a class="tel" href="tel:+79231301230">+7 923 130-12-30</a>
- <div class="hbt"><a class="btn m" href="https://t.me/natalya_feelatova">Написать</a><a class="btn" href="#kont">Записаться</a></div>
+ <a class="btn" href="#kont">Записаться</a>
 </header>
+
+<div class="pis" id="pis">
+ <div class="pl">
+  <a href="https://t.me/natalya_feelatova"><iconify-icon icon="tabler:brand-telegram"></iconify-icon>Telegram</a>
+  <a href="https://wa.me/79231301230"><iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>WhatsApp</a>
+  <a href="https://max.ru/id540697181743_biz"><b>MAX</b>MAX</a>
+  <a href="tel:+79231301230"><iconify-icon icon="tabler:phone"></iconify-icon>Позвонить</a>
+ </div>
+ <button class="btn pb" onclick="this.parentNode.classList.toggle('on')"><iconify-icon icon="tabler:message-circle"></iconify-icon>Написать</button>
+</div>
 
 <main>
 
 <section class="sheet hero" id="top">
- <img src="img/h_main.jpg" alt="Нейрофитнес на балансбордах в студии">
+ <img src="img/h_main.jpg" alt="Наталья Филатова с педагогами на семинаре по каллиграфии">
  <div class="shade"></div>
  <div class="htxt">
   <h1 class="up"><span>Студии, куда дети</span><em>бегут на уроки</em></h1>
