@@ -756,9 +756,7 @@ function ok(){b.textContent='Скопировано';b.classList.add('ok')}
 if(navigator.clipboard){navigator.clipboard.writeText(t.value).then(ok,function(){t.hidden=false;t.select();document.execCommand('copy');t.hidden=true;ok()})}
 else{t.hidden=false;t.select();document.execCommand('copy');t.hidden=true;ok()}}});
 var SP=document.getElementById('spisok');if(SP)SP.onclick=function(){var a=[];document.querySelectorAll('.sent').forEach(function(b){if(S[b.dataset.n])a.push('@'+b.dataset.u)});
-var t='Отправлено 2026-11-13: '+a.length+'
-'+a.join('
-');function ok(){SP.textContent='Скопировано: '+a.length}
+var t='Отправлено 2026-11-13: '+a.length+'\n'+a.join('\n');function ok(){SP.textContent='Скопировано: '+a.length}
 if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok,function(){prompt('Скопируй',t)})}else{prompt('Скопируй',t)}};
 upd();
 </script></body></html>
