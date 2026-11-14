@@ -43,9 +43,7 @@ button{font:inherit}
 .logo svg{width:1em;height:1em;fill:var(--acc)}
 .menu{display:flex;gap:clamp(22px,2.4vw,46px);font-size:clamp(18px,1.3vw,21px);font-weight:500;margin-left:auto}
 .menu a{position:relative;opacity:.85;transition:opacity .3s}
-.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--acc);transform:scaleX(0);transition:transform .5s var(--ease)}
 .menu a:hover{opacity:1}
-.menu a:hover::after{transform:scaleX(1)}
 .tel{font-weight:600;font-size:clamp(18px,1.3vw,21px);white-space:nowrap}
 .hdr .btn{height:clamp(52px,3.9vw,60px);padding:0 clamp(22px,1.8vw,32px);font-size:clamp(16px,1.2vw,19px)}
 
@@ -87,8 +85,6 @@ main{position:relative}
 .t1 img{object-position:40% 40%} .t2 img{object-position:50% 30%} .t3 img{object-position:50% 20%}
 .tin{position:absolute;left:0;right:0;bottom:0;padding:0 clamp(26px,2.4vw,44px) clamp(30px,2.6vw,48px);text-align:center}
 .tin h3{font-size:clamp(34px,2.9vw,56px);line-height:1;font-weight:700;text-transform:uppercase}
-.tin h3 iconify-icon{font-size:.62em;vertical-align:.08em;margin-left:.2em;transition:transform .6s var(--ease)}
-.tile:hover .tin h3 iconify-icon{transform:translateX(6px)}
 .tin .lead{font-family:var(--fh);font-weight:600;font-size:clamp(18px,1.3vw,23px);margin-top:12px}
 .tin p{font-size:clamp(16px,1.1vw,19px);line-height:1.5;max-width:460px;margin-inline:auto;max-height:0;opacity:0;overflow:hidden;transition:max-height .8s var(--ease),opacity .6s var(--ease),margin .8s var(--ease)}
 .tile:hover .tin p{max-height:160px;opacity:.95;margin-top:14px}
@@ -129,7 +125,6 @@ main{position:relative}
 .otz{background:var(--peachL)}
 .dopo{display:grid;grid-template-columns:minmax(0,587px) auto minmax(0,587px);justify-content:center;align-items:center;gap:clamp(20px,2.4vw,48px);margin-top:clamp(36px,3.4vw,60px)}
 .arr{display:grid;place-items:center;text-align:center;width:clamp(120px,9vw,160px);height:clamp(120px,9vw,160px);border-radius:50%;background:var(--acc);color:#fff;font-family:var(--fh);font-weight:700;font-size:clamp(20px,1.5vw,26px);line-height:1.1;box-shadow:0 16px 36px rgba(221,87,55,.3)}
-.arr iconify-icon{font-size:1.5em}
 .page{position:relative;border-radius:32px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(180,100,70,.12);transition:transform .8s var(--ease)}
 .page:nth-child(1){transform:rotate(-1.2deg)}
 .page:nth-child(2){transform:rotate(1.2deg)}
@@ -181,16 +176,17 @@ main{position:relative}
 .foot ul a:hover{color:var(--acc)}
 .copy{grid-column:1/-1;border-top:1px solid rgba(34,38,42,.12);padding-top:22px;font-size:15px;color:var(--soft)}
 
-/* плавающая кнопка «Написать» справа внизу */
-.pis{position:fixed;z-index:120;right:var(--g);bottom:28px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-.pis .pb{height:68px;padding:0 30px 0 24px;font-size:20px}
-.pis .pb iconify-icon{font-size:28px}
-.pl{display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .5s var(--ease),transform .6s var(--ease)}
-.pis.on .pl,.pis:hover .pl{opacity:1;transform:none;pointer-events:auto}
-.pl a{display:flex;align-items:center;gap:10px;height:54px;padding:0 22px 0 14px;border-radius:999px;background:#fff;font-weight:600;font-size:17px;box-shadow:0 8px 24px rgba(30,30,40,.16);transition:transform .6s var(--ease)}
-.pl a:hover{transform:translateX(-3px)}
-.pl iconify-icon,.pl b{width:32px;text-align:center;font-size:26px;color:var(--acc)}
-.pl b{font-size:12px;font-weight:800}
+/* круглая кнопка связи из прошлой версии */
+.svyaz{position:fixed;z-index:120;right:var(--g);bottom:28px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.svyaz .list{display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.svyaz.on .list,.svyaz:hover .list{opacity:1;transform:none;pointer-events:auto}
+.svyaz .list a{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;font:700 14px Inter,sans-serif;color:var(--ink);
+ background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.6)) padding-box,linear-gradient(135deg,#fff,rgba(255,255,255,.3)) border-box;border:2px solid transparent;
+ backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 22px rgba(30,30,40,.14);transition:transform .6s var(--ease)}
+.svyaz .list a:hover{transform:translateY(-2px) scale(1.05)}
+.svyaz .list iconify-icon{font-size:32px;color:var(--acc)}
+.svyaz .main{width:84px;height:84px;padding:0;border-radius:50%}
+.svyaz .main iconify-icon{font-size:40px}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 </style>
@@ -204,14 +200,14 @@ main{position:relative}
  <a class="btn" href="#kont">Записаться</a>
 </header>
 
-<div class="pis" id="pis">
- <div class="pl">
-  <a href="https://t.me/natalya_feelatova"><iconify-icon icon="tabler:brand-telegram"></iconify-icon>Telegram</a>
-  <a href="https://wa.me/79231301230"><iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>WhatsApp</a>
-  <a href="https://max.ru/id540697181743_biz"><b>MAX</b>MAX</a>
-  <a href="tel:+79231301230"><iconify-icon icon="tabler:phone"></iconify-icon>Позвонить</a>
+<div class="svyaz" id="svyaz">
+ <div class="list">
+  <a href="https://t.me/natalya_feelatova" aria-label="Telegram"><iconify-icon icon="tabler:brand-telegram"></iconify-icon></a>
+  <a href="https://wa.me/79231301230" aria-label="WhatsApp"><iconify-icon icon="tabler:brand-whatsapp"></iconify-icon></a>
+  <a href="https://max.ru/id540697181743_biz" aria-label="MAX">MAX</a>
+  <a href="tel:+79231301230" aria-label="Позвонить"><iconify-icon icon="tabler:phone"></iconify-icon></a>
  </div>
- <button class="btn pb" onclick="this.parentNode.classList.toggle('on')"><iconify-icon icon="tabler:message-circle"></iconify-icon>Написать</button>
+ <button class="btn main" aria-label="Связаться" onclick="this.parentNode.classList.toggle('on')"><iconify-icon icon="tabler:message-circle"></iconify-icon></button>
 </div>
 
 <main>
@@ -231,13 +227,13 @@ main{position:relative}
  <p class="sub">Занятия для детей, взрослых и тех, кто учит детей сам.</p>
  <div class="tiles">
   <a class="tile t1 rv" href="#diag"><img src="img/t_deti.jpg" alt="Мальчик пишет в тетради на занятии">
-   <div class="tin"><h3>Детям<iconify-icon icon="tabler:arrow-right"></iconify-icon></h3><div class="lead">Почерк, чтение, счёт</div>
+   <div class="tin"><h3>Детям</h3><div class="lead">Почерк, чтение, счёт</div>
     <p>Занимаемся один на один, потом закрепляем навык в мини-группе на 2-3 человека. Ещё есть нейрофитнес на балансбордах и каллиграфия пером.</p></div></a>
   <a class="tile t2 rv" href="#kont"><img src="img/t_vzr.jpg" alt="Взрослая рука пишет в ежедневнике">
-   <div class="tin"><h3>Взрослым<iconify-icon icon="tabler:arrow-right"></iconify-icon></h3><div class="lead">Почерк, который можно прочитать</div>
+   <div class="tin"><h3>Взрослым</h3><div class="lead">Почерк, который можно прочитать</div>
     <p>Курс для взрослых, чей почерк трудно разобрать. Занятия ведёт Наталья на Танковой 24.</p></div></a>
   <a class="tile t3 rv" href="#kont"><img src="img/t_ped.jpg" alt="Практикум для педагогов детского сада">
-   <div class="tin"><h3>Педагогам<iconify-icon icon="tabler:arrow-right"></iconify-icon></h3><div class="lead">Курс с НГПУ и практикумы</div>
+   <div class="tin"><h3>Педагогам</h3><div class="lead">Курс с НГПУ и практикумы</div>
     <p>Разбираем трудности учеников на конкретных случаях. С практикумом Наталья может приехать прямо в детский сад.</p></div></a>
  </div>
 </section>
@@ -281,7 +277,7 @@ main{position:relative}
  <p class="sub">Родители пишут, тетради показывают.</p>
  <div class="dopo">
   <figure class="page rv" style="margin:0"><span class="tag">До</span><img src="img/do.jpg" alt="Тетрадь до занятий"></figure>
-  <div class="arr rv"><div><iconify-icon icon="tabler:arrow-right"></iconify-icon><br>3 месяца</div></div>
+  <div class="arr rv">3 месяца</div>
   <figure class="page rv" style="margin:0"><span class="tag">После</span><img src="img/posle.jpg" alt="Тетрадь после трёх месяцев занятий"></figure>
  </div>
  <p class="cap">Три месяца занятий раз в неделю. Фото тетради из канала Натальи.</p>
