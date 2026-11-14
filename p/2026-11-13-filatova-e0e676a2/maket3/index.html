@@ -222,6 +222,57 @@ main{position:relative}
 .sheet.hero3{padding:0 !important;min-height:100svh;height:100svh;background:var(--graph)}
 .napr3{background:var(--bg)}
 :root{--mintD:#4E9785;--peachD:#D9805F}
+
+/* v3 блоки по NY Preschool */
+.diag3{background:var(--white)}
+.dgrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:clamp(16px,1.6vw,28px);margin-top:clamp(36px,3.4vw,60px)}
+.dphoto,.ophoto,.kphoto{border-radius:32px;overflow:hidden}
+.dphoto img,.ophoto img,.kphoto img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.dphoto:hover img,.ophoto:hover img,.kphoto:hover img{transform:scale(1.04)}
+.ht{font-size:clamp(28px,2.4vw,46px);line-height:1.1;margin-bottom:clamp(18px,1.6vw,28px)}
+.signs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.1vw,18px)}
+.sg{background:#EAF5F1;border-radius:26px;padding:clamp(22px,1.8vw,32px) clamp(16px,1.4vw,24px);text-align:center;transition:transform .6s var(--ease)}
+.sg:nth-child(2n){background:#FCEDE6}
+.sg:hover{transform:translateY(-2px)}
+.sg .ic{display:inline-grid;place-items:center;width:64px;height:64px;font-size:64px;color:var(--acc)}
+.sg p{margin-top:12px;font-size:clamp(16px,1.1vw,19px);line-height:1.4}
+.dcall{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);margin-top:clamp(12px,1.1vw,18px);border-radius:26px;overflow:hidden;background:var(--peach)}
+.dcall img{width:100%;height:100%;object-fit:cover;min-height:260px}
+.dct{padding:clamp(24px,2.2vw,40px);display:flex;flex-direction:column;gap:14px;justify-content:center}
+.dct b{font-family:var(--fh);font-weight:600;font-size:clamp(24px,1.9vw,34px);line-height:1.15}
+.dct p{font-size:clamp(16px,1.15vw,20px)}
+.dct .btn{align-self:flex-start}
+.otz3{background:#FCEDE6}
+.ogrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:clamp(16px,1.6vw,28px);margin-top:clamp(36px,3.4vw,60px)}
+.ophoto{height:clamp(440px,36vw,640px)}
+.obox{position:relative;background:var(--white);border-radius:32px;padding:clamp(40px,4vw,80px) clamp(32px,4.4vw,90px);display:flex;flex-direction:column;justify-content:center;text-align:center}
+.mark{font-family:var(--fh);font-size:clamp(120px,10vw,190px);line-height:.6;color:var(--peach);height:.5em}
+.qs{display:grid;margin-top:clamp(10px,1vw,20px)}
+.q{grid-area:1/1;margin:0;opacity:0;transform:translateY(8px);transition:opacity .7s var(--ease),transform .7s var(--ease);pointer-events:none;display:flex;flex-direction:column;justify-content:center}
+.q.on{opacity:1;transform:none;pointer-events:auto}
+.q blockquote{margin:0;font-size:clamp(18px,1.35vw,24px);line-height:1.55}
+.q figcaption{margin-top:22px;font-family:var(--fh);font-weight:600;font-size:clamp(18px,1.3vw,22px);color:var(--acc)}
+.octl{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:clamp(24px,2.4vw,40px)}
+.octl button{width:56px;height:56px;border-radius:50%;border:2px solid var(--peach);background:transparent;color:var(--acc);font-size:24px;display:grid;place-items:center;cursor:pointer;transition:background .4s,color .4s,transform .6s var(--ease)}
+.octl button:hover{background:var(--acc);border-color:var(--acc);color:#fff;transform:translateY(-2px)}
+.odots{display:flex;gap:8px}
+.odots i{width:10px;height:10px;border-radius:999px;background:var(--peach);cursor:pointer;transition:width .6s var(--ease),background .3s}
+.odots i.on{width:32px;background:var(--acc)}
+.kont3{background:#EAF5F1}
+.kgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(16px,1.6vw,28px);margin-top:clamp(36px,3.4vw,60px)}
+.kphoto{min-height:clamp(440px,36vw,620px)}
+.sts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.1vw,18px)}
+.st{background:var(--white);border-radius:26px;padding:clamp(22px,1.8vw,30px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;transition:transform .6s var(--ease)}
+.st:hover{transform:translateY(-2px)}
+.st iconify-icon{font-size:40px;color:var(--mintD)}
+.st b{font-family:var(--fh);font-weight:600;font-size:clamp(22px,1.7vw,30px)}
+.st small{font-size:16px;color:var(--soft)}
+.kcta{margin-top:clamp(12px,1.1vw,18px);background:var(--graph);color:#fff;border-radius:26px;padding:clamp(28px,2.6vw,44px);text-align:center}
+.kcta p{font-size:clamp(17px,1.2vw,21px);opacity:.85}
+.ktel{display:block;font-family:var(--fh);font-weight:600;font-size:clamp(30px,2.6vw,48px);margin:10px 0 22px}
+.kbtns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn.w{background:linear-gradient(135deg,#fff,#F1ECE6) padding-box,linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.4)) border-box;color:var(--ink);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.kbtns iconify-icon{font-size:22px}
 </style>
 </head>
 <body>
@@ -269,58 +320,39 @@ main{position:relative}
  </div>
 </section>
 
-<section class="sheet diag" id="diag">
+<section class="sheet diag3" id="diag">
  <h2 class="h2">Диагностика</h2>
  <p class="sub">Проводит Наталья Филатова на Красина 54 и Танковой 24.</p>
- <h3 class="ht">Когда нужен нейропсихолог, а не репетитор</h3>
- <div class="cols">
-   <div class="priz">
-    <div><iconify-icon icon="tabler:ear"></iconify-icon>Не слышит задание с первого раза</div>
-    <div><iconify-icon icon="tabler:speakerphone"></iconify-icon>Выкрикивает ответы, не дослушав вопрос</div>
-    <div><iconify-icon icon="tabler:run"></iconify-icon>Встаёт и ходит во время урока</div>
-    <div><iconify-icon icon="tabler:backpack"></iconify-icon>Собирает портфель час и всё равно что-то забывает</div>
-    <div><iconify-icon icon="tabler:battery-1"></iconify-icon>Через 15 минут занятий устаёт и капризничает</div>
-    <div><iconify-icon icon="tabler:flip-horizontal"></iconify-icon>Путает б и д, пишет буквы зеркально</div>
-   </div>
-  <div class="side">
-   <p class="q">Уроки по 3 часа, а результата нет? Сначала на диагностику.</p>
-   <p>После диагностики понятно, над чем работать. Наталья подбирает упражнения и честно объясняет родителям, что происходит.</p>
-   <a class="btn" href="#kont">Записаться на диагностику</a>
+ <div class="dgrid">
+  <div class="dphoto"><img src="img/d_ruki.jpg" alt="Упражнение на доске-лабиринте"></div>
+  <div class="dright">
+   <h3 class="ht">Узнаёте своего ребёнка?</h3>
+   <div class="signs"><div class="sg"><span class="ic"><iconify-icon icon="tabler:ear"></iconify-icon></span><p>Не слышит задание с первого раза</p></div><div class="sg"><span class="ic"><iconify-icon icon="tabler:speakerphone"></iconify-icon></span><p>Выкрикивает ответы, не дослушав вопрос</p></div><div class="sg"><span class="ic"><iconify-icon icon="tabler:run"></iconify-icon></span><p>Встаёт и ходит во время урока</p></div><div class="sg"><span class="ic"><iconify-icon icon="tabler:backpack"></iconify-icon></span><p>Собирает портфель час и всё равно что-то забывает</p></div><div class="sg"><span class="ic"><iconify-icon icon="tabler:battery-1"></iconify-icon></span><p>Через 15 минут занятий устаёт и капризничает</p></div><div class="sg"><span class="ic"><iconify-icon icon="tabler:flip-horizontal"></iconify-icon></span><p>Путает б и д, пишет буквы зеркально</p></div></div>
+   <div class="dcall"><img src="img/d_tetr.jpg" alt="Прописи на занятии"><div class="dct"><b>Уроки по 3 часа, а результата нет?</b><p>После диагностики понятно, над чем работать. Наталья подбирает упражнения и честно объясняет родителям, что происходит.</p><a class="btn" href="#kont">Записаться на диагностику</a></div></div>
   </div>
  </div>
 </section>
 
-
-
-<section class="sheet otz" id="otz">
+<section class="sheet otz3" id="otz">
  <h2 class="h2">Отзывы</h2>
- <p class="sub">Отзывы родителей из 2ГИС.</p>
- <div class="rev">
-  <article><p>Пришли к Наталье с проблемами в учёбе: многочисленными ошибками в русском языке, невнимательностью, сложностью концентрировать внимание при выполнении заданий. Что произошло после... Ребёнок с радостью идёт на занятия к Наталье и готов ходить на них вместо школы) Но, кстати, и в школу стал ходить с большей радостью) Стал делать уроки самостоятельно, не просит посидеть рядом при выполнении, делает быстро и старательно. И вишенка на торте: значительно улучшились оценки по русскому!) Наталья, благодарю за Ваш труд, терпение, позитивные и такие интересные занятия.</p><b>Ol Angel</b></article>
-  <article><p>Большое спасибо за Вашу работу. Теперь наши тетрадки стали чище, а оценки лучше и всё это в лёгкой, игровой форме для ребёнка. Это было супер! Спасибо!</p><b>Евгения Аверкиева</b></article>
-  <article><p>Большое спасибо Наталье Владимировне! Почерк у сына значительно улучшился после нескольких занятий. Упражнения не только непосредственно письменные, но и на крупную моторику, координацию, баланс, ритм.</p><b>Ксения Лубкина</b></article>
-  <article><p>Ходим на занятия с конца осени) почерк у сына-первоклассника был, прямо скажем, ну совсем не очень)) Сначала не понимала, почему упор был не только на письмо, а делалось ещё великое множество всяких упражнений, но спустя примерно пару месяцев от начала занятий стал появляться видимый результат! У сына начало получаться писать, и не так как ранее, когда одно слово растягивалось широко во всю строчку и часто не попадало по высоте в саму строку, а аккуратно и самое главное читабельно) Наталья Владимировна, спасибо вам за терпение и за найденный подход, ведь мальчик у нас далеко не самый усидчивый и послушный) На занятия идёт с удовольствием!</p><b>Лена Фролова</b></article>
-  <article><p>Обратились к Наталье с проблемой: дети вообще не умели решать задачи. Понравился подход: она обучает детей не просто школьной программе, а её занятия нацелены на развитие мозга, логики, мышления. Это намного ценнее.</p><b>Дана Новикова</b></article>
-  <article><p>Хочу поблагодарить Наталью за внимательный и индивидуальный подход к каждому ребенку. После первого урока обозначили области для работы, на что обратить внимание. После нескольких занятий у дочери значительно улучшился почерк, стала больше стараться. Рекомендую, для деток очень полезно.</p><b>Екатерина К.</b></article>
-  <article><p>Наталья, спасибо за Вашу работу, полученные рекомендации помогают выровнять недочёты. Ребёнок наконец-то научился писать :) Хотелось бы отметить, что сын после занятий заряжен, ему очень понравилось посещать студию.</p><b>Анна М.</b></article>
-  <article><p>Спасибо большое Наталье за работу, проведённую с дочерью. Действительно есть видимый результат. Подтянулись по математике на 4 и 5. Будем продолжать и дальше работать!</p><b>Анна Антонова</b></article>
-  <article><p>Наталья Владимировна, спасибо большое за Ваш труд! Дочка научилась писать красиво и аккуратно, после ваших занятий вырос интерес к учёбе. На занятие к вам ребёнок бежит с огромным желанием, радостью и интересом. Спасибо!</p><b>Nikolai</b></article>
+ <p class="sub">Что родители пишут в 2ГИС.</p>
+ <div class="ogrid">
+  <div class="ophoto"><img src="img/o_chten.jpg" alt="Чтение на занятии"></div>
+  <div class="obox"><span class="mark">&ldquo;</span><div class="qs"><figure class="q on"><blockquote>Пришли к Наталье с проблемами в учёбе: многочисленными ошибками в русском языке, невнимательностью, сложностью концентрировать внимание при выполнении заданий. Что произошло после... Ребёнок с радостью идёт на занятия к Наталье и готов ходить на них вместо школы) Но, кстати, и в школу стал ходить с большей радостью) Стал делать уроки самостоятельно, не просит посидеть рядом при выполнении, делает быстро и старательно. И вишенка на торте: значительно улучшились оценки по русскому!) Наталья, благодарю за Ваш труд, терпение, позитивные и такие интересные занятия.</blockquote><figcaption>Ol Angel</figcaption></figure><figure class="q"><blockquote>Большое спасибо за Вашу работу. Теперь наши тетрадки стали чище, а оценки лучше и всё это в лёгкой, игровой форме для ребёнка. Это было супер! Спасибо!</blockquote><figcaption>Евгения Аверкиева</figcaption></figure><figure class="q"><blockquote>Большое спасибо Наталье Владимировне! Почерк у сына значительно улучшился после нескольких занятий. Упражнения не только непосредственно письменные, но и на крупную моторику, координацию, баланс, ритм.</blockquote><figcaption>Ксения Лубкина</figcaption></figure><figure class="q"><blockquote>Ходим на занятия с конца осени) почерк у сына-первоклассника был, прямо скажем, ну совсем не очень)) Сначала не понимала, почему упор был не только на письмо, а делалось ещё великое множество всяких упражнений, но спустя примерно пару месяцев от начала занятий стал появляться видимый результат! У сына начало получаться писать, и не так как ранее, когда одно слово растягивалось широко во всю строчку и часто не попадало по высоте в саму строку, а аккуратно и самое главное читабельно) Наталья Владимировна, спасибо вам за терпение и за найденный подход, ведь мальчик у нас далеко не самый усидчивый и послушный) На занятия идёт с удовольствием!</blockquote><figcaption>Лена Фролова</figcaption></figure><figure class="q"><blockquote>Обратились к Наталье с проблемой: дети вообще не умели решать задачи. Понравился подход: она обучает детей не просто школьной программе, а её занятия нацелены на развитие мозга, логики, мышления. Это намного ценнее.</blockquote><figcaption>Дана Новикова</figcaption></figure><figure class="q"><blockquote>Хочу поблагодарить Наталью за внимательный и индивидуальный подход к каждому ребенку. После первого урока обозначили области для работы, на что обратить внимание. После нескольких занятий у дочери значительно улучшился почерк, стала больше стараться. Рекомендую, для деток очень полезно.</blockquote><figcaption>Екатерина К.</figcaption></figure><figure class="q"><blockquote>Наталья, спасибо за Вашу работу, полученные рекомендации помогают выровнять недочёты. Ребёнок наконец-то научился писать :) Хотелось бы отметить, что сын после занятий заряжен, ему очень понравилось посещать студию.</blockquote><figcaption>Анна М.</figcaption></figure><figure class="q"><blockquote>Спасибо большое Наталье за работу, проведённую с дочерью. Действительно есть видимый результат. Подтянулись по математике на 4 и 5. Будем продолжать и дальше работать!</blockquote><figcaption>Анна Антонова</figcaption></figure><figure class="q"><blockquote>Наталья Владимировна, спасибо большое за Ваш труд! Дочка научилась писать красиво и аккуратно, после ваших занятий вырос интерес к учёбе. На занятие к вам ребёнок бежит с огромным желанием, радостью и интересом. Спасибо!</blockquote><figcaption>Nikolai</figcaption></figure></div>
+   <div class="octl"><button id="op" aria-label="Назад"><iconify-icon icon="tabler:chevron-left"></iconify-icon></button><div class="odots" id="od"></div><button id="on" aria-label="Вперёд"><iconify-icon icon="tabler:chevron-right"></iconify-icon></button></div></div>
  </div>
 </section>
 
-<section class="sheet kont" id="kont">
+<section class="sheet kont3" id="kont">
  <h2 class="h2">Контакты</h2>
- <p class="sub">Четыре студии в Новосибирске. Выбирайте ближайшую.</p>
- <div class="adr">
-  <div><b>Красина 54</b><span>офис 504, Дзержинский район</span></div>
-  <div><b>Танковая 24</b><span>Калининский район</span></div>
-  <div><b>Горский 8</b><span>Ленинский район</span></div>
-  <div><b>Энгельса 12</b><span>ОбьГЭС, Советский район</span></div>
- </div>
- <div class="zap">
-  <p>Запишитесь на диагностику и расскажите, что беспокоит.</p>
-  <a class="tel2" href="tel:+79231301230">+7 923 130-12-30</a>
-  <div class="row"><a class="btn" href="https://t.me/natalya_feelatova">Telegram</a><a class="btn glass" href="https://wa.me/79231301230">WhatsApp</a><a class="btn glass" href="https://max.ru/id540697181743_biz">MAX</a></div>
+ <p class="sub">Четыре студии в Новосибирске. Выбирайте ту, что ближе к дому.</p>
+ <div class="kgrid">
+  <div class="kphoto"><img src="img/k_klass.jpg" alt="Класс студии на Танковой 24"></div>
+  <div class="kright">
+   <div class="sts"><div class="st"><iconify-icon icon="tabler:map-pin"></iconify-icon><b>Красина 54</b><small>офис 504, Дзержинский район</small></div><div class="st"><iconify-icon icon="tabler:map-pin"></iconify-icon><b>Танковая 24</b><small>Калининский район</small></div><div class="st"><iconify-icon icon="tabler:map-pin"></iconify-icon><b>Горский 8</b><small>Ленинский район</small></div><div class="st"><iconify-icon icon="tabler:map-pin"></iconify-icon><b>Энгельса 12</b><small>ОбьГЭС, Советский район</small></div></div>
+   <div class="kcta"><p>Запишитесь на диагностику и расскажите, что беспокоит.</p><a class="ktel" href="tel:+79231301230">+7 923 130-12-30</a>
+    <div class="kbtns"><a class="btn" href="https://t.me/natalya_feelatova"><iconify-icon icon="tabler:brand-telegram"></iconify-icon>Telegram</a><a class="btn w" href="https://wa.me/79231301230"><iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>WhatsApp</a><a class="btn w" href="https://max.ru/id540697181743_biz">MAX</a></div></div>
+  </div>
  </div>
 </section>
 </main>
@@ -333,6 +365,11 @@ main{position:relative}
 </footer>
 
 <script>
+// отзывы по одному, как у NY Preschool
+const Q=[...document.querySelectorAll('.q')],OD=document.getElementById('od');let oi=0,ot;
+Q.forEach((q,n)=>{const d=document.createElement('i');d.onclick=()=>og(n);OD.appendChild(d)});
+function og(n){oi=(n+Q.length)%Q.length;Q.forEach((q,k)=>q.classList.toggle('on',k===oi));[...OD.children].forEach((d,k)=>d.classList.toggle('on',k===oi));clearInterval(ot);ot=setInterval(()=>og(oi+1),9000)}
+document.getElementById('op').onclick=()=>og(oi-1);document.getElementById('on').onclick=()=>og(oi+1);og(0);
 // высокий лист прилипает низом, чтобы его было видно целиком до наезда следующего
 function stick(){document.querySelectorAll('.sheet').forEach((s,k)=>{s.style.zIndex=k+1;s.style.top=Math.min(0,innerHeight-s.offsetHeight)+'px'})}
 addEventListener('load',stick);addEventListener('resize',stick);stick();
