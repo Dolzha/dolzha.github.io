@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(revision/geologica-0.woff2) format('truetype');
+}
+
+@font-face {
+  font-family: 'Sofia Sans Extra Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(revision/sofiasansextracondensed-0.woff2) format('truetype');
+}
+
+@font-face {
+  font-family: 'Dela Gothic One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(revision/delagothicone-0.woff2) format('truetype');
+}
+
+@font-face {
+  font-family: 'Tenor Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(revision/tenorsans-0.woff2) format('truetype');
+}
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(revision/bitter-0.woff2) format('truetype');
+}
