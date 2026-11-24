@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Сообщения и звонки, 24 ноября 2026</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: #f4f5f6; color: #20252a; font: 16px/1.6 system-ui, -apple-system, sans-serif; }
+    header, main, nav { max-width: 1000px; margin: auto; padding: 24px; }
+    header { padding-top: 40px; padding-bottom: 16px; }
+    .eyebrow { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #4c5660; margin: 0 0 8px; }
+    h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.15; margin: 0 0 12px; }
+    h2 { margin: 36px 0 16px; font-size: 24px; border-bottom: 2px solid #e2e6ea; padding-bottom: 8px; }
+    h3 { font-size: 18px; margin: 0; }
+    h4 { margin: 12px 0 4px; font-size: 15px; color: #333; }
+    nav { display: flex; flex-wrap: wrap; gap: 12px; border-block: 1px solid #d4d9de; background: #fff; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    nav a { color: #075ca0; text-decoration: none; font-weight: 600; font-size: 15px; padding: 6px 12px; border-radius: 6px; }
+    nav a:hover { background: #f0f4f8; }
+    article { padding: 20px 24px; background: white; border: 1px solid #d4d9de; margin: 16px 0; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
+    article.done { opacity: 0.55; background: #fafafa; border-color: #ccc; }
+    .top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
+    .top h3 { display: flex; align-items: center; gap: 8px; }
+    .top a { color: #075ca0; text-decoration: none; font-weight: 600; }
+    .top a:hover { text-decoration: underline; }
+    .message { white-space: pre-wrap; margin: 16px 0; line-height: 1.65; background: #f9fbfd; padding: 14px 16px; border-radius: 8px; border-left: 4px solid #075ca0; font-family: inherit; }
+    .note { font-size: 14px; color: #4c5660; margin: 8px 0; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+    button.copy { border: 1px solid #064878; border-radius: 6px; padding: 9px 16px; background: #075ca0; color: white; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .15s; }
+    button.copy:hover { background: #064878; }
+    button.copy.ok { background: #2e7d32; border-color: #1e5a22; }
+    label.check-sent { display: flex; align-items: center; gap: 6px; font-size: 15px; cursor: pointer; user-select: none; margin-left: 8px; }
+    label.check-sent input { width: 18px; height: 18px; cursor: pointer; }
+    details { margin-top: 14px; border-top: 1px solid #eef0f2; padding-top: 10px; }
+    summary { cursor: pointer; font-weight: 600; color: #075ca0; font-size: 14px; }
+    .badge { display: inline-block; padding: 3px 8px; font-size: 12px; font-weight: 700; border-radius: 4px; background: #e8f0fe; color: #174ea6; }
+    .badge-warm { background: #fef7e0; color: #b06000; }
+    .badge-call { background: #e6f4ea; color: #137333; }
+    .badge-cold { background: #f1f3f4; color: #3c4043; }
+    .onl-rem { font-size: 13px; color: #b06000; margin-top: 8px; font-weight: 500; }
+    #notice { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #20252a; color: white; padding: 10px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; z-index: 100; font-weight: 500; }
+    #notice.on { display: block; }
+    .summary-bar { background: #fff; padding: 14px 20px; border-radius: 8px; border: 1px solid #d4d9de; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center; }
+    .summary-stats { display: flex; gap: 16px; flex-wrap: wrap; }
+    .stat-item b { font-size: 18px; color: #075ca0; }
+    #spisok { background: #3c4043; color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+    #spisok:hover { background: #202124; }
+    @media (max-width: 600px) {
+      header, main, nav { padding: 16px; }
+      article { padding: 16px; }
+      .btn-row { flex-direction: column; align-items: stretch; }
+      label.check-sent { margin-left: 0; margin-top: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">VSKA · 24 НОЯБРЯ 2026</p>
+  <h1>План касаний и рассылки</h1>
+  <div class="summary-bar">
+    <div class="summary-stats">
+      <div class="stat-item"><span class="badge badge-warm">✉ Тёплые</span>: <b>4</b></div>
+      <div class="stat-item"><span class="badge badge-call">☎ Звонки</span>: <b>2</b></div>
+      <div class="stat-item"><span class="badge badge-cold">❄ Холодные</span>: <b>45</b></div>
+      <div class="stat-item">Отправлено: <b id="cnt">0</b> из 45</div>
+    </div>
+    <button type="button" id="spisok">📋 Скопировать список отправленных</button>
+  </div>
+  <p class="note">Подготовлено для отправки. Тёплым писать/звонить ДО холодной рассылки. Холодные отправлять по 10 с паузой 10 минут с телефона через мобильный интернет.</p>
+</header>
+
+<nav>
+  <a href="#warm">✉ Тёплые (4)</a>
+  <a href="#calls">☎ Звонки (2)</a>
+  <a href="#helper">🔍 Помощнице</a>
+  <a href="#cold">❄ Холодные (45)</a>
+  <a href="#tasks">📐 Текущие проекты</a>
+</nav>
+
+<main>
+
+  <!-- РАЗДЕЛ: ТЁПЛЫЕ СООБЩЕНИЯ -->
+  <section id="warm">
+    <h2>✉ Тёплые сообщения (4)</h2>
+
+    <article id="warm-131">
+      <div class="top">
+        <h3><span class="badge badge-warm">№131</span> Монте-Карло, Тимур <small style="color:#666;font-weight:normal">(Россия)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/timurmontecarlo">@timurmontecarlo</a>
+      </div>
+      <p class="note"><b>Повод:</b> Клиент говорил о занятости в Сочи до пятницы; возврат в плане стоял на 20 ноября.</p>
+      <div class="message">Тимур, здравствуйте! Получилось после поездки посмотреть макет? Что скажете по оформлению?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/timurmontecarlo">Открыть чат @timurmontecarlo</a>
+      </div>
+      <p class="note" style="margin-top:10px;"><b>Дальше:</b> Записать ответ; не догонять несколько пропущенных касаний.</p>
+    </article>
+
+    <article id="warm-138">
+      <div class="top">
+        <h3><span class="badge badge-warm">№138</span> Любава, психолог <small style="color:#666;font-weight:normal">(Россия)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/lyubavayul">@lyubavayul</a>
+      </div>
+      <p class="note"><b>Повод:</b> Ждём обещанный референс; на 18 ноября был подготовлен черновик.</p>
+      <div class="message">Любава, добрый день! Получилось найти пример сайта, о котором говорили? Можно прислать ссылку или скриншот</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/lyubavayul">Открыть чат @lyubavayul</a>
+      </div>
+      <p class="note" style="margin-top:10px;"><b>Дальше:</b> Переделку без референса не начинать.</p>
+    </article>
+
+    <article id="warm-158">
+      <div class="top">
+        <h3><span class="badge badge-warm">№158</span> Илья, 7.62 <small style="color:#666;font-weight:normal">(Россия)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/ilya_7_62">@ilya_7_62</a>
+      </div>
+      <p class="note"><b>Повод:</b> Макет отправлен 17 ноября 21:25, исходящий вопрос 18 ноября был только подготовлен.</p>
+      <div class="message">Илья, добрый день! Как вам макет по цветам и общему виду? Есть что-то, что хотелось бы поменять?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/ilya_7_62">Открыть чат @ilya_7_62</a>
+      </div>
+      <p class="note" style="margin-top:10px;"><b>Дальше:</b> Не выдавать отправку макета за несделанную; ждать мнения.</p>
+    </article>
+
+    <article id="warm-146">
+      <div class="top">
+        <h3><span class="badge badge-warm">№146</span> Сила Химии <small style="color:#666;font-weight:normal">(Россия)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/maxim576">@maxim576</a>
+      </div>
+      <p class="note"><b>Повод:</b> На 18 ноября запланировано заключительное касание, фактическая отправка не подтверждена.</p>
+      <div class="message">Добрый день! Если сейчас не до сайта, так и напишите, больше беспокоить не буду</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/maxim576">Открыть чат @maxim576</a>
+      </div>
+      <p class="note" style="margin-top:10px;"><b>Дальше:</b> После прощального без ответа больше не писать.</p>
+    </article>
+
+  </section>
+
+  <section id="calls">
+    <h2>☎ Звонки (2)</h2>
+
+    <article id="call-58">
+      <div class="top">
+        <h3><span class="badge badge-call">№58</span> Led Garage 66 <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <div>
+          <a href="tel:+79935151505" style="font-size:17px;font-weight:700;margin-right:12px;">+7 993 515-15-05</a>
+          <a target="_blank" rel="noopener" href="https://t.me/ledgarage66">@ledgarage66</a>
+        </div>
+      </div>
+      <p class="note"><b>Время:</b> После проверки, не было ли звонка после 18 ноября</p>
+      <h4>С чего начать:</h4>
+      <div class="message">Здравствуйте, это Тимур, по сайту для Led Garage. Вы говорили, что доделываете логотип. Как сейчас с ним дела?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать начало</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#137333;color:#fff;font-weight:600;font-size:14px;" href="tel:+79935151505">Позвонить +7 993 515-15-05</a>
+      </div>
+      <details>
+        <summary>Что спросить и варианты ответов</summary>
+        <ul style="margin: 8px 0 0 16px; padding: 0;"><li>Готов ли логотип и вернутся ли к сайту.</li><li>Если пока занят, записать названную клиентом дату.</li></ul>
+      </details>
+    </article>
+
+    <article id="call-133">
+      <div class="top">
+        <h3><span class="badge badge-call">№133</span> Sofa Concept, Вадим <small style="color:#666;font-weight:normal">(Калининград)</small></h3>
+        <div>
+          <a href="tel:+79097992765" style="font-size:17px;font-weight:700;margin-right:12px;">+7 909 799-27-65</a>
+          <a target="_blank" rel="noopener" href="https://t.me/vezhergin">@vezhergin</a>
+        </div>
+      </div>
+      <p class="note"><b>Время:</b> С 13:00 Екатеринбурга = с 10:00 Калининграда, после проверки последних событий</p>
+      <h4>С чего начать:</h4>
+      <div class="message">Вадим, добрый день! Это Тимур, по сайту для Sofa Concept. Удалось посмотреть макет? Хотел коротко обсудить ваши впечатления</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать начало</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#137333;color:#fff;font-weight:600;font-size:14px;" href="tel:+79097992765">Позвонить +7 909 799-27-65</a>
+      </div>
+      <details>
+        <summary>Что спросить и варианты ответов</summary>
+        <ul style="margin: 8px 0 0 16px; padding: 0;"><li>Мнение о макете и правки.</li><li>Следующий шаг по его ответу, без автоматического предложения оплаты.</li></ul>
+      </details>
+    </article>
+
+  </section>
+
+  <section id="helper">
+    <h2>🔍 Внутренняя сверка с помощницей</h2>
+    <article>
+      <div class="top">
+        <h3>Ирина (помощница)</h3>
+        <a target="_blank" rel="noopener" href="https://t.me/irina_vakilova">@irina_vakilova</a>
+      </div>
+      <div class="message">Иринка, привет! Подскажи, есть ответы от Марины, Натальи Филатовой, Александра Валова и LATI? По Портнягиной картинки уже передавали, что она ответила? И что сейчас с четырьмя новыми макетами от 17 ноября?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/irina_vakilova">Открыть чат @irina_vakilova</a>
+      </div>
+      <p class="note">Спросить одним сообщением ДО того, как связываться с клиентами из её списка (Марченкова, Филатова, Валов, LATI, Портнягина).</p>
+    </article>
+  </section>
+
+  <!-- РАЗДЕЛ: ХОЛОДНЫЕ ПИСЬМА -->
+  <section id="cold">
+    <h2>❄ Холодные письма (45)</h2>
+    <p class="note">Партия подготовлена по утверждённому алгоритму «Задача бизнеса + деталь отзыва» (17.11). Проверено по 2ГИС, дублям и анти-ИИ фильтрам. Концовки проверены («Показать?», «Посмотрите?», без «картинкой»).</p>
+
+    <article class="cold-card" id="k1" data-n="1" data-u="gradientauto">
+      <div class="top">
+        <h3><span class="badge badge-cold">№1</span> Gradient Auto, автомастерская по удалению вмятин <small style="color:#666;font-weight:normal">(Иркутск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/gradientauto">@gradientauto</a>
+      </div>
+      <div class="message">Здравствуйте! Прочитал в 2ГИС про две вмятины, которые вы убрали без перекраски. Со вмятиной не всегда понятно, нужен ли перекрас и сколько стоит ремонт. Предлагаю сайт с вашими работами, чтобы человек мог посмотреть результат и отправить фото своей машины на расчёт.
+
+Меня зовут Тимур, я делаю сайты для автомастерских. Пример для вас соберу бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/gradientauto">Открыть чат @gradientauto</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="1" data-u="gradientauto"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k2" data-n="2" data-u="logocitypro">
+      <div class="top">
+        <h3><span class="badge badge-cold">№2</span> Logocity, нейрологопедический клуб для взрослых и детей <small style="color:#666;font-weight:normal">(Воронеж)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/logocitypro">@logocitypro</a>
+      </div>
+      <div class="message">Елена, здравствуйте! В 2ГИС родители пишут про ваши занятия через игру и советы для дома. Перед первой записью бывает трудно понять, подойдёт ли специалист ребёнку. Предлагаю сайт, на котором можно познакомиться с вашим подходом и оставить заявку на первую встречу, чтобы было проще решиться на запись.
+
+Меня зовут Тимур, я делаю сайты для логопедов. Бесплатно покажу пример под ваши занятия.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/logocitypro">Открыть чат @logocitypro</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="2" data-u="logocitypro"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k3" data-n="3" data-u="sto_fortuna">
+      <div class="top">
+        <h3><span class="badge badge-cold">№3</span> Фортуна Авто <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/sto_fortuna">@sto_fortuna</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС прочитал про устранение течи антифриза в вашем сервисе. С такой неисправностью важно понять, куда обращаться и с чего начнётся ремонт. Предлагаю сайт с примерами работ и заявкой на диагностику, чтобы вам сразу приходило описание проблемы с машиной.
+
+Меня зовут Тимур, я делаю сайты для автосервисов. Пример для вас подготовлю бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/sto_fortuna">Открыть чат @sto_fortuna</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="3" data-u="sto_fortuna"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k4" data-n="4" data-u="white_roses_vl">
+      <div class="top">
+        <h3><span class="badge badge-cold">№4</span> Белые розы <small style="color:#666;font-weight:normal">(Владивосток)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/white_roses_vl">@white_roses_vl</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС покупательница рассказала про букет на годовщину с доставкой от мужа. Для такого подарка хочется заранее понимать стоимость и время вручения. Предлагаю сайт с вариантами букетов и заявкой на нужную дату, чтобы вы получали адрес и пожелания к поздравлению вместе с обращением.
+
+Меня зовут Тимур, я делаю сайты для цветочных магазинов. Пример для вас соберу бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/white_roses_vl">Открыть чат @white_roses_vl</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="4" data-u="white_roses_vl"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k5" data-n="5" data-u="psy_stacy_cherry">
+      <div class="top">
+        <h3><span class="badge badge-cold">№5</span> Кабинет психолога-консультанта <small style="color:#666;font-weight:normal">(Новороссийск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/psy_stacy_cherry">@psy_stacy_cherry</a>
+      </div>
+      <div class="message">Анастасия, здравствуйте! В отзывах 2ГИС отмечают спокойную обстановку на встречах с вами. Обратиться к незнакомому психологу бывает непросто. Предлагаю сайт с рассказом о вашем подходе и формате консультаций, чтобы человек мог заранее познакомиться с вами и оставить заявку на первую встречу.
+
+Меня зовут Тимур, я делаю сайты для психологов. Бесплатно покажу пример под ваши услуги.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/psy_stacy_cherry">Открыть чат @psy_stacy_cherry</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="5" data-u="psy_stacy_cherry"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k6" data-n="6" data-u="cvetutsady">
+      <div class="top">
+        <h3><span class="badge badge-cold">№6</span> Цветут сады <small style="color:#666;font-weight:normal">(Пионерский)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/cvetutsady">@cvetutsady</a>
+      </div>
+      <div class="message">Добрый день! Нашёл вас в 2ГИС, в отзывах даже коллеги отмечают свежесть цветов. При заказе букета бывает сложно объяснить пожелания словами. Предлагаю сайт с вашими композициями и ценами, чтобы можно было выбрать подходящую по фото и отправить вам заказ с датой получения в Пионерском.
+
+Меня зовут Тимур, я делаю сайты для цветочных салонов. Пример для вас подготовлю бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/cvetutsady">Открыть чат @cvetutsady</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="6" data-u="cvetutsady"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k7" data-n="7" data-u="autobiography38">
+      <div class="top">
+        <h3><span class="badge badge-cold">№7</span> Автобиография, автосервис <small style="color:#666;font-weight:normal">(Иркутск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/autobiography38">@autobiography38</a>
+      </div>
+      <div class="message">Здравствуйте! Прочитал в 2ГИС, как вы подключили задние фары с неподходящими разъёмами и убрали ошибки. С нестандартной задачей бывает трудно найти подходящий сервис. Предлагаю сайт с такими случаями, чтобы человек мог узнать похожую проблему и сразу отправить вам описание своей машины.
+
+Меня зовут Тимур, я делаю сайты для автомастерских. Пример для вас соберу бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/autobiography38">Открыть чат @autobiography38</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="7" data-u="autobiography38"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k8" data-n="8" data-u="carevna43">
+      <div class="top">
+        <h3><span class="badge badge-cold">№8</span> Цветы, салон воздушных шаров <small style="color:#666;font-weight:normal">(Киров)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/carevna43">@carevna43</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС покупательница пишет, что торопилась и вы помогли выбрать цветы с открыткой. Предлагаю сайт с предварительным заказом букетов к нужному времени, чтобы можно было выбрать подарок заранее и согласовать с вами получение. Так в обращении уже будут пожелания и дата.
+
+Меня зовут Тимур, я делаю сайты для магазинов цветов и подарков. Бесплатно покажу пример под ваши услуги.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/carevna43">Открыть чат @carevna43</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="8" data-u="carevna43"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k9" data-n="9" data-u="ivan_uprs">
+      <div class="top">
+        <h3><span class="badge badge-cold">№9</span> Шина 116, автосервис <small style="color:#666;font-weight:normal">(Елабуга)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/ivan_uprs">@ivan_uprs</a>
+      </div>
+      <div class="message">Иван, здравствуйте! Смотрел сервисы Елабуги в 2ГИС, ваши клиенты отмечают быстрое обслуживание. Перед поездкой хочется понять, возьмутся ли за нужный ремонт. Предлагаю сайт с вашими услугами и обращением по конкретной машине, чтобы заранее согласовать задачу и время визита.
+
+Меня зовут Тимур, я делаю сайты для автосервисов. Пример для вас подготовлю бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/ivan_uprs">Открыть чат @ivan_uprs</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="9" data-u="ivan_uprs"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k10" data-n="10" data-u="mb_sto96">
+      <div class="top">
+        <h3><span class="badge badge-cold">№10</span> MB Динамика <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/mb_sto96">@mb_sto96</a>
+      </div>
+      <div class="message">Здравствуйте! Увидел в 2ГИС отзыв про ошибку двигателя, которая то появлялась, то пропадала. В таком случае непонятно, что проверять и на какую диагностику записаться. Предлагаю сайт с примерами подобных неисправностей и формой обращения, чтобы вы получали симптомы и модель автомобиля до визита.
+
+Меня зовут Тимур, я делаю сайты для сервисов по ремонту автомобилей. Пример для вас соберу бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/mb_sto96">Открыть чат @mb_sto96</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="10" data-u="mb_sto96"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k11" data-n="11" data-u="tsvetkova_flo">
+      <div class="top">
+        <h3><span class="badge badge-cold">№11</span> Цветкова, цветочный магазин <small style="color:#666;font-weight:normal">(Казань)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/tsvetkova_flo">@tsvetkova_flo</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС постоянные покупатели пишут, что вы подбираете букеты под их бюджет. Предлагаю сайт, где можно сразу посмотреть варианты на нужную сумму и оставить заказ на определённую дату. Вам придут пожелания к цветам и бюджет, с которых удобно начать подбор.
+
+Меня зовут Тимур, я делаю сайты для цветочных магазинов. Бесплатно покажу пример под ваши услуги.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/tsvetkova_flo">Открыть чат @tsvetkova_flo</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="11" data-u="tsvetkova_flo"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k12" data-n="12" data-u="prestige1616">
+      <div class="top">
+        <h3><span class="badge badge-cold">№12</span> Престиж, студия мебели <small style="color:#666;font-weight:normal">(Нижний Тагил)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/prestige1616">@prestige1616</a>
+      </div>
+      <div class="message">Сергей, здравствуйте! В 2ГИС прочитал про кровать, которую вы забрали на перетяжку и вернули уже собранной. Предлагаю сайт с примерами работ и ориентирами по цене, чтобы человек мог заранее прикинуть стоимость перетяжки и отправить вам фото на расчёт. Там же расскажем, как вы решаете вопрос с перевозкой.
+
+Меня зовут Тимур, я делаю сайты для мебельных мастерских. Пример для вас подготовлю бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/prestige1616">Открыть чат @prestige1616</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="12" data-u="prestige1616"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k13" data-n="13" data-u="belkina8insta">
+      <div class="top">
+        <h3><span class="badge badge-cold">№13</span> Контроль, фотостудия <small style="color:#666;font-weight:normal">(Барнаул)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/belkina8insta">@belkina8insta</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС после съёмки у вас благодарят за помощь с позами и выбором одежды. Перед фотосессией бывает непонятно, как подготовиться и какой результат получится. Предлагаю сайт с примерами съёмок и условиями подготовки, чтобы человек мог выбрать формат и оставить заявку на дату.
+
+Меня зовут Тимур, я делаю сайты для фотостудий. Пример для вас соберу бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/belkina8insta">Открыть чат @belkina8insta</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="13" data-u="belkina8insta"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k14" data-n="14" data-u="roman5454">
+      <div class="top">
+        <h3><span class="badge badge-cold">№14</span> 365, автосервис <small style="color:#666;font-weight:normal">(Верхняя Пышма)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/roman5454">@roman5454</a>
+      </div>
+      <div class="message">Роман, здравствуйте! В 2ГИС нашёл благодарность за помощь с расходниками для ТО. Перед обслуживанием хочется разобраться, что покупать и сколько закладывать на работу. Предлагаю сайт с составом ТО и заявкой по автомобилю, чтобы можно было заранее согласовать с вами необходимые материалы и стоимость.
+
+Меня зовут Тимур, я делаю сайты для автосервисов. Бесплатно покажу пример под ваши услуги.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/roman5454">Открыть чат @roman5454</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="14" data-u="roman5454"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k15" data-n="15" data-u="monronvrsk">
+      <div class="top">
+        <h3><span class="badge badge-cold">№15</span> Цветы-Монро, салон цветов <small style="color:#666;font-weight:normal">(Новороссийск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/monronvrsk">@monronvrsk</a>
+      </div>
+      <div class="message">Добрый день! Нашёл вас в 2ГИС, покупательница рассказала про доставку букета. Переписка о цене и доставке может затянуться, поэтому предлагаю сайт с букетами под разный бюджет и формой заказа. Покупатель укажет адрес и время вручения, а вы получите данные для подтверждения заказа.
+
+Меня зовут Тимур, я делаю сайты для цветочных магазинов. Бесплатно соберу пример такого заказа для вас.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/monronvrsk">Открыть чат @monronvrsk</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="15" data-u="monronvrsk"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k16" data-n="16" data-u="chrissvalery">
+      <div class="top">
+        <h3><span class="badge badge-cold">№16</span> Кабинет психолога Кристины Максимовой <small style="color:#666;font-weight:normal">(Нижний Тагил)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/chrissvalery">@chrissvalery</a>
+      </div>
+      <div class="message">Кристина, здравствуйте! В отзывах 2ГИС пишут, что вы помогаете посмотреть на ситуацию с другой стороны. При выборе психолога важно понять, как проходит работа. Предлагаю сайт с рассказом о вашем подходе и первой консультации, чтобы человек мог спокойно познакомиться с вами и обратиться за встречей.
+
+Меня зовут Тимур, я делаю сайты для психологов. Пример для вас соберу бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/chrissvalery">Открыть чат @chrissvalery</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="16" data-u="chrissvalery"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k17" data-n="17" data-u="bloomroom_kirov">
+      <div class="top">
+        <h3><span class="badge badge-cold">№17</span> Bloom room, цветочная студия <small style="color:#666;font-weight:normal">(Киров)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/bloomroom_kirov">@bloomroom_kirov</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС покупательница рассказала, что заказывает у вас цветы онлайн и забирает в удобное время. Предлагаю сайт с актуальными букетами и ценами, чтобы можно было заранее выбрать подарок и оставить заявку на самовывоз. Вы получите пожелания и время, к которому нужен букет.
+
+Меня зовут Тимур, я делаю сайты для цветочных студий. Бесплатно покажу пример под ваши услуги.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/bloomroom_kirov">Открыть чат @bloomroom_kirov</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="17" data-u="bloomroom_kirov"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k18" data-n="18" data-u="autoelectric16">
+      <div class="top">
+        <h3><span class="badge badge-cold">№18</span> Гараж33, выездной сервис автоэлектрика <small style="color:#666;font-weight:normal">(Казань)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/autoelectric16">@autoelectric16</a>
+      </div>
+      <div class="message">Александр, здравствуйте! В 2ГИС прочитал про автомобиль, который привезли на эвакуаторе и после вашего ремонта забрали своим ходом. Когда машина не заводится, важно быстро передать симптомы специалисту. Предлагаю сайт с обращением по поломке, чтобы вы получали модель автомобиля и описание неисправности для согласования помощи.
+
+Меня зовут Тимур, я делаю сайты для автоэлектриков. Пример для вас подготовлю бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/autoelectric16">Открыть чат @autoelectric16</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="18" data-u="autoelectric16"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k19" data-n="19" data-u="floramarket37">
+      <div class="top">
+        <h3><span class="badge badge-cold">№19</span> Флора маркет, супермаркет цветов <small style="color:#666;font-weight:normal">(Иваново)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/floramarket37">@floramarket37</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС покупательница рассказала про композицию, которая получилась лучше ожидаемого и простояла ещё неделю после торжества. При заказе по фотографии хочется понимать, какой букет получишь. Предлагаю сайт с вашими реальными работами и ценами, чтобы можно было выбрать образец и отправить вам пожелания.
+
+Меня зовут Тимур, я делаю сайты для цветочных магазинов. Пример для вас соберу бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/floramarket37">Открыть чат @floramarket37</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="19" data-u="floramarket37"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k20" data-n="20" data-u="djefri83">
+      <div class="top">
+        <h3><span class="badge badge-cold">№20</span> Кабинет психолога Алены Суховаровой <small style="color:#666;font-weight:normal">(Иваново)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/djefri83">@djefri83</a>
+      </div>
+      <div class="message">Алёна, здравствуйте! В отзывах 2ГИС пишут про внимание к себе на встречах с вами. На первую консультацию бывает сложно решиться без знакомства со специалистом. Предлагаю сайт с вашим подходом и понятным описанием встречи, чтобы человек мог разобраться в формате и оставить заявку на консультацию.
+
+Меня зовут Тимур, я делаю сайты для психологов. Бесплатно покажу пример под ваши услуги.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/djefri83">Открыть чат @djefri83</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="20" data-u="djefri83"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k21" data-n="21" data-u="tanya_sssure">
+      <div class="top">
+        <h3><span class="badge badge-cold">№21</span> Лучше всех!, детский сад домашнего типа <small style="color:#666;font-weight:normal">(Гурьевск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/tanya_sssure">@tanya_sssure</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС родители рассказали, что получают из вашего садика фото и видео занятий каждый день. Перед выбором сада хочется понять, чем будет занят ребёнок. Предлагаю сайт с распорядком и знакомством с воспитателями, чтобы родители могли оценить условия и договориться с вами о посещении.
+
+Меня зовут Тимур, я делаю сайты для частных детских садов. Пример для вас подготовлю бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/tanya_sssure">Открыть чат @tanya_sssure</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="21" data-u="tanya_sssure"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k22" data-n="22" data-u="bulavochka_31">
+      <div class="top">
+        <h3><span class="badge badge-cold">№22</span> Булавка, ателье <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/bulavochka_31">@bulavochka_31</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС прочитал про костюм на роспись, который вы сшили за считанные дни. Со срочным пошивом важно сразу согласовать срок и пожелания. Предлагаю сайт с примерами одежды и заявкой с датой мероприятия, чтобы вы могли оценить задачу и обсудить заказ до встречи.
+
+Меня зовут Тимур, я делаю сайты для ателье. Пример для вас соберу бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/bulavochka_31">Открыть чат @bulavochka_31</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="22" data-u="bulavochka_31"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k23" data-n="23" data-u="sodmigen">
+      <div class="top">
+        <h3><span class="badge badge-cold">№23</span> Brobox, автосервис <small style="color:#666;font-weight:normal">(Владивосток)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/sodmigen">@sodmigen</a>
+      </div>
+      <div class="message">Дмитрий, здравствуйте! В 2ГИС клиент из Якутии пишет, что каждый год приезжает к вам во Владивосток на ремонт или диагностику. Перед такой поездкой важно согласовать обслуживание. Предлагаю сайт с заявкой по автомобилю и дате визита, чтобы вы могли заранее обсудить работы с приезжим клиентом.
+
+Меня зовут Тимур, я делаю сайты для автосервисов. Бесплатно покажу пример под ваши услуги.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/sodmigen">Открыть чат @sodmigen</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="23" data-u="sodmigen"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k24" data-n="24" data-u="azbyka_svetov">
+      <div class="top">
+        <h3><span class="badge badge-cold">№24</span> Азбука цветов, салон <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/azbyka_svetov">@azbyka_svetov</a>
+      </div>
+      <div class="message">Рубина, здравствуйте! Прочитал в 2ГИС про букет, который доставили вовремя и который простоял почти две недели. Для поздравления важно заранее согласовать вручение и сумму. Предлагаю сайт с вашими цветами и заявкой на доставку, чтобы вы сразу получали пожелания к подарку и нужную дату.
+
+Меня зовут Тимур, я делаю сайты для цветочных салонов. Пример для вас подготовлю бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/azbyka_svetov">Открыть чат @azbyka_svetov</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="24" data-u="azbyka_svetov"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k25" data-n="25" data-u="farmer37">
+      <div class="top">
+        <h3><span class="badge badge-cold">№25</span> Ясюниха, загородный дом, баня, беседки <small style="color:#666;font-weight:normal">(Иваново)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/farmer37">@farmer37</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС прочитал про корпоратив на 46 человек у вас в загородном доме. Для компании нужно заранее понять вместимость и бюджет отдыха. Предлагаю сайт с условиями аренды и запросом на нужную дату, чтобы к вам обращались с количеством гостей и понятной задачей по мероприятию.
+
+Меня зовут Тимур, я делаю сайты для бань и загородных домов. Пример для вас соберу бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/farmer37">Открыть чат @farmer37</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="25" data-u="farmer37"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k26" data-n="26" data-u="automoda96">
+      <div class="top">
+        <h3><span class="badge badge-cold">№26</span> Автомода96, магазин автоаксессуаров <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/automoda96">@automoda96</a>
+      </div>
+      <div class="message">Николай, здравствуйте! В 2ГИС покупатель рассказал про чехлы, которые подошли точно по размеру, и вашу консультацию. При выборе автоаксессуаров важно не ошибиться с совместимостью. Предлагаю сайт с примерами установки и запросом на подбор, чтобы вам сразу присылали марку машины и нужный товар.
+
+Меня зовут Тимур, я делаю сайты для магазинов автоаксессуаров. Бесплатно покажу пример под ваши услуги.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/automoda96">Открыть чат @automoda96</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="26" data-u="automoda96"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k27" data-n="27" data-u="elenazav_psiholog">
+      <div class="top">
+        <h3><span class="badge badge-cold">№27</span> Психолог Елена Завацкая <small style="color:#666;font-weight:normal">(Кострома)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/elenazav_psiholog">@elenazav_psiholog</a>
+      </div>
+      <div class="message">Елена, здравствуйте! Нашёл вас среди психологов Костромы в 2ГИС и прочитал отзыв о повторном обращении к вам. Перед обращением бывает трудно понять, чего ждать от первой встречи. Предлагаю сайт с вашим подходом и условиями консультации, чтобы человек мог познакомиться с вами заранее и оставить запрос на запись.
+
+Меня зовут Тимур, я делаю сайты для психологов. Пример для вас подготовлю бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/elenazav_psiholog">Открыть чат @elenazav_psiholog</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="27" data-u="elenazav_psiholog"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k28" data-n="28" data-u="flowersss18">
+      <div class="top">
+        <h3><span class="badge badge-cold">№28</span> Цветочный рай, оптовая база <small style="color:#666;font-weight:normal">(Ижевск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/flowersss18">@flowersss18</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС увидел отзыв про покупку 51 розы, которые простояли больше недели. Для большого букета хочется заранее прикинуть сумму и договориться о получении. Предлагаю сайт с вашими предложениями и ценами, чтобы можно было оставить заказ с количеством цветов и нужной датой.
+
+Меня зовут Тимур, я делаю сайты для цветочных баз. Пример для вас соберу бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/flowersss18">Открыть чат @flowersss18</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="28" data-u="flowersss18"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k29" data-n="29" data-u="moxflowers">
+      <div class="top">
+        <h3><span class="badge badge-cold">№29</span> Мох <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/moxflowers">@moxflowers</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС прочитал про большой заказ, в котором вы точно подобрали цветовую гамму. Для оформления бывает трудно объяснить нужные оттенки словами. Предлагаю сайт с вашими композициями и заявкой с пожеланиями, чтобы вам можно было отправить пример оформления и обсудить бюджет.
+
+Меня зовут Тимур, я делаю сайты для цветочных мастерских. Бесплатно покажу пример под ваши услуги.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/moxflowers">Открыть чат @moxflowers</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="29" data-u="moxflowers"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k30" data-n="30" data-u="mozzevelnic">
+      <div class="top">
+        <h3><span class="badge badge-cold">№30</span> Можжевельник, салон цветов и декора <small style="color:#666;font-weight:normal">(Казань)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/mozzevelnic">@mozzevelnic</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС постоянная покупательница пишет, что берёт у вас цветы и вазы для интерьера. Подобрать такое сочетание по переписке бывает непросто. Предлагаю сайт с готовыми композициями и ценами, чтобы покупатель мог выбрать оформление для дома и отправить вам запрос на него.
+
+Меня зовут Тимур, я делаю сайты для салонов цветов и декора. Пример для вас подготовлю бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/mozzevelnic">Открыть чат @mozzevelnic</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="30" data-u="mozzevelnic"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k31" data-n="31" data-u="happy_ronny">
+      <div class="top">
+        <h3><span class="badge badge-cold">№31</span> Happy ronny, частный детский сад <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/happy_ronny">@happy_ronny</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС родители ребёнка, который ходит к вам полгода, благодарят воспитателей за терпение. Перед выбором садика хочется познакомиться с людьми и условиями. Предлагаю сайт с рассказом о группе и адаптации, чтобы родители могли задать вопросы и договориться о знакомстве с вами.
+
+Меня зовут Тимур, я делаю сайты для детских садов. Пример для вас соберу бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/happy_ronny">Открыть чат @happy_ronny</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="31" data-u="happy_ronny"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k32" data-n="32" data-u="bouquet_flowers">
+      <div class="top">
+        <h3><span class="badge badge-cold">№32</span> Букет, студия флористики и декора <small style="color:#666;font-weight:normal">(Йошкар-Ола)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/bouquet_flowers">@bouquet_flowers</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС покупательница пишет, что каждый месяц берёт у вас цветы на домашний стол. Для повторного заказа удобно заранее выбрать композицию и сумму. Предлагаю сайт с вариантами для интерьера, чтобы постоянным клиентам было проще отправить вам пожелания к следующему букету.
+
+Меня зовут Тимур, я делаю сайты для студий флористики. Бесплатно покажу пример под ваши услуги.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/bouquet_flowers">Открыть чат @bouquet_flowers</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="32" data-u="bouquet_flowers"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k33" data-n="33" data-u="arg_031">
+      <div class="top">
+        <h3><span class="badge badge-cold">№33</span> 031, центр покраски авто <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/arg_031">@arg_031</a>
+      </div>
+      <div class="message">Родион, здравствуйте! В 2ГИС прочитал про бампер в металлике, который вы покрасили без заметной разницы с кузовом. Перед покраской бывает тревожно за совпадение оттенка. Предлагаю сайт с вашими примерами подбора цвета, чтобы человек мог оценить результат и отправить фото деталей на предварительный расчёт.
+
+Меня зовут Тимур, я делаю сайты для центров покраски автомобилей. Пример для вас подготовлю бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/arg_031">Открыть чат @arg_031</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="33" data-u="arg_031"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k34" data-n="34" data-u="tsvetianzhelika">
+      <div class="top">
+        <h3><span class="badge badge-cold">№34</span> Анжелика, цветочный салон <small style="color:#666;font-weight:normal">(Курск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/tsvetianzhelika">@tsvetianzhelika</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС покупатель рассказал, что оформил у вас доставку дистанционно. Когда заказываешь подарок издалека, хочется понимать цену и порядок вручения. Предлагаю сайт с вашими букетами и условиями доставки, чтобы человек мог выбрать композицию и отправить вам адрес с пожеланиями к поздравлению.
+
+Меня зовут Тимур, я делаю сайты для магазинов цветов. Пример для вас соберу бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/tsvetianzhelika">Открыть чат @tsvetianzhelika</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="34" data-u="tsvetianzhelika"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k35" data-n="35" data-u="anflorstudio">
+      <div class="top">
+        <h3><span class="badge badge-cold">№35</span> Anflor <small style="color:#666;font-weight:normal">(Киров)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/anflorstudio">@anflorstudio</a>
+      </div>
+      <div class="message">Анна, здравствуйте! В 2ГИС прочитал про букет для мамы, который вы быстро и вовремя доставили. Для такого сюрприза важно заранее согласовать детали. Предлагаю сайт с вашими работами и заявкой на поздравление, чтобы вы получали пожелания к цветам и время вручения вместе с обращением.
+
+Меня зовут Тимур, я делаю сайты для цветочных магазинов. Бесплатно покажу пример под ваши услуги.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/anflorstudio">Открыть чат @anflorstudio</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="35" data-u="anflorstudio"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k36" data-n="36" data-u="kotbor77">
+      <div class="top">
+        <h3><span class="badge badge-cold">№36</span> С иголочки, швейное ателье <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/kotbor77">@kotbor77</a>
+      </div>
+      <div class="message">Татьяна, здравствуйте! В 2ГИС прочитал про ремонт рукавов куртки в вашем ателье. До визита бывает непонятно, возьмутся ли за переделку и сколько она будет стоить. Предлагаю сайт, через который вам смогут отправить фото вещи для предварительной оценки и договориться о примерке.
+
+Меня зовут Тимур, я делаю сайты для ателье. Пример под ваши услуги подготовлю бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/kotbor77">Открыть чат @kotbor77</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="36" data-u="kotbor77"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k37" data-n="37" data-u="delice_vld">
+      <div class="top">
+        <h3><span class="badge badge-cold">№37</span> Delice, салон цветов <small style="color:#666;font-weight:normal">(Владикавказ)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/delice_vld">@delice_vld</a>
+      </div>
+      <div class="message">Добрый день! Нашёл вас в 2ГИС во Владикавказе, в отзыве благодарят за букет, собранный и доставленный в короткий срок. Для срочного подарка хочется быстрее определиться с выбором. Предлагаю сайт с вашими композициями и ценами, чтобы покупатель мог отправить запрос на подходящий вариант и уточнить время вручения.
+
+Меня зовут Тимур, я делаю сайты для салонов цветов. Пример для вас соберу бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/delice_vld">Открыть чат @delice_vld</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="37" data-u="delice_vld"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k38" data-n="38" data-u="salut_luxe">
+      <div class="top">
+        <h3><span class="badge badge-cold">№38</span> Марьямка, магазин <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/salut_luxe">@salut_luxe</a>
+      </div>
+      <div class="message">Рамазан, здравствуйте! В 2ГИС семья рассказала, что купила у вас оформление на день рождения сына. Для праздника бывает сложно собрать всё в нужном стиле и бюджете. Предлагаю сайт с примерами украшений и ценами, чтобы покупатель мог отправить вам пожелания и согласовать подбор к своей дате.
+
+Меня зовут Тимур, я делаю сайты для магазинов товаров для праздника. Бесплатно покажу пример под ваши услуги.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/salut_luxe">Открыть чат @salut_luxe</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="38" data-u="salut_luxe"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k39" data-n="39" data-u="razbor86">
+      <div class="top">
+        <h3><span class="badge badge-cold">№39</span> Разбор 86, центр авторазбора иномарок <small style="color:#666;font-weight:normal">(Сургут)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/razbor86">@razbor86</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС прочитал про компрессор кондиционера, который у вас нашли дешевле, чем на Авито. При поиске запчасти важно проверить совместимость с машиной. Предлагаю сайт с наличием деталей и запросом на подбор, чтобы вы сразу получали модель автомобиля и информацию для проверки нужной запчасти.
+
+Меня зовут Тимур, я делаю сайты для авторазборов. Пример для вас подготовлю бесплатно.
+
+Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/razbor86">Открыть чат @razbor86</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="39" data-u="razbor86"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k40" data-n="40" data-u="houston_temp">
+      <div class="top">
+        <h3><span class="badge badge-cold">№40</span> Хьюстон, студия дизайна и ремонта <small style="color:#666;font-weight:normal">(Ижевск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/houston_temp">@houston_temp</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС заказчица рассказала про ремонт квартиры по предварительному дизайн-проекту. До начала работ хочется понять бюджет и будущий результат. Предлагаю сайт с вашими проектами и обращением на расчёт, чтобы человек мог прислать площадь и пожелания для обсуждения ремонта.
+
+Меня зовут Тимур, я делаю сайты для студий дизайна интерьеров. Пример для вас соберу бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/houston_temp">Открыть чат @houston_temp</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="40" data-u="houston_temp"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k41" data-n="41" data-u="panda31bel">
+      <div class="top">
+        <h3><span class="badge badge-cold">№41</span> Панда, игровая фотостудия <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/panda31bel">@panda31bel</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС прочитал про фотографии и копии, за которыми у вас ждали всего несколько минут. Перед визитом бывает непонятно, что подготовить и сколько стоит услуга. Предлагаю сайт с ценами и требованиями к документам, чтобы человек мог разобраться заранее и отправить вам свой запрос.
+
+Меня зовут Тимур, я делаю сайты для фотоателье. Бесплатно покажу пример под ваши услуги.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/panda31bel">Открыть чат @panda31bel</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="41" data-u="panda31bel"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k42" data-n="42" data-u="zheleznii94">
+      <div class="top">
+        <h3><span class="badge badge-cold">№42</span> Мастерская автоэлектрики и диагностики <small style="color:#666;font-weight:normal">(Владикавказ)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/zheleznii94">@zheleznii94</a>
+      </div>
+      <div class="message">Роман, здравствуйте! В 2ГИС прочитал, как вы восстановили электронику автомобиля после химчистки. С такой поломкой сложно понять причину без диагностики. Предлагаю сайт с примерами неисправностей и формой обращения, чтобы вам заранее присылали симптомы и модель машины для обсуждения ремонта.
+
+Меня зовут Тимур, я делаю сайты для мастерских автоэлектрики. Пример для вас подготовлю бесплатно.
+
+Посмотрите?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/zheleznii94">Открыть чат @zheleznii94</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="42" data-u="zheleznii94"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k43" data-n="43" data-u="kinjalkavkaza">
+      <div class="top">
+        <h3><span class="badge badge-cold">№43</span> Кинжалы Кавказа, магазин подарков и сувениров <small style="color:#666;font-weight:normal">(Грозный)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/kinjalkavkaza">@kinjalkavkaza</a>
+      </div>
+      <div class="message">Добрый день! В 2ГИС покупатели отмечают вашу помощь с выбором подарков и сувениров. При покупке подарка бывает трудно определиться без примеров и цен. Предлагаю сайт с вашим ассортиментом, чтобы гости Грозного могли заранее подобрать сувенир и отправить вам вопрос о наличии.
+
+Меня зовут Тимур, я делаю сайты для магазинов подарков и сувениров. Пример для вас соберу бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/kinjalkavkaza">Открыть чат @kinjalkavkaza</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="43" data-u="kinjalkavkaza"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k44" data-n="44" data-u="studio_nv">
+      <div class="top">
+        <h3><span class="badge badge-cold">№44</span> Нв-студия <small style="color:#666;font-weight:normal">(Сысерть)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/studio_nv">@studio_nv</a>
+      </div>
+      <div class="message">Здравствуйте! В 2ГИС прочитал отзыв о срочном фото на документы у вас. Перед визитом важно уточнить нужный формат и требования к снимку. Предлагаю сайт с условиями съёмки и обращением по задаче, чтобы человек мог заранее проверить детали и согласовать с вами визит в Сысерти.
+
+Меня зовут Тимур, я делаю сайты для студий печати. Бесплатно покажу пример под ваши услуги.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/studio_nv">Открыть чат @studio_nv</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="44" data-u="studio_nv"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+    <article class="cold-card" id="k45" data-n="45" data-u="zepter_raziyat">
+      <div class="top">
+        <h3><span class="badge badge-cold">№45</span> Zepter, магазин товаров для эко-уборки <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/zepter_raziyat">@zepter_raziyat</a>
+      </div>
+      <div class="message">Разият, здравствуйте! В 2ГИС покупатели отмечают ассортимент и обслуживание в вашем магазине. Среди товаров для уборки бывает непросто выбрать подходящий под свою задачу. Предлагаю сайт с описаниями и ценами, чтобы покупатель мог сравнить варианты и отправить вам запрос на подбор или наличие.
+
+Меня зовут Тимур, я делаю сайты для магазинов товаров для дома. Пример для вас подготовлю бесплатно.
+
+Прислать пример?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/zepter_raziyat">Открыть чат @zepter_raziyat</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="45" data-u="zepter_raziyat"> отправил</label>
+      </div>
+      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+    </article>
+
+  </section>
+
+  <section id="tasks">
+    <h2>📐 Текущие проекты и задачи</h2>
+    <article>
+      <h3>Install Audio (Дмитрий, Тюмень, @installaudio_tmn)</h3>
+      <p>Дмитрий заполнил данные владельца. Идёт верификация, результат придёт на контактную почту. Ждём статус домена installaudio.ru в кабинете. Ничего повторно не просить.</p>
+    </article>
+    <article>
+      <h3>LolliPolli38 (Полина, Иркутск, @lollipolli_38)</h3>
+      <p>Внутренний контроль 24.11: индексация главной и обработка Sitemap в Яндексе и Google. Права подтверждены, повторно коды не запрашивать.</p>
+    </article>
+    <article>
+      <h3>Ледавто (Влад, Екатеринбург, @ledavtoekb)</h3>
+      <p>Согласованный макет готов. Проверить картинки и передать Владу вручную.</p>
+    </article>
+    <article>
+      <h3>Лучший День (Павел Порошин, Абакан, @poroshinpro)</h3>
+      <p>Макет полностью дособран 24.11 по правкам Роберта. Проверить картинки и передать Павлу.</p>
+    </article>
+    <article>
+      <h3>Иван PDR (Уссурийск, @semyanikhin)</h3>
+      <p>Макет demo-pdr-ussuriysk признан эталоном 23.11 и отправлен клиенту.</p>
+    </article>
+  </section>
+
+</main>
+
+<div id="notice">Текст скопирован</div>
+
+<script>
+  // Копирование текста
+  document.addEventListener('click', async function(e) {
+    if (!e.target.matches('button.copy')) return;
+    const btn = e.target;
+    const card = btn.closest('article');
+    const msg = card.querySelector('.message');
+    const text = msg ? msg.innerText : '';
+    
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = 'Скопировано';
+      btn.classList.add('ok');
+      const n = document.getElementById('notice');
+      n.classList.add('on');
+      setTimeout(() => {
+        btn.textContent = 'Скопировать текст';
+        btn.classList.remove('ok');
+        n.classList.remove('on');
+      }, 1800);
+    } catch(err) {
+      alert('Ошибка копирования: ' + err);
+    }
+  });
+
+  // Локальное сохранение отправленных чекбоксов
+  const STAMP = 'sent-2026-11-24';
+  let S = {};
+  try { S = JSON.parse(localStorage.getItem(STAMP) || '{}'); } catch(e) { S = {}; }
+
+  function updateCount() {
+    let count = 0;
+    document.querySelectorAll('.sent-toggle').forEach(chk => {
+      const id = chk.dataset.n;
+      const on = !!S[id];
+      chk.checked = on;
+      const card = chk.closest('article');
+      if (card) card.classList.toggle('done', on);
+      if (on) count++;
+    });
+    const cntEl = document.getElementById('cnt');
+    if (cntEl) cntEl.textContent = count;
+  }
+
+  document.querySelectorAll('.sent-toggle').forEach(chk => {
+    chk.addEventListener('change', function() {
+      S[this.dataset.n] = this.checked;
+      try { localStorage.setItem(STAMP, JSON.stringify(S)); } catch(e) {}
+      updateCount();
+    });
+  });
+
+  // Скопировать список отправленных
+  const btnSpisok = document.getElementById('spisok');
+  if (btnSpisok) {
+    btnSpisok.addEventListener('click', async function() {
+      const sentUsers = [];
+      document.querySelectorAll('.sent-toggle').forEach(chk => {
+        if (S[chk.dataset.n]) sentUsers.push('@' + chk.dataset.u);
+      });
+      const resText = 'Отправлено 24.11 (' + sentUsers.length + ' лидов):\n' + sentUsers.join('\n');
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(resText);
+        btnSpisok.textContent = 'Скопировано (' + sentUsers.length + ')';
+        setTimeout(() => { btnSpisok.textContent = '📋 Скопировать список отправленных'; }, 2000);
+      } else {
+        prompt('Скопируй список:', resText);
+      }
+    });
+  }
+
+  updateCount();
+</script>
+
+</body>
+</html>
