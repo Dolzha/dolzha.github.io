@@ -38,6 +38,7 @@
     .badge-warm { background: #fef7e0; color: #b06000; }
     .badge-call { background: #e6f4ea; color: #137333; }
     .badge-cold { background: #f1f3f4; color: #3c4043; }
+    .badge-cancel { background: #f8d7da; color: #721c24; }
     .summary-bar { background: #fff; padding: 14px 20px; border-radius: 10px; border: 1px solid #d4d9de; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; }
     .summary-stats { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; }
     .stat-item b { font-size: 17px; color: #075ca0; }
@@ -50,26 +51,26 @@
 <body>
 
 <header>
-  <p class="eyebrow">VSKA · ЖИВАЯ СВОДКА ИЗ TELEGRAM · 24 НОЯБРЯ 2026 (13:45)</p>
+  <p class="eyebrow">VSKA · ЖИВАЯ СВОДКА ИЗ TELEGRAM · 24 НОЯБРЯ 2026 (16:45)</p>
   <h1>Сделки, Тёплые, Макеты и Холодная партия</h1>
   <div class="summary-bar">
     <div class="summary-stats">
       <div class="stat-item"><span class="badge badge-hot">🔥 Сделки/ТЗ</span> <b>4</b></div>
-      <div class="stat-item"><span class="badge badge-warm">✉ Написать тёплым</span> <b>7</b></div>
-      <div class="stat-item"><span class="badge">📐 Очередь макетов</span> <b>4</b></div>
-      <div class="stat-item"><span class="badge badge-call">☎ Звонки</span> <b>3</b></div>
+      <div class="stat-item"><span class="badge badge-warm">✉ Тёплые</span> <b>7</b> (Отправлены)</div>
+      <div class="stat-item"><span class="badge">📐 Очередь макетов</span> <b>6</b></div>
+      <div class="stat-item"><span class="badge badge-call">☎ Созвоны</span> <b>3</b></div>
       <div class="stat-item"><span class="badge badge-cold">❄ Холодные</span> <b>45</b> (Отправлено: <b id="cnt">0</b>)</div>
     </div>
     <button type="button" id="spisok">📋 Скопировать список отправленных</button>
   </div>
-  <p class="note">Собрано напрямую по твоим папкам Telegram: <b>Сделка</b>, <b>Макеты</b>, <b>02.11–18.11</b>, <b>Секретутка С Премией</b> и <b>Рабочка (Макеты, Чатик)</b>. Учтены все реальные сообщения за 18–24 ноября.</p>
+  <p class="note">Собрано напрямую по твоим папкам Telegram и обновлено по всем событиям 24 ноября. Учтены ответы Lati, Димы Радуги, отправка тёплых и решения по макетам.</p>
 </header>
 
 <nav>
-  <a href="#deals">🔥 Сделки и Lati (4)</a>
-  <a href="#warm">✉ Написать тёплым (7)</a>
-  <a href="#mockups">📐 Очередь макетов (4)</a>
-  <a href="#calls">☎ Звонки (3)</a>
+  <a href="#deals">🔥 Сделки (4)</a>
+  <a href="#warm">✉ Тёплые (7)</a>
+  <a href="#mockups">📐 Очередь макетов (6)</a>
+  <a href="#calls">☎ Созвоны (3)</a>
   <a href="#cold">❄ Холодные (45)</a>
 </nav>
 
@@ -79,55 +80,44 @@
     <h2>🔥 1. Сделки и горячие ответы (Lati, Ива, Ледавто, Install Audio)</h2>
 
     <article id="deal-1">
-      <span class="badge badge-hot">🔥 ГОРЯЧАЯ СДЕЛКА (от Ирины)</span>
+      <span class="badge badge-hot">🟡 СОГЛАСИЛИСЬ / ПАУЗА НА РЕБРЕНДИНГ</span>
       <div class="top">
-        <h3>Цветочная студия Lati (менеджер Ева от Анастасии) <small style="color:#666;font-weight:normal">(Новосибирск (2 салона + 3-й скоро))</small></h3>
+        <h3>Цветочная студия Lati (менеджер Ева) <small style="color:#666;font-weight:normal">(Новосибирск)</small></h3>
         <div><a href="tel:+79658211414" style="margin-right:12px;">+7 965 821-14-14</a><a target="_blank" rel="noopener" href="https://t.me/latistudioflo">@latistudioflo</a></div>
       </div>
-      <p class="note"><b>Что в Telegram:</b> 23.11 и сегодня 24.11 в 13:23 Ирина переслала подробное ТЗ на 4 сообщения под бюджет 24 000 р. Хотят: Главную, Каталог (монобукеты, сборные, коробки, поштучно) с кнопкой «Заказать» в WhatsApp без корзины и онлайн-оплаты, Доставку, Контакты (2 точки + 3-я скоро, карта, форма в ТГ), воздушный природный стиль (референс «грушевый цвет»). Задали 5 вопросов и написали: «Готовы согласовать детали».</p>
-      <div class="message">Здравствуйте! Изучил ваши пожелания по сайту для студии Lati, всё очень чётко и понятно. Отвечаю по порядку на ваши вопросы:
-
-1. По бюджету 24 000 р: вся описанная вами структура (Главная, Каталог с карточками букетов и заказом в WhatsApp с названием букета, Доставка и оплата, Контакты с 3 салонами, картой и формой заявки в Telegram + мобильная версия в воздушном природном стиле) полностью укладывается в 24 000 р без доплат. Отдельно оплачивается только домен и хостинг (около 2 000 р за целый год).
-2. По правкам: делаем до полного утверждения, обычно это 2-3 круга правок, пока вам всё не понравится.
-3. По срокам: от 12 рабочих дней. Оплату разбиваем на этапы (50% старт, 50% по готовности).
-4. По текстам: тексты с вас не требуются, я сам всё напишу и оформлю на основе ваших данных и фото букетов, вам нужно будет только проверить.
-5. По доступам: домен и хостинг оформляем сразу на вас, по завершении передаю все полные доступы и показываю, как легко добавлять или менять букеты и цены.
-
-Если условия подходят, можем сегодня согласовать детали и запускать в работу!</div>
+      <p class="note"><b>Что в Telegram:</b> 24.11 в 14:50 Роберт отправил полное КП (24 000 руб + домен/хостинг 2 000 руб/год + админка 5 000 руб). В 15:58 Ева ответила: «Ну вроде все подходит, все объективно и приятно. А так, все устраивает. Единственный момент — сейчас решаем вопрос с ребрендингом, нужно время понять, начинать сайт сейчас или после изменений. Как решим вопрос, напишем вам о начале работы». Роберт в 16:05: «Будем ждать от вас новостей».</p>
+      <div class="message">Условия и цена 24 000 руб + 5 000 руб согласованы на 100%. Ждём решения по ребрендингу, следующее мягкое касание 04.12.</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/latistudioflo">Открыть чат @latistudioflo</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="deal-1" data-u="latistudioflo"> готово</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Отправить ответ (напрямую или через Ирину @irina_vakilova) и переводить в оплату 1-го этапа.</p>
+      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Ждём сообщения от Lati по ребрендингу (контрольная дата 04.12).</p>
     </article>
 
     <article id="deal-2">
-      <span class="badge badge-hot">✅ ИСПРАВЛЕНО НА САЙТЕ (ОТПИСАТЬ ИРИНЕ)</span>
+      <span class="badge badge-hot">✅ ДОРАБОТКИ ВЫЛОЖЕНЫ НА САЙТ</span>
       <div class="top">
-        <h3>Ива — Ирина Кужина <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <h3>Ива — салон цветов (Ирина Кужина) <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
         <div><a href="tel:+79041760166" style="margin-right:12px;">+7 904 176-01-66</a><a target="_blank" rel="noopener" href="https://t.me/kuzhina_irina">@kuzhina_irina</a></div>
       </div>
-      <p class="note"><b>Что в Telegram:</b> Все 3 её вчерашние просьбы (заменить верхний «Получатель» на «Отправитель», добавить отправку для MAX/ТГ и решить проблему со скрытыми номерами в Telegram) УЖЕ ВЫЛОЖЕНЫ на боевой сайт iva-ekb.ru!</p>
-      <div class="message">Ирина, добрый день! Всё поправил на сайте:
-1. В форме заказа верхний блок переименовал в «Отправитель», а в доставке остался «Получатель».
-2. Под телефоном добавил поле «Ваш Telegram (@ник, если номер скрыт)» — если покупатель укажет свой @ник, у вас в боте и на странице доставки появится прямая кнопка «Отправить в Telegram (@ник)», которая открывает чат даже при скрытом номере и сразу вставляет текст со ссылкой на оплату.
-3. Для MAX и СМС: в сообщении бота и на странице расчёта доставки теперь есть готовый текст со ссылкой на оплату, который копируется одним нажатием пальца (можно сразу вставить в MAX), плюс кнопка «Отправить по СМС» на случай, если человек скрыл номер во всех мессенджерах.</div>
+      <p class="note"><b>Что в Telegram:</b> Все доработки выложены на Sprinthost: в корзине заголовок «Отправитель» + поле Telegram @ник, в zakaz.php кнопки Telegram (@ник) и «Отправить в MAX» с 1-тап копированием для скрытых номеров, в админке app.js графа «Отправитель» для всех заказов.</p>
+      <div class="message">Сайт iva-ekb.ru и админка обновлены и проверены.</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/kuzhina_irina">Открыть чат @kuzhina_irina</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="deal-2" data-u="kuzhina_irina"> готово</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Скопировать и отправить Ирине отчёт о готовых правках.</p>
+      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Сдано, на контроле.</p>
     </article>
 
     <article id="deal-3">
-      <span class="badge badge-hot">🛠 СДЕЛКА В РАБОТЕ</span>
+      <span class="badge badge-hot">🛠 СДЕЛКА В РАБОТЕ (ЖДЁМ ПРАВКИ)</span>
       <div class="top">
         <h3>Ледавто — Владислав <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
         <div><a href="tel:+79505516240" style="margin-right:12px;">+7 950 551-62-40</a><a target="_blank" rel="noopener" href="https://t.me/Ledavtoekb">@Ledavtoekb</a></div>
       </div>
-      <p class="note"><b>Что в Telegram:</b> 21.11 отправлена демо-ссылка. 22.11 в 21:11 Влад ответил: «Привет) слушай вообще круто, очень круто) Есть несколько моментов, которые хотел бы поправить...». В 21:52 ты попросил написать список правок. С тех пор прошло 2 дня.</p>
+      <p class="note"><b>Что в Telegram:</b> 21.11 отправлена демо-ссылка. 22.11 в 21:11 Влад ответил: «Привет) слушай вообще круто, очень круто) Есть несколько моментов, которые хотел бы поправить...». В 21:52 ты попросил написать список правок. Ждём список.</p>
       <div class="message">Владислав, добрый день! Получилось собрать список правок по сайту? Присылайте в любом удобном виде (текстом или голосовым), всё внесу.</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
@@ -138,192 +128,231 @@
     </article>
 
     <article id="deal-4">
-      <span class="badge badge-hot">✅ ДОМЕН НА ПРОВЕРКЕ</span>
+      <span class="badge badge-hot">⏳ ДОМЕН НА ПРОВЕРКЕ</span>
       <div class="top">
         <h3>Install Audio — Дмитрий <small style="color:#666;font-weight:normal">(Тюмень)</small></h3>
         <div><a target="_blank" rel="noopener" href="https://t.me/InstallAudio_tmn">@InstallAudio_tmn</a></div>
       </div>
-      <p class="note"><b>Что в Telegram:</b> Сегодня 24.11 в 12:22 прошёл код 42356. В 13:21 ты написал «Домен пока что проверяется. Как проверится-буду выкладывать сайт». В 13:38 Дмитрий ответил «Да хорошо» (сообщение оставлено непрочитанным).</p>
+      <p class="note"><b>Что в Telegram:</b> 24.11 в 12:22 прошёл код 42356. В 13:21 ты написал «Домен пока что проверяется. Как проверится-буду выкладывать сайт». В 13:38 Дмитрий ответил «Да хорошо».</p>
       
       <div class="btn-row">
         
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/InstallAudio_tmn">Открыть чат @InstallAudio_tmn</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="deal-4" data-u="InstallAudio_tmn"> готово</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Писать сейчас не нужно — ждём завершения проверки домена и выкладываем сайт.</p>
+      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Ждём завершения проверки домена у регистратора и выкладываем сайт.</p>
     </article>
 
   </section>
 
   <section id="warm">
-    <h2>✉ 2. Кому написать сегодня из тёплых (с учётом всех переписок до 24.11)</h2>
-    <p class="note">Исключены те, кому ты уже отправил прощальное 18-20 ноября (@maxim576 Сила Химии, @byrmatovvv, @DuetAutoPlus). Добавлены найденные в папках дат горячие диалоги (@kotbor77, @Dimaraduga7, @eka_terina_36106, @KseniyaAstachova) и @TimurMontecarlo, просивший написать после воскресенья.</p>
+    <h2>✉ 2. Тёплые контакты (отправлены Робертом 24.11)</h2>
+    <p class="note">Все 7 тёплых контактов обработаны. Дмитрий Радуга согласовал созвон на 25.11 в 11:30, с Тимуром Монте-Карло созвон проведён, остальным отправлены напоминания.</p>
 
     <article id="warm-1">
-      <span class="badge badge-warm">№131</span>
+      <span class="badge badge-warm">🔥 СОЗВОН НАЗНАЧЕН НА 25.11 В 11:30</span>
       <div class="top">
-        <h3>Монте-Карло — Тимур <small style="color:#666;font-weight:normal">(Набережные Челны)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/TimurMontecarlo">@TimurMontecarlo</a>
+        <h3>Dima Raduga — ведущий мероприятий <small style="color:#666;font-weight:normal">(Владивосток)</small></h3>
+        <div><a href="tel:+79024810787" style="margin-right:12px;font-weight:700;">+7 902 481-07-87</a><a target="_blank" rel="noopener" href="https://t.me/Dimaraduga7">@Dimaraduga7</a></div>
       </div>
-      <p class="note"><b>Реальная ситуация в чате:</b> 20.11 он ответил: «Првиет нет еще Только закончили чемпионат Сегодня домой Раньше воскресенья вряд Ли будет интересно мне Напиши в воскресенье». Ты ответил: «До воскресенья». В воскресенье (22.11) не писали — пишем сегодня!</p>
-      <div class="message">Тимур, добрый день! Договаривались списаться после воскресенья, как вернётесь с чемпионата. Удалось отдохнуть с дороги и посмотреть макет?</div>
-      <div class="btn-row">
-        <button type="button" class="copy">Скопировать текст</button>
-        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/TimurMontecarlo">Открыть чат @TimurMontecarlo</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-1" data-u="TimurMontecarlo"> отправил</label>
-      </div>
-      <p class="note" style="margin-top:8px;"><b>Цель:</b> Узнать мнение по макету и перевести к обсуждению условий.</p>
-    </article>
-
-    <article id="warm-2">
-      <span class="badge badge-warm">№17.11</span>
-      <div class="top">
-        <h3>С иголочки — Татьяна Козлова (ателье) <small style="color:#666;font-weight:normal">(Из папки 17.11.2026)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/kotbor77">@kotbor77</a>
-      </div>
-      <p class="note"><b>Реальная ситуация в чате:</b> 17.11 ответила «Здравствуйте, давайте.», попросила стоимость и примеры, написала пожелание: «дизайн обозначен в 2гис, в фиолетовых тонах, как на визитке». 17.11 в 22:31 ты скинул портфолио и назвал 24 000 р. С 17.11 касаний не было!</p>
-      <div class="message">Татьяна, добрый день! Давайте я соберу для вас бесплатный пример главной страницы в ваших фиолетовых тонах, как на визитке в 2ГИС? Посмотрите вживую, как будет выглядеть именно ваш сайт, это ни к чему не обязывает. Собрать?</div>
-      <div class="btn-row">
-        <button type="button" class="copy">Скопировать текст</button>
-        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/kotbor77">Открыть чат @kotbor77</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-2" data-u="kotbor77"> отправил</label>
-      </div>
-      <p class="note" style="margin-top:8px;"><b>Цель:</b> Если скажет «да» — перенести в папку «Макеты» и собрать макет в фиолетовой палитре визитки.</p>
-    </article>
-
-    <article id="warm-3">
-      <span class="badge badge-warm">№11.11</span>
-      <div class="top">
-        <h3>Dima Raduga — ведущий мафии и мероприятий <small style="color:#666;font-weight:normal">(Из папки 11.11.2026)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/Dimaraduga7">@Dimaraduga7</a>
-      </div>
-      <p class="note"><b>Реальная ситуация в чате:</b> 11.11 сам ответил: «Слушай хай Напиши завтра плиз поговорим», договорились списаться завтра в 15:00 («Окей»), но после 11.11 ему так и не написали!</p>
-      <div class="message">Дима, привет! Договаривались списаться по сайту на следующий день в 15:00, я закрутился с проектами и упустил чат. Ещё актуально обсудить? Могу бесплатно собрать пример под твои игры и мероприятия.</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 24.11 в 16:11-16:12 Роберт написал с извинением. В 16:33 Дмитрий ответил: «Тимур привет давай завтра созвонимся в 11 30». Роберт согласовал («Хорошо») и в 16:43 уточнил часовой пояс («Забыл уточнить, по вашему времени или по МСК?»).</p>
+      <div class="message">СОЗВОН НАЗНАЧЕН НА ЗАВТРА 25.11 В 11:30! Телефон: +7 902 481-07-87</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/Dimaraduga7">Открыть чат @Dimaraduga7</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-3" data-u="Dimaraduga7"> отправил</label>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-1" data-u="Dimaraduga7" checked> отправлено</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Цель:</b> Вернуть диалог и предложить бесплатный набросок.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Созвониться 25.11 в 11:30 и обсудить сайт для ведущего.</p>
+    </article>
+
+    <article id="warm-2">
+      <span class="badge badge-warm">📞 СОЗВОН СОСТОЯЛСЯ (ПАУЗА ДО 26.11)</span>
+      <div class="top">
+        <h3>Монте-Карло — Тимур (мафия, детские праздники) <small style="color:#666;font-weight:normal">(Набережные Челны)</small></h3>
+        <div><a href="tel:+79375751313" style="margin-right:12px;font-weight:700;">+7 937 575-13-13</a><a target="_blank" rel="noopener" href="https://t.me/TimurMontecarlo">@TimurMontecarlo</a></div>
+      </div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 24.11 созвонились по телефону. Тимур дал номер, назвал второй проект Pokerchelny.ru. Роберт озвучил условия по сайту и расценки на Яндекс Директ. Тимур взял паузу подумать об актуальности мафии и дать ответ.</p>
+      <div class="message">Созвон проведён. Следующее касание: 26.11.</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/TimurMontecarlo">Открыть чат @TimurMontecarlo</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-2" data-u="TimurMontecarlo" checked> отправлено</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Касание 26.11 по обратной связи.</p>
+    </article>
+
+    <article id="warm-3">
+      <span class="badge badge-warm">✉ ОТПРАВЛЕНО 24.11 В 16:11</span>
+      <div class="top">
+        <h3>Татьяна Козлова — ателье / ведущая <small style="color:#666;font-weight:normal">(Из папки 17.11.2026)</small></h3>
+        <div><a target="_blank" rel="noopener" href="https://t.me/kotbor77">@kotbor77</a></div>
+      </div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 24.11 в 16:11 Роберт отправил: «Татьяна, здравствуйте! Моё предложение про макет все ещё в силе, собрать для вас?». Ранее названа цена 24 000 р, пожелание: фиолетовые тона как на визитке.</p>
+      <div class="message">Татьяна, здравствуйте! Моё предложение про макет все ещё в силе, собрать для вас?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/kotbor77">Открыть чат @kotbor77</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-3" data-u="kotbor77" checked> отправлено</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Ждём ответа (контроль 26.11).</p>
     </article>
 
     <article id="warm-4">
-      <span class="badge badge-warm">№158</span>
+      <span class="badge badge-warm">✉ ОТПРАВЛЕНО 24.11 В 16:12</span>
       <div class="top">
-        <h3>Илья Shark 7.62 — автосервис <small style="color:#666;font-weight:normal">(Миасс (папка Макеты))</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/Ilya_7_62">@Ilya_7_62</a>
+        <h3>Илья Shark 7.62 — автосервис <small style="color:#666;font-weight:normal">(Миасс)</small></h3>
+        <div><a target="_blank" rel="noopener" href="https://t.me/Ilya_7_62">@Ilya_7_62</a></div>
       </div>
-      <p class="note"><b>Реальная ситуация в чате:</b> Макет отправлен 17.11 в 21:25 (цена 24 000 р названа 15.11). Ты уже спрашивал его 18.11 и 20.11 («Здравствуйте! Удалось посмотреть макет?»), он промолчал. Сегодня — финальное прощальное касание (д5).</p>
-      <div class="message">Илья, добрый день! Если сейчас не до сайта, так и напишите, больше отвлекать не буду.</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 24.11 в 16:12 Роберт отправил: «Илья, приветствую! Скажите, посвободнее стали в плане времени? Удалось вам посмотреть макет?». Макет был сдан 17.11.</p>
+      <div class="message">Илья, приветствую! Скажите, посвободнее стали в плане времени? Удалось вам посмотреть макет?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/Ilya_7_62">Открыть чат @Ilya_7_62</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-4" data-u="Ilya_7_62"> отправил</label>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-4" data-u="Ilya_7_62" checked> отправлено</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Цель:</b> Финальное касание. Если промолчит — закрываем.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Ждём ответа (контроль 26.11).</p>
     </article>
 
     <article id="warm-5">
-      <span class="badge badge-warm">№156</span>
+      <span class="badge badge-warm">✉ ОТПРАВЛЕНО 24.11 В 16:13</span>
       <div class="top">
-        <h3>Наталья Денисова — психолог-консультант <small style="color:#666;font-weight:normal">(Иркутск (папка Макеты))</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/D16Nat">@D16Nat</a>
+        <h3>Наталья Денисова — психолог-консультант <small style="color:#666;font-weight:normal">(Иркутск)</small></h3>
+        <div><a target="_blank" rel="noopener" href="https://t.me/D16Nat">@D16Nat</a></div>
       </div>
-      <p class="note"><b>Реальная ситуация в чате:</b> 16.11 попросила работы, 17.11 ты скинул портфолио и 2 сайта психологов, 20.11 спросил «Удалось примеры посмотреть?». Ответа пока нет.</p>
-      <div class="message">Наталья, добрый день! Если удалось посмотреть примеры, подскажите, какое оформление вам ближе? Могу бесплатно собрать пример под вашу практику, чтобы вы оценили на своих материалах.</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 24.11 в 16:13 Роберт отправил: «Наталья, здравствуйте. Посвободнее стали в плане времени?». Ранее отправлены примеры сайта Марины Скворцовой.</p>
+      <div class="message">Наталья, здравствуйте. Посвободнее стали в плане времени?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/D16Nat">Открыть чат @D16Nat</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-5" data-u="D16Nat"> отправил</label>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-5" data-u="D16Nat" checked> отправлено</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Цель:</b> Финальное предложение макета; если молчит — отпускаем.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Ждём ответа (контроль 26.11).</p>
     </article>
 
     <article id="warm-6">
-      <span class="badge badge-warm">№15.11</span>
+      <span class="badge badge-warm">✉ ОТПРАВЛЕНО 24.11 В 16:13</span>
       <div class="top">
-        <h3>Екатерина — кухни на заказ <small style="color:#666;font-weight:normal">(Из папки 15.11.2026)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/eka_terina_36106">@eka_terina_36106</a>
+        <h3>Екатерина — студия мебели «Ека форм» <small style="color:#666;font-weight:normal">(Когалым)</small></h3>
+        <div><a href="tel:+79505136106" style="margin-right:12px;font-weight:700;">+7 950 513-61-06</a><a target="_blank" rel="noopener" href="https://t.me/eka_terina_36106">@eka_terina_36106</a></div>
       </div>
-      <p class="note"><b>Реальная ситуация в чате:</b> 15.11 спросила «Стоимость сайта?», ты ответил «Стоит 24 000 рублей, по срокам от 12 рабочих дней» без предложения бесплатного макета. По правилу 27.10 цену до макета нужно закрывать предложением бесплатного примера.</p>
-      <div class="message">Екатерина, добрый день! Чтобы вам проще было оценить, за что именно цена, давайте я бесплатно соберу пример главной страницы под ваши кухни? Посмотрите вживую, как будут смотреться ваши работы и форма расчёта. Показать?</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 24.11 в 16:13 Роберт отправил: «Екатерина, здравствуйте! Моё предложение про макет все ещё в силе, подскажите интересует вас?». Цена 24 000 р названа 15.11.</p>
+      <div class="message">Екатерина, здравствуйте! Моё предложение про макет все ещё в силе, подскажите интересует вас?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/eka_terina_36106">Открыть чат @eka_terina_36106</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-6" data-u="eka_terina_36106"> отправил</label>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-6" data-u="eka_terina_36106" checked> отправлено</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Цель:</b> Перевести с сухой цены на бесплатный макет.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Ждём ответа (контроль 26.11).</p>
     </article>
 
     <article id="warm-7">
-      <span class="badge badge-warm">№12.11</span>
+      <span class="badge badge-warm">✉ ОТПРАВЛЕНО 24.11 В 16:14</span>
       <div class="top">
-        <h3>Ксения Астахова — логопед <small style="color:#666;font-weight:normal">(Из папки 12.11.2026)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/KseniyaAstachova">@KseniyaAstachova</a>
+        <h3>Ксения Астахова — логопед <small style="color:#666;font-weight:normal">(Иркутск)</small></h3>
+        <div><a target="_blank" rel="noopener" href="https://t.me/KseniyaAstachova">@KseniyaAstachova</a></div>
       </div>
-      <p class="note"><b>Реальная ситуация в чате:</b> 12.11 спросила «Здравствуйте! А сколько стоит ?», получила ответ 24 000 р и замолчала.</p>
-      <div class="message">Ксения, здравствуйте! Давайте я бесплатно соберу пример страницы под ваши занятия, чтобы вы наглядно увидели, как сайт будет выглядеть и помогать родителям записываться? Это ни к чему не обязывает.</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 24.11 в 16:14 Роберт отправил: «Ксения, здравствуйте! Моё предложение про макет все ещё в силе, подскажите интересует вас?». Цена 24 000 р названа 12.11.</p>
+      <div class="message">Ксения, здравствуйте! Моё предложение про макет все ещё в силе, подскажите интересует вас?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
         <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/KseniyaAstachova">Открыть чат @KseniyaAstachova</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-7" data-u="KseniyaAstachova"> отправил</label>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-7" data-u="KseniyaAstachova" checked> отправлено</label>
       </div>
-      <p class="note" style="margin-top:8px;"><b>Цель:</b> Перевести с вопроса о цене на бесплатный пример.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Ждём ответа (контроль 26.11).</p>
     </article>
 
   </section>
 
   <section id="mockups">
-    <h2>📐 3. Очередь на сборку макетов (найдено в папках дат и у Ирины)</h2>
+    <h2>📐 3. Очередь на сборку макетов (актуализировано по решениям Роберта)</h2>
+    <p class="note">По решению Роберта: макеты для Деревяшкино и Оксаны Ребдевой не делаем; по Елизавете зафиксирован отказ; по Дмитрию Соколову и Анастасии Дулаевой сначала уточняем актуальность до начала сборки.</p>
 
     <article id="mockup-1">
-      <span class="badge">🚨 ПРОСРОЧЕН С 17.11 (НЕ БЫЛ В ПАПКЕ МАКЕТЫ!)</span>
+      <span class="badge badge">⏳ УТОЧНИТЬ АКТУАЛЬНОСТЬ (ОТПРАВЛЕНО 24.11 16:31)</span>
       <div class="top">
-        <h3>Дмитрий Соколов — автосервис <small style="color:#666;font-weight:normal">(Владивосток (папка 17.11.2026))</small></h3>
+        <h3>Дмитрий Соколов — автосервис <small style="color:#666;font-weight:normal">(Владивосток)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/Sodmigen">@Sodmigen</a>
       </div>
-      <p class="note"><b>Детали из Telegram:</b> 17.11 ответил «посмотрю» -&gt; на вопрос о пожеланиях: «нет» -&gt; «Собирайте.». Ты 17.11 в 20:54 пообещал макет «завтра или послезавтра вечером» («Договорились?»), но чат остался в папке 17.11 и макет не собран!</p>
-      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Перенести в папку «Макеты» и срочно собрать макет автосервиса!</p>
+      <p class="note"><b>Детали:</b> 17.11 согласился на макет («Собирайте.»), обещан за 1-2 дня. 24.11 в 16:31 Роберт написал с извинением: «Дмитрий, добрый день! Прошу прощения что так и не скинул макет, было куча работы. Подскажите, все ещё актуально для вас?».</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Статус:</b> Сборка на паузе: ждём подтверждения актуальности от Дмитрия. Если подтвердит — собираем.</p>
     </article>
 
     <article id="mockup-2">
-      <span class="badge">🟢 НОВЫЙ МАКЕТ ОТ ИРИНЫ (сегодня 13:24)</span>
+      <span class="badge badge">💬 УТОЧНИТЬ АКТУАЛЬНОСТЬ (САЛОН ШТОР)</span>
       <div class="top">
-        <h3>Елизавета — логопед <small style="color:#666;font-weight:normal">(Из чата «Секретутка С Премией» / Рабочка)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/li_zizy">@li_zizy</a>
+        <h3>Анастасия Дулаева — салон штор «Ажур Декор» <small style="color:#666;font-weight:normal">(Находка (от Ирины))</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/Anastasia_Dulaeva">@Anastasia_Dulaeva</a>
       </div>
-      <p class="note"><b>Детали из Telegram:</b> Согласилась («Да, покажите Здравствуйте»). Пожелания: «Нравится эко стиль - дерево и зелень, с принципами монтессори среды (натуральные материалы: дерево, камни) Поэтому - зеленый и песочный, светло коричневый». Обещано на завтра-послезавтра («Хорошо, без спешки 🌸»).</p>
-      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Собрать светлый эко-макет в стиле Монтессори (зелёный, песочный, светло-коричневый, текстуры дерева/камня).</p>
+      <p class="note"><b>Детали:</b> 17.11 согласилась на макет через Ирину, прислала референс сайта студии текстиля Лары Аунап (tf39.ru, «Для примера»). До начала верстки сначала уточняем актуальность.</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Статус:</b> Написать: «Анастасия, здравствуйте! Прошу прощения за то, что так и не скинули вам макет вовремя, было много работы. Подскажите, всё ещё актуально для вас?». Если подтвердит — верстаем.</p>
     </article>
 
     <article id="mockup-3">
-      <span class="badge">🟡 МАКЕТЫ ОТ ИРИНЫ В «РАБОЧКА -&gt; 💻 МАКЕТЫ» (от 17.11)</span>
+      <span class="badge badge-cancel">❌ НЕ ДЕЛАЕМ МАКЕТ (РЕШЕНИЕ РОБЕРТА)</span>
       <div class="top">
-        <h3>Три лида Ирины от 17.11 <small style="color:#666;font-weight:normal">(Топик «💻 Макеты»)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/irina_vakilova">@irina_vakilova</a>
+        <h3>Деревяшкино — детская игровая комната <small style="color:#666;font-weight:normal">(Бийск (от Ирины, +7 906 943 2505))</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/derevyashkino_bsk">@derevyashkino_bsk</a>
       </div>
-      <p class="note"><b>Детали из Telegram:</b> 1) @Anastasia_Dulaeva («Макет, уточняю пожелания»); 2) @derevyashkino_bsk («Пожеланий нет»); 3) @Neuro_logoped_BFB («Макет»). С 17.11 в топике новых сообщений не было.</p>
-      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Уточнить у Ирины статус по этим трём макетам с 17.11 (какие актуальны к сборке).</p>
+      <p class="note"><b>Детали:</b> 17.11 на вопрос о пожеланиях ответила «Вообще не думала об этом». По решению Роберта от 24.11 — макет не делаем.</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Статус:</b> Макет снят с очереди.</p>
     </article>
 
     <article id="mockup-4">
-      <span class="badge">⏳ УЖЕ ОТПРАВЛЕНЫ СЕГОДНЯ / ВЧЕРА (ЖДЁМ)</span>
+      <span class="badge badge-cancel">❌ НЕ ДЕЛАЕМ МАКЕТ (РЕШЕНИЕ РОБЕРТА)</span>
+      <div class="top">
+        <h3>Оксана Ребдева — нейрологопед <small style="color:#666;font-weight:normal">(Из топика Рабочка (от Ирины))</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/Neuro_logoped_BFB">@Neuro_logoped_BFB</a>
+      </div>
+      <p class="note"><b>Детали:</b> 17.11 ответила «Добрый день. Да», на вопрос о пожеланиях не ответила. По решению Роберта от 24.11 — макет не делаем.</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Статус:</b> Макет снят с очереди.</p>
+    </article>
+
+    <article id="mockup-5">
+      <span class="badge badge-cancel">❌ ОТКАЗ (МАКЕТ ОТМЕНЁН)</span>
+      <div class="top">
+        <h3>Елизавета — логопед <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/li_zizy">@li_zizy</a>
+      </div>
+      <p class="note"><b>Детали:</b> 18.11 ответила отказом: «Здравствуйте. Уже 3 сообщение с таким текстом. Не надо». Повторно не писать.</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Статус:</b> Макет отменён, чат закрыт.</p>
+    </article>
+
+    <article id="mockup-6">
+      <span class="badge badge">⏳ СДАНЫ КАРТИНКАМИ (ЖДЁМ)</span>
       <div class="top">
         <h3>Павел Порошин (@poroshinpro) и Иван PDR (@semyanikhin) <small style="color:#666;font-weight:normal">(Абакан / Уссурийск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/poroshinpro">@poroshinpro</a>
       </div>
-      <p class="note"><b>Детали из Telegram:</b> • Павлу Порошину макет отправлен сегодня 24.11 в 12:38 — ждём реакцию.
-• Ивану PDR макет отправлен 23.11 в 21:33, сегодня ночью он похвалил («получилось отлично, сколько будет стоить?»), узнал цену и написал «как решусь напишу вам» (в 11:25 ты дописал про поэтапную оплату).</p>
-      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Сегодня их не трогаем. Павла проверяем завтра (д1), Ивана через 2-3 дня.</p>
+      <p class="note"><b>Детали:</b> • Павлу Порошину макет demo-luchshiyden сдан сегодня 24.11 в 12:38 (палитра Chrome Mono, узоры, 0 запрещённых знаков).
+• Ивану PDR макет demo-pdr-ussuriysk сдан картинками, цена 24 000 р озвучена.</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Статус:</b> Ждём обратной связи клиентов.</p>
     </article>
 
   </section>
 
   <section id="calls">
-    <h2>☎ 4. Звонки на сегодня</h2>
+    <h2>☎ 4. Созвоны</h2>
 
     <article id="call-1">
-      <span class="badge badge-call">Звонок · 133</span>
+      <span class="badge badge-call">Созвон · 171</span>
+      <div class="top">
+        <h3>Dima Raduga — созвон 25.11 в 11:30 <small style="color:#666;font-weight:normal">(Владивосток (согласовано в переписке))</small></h3>
+        <div>
+          <a href="tel:+79024810787" style="font-size:17px;font-weight:700;margin-right:12px;">+7 902 481-07-87</a>
+          <a target="_blank" rel="noopener" href="https://t.me/Dimaraduga7">@Dimaraduga7</a>
+        </div>
+      </div>
+      <p class="note"><b>Контекст:</b> Дмитрий сам назначил: «Тимур привет давай завтра созвонимся в 11 30». Роберт согласовал. Уточнить часовой пояс перед звонком.</p>
+      <div class="message">Дима, привет! Как договаривались, набираю по сайту для твоих мероприятий и игр. Удобно сейчас?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать фразу</button>
+        <a class="btn-tg" style="background:#137333;" href="tel:+79024810787">Позвонить +7 902 481-07-87</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-1" data-u="Dimaraduga7"> сделано</label>
+      </div>
+    </article>
+
+    <article id="call-2">
+      <span class="badge badge-call">Созвон · 133</span>
       <div class="top">
         <h3>Sofa Concept — Вадим Ежергин <small style="color:#666;font-weight:normal">(Калининград (-3 часа от Екб))</small></h3>
         <div>
@@ -331,17 +360,17 @@
           <a target="_blank" rel="noopener" href="https://t.me/vezhergin">@vezhergin</a>
         </div>
       </div>
-      <p class="note"><b>Контекст:</b> Макет отправлен 12.11, сообщение 14.11 («Вадим, приветствую Удалось макет посмотреть?») без ответа. В плане стоял звонок.</p>
+      <p class="note"><b>Контекст:</b> Макет отправлен 12.11, сообщение 14.11 без ответа.</p>
       <div class="message">Вадим, добрый день! Это Тимур, я отправлял вам в Telegram пример сайта для Sofa Concept. Удалось посмотреть? Хотел коротко узнать, как вам по стилю.</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать фразу</button>
         <a class="btn-tg" style="background:#137333;" href="tel:+79097992765">Позвонить +7 909 799-27-65</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-1" data-u="vezhergin"> позвонил</label>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-2" data-u="vezhergin"> сделано</label>
       </div>
     </article>
 
-    <article id="call-2">
-      <span class="badge badge-call">Звонок · 58</span>
+    <article id="call-3">
+      <span class="badge badge-call">Созвон · 58</span>
       <div class="top">
         <h3>Led Garage 66 <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
         <div>
@@ -354,25 +383,7 @@
       <div class="btn-row">
         <button type="button" class="copy">Скопировать фразу</button>
         <a class="btn-tg" style="background:#137333;" href="tel:+79935151505">Позвонить +7 993 515-15-05</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-2" data-u="ledgarage66"> позвонил</label>
-      </div>
-    </article>
-
-    <article id="call-3">
-      <span class="badge badge-call">Звонок · Ирина #Чатик</span>
-      <div class="top">
-        <h3>Звонки по списку Ирины из «Рабочка -&gt; # Чатик» <small style="color:#666;font-weight:normal">(Антонина Гаус, Валерия Николаева, Александр Валов)</small></h3>
-        <div>
-          <a href="tel:+79089767337" style="font-size:17px;font-weight:700;margin-right:12px;">+7 908 976-73-37 (Антонина) / +7 917 732-23-87 (Валов)</a>
-          <a target="_blank" rel="noopener" href="https://t.me/Antonina_Gaus_psiholog">@Antonina_Gaus_psiholog</a>
-        </div>
-      </div>
-      <p class="note"><b>Контекст:</b> 15.11 и 16.11 Ирина в «# Чатик» напоминала позвонить: @Antonina_Gaus_psiholog (+7 908 976 7337), @Valeri_Nikolaeva и @alexandr_valov1 (+7 917 732-23-87). 16.11 в 13:21 ты написал «Я позвоню».</p>
-      <div class="message">Здравствуйте! Это Тимур, мы с помощницей Ириной отправляли вам пример сайта. Удалось посмотреть картинки? Хотел узнать ваше мнение.</div>
-      <div class="btn-row">
-        <button type="button" class="copy">Скопировать фразу</button>
-        <a class="btn-tg" style="background:#137333;" href="tel:+79089767337">Позвонить +7 908 976-73-37 (Антонина) / +7 917 732-23-87 (Валов)</a>
-        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-3" data-u="Antonina_Gaus_psiholog"> позвонил</label>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-3" data-u="ledgarage66"> сделано</label>
       </div>
     </article>
 
@@ -1221,51 +1232,42 @@
     }
   });
 
-  const STAMP = 'sent-2026-11-24-v2';
+  const STAMP = 'sent-2026-11-24-v3';
   let S = {};
   try { S = JSON.parse(localStorage.getItem(STAMP) || '{}'); } catch(e) { S = {}; }
 
   function updateCount() {
-    let count = 0;
-    document.querySelectorAll('.sent-toggle').forEach(chk => {
-      const id = chk.dataset.n;
-      const on = !!S[id];
-      chk.checked = on;
-      const card = chk.closest('article');
-      if (card) card.classList.toggle('done', on);
-      if (on && !String(id).includes('-')) count++;
-    });
-    const cntEl = document.getElementById('cnt');
-    if (cntEl) cntEl.textContent = count;
+    const total = Object.values(S).filter(Boolean).length;
+    document.getElementById('cnt').textContent = total;
   }
 
-  document.querySelectorAll('.sent-toggle').forEach(chk => {
-    chk.addEventListener('change', function() {
-      S[this.dataset.n] = this.checked;
-      try { localStorage.setItem(STAMP, JSON.stringify(S)); } catch(e) {}
+  document.querySelectorAll('.sent-toggle').forEach(ch => {
+    const key = ch.dataset.n;
+    if (S[key]) {
+      ch.checked = true;
+      ch.closest('article').classList.add('done');
+    }
+    ch.addEventListener('change', () => {
+      S[key] = ch.checked ? (ch.dataset.u || key) : null;
+      if (!ch.checked) delete S[key];
+      localStorage.setItem(STAMP, JSON.stringify(S));
+      ch.closest('article').classList.toggle('done', ch.checked);
       updateCount();
     });
   });
-
-  const btnSpisok = document.getElementById('spisok');
-  if (btnSpisok) {
-    btnSpisok.addEventListener('click', async function() {
-      const sentUsers = [];
-      document.querySelectorAll('.sent-toggle').forEach(chk => {
-        if (S[chk.dataset.n]) sentUsers.push('@' + chk.dataset.u + ' (' + chk.dataset.n + ')');
-      });
-      const resText = 'Отправлено 24.11 (' + sentUsers.length + '):\n' + sentUsers.join('\n');
-      if (navigator.clipboard) {
-        await navigator.clipboard.writeText(resText);
-        btnSpisok.textContent = 'Скопировано (' + sentUsers.length + ')';
-        setTimeout(() => { btnSpisok.textContent = '📋 Скопировать список отправленных'; }, 2000);
-      } else {
-        prompt('Скопируй список:', resText);
-      }
-    });
-  }
-
   updateCount();
+
+  document.getElementById('spisok').addEventListener('click', async () => {
+    const list = Object.values(S).filter(Boolean);
+    if (!list.length) {
+      alert('Пока нет ни одной отметки об отправке.');
+      return;
+    }
+    const txt = list.join('\n');
+    await navigator.clipboard.writeText(txt);
+    alert('Скопировано в буфер (' + list.length + ' контактов):\n' + txt);
+  });
 </script>
+
 </body>
 </html>
