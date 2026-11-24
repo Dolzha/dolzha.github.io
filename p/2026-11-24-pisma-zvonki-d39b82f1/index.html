@@ -4,215 +4,385 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Сообщения и звонки, 24 ноября 2026</title>
+  <title>Сводка Telegram и письма — 24 ноября 2026</title>
   <style>
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-    body { margin: 0; background: #f4f5f6; color: #20252a; font: 16px/1.6 system-ui, -apple-system, sans-serif; }
-    header, main, nav { max-width: 1000px; margin: auto; padding: 24px; }
-    header { padding-top: 40px; padding-bottom: 16px; }
-    .eyebrow { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #4c5660; margin: 0 0 8px; }
-    h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.15; margin: 0 0 12px; }
-    h2 { margin: 36px 0 16px; font-size: 24px; border-bottom: 2px solid #e2e6ea; padding-bottom: 8px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+    body { margin: 0; background: #f4f5f7; color: #1f2428; font: 16px/1.6 system-ui, -apple-system, sans-serif; }
+    header, main { max-width: 1040px; margin: auto; padding: 24px; }
+    header { padding-top: 32px; padding-bottom: 12px; }
+    .eyebrow { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #075ca0; margin: 0 0 6px; }
+    h1 { font-size: clamp(26px, 4vw, 38px); line-height: 1.15; margin: 0 0 12px; }
+    h2 { margin: 36px 0 14px; font-size: 22px; border-bottom: 2px solid #dfe3e8; padding-bottom: 8px; }
     h3 { font-size: 18px; margin: 0; }
-    h4 { margin: 12px 0 4px; font-size: 15px; color: #333; }
-    nav { display: flex; flex-wrap: wrap; gap: 12px; border-block: 1px solid #d4d9de; background: #fff; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    nav a { color: #075ca0; text-decoration: none; font-weight: 600; font-size: 15px; padding: 6px 12px; border-radius: 6px; }
-    nav a:hover { background: #f0f4f8; }
-    article { padding: 20px 24px; background: white; border: 1px solid #d4d9de; margin: 16px 0; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
-    article.done { opacity: 0.55; background: #fafafa; border-color: #ccc; }
-    .top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
-    .top h3 { display: flex; align-items: center; gap: 8px; }
+    nav { max-width: 1040px; margin: auto; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 10px; border-block: 1px solid #d4d9de; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    nav a { color: #075ca0; text-decoration: none; font-weight: 600; font-size: 14px; padding: 6px 12px; border-radius: 6px; background: #f0f4f8; }
+    nav a:hover { background: #e1eaf4; }
+    article { padding: 20px 22px; background: white; border: 1px solid #d4d9de; margin: 14px 0; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
+    article.done { opacity: 0.5; background: #fafafa; }
+    .top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-bottom: 8px; }
     .top a { color: #075ca0; text-decoration: none; font-weight: 600; }
     .top a:hover { text-decoration: underline; }
-    .message { white-space: pre-wrap; margin: 16px 0; line-height: 1.65; background: #f9fbfd; padding: 14px 16px; border-radius: 8px; border-left: 4px solid #075ca0; font-family: inherit; }
-    .note { font-size: 14px; color: #4c5660; margin: 8px 0; }
-    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
-    button.copy { border: 1px solid #064878; border-radius: 6px; padding: 9px 16px; background: #075ca0; color: white; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .15s; }
+    .message { white-space: pre-wrap; margin: 12px 0; line-height: 1.6; background: #f8fafd; padding: 14px 16px; border-radius: 8px; border-left: 4px solid #075ca0; }
+    .note { font-size: 14px; color: #4a545e; margin: 6px 0; white-space: pre-wrap; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 12px; }
+    button.copy { border: 1px solid #064878; border-radius: 6px; padding: 9px 16px; background: #075ca0; color: white; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
     button.copy:hover { background: #064878; }
     button.copy.ok { background: #2e7d32; border-color: #1e5a22; }
-    label.check-sent { display: flex; align-items: center; gap: 6px; font-size: 15px; cursor: pointer; user-select: none; margin-left: 8px; }
+    .btn-tg { text-decoration: none; display: inline-block; padding: 9px 16px; border-radius: 6px; background: #2b7a4b; color: #fff; font-weight: 600; font-size: 14px; }
+    .btn-tg:hover { background: #205e39; }
+    label.check-sent { display: flex; align-items: center; gap: 6px; font-size: 15px; cursor: pointer; user-select: none; margin-left: 8px; font-weight: 500; }
     label.check-sent input { width: 18px; height: 18px; cursor: pointer; }
-    details { margin-top: 14px; border-top: 1px solid #eef0f2; padding-top: 10px; }
-    summary { cursor: pointer; font-weight: 600; color: #075ca0; font-size: 14px; }
-    .badge { display: inline-block; padding: 3px 8px; font-size: 12px; font-weight: 700; border-radius: 4px; background: #e8f0fe; color: #174ea6; }
+    .badge { display: inline-block; padding: 3px 8px; font-size: 12px; font-weight: 700; border-radius: 5px; background: #e8f0fe; color: #174ea6; margin-bottom: 6px; }
+    .badge-hot { background: #fce8e6; color: #c5221f; }
     .badge-warm { background: #fef7e0; color: #b06000; }
     .badge-call { background: #e6f4ea; color: #137333; }
     .badge-cold { background: #f1f3f4; color: #3c4043; }
-    .onl-rem { font-size: 13px; color: #b06000; margin-top: 8px; font-weight: 500; }
-    #notice { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #20252a; color: white; padding: 10px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; z-index: 100; font-weight: 500; }
+    .summary-bar { background: #fff; padding: 14px 20px; border-radius: 10px; border: 1px solid #d4d9de; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; }
+    .summary-stats { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; }
+    .stat-item b { font-size: 17px; color: #075ca0; }
+    #spisok { background: #3c4043; color: #fff; border: 0; border-radius: 6px; padding: 9px 14px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+    #notice { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #20252a; color: white; padding: 10px 20px; border-radius: 8px; display: none; z-index: 100; font-weight: 600; }
     #notice.on { display: block; }
-    .summary-bar { background: #fff; padding: 14px 20px; border-radius: 8px; border: 1px solid #d4d9de; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center; }
-    .summary-stats { display: flex; gap: 16px; flex-wrap: wrap; }
-    .stat-item b { font-size: 18px; color: #075ca0; }
-    #spisok { background: #3c4043; color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
-    #spisok:hover { background: #202124; }
-    @media (max-width: 600px) {
-      header, main, nav { padding: 16px; }
-      article { padding: 16px; }
-      .btn-row { flex-direction: column; align-items: stretch; }
-      label.check-sent { margin-left: 0; margin-top: 6px; }
-    }
+    .onl-rem { font-size: 13px; color: #b06000; margin-top: 8px; font-weight: 500; }
   </style>
 </head>
 <body>
 
 <header>
-  <p class="eyebrow">VSKA · 24 НОЯБРЯ 2026</p>
-  <h1>План касаний и рассылки</h1>
+  <p class="eyebrow">VSKA · ЖИВАЯ СВОДКА ИЗ TELEGRAM · 24 НОЯБРЯ 2026 (13:45)</p>
+  <h1>Сделки, Тёплые, Макеты и Холодная партия</h1>
   <div class="summary-bar">
     <div class="summary-stats">
-      <div class="stat-item"><span class="badge badge-warm">✉ Тёплые</span>: <b>4</b></div>
-      <div class="stat-item"><span class="badge badge-call">☎ Звонки</span>: <b>2</b></div>
-      <div class="stat-item"><span class="badge badge-cold">❄ Холодные</span>: <b>45</b></div>
-      <div class="stat-item">Отправлено: <b id="cnt">0</b> из 45</div>
+      <div class="stat-item"><span class="badge badge-hot">🔥 Сделки/ТЗ</span> <b>4</b></div>
+      <div class="stat-item"><span class="badge badge-warm">✉ Написать тёплым</span> <b>7</b></div>
+      <div class="stat-item"><span class="badge">📐 Очередь макетов</span> <b>4</b></div>
+      <div class="stat-item"><span class="badge badge-call">☎ Звонки</span> <b>3</b></div>
+      <div class="stat-item"><span class="badge badge-cold">❄ Холодные</span> <b>45</b> (Отправлено: <b id="cnt">0</b>)</div>
     </div>
     <button type="button" id="spisok">📋 Скопировать список отправленных</button>
   </div>
-  <p class="note">Подготовлено для отправки. Тёплым писать/звонить ДО холодной рассылки. Холодные отправлять по 10 с паузой 10 минут с телефона через мобильный интернет.</p>
+  <p class="note">Собрано напрямую по твоим папкам Telegram: <b>Сделка</b>, <b>Макеты</b>, <b>02.11–18.11</b>, <b>Секретутка С Премией</b> и <b>Рабочка (Макеты, Чатик)</b>. Учтены все реальные сообщения за 18–24 ноября.</p>
 </header>
 
 <nav>
-  <a href="#warm">✉ Тёплые (4)</a>
-  <a href="#calls">☎ Звонки (2)</a>
-  <a href="#helper">🔍 Помощнице</a>
+  <a href="#deals">🔥 Сделки и Lati (4)</a>
+  <a href="#warm">✉ Написать тёплым (7)</a>
+  <a href="#mockups">📐 Очередь макетов (4)</a>
+  <a href="#calls">☎ Звонки (3)</a>
   <a href="#cold">❄ Холодные (45)</a>
-  <a href="#tasks">📐 Текущие проекты</a>
 </nav>
 
 <main>
 
-  <!-- РАЗДЕЛ: ТЁПЛЫЕ СООБЩЕНИЯ -->
+  <section id="deals">
+    <h2>🔥 1. Сделки и горячие ответы (Lati, Ива, Ледавто, Install Audio)</h2>
+
+    <article id="deal-1">
+      <span class="badge badge-hot">🔥 ГОРЯЧАЯ СДЕЛКА (от Ирины)</span>
+      <div class="top">
+        <h3>Цветочная студия Lati (менеджер Ева от Анастасии) <small style="color:#666;font-weight:normal">(Новосибирск (2 салона + 3-й скоро))</small></h3>
+        <div><a href="tel:+79658211414" style="margin-right:12px;">+7 965 821-14-14</a><a target="_blank" rel="noopener" href="https://t.me/latistudioflo">@latistudioflo</a></div>
+      </div>
+      <p class="note"><b>Что в Telegram:</b> 23.11 и сегодня 24.11 в 13:23 Ирина переслала подробное ТЗ на 4 сообщения под бюджет 24 000 р. Хотят: Главную, Каталог (монобукеты, сборные, коробки, поштучно) с кнопкой «Заказать» в WhatsApp без корзины и онлайн-оплаты, Доставку, Контакты (2 точки + 3-я скоро, карта, форма в ТГ), воздушный природный стиль (референс «грушевый цвет»). Задали 5 вопросов и написали: «Готовы согласовать детали».</p>
+      <div class="message">Здравствуйте! Изучил ваши пожелания по сайту для студии Lati, всё очень чётко и понятно. Отвечаю по порядку на ваши вопросы:
+
+1. По бюджету 24 000 р: вся описанная вами структура (Главная, Каталог с карточками букетов и заказом в WhatsApp с названием букета, Доставка и оплата, Контакты с 3 салонами, картой и формой заявки в Telegram + мобильная версия в воздушном природном стиле) полностью укладывается в 24 000 р без доплат. Отдельно оплачивается только домен и хостинг (около 2 000 р за целый год).
+2. По правкам: делаем до полного утверждения, обычно это 2-3 круга правок, пока вам всё не понравится.
+3. По срокам: от 12 рабочих дней. Оплату разбиваем на этапы (50% старт, 50% по готовности).
+4. По текстам: тексты с вас не требуются, я сам всё напишу и оформлю на основе ваших данных и фото букетов, вам нужно будет только проверить.
+5. По доступам: домен и хостинг оформляем сразу на вас, по завершении передаю все полные доступы и показываю, как легко добавлять или менять букеты и цены.
+
+Если условия подходят, можем сегодня согласовать детали и запускать в работу!</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/latistudioflo">Открыть чат @latistudioflo</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="deal-1" data-u="latistudioflo"> готово</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Отправить ответ (напрямую или через Ирину @irina_vakilova) и переводить в оплату 1-го этапа.</p>
+    </article>
+
+    <article id="deal-2">
+      <span class="badge badge-hot">🛠 СДЕЛКА В РАБОТЕ</span>
+      <div class="top">
+        <h3>Ива — Ирина Кужина <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <div><a href="tel:+79041760166" style="margin-right:12px;">+7 904 176-01-66</a><a target="_blank" rel="noopener" href="https://t.me/kuzhina_irina">@kuzhina_irina</a></div>
+      </div>
+      <p class="note"><b>Что в Telegram:</b> 23.11 в 18:21-18:43 написала: 1) в форме два раза «получатель» — нужно заменить на «отправитель»; 2) в ссылке из бота добавить TG и MAX вместо WhatsApp; 3) в 18:43: «Короче, людям, у которых в мессенджерах скрыт номер, нельзя отправить ссылку) уже второй заказ так». Ждёт ответа.</p>
+      <div class="message">Ирина, добрый день! По вашим пунктам:
+1. В форме «получатель» на «отправитель» поправлю.
+2. Кнопку на MAX и Telegram в уведомлениях сделаем.
+3. По скрытым номерам в Telegram: если у покупателя в настройках приватности запрещён поиск по номеру, Telegram не даёт открыть чат по ссылке с телефоном. Можем добавить в форму необязательное поле «Ваш ник в Telegram (@...)» или кнопку быстрой связи, плюс всегда остаётся прямой звонок и СМС со ссылкой на оплату. Как вам такой вариант?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/kuzhina_irina">Открыть чат @kuzhina_irina</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="deal-2" data-u="kuzhina_irina"> готово</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Внести правку «Отправитель» в форму и согласовать решение по скрытым номерам.</p>
+    </article>
+
+    <article id="deal-3">
+      <span class="badge badge-hot">🛠 СДЕЛКА В РАБОТЕ</span>
+      <div class="top">
+        <h3>Ледавто — Владислав <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <div><a href="tel:+79505516240" style="margin-right:12px;">+7 950 551-62-40</a><a target="_blank" rel="noopener" href="https://t.me/Ledavtoekb">@Ledavtoekb</a></div>
+      </div>
+      <p class="note"><b>Что в Telegram:</b> 21.11 отправлена демо-ссылка. 22.11 в 21:11 Влад ответил: «Привет) слушай вообще круто, очень круто) Есть несколько моментов, которые хотел бы поправить...». В 21:52 ты попросил написать список правок. С тех пор прошло 2 дня.</p>
+      <div class="message">Владислав, добрый день! Получилось собрать список правок по сайту? Присылайте в любом удобном виде (текстом или голосовым), всё внесу.</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/Ledavtoekb">Открыть чат @Ledavtoekb</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="deal-3" data-u="Ledavtoekb"> готово</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Дождаться списка правок от Влада и докрутить сайт.</p>
+    </article>
+
+    <article id="deal-4">
+      <span class="badge badge-hot">✅ ДОМЕН НА ПРОВЕРКЕ</span>
+      <div class="top">
+        <h3>Install Audio — Дмитрий <small style="color:#666;font-weight:normal">(Тюмень)</small></h3>
+        <div><a target="_blank" rel="noopener" href="https://t.me/InstallAudio_tmn">@InstallAudio_tmn</a></div>
+      </div>
+      <p class="note"><b>Что в Telegram:</b> Сегодня 24.11 в 12:22 прошёл код 42356. В 13:21 ты написал «Домен пока что проверяется. Как проверится-буду выкладывать сайт». В 13:38 Дмитрий ответил «Да хорошо» (сообщение оставлено непрочитанным).</p>
+      
+      <div class="btn-row">
+        
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/InstallAudio_tmn">Открыть чат @InstallAudio_tmn</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="deal-4" data-u="InstallAudio_tmn"> готово</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Следующий шаг:</b> Писать сейчас не нужно — ждём завершения проверки домена и выкладываем сайт.</p>
+    </article>
+
+  </section>
+
   <section id="warm">
-    <h2>✉ Тёплые сообщения (4)</h2>
+    <h2>✉ 2. Кому написать сегодня из тёплых (с учётом всех переписок до 24.11)</h2>
+    <p class="note">Исключены те, кому ты уже отправил прощальное 18-20 ноября (@maxim576 Сила Химии, @byrmatovvv, @DuetAutoPlus). Добавлены найденные в папках дат горячие диалоги (@kotbor77, @Dimaraduga7, @eka_terina_36106, @KseniyaAstachova) и @TimurMontecarlo, просивший написать после воскресенья.</p>
 
-    <article id="warm-131">
+    <article id="warm-1">
+      <span class="badge badge-warm">№131</span>
       <div class="top">
-        <h3><span class="badge badge-warm">№131</span> Монте-Карло, Тимур <small style="color:#666;font-weight:normal">(Россия)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/timurmontecarlo">@timurmontecarlo</a>
+        <h3>Монте-Карло — Тимур <small style="color:#666;font-weight:normal">(Набережные Челны)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/TimurMontecarlo">@TimurMontecarlo</a>
       </div>
-      <p class="note"><b>Повод:</b> Клиент говорил о занятости в Сочи до пятницы; возврат в плане стоял на 20 ноября.</p>
-      <div class="message">Тимур, здравствуйте! Получилось после поездки посмотреть макет? Что скажете по оформлению?</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 20.11 он ответил: «Првиет нет еще Только закончили чемпионат Сегодня домой Раньше воскресенья вряд Ли будет интересно мне Напиши в воскресенье». Ты ответил: «До воскресенья». В воскресенье (22.11) не писали — пишем сегодня!</p>
+      <div class="message">Тимур, добрый день! Договаривались списаться после воскресенья, как вернётесь с чемпионата. Удалось отдохнуть с дороги и посмотреть макет?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/timurmontecarlo">Открыть чат @timurmontecarlo</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/TimurMontecarlo">Открыть чат @TimurMontecarlo</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-1" data-u="TimurMontecarlo"> отправил</label>
       </div>
-      <p class="note" style="margin-top:10px;"><b>Дальше:</b> Записать ответ; не догонять несколько пропущенных касаний.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Узнать мнение по макету и перевести к обсуждению условий.</p>
     </article>
 
-    <article id="warm-138">
+    <article id="warm-2">
+      <span class="badge badge-warm">№17.11</span>
       <div class="top">
-        <h3><span class="badge badge-warm">№138</span> Любава, психолог <small style="color:#666;font-weight:normal">(Россия)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/lyubavayul">@lyubavayul</a>
+        <h3>С иголочки — Татьяна Козлова (ателье) <small style="color:#666;font-weight:normal">(Из папки 17.11.2026)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/kotbor77">@kotbor77</a>
       </div>
-      <p class="note"><b>Повод:</b> Ждём обещанный референс; на 18 ноября был подготовлен черновик.</p>
-      <div class="message">Любава, добрый день! Получилось найти пример сайта, о котором говорили? Можно прислать ссылку или скриншот</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 17.11 ответила «Здравствуйте, давайте.», попросила стоимость и примеры, написала пожелание: «дизайн обозначен в 2гис, в фиолетовых тонах, как на визитке». 17.11 в 22:31 ты скинул портфолио и назвал 24 000 р. С 17.11 касаний не было!</p>
+      <div class="message">Татьяна, добрый день! Давайте я соберу для вас бесплатный пример главной страницы в ваших фиолетовых тонах, как на визитке в 2ГИС? Посмотрите вживую, как будет выглядеть именно ваш сайт, это ни к чему не обязывает. Собрать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/lyubavayul">Открыть чат @lyubavayul</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/kotbor77">Открыть чат @kotbor77</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-2" data-u="kotbor77"> отправил</label>
       </div>
-      <p class="note" style="margin-top:10px;"><b>Дальше:</b> Переделку без референса не начинать.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Если скажет «да» — перенести в папку «Макеты» и собрать макет в фиолетовой палитре визитки.</p>
     </article>
 
-    <article id="warm-158">
+    <article id="warm-3">
+      <span class="badge badge-warm">№11.11</span>
       <div class="top">
-        <h3><span class="badge badge-warm">№158</span> Илья, 7.62 <small style="color:#666;font-weight:normal">(Россия)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/ilya_7_62">@ilya_7_62</a>
+        <h3>Dima Raduga — ведущий мафии и мероприятий <small style="color:#666;font-weight:normal">(Из папки 11.11.2026)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/Dimaraduga7">@Dimaraduga7</a>
       </div>
-      <p class="note"><b>Повод:</b> Макет отправлен 17 ноября 21:25, исходящий вопрос 18 ноября был только подготовлен.</p>
-      <div class="message">Илья, добрый день! Как вам макет по цветам и общему виду? Есть что-то, что хотелось бы поменять?</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 11.11 сам ответил: «Слушай хай Напиши завтра плиз поговорим», договорились списаться завтра в 15:00 («Окей»), но после 11.11 ему так и не написали!</p>
+      <div class="message">Дима, привет! Договаривались списаться по сайту на следующий день в 15:00, я закрутился с проектами и упустил чат. Ещё актуально обсудить? Могу бесплатно собрать пример под твои игры и мероприятия.</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/ilya_7_62">Открыть чат @ilya_7_62</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/Dimaraduga7">Открыть чат @Dimaraduga7</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-3" data-u="Dimaraduga7"> отправил</label>
       </div>
-      <p class="note" style="margin-top:10px;"><b>Дальше:</b> Не выдавать отправку макета за несделанную; ждать мнения.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Вернуть диалог и предложить бесплатный набросок.</p>
     </article>
 
-    <article id="warm-146">
+    <article id="warm-4">
+      <span class="badge badge-warm">№158</span>
       <div class="top">
-        <h3><span class="badge badge-warm">№146</span> Сила Химии <small style="color:#666;font-weight:normal">(Россия)</small></h3>
-        <a target="_blank" rel="noopener" href="https://t.me/maxim576">@maxim576</a>
+        <h3>Илья Shark 7.62 — автосервис <small style="color:#666;font-weight:normal">(Миасс (папка Макеты))</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/Ilya_7_62">@Ilya_7_62</a>
       </div>
-      <p class="note"><b>Повод:</b> На 18 ноября запланировано заключительное касание, фактическая отправка не подтверждена.</p>
-      <div class="message">Добрый день! Если сейчас не до сайта, так и напишите, больше беспокоить не буду</div>
+      <p class="note"><b>Реальная ситуация в чате:</b> Макет отправлен 17.11 в 21:25 (цена 24 000 р названа 15.11). Ты уже спрашивал его 18.11 и 20.11 («Здравствуйте! Удалось посмотреть макет?»), он промолчал. Сегодня — финальное прощальное касание (д5).</p>
+      <div class="message">Илья, добрый день! Если сейчас не до сайта, так и напишите, больше отвлекать не буду.</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/maxim576">Открыть чат @maxim576</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/Ilya_7_62">Открыть чат @Ilya_7_62</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-4" data-u="Ilya_7_62"> отправил</label>
       </div>
-      <p class="note" style="margin-top:10px;"><b>Дальше:</b> После прощального без ответа больше не писать.</p>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Финальное касание. Если промолчит — закрываем.</p>
+    </article>
+
+    <article id="warm-5">
+      <span class="badge badge-warm">№156</span>
+      <div class="top">
+        <h3>Наталья Денисова — психолог-консультант <small style="color:#666;font-weight:normal">(Иркутск (папка Макеты))</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/D16Nat">@D16Nat</a>
+      </div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 16.11 попросила работы, 17.11 ты скинул портфолио и 2 сайта психологов, 20.11 спросил «Удалось примеры посмотреть?». Ответа пока нет.</p>
+      <div class="message">Наталья, добрый день! Если удалось посмотреть примеры, подскажите, какое оформление вам ближе? Могу бесплатно собрать пример под вашу практику, чтобы вы оценили на своих материалах.</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/D16Nat">Открыть чат @D16Nat</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-5" data-u="D16Nat"> отправил</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Финальное предложение макета; если молчит — отпускаем.</p>
+    </article>
+
+    <article id="warm-6">
+      <span class="badge badge-warm">№15.11</span>
+      <div class="top">
+        <h3>Екатерина — кухни на заказ <small style="color:#666;font-weight:normal">(Из папки 15.11.2026)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/eka_terina_36106">@eka_terina_36106</a>
+      </div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 15.11 спросила «Стоимость сайта?», ты ответил «Стоит 24 000 рублей, по срокам от 12 рабочих дней» без предложения бесплатного макета. По правилу 27.10 цену до макета нужно закрывать предложением бесплатного примера.</p>
+      <div class="message">Екатерина, добрый день! Чтобы вам проще было оценить, за что именно цена, давайте я бесплатно соберу пример главной страницы под ваши кухни? Посмотрите вживую, как будут смотреться ваши работы и форма расчёта. Показать?</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/eka_terina_36106">Открыть чат @eka_terina_36106</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-6" data-u="eka_terina_36106"> отправил</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Перевести с сухой цены на бесплатный макет.</p>
+    </article>
+
+    <article id="warm-7">
+      <span class="badge badge-warm">№12.11</span>
+      <div class="top">
+        <h3>Ксения Астахова — логопед <small style="color:#666;font-weight:normal">(Из папки 12.11.2026)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/KseniyaAstachova">@KseniyaAstachova</a>
+      </div>
+      <p class="note"><b>Реальная ситуация в чате:</b> 12.11 спросила «Здравствуйте! А сколько стоит ?», получила ответ 24 000 р и замолчала.</p>
+      <div class="message">Ксения, здравствуйте! Давайте я бесплатно соберу пример страницы под ваши занятия, чтобы вы наглядно увидели, как сайт будет выглядеть и помогать родителям записываться? Это ни к чему не обязывает.</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать текст</button>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/KseniyaAstachova">Открыть чат @KseniyaAstachova</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="warm-7" data-u="KseniyaAstachova"> отправил</label>
+      </div>
+      <p class="note" style="margin-top:8px;"><b>Цель:</b> Перевести с вопроса о цене на бесплатный пример.</p>
+    </article>
+
+  </section>
+
+  <section id="mockups">
+    <h2>📐 3. Очередь на сборку макетов (найдено в папках дат и у Ирины)</h2>
+
+    <article id="mockup-1">
+      <span class="badge">🚨 ПРОСРОЧЕН С 17.11 (НЕ БЫЛ В ПАПКЕ МАКЕТЫ!)</span>
+      <div class="top">
+        <h3>Дмитрий Соколов — автосервис <small style="color:#666;font-weight:normal">(Владивосток (папка 17.11.2026))</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/Sodmigen">@Sodmigen</a>
+      </div>
+      <p class="note"><b>Детали из Telegram:</b> 17.11 ответил «посмотрю» -&gt; на вопрос о пожеланиях: «нет» -&gt; «Собирайте.». Ты 17.11 в 20:54 пообещал макет «завтра или послезавтра вечером» («Договорились?»), но чат остался в папке 17.11 и макет не собран!</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Перенести в папку «Макеты» и срочно собрать макет автосервиса!</p>
+    </article>
+
+    <article id="mockup-2">
+      <span class="badge">🟢 НОВЫЙ МАКЕТ ОТ ИРИНЫ (сегодня 13:24)</span>
+      <div class="top">
+        <h3>Елизавета — логопед <small style="color:#666;font-weight:normal">(Из чата «Секретутка С Премией» / Рабочка)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/li_zizy">@li_zizy</a>
+      </div>
+      <p class="note"><b>Детали из Telegram:</b> Согласилась («Да, покажите Здравствуйте»). Пожелания: «Нравится эко стиль - дерево и зелень, с принципами монтессори среды (натуральные материалы: дерево, камни) Поэтому - зеленый и песочный, светло коричневый». Обещано на завтра-послезавтра («Хорошо, без спешки 🌸»).</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Собрать светлый эко-макет в стиле Монтессори (зелёный, песочный, светло-коричневый, текстуры дерева/камня).</p>
+    </article>
+
+    <article id="mockup-3">
+      <span class="badge">🟡 МАКЕТЫ ОТ ИРИНЫ В «РАБОЧКА -&gt; 💻 МАКЕТЫ» (от 17.11)</span>
+      <div class="top">
+        <h3>Три лида Ирины от 17.11 <small style="color:#666;font-weight:normal">(Топик «💻 Макеты»)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/irina_vakilova">@irina_vakilova</a>
+      </div>
+      <p class="note"><b>Детали из Telegram:</b> 1) @Anastasia_Dulaeva («Макет, уточняю пожелания»); 2) @derevyashkino_bsk («Пожеланий нет»); 3) @Neuro_logoped_BFB («Макет»). С 17.11 в топике новых сообщений не было.</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Уточнить у Ирины статус по этим трём макетам с 17.11 (какие актуальны к сборке).</p>
+    </article>
+
+    <article id="mockup-4">
+      <span class="badge">⏳ УЖЕ ОТПРАВЛЕНЫ СЕГОДНЯ / ВЧЕРА (ЖДЁМ)</span>
+      <div class="top">
+        <h3>Павел Порошин (@poroshinpro) и Иван PDR (@semyanikhin) <small style="color:#666;font-weight:normal">(Абакан / Уссурийск)</small></h3>
+        <a target="_blank" rel="noopener" href="https://t.me/poroshinpro">@poroshinpro</a>
+      </div>
+      <p class="note"><b>Детали из Telegram:</b> • Павлу Порошину макет отправлен сегодня 24.11 в 12:38 — ждём реакцию.
+• Ивану PDR макет отправлен 23.11 в 21:33, сегодня ночью он похвалил («получилось отлично, сколько будет стоить?»), узнал цену и написал «как решусь напишу вам» (в 11:25 ты дописал про поэтапную оплату).</p>
+      <p class="note" style="color:#075ca0;font-weight:600;"><b>Действие:</b> Сегодня их не трогаем. Павла проверяем завтра (д1), Ивана через 2-3 дня.</p>
     </article>
 
   </section>
 
   <section id="calls">
-    <h2>☎ Звонки (2)</h2>
+    <h2>☎ 4. Звонки на сегодня</h2>
 
-    <article id="call-58">
+    <article id="call-1">
+      <span class="badge badge-call">Звонок · 133</span>
       <div class="top">
-        <h3><span class="badge badge-call">№58</span> Led Garage 66 <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
-        <div>
-          <a href="tel:+79935151505" style="font-size:17px;font-weight:700;margin-right:12px;">+7 993 515-15-05</a>
-          <a target="_blank" rel="noopener" href="https://t.me/ledgarage66">@ledgarage66</a>
-        </div>
-      </div>
-      <p class="note"><b>Время:</b> После проверки, не было ли звонка после 18 ноября</p>
-      <h4>С чего начать:</h4>
-      <div class="message">Здравствуйте, это Тимур, по сайту для Led Garage. Вы говорили, что доделываете логотип. Как сейчас с ним дела?</div>
-      <div class="btn-row">
-        <button type="button" class="copy">Скопировать начало</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#137333;color:#fff;font-weight:600;font-size:14px;" href="tel:+79935151505">Позвонить +7 993 515-15-05</a>
-      </div>
-      <details>
-        <summary>Что спросить и варианты ответов</summary>
-        <ul style="margin: 8px 0 0 16px; padding: 0;"><li>Готов ли логотип и вернутся ли к сайту.</li><li>Если пока занят, записать названную клиентом дату.</li></ul>
-      </details>
-    </article>
-
-    <article id="call-133">
-      <div class="top">
-        <h3><span class="badge badge-call">№133</span> Sofa Concept, Вадим <small style="color:#666;font-weight:normal">(Калининград)</small></h3>
+        <h3>Sofa Concept — Вадим Ежергин <small style="color:#666;font-weight:normal">(Калининград (-3 часа от Екб))</small></h3>
         <div>
           <a href="tel:+79097992765" style="font-size:17px;font-weight:700;margin-right:12px;">+7 909 799-27-65</a>
           <a target="_blank" rel="noopener" href="https://t.me/vezhergin">@vezhergin</a>
         </div>
       </div>
-      <p class="note"><b>Время:</b> С 13:00 Екатеринбурга = с 10:00 Калининграда, после проверки последних событий</p>
-      <h4>С чего начать:</h4>
-      <div class="message">Вадим, добрый день! Это Тимур, по сайту для Sofa Concept. Удалось посмотреть макет? Хотел коротко обсудить ваши впечатления</div>
+      <p class="note"><b>Контекст:</b> Макет отправлен 12.11, сообщение 14.11 («Вадим, приветствую Удалось макет посмотреть?») без ответа. В плане стоял звонок.</p>
+      <div class="message">Вадим, добрый день! Это Тимур, я отправлял вам в Telegram пример сайта для Sofa Concept. Удалось посмотреть? Хотел коротко узнать, как вам по стилю.</div>
       <div class="btn-row">
-        <button type="button" class="copy">Скопировать начало</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#137333;color:#fff;font-weight:600;font-size:14px;" href="tel:+79097992765">Позвонить +7 909 799-27-65</a>
+        <button type="button" class="copy">Скопировать фразу</button>
+        <a class="btn-tg" style="background:#137333;" href="tel:+79097992765">Позвонить +7 909 799-27-65</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-1" data-u="vezhergin"> позвонил</label>
       </div>
-      <details>
-        <summary>Что спросить и варианты ответов</summary>
-        <ul style="margin: 8px 0 0 16px; padding: 0;"><li>Мнение о макете и правки.</li><li>Следующий шаг по его ответу, без автоматического предложения оплаты.</li></ul>
-      </details>
     </article>
 
-  </section>
-
-  <section id="helper">
-    <h2>🔍 Внутренняя сверка с помощницей</h2>
-    <article>
+    <article id="call-2">
+      <span class="badge badge-call">Звонок · 58</span>
       <div class="top">
-        <h3>Ирина (помощница)</h3>
-        <a target="_blank" rel="noopener" href="https://t.me/irina_vakilova">@irina_vakilova</a>
+        <h3>Led Garage 66 <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
+        <div>
+          <a href="tel:+79935151505" style="font-size:17px;font-weight:700;margin-right:12px;">+7 993 515-15-05</a>
+          <a target="_blank" rel="noopener" href="https://t.me/ledgarage66">@ledgarage66</a>
+        </div>
       </div>
-      <div class="message">Иринка, привет! Подскажи, есть ответы от Марины, Натальи Филатовой, Александра Валова и LATI? По Портнягиной картинки уже передавали, что она ответила? И что сейчас с четырьмя новыми макетами от 17 ноября?</div>
+      <p class="note"><b>Контекст:</b> Ждали готовности логотипа (цена 24 000 р была озвучена ранее).</p>
+      <div class="message">Здравствуйте, это Тимур, по сайту для Led Garage. Вы говорили, что доделываете логотип. Как сейчас с ним дела?</div>
       <div class="btn-row">
-        <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/irina_vakilova">Открыть чат @irina_vakilova</a>
+        <button type="button" class="copy">Скопировать фразу</button>
+        <a class="btn-tg" style="background:#137333;" href="tel:+79935151505">Позвонить +7 993 515-15-05</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-2" data-u="ledgarage66"> позвонил</label>
       </div>
-      <p class="note">Спросить одним сообщением ДО того, как связываться с клиентами из её списка (Марченкова, Филатова, Валов, LATI, Портнягина).</p>
     </article>
+
+    <article id="call-3">
+      <span class="badge badge-call">Звонок · Ирина #Чатик</span>
+      <div class="top">
+        <h3>Звонки по списку Ирины из «Рабочка -&gt; # Чатик» <small style="color:#666;font-weight:normal">(Антонина Гаус, Валерия Николаева, Александр Валов)</small></h3>
+        <div>
+          <a href="tel:+79089767337" style="font-size:17px;font-weight:700;margin-right:12px;">+7 908 976-73-37 (Антонина) / +7 917 732-23-87 (Валов)</a>
+          <a target="_blank" rel="noopener" href="https://t.me/Antonina_Gaus_psiholog">@Antonina_Gaus_psiholog</a>
+        </div>
+      </div>
+      <p class="note"><b>Контекст:</b> 15.11 и 16.11 Ирина в «# Чатик» напоминала позвонить: @Antonina_Gaus_psiholog (+7 908 976 7337), @Valeri_Nikolaeva и @alexandr_valov1 (+7 917 732-23-87). 16.11 в 13:21 ты написал «Я позвоню».</p>
+      <div class="message">Здравствуйте! Это Тимур, мы с помощницей Ириной отправляли вам пример сайта. Удалось посмотреть картинки? Хотел узнать ваше мнение.</div>
+      <div class="btn-row">
+        <button type="button" class="copy">Скопировать фразу</button>
+        <a class="btn-tg" style="background:#137333;" href="tel:+79089767337">Позвонить +7 908 976-73-37 (Антонина) / +7 917 732-23-87 (Валов)</a>
+        <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="call-3" data-u="Antonina_Gaus_psiholog"> позвонил</label>
+      </div>
+    </article>
+
   </section>
 
-  <!-- РАЗДЕЛ: ХОЛОДНЫЕ ПИСЬМА -->
   <section id="cold">
-    <h2>❄ Холодные письма (45)</h2>
-    <p class="note">Партия подготовлена по утверждённому алгоритму «Задача бизнеса + деталь отзыва» (17.11). Проверено по 2ГИС, дублям и анти-ИИ фильтрам. Концовки проверены («Показать?», «Посмотрите?», без «картинкой»).</p>
+    <h2>❄ 5. Холодная партия (45 лидов по алгоритму задачи бизнеса)</h2>
+    <p class="note">Все 45 писем написаны строго по алгоритму (имя без отчества · факт из 2ГИС · задача бизнеса ниши · решение через сайт · оффер · короткий вопрос без слова «картинкой»).</p>
 
-    <article class="cold-card" id="k1" data-n="1" data-u="gradientauto">
+    <article class="cold-card" id="k1">
       <div class="top">
         <h3><span class="badge badge-cold">№1</span> Gradient Auto, автомастерская по удалению вмятин <small style="color:#666;font-weight:normal">(Иркутск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/gradientauto">@gradientauto</a>
@@ -224,13 +394,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/gradientauto">Открыть чат @gradientauto</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/gradientauto">Открыть чат @gradientauto</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="1" data-u="gradientauto"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k2" data-n="2" data-u="logocitypro">
+    <article class="cold-card" id="k2">
       <div class="top">
         <h3><span class="badge badge-cold">№2</span> Logocity, нейрологопедический клуб для взрослых и детей <small style="color:#666;font-weight:normal">(Воронеж)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/logocitypro">@logocitypro</a>
@@ -242,13 +412,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/logocitypro">Открыть чат @logocitypro</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/logocitypro">Открыть чат @logocitypro</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="2" data-u="logocitypro"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k3" data-n="3" data-u="sto_fortuna">
+    <article class="cold-card" id="k3">
       <div class="top">
         <h3><span class="badge badge-cold">№3</span> Фортуна Авто <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/sto_fortuna">@sto_fortuna</a>
@@ -260,13 +430,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/sto_fortuna">Открыть чат @sto_fortuna</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/sto_fortuna">Открыть чат @sto_fortuna</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="3" data-u="sto_fortuna"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k4" data-n="4" data-u="white_roses_vl">
+    <article class="cold-card" id="k4">
       <div class="top">
         <h3><span class="badge badge-cold">№4</span> Белые розы <small style="color:#666;font-weight:normal">(Владивосток)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/white_roses_vl">@white_roses_vl</a>
@@ -278,13 +448,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/white_roses_vl">Открыть чат @white_roses_vl</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/white_roses_vl">Открыть чат @white_roses_vl</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="4" data-u="white_roses_vl"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k5" data-n="5" data-u="psy_stacy_cherry">
+    <article class="cold-card" id="k5">
       <div class="top">
         <h3><span class="badge badge-cold">№5</span> Кабинет психолога-консультанта <small style="color:#666;font-weight:normal">(Новороссийск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/psy_stacy_cherry">@psy_stacy_cherry</a>
@@ -296,13 +466,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/psy_stacy_cherry">Открыть чат @psy_stacy_cherry</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/psy_stacy_cherry">Открыть чат @psy_stacy_cherry</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="5" data-u="psy_stacy_cherry"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k6" data-n="6" data-u="cvetutsady">
+    <article class="cold-card" id="k6">
       <div class="top">
         <h3><span class="badge badge-cold">№6</span> Цветут сады <small style="color:#666;font-weight:normal">(Пионерский)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/cvetutsady">@cvetutsady</a>
@@ -314,13 +484,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/cvetutsady">Открыть чат @cvetutsady</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/cvetutsady">Открыть чат @cvetutsady</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="6" data-u="cvetutsady"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k7" data-n="7" data-u="autobiography38">
+    <article class="cold-card" id="k7">
       <div class="top">
         <h3><span class="badge badge-cold">№7</span> Автобиография, автосервис <small style="color:#666;font-weight:normal">(Иркутск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/autobiography38">@autobiography38</a>
@@ -332,13 +502,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/autobiography38">Открыть чат @autobiography38</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/autobiography38">Открыть чат @autobiography38</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="7" data-u="autobiography38"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k8" data-n="8" data-u="carevna43">
+    <article class="cold-card" id="k8">
       <div class="top">
         <h3><span class="badge badge-cold">№8</span> Цветы, салон воздушных шаров <small style="color:#666;font-weight:normal">(Киров)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/carevna43">@carevna43</a>
@@ -350,13 +520,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/carevna43">Открыть чат @carevna43</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/carevna43">Открыть чат @carevna43</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="8" data-u="carevna43"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k9" data-n="9" data-u="ivan_uprs">
+    <article class="cold-card" id="k9">
       <div class="top">
         <h3><span class="badge badge-cold">№9</span> Шина 116, автосервис <small style="color:#666;font-weight:normal">(Елабуга)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/ivan_uprs">@ivan_uprs</a>
@@ -368,13 +538,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/ivan_uprs">Открыть чат @ivan_uprs</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/ivan_uprs">Открыть чат @ivan_uprs</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="9" data-u="ivan_uprs"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k10" data-n="10" data-u="mb_sto96">
+    <article class="cold-card" id="k10">
       <div class="top">
         <h3><span class="badge badge-cold">№10</span> MB Динамика <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/mb_sto96">@mb_sto96</a>
@@ -386,13 +556,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/mb_sto96">Открыть чат @mb_sto96</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/mb_sto96">Открыть чат @mb_sto96</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="10" data-u="mb_sto96"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k11" data-n="11" data-u="tsvetkova_flo">
+    <article class="cold-card" id="k11">
       <div class="top">
         <h3><span class="badge badge-cold">№11</span> Цветкова, цветочный магазин <small style="color:#666;font-weight:normal">(Казань)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/tsvetkova_flo">@tsvetkova_flo</a>
@@ -404,13 +574,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/tsvetkova_flo">Открыть чат @tsvetkova_flo</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/tsvetkova_flo">Открыть чат @tsvetkova_flo</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="11" data-u="tsvetkova_flo"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k12" data-n="12" data-u="prestige1616">
+    <article class="cold-card" id="k12">
       <div class="top">
         <h3><span class="badge badge-cold">№12</span> Престиж, студия мебели <small style="color:#666;font-weight:normal">(Нижний Тагил)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/prestige1616">@prestige1616</a>
@@ -422,13 +592,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/prestige1616">Открыть чат @prestige1616</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/prestige1616">Открыть чат @prestige1616</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="12" data-u="prestige1616"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k13" data-n="13" data-u="belkina8insta">
+    <article class="cold-card" id="k13">
       <div class="top">
         <h3><span class="badge badge-cold">№13</span> Контроль, фотостудия <small style="color:#666;font-weight:normal">(Барнаул)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/belkina8insta">@belkina8insta</a>
@@ -440,13 +610,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/belkina8insta">Открыть чат @belkina8insta</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/belkina8insta">Открыть чат @belkina8insta</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="13" data-u="belkina8insta"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k14" data-n="14" data-u="roman5454">
+    <article class="cold-card" id="k14">
       <div class="top">
         <h3><span class="badge badge-cold">№14</span> 365, автосервис <small style="color:#666;font-weight:normal">(Верхняя Пышма)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/roman5454">@roman5454</a>
@@ -458,13 +628,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/roman5454">Открыть чат @roman5454</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/roman5454">Открыть чат @roman5454</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="14" data-u="roman5454"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k15" data-n="15" data-u="monronvrsk">
+    <article class="cold-card" id="k15">
       <div class="top">
         <h3><span class="badge badge-cold">№15</span> Цветы-Монро, салон цветов <small style="color:#666;font-weight:normal">(Новороссийск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/monronvrsk">@monronvrsk</a>
@@ -476,13 +646,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/monronvrsk">Открыть чат @monronvrsk</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/monronvrsk">Открыть чат @monronvrsk</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="15" data-u="monronvrsk"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k16" data-n="16" data-u="chrissvalery">
+    <article class="cold-card" id="k16">
       <div class="top">
         <h3><span class="badge badge-cold">№16</span> Кабинет психолога Кристины Максимовой <small style="color:#666;font-weight:normal">(Нижний Тагил)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/chrissvalery">@chrissvalery</a>
@@ -494,13 +664,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/chrissvalery">Открыть чат @chrissvalery</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/chrissvalery">Открыть чат @chrissvalery</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="16" data-u="chrissvalery"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k17" data-n="17" data-u="bloomroom_kirov">
+    <article class="cold-card" id="k17">
       <div class="top">
         <h3><span class="badge badge-cold">№17</span> Bloom room, цветочная студия <small style="color:#666;font-weight:normal">(Киров)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/bloomroom_kirov">@bloomroom_kirov</a>
@@ -512,13 +682,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/bloomroom_kirov">Открыть чат @bloomroom_kirov</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/bloomroom_kirov">Открыть чат @bloomroom_kirov</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="17" data-u="bloomroom_kirov"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k18" data-n="18" data-u="autoelectric16">
+    <article class="cold-card" id="k18">
       <div class="top">
         <h3><span class="badge badge-cold">№18</span> Гараж33, выездной сервис автоэлектрика <small style="color:#666;font-weight:normal">(Казань)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/autoelectric16">@autoelectric16</a>
@@ -530,13 +700,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/autoelectric16">Открыть чат @autoelectric16</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/autoelectric16">Открыть чат @autoelectric16</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="18" data-u="autoelectric16"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k19" data-n="19" data-u="floramarket37">
+    <article class="cold-card" id="k19">
       <div class="top">
         <h3><span class="badge badge-cold">№19</span> Флора маркет, супермаркет цветов <small style="color:#666;font-weight:normal">(Иваново)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/floramarket37">@floramarket37</a>
@@ -548,13 +718,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/floramarket37">Открыть чат @floramarket37</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/floramarket37">Открыть чат @floramarket37</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="19" data-u="floramarket37"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k20" data-n="20" data-u="djefri83">
+    <article class="cold-card" id="k20">
       <div class="top">
         <h3><span class="badge badge-cold">№20</span> Кабинет психолога Алены Суховаровой <small style="color:#666;font-weight:normal">(Иваново)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/djefri83">@djefri83</a>
@@ -566,13 +736,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/djefri83">Открыть чат @djefri83</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/djefri83">Открыть чат @djefri83</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="20" data-u="djefri83"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k21" data-n="21" data-u="tanya_sssure">
+    <article class="cold-card" id="k21">
       <div class="top">
         <h3><span class="badge badge-cold">№21</span> Лучше всех!, детский сад домашнего типа <small style="color:#666;font-weight:normal">(Гурьевск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/tanya_sssure">@tanya_sssure</a>
@@ -584,13 +754,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/tanya_sssure">Открыть чат @tanya_sssure</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/tanya_sssure">Открыть чат @tanya_sssure</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="21" data-u="tanya_sssure"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k22" data-n="22" data-u="bulavochka_31">
+    <article class="cold-card" id="k22">
       <div class="top">
         <h3><span class="badge badge-cold">№22</span> Булавка, ателье <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/bulavochka_31">@bulavochka_31</a>
@@ -602,13 +772,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/bulavochka_31">Открыть чат @bulavochka_31</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/bulavochka_31">Открыть чат @bulavochka_31</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="22" data-u="bulavochka_31"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k23" data-n="23" data-u="sodmigen">
+    <article class="cold-card" id="k23">
       <div class="top">
         <h3><span class="badge badge-cold">№23</span> Brobox, автосервис <small style="color:#666;font-weight:normal">(Владивосток)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/sodmigen">@sodmigen</a>
@@ -620,13 +790,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/sodmigen">Открыть чат @sodmigen</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/sodmigen">Открыть чат @sodmigen</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="23" data-u="sodmigen"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k24" data-n="24" data-u="azbyka_svetov">
+    <article class="cold-card" id="k24">
       <div class="top">
         <h3><span class="badge badge-cold">№24</span> Азбука цветов, салон <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/azbyka_svetov">@azbyka_svetov</a>
@@ -638,13 +808,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/azbyka_svetov">Открыть чат @azbyka_svetov</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/azbyka_svetov">Открыть чат @azbyka_svetov</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="24" data-u="azbyka_svetov"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k25" data-n="25" data-u="farmer37">
+    <article class="cold-card" id="k25">
       <div class="top">
         <h3><span class="badge badge-cold">№25</span> Ясюниха, загородный дом, баня, беседки <small style="color:#666;font-weight:normal">(Иваново)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/farmer37">@farmer37</a>
@@ -656,13 +826,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/farmer37">Открыть чат @farmer37</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/farmer37">Открыть чат @farmer37</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="25" data-u="farmer37"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k26" data-n="26" data-u="automoda96">
+    <article class="cold-card" id="k26">
       <div class="top">
         <h3><span class="badge badge-cold">№26</span> Автомода96, магазин автоаксессуаров <small style="color:#666;font-weight:normal">(Екатеринбург)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/automoda96">@automoda96</a>
@@ -674,13 +844,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/automoda96">Открыть чат @automoda96</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/automoda96">Открыть чат @automoda96</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="26" data-u="automoda96"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k27" data-n="27" data-u="elenazav_psiholog">
+    <article class="cold-card" id="k27">
       <div class="top">
         <h3><span class="badge badge-cold">№27</span> Психолог Елена Завацкая <small style="color:#666;font-weight:normal">(Кострома)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/elenazav_psiholog">@elenazav_psiholog</a>
@@ -692,13 +862,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/elenazav_psiholog">Открыть чат @elenazav_psiholog</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/elenazav_psiholog">Открыть чат @elenazav_psiholog</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="27" data-u="elenazav_psiholog"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k28" data-n="28" data-u="flowersss18">
+    <article class="cold-card" id="k28">
       <div class="top">
         <h3><span class="badge badge-cold">№28</span> Цветочный рай, оптовая база <small style="color:#666;font-weight:normal">(Ижевск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/flowersss18">@flowersss18</a>
@@ -710,13 +880,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/flowersss18">Открыть чат @flowersss18</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/flowersss18">Открыть чат @flowersss18</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="28" data-u="flowersss18"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k29" data-n="29" data-u="moxflowers">
+    <article class="cold-card" id="k29">
       <div class="top">
         <h3><span class="badge badge-cold">№29</span> Мох <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/moxflowers">@moxflowers</a>
@@ -728,13 +898,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/moxflowers">Открыть чат @moxflowers</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/moxflowers">Открыть чат @moxflowers</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="29" data-u="moxflowers"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k30" data-n="30" data-u="mozzevelnic">
+    <article class="cold-card" id="k30">
       <div class="top">
         <h3><span class="badge badge-cold">№30</span> Можжевельник, салон цветов и декора <small style="color:#666;font-weight:normal">(Казань)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/mozzevelnic">@mozzevelnic</a>
@@ -746,13 +916,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/mozzevelnic">Открыть чат @mozzevelnic</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/mozzevelnic">Открыть чат @mozzevelnic</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="30" data-u="mozzevelnic"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k31" data-n="31" data-u="happy_ronny">
+    <article class="cold-card" id="k31">
       <div class="top">
         <h3><span class="badge badge-cold">№31</span> Happy ronny, частный детский сад <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/happy_ronny">@happy_ronny</a>
@@ -764,13 +934,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/happy_ronny">Открыть чат @happy_ronny</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/happy_ronny">Открыть чат @happy_ronny</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="31" data-u="happy_ronny"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k32" data-n="32" data-u="bouquet_flowers">
+    <article class="cold-card" id="k32">
       <div class="top">
         <h3><span class="badge badge-cold">№32</span> Букет, студия флористики и декора <small style="color:#666;font-weight:normal">(Йошкар-Ола)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/bouquet_flowers">@bouquet_flowers</a>
@@ -782,13 +952,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/bouquet_flowers">Открыть чат @bouquet_flowers</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/bouquet_flowers">Открыть чат @bouquet_flowers</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="32" data-u="bouquet_flowers"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k33" data-n="33" data-u="arg_031">
+    <article class="cold-card" id="k33">
       <div class="top">
         <h3><span class="badge badge-cold">№33</span> 031, центр покраски авто <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/arg_031">@arg_031</a>
@@ -800,13 +970,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/arg_031">Открыть чат @arg_031</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/arg_031">Открыть чат @arg_031</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="33" data-u="arg_031"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k34" data-n="34" data-u="tsvetianzhelika">
+    <article class="cold-card" id="k34">
       <div class="top">
         <h3><span class="badge badge-cold">№34</span> Анжелика, цветочный салон <small style="color:#666;font-weight:normal">(Курск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/tsvetianzhelika">@tsvetianzhelika</a>
@@ -818,13 +988,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/tsvetianzhelika">Открыть чат @tsvetianzhelika</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/tsvetianzhelika">Открыть чат @tsvetianzhelika</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="34" data-u="tsvetianzhelika"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k35" data-n="35" data-u="anflorstudio">
+    <article class="cold-card" id="k35">
       <div class="top">
         <h3><span class="badge badge-cold">№35</span> Anflor <small style="color:#666;font-weight:normal">(Киров)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/anflorstudio">@anflorstudio</a>
@@ -836,13 +1006,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/anflorstudio">Открыть чат @anflorstudio</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/anflorstudio">Открыть чат @anflorstudio</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="35" data-u="anflorstudio"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k36" data-n="36" data-u="kotbor77">
+    <article class="cold-card" id="k36">
       <div class="top">
         <h3><span class="badge badge-cold">№36</span> С иголочки, швейное ателье <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/kotbor77">@kotbor77</a>
@@ -854,13 +1024,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/kotbor77">Открыть чат @kotbor77</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/kotbor77">Открыть чат @kotbor77</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="36" data-u="kotbor77"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k37" data-n="37" data-u="delice_vld">
+    <article class="cold-card" id="k37">
       <div class="top">
         <h3><span class="badge badge-cold">№37</span> Delice, салон цветов <small style="color:#666;font-weight:normal">(Владикавказ)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/delice_vld">@delice_vld</a>
@@ -872,13 +1042,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/delice_vld">Открыть чат @delice_vld</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/delice_vld">Открыть чат @delice_vld</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="37" data-u="delice_vld"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k38" data-n="38" data-u="salut_luxe">
+    <article class="cold-card" id="k38">
       <div class="top">
         <h3><span class="badge badge-cold">№38</span> Марьямка, магазин <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/salut_luxe">@salut_luxe</a>
@@ -890,13 +1060,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/salut_luxe">Открыть чат @salut_luxe</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/salut_luxe">Открыть чат @salut_luxe</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="38" data-u="salut_luxe"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k39" data-n="39" data-u="razbor86">
+    <article class="cold-card" id="k39">
       <div class="top">
         <h3><span class="badge badge-cold">№39</span> Разбор 86, центр авторазбора иномарок <small style="color:#666;font-weight:normal">(Сургут)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/razbor86">@razbor86</a>
@@ -908,13 +1078,13 @@
 Показать?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/razbor86">Открыть чат @razbor86</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/razbor86">Открыть чат @razbor86</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="39" data-u="razbor86"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k40" data-n="40" data-u="houston_temp">
+    <article class="cold-card" id="k40">
       <div class="top">
         <h3><span class="badge badge-cold">№40</span> Хьюстон, студия дизайна и ремонта <small style="color:#666;font-weight:normal">(Ижевск)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/houston_temp">@houston_temp</a>
@@ -926,13 +1096,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/houston_temp">Открыть чат @houston_temp</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/houston_temp">Открыть чат @houston_temp</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="40" data-u="houston_temp"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k41" data-n="41" data-u="panda31bel">
+    <article class="cold-card" id="k41">
       <div class="top">
         <h3><span class="badge badge-cold">№41</span> Панда, игровая фотостудия <small style="color:#666;font-weight:normal">(Белгород)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/panda31bel">@panda31bel</a>
@@ -944,13 +1114,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/panda31bel">Открыть чат @panda31bel</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/panda31bel">Открыть чат @panda31bel</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="41" data-u="panda31bel"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k42" data-n="42" data-u="zheleznii94">
+    <article class="cold-card" id="k42">
       <div class="top">
         <h3><span class="badge badge-cold">№42</span> Мастерская автоэлектрики и диагностики <small style="color:#666;font-weight:normal">(Владикавказ)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/zheleznii94">@zheleznii94</a>
@@ -962,13 +1132,13 @@
 Посмотрите?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/zheleznii94">Открыть чат @zheleznii94</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/zheleznii94">Открыть чат @zheleznii94</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="42" data-u="zheleznii94"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k43" data-n="43" data-u="kinjalkavkaza">
+    <article class="cold-card" id="k43">
       <div class="top">
         <h3><span class="badge badge-cold">№43</span> Кинжалы Кавказа, магазин подарков и сувениров <small style="color:#666;font-weight:normal">(Грозный)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/kinjalkavkaza">@kinjalkavkaza</a>
@@ -980,13 +1150,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/kinjalkavkaza">Открыть чат @kinjalkavkaza</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/kinjalkavkaza">Открыть чат @kinjalkavkaza</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="43" data-u="kinjalkavkaza"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k44" data-n="44" data-u="studio_nv">
+    <article class="cold-card" id="k44">
       <div class="top">
         <h3><span class="badge badge-cold">№44</span> Нв-студия <small style="color:#666;font-weight:normal">(Сысерть)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/studio_nv">@studio_nv</a>
@@ -998,13 +1168,13 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/studio_nv">Открыть чат @studio_nv</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/studio_nv">Открыть чат @studio_nv</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="44" data-u="studio_nv"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
-    <article class="cold-card" id="k45" data-n="45" data-u="zepter_raziyat">
+    <article class="cold-card" id="k45">
       <div class="top">
         <h3><span class="badge badge-cold">№45</span> Zepter, магазин товаров для эко-уборки <small style="color:#666;font-weight:normal">(Махачкала)</small></h3>
         <a target="_blank" rel="noopener" href="https://t.me/zepter_raziyat">@zepter_raziyat</a>
@@ -1016,59 +1186,33 @@
 Прислать пример?</div>
       <div class="btn-row">
         <button type="button" class="copy">Скопировать текст</button>
-        <a class="copy" style="text-decoration:none;display:inline-block;padding:9px 16px;border-radius:6px;background:#3b7a57;color:#fff;font-weight:600;font-size:14px;" target="_blank" rel="noopener" href="https://t.me/zepter_raziyat">Открыть чат @zepter_raziyat</a>
+        <a class="btn-tg" target="_blank" rel="noopener" href="https://t.me/zepter_raziyat">Открыть чат @zepter_raziyat</a>
         <label class="check-sent"><input type="checkbox" class="sent-toggle" data-n="45" data-u="zepter_raziyat"> отправил</label>
       </div>
-      <p class="onl-rem">Перед отправкой: проверить профиль — был(а) недавно или в сети не дольше 3 дней назад.</p>
+      <p class="onl-rem">Перед отправкой: в профиле «был(а) недавно» или в сети меньше 3 дней назад.</p>
     </article>
 
   </section>
-
-  <section id="tasks">
-    <h2>📐 Текущие проекты и задачи</h2>
-    <article>
-      <h3>Install Audio (Дмитрий, Тюмень, @installaudio_tmn)</h3>
-      <p>Дмитрий заполнил данные владельца. Идёт верификация, результат придёт на контактную почту. Ждём статус домена installaudio.ru в кабинете. Ничего повторно не просить.</p>
-    </article>
-    <article>
-      <h3>LolliPolli38 (Полина, Иркутск, @lollipolli_38)</h3>
-      <p>Внутренний контроль 24.11: индексация главной и обработка Sitemap в Яндексе и Google. Права подтверждены, повторно коды не запрашивать.</p>
-    </article>
-    <article>
-      <h3>Ледавто (Влад, Екатеринбург, @ledavtoekb)</h3>
-      <p>Согласованный макет готов. Проверить картинки и передать Владу вручную.</p>
-    </article>
-    <article>
-      <h3>Лучший День (Павел Порошин, Абакан, @poroshinpro)</h3>
-      <p>Макет полностью дособран 24.11 по правкам Роберта. Проверить картинки и передать Павлу.</p>
-    </article>
-    <article>
-      <h3>Иван PDR (Уссурийск, @semyanikhin)</h3>
-      <p>Макет demo-pdr-ussuriysk признан эталоном 23.11 и отправлен клиенту.</p>
-    </article>
-  </section>
-
 </main>
 
 <div id="notice">Текст скопирован</div>
 
 <script>
-  // Копирование текста
   document.addEventListener('click', async function(e) {
     if (!e.target.matches('button.copy')) return;
     const btn = e.target;
     const card = btn.closest('article');
     const msg = card.querySelector('.message');
     const text = msg ? msg.innerText : '';
-    
     try {
       await navigator.clipboard.writeText(text);
-      btn.textContent = 'Скопировано';
+      const orig = btn.textContent;
+      btn.textContent = 'Скопировано ✓';
       btn.classList.add('ok');
       const n = document.getElementById('notice');
       n.classList.add('on');
       setTimeout(() => {
-        btn.textContent = 'Скопировать текст';
+        btn.textContent = orig;
         btn.classList.remove('ok');
         n.classList.remove('on');
       }, 1800);
@@ -1077,8 +1221,7 @@
     }
   });
 
-  // Локальное сохранение отправленных чекбоксов
-  const STAMP = 'sent-2026-11-24';
+  const STAMP = 'sent-2026-11-24-v2';
   let S = {};
   try { S = JSON.parse(localStorage.getItem(STAMP) || '{}'); } catch(e) { S = {}; }
 
@@ -1090,7 +1233,7 @@
       chk.checked = on;
       const card = chk.closest('article');
       if (card) card.classList.toggle('done', on);
-      if (on) count++;
+      if (on && !String(id).includes('-')) count++;
     });
     const cntEl = document.getElementById('cnt');
     if (cntEl) cntEl.textContent = count;
@@ -1104,15 +1247,14 @@
     });
   });
 
-  // Скопировать список отправленных
   const btnSpisok = document.getElementById('spisok');
   if (btnSpisok) {
     btnSpisok.addEventListener('click', async function() {
       const sentUsers = [];
       document.querySelectorAll('.sent-toggle').forEach(chk => {
-        if (S[chk.dataset.n]) sentUsers.push('@' + chk.dataset.u);
+        if (S[chk.dataset.n]) sentUsers.push('@' + chk.dataset.u + ' (' + chk.dataset.n + ')');
       });
-      const resText = 'Отправлено 24.11 (' + sentUsers.length + ' лидов):\n' + sentUsers.join('\n');
+      const resText = 'Отправлено 24.11 (' + sentUsers.length + '):\n' + sentUsers.join('\n');
       if (navigator.clipboard) {
         await navigator.clipboard.writeText(resText);
         btnSpisok.textContent = 'Скопировано (' + sentUsers.length + ')';
@@ -1125,6 +1267,5 @@
 
   updateCount();
 </script>
-
 </body>
 </html>
