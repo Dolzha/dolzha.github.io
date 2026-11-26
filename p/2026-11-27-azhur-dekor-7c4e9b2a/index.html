@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Ажур Декор - Салон штор и интерьерного текстиля в Находке</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+  :root {
+    color-scheme: light only;
+    --bg: #F5F2EC;
+    --bg-alt: #ECE6DC;
+    --surface: #FFFFFF;
+    --surface-soft: #FAF8F4;
+    --ink: #112536;
+    --ink-2: #3F5160;
+    --ink-3: #647482;
+    --line: rgba(17, 37, 54, 0.11);
+    --line-strong: rgba(17, 37, 54, 0.20);
+    --acc: #C97316;
+    --acc-hover: #B1620E;
+    --acc-soft: rgba(201, 115, 22, 0.10);
+    --acc-ink: #FFFFFF;
+    --glass-bg: linear-gradient(135deg, rgba(249, 246, 241, 0.88), rgba(255, 255, 255, 0.74));
+    --glass-border: rgba(17, 37, 54, 0.12);
+    --glass-shadow: 0 24px 56px rgba(17, 37, 54, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+    --font-display: 'Tenor Sans', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+    --pad: clamp(24px, 3.2vw, 56px);
+    --sec-y: clamp(68px, 6.2vw, 108px);
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+
+  /* ==================== HEADER ==================== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    height: 76px;
+    padding: 0 var(--pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: rgba(245, 242, 236, 0.92);
+    backdrop-filter: blur(18px) saturate(1.15);
+    -webkit-backdrop-filter: blur(18px) saturate(1.15);
+    border-bottom: 1px solid var(--line);
+  }
+  .brand-wordmark {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2.2vw, 36px);
+  }
+  .site-nav a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.35s var(--ease);
+  }
+  .site-nav a:hover { color: var(--ink); }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .header-phone {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    transition: color 0.35s var(--ease);
+  }
+  .header-phone:hover { color: var(--acc); }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: var(--acc);
+    color: var(--acc-ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: transform 0.65s var(--ease), background-color 0.45s var(--ease);
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    background: var(--acc-hover);
+    transform: translateY(-2px);
+  }
+  .btn-header {
+    padding: 11px 22px;
+    font-size: 14px;
+  }
+
+  /* ==================== HERO ==================== */
+  .hero {
+    position: relative;
+    height: calc(100svh - 76px);
+    min-height: 680px;
+    max-height: 920px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: clamp(36px, 4.4vw, 68px) var(--pad);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 44%;
+    /* Slightly lighter warm daylight tone as requested by Robert */
+    filter: brightness(1.13) contrast(1.01) saturate(1.03);
+    z-index: 0;
+  }
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(90deg, rgba(245, 242, 236, 0.42) 0%, rgba(245, 242, 236, 0.14) 44%, rgba(245, 242, 236, 0.02) 100%),
+      linear-gradient(180deg, rgba(245, 242, 236, 0.06) 0%, rgba(17, 37, 54, 0.08) 100%);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 36px;
+  }
+  .hero-glass {
+    width: fit-content;
+    max-width: 800px;
+    padding: clamp(32px, 3.4vw, 50px);
+    border-radius: var(--radius-lg);
+    background: var(--glass-bg);
+    backdrop-filter: blur(22px) saturate(1.25);
+    -webkit-backdrop-filter: blur(22px) saturate(1.25);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  .hero-glass h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 4.1vw, 66px);
+    line-height: 1.06;
+    font-weight: 400;
+    letter-spacing: -0.014em;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .hero-glass p {
+    font-size: clamp(18px, 1.35vw, 21px);
+    line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 560px;
+    margin-bottom: 28px;
+  }
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero-note {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+
+  .fabric-dock {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 20px 13px 14px;
+    border-radius: 999px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 18px 42px rgba(17, 37, 54, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+  .swatches-row { display: flex; align-items: center; }
+  .swatch-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FFFFFF;
+    margin-left: -10px;
+    box-shadow: 0 4px 12px rgba(17, 37, 54, 0.16);
+  }
+  .swatch-circle:first-child { margin-left: 0; }
+  .fabric-dock-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.32;
+    color: var(--ink);
+  }
+  .fabric-dock-text span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-2);
+  }
+
+  /* ==================== SHARED SECTION HEADER ==================== */
+  .section {
+    padding: var(--sec-y) var(--pad);
+    scroll-margin-top: 76px;
+  }
+  .section-alt {
+    background: var(--bg-alt);
+  }
+  .sec-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: clamp(32px, 3.2vw, 48px);
+  }
+  .sec-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 4.2vw, 62px);
+    line-height: 1.04;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .sec-head p {
+    font-size: clamp(19px, 1.4vw, 22px);
+    line-height: 1.48;
+    color: var(--ink-2);
+    max-width: 720px;
+  }
+
+  /* ==================== 1. USLUGI (EDITORIAL ASYMMETRIC GLASS CARDS) ==================== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  .srv-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    min-height: 470px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.65s var(--ease);
+  }
+  .srv-card:hover { transform: translateY(-2px); }
+  .srv-card.wide { grid-column: span 7; }
+  .srv-card.narrow { grid-column: span 5; }
+  .srv-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease);
+  }
+  .srv-card:hover img { transform: scale(1.025); }
+  .srv-caption {
+    position: relative;
+    z-index: 2;
+    margin: 22px;
+    padding: 24px 28px;
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(1.25);
+    -webkit-backdrop-filter: blur(20px) saturate(1.25);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: 0 14px 34px rgba(17, 37, 54, 0.14);
+  }
+  .srv-caption h3 {
+    font-family: var(--font-display);
+    font-size: clamp(25px, 2vw, 31px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .srv-caption p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 540px;
+  }
+
+  /* ==================== 2. PROEKTY (CLEAN ARCHITECTURAL MOSAIC, NO GLASS OVERLAY) ==================== */
+  .projects-mosaic {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  .proj-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.65s var(--ease);
+  }
+  .proj-item:hover { transform: translateY(-2px); }
+  .proj-item.p-span-7 { grid-column: span 7; }
+  .proj-item.p-span-5 { grid-column: span 5; }
+  .proj-item.p-span-4 { grid-column: span 4; }
+  .proj-item.p-span-6 { grid-column: span 6; }
+  .proj-frame {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--line);
+  }
+  .proj-frame.tall { height: 470px; }
+  .proj-frame.mid  { height: 400px; }
+  .proj-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease);
+  }
+  .proj-item:hover .proj-frame img { transform: scale(1.03); }
+  .proj-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 4px;
+  }
+  .proj-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .proj-room {
+    font-size: 14px;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  /* ==================== 3. KAK RABOTAEM (CIRCLES TRACK + TACTILE SWATCH BAND) ==================== */
+  .steps-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  .step-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: transform 0.65s var(--ease), border-color 0.45s var(--ease);
+  }
+  .step-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-strong);
+  }
+  .step-num {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1.5px solid var(--line-strong);
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    display: grid;
+    place-items: center;
+    transition: background-color 0.45s var(--ease), border-color 0.45s var(--ease), color 0.45s var(--ease);
+  }
+  .step-card:hover .step-num {
+    background: var(--acc);
+    border-color: var(--acc);
+    color: var(--acc-ink);
+  }
+  .step-card h3 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .step-card p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  /* Lion-fabrics inspired tactile textile band */
+  .tactile-band {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(28px, 3vw, 44px) clamp(28px, 3.6vw, 52px);
+    display: grid;
+    grid-template-columns: 1.3fr auto auto;
+    align-items: center;
+    gap: 36px;
+  }
+  .tactile-copy h3 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 2.4vw, 34px);
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .tactile-copy p {
+    font-size: 16px;
+    color: var(--ink-2);
+    max-width: 620px;
+  }
+  .tactile-swatches {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .tactile-swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .tactile-swatch img {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bg);
+    box-shadow: 0 8px 20px rgba(17, 37, 54, 0.12);
+    transition: transform 0.6s var(--ease);
+  }
+  .tactile-swatch:hover img { transform: scale(1.06); }
+  .tactile-swatch span {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-3);
+  }
+
+  /* ==================== 4. O SALONE (3-COLUMN EDITORIAL SPREAD) ==================== */
+  .about-spread {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 0.92fr;
+    gap: clamp(24px, 2.8vw, 44px);
+    align-items: stretch;
+  }
+  .about-photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    min-height: 520px;
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 8px;
+  }
+  .about-lead {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 2.3vw, 36px);
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .about-center p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .about-right-photo {
+    flex: 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 310px;
+  }
+  .about-right-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-quote {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 24px 26px;
+  }
+  .about-quote blockquote {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .about-quote cite {
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-3);
+  }
+
+  /* ==================== 5. OTZYVY (3x2 FULL VISIBLE GRID, ZERO STARS) ==================== */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .rev-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 22px;
+    transition: transform 0.65s var(--ease);
+  }
+  .rev-card:hover { transform: translateY(-2px); }
+  .rev-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .rev-footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .rev-author {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .rev-source {
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .reviews-more {
+    margin-top: 28px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .reviews-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-2);
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    transition: border-color 0.35s var(--ease), color 0.35s var(--ease), transform 0.55s var(--ease);
+  }
+  .reviews-link:hover {
+    border-color: var(--acc);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  /* ==================== 6. KONTAKTY ==================== */
+  .contacts-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 26px;
+    align-items: stretch;
+  }
+  .contacts-left {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .contact-info-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 32px 34px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px 32px;
+  }
+  .c-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .c-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .c-label {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-bottom: 4px;
+  }
+  .c-val {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+    text-decoration: none;
+    display: block;
+  }
+  .c-sub {
+    font-size: 14px;
+    color: var(--ink-2);
+    margin-top: 2px;
+  }
+
+  .map-box {
+    flex: 1;
+    min-height: 320px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface-soft);
+    position: relative;
+  }
+  #salon-map {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    z-index: 1;
+  }
+  .leaflet-tile-pane {
+    filter: saturate(0.75) contrast(0.96) brightness(1.02);
+  }
+
+  .contact-form-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(32px, 3vw, 44px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .contact-form-card h3 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 2.3vw, 36px);
+    font-weight: 400;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .form-lead {
+    font-size: 16px;
+    color: var(--ink-2);
+    margin-bottom: 6px;
+  }
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .field label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+  .field input, .field textarea {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line-strong);
+    background: var(--surface-soft);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.35s var(--ease), background-color 0.35s var(--ease);
+  }
+  .field input:focus, .field textarea:focus {
+    border-color: var(--acc);
+    background: #FFFFFF;
+  }
+  .field textarea { resize: vertical; min-height: 104px; }
+  .form-submit-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .form-submit-row .btn-primary { width: 100%; padding: 17px 28px; }
+  .form-status {
+    font-size: 14px;
+    color: var(--ink-2);
+    min-height: 20px;
+  }
+
+  /* ==================== FOOTER ==================== */
+  .site-footer {
+    background: #E5DED2;
+    border-top: 1px solid var(--line);
+    padding: 44px var(--pad) 48px;
+  }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .footer-nav a {
+    font-size: 15px;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.35s var(--ease);
+  }
+  .footer-nav a:hover { color: var(--ink); }
+  .footer-bottom {
+    padding-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--ink-3);
+    flex-wrap: wrap;
+  }
+
+  /* ==================== LIGHTBOX ==================== */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(17, 37, 54, 0.84);
+    backdrop-filter: blur(12px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 36px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox-inner {
+    position: relative;
+    max-width: 1120px;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .lightbox-inner img {
+    max-height: 78vh;
+    border-radius: 14px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  }
+  .lightbox-cap {
+    color: #F5F2EC;
+    font-size: 16px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #FFFFFF;
+    color: var(--ink);
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand-wordmark" href="#top">Ажур Декор</a>
+  <nav class="site-nav" aria-label="Основное меню">
+    <a href="#uslugi">Услуги</a>
+    <a href="#proekty">Проекты</a>
+    <a href="#etapy">Как работаем</a>
+    <a href="#o-salone">О салоне</a>
+    <a href="#otzyvy">Отзывы</a>
+    <a href="#kontakty">Контакты</a>
+  </nav>
+  <div class="header-right">
+    <a class="header-phone" href="tel:+79147938775">+7 914 793-87-75</a>
+    <a class="btn-primary btn-header" href="#kontakty">Вызвать дизайнера</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <img class="hero-bg" src="img/hero_main.jpg" alt="Интерьер гостиной с портьерами, тюлем и римской шторой от салона Ажур Декор">
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="hero-glass">
+        <h1>Шторы и текстиль на заказ в Находке</h1>
+        <p>Приедем на объект с каталогами тканей, снимем точные замеры под ваши карнизы и сошьём комплект для квартиры или дома</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#kontakty">Пригласить дизайнера</a>
+          <span class="hero-note">Выезд по Находке и Приморскому краю</span>
+        </div>
+      </div>
+
+      <div class="fabric-dock">
+        <div class="swatches-row">
+          <img class="swatch-circle" src="img/swatch_linen.jpg" alt="Натуральный лён">
+          <img class="swatch-circle" src="img/swatch_petrol.jpg" alt="Портьерная ткань">
+          <img class="swatch-circle" src="img/swatch_velvet.jpg" alt="Бархат">
+          <img class="swatch-circle" src="img/swatch_sage.jpg" alt="Варёный хлопок">
+        </div>
+        <div class="fabric-dock-text">
+          Подбор тканей вживую
+          <span>Привозим образцы к вашему свету и стенам</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 1. USLUGI ==================== -->
+  <section class="section" id="uslugi">
+    <div class="sec-head">
+      <h2>Услуги</h2>
+      <p>Оформляем окна и интерьеры под ключ: от замеров на объекте до развески готовых штор и подбора домашнего текстиля</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="srv-card wide">
+        <img src="img/srv_petrol.jpg" alt="Портьеры и тюль на заказ">
+        <div class="srv-caption">
+          <h3>Портьеры и тюль</h3>
+          <p>Подбираем плотность, посадку и оттенок ткани под дневной свет комнаты, отшиваем и навешиваем шторы на месте</p>
+        </div>
+      </article>
+
+      <article class="srv-card narrow">
+        <img src="img/srv_rimskie.jpg" alt="Римские шторы, плиссе и жалюзи">
+        <div class="srv-caption">
+          <h3>Римские шторы, плиссе и жалюзи</h3>
+          <p>Точные замеры, подбор механизмов и аккуратная установка солнцезащитных систем на любые окна</p>
+        </div>
+      </article>
+
+      <article class="srv-card narrow">
+        <img src="img/srv_belye.jpg" alt="Постельное бельё из варёного хлопка и подушки" style="object-position: center 76%;">
+        <div class="srv-caption">
+          <h3>Постельное бельё и подушки</h3>
+          <p>Комплекты из варёного хлопка и тенселя по вашим размерам, покрывала и декоративные подушки</p>
+        </div>
+      </article>
+
+      <article class="srv-card wide">
+        <img src="img/srv_wallpaper.jpg" alt="Обои, фрески и лепной декор">
+        <div class="srv-caption">
+          <h3>Обои, фрески и лепной декор</h3>
+          <p>Помогаем собрать комнату целиком, чтобы стены, шторы и текстиль сочетались по фактуре и тону</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== 2. PROEKTY ==================== -->
+  <section class="section section-alt" id="proekty">
+    <div class="sec-head">
+      <h2>Проекты</h2>
+      <p>Реальные квартиры и дома в Находке и Приморском крае, для которых мы подбирали ткани, шили шторы и делали установку</p>
+    </div>
+
+    <div class="projects-mosaic">
+      <figure class="proj-item p-span-7" data-full="img/srv_chalet.jpg" data-cap="Гостиная в загородном доме - плотные портьеры и лёгкий тюль">
+        <div class="proj-frame tall">
+          <img src="img/srv_chalet.jpg" alt="Гостиная в загородном доме с портьерами и тюлем">
+        </div>
+        <figcaption class="proj-meta">
+          <span class="proj-title">Гостиная в деревянном доме</span>
+          <span class="proj-room">Портьеры и тюль</span>
+        </figcaption>
+      </figure>
+
+      <figure class="proj-item p-span-5" data-full="img/srv_portyery.jpg" data-cap="Столовая зона - графитовые портьеры в пол и воздушный тюль">
+        <div class="proj-frame tall">
+          <img src="img/srv_portyery.jpg" alt="Столовая зона с графитовыми портьерами" style="object-position: center 45%;">
+        </div>
+        <figcaption class="proj-meta">
+          <span class="proj-title">Столовая с высокими окнами</span>
+          <span class="proj-room">Портьеры в пол</span>
+        </figcaption>
+      </figure>
+
+      <figure class="proj-item p-span-4" data-full="img/srv_living.jpg" data-cap="Светлая гостиная - комбинированные портьеры и акцентная подушка">
+        <div class="proj-frame mid">
+          <img src="img/srv_living.jpg" alt="Светлая гостиная с комбинированными портьерами" style="object-position: center 55%;">
+        </div>
+        <figcaption class="proj-meta">
+          <span class="proj-title">Светлая гостиная</span>
+          <span class="proj-room">Шторы и подушки</span>
+        </figcaption>
+      </figure>
+
+      <figure class="proj-item p-span-4" data-full="img/hero_light.jpg" data-cap="Зона отдыха - льняная римская штора в тон отделке">
+        <div class="proj-frame mid">
+          <img src="img/hero_light.jpg" alt="Льняная римская штора в гостиной">
+        </div>
+        <figcaption class="proj-meta">
+          <span class="proj-title">Минималистичная гостиная</span>
+          <span class="proj-room">Римская штора</span>
+        </figcaption>
+      </figure>
+
+      <figure class="proj-item p-span-4" data-full="img/srv_nook.jpg" data-cap="Уютный эркер - римские шторы и текстильные подушки">
+        <div class="proj-frame mid">
+          <img src="img/srv_nook.jpg" alt="Оформление окна в эркере римской шторой" style="object-position: center 50%;">
+        </div>
+        <figcaption class="proj-meta">
+          <span class="proj-title">Зона отдыха у окна</span>
+          <span class="proj-room">Римские шторы</span>
+        </figcaption>
+      </figure>
+
+      <figure class="proj-item p-span-6" data-full="img/srv_bedroom.jpg" data-cap="Спальня в тёплых тонах - портьеры блэкаут и светлый тюль">
+        <div class="proj-frame mid">
+          <img src="img/srv_bedroom.jpg" alt="Спальня с тёплыми бежевыми портьерами" style="object-position: center 48%;">
+        </div>
+        <figcaption class="proj-meta">
+          <span class="proj-title">Спальня в песочных тонах</span>
+          <span class="proj-room">Портьеры и тюль</span>
+        </figcaption>
+      </figure>
+
+      <figure class="proj-item p-span-6" data-full="img/srv_roman2.jpg" data-cap="Кухня с геометрическим орнаментом на римской шторе">
+        <div class="proj-frame mid">
+          <img src="img/srv_roman2.jpg" alt="Римская штора с геометрическим рисунком" style="object-position: center 35%;">
+        </div>
+        <figcaption class="proj-meta">
+          <span class="proj-title">Кухня с эркером</span>
+          <span class="proj-room">Римская штора с кантом</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================== 3. KAK RABOTAEM ==================== -->
+  <section class="section" id="etapy">
+    <div class="sec-head">
+      <h2>Как работаем</h2>
+      <p>Берём на себя замеры, расчёт ткани и монтаж, чтобы шторы точно подошли к вашим карнизам и освещению комнаты</p>
+    </div>
+
+    <div class="steps-track">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Заявка и беседа</h3>
+        <p>Обсуждаем ваши комнаты, пожелания по свету и стилю и договариваемся об удобном времени визита</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Выезд с каталогами</h3>
+        <p>Привозим ткани прямо в квартиру, прикладываем к стенам и мебели, учитываем уже установленные карнизы и натяжной потолок</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Пошив и контроль</h3>
+        <p>Рассчитываем точный расход, отшиваем портьеры, тюль, римские шторы или постельное бельё с ровными швами и посадкой</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Установка и развеска</h3>
+        <p>Монтируем карнизы или плиссе, отпариваем и развешиваем шторы на месте, чтобы комната сразу стала законченной</p>
+      </div>
+    </div>
+
+    <div class="tactile-band">
+      <div class="tactile-copy">
+        <h3>Привезём образцы к вашему свету</h3>
+        <p>Один и тот же оттенок ткани по-разному смотрится в салоне и в живой комнате. Поэтому дизайнер приезжает с каталогами домой - по Находке и другим городам Приморского края</p>
+      </div>
+      <div class="tactile-swatches" aria-label="Образцы тканей салона">
+        <div class="tactile-swatch">
+          <img src="img/swatch_linen.jpg" alt="Образец льна">
+          <span>Лён</span>
+        </div>
+        <div class="tactile-swatch">
+          <img src="img/swatch_petrol.jpg" alt="Портьерная ткань">
+          <span>Портьера</span>
+        </div>
+        <div class="tactile-swatch">
+          <img src="img/swatch_velvet.jpg" alt="Бархат">
+          <span>Бархат</span>
+        </div>
+        <div class="tactile-swatch">
+          <img src="img/swatch_sage.jpg" alt="Варёный хлопок">
+          <span>Хлопок</span>
+        </div>
+      </div>
+      <div>
+        <a class="btn-primary" href="#kontakty">Заказать выезд</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. O SALONE ==================== -->
+  <section class="section section-alt" id="o-salone">
+    <div class="sec-head">
+      <h2>О салоне</h2>
+      <p>«Ажур Декор» - салон штор, дизайна и домашнего текстиля Анастасии Дулаевой в Находке</p>
+    </div>
+
+    <div class="about-spread">
+      <div class="about-photo">
+        <img src="img/srv_mustard.jpg" alt="Горчичные портьеры и декоративные подушки от Ажур Декор">
+      </div>
+
+      <div class="about-center">
+        <div class="about-lead">Спокойный подбор текстиля под характер дома и готовый ремонт</div>
+        <p>Мы работаем с каждым объектом лично: приезжаем на замеры, смотрим высоту потолков, расположение карнизов и то, как в комнату падает дневной свет. Часто клиенты приходят после попыток подобрать готовые шторы на маркетплейсах и видят, насколько точнее садится ткань, выбранная вживую.</p>
+        <p>Помимо штор, карнизов и солнцезащитных систем в салоне можно заказать постельное бельё по индивидуальным меркам из варёного хлопка и тенселя, декоративные подушки, а также подобрать обои, фрески и лепной декор в едином стиле.</p>
+      </div>
+
+      <div class="about-right">
+        <div class="about-right-photo">
+          <img src="img/srv_bedding2.jpg" alt="Домашний текстиль и постельное бельё в салоне Ажур Декор">
+        </div>
+        <div class="about-quote">
+          <blockquote>«Могу смело сказать, что салон лучший в Находке и пока даже во Владивостоке достойных найти не могу. Замеры и подборка тканей к интерьеру на высшем уровне»</blockquote>
+          <cite>Елена Сорока, отзыв в 2ГИС</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. OTZYVY ==================== -->
+  <section class="section" id="otzyvy">
+    <div class="sec-head">
+      <h2>Отзывы</h2>
+      <p>Реальные впечатления клиентов из Находки, которые оформляли с нами квартиры, дома и заказывали домашний текстиль</p>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="rev-card">
+        <p class="rev-text">Изначально собиралась покупать готовые шторы и тюль на маркетплейсе, но решила пригласить Анастасию на замеры. Я не учла карнизы, которые поставили вместе с натяжным потолком. Анастасия объяснила, какой вид штор подойдёт под них. От совета по плотности ткани до финальной установки всё прошло замечательно.</p>
+        <div class="rev-footer">
+          <span class="rev-author">Оксана Дядюк</span>
+          <span class="rev-source">2ГИС, август 2026</span>
+        </div>
+      </article>
+
+      <article class="rev-card">
+        <p class="rev-text">Заказывала тюль и шторы в новую квартиру, осталась очень довольна. Благодарю Анастасию за прекрасную работу и высокое качество. Щепетильность, с которой вы подходите к своей работе, поражает, всё идеально.</p>
+        <div class="rev-footer">
+          <span class="rev-author">Виктория Костюкова</span>
+          <span class="rev-source">2ГИС, ноябрь 2026</span>
+        </div>
+      </article>
+
+      <article class="rev-card">
+        <p class="rev-text">Анастасия помогла подобрать ткани, учла все наши пожелания и предложила удачные решения, о которых мы сами бы не подумали. Шторы идеально вписались в интерьер и сделали дом ещё уютнее. Работа выполнена безупречно, аккуратно и в срок.</p>
+        <div class="rev-footer">
+          <span class="rev-author">Diana Anbrazevich</span>
+          <span class="rev-source">2ГИС, сентябрь 2025</span>
+        </div>
+      </article>
+
+      <article class="rev-card">
+        <p class="rev-text">Получила свой комплект постельного белья Serenity home из варёного хлопка - очень нежный и уютный, его можно не утюжить. При заказе Анастасия учла все пожелания по размерам и дизайну. Отдельное спасибо за красивую упаковку и внимание к деталям.</p>
+        <div class="rev-footer">
+          <span class="rev-author">Anzhela Che</span>
+          <span class="rev-source">2ГИС, май 2025</span>
+        </div>
+      </article>
+
+      <article class="rev-card">
+        <p class="rev-text">Шикарный салон. От интерьера до дела. Обращалась неоднократно. Девочки знают подход к клиентам, а главное, как сделать атмосферу в доме ещё уютнее.</p>
+        <div class="rev-footer">
+          <span class="rev-author">Alisa Eremtsova</span>
+          <span class="rev-source">2ГИС, октябрь 2025</span>
+        </div>
+      </article>
+
+      <article class="rev-card">
+        <p class="rev-text">Спасибо большое, выбрали шторы-плиссе, получилось очень уютно и красиво. Быстрая установка и прекрасное обслуживание. Рекомендую.</p>
+        <div class="rev-footer">
+          <span class="rev-author">Анна Шипицына</span>
+          <span class="rev-source">2ГИС, июль 2024</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="reviews-more">
+      <a class="reviews-link" href="https://2gis.ru/nakhodka/firm/70000001020849312/tab/reviews" target="_blank" rel="noopener noreferrer">Читать все отзывы в 2ГИС</a>
+    </div>
+  </section>
+
+  <!-- ==================== 6. KONTAKTY ==================== -->
+  <section class="section section-alt" id="kontakty">
+    <div class="sec-head">
+      <h2>Контакты</h2>
+      <p>Приезжайте в салон посмотреть ткани вживую или оставьте заявку на выезд дизайнера с каталогами</p>
+    </div>
+
+    <div class="contacts-layout">
+      <div class="contacts-left">
+        <div class="contact-info-card">
+          <div class="c-item">
+            <div class="c-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Адрес салона</div>
+              <div class="c-val">Находка, ул. Мичманская, 39а</div>
+              <div class="c-sub">2 этаж, от лестницы налево, удобная парковка</div>
+            </div>
+          </div>
+
+          <div class="c-item">
+            <div class="c-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Режим работы</div>
+              <div class="c-val">Пн - Сб: 11:00 - 18:00</div>
+              <div class="c-sub">Воскресенье по предварительной записи</div>
+            </div>
+          </div>
+
+          <div class="c-item">
+            <div class="c-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L9 10.8a16 16 0 0 0 4.2 4.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Телефон</div>
+              <a class="c-val" href="tel:+79147938775">+7 914 793-87-75</a>
+              <div class="c-sub">Звонки и запись на замер</div>
+            </div>
+          </div>
+
+          <div class="c-item">
+            <div class="c-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 5 2 12.5l7 2.2M21 5l-2.5 14-5.5-4.3M21 5 9 14.7v4.8l3.2-3.2"/></svg>
+            </div>
+            <div>
+              <div class="c-label">Telegram</div>
+              <a class="c-val" href="https://t.me/Anastasia_Dulaeva" target="_blank" rel="noopener noreferrer">@Anastasia_Dulaeva</a>
+              <div class="c-sub">Можно прислать фото окон для консультации</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <div id="salon-map" aria-label="Карта расположения салона Ажур Декор в Находке"></div>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <div>
+          <h3>Пригласить дизайнера на замер</h3>
+          <p class="form-lead">Оставьте номер телефона, и Анастасия свяжется с вами, чтобы согласовать удобный день и подобрать каталоги тканей</p>
+        </div>
+
+        <form id="visit-form" class="field-group" novalidate>
+          <div class="field">
+            <label for="f-name">Как к вам обращаться</label>
+            <input id="f-name" name="name" type="text" placeholder="Ваше имя" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон для связи</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-note">Какие комнаты или окна планируете оформить</label>
+            <textarea id="f-note" name="note" placeholder="Например: гостиная и спальня, карнизы уже установлены"></textarea>
+          </div>
+          <div class="form-submit-row">
+            <button class="btn-primary" type="submit">Оставить заявку на выезд</button>
+            <div class="form-status" id="form-status" role="status"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <a class="brand-wordmark" href="#top">Ажур Декор</a>
+    <nav class="footer-nav" aria-label="Меню в подвале">
+      <a href="#uslugi">Услуги</a>
+      <a href="#proekty">Проекты</a>
+      <a href="#etapy">Как работаем</a>
+      <a href="#o-salone">О салоне</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <a class="header-phone" href="tel:+79147938775">+7 914 793-87-75</a>
+  </div>
+  <div class="footer-bottom">
+    <span>Салон штор, дизайна и интерьера «Ажур Декор», г. Находка, ул. Мичманская, 39а</span>
+    <span>Пн - Сб 11:00 - 18:00, Вс по записи</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии проекта">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lb-close" aria-label="Закрыть">&times;</button>
+    <img id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+    <div class="lightbox-cap" id="lb-cap"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+  // Lightbox for project photos
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCap = document.getElementById('lb-cap');
+  document.querySelectorAll('.proj-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lbImg.src = item.dataset.full;
+      lbImg.alt = item.dataset.cap || '';
+      lbCap.textContent = item.dataset.cap || '';
+      lb.classList.add('open');
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+  // Local demo form preview (does not send external requests)
+  document.getElementById('visit-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const phone = document.getElementById('f-phone').value.trim();
+    const status = document.getElementById('form-status');
+    if (!phone) {
+      status.textContent = 'Укажите номер телефона, чтобы дизайнер мог перезвонить';
+      return;
+    }
+    status.textContent = 'Заявка принята (демо-режим макета). В рабочем сайте она сразу уйдёт в Telegram салона';
+  });
+
+  // OpenStreetMap Leaflet map at verified coordinates of Michmanskaya 39a, Nakhodka
+  if (typeof L !== 'undefined') {
+    const coords = [42.8339366, 132.8732244];
+    const map = L.map('salon-map', { scrollWheelZoom: false, attributionControl: true }).setView(coords, 16);
+    map.attributionControl.setPrefix(false);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: 'OpenStreetMap'
+    }).addTo(map);
+    const pin = L.divIcon({
+      className: '',
+      html: '<div style="width:20px;height:20px;border-radius:50%;background:#C97316;border:3px solid #FFFFFF;box-shadow:0 4px 12px rgba(17,37,54,0.4);"></div>',
+      iconSize: [20, 20],
+      iconAnchor: [10, 10]
+    });
+    L.marker(coords, { icon: pin }).addTo(map).bindPopup('<strong>Ажур Декор</strong><br>ул. Мичманская, 39а, 2 этаж').openPopup();
+  }
+</script>
+</body>
+</html>
