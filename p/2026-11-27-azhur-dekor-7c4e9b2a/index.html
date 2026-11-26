@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <title>Ажур Декор - Салон штор и интерьерного текстиля в Находке</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23112536'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='26' fill='%23F5F2EC'%3E%D0%90%D0%94%3C/text%3E%3Ccircle cx='50' cy='16' r='5' fill='%23C97316'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet">
@@ -16,25 +17,28 @@
     --bg-alt: #ECE6DC;
     --surface: #FFFFFF;
     --surface-soft: #FAF8F4;
+    --beige-pill: #E6DFD2;
+    --beige-quote: #E3DACB;
     --ink: #112536;
     --ink-2: #3F5160;
     --ink-3: #647482;
-    --line: rgba(17, 37, 54, 0.11);
-    --line-strong: rgba(17, 37, 54, 0.20);
+    --line: rgba(17, 37, 54, 0.12);
+    --line-card: rgba(17, 37, 54, 0.18);
+    --line-strong: rgba(17, 37, 54, 0.24);
+    --card-shadow: 0 10px 28px rgba(17, 37, 54, 0.06), 0 1px 2px rgba(17, 37, 54, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.92);
     --acc: #C97316;
     --acc-hover: #B1620E;
-    --acc-soft: rgba(201, 115, 22, 0.10);
     --acc-ink: #FFFFFF;
-    --glass-bg: linear-gradient(135deg, rgba(249, 246, 241, 0.88), rgba(255, 255, 255, 0.74));
-    --glass-border: rgba(17, 37, 54, 0.12);
-    --glass-shadow: 0 24px 56px rgba(17, 37, 54, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+    --glass-bg: linear-gradient(135deg, rgba(249, 246, 241, 0.90), rgba(255, 255, 255, 0.76));
+    --glass-border: rgba(17, 37, 54, 0.15);
+    --glass-shadow: 0 24px 56px rgba(17, 37, 54, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.94);
     --font-display: 'Tenor Sans', sans-serif;
     --font-body: 'Manrope', sans-serif;
     --pad: clamp(24px, 3.2vw, 56px);
     --sec-y: clamp(68px, 6.2vw, 108px);
-    --radius-lg: 20px;
-    --radius-md: 14px;
-    --radius-sm: 10px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --radius-pill: 999px;
     --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
@@ -52,49 +56,34 @@
   img { display: block; max-width: 100%; }
   a { color: inherit; }
 
-  /* ==================== HEADER ==================== */
+  /* ==================== CENTERED HEADER ==================== */
   .site-header {
     position: sticky;
     top: 0;
     z-index: 40;
-    height: 76px;
+    height: 86px;
     padding: 0 var(--pad);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    gap: 28px;
-    background: rgba(245, 242, 236, 0.92);
+    gap: 20px;
+    background: rgba(245, 242, 236, 0.94);
     backdrop-filter: blur(18px) saturate(1.15);
     -webkit-backdrop-filter: blur(18px) saturate(1.15);
     border-bottom: 1px solid var(--line);
   }
-  .brand-wordmark {
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .site-nav {
+  .header-left {
     display: flex;
     align-items: center;
-    gap: clamp(18px, 2.2vw, 36px);
-  }
-  .site-nav a {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink-2);
-    text-decoration: none;
-    transition: color 0.35s var(--ease);
-  }
-  .site-nav a:hover { color: var(--ink); }
-  .header-right {
-    display: flex;
-    align-items: center;
+    justify-content: space-between;
     gap: 20px;
+    padding-right: clamp(12px, 1.8vw, 28px);
+  }
+  .header-contact-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
   .header-phone {
     font-size: 15px;
@@ -103,15 +92,70 @@
     text-decoration: none;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
+    line-height: 1.25;
     transition: color 0.35s var(--ease);
   }
   .header-phone:hover { color: var(--acc); }
+  .header-hours {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-3);
+    white-space: nowrap;
+    line-height: 1.25;
+  }
 
+  .brand-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 28px;
+    border-radius: var(--radius-pill);
+    background: var(--beige-pill);
+    border: 1px solid rgba(17, 37, 54, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 2px 8px rgba(17, 37, 54, 0.05);
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.4s var(--ease), transform 0.55s var(--ease);
+  }
+  .brand-pill:hover {
+    background: #DDD4C4;
+    transform: translateY(-1px);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: clamp(12px, 1.8vw, 28px);
+  }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 1.9vw, 30px);
+  }
+  .site-nav a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-2);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.35s var(--ease);
+  }
+  .site-nav a:hover { color: var(--ink); }
+
+  /* ==================== ROUNDED PILL BUTTONS (ORANGE KEPT) ==================== */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 32px;
+    padding: 16px 36px;
     background: var(--acc);
     color: var(--acc-ink);
     font-family: var(--font-body);
@@ -119,25 +163,27 @@
     font-weight: 600;
     text-decoration: none;
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-pill);
     cursor: pointer;
-    transition: transform 0.65s var(--ease), background-color 0.45s var(--ease);
+    box-shadow: 0 8px 22px rgba(201, 115, 22, 0.24);
+    transition: transform 0.65s var(--ease), background-color 0.45s var(--ease), box-shadow 0.45s var(--ease);
     white-space: nowrap;
   }
   .btn-primary:hover {
     background: var(--acc-hover);
     transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(177, 98, 14, 0.30);
   }
   .btn-header {
-    padding: 11px 22px;
+    padding: 12px 24px;
     font-size: 14px;
   }
 
   /* ==================== HERO ==================== */
   .hero {
     position: relative;
-    height: calc(100svh - 76px);
-    min-height: 680px;
+    height: calc(100svh - 86px);
+    min-height: 670px;
     max-height: 920px;
     width: 100%;
     overflow: hidden;
@@ -152,7 +198,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center 44%;
-    /* Slightly lighter warm daylight tone as requested by Robert */
     filter: brightness(1.13) contrast(1.01) saturate(1.03);
     z-index: 0;
   }
@@ -175,49 +220,42 @@
   }
   .hero-glass {
     width: fit-content;
-    max-width: 800px;
-    padding: clamp(32px, 3.4vw, 50px);
-    border-radius: var(--radius-lg);
+    max-width: 760px;
+    padding: clamp(34px, 3.6vw, 52px) clamp(36px, 4vw, 56px);
+    border-radius: 26px;
     background: var(--glass-bg);
     backdrop-filter: blur(22px) saturate(1.25);
     -webkit-backdrop-filter: blur(22px) saturate(1.25);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .hero-glass h1 {
     font-family: var(--font-display);
-    font-size: clamp(44px, 4.1vw, 66px);
-    line-height: 1.06;
+    font-size: clamp(42px, 4vw, 62px);
+    line-height: 1.08;
     font-weight: 400;
     letter-spacing: -0.014em;
     color: var(--ink);
     margin-bottom: 18px;
   }
   .hero-glass p {
-    font-size: clamp(18px, 1.35vw, 21px);
+    font-size: clamp(18px, 1.35vw, 20px);
     line-height: 1.5;
     color: var(--ink-2);
-    max-width: 560px;
+    max-width: 540px;
     margin-bottom: 28px;
-  }
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .hero-note {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ink-2);
   }
 
   .fabric-dock {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 13px 20px 13px 14px;
-    border-radius: 999px;
+    padding: 13px 22px 13px 14px;
+    border-radius: var(--radius-pill);
     background: var(--glass-bg);
     backdrop-filter: blur(20px) saturate(1.2);
     -webkit-backdrop-filter: blur(20px) saturate(1.2);
@@ -248,37 +286,75 @@
     color: var(--ink-2);
   }
 
-  /* ==================== SHARED SECTION HEADER ==================== */
+  /* ==================== SECTIONS + UNIQUE SUBTLE TEXTILE PATTERNS ==================== */
   .section {
+    position: relative;
     padding: var(--sec-y) var(--pad);
-    scroll-margin-top: 76px;
+    scroll-margin-top: 86px;
+    overflow: hidden;
   }
-  .section-alt {
-    background: var(--bg-alt);
+  .section > * { position: relative; z-index: 1; }
+  .section-alt { background-color: var(--bg-alt); }
+
+  /* Pattern 1 (Uslugi): Fine natural linen weave */
+  .bg-pat-linen {
+    background-color: var(--bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg stroke='%23112536' stroke-opacity='0.045' stroke-width='1'%3E%3Cpath d='M0 12h48M0 36h48M12 0v48M36 0v48'/%3E%3Cpath d='M0 24h20M28 24h20M24 0v20M24 28v20' stroke-opacity='0.03'/%3E%3C/g%3E%3C/svg%3E");
   }
+
+  /* Pattern 2 (Proekty): Vertical soft curtain drapery waves */
+  .bg-pat-drape {
+    background-color: var(--bg-alt);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='160' viewBox='0 0 96 160'%3E%3Cpath d='M16 0c12 40-12 80 0 120 4 14 4 26 0 40M48 0c12 40-12 80 0 120 4 14 4 26 0 40M80 0c12 40-12 80 0 120 4 14 4 26 0 40' fill='none' stroke='%23112536' stroke-opacity='0.05' stroke-width='1.1'/%3E%3C/svg%3E");
+  }
+
+  /* Pattern 3 (Kak rabotaem): Subtle textile herringbone chevron */
+  .bg-pat-chevron {
+    background-color: var(--bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='36' viewBox='0 0 64 36'%3E%3Cpath d='M0 18L16 4l16 14 16-14 16 14M0 36L16 22l16 14 16-14 16 14' fill='none' stroke='%23112536' stroke-opacity='0.048' stroke-width='1'/%3E%3C/svg%3E");
+  }
+
+  /* Pattern 4 (O salone): Delicate Ajur openwork diamond filigree */
+  .bg-pat-ajur {
+    background-color: var(--bg-alt);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23112536' stroke-opacity='0.055' stroke-width='1'%3E%3Cpath d='M36 4L68 36 36 68 4 36z'/%3E%3Cpath d='M36 16L56 36 36 56 16 36z' stroke-opacity='0.035'/%3E%3Ccircle cx='36' cy='36' r='2.2' fill='%23C97316' fill-opacity='0.14' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Pattern 5 (Otzyvy): Soft architectural scalloped arcs */
+  .bg-pat-arcs {
+    background-color: var(--bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='52' viewBox='0 0 84 52'%3E%3Cpath d='M0 52a42 42 0 0 1 84 0M-42 26a42 42 0 0 1 84 0M42 26a42 42 0 0 1 84 0' fill='none' stroke='%23112536' stroke-opacity='0.048' stroke-width='1'/%3E%3C/svg%3E");
+  }
+
+  /* Pattern 6 (Kontakty): Tailor measurement cross-drafting grid */
+  .bg-pat-draft {
+    background-color: var(--bg-alt);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg stroke='%23112536' stroke-opacity='0.065' stroke-width='1'%3E%3Cpath d='M28 22v12M22 28h12'/%3E%3Ccircle cx='0' cy='0' r='1.4' fill='%23112536' fill-opacity='0.06' stroke='none'/%3E%3Ccircle cx='56' cy='0' r='1.4' fill='%23112536' fill-opacity='0.06' stroke='none'/%3E%3Ccircle cx='0' cy='56' r='1.4' fill='%23112536' fill-opacity='0.06' stroke='none'/%3E%3Ccircle cx='56' cy='56' r='1.4' fill='%23112536' fill-opacity='0.06' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
   .sec-head {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
-    margin-bottom: clamp(32px, 3.2vw, 48px);
+    gap: 12px;
+    margin-bottom: clamp(32px, 3.2vw, 46px);
   }
   .sec-head h2 {
     font-family: var(--font-display);
-    font-size: clamp(42px, 4.2vw, 62px);
+    font-size: clamp(42px, 4.2vw, 60px);
     line-height: 1.04;
     font-weight: 400;
     letter-spacing: -0.015em;
     color: var(--ink);
   }
   .sec-head p {
-    font-size: clamp(19px, 1.4vw, 22px);
+    font-size: clamp(19px, 1.38vw, 21px);
     line-height: 1.48;
     color: var(--ink-2);
-    max-width: 720px;
+    max-width: 680px;
   }
 
-  /* ==================== 1. USLUGI (EDITORIAL ASYMMETRIC GLASS CARDS) ==================== */
+  /* ==================== 1. USLUGI ==================== */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -288,9 +364,10 @@
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    min-height: 470px;
+    min-height: 465px;
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
+    box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -313,16 +390,20 @@
     z-index: 2;
     margin: 22px;
     padding: 24px 28px;
+    min-height: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: var(--radius-md);
     background: var(--glass-bg);
     backdrop-filter: blur(20px) saturate(1.25);
     -webkit-backdrop-filter: blur(20px) saturate(1.25);
-    border: 1px solid rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.78);
     box-shadow: 0 14px 34px rgba(17, 37, 54, 0.14);
   }
   .srv-caption h3 {
     font-family: var(--font-display);
-    font-size: clamp(25px, 2vw, 31px);
+    font-size: clamp(24px, 1.9vw, 30px);
     font-weight: 400;
     letter-spacing: -0.01em;
     color: var(--ink);
@@ -330,12 +411,12 @@
   }
   .srv-caption p {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.48;
     color: var(--ink-2);
     max-width: 540px;
   }
 
-  /* ==================== 2. PROEKTY (CLEAN ARCHITECTURAL MOSAIC, NO GLASS OVERLAY) ==================== */
+  /* ==================== 2. PROEKTY ==================== */
   .projects-mosaic {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -359,7 +440,8 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
+    box-shadow: var(--card-shadow);
   }
   .proj-frame.tall { height: 470px; }
   .proj-frame.mid  { height: 400px; }
@@ -375,7 +457,7 @@
     align-items: baseline;
     justify-content: space-between;
     gap: 16px;
-    padding: 0 4px;
+    padding: 0 6px;
   }
   .proj-title {
     font-family: var(--font-display);
@@ -389,27 +471,27 @@
     white-space: nowrap;
   }
 
-  /* ==================== 3. KAK RABOTAEM (CIRCLES TRACK + TACTILE SWATCH BAND) ==================== */
+  /* ==================== 3. KAK RABOTAEM (FRAMED CARDS) ==================== */
   .steps-track {
-    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    margin-bottom: 36px;
+    margin-bottom: 34px;
   }
   .step-card {
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
     border-radius: var(--radius-lg);
     padding: 32px 28px 34px;
+    box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
     transition: transform 0.65s var(--ease), border-color 0.45s var(--ease);
   }
   .step-card:hover {
     transform: translateY(-2px);
-    border-color: var(--line-strong);
+    border-color: rgba(201, 115, 22, 0.45);
   }
   .step-num {
     width: 52px;
@@ -433,22 +515,22 @@
   }
   .step-card h3 {
     font-family: var(--font-display);
-    font-size: 26px;
+    font-size: 25px;
     font-weight: 400;
     line-height: 1.15;
     color: var(--ink);
   }
   .step-card p {
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 1.52;
     color: var(--ink-2);
   }
 
-  /* Lion-fabrics inspired tactile textile band */
   .tactile-band {
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
     border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
     padding: clamp(28px, 3vw, 44px) clamp(28px, 3.6vw, 52px);
     display: grid;
     grid-template-columns: 1.3fr auto auto;
@@ -457,7 +539,7 @@
   }
   .tactile-copy h3 {
     font-family: var(--font-display);
-    font-size: clamp(26px, 2.4vw, 34px);
+    font-size: clamp(26px, 2.3vw, 34px);
     font-weight: 400;
     color: var(--ink);
     margin-bottom: 10px;
@@ -465,7 +547,7 @@
   .tactile-copy p {
     font-size: 16px;
     color: var(--ink-2);
-    max-width: 620px;
+    max-width: 590px;
   }
   .tactile-swatches {
     display: flex;
@@ -484,7 +566,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--bg);
-    box-shadow: 0 8px 20px rgba(17, 37, 54, 0.12);
+    box-shadow: 0 8px 20px rgba(17, 37, 54, 0.14);
     transition: transform 0.6s var(--ease);
   }
   .tactile-swatch:hover img { transform: scale(1.06); }
@@ -494,7 +576,7 @@
     color: var(--ink-3);
   }
 
-  /* ==================== 4. O SALONE (3-COLUMN EDITORIAL SPREAD) ==================== */
+  /* ==================== 4. O SALONE ==================== */
   .about-spread {
     display: grid;
     grid-template-columns: 1fr 1.15fr 0.92fr;
@@ -504,14 +586,16 @@
   .about-photo {
     border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
+    box-shadow: var(--card-shadow);
     background: var(--surface);
-    min-height: 520px;
+    min-height: 510px;
   }
   .about-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 58%;
   }
   .about-center {
     display: flex;
@@ -522,7 +606,7 @@
   }
   .about-lead {
     font-family: var(--font-display);
-    font-size: clamp(28px, 2.3vw, 36px);
+    font-size: clamp(28px, 2.3vw, 35px);
     line-height: 1.2;
     color: var(--ink);
   }
@@ -540,19 +624,22 @@
     flex: 1;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid var(--line);
-    min-height: 310px;
+    border: 1.5px solid var(--line-card);
+    box-shadow: var(--card-shadow);
+    min-height: 300px;
   }
   .about-right-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+  /* Warm darker beige styled quote card as requested by Robert */
   .about-quote {
-    background: var(--surface);
-    border: 1px solid var(--line);
+    background: var(--beige-quote);
+    border: 1.5px solid rgba(17, 37, 54, 0.18);
     border-radius: var(--radius-md);
-    padding: 24px 26px;
+    padding: 26px 28px;
+    box-shadow: 0 12px 28px rgba(17, 37, 54, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.55);
   }
   .about-quote blockquote {
     font-size: 16px;
@@ -564,10 +651,10 @@
     font-style: normal;
     font-size: 14px;
     font-weight: 600;
-    color: var(--ink-3);
+    color: var(--ink-2);
   }
 
-  /* ==================== 5. OTZYVY (3x2 FULL VISIBLE GRID, ZERO STARS) ==================== */
+  /* ==================== 5. OTZYVY (FRAMED CARDS) ==================== */
   .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -575,16 +662,20 @@
   }
   .rev-card {
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
     border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
     padding: 30px 28px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 22px;
-    transition: transform 0.65s var(--ease);
+    transition: transform 0.65s var(--ease), border-color 0.45s var(--ease);
   }
-  .rev-card:hover { transform: translateY(-2px); }
+  .rev-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(201, 115, 22, 0.40);
+  }
   .rev-text {
     font-size: 16px;
     line-height: 1.6;
@@ -617,10 +708,11 @@
     font-weight: 600;
     color: var(--ink-2);
     text-decoration: none;
-    padding: 12px 22px;
-    border-radius: var(--radius-sm);
+    padding: 13px 26px;
+    border-radius: var(--radius-pill);
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
+    box-shadow: 0 4px 14px rgba(17, 37, 54, 0.05);
     transition: border-color 0.35s var(--ease), color 0.35s var(--ease), transform 0.55s var(--ease);
   }
   .reviews-link:hover {
@@ -629,7 +721,7 @@
     transform: translateY(-2px);
   }
 
-  /* ==================== 6. KONTAKTY ==================== */
+  /* ==================== 6. KONTAKTY (FRAMED CARDS) ==================== */
   .contacts-layout {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -643,8 +735,9 @@
   }
   .contact-info-card {
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
     border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
     padding: 32px 34px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -656,11 +749,11 @@
     gap: 14px;
   }
   .c-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
     background: var(--bg);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
     color: var(--ink);
     display: grid;
     place-items: center;
@@ -678,7 +771,9 @@
     line-height: 1.4;
     text-decoration: none;
     display: block;
+    transition: color 0.35s var(--ease);
   }
+  a.c-val:hover { color: var(--acc); }
   .c-sub {
     font-size: 14px;
     color: var(--ink-2);
@@ -690,7 +785,8 @@
     min-height: 320px;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
+    box-shadow: var(--card-shadow);
     background: var(--surface-soft);
     position: relative;
   }
@@ -703,20 +799,33 @@
   .leaflet-tile-pane {
     filter: saturate(0.75) contrast(0.96) brightness(1.02);
   }
+  .leaflet-popup-content-wrapper {
+    border-radius: 14px;
+    box-shadow: 0 10px 26px rgba(17, 37, 54, 0.16);
+    border: 1px solid rgba(17, 37, 54, 0.12);
+    font-family: var(--font-body);
+    color: var(--ink);
+  }
+  .leaflet-popup-content {
+    margin: 12px 16px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
 
   .contact-form-card {
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line-card);
     border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
     padding: clamp(32px, 3vw, 44px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 24px;
+    gap: 22px;
   }
   .contact-form-card h3 {
     font-family: var(--font-display);
-    font-size: clamp(28px, 2.3vw, 36px);
+    font-size: clamp(28px, 2.3vw, 35px);
     font-weight: 400;
     line-height: 1.12;
     color: var(--ink);
@@ -725,7 +834,6 @@
   .form-lead {
     font-size: 16px;
     color: var(--ink-2);
-    margin-bottom: 6px;
   }
   .field-group {
     display: flex;
@@ -744,9 +852,9 @@
   }
   .field input, .field textarea {
     width: 100%;
-    padding: 15px 18px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--line-strong);
+    padding: 15px 20px;
+    border-radius: 14px;
+    border: 1.5px solid var(--line-card);
     background: var(--surface-soft);
     color: var(--ink);
     font-family: var(--font-body);
@@ -762,7 +870,7 @@
   .form-submit-row {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     margin-top: 4px;
   }
   .form-submit-row .btn-primary { width: 100%; padding: 17px 28px; }
@@ -775,7 +883,7 @@
   /* ==================== FOOTER ==================== */
   .site-footer {
     background: #E5DED2;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line-card);
     padding: 44px var(--pad) 48px;
   }
   .footer-top {
@@ -835,7 +943,7 @@
   }
   .lightbox-inner img {
     max-height: 78vh;
-    border-radius: 14px;
+    border-radius: 16px;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
   }
   .lightbox-cap {
@@ -865,17 +973,26 @@
 <body>
 
 <header class="site-header">
-  <a class="brand-wordmark" href="#top">Ажур Декор</a>
-  <nav class="site-nav" aria-label="Основное меню">
-    <a href="#uslugi">Услуги</a>
-    <a href="#proekty">Проекты</a>
-    <a href="#etapy">Как работаем</a>
-    <a href="#o-salone">О салоне</a>
-    <a href="#otzyvy">Отзывы</a>
-    <a href="#kontakty">Контакты</a>
-  </nav>
+  <div class="header-left">
+    <div class="header-contact-stack">
+      <a class="header-phone" href="tel:+79147938775">+7 914 793-87-75</a>
+      <span class="header-hours">Пн-Сб 11:00 - 18:00, Вс по записи</span>
+    </div>
+    <nav class="site-nav" aria-label="Меню слева">
+      <a href="#uslugi">Услуги</a>
+      <a href="#proekty">Проекты</a>
+      <a href="#etapy">Как работаем</a>
+    </nav>
+  </div>
+
+  <a class="brand-pill" href="#top">Ажур Декор</a>
+
   <div class="header-right">
-    <a class="header-phone" href="tel:+79147938775">+7 914 793-87-75</a>
+    <nav class="site-nav" aria-label="Меню справа">
+      <a href="#o-salone">О салоне</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
     <a class="btn-primary btn-header" href="#kontakty">Вызвать дизайнера</a>
   </div>
 </header>
@@ -887,12 +1004,9 @@
     <div class="hero-shade"></div>
     <div class="hero-inner">
       <div class="hero-glass">
-        <h1>Шторы и текстиль на заказ в Находке</h1>
-        <p>Приедем на объект с каталогами тканей, снимем точные замеры под ваши карнизы и сошьём комплект для квартиры или дома</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#kontakty">Пригласить дизайнера</a>
-          <span class="hero-note">Выезд по Находке и Приморскому краю</span>
-        </div>
+        <h1>Шторы и&nbsp;текстиль на&nbsp;заказ в&nbsp;Находке</h1>
+        <p>Привезём каталоги тканей к&nbsp;вам домой, снимем замеры и&nbsp;сошьём шторы под&nbsp;ваш интерьер</p>
+        <a class="btn-primary" href="#kontakty">Пригласить дизайнера</a>
       </div>
 
       <div class="fabric-dock">
@@ -903,84 +1017,84 @@
           <img class="swatch-circle" src="img/swatch_sage.jpg" alt="Варёный хлопок">
         </div>
         <div class="fabric-dock-text">
-          Подбор тканей вживую
-          <span>Привозим образцы к вашему свету и стенам</span>
+          Ткани вживую
+          <span>Смотрим при вашем освещении</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== 1. USLUGI ==================== -->
-  <section class="section" id="uslugi">
+  <section class="section bg-pat-linen" id="uslugi">
     <div class="sec-head">
       <h2>Услуги</h2>
-      <p>Оформляем окна и интерьеры под ключ: от замеров на объекте до развески готовых штор и подбора домашнего текстиля</p>
+      <p>Берём на&nbsp;себя замеры, подбор тканей, пошив и&nbsp;навеску штор</p>
     </div>
 
     <div class="services-grid">
       <article class="srv-card wide">
         <img src="img/srv_petrol.jpg" alt="Портьеры и тюль на заказ">
         <div class="srv-caption">
-          <h3>Портьеры и тюль</h3>
-          <p>Подбираем плотность, посадку и оттенок ткани под дневной свет комнаты, отшиваем и навешиваем шторы на месте</p>
+          <h3>Портьеры и&nbsp;тюль</h3>
+          <p>Подбираем плотность и&nbsp;оттенок под&nbsp;свет комнаты, шьём и&nbsp;навешиваем готовые шторы</p>
         </div>
       </article>
 
       <article class="srv-card narrow">
         <img src="img/srv_rimskie.jpg" alt="Римские шторы, плиссе и жалюзи">
         <div class="srv-caption">
-          <h3>Римские шторы, плиссе и жалюзи</h3>
-          <p>Точные замеры, подбор механизмов и аккуратная установка солнцезащитных систем на любые окна</p>
+          <h3>Римские шторы и&nbsp;плиссе</h3>
+          <p>Замеряем проём, подбираем рулонные системы, жалюзи и&nbsp;плиссе на&nbsp;стандартные и&nbsp;сложные окна</p>
         </div>
       </article>
 
       <article class="srv-card narrow">
         <img src="img/srv_belye.jpg" alt="Постельное бельё из варёного хлопка и подушки" style="object-position: center 76%;">
         <div class="srv-caption">
-          <h3>Постельное бельё и подушки</h3>
-          <p>Комплекты из варёного хлопка и тенселя по вашим размерам, покрывала и декоративные подушки</p>
+          <h3>Постельное бельё и&nbsp;подушки</h3>
+          <p>Шьём комплекты из&nbsp;варёного хлопка и&nbsp;тенселя по&nbsp;вашим размерам, покрывала и&nbsp;подушки</p>
         </div>
       </article>
 
       <article class="srv-card wide">
         <img src="img/srv_wallpaper.jpg" alt="Обои, фрески и лепной декор">
         <div class="srv-caption">
-          <h3>Обои, фрески и лепной декор</h3>
-          <p>Помогаем собрать комнату целиком, чтобы стены, шторы и текстиль сочетались по фактуре и тону</p>
+          <h3>Обои, фрески и&nbsp;лепной декор</h3>
+          <p>Подбираем отделку стен так, чтобы обои, фрески и&nbsp;шторы держались в&nbsp;одной гамме</p>
         </div>
       </article>
     </div>
   </section>
 
   <!-- ==================== 2. PROEKTY ==================== -->
-  <section class="section section-alt" id="proekty">
+  <section class="section section-alt bg-pat-drape" id="proekty">
     <div class="sec-head">
       <h2>Проекты</h2>
-      <p>Реальные квартиры и дома в Находке и Приморском крае, для которых мы подбирали ткани, шили шторы и делали установку</p>
+      <p>Квартиры и&nbsp;дома в&nbsp;Находке, которые мы уже оформили</p>
     </div>
 
     <div class="projects-mosaic">
-      <figure class="proj-item p-span-7" data-full="img/srv_chalet.jpg" data-cap="Гостиная в загородном доме - плотные портьеры и лёгкий тюль">
+      <figure class="proj-item p-span-7" data-full="img/srv_chalet.jpg" data-cap="Деревянный дом - портьеры и тюль">
         <div class="proj-frame tall">
-          <img src="img/srv_chalet.jpg" alt="Гостиная в загородном доме с портьерами и тюлем">
+          <img src="img/srv_chalet.jpg" alt="Гостиная в деревянном доме с портьерами и тюлем">
         </div>
         <figcaption class="proj-meta">
-          <span class="proj-title">Гостиная в деревянном доме</span>
+          <span class="proj-title">Деревянный дом</span>
           <span class="proj-room">Портьеры и тюль</span>
         </figcaption>
       </figure>
 
-      <figure class="proj-item p-span-5" data-full="img/srv_portyery.jpg" data-cap="Столовая зона - графитовые портьеры в пол и воздушный тюль">
+      <figure class="proj-item p-span-5" data-full="img/srv_portyery.jpg" data-cap="Столовая - графитовые портьеры в пол и лёгкий тюль">
         <div class="proj-frame tall">
-          <img src="img/srv_portyery.jpg" alt="Столовая зона с графитовыми портьерами" style="object-position: center 45%;">
+          <img src="img/srv_portyery.jpg" alt="Столовая с графитовыми портьерами" style="object-position: center 34%;">
         </div>
         <figcaption class="proj-meta">
-          <span class="proj-title">Столовая с высокими окнами</span>
+          <span class="proj-title">Столовая</span>
           <span class="proj-room">Портьеры в пол</span>
         </figcaption>
       </figure>
 
-      <figure class="proj-item p-span-4" data-full="img/srv_living.jpg" data-cap="Светлая гостиная - комбинированные портьеры и акцентная подушка">
+      <figure class="proj-item p-span-4" data-full="img/srv_living.jpg" data-cap="Светлая гостиная - комбинированные шторы и подушки">
         <div class="proj-frame mid">
           <img src="img/srv_living.jpg" alt="Светлая гостиная с комбинированными портьерами" style="object-position: center 55%;">
         </div>
@@ -990,42 +1104,42 @@
         </figcaption>
       </figure>
 
-      <figure class="proj-item p-span-4" data-full="img/hero_light.jpg" data-cap="Зона отдыха - льняная римская штора в тон отделке">
+      <figure class="proj-item p-span-4" data-full="img/hero_light.jpg" data-cap="Гостиная - льняная римская штора">
         <div class="proj-frame mid">
           <img src="img/hero_light.jpg" alt="Льняная римская штора в гостиной">
         </div>
         <figcaption class="proj-meta">
-          <span class="proj-title">Минималистичная гостиная</span>
+          <span class="proj-title">Гостиная</span>
           <span class="proj-room">Римская штора</span>
         </figcaption>
       </figure>
 
-      <figure class="proj-item p-span-4" data-full="img/srv_nook.jpg" data-cap="Уютный эркер - римские шторы и текстильные подушки">
+      <figure class="proj-item p-span-4" data-full="img/srv_nook.jpg" data-cap="Эркер - римские шторы и текстильные подушки">
         <div class="proj-frame mid">
           <img src="img/srv_nook.jpg" alt="Оформление окна в эркере римской шторой" style="object-position: center 50%;">
         </div>
         <figcaption class="proj-meta">
-          <span class="proj-title">Зона отдыха у окна</span>
+          <span class="proj-title">Эркер</span>
           <span class="proj-room">Римские шторы</span>
         </figcaption>
       </figure>
 
-      <figure class="proj-item p-span-6" data-full="img/srv_bedroom.jpg" data-cap="Спальня в тёплых тонах - портьеры блэкаут и светлый тюль">
+      <figure class="proj-item p-span-6" data-full="img/srv_bedroom.jpg" data-cap="Спальня - тёплые портьеры и светлый тюль">
         <div class="proj-frame mid">
           <img src="img/srv_bedroom.jpg" alt="Спальня с тёплыми бежевыми портьерами" style="object-position: center 48%;">
         </div>
         <figcaption class="proj-meta">
-          <span class="proj-title">Спальня в песочных тонах</span>
+          <span class="proj-title">Спальня</span>
           <span class="proj-room">Портьеры и тюль</span>
         </figcaption>
       </figure>
 
-      <figure class="proj-item p-span-6" data-full="img/srv_roman2.jpg" data-cap="Кухня с геометрическим орнаментом на римской шторе">
+      <figure class="proj-item p-span-6" data-full="img/srv_roman2.jpg" data-cap="Кухня - римская штора с геометрическим кантом">
         <div class="proj-frame mid">
           <img src="img/srv_roman2.jpg" alt="Римская штора с геометрическим рисунком" style="object-position: center 35%;">
         </div>
         <figcaption class="proj-meta">
-          <span class="proj-title">Кухня с эркером</span>
+          <span class="proj-title">Кухня</span>
           <span class="proj-room">Римская штора с кантом</span>
         </figcaption>
       </figure>
@@ -1033,42 +1147,42 @@
   </section>
 
   <!-- ==================== 3. KAK RABOTAEM ==================== -->
-  <section class="section" id="etapy">
+  <section class="section bg-pat-chevron" id="etapy">
     <div class="sec-head">
       <h2>Как работаем</h2>
-      <p>Берём на себя замеры, расчёт ткани и монтаж, чтобы шторы точно подошли к вашим карнизам и освещению комнаты</p>
+      <p>От&nbsp;первой встречи до&nbsp;отпаренных штор на&nbsp;окнах</p>
     </div>
 
     <div class="steps-track">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h3>Заявка и беседа</h3>
-        <p>Обсуждаем ваши комнаты, пожелания по свету и стилю и договариваемся об удобном времени визита</p>
+        <h3>Заявка и&nbsp;встреча</h3>
+        <p>Обсуждаем комнаты и&nbsp;задачи, выбираем удобный день для&nbsp;выезда дизайнера</p>
       </div>
 
       <div class="step-card">
         <div class="step-num">2</div>
-        <h3>Выезд с каталогами</h3>
-        <p>Привозим ткани прямо в квартиру, прикладываем к стенам и мебели, учитываем уже установленные карнизы и натяжной потолок</p>
+        <h3>Замер и&nbsp;подбор тканей</h3>
+        <p>Привозим каталоги домой, прикладываем ткани к&nbsp;стенам и&nbsp;проверяем уже стоящие карнизы</p>
       </div>
 
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>Пошив и контроль</h3>
-        <p>Рассчитываем точный расход, отшиваем портьеры, тюль, римские шторы или постельное бельё с ровными швами и посадкой</p>
+        <h3>Пошив</h3>
+        <p>Рассчитываем расход, шьём шторы или&nbsp;постельное бельё и&nbsp;проверяем каждый шов</p>
       </div>
 
       <div class="step-card">
         <div class="step-num">4</div>
-        <h3>Установка и развеска</h3>
-        <p>Монтируем карнизы или плиссе, отпариваем и развешиваем шторы на месте, чтобы комната сразу стала законченной</p>
+        <h3>Установка и&nbsp;навеска</h3>
+        <p>Монтируем карнизы или&nbsp;плиссе, отпариваем ткань и&nbsp;вешаем шторы на&nbsp;окна</p>
       </div>
     </div>
 
     <div class="tactile-band">
       <div class="tactile-copy">
-        <h3>Привезём образцы к вашему свету</h3>
-        <p>Один и тот же оттенок ткани по-разному смотрится в салоне и в живой комнате. Поэтому дизайнер приезжает с каталогами домой - по Находке и другим городам Приморского края</p>
+        <h3>Привезём ткани к&nbsp;вашему свету</h3>
+        <p>Один и&nbsp;тот же оттенок по-разному выглядит в&nbsp;салоне и&nbsp;дома. Привозим образцы к&nbsp;вашим стенам по&nbsp;Находке и&nbsp;Приморью</p>
       </div>
       <div class="tactile-swatches" aria-label="Образцы тканей салона">
         <div class="tactile-swatch">
@@ -1095,10 +1209,10 @@
   </section>
 
   <!-- ==================== 4. O SALONE ==================== -->
-  <section class="section section-alt" id="o-salone">
+  <section class="section section-alt bg-pat-ajur" id="o-salone">
     <div class="sec-head">
-      <h2>О салоне</h2>
-      <p>«Ажур Декор» - салон штор, дизайна и домашнего текстиля Анастасии Дулаевой в Находке</p>
+      <h2>О&nbsp;салоне</h2>
+      <p>Салон штор и&nbsp;домашнего текстиля Анастасии Дулаевой в&nbsp;Находке</p>
     </div>
 
     <div class="about-spread">
@@ -1107,9 +1221,9 @@
       </div>
 
       <div class="about-center">
-        <div class="about-lead">Спокойный подбор текстиля под характер дома и готовый ремонт</div>
-        <p>Мы работаем с каждым объектом лично: приезжаем на замеры, смотрим высоту потолков, расположение карнизов и то, как в комнату падает дневной свет. Часто клиенты приходят после попыток подобрать готовые шторы на маркетплейсах и видят, насколько точнее садится ткань, выбранная вживую.</p>
-        <p>Помимо штор, карнизов и солнцезащитных систем в салоне можно заказать постельное бельё по индивидуальным меркам из варёного хлопка и тенселя, декоративные подушки, а также подобрать обои, фрески и лепной декор в едином стиле.</p>
+        <div class="about-lead">Подбираем текстиль под&nbsp;живой интерьер и&nbsp;готовый ремонт</div>
+        <p>Приезжаем на&nbsp;замер сами: смотрим высоту потолков, карнизы в&nbsp;нишах и&nbsp;то, как в&nbsp;комнату ложится дневной свет. Так ткань точно садится по&nbsp;длине и&nbsp;оттенку с&nbsp;первого раза.</p>
+        <p>Кроме штор и&nbsp;карнизов шьём постельное бельё из&nbsp;варёного хлопка и&nbsp;тенселя по&nbsp;вашим меркам, подбираем обои, фрески и&nbsp;лепной декор в&nbsp;одном стиле.</p>
       </div>
 
       <div class="about-right">
@@ -1117,7 +1231,7 @@
           <img src="img/srv_bedding2.jpg" alt="Домашний текстиль и постельное бельё в салоне Ажур Декор">
         </div>
         <div class="about-quote">
-          <blockquote>«Могу смело сказать, что салон лучший в Находке и пока даже во Владивостоке достойных найти не могу. Замеры и подборка тканей к интерьеру на высшем уровне»</blockquote>
+          <blockquote>«Могу смело сказать, что салон лучший в&nbsp;Находке и&nbsp;пока даже во&nbsp;Владивостоке достойных найти не&nbsp;могу. Замеры и&nbsp;подборка тканей к&nbsp;интерьеру на&nbsp;высшем уровне»</blockquote>
           <cite>Елена Сорока, отзыв в 2ГИС</cite>
         </div>
       </div>
@@ -1125,15 +1239,15 @@
   </section>
 
   <!-- ==================== 5. OTZYVY ==================== -->
-  <section class="section" id="otzyvy">
+  <section class="section bg-pat-arcs" id="otzyvy">
     <div class="sec-head">
       <h2>Отзывы</h2>
-      <p>Реальные впечатления клиентов из Находки, которые оформляли с нами квартиры, дома и заказывали домашний текстиль</p>
+      <p>Что пишут клиенты из&nbsp;Находки в&nbsp;2ГИС</p>
     </div>
 
     <div class="reviews-grid">
       <article class="rev-card">
-        <p class="rev-text">Изначально собиралась покупать готовые шторы и тюль на маркетплейсе, но решила пригласить Анастасию на замеры. Я не учла карнизы, которые поставили вместе с натяжным потолком. Анастасия объяснила, какой вид штор подойдёт под них. От совета по плотности ткани до финальной установки всё прошло замечательно.</p>
+        <p class="rev-text">Изначально собиралась покупать готовые шторы и&nbsp;тюль на&nbsp;маркетплейсе, но&nbsp;решила пригласить Анастасию на&nbsp;замеры. Я&nbsp;не&nbsp;учла карнизы, которые поставили вместе с&nbsp;натяжным потолком. Анастасия объяснила, какой вид штор подойдёт под&nbsp;них. От&nbsp;совета по&nbsp;плотности ткани до&nbsp;финальной установки всё прошло замечательно.</p>
         <div class="rev-footer">
           <span class="rev-author">Оксана Дядюк</span>
           <span class="rev-source">2ГИС, август 2026</span>
@@ -1141,7 +1255,7 @@
       </article>
 
       <article class="rev-card">
-        <p class="rev-text">Заказывала тюль и шторы в новую квартиру, осталась очень довольна. Благодарю Анастасию за прекрасную работу и высокое качество. Щепетильность, с которой вы подходите к своей работе, поражает, всё идеально.</p>
+        <p class="rev-text">Заказывала тюль и&nbsp;шторы в&nbsp;новую квартиру, осталась очень довольна. Благодарю Анастасию за&nbsp;прекрасную работу и&nbsp;высокое качество. Щепетильность, с&nbsp;которой вы подходите к&nbsp;своей работе, поражает, всё идеально.</p>
         <div class="rev-footer">
           <span class="rev-author">Виктория Костюкова</span>
           <span class="rev-source">2ГИС, ноябрь 2026</span>
@@ -1149,7 +1263,7 @@
       </article>
 
       <article class="rev-card">
-        <p class="rev-text">Анастасия помогла подобрать ткани, учла все наши пожелания и предложила удачные решения, о которых мы сами бы не подумали. Шторы идеально вписались в интерьер и сделали дом ещё уютнее. Работа выполнена безупречно, аккуратно и в срок.</p>
+        <p class="rev-text">Анастасия помогла подобрать ткани, учла все наши пожелания и&nbsp;предложила удачные решения, о&nbsp;которых мы сами бы не&nbsp;подумали. Шторы идеально вписались в&nbsp;интерьер и&nbsp;сделали дом ещё уютнее. Работа выполнена безупречно, аккуратно и&nbsp;в&nbsp;срок.</p>
         <div class="rev-footer">
           <span class="rev-author">Diana Anbrazevich</span>
           <span class="rev-source">2ГИС, сентябрь 2025</span>
@@ -1157,7 +1271,7 @@
       </article>
 
       <article class="rev-card">
-        <p class="rev-text">Получила свой комплект постельного белья Serenity home из варёного хлопка - очень нежный и уютный, его можно не утюжить. При заказе Анастасия учла все пожелания по размерам и дизайну. Отдельное спасибо за красивую упаковку и внимание к деталям.</p>
+        <p class="rev-text">Получила свой комплект постельного белья Serenity home из&nbsp;варёного хлопка - очень нежный и&nbsp;уютный, его можно не&nbsp;утюжить. При&nbsp;заказе Анастасия учла все пожелания по&nbsp;размерам и&nbsp;дизайну. Отдельное спасибо за&nbsp;красивую упаковку и&nbsp;внимание к&nbsp;деталям.</p>
         <div class="rev-footer">
           <span class="rev-author">Anzhela Che</span>
           <span class="rev-source">2ГИС, май 2025</span>
@@ -1165,7 +1279,7 @@
       </article>
 
       <article class="rev-card">
-        <p class="rev-text">Шикарный салон. От интерьера до дела. Обращалась неоднократно. Девочки знают подход к клиентам, а главное, как сделать атмосферу в доме ещё уютнее.</p>
+        <p class="rev-text">Шикарный салон. От&nbsp;интерьера до&nbsp;дела. Обращалась неоднократно. Девочки знают подход к&nbsp;клиентам, а&nbsp;главное, как сделать атмосферу в&nbsp;доме ещё уютнее.</p>
         <div class="rev-footer">
           <span class="rev-author">Alisa Eremtsova</span>
           <span class="rev-source">2ГИС, октябрь 2025</span>
@@ -1173,7 +1287,7 @@
       </article>
 
       <article class="rev-card">
-        <p class="rev-text">Спасибо большое, выбрали шторы-плиссе, получилось очень уютно и красиво. Быстрая установка и прекрасное обслуживание. Рекомендую.</p>
+        <p class="rev-text">Спасибо большое, выбрали шторы-плиссе, получилось очень уютно и&nbsp;красиво. Быстрая установка и&nbsp;прекрасное обслуживание. Рекомендую.</p>
         <div class="rev-footer">
           <span class="rev-author">Анна Шипицына</span>
           <span class="rev-source">2ГИС, июль 2024</span>
@@ -1187,10 +1301,10 @@
   </section>
 
   <!-- ==================== 6. KONTAKTY ==================== -->
-  <section class="section section-alt" id="kontakty">
+  <section class="section section-alt bg-pat-draft" id="kontakty">
     <div class="sec-head">
       <h2>Контакты</h2>
-      <p>Приезжайте в салон посмотреть ткани вживую или оставьте заявку на выезд дизайнера с каталогами</p>
+      <p>Приезжайте посмотреть ткани в&nbsp;салон или&nbsp;пригласите дизайнера домой</p>
     </div>
 
     <div class="contacts-layout">
@@ -1202,8 +1316,8 @@
             </div>
             <div>
               <div class="c-label">Адрес салона</div>
-              <div class="c-val">Находка, ул. Мичманская, 39а</div>
-              <div class="c-sub">2 этаж, от лестницы налево, удобная парковка</div>
+              <a class="c-val" href="https://2gis.ru/nakhodka/firm/70000001020849312" target="_blank" rel="noopener noreferrer">Находка, ул. Мичманская, 39а</a>
+              <div class="c-sub">2 этаж, от лестницы налево, есть парковка</div>
             </div>
           </div>
 
@@ -1214,7 +1328,7 @@
             <div>
               <div class="c-label">Режим работы</div>
               <div class="c-val">Пн - Сб: 11:00 - 18:00</div>
-              <div class="c-sub">Воскресенье по предварительной записи</div>
+              <div class="c-sub">Воскресенье по записи</div>
             </div>
           </div>
 
@@ -1236,7 +1350,7 @@
             <div>
               <div class="c-label">Telegram</div>
               <a class="c-val" href="https://t.me/Anastasia_Dulaeva" target="_blank" rel="noopener noreferrer">@Anastasia_Dulaeva</a>
-              <div class="c-sub">Можно прислать фото окон для консультации</div>
+              <div class="c-sub">Присылайте фото окон для оценки</div>
             </div>
           </div>
         </div>
@@ -1248,25 +1362,25 @@
 
       <div class="contact-form-card">
         <div>
-          <h3>Пригласить дизайнера на замер</h3>
-          <p class="form-lead">Оставьте номер телефона, и Анастасия свяжется с вами, чтобы согласовать удобный день и подобрать каталоги тканей</p>
+          <h3>Пригласить дизайнера на&nbsp;замер</h3>
+          <p class="form-lead">Оставьте телефон - Анастасия перезвонит, чтобы согласовать день замера и&nbsp;взять нужные каталоги</p>
         </div>
 
         <form id="visit-form" class="field-group" novalidate>
           <div class="field">
-            <label for="f-name">Как к вам обращаться</label>
-            <input id="f-name" name="name" type="text" placeholder="Ваше имя" autocomplete="name">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="name">
           </div>
           <div class="field">
-            <label for="f-phone">Телефон для связи</label>
+            <label for="f-phone">Телефон</label>
             <input id="f-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel">
           </div>
           <div class="field">
-            <label for="f-note">Какие комнаты или окна планируете оформить</label>
-            <textarea id="f-note" name="note" placeholder="Например: гостиная и спальня, карнизы уже установлены"></textarea>
+            <label for="f-note">Комментарий</label>
+            <textarea id="f-note" name="note" placeholder="Какие комнаты оформляем, стоят ли уже карнизы"></textarea>
           </div>
           <div class="form-submit-row">
-            <button class="btn-primary" type="submit">Оставить заявку на выезд</button>
+            <button class="btn-primary" type="submit">Вызвать дизайнера</button>
             <div class="form-status" id="form-status" role="status"></div>
           </div>
         </form>
@@ -1277,7 +1391,7 @@
 
 <footer class="site-footer">
   <div class="footer-top">
-    <a class="brand-wordmark" href="#top">Ажур Декор</a>
+    <a class="brand-pill" href="#top">Ажур Декор</a>
     <nav class="footer-nav" aria-label="Меню в подвале">
       <a href="#uslugi">Услуги</a>
       <a href="#proekty">Проекты</a>
@@ -1286,10 +1400,13 @@
       <a href="#otzyvy">Отзывы</a>
       <a href="#kontakty">Контакты</a>
     </nav>
-    <a class="header-phone" href="tel:+79147938775">+7 914 793-87-75</a>
+    <div class="header-contact-stack">
+      <a class="header-phone" href="tel:+79147938775">+7 914 793-87-75</a>
+      <span class="header-hours">Пн-Сб 11:00 - 18:00, Вс по записи</span>
+    </div>
   </div>
   <div class="footer-bottom">
-    <span>Салон штор, дизайна и интерьера «Ажур Декор», г. Находка, ул. Мичманская, 39а</span>
+    <span>Салон штор «Ажур Декор», г. Находка, ул. Мичманская, 39а</span>
     <span>Пн - Сб 11:00 - 18:00, Вс по записи</span>
   </div>
 </footer>
@@ -1347,7 +1464,7 @@
       iconSize: [20, 20],
       iconAnchor: [10, 10]
     });
-    L.marker(coords, { icon: pin }).addTo(map).bindPopup('<strong>Ажур Декор</strong><br>ул. Мичманская, 39а, 2 этаж').openPopup();
+    L.marker(coords, { icon: pin }).addTo(map).bindPopup('<strong>Ажур Декор</strong><br>ул. Мичманская, 39а, 2 этаж', { closeButton: false }).openPopup();
   }
 </script>
 </body>
