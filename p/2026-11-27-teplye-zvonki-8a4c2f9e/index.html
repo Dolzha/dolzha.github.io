@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тёплые лиды и звонки - 27 ноября 2026</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 68px; }
+    body {
+      margin: 0;
+      background: #f4f6f9;
+      color: #1c2127;
+      font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    header, main { max-width: 960px; margin: 0 auto; padding: 16px; }
+    header { padding-top: 22px; padding-bottom: 10px; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: #0b5cab;
+      margin: 0 0 6px;
+    }
+    h1 {
+      font-size: clamp(23px, 4.2vw, 34px);
+      line-height: 1.18;
+      margin: 0 0 14px;
+      color: #11161c;
+    }
+    h2 {
+      margin: 28px 0 12px;
+      font-size: 20px;
+      line-height: 1.25;
+      border-bottom: 2px solid #dde3ea;
+      padding-bottom: 8px;
+      color: #11161c;
+    }
+    h3 { font-size: 17px; line-height: 1.3; margin: 0; color: #11161c; }
+
+    .summary-bar {
+      background: #ffffff;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid #d7dee6;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .summary-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+      font-size: 14px;
+    }
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f3f6fa;
+      border: 1px solid #e1e7ef;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .stat-pill b { color: #0b5cab; font-size: 15px; }
+    .summary-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .toggle-hide {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      color: #2c3540;
+    }
+    .toggle-hide input { width: 18px; height: 18px; cursor: pointer; accent-color: #0b5cab; }
+    #copy-results {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: #1f2933;
+      color: #ffffff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #copy-results:active { opacity: 0.9; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #ffffff;
+      border-top: 1px solid #d7dee6;
+      border-bottom: 1px solid #d7dee6;
+      padding: 10px 16px;
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    nav a {
+      color: #0b5cab;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 7px 11px;
+      border-radius: 8px;
+      background: #eef4fb;
+      white-space: nowrap;
+    }
+    nav a:hover { background: #dce9f8; }
+
+    article.card {
+      background: #ffffff;
+      border: 1px solid #d7dee6;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 12px 0;
+    }
+    article.card.is-done {
+      opacity: 0.56;
+      background: #f8fafc;
+    }
+    body.hide-done article.card.is-done {
+      display: none;
+    }
+
+    .card-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px 12px;
+      margin-bottom: 8px;
+    }
+    .meta-line {
+      font-size: 13px;
+      color: #4b5563;
+      margin-top: 3px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 6px;
+      background: #e8f1fc;
+      color: #0b5cab;
+      white-space: nowrap;
+    }
+    .badge-hot { background: #fde8e8; color: #b91c1c; }
+    .badge-warm { background: #fef3c7; color: #92400e; }
+    .badge-call { background: #dcfce7; color: #166534; }
+    .badge-soft { background: #f1f5f9; color: #334155; }
+    .badge-mockup { background: #ede9fe; color: #5b21b6; }
+
+    .context {
+      font-size: 14px;
+      color: #374151;
+      margin: 6px 0 10px;
+    }
+    .message {
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 10px 0 12px;
+      padding: 12px 14px;
+      background: #f7f9fc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0b5cab;
+      border-radius: 8px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #111827;
+    }
+    .message.call-script {
+      border-left-color: #16a34a;
+      background: #f6fbf8;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    button.copy-btn {
+      border: 1px solid #094c8e;
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: #0b5cab;
+      color: #ffffff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.copy-btn.copied {
+      background: #15803d;
+      border-color: #166534;
+    }
+    a.action-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    a.tg-link { background: #1d74b8; }
+    a.call-link { background: #15803d; }
+
+    .card-footer {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e9f0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    label.done-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      color: #1f2937;
+    }
+    label.done-check input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: #15803d;
+    }
+    input.note-input {
+      flex: 1 1 220px;
+      min-width: 0;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 14px;
+      background: #ffffff;
+      color: #111827;
+    }
+    input.note-input:focus {
+      outline: 2px solid #93c5fd;
+      border-color: #0b5cab;
+    }
+
+    .list-compact {
+      display: grid;
+      gap: 10px;
+    }
+    .info-item {
+      background: #ffffff;
+      border: 1px solid #d7dee6;
+      border-radius: 10px;
+      padding: 13px 15px;
+    }
+    .info-title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .info-desc {
+      font-size: 14px;
+      color: #374151;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111827;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      display: none;
+      z-index: 50;
+    }
+    #toast.show { display: block; }
+
+    @media (max-width: 600px) {
+      header, main { padding: 12px; }
+      nav { padding: 8px 12px; }
+      article.card { padding: 14px; }
+      button.copy-btn, a.action-link { flex: 1 1 auto; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">VSKA · Пятница, 27 ноября 2026</p>
+  <h1>Тёплые лиды, сделка и звонки на сегодня</h1>
+  <div class="summary-bar">
+    <div class="summary-stats">
+      <span class="stat-pill">Всего действий: <b id="stat-total">10</b></span>
+      <span class="stat-pill">Сделано: <b id="stat-done">0</b></span>
+      <span class="stat-pill">Сделка: <b>1</b></span>
+      <span class="stat-pill">Написать: <b>6</b></span>
+      <span class="stat-pill">Позвонить: <b>3</b></span>
+      <span class="stat-pill">Макеты на сегодня: <b>3</b></span>
+    </div>
+    <div class="summary-controls">
+      <label class="toggle-hide">
+        <input type="checkbox" id="toggle-hide-done">
+        Скрыть выполненные
+      </label>
+      <button type="button" id="copy-results">Скопировать итоги</button>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#deals">Сделка (1)</a>
+    <a href="#write">Написать (6)</a>
+    <a href="#calls">Позвонить (3)</a>
+    <a href="#control">На контроле (7)</a>
+    <a href="#mockups">Макеты (3)</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="deals">
+    <h2>1. Сделка (деньги сегодня)</h2>
+
+    <article class="card" data-id="deal-ledavto" data-name="Ледавто - Влад (@ledavtoekb)">
+      <div class="card-top">
+        <div>
+          <h3>Ледавто - Влад</h3>
+          <div class="meta-line">Екатеринбург (ЕКБ) · автосвет · @ledavtoekb · +7 950 551-62-40</div>
+        </div>
+        <span class="badge badge-hot">Сделка · 17 000 ₽</span>
+      </div>
+      <div class="context">По звонку 25.11 договорились на 17 000 ₽ до конца недели (админка + этап разработки) и правку гарантии с 2 лет на 1 год. Написать днём сразу после правки гарантии на сайте.</div>
+      <div class="message">Влад, добрый день! По нашему разговору - гарантию на сайте поправили на 1 год, как договаривались. Подскажите, удобно сегодня перевести 17 000 ₽ за админ-панель и этап разработки, чтобы я сразу поставил админку и мы двигались к запуску?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/ledavtoekb" target="_blank" rel="noopener">Открыть Telegram</a>
+        <a class="action-link call-link" href="tel:+79505516240">Позвонить</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог (перевёл, пообещал вечером...)">
+      </div>
+    </article>
+  </section>
+
+  <section id="write">
+    <h2>2. Написать тёплым сегодня (6)</h2>
+
+    <article class="card" data-id="write-poroshin" data-name="Павел Порошин - Лучший День (@poroshinpro)">
+      <div class="card-top">
+        <div>
+          <h3>Павел Порошин («Лучший День»)</h3>
+          <div class="meta-line">Абакан (+2 ч к ЕКБ) · праздники · @poroshinpro · +7 923 215-95-79</div>
+        </div>
+        <span class="badge badge-warm">д3 после макета</span>
+      </div>
+      <div class="context">Макет demo-luchshiyden отправлен 24.11, прочитан, тишина 3 дня. В Абакане уже вторая половина дня, можно написать или набрать до 17:00 ЕКБ.</div>
+      <div class="message">Павел, добрый день! Удалось посмотреть макет? Как вам по подаче и стилю, есть что хотелось бы поменять?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/poroshinpro" target="_blank" rel="noopener">Открыть Telegram</a>
+        <a class="action-link call-link" href="tel:+79232159579">Позвонить</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог касания...">
+      </div>
+    </article>
+
+    <article class="card" data-id="write-timur-mc" data-name="Тимур Монте-Карло (@timurmontecarlo)">
+      <div class="card-top">
+        <div>
+          <h3>Тимур Монте-Карло</h3>
+          <div class="meta-line">Набережные Челны (-2 ч к ЕКБ) · мафия и праздники · @timurmontecarlo · +7 937 575-13-13</div>
+        </div>
+        <span class="badge badge-warm">После созвона 24.11</span>
+      </div>
+      <div class="context">24.11 созвонились по сайту Мафии / Pokerchelny.ru и Директу, договорились вернуться через 2 дня.</div>
+      <div class="message">Тимур, привет! Как и договаривались, возвращаюсь через пару дней. Удалось прикинуть по сайту для мафии и Директу, актуально двигаться дальше?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/timurmontecarlo" target="_blank" rel="noopener">Открыть Telegram</a>
+        <a class="action-link call-link" href="tel:+79375751313">Позвонить</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог касания...">
+      </div>
+    </article>
+
+    <article class="card" data-id="write-raduga" data-name="Дмитрий Радуга (@dimaraduga7)">
+      <div class="card-top">
+        <div>
+          <h3>Дмитрий Радуга</h3>
+          <div class="meta-line">Владивосток / сейчас во Вьетнаме (живёт по МСК) · праздники · @dimaraduga7 · +7 902 481-07-87</div>
+        </div>
+        <span class="badge badge-warm">Уточнить созвон 25.11</span>
+      </div>
+      <div class="context">Назначали созвон на 25.11 в 11:30 по МСК, в TG после 24.11 переписки нет. Если созвон не состоялся - отправить это сообщение.</div>
+      <div class="message">Дмитрий, привет! Выпал со звонком, прошу прощения. Актуально ещё по сайту пообщаться? Могу в любое удобное время по МСК</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/dimaraduga7" target="_blank" rel="noopener">Открыть Telegram</a>
+        <a class="action-link call-link" href="tel:+79024810787">Позвонить</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог (созвонились 25-го или написал сегодня)...">
+      </div>
+    </article>
+
+    <article class="card" data-id="write-ilya" data-name="Илья Shark 7.62 (@ilya_7_62)">
+      <div class="card-top">
+        <div>
+          <h3>Илья Shark 7.62</h3>
+          <div class="meta-line">Миасс (ЕКБ) · автосервис · @ilya_7_62</div>
+        </div>
+        <span class="badge badge-soft">Прощальное (д5)</span>
+      </div>
+      <div class="context">Макет отправлен 17.11, три напоминания (18.11, 20.11, 24.11) без ответа. Ставим точку мягким прощальным и переводим в Отложено.</div>
+      <div class="message">Илья, добрый день! Если сейчас не до сайта, так и напишите, больше беспокоить не буду.</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/ilya_7_62" target="_blank" rel="noopener">Открыть Telegram</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог касания...">
+      </div>
+    </article>
+
+    <article class="card" data-id="write-denisova" data-name="Наталья Денисова (@D16Nat)">
+      <div class="card-top">
+        <div>
+          <h3>Наталья Денисова</h3>
+          <div class="meta-line">Иркутск (+3 ч к ЕКБ) · психолог · @D16Nat</div>
+        </div>
+        <span class="badge badge-soft">Прощальное</span>
+      </div>
+      <div class="context">Портфолио отправлено 17.11, напоминания 20.11 и 24.11 без ответа. Закрываем мягким прощальным в Отложено.</div>
+      <div class="message">Наталья, добрый день! Если сейчас не до сайта, напишите прямо, больше беспокоить не буду.</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/D16Nat" target="_blank" rel="noopener">Открыть Telegram</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог касания...">
+      </div>
+    </article>
+
+    <article class="card" data-id="write-irina" data-name="Ирина-помощница (@irina_vakilova)">
+      <div class="card-top">
+        <div>
+          <h3>Ирина-помощница</h3>
+          <div class="meta-line">Сверка ответов · @irina_vakilova</div>
+        </div>
+        <span class="badge">Сверка лидов</span>
+      </div>
+      <div class="context">Одно короткое сообщение-сверка по сегодняшней рассылке 30 писем и старым контактам Ирины.</div>
+      <div class="message">Ирин, привет! Подскажи, пожалуйста, есть ли уже ответы по сегодняшним 30 письмам и по старым твоим ребятам (Марченкова, Филатова, Валов, Портнягина)?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/irina_vakilova" target="_blank" rel="noopener">Открыть Telegram</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог (что ответила Ирина)...">
+      </div>
+    </article>
+  </section>
+
+  <section id="calls">
+    <h2>3. Позвонить тёплым сегодня (3)</h2>
+
+    <article class="card" data-id="call-ledgarage" data-name="Led Garage 66 (+7 993 515-15-05)">
+      <div class="card-top">
+        <div>
+          <h3>Led Garage 66</h3>
+          <div class="meta-line">Екатеринбург (ЕКБ) · автосвет · +7 993 515-15-05 · @ledgarage66</div>
+        </div>
+        <span class="badge badge-call">Звонок</span>
+      </div>
+      <div class="context">Ждали готовности логотипа, на 17.11 планировался звонок. Узнать, готов ли логотип и когда возвращаемся к сайту.</div>
+      <div class="message call-script">Здравствуйте, это Тимур, по сайту для Led Garage. Вы говорили, что доделываете логотип. Как сейчас с ним дела?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link call-link" href="tel:+79935151505">Позвонить</a>
+        <a class="action-link tg-link" href="https://t.me/ledgarage66" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог звонка...">
+      </div>
+    </article>
+
+    <article class="card" data-id="call-sofa" data-name="Sofa Concept - Вадим (+7 909 799-27-65)">
+      <div class="card-top">
+        <div>
+          <h3>Sofa Concept - Вадим</h3>
+          <div class="meta-line">Калининград (-3 ч к ЕКБ) · мягкая мебель · +7 909 799-27-65 · @vezhergin</div>
+        </div>
+        <span class="badge badge-call">Звонок 13:00-19:00 ЕКБ</span>
+      </div>
+      <div class="context">Макет отправлен 12.11, уточнить впечатления по показанному макету и понять следующий шаг.</div>
+      <div class="message call-script">Вадим, добрый день! Это Тимур, по сайту для Sofa Concept. Удалось посмотреть макет? Хотел коротко обсудить ваши впечатления.</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link call-link" href="tel:+79097992765">Позвонить</a>
+        <a class="action-link tg-link" href="https://t.me/vezhergin" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог звонка...">
+      </div>
+    </article>
+
+    <article class="card" data-id="call-ekaform" data-name="Екатерина - Ека Форм (+7 950 513-61-06)">
+      <div class="card-top">
+        <div>
+          <h3>Екатерина («Ека Форм»)</h3>
+          <div class="meta-line">Когалым (ЕКБ) · кухни и мебель · +7 950 513-61-06 · @eka_terina_36106</div>
+        </div>
+        <span class="badge badge-call">Звонок</span>
+      </div>
+      <div class="context">Цена 24 000 ₽ названа 15.11, напоминание 24.11 без ответа. Денежная ниша (кухни на заказ) - лучше коротко набрать.</div>
+      <div class="message call-script">Екатерина, добрый день! Это Тимур по сайту для студии мебели. Подскажите, актуально ещё посмотреть бесплатный пример, или пока отложили вопрос?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link call-link" href="tel:+79505136106">Позвонить</a>
+        <a class="action-link tg-link" href="https://t.me/eka_terina_36106" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="card-footer">
+        <label class="done-check"><input type="checkbox" class="done-box"> Сделано</label>
+        <input type="text" class="note-input" placeholder="Итог звонка...">
+      </div>
+    </article>
+  </section>
+
+  <section id="control">
+    <h2>4. На контроле (сегодня не пишем, только смотрим)</h2>
+    <div class="list-compact">
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>Андрей Carchip_NN (Нижний Новгород, автосервис)</span>
+          <span class="badge badge-warm">Проверить вечером / написать завтра</span>
+        </div>
+        <div class="info-desc">Свежий ответ 26.11 в 23:28 («Покажите примеры / Как он будет работать и будет ли вообще?»). Твои ссылки 23:46 пока не прочитаны (одна галочка). Если прочитает и промолчит - черновик на завтра:</div>
+        <div class="message" style="margin-top:8px;">Андрей, добрый день! По вашему вопросу - сайт грузится за секунду, ставится в 2ГИС и Яндекс, а все заявки сразу прилетают вам в Telegram. Хотите, соберу бесплатный пример под ваш сервис?</div>
+        <div class="btn-row">
+          <button type="button" class="copy-btn">Скопировать черновик на завтра</button>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>Анастасия Дулаева («Ажур Декор», @Anastasia_Dulaeva)</span>
+          <span class="badge">Ждём ответ на макет</span>
+        </div>
+        <div class="info-desc">Макет штор полностью готов и отправлен сегодня в 13:19 через Ирину. Ждём обратную связь.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>Полина ЛоллиПолли38 (@lollipolli_38)</span>
+          <span class="badge badge-call">Отзыв разрешён</span>
+        </div>
+        <div class="info-desc">27.11 в 09:11 разрешила разместить отзыв, поблагодарили в 13:15. Осталось добавить её отзыв на dolzha.ru.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>Иван PDR (@semyanikhin, Уссурийск)</span>
+          <span class="badge badge-soft">Возврат 04.12</span>
+        </div>
+        <div class="info-desc">24.11 похвалил макет и сказал «как решусь напишу вам». Сегодня не давим, мягкий возврат 04.12.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>LATI (@latistudioflo, Новосибирск)</span>
+          <span class="badge badge-soft">Возврат 04.12</span>
+        </div>
+        <div class="info-desc">29 000 ₽ (сайт 24 000 + админка 5 000) полностью согласовано, пауза на ребрендинг до 04.12.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>Lotus Flowers (@lotus_flowers, Казань)</span>
+          <span class="badge badge-hot">28-29.11 НЕ писать</span>
+        </div>
+        <div class="info-desc">В субботу и воскресенье 28-29.11 НЕ писать (День матери!). Сдать готовый макет в понедельник 30.11.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>Install Audio (@installaudio_tmn) и Ива (@kuzhina_irina)</span>
+          <span class="badge badge-soft">На выходные 28-29.11</span>
+        </div>
+        <div class="info-desc">Технические задачи (SSL на installaudio.ru, Вебмастер/GSC/IndexNow, ссылка Кировградской и SEO на iva-ekb.ru) перенесены на выходные.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="mockups">
+    <h2>5. Очередь макетов на сегодня (3 шт.)</h2>
+    <div class="list-compact">
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>1. Дмитрий Соколов (@Sodmigen, Владивосток)</span>
+          <span class="badge badge-mockup">Срок сегодня 27.11</span>
+        </div>
+        <div class="info-desc">Автосервис. 24.11 написал «скидывай», обещано в течение 3 дней. Пожеланий по дизайну нет - собираем на наше усмотрение.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>2. Елизавета (@li_zizy, Екатеринбург, через Ирину)</span>
+          <span class="badge badge-mockup">Срок сегодня 27.11</span>
+        </div>
+        <div class="info-desc">Логопед. Эко-стиль Монтессори: дерево и камни, зелёный, песочный и светло-коричневый цвета.</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-title">
+          <span>3. Татьяна Козлова (@kotbor77)</span>
+          <span class="badge badge-mockup">Срок сегодня 27.11 / запас</span>
+        </div>
+        <div class="info-desc">Ателье «С иголочки» (ремонт и переделка одежды, оценка по фото). Фиолетовые тона как на визитке в 2ГИС. Цену 24 000 ₽ уже знает и согласилась смотреть.</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div id="toast">Скопировано</div>
+
+<script>
+  (function () {
+    const STORAGE_KEY = 'vska_teplye_27_11_v1';
+    let state = { hideDone: false, cards: {} };
+
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      if (saved && typeof saved === 'object') {
+        state.hideDone = Boolean(saved.hideDone);
+        state.cards = (saved.cards && typeof saved.cards === 'object') ? saved.cards : {};
+      }
+    } catch (e) {}
+
+    function save() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    const toast = document.getElementById('toast');
+    let toastTimer = null;
+    function showToast(text) {
+      toast.textContent = text;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () {
+        toast.classList.remove('show');
+      }, 1700);
+    }
+
+    function copyText(text, btn, defaultLabel) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          onCopied(btn, defaultLabel);
+        }, function () {
+          fallbackCopy(text, btn, defaultLabel);
+        });
+      } else {
+        fallbackCopy(text, btn, defaultLabel);
+      }
+    }
+
+    function fallbackCopy(text, btn, defaultLabel) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      onCopied(btn, defaultLabel);
+    }
+
+    function onCopied(btn, defaultLabel) {
+      showToast('Скопировано в буфер');
+      if (!btn) return;
+      btn.classList.add('copied');
+      btn.textContent = 'Скопировано';
+      setTimeout(function () {
+        btn.classList.remove('copied');
+        btn.textContent = defaultLabel;
+      }, 1500);
+    }
+
+    const cards = Array.from(document.querySelectorAll('article.card'));
+    const statTotal = document.getElementById('stat-total');
+    const statDone = document.getElementById('stat-done');
+    const hideToggle = document.getElementById('toggle-hide-done');
+
+    statTotal.textContent = String(cards.length);
+
+    function updateStats() {
+      let doneCount = 0;
+      cards.forEach(function (card) {
+        if (card.classList.contains('is-done')) doneCount += 1;
+      });
+      statDone.textContent = String(doneCount);
+    }
+
+    hideToggle.checked = state.hideDone;
+    if (state.hideDone) document.body.classList.add('hide-done');
+
+    hideToggle.addEventListener('change', function () {
+      state.hideDone = hideToggle.checked;
+      document.body.classList.toggle('hide-done', state.hideDone);
+      save();
+    });
+
+    cards.forEach(function (card) {
+      const id = card.getAttribute('data-id');
+      const box = card.querySelector('.done-box');
+      const note = card.querySelector('.note-input');
+      const copyBtn = card.querySelector('.copy-btn');
+      const msgEl = card.querySelector('.message');
+      const savedCard = state.cards[id] || {};
+
+      if (savedCard.done) {
+        box.checked = true;
+        card.classList.add('is-done');
+      }
+      if (typeof savedCard.note === 'string') {
+        note.value = savedCard.note;
+      }
+
+      box.addEventListener('change', function () {
+        card.classList.toggle('is-done', box.checked);
+        state.cards[id] = state.cards[id] || {};
+        state.cards[id].done = box.checked;
+        save();
+        updateStats();
+      });
+
+      note.addEventListener('input', function () {
+        state.cards[id] = state.cards[id] || {};
+        state.cards[id].note = note.value;
+        save();
+      });
+
+      if (copyBtn && msgEl) {
+        const origLabel = copyBtn.textContent;
+        copyBtn.addEventListener('click', function () {
+          copyText(msgEl.textContent.trim(), copyBtn, origLabel);
+        });
+      }
+    });
+
+    document.querySelectorAll('.info-item .copy-btn').forEach(function (btn) {
+      const origLabel = btn.textContent;
+      const box = btn.closest('.info-item').querySelector('.message');
+      if (!box) return;
+      btn.addEventListener('click', function () {
+        copyText(box.textContent.trim(), btn, origLabel);
+      });
+    });
+
+    document.getElementById('copy-results').addEventListener('click', function () {
+      const lines = ['Итоги по тёплым 27.11.2026:'];
+      cards.forEach(function (card) {
+        const id = card.getAttribute('data-id');
+        const name = card.getAttribute('data-name');
+        const c = state.cards[id] || {};
+        if (c.done || (c.note && c.note.trim())) {
+          const status = c.done ? '[Сделано]' : '[В работе]';
+          const text = c.note && c.note.trim() ? ' - ' + c.note.trim() : '';
+          lines.push(status + ' ' + name + text);
+        }
+      });
+      if (lines.length === 1) {
+        lines.push('Пока нет отмеченных карточек.');
+      }
+      copyText(lines.join('\n'), null, '');
+    });
+
+    updateStats();
+  })();
+</script>
+</body>
+</html>
