@@ -1,0 +1,1617 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Письма Ирины v5.2 (30 шт. 😊) - 27.11.2026</title>
+<style>
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-2: #1f2430;
+  --border: #2a3040;
+  --text: #eef1f6;
+  --muted: #9aa3b2;
+  --accent: #3b82f6;
+  --green: #10b981;
+  --amber: #f59e0b;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f3f5f8;
+    --surface: #ffffff;
+    --surface-2: #eef1f6;
+    --border: #d8dee8;
+    --text: #151921;
+    --muted: #5b6475;
+    --accent: #2563eb;
+    --green: #059669;
+    --amber: #d97706;
+  }
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 15.5px/1.52 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 0 0 72px;
+}
+.sticky-bar {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 10px 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+.sticky-inner {
+  max-width: 920px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;
+}
+.sticky-counts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13.5px; }
+.pill {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 5px 10px; font-weight: 600;
+}
+.pill b { color: var(--green); font-size: 14.5px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 14px 12px 0; }
+header, details.cheat {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 15px 16px; margin-bottom: 14px;
+}
+h1 { font-size: 19px; line-height: 1.28; margin: 0 0 6px; }
+.sub { color: var(--muted); margin: 0 0 12px; font-size: 13.5px; }
+.export-row { display: flex; flex-wrap: wrap; gap: 8px; }
+details.cheat summary { cursor: pointer; font-weight: 700; font-size: 14.5px; list-style-position: inside; }
+.cheat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 12px; }
+.cheat-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.cheat-item h4 { margin: 0 0 7px; font-size: 13.5px; color: var(--accent); }
+.cheat-item pre { white-space: pre-wrap; font: 13.5px/1.45 inherit; margin: 0 0 10px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.tab-btn {
+  flex: 1 1 auto; min-height: 44px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 10px; padding: 9px 13px; font: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer;
+}
+.tab-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.toolbar { display: flex; gap: 8px; margin-bottom: 14px; }
+.search-in {
+  width: 100%; min-height: 42px; background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: 10px; padding: 9px 13px; font: inherit; font-size: 15px;
+}
+.batch-sep {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px;
+  padding: 9px 13px; margin: 18px 0 10px; border-radius: 10px;
+  background: var(--surface-2); border-left: 4px solid var(--amber);
+  font-weight: 700; font-size: 13.5px;
+}
+.batch-sep small { font-weight: 500; color: var(--muted); font-size: 12.5px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 15px; margin-bottom: 12px; transition: opacity 0.16s ease;
+}
+.card.done { opacity: 0.42; }
+.card-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; margin-bottom: 10px; }
+.card-title { display: flex; flex-wrap: wrap; gap: 7px; align-items: baseline; font-size: 15.5px; }
+.badge-num { background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px; font-weight: 700; font-size: 12.5px; }
+.city { color: var(--muted); font-size: 13.5px; }
+.card-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12.5px; }
+.imya-tag { background: rgba(16,185,129,0.14); color: var(--green); padding: 2px 7px; border-radius: 6px; font-weight: 600; }
+.niche-tag { background: var(--surface-2); padding: 2px 7px; border-radius: 6px; color: var(--muted); }
+.gis { color: var(--accent); text-decoration: none; font-weight: 600; }
+.nick { color: var(--muted); font-family: ui-monospace, Consolas, monospace; }
+.letter-text {
+  white-space: pre-wrap; font: 15px/1.52 inherit; background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: 10px; padding: 12px 13px; margin: 0 0 12px;
+}
+.actions-main { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn {
+  min-height: 44px; border: 0; border-radius: 10px; padding: 10px 14px; font: inherit;
+  font-size: 14.5px; font-weight: 600; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-copy { background: var(--green); color: #fff; flex: 1 1 165px; }
+.btn-copy.copied { background: #64748b !important; }
+.btn-tg { background: var(--accent); color: #fff; flex: 1 1 155px; }
+.btn-sec {
+  min-height: 38px; background: var(--surface-2); color: var(--text);
+  border: 1px solid var(--border); border-radius: 9px; font-size: 13px; padding: 7px 11px; font-weight: 600; cursor: pointer;
+}
+.btn-sec.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.chk-wrap {
+  min-height: 44px; display: inline-flex; align-items: center; gap: 8px;
+  cursor: pointer; padding: 6px 11px; border-radius: 10px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  font-weight: 600; font-size: 14px; user-select: none; margin-left: auto;
+}
+.chk-wrap input { width: 21px; height: 21px; cursor: pointer; margin: 0; }
+.actions-sub {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 9px;
+}
+.sub-lbl { color: var(--muted); font-size: 12px; margin-right: 2px; }
+.btn-mini {
+  min-height: 32px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border);
+  border-radius: 7px; padding: 5px 9px; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.hint { color: var(--muted); font-size: 12px; margin: 8px 0 0; }
+.toast {
+  position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+  background: #111827; color: #fff; border: 1px solid #374151;
+  padding: 9px 16px; border-radius: 999px; font-size: 13.5px; font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35); z-index: 90; display: none;
+}
+.toast.show { display: block; }
+.hidden { display: none !important; }
+@media (max-width: 520px) {
+  .chk-wrap { width: 100%; justify-content: center; margin-left: 0; }
+}
+</style>
+</head>
+<body>
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <div class="sticky-counts">
+      <span class="pill">Отправлено: <b id="cnt">0</b> / 30</span>
+    </div>
+    <button type="button" class="btn-sec" id="toggle-hide">Скрыть отправленные: Выкл</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <header>
+    <h1>Письма Ирины v5.2 (30 шт. 😊) - 27.11.2026</h1>
+    <p class="sub">Отправлять со своего телефона через мобильный интернет по 10 писем с паузой 10 минут. Галочки сохраняются в браузере телефона.</p>
+    <div class="export-row">
+      <button type="button" class="btn-sec" id="exp">Скопировать список отправленных</button>
+    </div>
+  </header>
+  
+  <details class="cheat">
+    <summary>Шпаргалка ответа, когда клиент написал «Да, покажите» 🤗</summary>
+    <div class="cheat-grid">
+      <div class="cheat-item">
+        <h4>Ответ на «Да, покажите» 🤗</h4>
+        <pre>Замечательно! 🤗
+Сейчас приступим к сборке макета. Перед началом подскажите пару моментов: на какие букеты или услуги сделать главный акцент и есть ли примеры сайтов в близком вам стиле?</pre>
+        <button type="button" class="btn-mini btn-copy" data-target="ta-si-1">Скопировать</button>
+        <textarea hidden id="ta-si-1">Замечательно! 🤗
+Сейчас приступим к сборке макета. Перед началом подскажите пару моментов: на какие букеты или услуги сделать главный акцент и есть ли примеры сайтов в близком вам стиле?</textarea>
+      </div>
+      <div class="cheat-item">
+        <h4>Фиксация срока сборки макета 🙏</h4>
+        <pre>Хорошо, я вас поняла!
+На разработку макета потребуется немного времени 🥺
+Макет будет готов завтра (возможно послезавтра вечером) и мы сразу вам напишем 🙏</pre>
+        <button type="button" class="btn-mini btn-copy" data-target="ta-si-2">Скопировать</button>
+        <textarea hidden id="ta-si-2">Хорошо, я вас поняла!
+На разработку макета потребуется немного времени 🥺
+Макет будет готов завтра (возможно послезавтра вечером) и мы сразу вам напишем 🙏</textarea>
+      </div>
+    </div>
+  </details>
+  <div class="toolbar">
+    <input type="search" id="q" class="search-in" placeholder="Поиск по названию, городу или @нику...">
+  </div>
+  <div class="batch-sep" data-batch="I-1"><span>Пачка 1 из 3 (№1-10)</span><small>после 10 чатов пауза 10 минут</small></div>
+<article class="card" id="card-I1" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№1</span>
+      <strong>Артори, студия штор и текстиля</strong>
+      <span class="city">(Севастополь)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Виктория</span>
+      <span class="niche-tag">Портьерные ткани / Шторы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001051167690" target="_blank" rel="noopener">2ГИС (15 отз., ★5.0)</a>
+      <span class="nick">@artori_ya</span>
+    </div>
+  </div>
+  <pre class="letter-text">Виктория, добрый день! 😊
+Смотрела вашу карточку в Севастополе и улыбнулась от отзыва про дистанционный пошив штор с точным попаданием в цвет и частоту складок.
+
+Отдельного сайта в профиле пока не нашла. Красивая страница поможет сразу показать готовые текстильные проекты и записаться на подбор ткани.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для студий штор и интерьерного текстиля. Сделаем бесплатный первый макет под ваш салон и пришлём картинкой на просмотр. 🤗
+
+Показать вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I1">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/artori_ya" target="_blank" rel="noopener">Открыть @artori_ya</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I1" data-group="I" data-u="artori_ya"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I1-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I1-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I1-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I1-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I1">Виктория, добрый день! 😊
+Смотрела вашу карточку в Севастополе и улыбнулась от отзыва про дистанционный пошив штор с точным попаданием в цвет и частоту складок.
+
+Отдельного сайта в профиле пока не нашла. Красивая страница поможет сразу показать готовые текстильные проекты и записаться на подбор ткани.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для студий штор и интерьерного текстиля. Сделаем бесплатный первый макет под ваш салон и пришлём картинкой на просмотр. 🤗
+
+Показать вам такой вариант?</textarea>
+  <textarea hidden id="blk-I1-1">Виктория, добрый день! 😊</textarea><textarea hidden id="blk-I1-2">Смотрела вашу карточку в Севастополе и улыбнулась от отзыва про дистанционный пошив штор с точным попаданием в цвет и частоту складок.
+
+Отдельного сайта в профиле пока не нашла. Красивая страница поможет сразу показать готовые текстильные проекты и записаться на подбор ткани.</textarea><textarea hidden id="blk-I1-3">Меня зовут Ирина, мы небольшой командой делаем сайты для студий штор и интерьерного текстиля. Сделаем бесплатный первый макет под ваш салон и пришлём картинкой на просмотр. 🤗</textarea><textarea hidden id="blk-I1-4">Показать вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I2" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№2</span>
+      <strong>Как дома, зоогостиница</strong>
+      <span class="city">(Краснодар)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Елена</span>
+      <span class="niche-tag">Зоогостиницы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001116506112" target="_blank" rel="noopener">2ГИС (7 отз., ★5.0)</a>
+      <span class="nick">@amberbabydog</span>
+    </div>
+  </div>
+  <pre class="letter-text">Елена, здравствуйте! 😊
+Заглянула в вашу карточку в Краснодаре и увидела тёплые отзывы про зоотакси для йорка с ежедневными видеоотчётами и заботливыми прогулками.
+
+Своего сайта в 2ГИС сейчас нет. Хозяевам питомцев спокойно заранее увидеть условия проживания с питанием и сразу забронировать даты.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для зоогостиниц и передержек. Бесплатно соберём стартовый макет под вашу гостиницу и отправим картинкой. 🙏
+
+Скинем вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I2">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/amberbabydog" target="_blank" rel="noopener">Открыть @amberbabydog</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I2" data-group="I" data-u="amberbabydog"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I2-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I2-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I2-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I2-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I2">Елена, здравствуйте! 😊
+Заглянула в вашу карточку в Краснодаре и увидела тёплые отзывы про зоотакси для йорка с ежедневными видеоотчётами и заботливыми прогулками.
+
+Своего сайта в 2ГИС сейчас нет. Хозяевам питомцев спокойно заранее увидеть условия проживания с питанием и сразу забронировать даты.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для зоогостиниц и передержек. Бесплатно соберём стартовый макет под вашу гостиницу и отправим картинкой. 🙏
+
+Скинем вам готовый пример?</textarea>
+  <textarea hidden id="blk-I2-1">Елена, здравствуйте! 😊</textarea><textarea hidden id="blk-I2-2">Заглянула в вашу карточку в Краснодаре и увидела тёплые отзывы про зоотакси для йорка с ежедневными видеоотчётами и заботливыми прогулками.
+
+Своего сайта в 2ГИС сейчас нет. Хозяевам питомцев спокойно заранее увидеть условия проживания с питанием и сразу забронировать даты.</textarea><textarea hidden id="blk-I2-3">Меня зовут Ирина, мы небольшой командой делаем сайты для зоогостиниц и передержек. Бесплатно соберём стартовый макет под вашу гостиницу и отправим картинкой. 🙏</textarea><textarea hidden id="blk-I2-4">Скинем вам готовый пример?</textarea>
+</article>
+<article class="card" id="card-I3" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№3</span>
+      <strong>Феникс, кабинет семейного психолога и для взрослых</strong>
+      <span class="city">(Барнаул)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Анна</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001112720873" target="_blank" rel="noopener">2ГИС (14 отз., ★5.0)</a>
+      <span class="nick">@anuta_online</span>
+    </div>
+  </div>
+  <pre class="letter-text">Анна, добрый день! 😊
+Открыла вашу карточку в Барнауле и прочитала душевные отзывы про бережный разбор после развода и понятные шаги сразу после беседы.
+
+Отдельного сайта в профиле пока нет. На спокойной странице удобно рассказать о вашем подходе и открыть мягкую запись на первую встречу.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных психологов. С удовольствием бесплатно набросаем макет под ваш кабинет и пришлём картинкой. 🤗
+
+Показать вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I3">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/anuta_online" target="_blank" rel="noopener">Открыть @anuta_online</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I3" data-group="I" data-u="anuta_online"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I3-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I3-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I3-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I3-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I3">Анна, добрый день! 😊
+Открыла вашу карточку в Барнауле и прочитала душевные отзывы про бережный разбор после развода и понятные шаги сразу после беседы.
+
+Отдельного сайта в профиле пока нет. На спокойной странице удобно рассказать о вашем подходе и открыть мягкую запись на первую встречу.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных психологов. С удовольствием бесплатно набросаем макет под ваш кабинет и пришлём картинкой. 🤗
+
+Показать вам готовый пример?</textarea>
+  <textarea hidden id="blk-I3-1">Анна, добрый день! 😊</textarea><textarea hidden id="blk-I3-2">Открыла вашу карточку в Барнауле и прочитала душевные отзывы про бережный разбор после развода и понятные шаги сразу после беседы.
+
+Отдельного сайта в профиле пока нет. На спокойной странице удобно рассказать о вашем подходе и открыть мягкую запись на первую встречу.</textarea><textarea hidden id="blk-I3-3">Меня зовут Ирина, мы небольшой командой делаем сайты для частных психологов. С удовольствием бесплатно набросаем макет под ваш кабинет и пришлём картинкой. 🤗</textarea><textarea hidden id="blk-I3-4">Показать вам готовый пример?</textarea>
+</article>
+<article class="card" id="card-I4" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№4</span>
+      <strong>Эволюция Незнайки, центр раннего развития</strong>
+      <span class="city">(Иркутск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Светлана</span>
+      <span class="niche-tag">Частные детские сады</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001061521026" target="_blank" rel="noopener">2ГИС (29 отз., ★4.8)</a>
+      <span class="nick">@veta_pashkova</span>
+    </div>
+  </div>
+  <pre class="letter-text">Светлана, здравствуйте! 😊
+Листала вашу карточку в Иркутске и отметила отзывы родителей про мягкую адаптацию малышей в домашней атмосфере и творческие игры каждый день.
+
+Ссылки на собственный сайт в 2ГИС пока нет. Мамам удобно заранее посмотреть режим дня с педагогами и записаться на знакомство с садиком.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов и центров развития. Бесплатно подготовим пробный макет под ваш центр и скинем картинкой. 🙏
+
+Пришлём вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I4">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/veta_pashkova" target="_blank" rel="noopener">Открыть @veta_pashkova</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I4" data-group="I" data-u="veta_pashkova"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I4-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I4-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I4-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I4-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I4">Светлана, здравствуйте! 😊
+Листала вашу карточку в Иркутске и отметила отзывы родителей про мягкую адаптацию малышей в домашней атмосфере и творческие игры каждый день.
+
+Ссылки на собственный сайт в 2ГИС пока нет. Мамам удобно заранее посмотреть режим дня с педагогами и записаться на знакомство с садиком.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов и центров развития. Бесплатно подготовим пробный макет под ваш центр и скинем картинкой. 🙏
+
+Пришлём вам такой вариант?</textarea>
+  <textarea hidden id="blk-I4-1">Светлана, здравствуйте! 😊</textarea><textarea hidden id="blk-I4-2">Листала вашу карточку в Иркутске и отметила отзывы родителей про мягкую адаптацию малышей в домашней атмосфере и творческие игры каждый день.
+
+Ссылки на собственный сайт в 2ГИС пока нет. Мамам удобно заранее посмотреть режим дня с педагогами и записаться на знакомство с садиком.</textarea><textarea hidden id="blk-I4-3">Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов и центров развития. Бесплатно подготовим пробный макет под ваш центр и скинем картинкой. 🙏</textarea><textarea hidden id="blk-I4-4">Пришлём вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I5" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№5</span>
+      <strong>Магазин цветов</strong>
+      <span class="city">(Самара)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Алиса</span>
+      <span class="niche-tag">Цветы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001020245760" target="_blank" rel="noopener">2ГИС (6 отз., ★5.0)</a>
+      <span class="nick">@asiyaka94</span>
+    </div>
+  </div>
+  <pre class="letter-text">Алиса, добрый день! 😊
+Зашла в вашу карточку в Самаре и увидела искренние отзывы покупателей про самые свежие цветы и душевную сборку букетов.
+
+Своего сайта в профиле 2ГИС сейчас нет. На лёгкой странице можно красиво показать сезонные букеты с быстрым заказом прямо в мессенджер.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных магазинов. Сделаем бесплатный эскиз главной страницы под ваш магазин и пришлём картинкой. 🤗
+
+Показать вам такой пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I5">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/asiyaka94" target="_blank" rel="noopener">Открыть @asiyaka94</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I5" data-group="I" data-u="asiyaka94"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I5-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I5-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I5-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I5-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I5">Алиса, добрый день! 😊
+Зашла в вашу карточку в Самаре и увидела искренние отзывы покупателей про самые свежие цветы и душевную сборку букетов.
+
+Своего сайта в профиле 2ГИС сейчас нет. На лёгкой странице можно красиво показать сезонные букеты с быстрым заказом прямо в мессенджер.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных магазинов. Сделаем бесплатный эскиз главной страницы под ваш магазин и пришлём картинкой. 🤗
+
+Показать вам такой пример?</textarea>
+  <textarea hidden id="blk-I5-1">Алиса, добрый день! 😊</textarea><textarea hidden id="blk-I5-2">Зашла в вашу карточку в Самаре и увидела искренние отзывы покупателей про самые свежие цветы и душевную сборку букетов.
+
+Своего сайта в профиле 2ГИС сейчас нет. На лёгкой странице можно красиво показать сезонные букеты с быстрым заказом прямо в мессенджер.</textarea><textarea hidden id="blk-I5-3">Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных магазинов. Сделаем бесплатный эскиз главной страницы под ваш магазин и пришлём картинкой. 🤗</textarea><textarea hidden id="blk-I5-4">Показать вам такой пример?</textarea>
+</article>
+<article class="card" id="card-I6" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№6</span>
+      <strong>Кабинет психолога Березина Ильи</strong>
+      <span class="city">(Новосибирск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Илья</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001099767132" target="_blank" rel="noopener">2ГИС (12 отз., ★5.0)</a>
+      <span class="nick">@ilia_berezkin</span>
+    </div>
+  </div>
+  <pre class="letter-text">Илья, добрый день! 😊
+Посмотрела ваши отзывы в Новосибирске про бережную помощь подросткам с родителями в трудный период и точный взгляд на причину с первой встречи.
+
+Отдельного сайта в 2ГИС сейчас нет. Своя страница поможет семьям заранее познакомиться с направлениями работы и спокойно записаться на приём.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и частных кабинетов. Бесплатно соберём пробный макет под ваш кабинет и отправим картинкой. 🙏
+
+Скинем вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I6">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/ilia_berezkin" target="_blank" rel="noopener">Открыть @ilia_berezkin</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I6" data-group="I" data-u="ilia_berezkin"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I6-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I6-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I6-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I6-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I6">Илья, добрый день! 😊
+Посмотрела ваши отзывы в Новосибирске про бережную помощь подросткам с родителями в трудный период и точный взгляд на причину с первой встречи.
+
+Отдельного сайта в 2ГИС сейчас нет. Своя страница поможет семьям заранее познакомиться с направлениями работы и спокойно записаться на приём.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и частных кабинетов. Бесплатно соберём пробный макет под ваш кабинет и отправим картинкой. 🙏
+
+Скинем вам такой вариант?</textarea>
+  <textarea hidden id="blk-I6-1">Илья, добрый день! 😊</textarea><textarea hidden id="blk-I6-2">Посмотрела ваши отзывы в Новосибирске про бережную помощь подросткам с родителями в трудный период и точный взгляд на причину с первой встречи.
+
+Отдельного сайта в 2ГИС сейчас нет. Своя страница поможет семьям заранее познакомиться с направлениями работы и спокойно записаться на приём.</textarea><textarea hidden id="blk-I6-3">Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и частных кабинетов. Бесплатно соберём пробный макет под ваш кабинет и отправим картинкой. 🙏</textarea><textarea hidden id="blk-I6-4">Скинем вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I7" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№7</span>
+      <strong>Фавн, цветочный салон</strong>
+      <span class="city">(Великий Новгород)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Анна</span>
+      <span class="niche-tag">Цветы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001111210164" target="_blank" rel="noopener">2ГИС (11 отз., ★5.0)</a>
+      <span class="nick">@favn53</span>
+    </div>
+  </div>
+  <pre class="letter-text">Анна, здравствуйте! 😊
+Увидела вашу карточку в Великом Новгороде и влюбилась в отзывы про авторские букеты с обилием зелени плюс ароматный кофе и очаровательную кошечку Стефани.
+
+Ссылки на сайт в 2ГИС пока нет. На атмосферной странице можно передать настроение салона с примерами композиций и предзаказом к праздникам.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных салонов. С радостью бесплатно сделаем первый макет под ваш салон и пришлём картинкой. 🤗
+
+Показать вам готовый вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I7">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/favn53" target="_blank" rel="noopener">Открыть @favn53</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I7" data-group="I" data-u="favn53"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I7-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I7-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I7-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I7-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I7">Анна, здравствуйте! 😊
+Увидела вашу карточку в Великом Новгороде и влюбилась в отзывы про авторские букеты с обилием зелени плюс ароматный кофе и очаровательную кошечку Стефани.
+
+Ссылки на сайт в 2ГИС пока нет. На атмосферной странице можно передать настроение салона с примерами композиций и предзаказом к праздникам.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных салонов. С радостью бесплатно сделаем первый макет под ваш салон и пришлём картинкой. 🤗
+
+Показать вам готовый вариант?</textarea>
+  <textarea hidden id="blk-I7-1">Анна, здравствуйте! 😊</textarea><textarea hidden id="blk-I7-2">Увидела вашу карточку в Великом Новгороде и влюбилась в отзывы про авторские букеты с обилием зелени плюс ароматный кофе и очаровательную кошечку Стефани.
+
+Ссылки на сайт в 2ГИС пока нет. На атмосферной странице можно передать настроение салона с примерами композиций и предзаказом к праздникам.</textarea><textarea hidden id="blk-I7-3">Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных салонов. С радостью бесплатно сделаем первый макет под ваш салон и пришлём картинкой. 🤗</textarea><textarea hidden id="blk-I7-4">Показать вам готовый вариант?</textarea>
+</article>
+<article class="card" id="card-I8" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№8</span>
+      <strong>Крошка Енот</strong>
+      <span class="city">(Красноярск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Мария</span>
+      <span class="niche-tag">Частные детские сады</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001024871564" target="_blank" rel="noopener">2ГИС (10 отз., ★5.0)</a>
+      <span class="nick">@marisakrsk</span>
+    </div>
+  </div>
+  <pre class="letter-text">Мария, добрый день! 😊
+Заглянула в вашу карточку в Красноярске и заметила отзывы про группу выходного дня и спокойный уход дочки в сад без слёз.
+
+Своего сайта в 2ГИС сейчас нет. Родителям удобно сразу увидеть условия субботней группы с фото комнат и записаться на экскурсию.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. Бесплатно подготовим набросок сайта под ваш садик и скинем картинкой. 🙏
+
+Пришлём вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I8">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/marisakrsk" target="_blank" rel="noopener">Открыть @marisakrsk</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I8" data-group="I" data-u="marisakrsk"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I8-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I8-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I8-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I8-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I8">Мария, добрый день! 😊
+Заглянула в вашу карточку в Красноярске и заметила отзывы про группу выходного дня и спокойный уход дочки в сад без слёз.
+
+Своего сайта в 2ГИС сейчас нет. Родителям удобно сразу увидеть условия субботней группы с фото комнат и записаться на экскурсию.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. Бесплатно подготовим набросок сайта под ваш садик и скинем картинкой. 🙏
+
+Пришлём вам готовый пример?</textarea>
+  <textarea hidden id="blk-I8-1">Мария, добрый день! 😊</textarea><textarea hidden id="blk-I8-2">Заглянула в вашу карточку в Красноярске и заметила отзывы про группу выходного дня и спокойный уход дочки в сад без слёз.
+
+Своего сайта в 2ГИС сейчас нет. Родителям удобно сразу увидеть условия субботней группы с фото комнат и записаться на экскурсию.</textarea><textarea hidden id="blk-I8-3">Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. Бесплатно подготовим набросок сайта под ваш садик и скинем картинкой. 🙏</textarea><textarea hidden id="blk-I8-4">Пришлём вам готовый пример?</textarea>
+</article>
+<article class="card" id="card-I9" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№9</span>
+      <strong>Пудра, салон цветов</strong>
+      <span class="city">(Иркутск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Яна</span>
+      <span class="niche-tag">Доставка цветов</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001036095000" target="_blank" rel="noopener">2ГИС (89 отз., ★5.0)</a>
+      <span class="nick">@chvetok38</span>
+    </div>
+  </div>
+  <pre class="letter-text">Яна, здравствуйте! 😊
+Открыла вашу карточку в Иркутске и увидела почти девяносто отзывов про внимательных флористов и живую помощь с выбором каждого цветка.
+
+Отдельного сайта в 2ГИС пока не стоит. На аккуратной странице гости смогут выбрать повод с бюджетом и оформить доставку в пару кликов.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для салонов и доставки цветов. Соберём бесплатный стартовый макет под ваш салон и отправим картинкой. 🤗
+
+Показать вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I9">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/chvetok38" target="_blank" rel="noopener">Открыть @chvetok38</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I9" data-group="I" data-u="chvetok38"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I9-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I9-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I9-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I9-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I9">Яна, здравствуйте! 😊
+Открыла вашу карточку в Иркутске и увидела почти девяносто отзывов про внимательных флористов и живую помощь с выбором каждого цветка.
+
+Отдельного сайта в 2ГИС пока не стоит. На аккуратной странице гости смогут выбрать повод с бюджетом и оформить доставку в пару кликов.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для салонов и доставки цветов. Соберём бесплатный стартовый макет под ваш салон и отправим картинкой. 🤗
+
+Показать вам такой вариант?</textarea>
+  <textarea hidden id="blk-I9-1">Яна, здравствуйте! 😊</textarea><textarea hidden id="blk-I9-2">Открыла вашу карточку в Иркутске и увидела почти девяносто отзывов про внимательных флористов и живую помощь с выбором каждого цветка.
+
+Отдельного сайта в 2ГИС пока не стоит. На аккуратной странице гости смогут выбрать повод с бюджетом и оформить доставку в пару кликов.</textarea><textarea hidden id="blk-I9-3">Меня зовут Ирина, мы небольшой командой делаем сайты для салонов и доставки цветов. Соберём бесплатный стартовый макет под ваш салон и отправим картинкой. 🤗</textarea><textarea hidden id="blk-I9-4">Показать вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I10" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№10</span>
+      <strong>КошкинДог, зоогостиница</strong>
+      <span class="city">(Хабаровск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Валерия</span>
+      <span class="niche-tag">Зоогостиницы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001078782647" target="_blank" rel="noopener">2ГИС (136 отз., ★5.0)</a>
+      <span class="nick">@kotdog75</span>
+    </div>
+  </div>
+  <pre class="letter-text">Валерия, добрый день! 😊
+Листала ваши отзывы в Хабаровске про предварительное знакомство с вольерами и кормление щенка строго по графику с ежедневными отчётами.
+
+Ссылки на сайт в 2ГИС сейчас нет. На тёплой странице владельцы собак сразу увидят условия передержки и спокойно оставят бронь перед отъездом.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для зоогостиниц. Бесплатно набросаем макет сайта под вашу гостиницу и пришлём картинкой. 🙏
+
+Скинем вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I10">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/kotdog75" target="_blank" rel="noopener">Открыть @kotdog75</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I10" data-group="I" data-u="kotdog75"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I10-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I10-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I10-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I10-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I10">Валерия, добрый день! 😊
+Листала ваши отзывы в Хабаровске про предварительное знакомство с вольерами и кормление щенка строго по графику с ежедневными отчётами.
+
+Ссылки на сайт в 2ГИС сейчас нет. На тёплой странице владельцы собак сразу увидят условия передержки и спокойно оставят бронь перед отъездом.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для зоогостиниц. Бесплатно набросаем макет сайта под вашу гостиницу и пришлём картинкой. 🙏
+
+Скинем вам готовый пример?</textarea>
+  <textarea hidden id="blk-I10-1">Валерия, добрый день! 😊</textarea><textarea hidden id="blk-I10-2">Листала ваши отзывы в Хабаровске про предварительное знакомство с вольерами и кормление щенка строго по графику с ежедневными отчётами.
+
+Ссылки на сайт в 2ГИС сейчас нет. На тёплой странице владельцы собак сразу увидят условия передержки и спокойно оставят бронь перед отъездом.</textarea><textarea hidden id="blk-I10-3">Меня зовут Ирина, мы небольшой командой делаем сайты для зоогостиниц. Бесплатно набросаем макет сайта под вашу гостиницу и пришлём картинкой. 🙏</textarea><textarea hidden id="blk-I10-4">Скинем вам готовый пример?</textarea>
+</article>
+<div class="batch-sep" data-batch="I-2"><span>Пачка 2 из 3 (№11-20)</span><small>после 10 чатов пауза 10 минут</small></div>
+<article class="card" id="card-I11" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№11</span>
+      <strong>Вдохновение, психотерапевтический центр</strong>
+      <span class="city">(Новороссийск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Татьяна</span>
+      <span class="niche-tag">Услуги логопеда</span>
+      <a class="gis" href="https://2gis.ru/firm/10415102419273180" target="_blank" rel="noopener">2ГИС (5 отз., ★4.2)</a>
+      <span class="nick">@tatianavasilets</span>
+    </div>
+  </div>
+  <pre class="letter-text">Татьяна, здравствуйте! 😊
+Зашла в вашу карточку в Новороссийске и прочитала благодарные отзывы про чуткую психотерапию и совместную помощь взрослым и детям.
+
+Собственного сайта в 2ГИС пока нет. Спокойная страница расскажет о специалистах центра с форматами сессий и откроет простую запись.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психотерапевтических центров. Бесплатно сделаем пробный макет под ваш центр и пришлём картинкой. 🤗
+
+Показать вам такой пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I11">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/tatianavasilets" target="_blank" rel="noopener">Открыть @tatianavasilets</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I11" data-group="I" data-u="tatianavasilets"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I11-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I11-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I11-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I11-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I11">Татьяна, здравствуйте! 😊
+Зашла в вашу карточку в Новороссийске и прочитала благодарные отзывы про чуткую психотерапию и совместную помощь взрослым и детям.
+
+Собственного сайта в 2ГИС пока нет. Спокойная страница расскажет о специалистах центра с форматами сессий и откроет простую запись.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психотерапевтических центров. Бесплатно сделаем пробный макет под ваш центр и пришлём картинкой. 🤗
+
+Показать вам такой пример?</textarea>
+  <textarea hidden id="blk-I11-1">Татьяна, здравствуйте! 😊</textarea><textarea hidden id="blk-I11-2">Зашла в вашу карточку в Новороссийске и прочитала благодарные отзывы про чуткую психотерапию и совместную помощь взрослым и детям.
+
+Собственного сайта в 2ГИС пока нет. Спокойная страница расскажет о специалистах центра с форматами сессий и откроет простую запись.</textarea><textarea hidden id="blk-I11-3">Меня зовут Ирина, мы небольшой командой делаем сайты для психотерапевтических центров. Бесплатно сделаем пробный макет под ваш центр и пришлём картинкой. 🤗</textarea><textarea hidden id="blk-I11-4">Показать вам такой пример?</textarea>
+</article>
+<article class="card" id="card-I12" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№12</span>
+      <strong>Флорист №1, студия флористического искусства и декора</strong>
+      <span class="city">(Астрахань)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Галина</span>
+      <span class="niche-tag">Цветы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001037450146" target="_blank" rel="noopener">2ГИС (26 отз., ★5.0)</a>
+      <span class="nick">@floristnumber1</span>
+    </div>
+  </div>
+  <pre class="letter-text">Галина, добрый день! 😊
+Посмотрела вашу карточку в Астрахани и отзывы постоянных гостей про свежие композиции на любой запрос с доставкой и приятными скидками.
+
+Отдельного сайта в профиле 2ГИС сейчас нет. На странице красиво соберутся готовые подборки букетов с кнопкой быстрого заказа.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для студий флористики и декора. С радостью бесплатно подготовим эскиз сайта под вашу студию и скинем картинкой. 🙏
+
+Пришлём вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I12">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/floristnumber1" target="_blank" rel="noopener">Открыть @floristnumber1</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I12" data-group="I" data-u="floristnumber1"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I12-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I12-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I12-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I12-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I12">Галина, добрый день! 😊
+Посмотрела вашу карточку в Астрахани и отзывы постоянных гостей про свежие композиции на любой запрос с доставкой и приятными скидками.
+
+Отдельного сайта в профиле 2ГИС сейчас нет. На странице красиво соберутся готовые подборки букетов с кнопкой быстрого заказа.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для студий флористики и декора. С радостью бесплатно подготовим эскиз сайта под вашу студию и скинем картинкой. 🙏
+
+Пришлём вам такой вариант?</textarea>
+  <textarea hidden id="blk-I12-1">Галина, добрый день! 😊</textarea><textarea hidden id="blk-I12-2">Посмотрела вашу карточку в Астрахани и отзывы постоянных гостей про свежие композиции на любой запрос с доставкой и приятными скидками.
+
+Отдельного сайта в профиле 2ГИС сейчас нет. На странице красиво соберутся готовые подборки букетов с кнопкой быстрого заказа.</textarea><textarea hidden id="blk-I12-3">Меня зовут Ирина, мы небольшой командой делаем сайты для студий флористики и декора. С радостью бесплатно подготовим эскиз сайта под вашу студию и скинем картинкой. 🙏</textarea><textarea hidden id="blk-I12-4">Пришлём вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I13" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№13</span>
+      <strong>Кабинет психолога Алёны Поляковой</strong>
+      <span class="city">(Хабаровск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Алёна</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001067299689" target="_blank" rel="noopener">2ГИС (49 отз., ★5.0)</a>
+      <span class="nick">@alenapolyakovapsy</span>
+    </div>
+  </div>
+  <pre class="letter-text">Алёна, здравствуйте! 😊
+Открыла вашу карточку в Хабаровске и увидела почти полсотни тёплых отзывов про бережную поддержку и понятный разбор непростых ситуаций.
+
+Своего сайта в 2ГИС сейчас нет. На аккуратной странице клиентам легко узнать про ваш опыт и выбрать удобное время консультации.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для кабинетов психолога. Бесплатно соберём первый макет под ваш кабинет и отправим картинкой. 🤗
+
+Показать вам готовый вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I13">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/alenapolyakovapsy" target="_blank" rel="noopener">Открыть @alenapolyakovapsy</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I13" data-group="I" data-u="alenapolyakovapsy"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I13-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I13-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I13-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I13-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I13">Алёна, здравствуйте! 😊
+Открыла вашу карточку в Хабаровске и увидела почти полсотни тёплых отзывов про бережную поддержку и понятный разбор непростых ситуаций.
+
+Своего сайта в 2ГИС сейчас нет. На аккуратной странице клиентам легко узнать про ваш опыт и выбрать удобное время консультации.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для кабинетов психолога. Бесплатно соберём первый макет под ваш кабинет и отправим картинкой. 🤗
+
+Показать вам готовый вариант?</textarea>
+  <textarea hidden id="blk-I13-1">Алёна, здравствуйте! 😊</textarea><textarea hidden id="blk-I13-2">Открыла вашу карточку в Хабаровске и увидела почти полсотни тёплых отзывов про бережную поддержку и понятный разбор непростых ситуаций.
+
+Своего сайта в 2ГИС сейчас нет. На аккуратной странице клиентам легко узнать про ваш опыт и выбрать удобное время консультации.</textarea><textarea hidden id="blk-I13-3">Меня зовут Ирина, мы небольшой командой делаем сайты для кабинетов психолога. Бесплатно соберём первый макет под ваш кабинет и отправим картинкой. 🤗</textarea><textarea hidden id="blk-I13-4">Показать вам готовый вариант?</textarea>
+</article>
+<article class="card" id="card-I14" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№14</span>
+      <strong>Кабинет психолога Ольги Гореловой</strong>
+      <span class="city">(Астрахань)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Ольга</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001106089703" target="_blank" rel="noopener">2ГИС (22 отз., ★5.0)</a>
+      <span class="nick">@goolga</span>
+    </div>
+  </div>
+  <pre class="letter-text">Ольга, добрый день! 😊
+Заглянула в вашу карточку в Астрахани и заметила отзывы про помощь двенадцатилетнему сыну плюс женские лекции и ретрит перезагрузки.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На одной странице удобно объединить личные консультации с анонсами курсов и ближайших поездок.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и авторов программ. Бесплатно сделаем набросок сайта под ваши направления и пришлём картинкой. 🙏
+
+Скинем вам такой пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I14">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/goolga" target="_blank" rel="noopener">Открыть @goolga</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I14" data-group="I" data-u="goolga"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I14-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I14-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I14-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I14-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I14">Ольга, добрый день! 😊
+Заглянула в вашу карточку в Астрахани и заметила отзывы про помощь двенадцатилетнему сыну плюс женские лекции и ретрит перезагрузки.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На одной странице удобно объединить личные консультации с анонсами курсов и ближайших поездок.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и авторов программ. Бесплатно сделаем набросок сайта под ваши направления и пришлём картинкой. 🙏
+
+Скинем вам такой пример?</textarea>
+  <textarea hidden id="blk-I14-1">Ольга, добрый день! 😊</textarea><textarea hidden id="blk-I14-2">Заглянула в вашу карточку в Астрахани и заметила отзывы про помощь двенадцатилетнему сыну плюс женские лекции и ретрит перезагрузки.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На одной странице удобно объединить личные консультации с анонсами курсов и ближайших поездок.</textarea><textarea hidden id="blk-I14-3">Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и авторов программ. Бесплатно сделаем набросок сайта под ваши направления и пришлём картинкой. 🙏</textarea><textarea hidden id="blk-I14-4">Скинем вам такой пример?</textarea>
+</article>
+<article class="card" id="card-I15" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№15</span>
+      <strong>Психолог Дина Васькина</strong>
+      <span class="city">(Краснодар)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Дина</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001101163639" target="_blank" rel="noopener">2ГИС (15 отз., ★5.0)</a>
+      <span class="nick">@dinavaskina</span>
+    </div>
+  </div>
+  <pre class="letter-text">Дина, здравствуйте! 😊
+Смотрела вашу карточку в Краснодаре и прочитала вдохновляющие отзывы про проведение игры Лила и деликатную работу с семейными запросами.
+
+Отдельного сайта в 2ГИС сейчас нет. На атмосферной странице можно рассказать о формате игры с живыми откликами и записью на участие.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих трансформационных игр. С удовольствием бесплатно подготовим пробный макет и отправим картинкой. 🤗
+
+Показать вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I15">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/dinavaskina" target="_blank" rel="noopener">Открыть @dinavaskina</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I15" data-group="I" data-u="dinavaskina"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I15-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I15-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I15-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I15-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I15">Дина, здравствуйте! 😊
+Смотрела вашу карточку в Краснодаре и прочитала вдохновляющие отзывы про проведение игры Лила и деликатную работу с семейными запросами.
+
+Отдельного сайта в 2ГИС сейчас нет. На атмосферной странице можно рассказать о формате игры с живыми откликами и записью на участие.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих трансформационных игр. С удовольствием бесплатно подготовим пробный макет и отправим картинкой. 🤗
+
+Показать вам такой вариант?</textarea>
+  <textarea hidden id="blk-I15-1">Дина, здравствуйте! 😊</textarea><textarea hidden id="blk-I15-2">Смотрела вашу карточку в Краснодаре и прочитала вдохновляющие отзывы про проведение игры Лила и деликатную работу с семейными запросами.
+
+Отдельного сайта в 2ГИС сейчас нет. На атмосферной странице можно рассказать о формате игры с живыми откликами и записью на участие.</textarea><textarea hidden id="blk-I15-3">Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих трансформационных игр. С удовольствием бесплатно подготовим пробный макет и отправим картинкой. 🤗</textarea><textarea hidden id="blk-I15-4">Показать вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I16" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№16</span>
+      <strong>Кабинет психолога Виктории Портновой</strong>
+      <span class="city">(Новосибирск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Виктория</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001097450069" target="_blank" rel="noopener">2ГИС (13 отз., ★5.0)</a>
+      <span class="nick">@portnova_vv</span>
+    </div>
+  </div>
+  <pre class="letter-text">Виктория, добрый день! 😊
+Листала вашу карточку в Новосибирске и отметила отзывы про уютный кабинет с метафорическими картами плюс чай и тренинг по женским архетипам.
+
+Своего сайта в профиле 2ГИС пока нет. На странице красиво покажем атмосферу встреч с расписанием групп и записью на личную беседу.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих тренингов. Бесплатно набросаем стартовый макет под ваш кабинет и скинем картинкой. 🙏
+
+Пришлём вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I16">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/portnova_vv" target="_blank" rel="noopener">Открыть @portnova_vv</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I16" data-group="I" data-u="portnova_vv"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I16-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I16-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I16-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I16-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I16">Виктория, добрый день! 😊
+Листала вашу карточку в Новосибирске и отметила отзывы про уютный кабинет с метафорическими картами плюс чай и тренинг по женским архетипам.
+
+Своего сайта в профиле 2ГИС пока нет. На странице красиво покажем атмосферу встреч с расписанием групп и записью на личную беседу.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих тренингов. Бесплатно набросаем стартовый макет под ваш кабинет и скинем картинкой. 🙏
+
+Пришлём вам готовый пример?</textarea>
+  <textarea hidden id="blk-I16-1">Виктория, добрый день! 😊</textarea><textarea hidden id="blk-I16-2">Листала вашу карточку в Новосибирске и отметила отзывы про уютный кабинет с метафорическими картами плюс чай и тренинг по женским архетипам.
+
+Своего сайта в профиле 2ГИС пока нет. На странице красиво покажем атмосферу встреч с расписанием групп и записью на личную беседу.</textarea><textarea hidden id="blk-I16-3">Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих тренингов. Бесплатно набросаем стартовый макет под ваш кабинет и скинем картинкой. 🙏</textarea><textarea hidden id="blk-I16-4">Пришлём вам готовый пример?</textarea>
+</article>
+<article class="card" id="card-I17" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№17</span>
+      <strong>Кабинет психолога Глеза Оксаны</strong>
+      <span class="city">(Калининград)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Оксана</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001029242860" target="_blank" rel="noopener">2ГИС (12 отз., ★5.0)</a>
+      <span class="nick">@oksana_gleza</span>
+    </div>
+  </div>
+  <pre class="letter-text">Оксана, здравствуйте! 😊
+Зашла в вашу карточку в Калининграде и увидела искренние отзывы про снижение тревожности и уверенную работу с паническими атаками.
+
+Ссылки на сайт в 2ГИС сейчас нет. На спокойной странице людям проще сделать первый шаг и сразу увидеть форматы бережных консультаций.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для практикующих психологов. Бесплатно соберём эскиз сайта под ваш кабинет и пришлём картинкой. 🤗
+
+Показать вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I17">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/oksana_gleza" target="_blank" rel="noopener">Открыть @oksana_gleza</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I17" data-group="I" data-u="oksana_gleza"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I17-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I17-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I17-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I17-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I17">Оксана, здравствуйте! 😊
+Зашла в вашу карточку в Калининграде и увидела искренние отзывы про снижение тревожности и уверенную работу с паническими атаками.
+
+Ссылки на сайт в 2ГИС сейчас нет. На спокойной странице людям проще сделать первый шаг и сразу увидеть форматы бережных консультаций.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для практикующих психологов. Бесплатно соберём эскиз сайта под ваш кабинет и пришлём картинкой. 🤗
+
+Показать вам готовый пример?</textarea>
+  <textarea hidden id="blk-I17-1">Оксана, здравствуйте! 😊</textarea><textarea hidden id="blk-I17-2">Зашла в вашу карточку в Калининграде и увидела искренние отзывы про снижение тревожности и уверенную работу с паническими атаками.
+
+Ссылки на сайт в 2ГИС сейчас нет. На спокойной странице людям проще сделать первый шаг и сразу увидеть форматы бережных консультаций.</textarea><textarea hidden id="blk-I17-3">Меня зовут Ирина, мы небольшой командой делаем сайты для практикующих психологов. Бесплатно соберём эскиз сайта под ваш кабинет и пришлём картинкой. 🤗</textarea><textarea hidden id="blk-I17-4">Показать вам готовый пример?</textarea>
+</article>
+<article class="card" id="card-I18" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№18</span>
+      <strong>Тут Растут, частный детский сад</strong>
+      <span class="city">(Челябинск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Елена</span>
+      <span class="niche-tag">Частные детские сады</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001034406787" target="_blank" rel="noopener">2ГИС (51 отз., ★4.9)</a>
+      <span class="nick">@helen_v_y</span>
+    </div>
+  </div>
+  <pre class="letter-text">Елена, добрый день! 😊
+Посмотрела ваши отзывы в Челябинске про сон уже со второго дня адаптации и ежедневные фотоотчёты родителям дважды в день.
+
+Отдельного сайта в 2ГИС пока нет. На тёплой странице мамы сразу увидят занятия с фото групп и смогут записаться на пробное посещение.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. С радостью бесплатно сделаем набросок сайта под ваш садик и скинем картинкой. 🙏
+
+Скинем вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I18">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/helen_v_y" target="_blank" rel="noopener">Открыть @helen_v_y</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I18" data-group="I" data-u="helen_v_y"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I18-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I18-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I18-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I18-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I18">Елена, добрый день! 😊
+Посмотрела ваши отзывы в Челябинске про сон уже со второго дня адаптации и ежедневные фотоотчёты родителям дважды в день.
+
+Отдельного сайта в 2ГИС пока нет. На тёплой странице мамы сразу увидят занятия с фото групп и смогут записаться на пробное посещение.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. С радостью бесплатно сделаем набросок сайта под ваш садик и скинем картинкой. 🙏
+
+Скинем вам такой вариант?</textarea>
+  <textarea hidden id="blk-I18-1">Елена, добрый день! 😊</textarea><textarea hidden id="blk-I18-2">Посмотрела ваши отзывы в Челябинске про сон уже со второго дня адаптации и ежедневные фотоотчёты родителям дважды в день.
+
+Отдельного сайта в 2ГИС пока нет. На тёплой странице мамы сразу увидят занятия с фото групп и смогут записаться на пробное посещение.</textarea><textarea hidden id="blk-I18-3">Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. С радостью бесплатно сделаем набросок сайта под ваш садик и скинем картинкой. 🙏</textarea><textarea hidden id="blk-I18-4">Скинем вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I19" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№19</span>
+      <strong>Кристафло, цветочный магазин</strong>
+      <span class="city">(Новосибирск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Кристина</span>
+      <span class="niche-tag">Цветы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001088726118" target="_blank" rel="noopener">2ГИС (43 отз., ★4.9)</a>
+      <span class="nick">@kristi621</span>
+    </div>
+  </div>
+  <pre class="letter-text">Кристина, здравствуйте! 😊
+Открыла вашу карточку в Новосибирске и улыбнулась от отзывов заказчиков из Братска и Барнаула про сборку букета по фото за пятнадцать минут.
+
+Своего сайта в 2ГИС сейчас нет. Для дистанционных поздравлений очень удобно иметь витрину свежих букетов с быстрой оплатой и доставкой.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных магазинов. Бесплатно подготовим первый макет под ваш магазин и отправим картинкой. 🤗
+
+Показать вам такой пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I19">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/kristi621" target="_blank" rel="noopener">Открыть @kristi621</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I19" data-group="I" data-u="kristi621"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I19-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I19-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I19-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I19-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I19">Кристина, здравствуйте! 😊
+Открыла вашу карточку в Новосибирске и улыбнулась от отзывов заказчиков из Братска и Барнаула про сборку букета по фото за пятнадцать минут.
+
+Своего сайта в 2ГИС сейчас нет. Для дистанционных поздравлений очень удобно иметь витрину свежих букетов с быстрой оплатой и доставкой.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных магазинов. Бесплатно подготовим первый макет под ваш магазин и отправим картинкой. 🤗
+
+Показать вам такой пример?</textarea>
+  <textarea hidden id="blk-I19-1">Кристина, здравствуйте! 😊</textarea><textarea hidden id="blk-I19-2">Открыла вашу карточку в Новосибирске и улыбнулась от отзывов заказчиков из Братска и Барнаула про сборку букета по фото за пятнадцать минут.
+
+Своего сайта в 2ГИС сейчас нет. Для дистанционных поздравлений очень удобно иметь витрину свежих букетов с быстрой оплатой и доставкой.</textarea><textarea hidden id="blk-I19-3">Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных магазинов. Бесплатно подготовим первый макет под ваш магазин и отправим картинкой. 🤗</textarea><textarea hidden id="blk-I19-4">Показать вам такой пример?</textarea>
+</article>
+<article class="card" id="card-I20" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№20</span>
+      <strong>Spitol, фотостудия</strong>
+      <span class="city">(Новосибирск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Анастасия</span>
+      <span class="niche-tag">Аренда фотостудии</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001089626767" target="_blank" rel="noopener">2ГИС (22 отз., ★5.0)</a>
+      <span class="nick">@spirina_a</span>
+    </div>
+  </div>
+  <pre class="letter-text">Анастасия, добрый день! 😊
+Заглянула в вашу карточку в Новосибирске и увидела отзывы про стильный зал Винтаж с новой циклорамой и вкусным кофе для гостей.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На странице фотографы сразу увидят интерьеры залов с оборудованием и забронируют свободные часы.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для фотостудий. Бесплатно соберём пробный макет под вашу студию и пришлём картинкой. 🙏
+
+Пришлём вам готовый вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I20">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/spirina_a" target="_blank" rel="noopener">Открыть @spirina_a</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I20" data-group="I" data-u="spirina_a"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I20-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I20-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I20-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I20-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I20">Анастасия, добрый день! 😊
+Заглянула в вашу карточку в Новосибирске и увидела отзывы про стильный зал Винтаж с новой циклорамой и вкусным кофе для гостей.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На странице фотографы сразу увидят интерьеры залов с оборудованием и забронируют свободные часы.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для фотостудий. Бесплатно соберём пробный макет под вашу студию и пришлём картинкой. 🙏
+
+Пришлём вам готовый вариант?</textarea>
+  <textarea hidden id="blk-I20-1">Анастасия, добрый день! 😊</textarea><textarea hidden id="blk-I20-2">Заглянула в вашу карточку в Новосибирске и увидела отзывы про стильный зал Винтаж с новой циклорамой и вкусным кофе для гостей.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На странице фотографы сразу увидят интерьеры залов с оборудованием и забронируют свободные часы.</textarea><textarea hidden id="blk-I20-3">Меня зовут Ирина, мы небольшой командой делаем сайты для фотостудий. Бесплатно соберём пробный макет под вашу студию и пришлём картинкой. 🙏</textarea><textarea hidden id="blk-I20-4">Пришлём вам готовый вариант?</textarea>
+</article>
+<div class="batch-sep" data-batch="I-3"><span>Пачка 3 из 3 (№21-30)</span><small>финальная часть</small></div>
+<article class="card" id="card-I21" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№21</span>
+      <strong>Garden flowers&amp;beauty, студия флористики</strong>
+      <span class="city">(Воронеж)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Ольга</span>
+      <span class="niche-tag">Цветы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001030001561" target="_blank" rel="noopener">2ГИС (19 отз., ★5.0)</a>
+      <span class="nick">@oly20063</span>
+    </div>
+  </div>
+  <pre class="letter-text">Ольга, здравствуйте! 😊
+Смотрела вашу карточку в Воронеже и отметила отзыв про доставку свежих роз за полчаса и добрые советы дочке по уходу за цветами.
+
+Отдельного сайта в 2ГИС сейчас нет. На нежной странице можно вынести готовые корзины с композициями и оформить доставку за пару минут.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для студий флористики. С удовольствием бесплатно сделаем эскиз сайта под вашу студию и скинем картинкой. 🤗
+
+Показать вам готовый вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I21">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/oly20063" target="_blank" rel="noopener">Открыть @oly20063</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I21" data-group="I" data-u="oly20063"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I21-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I21-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I21-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I21-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I21">Ольга, здравствуйте! 😊
+Смотрела вашу карточку в Воронеже и отметила отзыв про доставку свежих роз за полчаса и добрые советы дочке по уходу за цветами.
+
+Отдельного сайта в 2ГИС сейчас нет. На нежной странице можно вынести готовые корзины с композициями и оформить доставку за пару минут.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для студий флористики. С удовольствием бесплатно сделаем эскиз сайта под вашу студию и скинем картинкой. 🤗
+
+Показать вам готовый вариант?</textarea>
+  <textarea hidden id="blk-I21-1">Ольга, здравствуйте! 😊</textarea><textarea hidden id="blk-I21-2">Смотрела вашу карточку в Воронеже и отметила отзыв про доставку свежих роз за полчаса и добрые советы дочке по уходу за цветами.
+
+Отдельного сайта в 2ГИС сейчас нет. На нежной странице можно вынести готовые корзины с композициями и оформить доставку за пару минут.</textarea><textarea hidden id="blk-I21-3">Меня зовут Ирина, мы небольшой командой делаем сайты для студий флористики. С удовольствием бесплатно сделаем эскиз сайта под вашу студию и скинем картинкой. 🤗</textarea><textarea hidden id="blk-I21-4">Показать вам готовый вариант?</textarea>
+</article>
+<article class="card" id="card-I22" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№22</span>
+      <strong>Черника, цветочный салон</strong>
+      <span class="city">(Новосибирск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Олеся</span>
+      <span class="niche-tag">Цветы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001113660907" target="_blank" rel="noopener">2ГИС (13 отз., ★5.0)</a>
+      <span class="nick">@olesiachernika54</span>
+    </div>
+  </div>
+  <pre class="letter-text">Олеся, добрый день! 😊
+Листала ваши отзывы в Новосибирске и порадовалась истории про ароматный букет на три недели свежести и огромный выбор цветов в салоне.
+
+Своего сайта в 2ГИС пока не стоит. На аккуратной странице клиенты смогут выбрать палитру под событие и сразу написать на сборку.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных салонов. Бесплатно набросаем стартовый макет под ваш салон и отправим картинкой. 🙏
+
+Скинем вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I22">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/olesiachernika54" target="_blank" rel="noopener">Открыть @olesiachernika54</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I22" data-group="I" data-u="olesiachernika54"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I22-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I22-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I22-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I22-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I22">Олеся, добрый день! 😊
+Листала ваши отзывы в Новосибирске и порадовалась истории про ароматный букет на три недели свежести и огромный выбор цветов в салоне.
+
+Своего сайта в 2ГИС пока не стоит. На аккуратной странице клиенты смогут выбрать палитру под событие и сразу написать на сборку.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных салонов. Бесплатно набросаем стартовый макет под ваш салон и отправим картинкой. 🙏
+
+Скинем вам готовый пример?</textarea>
+  <textarea hidden id="blk-I22-1">Олеся, добрый день! 😊</textarea><textarea hidden id="blk-I22-2">Листала ваши отзывы в Новосибирске и порадовалась истории про ароматный букет на три недели свежести и огромный выбор цветов в салоне.
+
+Своего сайта в 2ГИС пока не стоит. На аккуратной странице клиенты смогут выбрать палитру под событие и сразу написать на сборку.</textarea><textarea hidden id="blk-I22-3">Меня зовут Ирина, мы небольшой командой делаем сайты для цветочных салонов. Бесплатно набросаем стартовый макет под ваш салон и отправим картинкой. 🙏</textarea><textarea hidden id="blk-I22-4">Скинем вам готовый пример?</textarea>
+</article>
+<article class="card" id="card-I23" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№23</span>
+      <strong>Говори Легко!, центр развития и коррекции речи</strong>
+      <span class="city">(Красноярск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Оксана</span>
+      <span class="niche-tag">Услуги логопеда</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001048038564" target="_blank" rel="noopener">2ГИС (55 отз., ★4.9)</a>
+      <span class="nick">@matvienko_logoped</span>
+    </div>
+  </div>
+  <pre class="letter-text">Оксана, здравствуйте! 😊
+Зашла в вашу карточку в Красноярске и прочитала радостные отзывы родителей про постановку звуков Р и Л с обратной связью после каждого урока.
+
+Ссылки на сайт в 2ГИС сейчас нет. На понятной странице мамы сразу увидят программы логопеда с нейропсихологом и запишутся на диагностику.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для логопедических и коррекционных центров. Бесплатно подготовим набросок сайта под ваш центр и пришлём картинкой. 🤗
+
+Показать вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I23">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/matvienko_logoped" target="_blank" rel="noopener">Открыть @matvienko_logoped</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I23" data-group="I" data-u="matvienko_logoped"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I23-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I23-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I23-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I23-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I23">Оксана, здравствуйте! 😊
+Зашла в вашу карточку в Красноярске и прочитала радостные отзывы родителей про постановку звуков Р и Л с обратной связью после каждого урока.
+
+Ссылки на сайт в 2ГИС сейчас нет. На понятной странице мамы сразу увидят программы логопеда с нейропсихологом и запишутся на диагностику.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для логопедических и коррекционных центров. Бесплатно подготовим набросок сайта под ваш центр и пришлём картинкой. 🤗
+
+Показать вам такой вариант?</textarea>
+  <textarea hidden id="blk-I23-1">Оксана, здравствуйте! 😊</textarea><textarea hidden id="blk-I23-2">Зашла в вашу карточку в Красноярске и прочитала радостные отзывы родителей про постановку звуков Р и Л с обратной связью после каждого урока.
+
+Ссылки на сайт в 2ГИС сейчас нет. На понятной странице мамы сразу увидят программы логопеда с нейропсихологом и запишутся на диагностику.</textarea><textarea hidden id="blk-I23-3">Меня зовут Ирина, мы небольшой командой делаем сайты для логопедических и коррекционных центров. Бесплатно подготовим набросок сайта под ваш центр и пришлём картинкой. 🤗</textarea><textarea hidden id="blk-I23-4">Показать вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I24" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№24</span>
+      <strong>Территория знаний, детская студия развития</strong>
+      <span class="city">(Йошкар-Ола)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Надежда</span>
+      <span class="niche-tag">Услуги логопеда</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001036193988" target="_blank" rel="noopener">2ГИС (26 отз., ★5.0)</a>
+      <span class="nick">@nadezda08_02</span>
+    </div>
+  </div>
+  <pre class="letter-text">Надежда, добрый день! 😊
+Посмотрела ваши отзывы в Йошкар-Оле про обучение чтению за месяц в игровой форме с переходом на скорочтение и аккуратное письмо.
+
+Отдельного сайта в 2ГИС пока нет. На тёплой странице удобно показать курсы подготовки к школе по возрастам и открыть запись в группы.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для детских студий развития. С радостью бесплатно соберём первый макет под вашу студию и скинем картинкой. 🙏
+
+Пришлём вам такой пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I24">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/nadezda08_02" target="_blank" rel="noopener">Открыть @nadezda08_02</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I24" data-group="I" data-u="nadezda08_02"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I24-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I24-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I24-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I24-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I24">Надежда, добрый день! 😊
+Посмотрела ваши отзывы в Йошкар-Оле про обучение чтению за месяц в игровой форме с переходом на скорочтение и аккуратное письмо.
+
+Отдельного сайта в 2ГИС пока нет. На тёплой странице удобно показать курсы подготовки к школе по возрастам и открыть запись в группы.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для детских студий развития. С радостью бесплатно соберём первый макет под вашу студию и скинем картинкой. 🙏
+
+Пришлём вам такой пример?</textarea>
+  <textarea hidden id="blk-I24-1">Надежда, добрый день! 😊</textarea><textarea hidden id="blk-I24-2">Посмотрела ваши отзывы в Йошкар-Оле про обучение чтению за месяц в игровой форме с переходом на скорочтение и аккуратное письмо.
+
+Отдельного сайта в 2ГИС пока нет. На тёплой странице удобно показать курсы подготовки к школе по возрастам и открыть запись в группы.</textarea><textarea hidden id="blk-I24-3">Меня зовут Ирина, мы небольшой командой делаем сайты для детских студий развития. С радостью бесплатно соберём первый макет под вашу студию и скинем картинкой. 🙏</textarea><textarea hidden id="blk-I24-4">Пришлём вам такой пример?</textarea>
+</article>
+<article class="card" id="card-I25" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№25</span>
+      <strong>Нейрополис, центр интеллектуального развития</strong>
+      <span class="city">(Краснодар)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Анна</span>
+      <span class="niche-tag">Услуги нейропсихолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001103324888" target="_blank" rel="noopener">2ГИС (16 отз., ★4.8)</a>
+      <span class="nick">@annak1988</span>
+    </div>
+  </div>
+  <pre class="letter-text">Анна, здравствуйте! 😊
+Открыла вашу карточку в Краснодаре и заметила тёплые отзывы про уверенное чтение по слогам к школе и фотоотчёты родителям после занятий.
+
+Своего сайта в 2ГИС сейчас нет. На светлой странице семьи быстро разберутся в групповых занятиях с нейроподготовкой и запишутся на пробный урок.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для центров детского развития и нейропсихологов. Бесплатно сделаем пробный макет под ваш центр и отправим картинкой. 🤗
+
+Показать вам готовый пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I25">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/annak1988" target="_blank" rel="noopener">Открыть @annak1988</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I25" data-group="I" data-u="annak1988"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I25-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I25-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I25-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I25-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I25">Анна, здравствуйте! 😊
+Открыла вашу карточку в Краснодаре и заметила тёплые отзывы про уверенное чтение по слогам к школе и фотоотчёты родителям после занятий.
+
+Своего сайта в 2ГИС сейчас нет. На светлой странице семьи быстро разберутся в групповых занятиях с нейроподготовкой и запишутся на пробный урок.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для центров детского развития и нейропсихологов. Бесплатно сделаем пробный макет под ваш центр и отправим картинкой. 🤗
+
+Показать вам готовый пример?</textarea>
+  <textarea hidden id="blk-I25-1">Анна, здравствуйте! 😊</textarea><textarea hidden id="blk-I25-2">Открыла вашу карточку в Краснодаре и заметила тёплые отзывы про уверенное чтение по слогам к школе и фотоотчёты родителям после занятий.
+
+Своего сайта в 2ГИС сейчас нет. На светлой странице семьи быстро разберутся в групповых занятиях с нейроподготовкой и запишутся на пробный урок.</textarea><textarea hidden id="blk-I25-3">Меня зовут Ирина, мы небольшой командой делаем сайты для центров детского развития и нейропсихологов. Бесплатно сделаем пробный макет под ваш центр и отправим картинкой. 🤗</textarea><textarea hidden id="blk-I25-4">Показать вам готовый пример?</textarea>
+</article>
+<article class="card" id="card-I26" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№26</span>
+      <strong>Подсолнух, частный детский сад</strong>
+      <span class="city">(Новосибирск)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Екатерина</span>
+      <span class="niche-tag">Частные детские сады</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001031311073" target="_blank" rel="noopener">2ГИС (17 отз., ★4.5)</a>
+      <span class="nick">@sunflower_nsk</span>
+    </div>
+  </div>
+  <pre class="letter-text">Екатерина, добрый день! 😊
+Заглянула в вашу карточку в Новосибирске и улыбнулась от отзывов про малышей с желанием идти в садик даже в выходные и сытные обеды.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На уютной странице родители увидят распорядок дня с праздниками и сразу договорятся о встрече.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. Бесплатно набросаем эскиз сайта под ваш садик и пришлём картинкой. 🙏
+
+Скинем вам такой вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I26">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/sunflower_nsk" target="_blank" rel="noopener">Открыть @sunflower_nsk</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I26" data-group="I" data-u="sunflower_nsk"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I26-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I26-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I26-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I26-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I26">Екатерина, добрый день! 😊
+Заглянула в вашу карточку в Новосибирске и улыбнулась от отзывов про малышей с желанием идти в садик даже в выходные и сытные обеды.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На уютной странице родители увидят распорядок дня с праздниками и сразу договорятся о встрече.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. Бесплатно набросаем эскиз сайта под ваш садик и пришлём картинкой. 🙏
+
+Скинем вам такой вариант?</textarea>
+  <textarea hidden id="blk-I26-1">Екатерина, добрый день! 😊</textarea><textarea hidden id="blk-I26-2">Заглянула в вашу карточку в Новосибирске и улыбнулась от отзывов про малышей с желанием идти в садик даже в выходные и сытные обеды.
+
+Ссылки на собственный сайт в 2ГИС пока нет. На уютной странице родители увидят распорядок дня с праздниками и сразу договорятся о встрече.</textarea><textarea hidden id="blk-I26-3">Меня зовут Ирина, мы небольшой командой делаем сайты для частных детских садов. Бесплатно набросаем эскиз сайта под ваш садик и пришлём картинкой. 🙏</textarea><textarea hidden id="blk-I26-4">Скинем вам такой вариант?</textarea>
+</article>
+<article class="card" id="card-I27" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№27</span>
+      <strong>Пространство-Трансформации, кабинет психолога</strong>
+      <span class="city">(Новокузнецк)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Елена</span>
+      <span class="niche-tag">Услуги психолога</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001087676897" target="_blank" rel="noopener">2ГИС (11 отз., ★5.0)</a>
+      <span class="nick">@fire_fox2737</span>
+    </div>
+  </div>
+  <pre class="letter-text">Елена, здравствуйте! 😊
+Смотрела вашу карточку в Новокузнецке и прочитала яркие отзывы про игру Пиканта с бережным подсвечиванием сильных сторон на индивидуальной сессии.
+
+Отдельного сайта в 2ГИС сейчас нет. На лёгкой странице можно красиво описать формат трансформационной игры и собрать заявки на ближайшую дату.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих игр. С удовольствием бесплатно соберём стартовый макет под ваши встречи и скинем картинкой. 🤗
+
+Показать вам такой пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I27">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/fire_fox2737" target="_blank" rel="noopener">Открыть @fire_fox2737</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I27" data-group="I" data-u="fire_fox2737"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I27-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I27-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I27-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I27-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I27">Елена, здравствуйте! 😊
+Смотрела вашу карточку в Новокузнецке и прочитала яркие отзывы про игру Пиканта с бережным подсвечиванием сильных сторон на индивидуальной сессии.
+
+Отдельного сайта в 2ГИС сейчас нет. На лёгкой странице можно красиво описать формат трансформационной игры и собрать заявки на ближайшую дату.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих игр. С удовольствием бесплатно соберём стартовый макет под ваши встречи и скинем картинкой. 🤗
+
+Показать вам такой пример?</textarea>
+  <textarea hidden id="blk-I27-1">Елена, здравствуйте! 😊</textarea><textarea hidden id="blk-I27-2">Смотрела вашу карточку в Новокузнецке и прочитала яркие отзывы про игру Пиканта с бережным подсвечиванием сильных сторон на индивидуальной сессии.
+
+Отдельного сайта в 2ГИС сейчас нет. На лёгкой странице можно красиво описать формат трансформационной игры и собрать заявки на ближайшую дату.</textarea><textarea hidden id="blk-I27-3">Меня зовут Ирина, мы небольшой командой делаем сайты для психологов и ведущих игр. С удовольствием бесплатно соберём стартовый макет под ваши встречи и скинем картинкой. 🤗</textarea><textarea hidden id="blk-I27-4">Показать вам такой пример?</textarea>
+</article>
+<article class="card" id="card-I28" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№28</span>
+      <strong>Бегемот&amp;Бантик, магазин цветов и напитков</strong>
+      <span class="city">(Калининград)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Кирилл</span>
+      <span class="niche-tag">Доставка цветов</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001056045533" target="_blank" rel="noopener">2ГИС (38 отз., ★4.7)</a>
+      <span class="nick">@kirillas39</span>
+    </div>
+  </div>
+  <pre class="letter-text">Кирилл, добрый день! 😊
+Листала вашу карточку в Калининграде и отметила отзыв про сборку букета по фотографиям мужа ещё до прилёта в город точно к празднику жены.
+
+Своего сайта в 2ГИС сейчас нет. На удобной странице легко показать свежие композиции с дистанционным заказом и доставкой к нужной дате.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для магазинов цветов и доставки. Бесплатно подготовим пробный макет под ваш магазин и отправим картинкой. 🙏
+
+Пришлём вам готовый вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I28">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/kirillas39" target="_blank" rel="noopener">Открыть @kirillas39</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I28" data-group="I" data-u="kirillas39"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I28-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I28-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I28-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I28-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I28">Кирилл, добрый день! 😊
+Листала вашу карточку в Калининграде и отметила отзыв про сборку букета по фотографиям мужа ещё до прилёта в город точно к празднику жены.
+
+Своего сайта в 2ГИС сейчас нет. На удобной странице легко показать свежие композиции с дистанционным заказом и доставкой к нужной дате.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для магазинов цветов и доставки. Бесплатно подготовим пробный макет под ваш магазин и отправим картинкой. 🙏
+
+Пришлём вам готовый вариант?</textarea>
+  <textarea hidden id="blk-I28-1">Кирилл, добрый день! 😊</textarea><textarea hidden id="blk-I28-2">Листала вашу карточку в Калининграде и отметила отзыв про сборку букета по фотографиям мужа ещё до прилёта в город точно к празднику жены.
+
+Своего сайта в 2ГИС сейчас нет. На удобной странице легко показать свежие композиции с дистанционным заказом и доставкой к нужной дате.</textarea><textarea hidden id="blk-I28-3">Меня зовут Ирина, мы небольшой командой делаем сайты для магазинов цветов и доставки. Бесплатно подготовим пробный макет под ваш магазин и отправим картинкой. 🙏</textarea><textarea hidden id="blk-I28-4">Пришлём вам готовый вариант?</textarea>
+</article>
+<article class="card" id="card-I29" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№29</span>
+      <strong>Nadin design, портьерный салон</strong>
+      <span class="city">(Казань)</span>
+    </div>
+    <div class="card-meta">
+      <span class="imya-tag">Имя: Надежда</span>
+      <span class="niche-tag">Портьерные ткани / Шторы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001048044299" target="_blank" rel="noopener">2ГИС (22 отз., ★5.0)</a>
+      <span class="nick">@design_by_nadin</span>
+    </div>
+  </div>
+  <pre class="letter-text">Надежда, здравствуйте! 😊
+Зашла в вашу карточку в Казани и увидела отзывы про пошив чехлов на диван и точную подгонку стыков поворотного карниза в гостевой комнате.
+
+Ссылки на сайт в 2ГИС пока нет. На элегантной странице отлично смотрятся готовые шторы с чехлами и кнопка вызова на замер.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для портьерных салонов. Бесплатно сделаем первый макет под ваш салон и пришлём картинкой. 🤗
+
+Показать вам готовый вариант?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I29">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/design_by_nadin" target="_blank" rel="noopener">Открыть @design_by_nadin</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I29" data-group="I" data-u="design_by_nadin"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I29-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I29-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I29-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I29-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I29">Надежда, здравствуйте! 😊
+Зашла в вашу карточку в Казани и увидела отзывы про пошив чехлов на диван и точную подгонку стыков поворотного карниза в гостевой комнате.
+
+Ссылки на сайт в 2ГИС пока нет. На элегантной странице отлично смотрятся готовые шторы с чехлами и кнопка вызова на замер.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для портьерных салонов. Бесплатно сделаем первый макет под ваш салон и пришлём картинкой. 🤗
+
+Показать вам готовый вариант?</textarea>
+  <textarea hidden id="blk-I29-1">Надежда, здравствуйте! 😊</textarea><textarea hidden id="blk-I29-2">Зашла в вашу карточку в Казани и увидела отзывы про пошив чехлов на диван и точную подгонку стыков поворотного карниза в гостевой комнате.
+
+Ссылки на сайт в 2ГИС пока нет. На элегантной странице отлично смотрятся готовые шторы с чехлами и кнопка вызова на замер.</textarea><textarea hidden id="blk-I29-3">Меня зовут Ирина, мы небольшой командой делаем сайты для портьерных салонов. Бесплатно сделаем первый макет под ваш салон и пришлём картинкой. 🤗</textarea><textarea hidden id="blk-I29-4">Показать вам готовый вариант?</textarea>
+</article>
+<article class="card" id="card-I30" data-group="I">
+  <div class="card-top">
+    <div class="card-title">
+      <span class="badge-num">№30</span>
+      <strong>Ажур, салон штор</strong>
+      <span class="city">(Омск)</span>
+    </div>
+    <div class="card-meta">
+      
+      <span class="niche-tag">Портьерные ткани / Шторы</span>
+      <a class="gis" href="https://2gis.ru/firm/70000001007107112" target="_blank" rel="noopener">2ГИС (18 отз., ★5.0)</a>
+      <span class="nick">@ajur55</span>
+    </div>
+  </div>
+  <pre class="letter-text">Здравствуйте! 😊
+Посмотрела ваши отзывы в Омске про оперативный пошив штор для салона красоты с выездом на подбор тканей и возвращением заказчиков за третьим комплектом.
+
+Отдельного сайта в 2ГИС сейчас нет. На светлой странице удобно показать работы для квартир и студий с быстрым расчётом по размерам окон.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для салонов штор и текстиля. С радостью бесплатно соберём набросок сайта под ваш салон и скинем картинкой. 🙏
+
+Скинем вам такой пример?</pre>
+  <div class="actions-main">
+    <button type="button" class="btn btn-copy" data-target="txt-I30">Скопировать письмо</button>
+    <a class="btn btn-tg" href="https://t.me/ajur55" target="_blank" rel="noopener">Открыть @ajur55</a>
+    <label class="chk-wrap"><input type="checkbox" class="sent-chk" data-id="I30" data-group="I" data-u="ajur55"> <span>отправила</span></label>
+  </div>
+  <div class="actions-sub">
+    <span class="sub-lbl">По блокам:</span>
+    <button type="button" class="btn-mini btn-copy" data-target="blk-I30-1" title="Скопировать блок 1">Блок 1</button><button type="button" class="btn-mini btn-copy" data-target="blk-I30-2" title="Скопировать блок 2">Блок 2</button><button type="button" class="btn-mini btn-copy" data-target="blk-I30-3" title="Скопировать блок 3">Блок 3</button><button type="button" class="btn-mini btn-copy" data-target="blk-I30-4" title="Скопировать блок 4">Блок 4</button>
+  </div>
+  <p class="hint">Глянуть в профиле: «был(а) недавно» или в сети меньше 3 дней назад.</p>
+  <textarea hidden id="txt-I30">Здравствуйте! 😊
+Посмотрела ваши отзывы в Омске про оперативный пошив штор для салона красоты с выездом на подбор тканей и возвращением заказчиков за третьим комплектом.
+
+Отдельного сайта в 2ГИС сейчас нет. На светлой странице удобно показать работы для квартир и студий с быстрым расчётом по размерам окон.
+
+Меня зовут Ирина, мы небольшой командой делаем сайты для салонов штор и текстиля. С радостью бесплатно соберём набросок сайта под ваш салон и скинем картинкой. 🙏
+
+Скинем вам такой пример?</textarea>
+  <textarea hidden id="blk-I30-1">Здравствуйте! 😊</textarea><textarea hidden id="blk-I30-2">Посмотрела ваши отзывы в Омске про оперативный пошив штор для салона красоты с выездом на подбор тканей и возвращением заказчиков за третьим комплектом.
+
+Отдельного сайта в 2ГИС сейчас нет. На светлой странице удобно показать работы для квартир и студий с быстрым расчётом по размерам окон.</textarea><textarea hidden id="blk-I30-3">Меня зовут Ирина, мы небольшой командой делаем сайты для салонов штор и текстиля. С радостью бесплатно соберём набросок сайта под ваш салон и скинем картинкой. 🙏</textarea><textarea hidden id="blk-I30-4">Скинем вам такой пример?</textarea>
+</article>
+</div>
+
+<div class="toast" id="toast">Скопировано в буфер</div>
+
+<script>
+(function() {
+  var KEY = 'vska-single-v52-2026-11-27-I';
+  var S = {};
+  try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) { S = {}; }
+  var hideDone = false;
+  var toastTimer = null;
+
+  function showToast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function() { t.classList.remove('show'); }, 1400);
+  }
+
+  function copyText(val, okCb) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(val).then(okCb, function() { fallbackCopy(val, okCb); });
+    } else {
+      fallbackCopy(val, okCb);
+    }
+  }
+
+  function fallbackCopy(val, okCb) {
+    var ta = document.createElement('textarea');
+    ta.value = val;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+    okCb();
+  }
+
+  function upd() {
+    var c = 0;
+    var query = (document.getElementById('q').value || '').toLowerCase().trim();
+    document.querySelectorAll('.sent-chk').forEach(function(b) {
+      var on = !!S[b.dataset.id];
+      b.checked = on;
+      if (on) c++;
+      var card = document.getElementById('card-' + b.dataset.id);
+      card.classList.toggle('done', on);
+      var matchQ = !query || card.innerText.toLowerCase().indexOf(query) !== -1;
+      var matchHide = !(hideDone && on);
+      card.classList.toggle('hidden', !(matchQ && matchHide));
+    });
+    document.querySelectorAll('.batch-sep').forEach(function(s) { s.classList.toggle('hidden', !!query); });
+    document.getElementById('cnt').textContent = c;
+  }
+
+  document.querySelectorAll('.sent-chk').forEach(function(b) {
+    b.onchange = function() {
+      S[b.dataset.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {}
+      upd();
+    };
+  });
+
+  document.querySelectorAll('.btn-copy').forEach(function(btn) {
+    var orig = btn.textContent;
+    btn.onclick = function() {
+      var ta = document.getElementById(btn.dataset.target);
+      copyText(ta.value, function() {
+        btn.textContent = '✓ Скопировано';
+        btn.classList.add('copied');
+        showToast('Текст скопирован');
+        setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 1300);
+      });
+    };
+  });
+
+  document.getElementById('toggle-hide').onclick = function() {
+    hideDone = !hideDone;
+    this.textContent = 'Скрыть отправленные: ' + (hideDone ? 'Вкл' : 'Выкл');
+    this.classList.toggle('active', hideDone);
+    upd();
+  };
+
+  document.getElementById('q').addEventListener('input', upd);
+
+  document.getElementById('exp').onclick = function() {
+    var a = [];
+    document.querySelectorAll('.sent-chk').forEach(function(b) { if (S[b.dataset.id]) a.push('@' + b.dataset.u); });
+    var t = 'Отправлено 27.11 (I): ' + a.length + '\n' + a.join('\n');
+    var btn = this;
+    copyText(t, function() {
+      btn.textContent = '✓ Скопировано (' + a.length + ')';
+      showToast('Список скопирован (' + a.length + ')');
+    });
+  };
+  upd();
+})();
+</script>
+</body>
+</html>
