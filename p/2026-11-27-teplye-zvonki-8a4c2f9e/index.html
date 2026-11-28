@@ -346,23 +346,24 @@
       header, main { padding: 12px; }
       nav { padding: 8px 12px; }
       article.card { padding: 14px; }
-      button.copy-btn, a.action-link { flex: 1 1 auto; text-align: center; }
+      button.copy-btn, a.action-link { flex: 1 1 auto; text-align: center; min-height: 44px; }
+      input.note-input { font-size: 16px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <p class="eyebrow">VSKA · Суббота, 28 ноября 2026</p>
+  <p class="eyebrow">VSKA · Суббота, 28 ноября 2026 · Обновлено в 13:25 ЕКБ</p>
   <h1>План касаний: утром написать -> вечером позвонить</h1>
-  <p class="subtitle">Схема дня: с утра проходим все карточки в Telegram, а вечером набираем тем, кто не ответил и у кого есть номер телефона (учитываем часовой пояс).</p>
+  <p class="subtitle">Сегодня суббота: новых холодных лидов не ищем, отдыхаем. Главное - закрыть Раздел 1 (оффер с собеседования, цена Павлу Порошину, пинги Татьяне, Елизавете и две сделки). По остальным: написать сейчас в Telegram, а вечером коротко набрать молчунам с телефоном (с учетом часового пояса).</p>
   <div class="summary-bar">
     <div class="summary-stats">
       <span class="stat-pill">Всего карточек: <b id="stat-total">0</b></span>
       <span class="stat-pill">Написал утром: <b id="stat-wrote">0</b></span>
       <span class="stat-pill">Закрыто за день: <b id="stat-done">0</b></span>
-      <span class="stat-pill">Сделки: <b>2</b></span>
-      <span class="stat-pill">Приоритет 28.11: <b>12</b></span>
+      <span class="stat-pill">Горячее сейчас: <b>6</b></span>
+      <span class="stat-pill">Приоритет 28.11: <b>11</b></span>
       <span class="stat-pill">Крупные / забытые: <b>10</b></span>
     </div>
     <div class="summary-controls">
@@ -377,18 +378,121 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#deals">1. Сделки (2)</a>
-    <a href="#priority">2. Приоритет 28.11 (12)</a>
+    <a href="#deals">1. Горячее сейчас (6)</a>
+    <a href="#priority">2. Приоритет 28.11 (11)</a>
     <a href="#forgotten">3. Крупные и забытые (10)</a>
-    <a href="#control">4. На контроле и макеты ПН (10)</a>
+    <a href="#control">4. На контроле и макеты ПН (7)</a>
   </div>
 </nav>
 
 <main>
 
-  <!-- ==================== 1. СДЕЛКИ ==================== -->
+  <!-- ==================== 1. ГОРЯЧЕЕ СЕЙЧАС (ОФФЕР, ВХОДЯЩИЕ, СДЕЛКИ) ==================== -->
   <section id="deals">
-    <h2>1. Активные сделки (деньги и сервис)</h2>
+    <h2>1. Горячее сейчас: оффер, входящие ответы и сделки (6)</h2>
+
+    <article class="card" data-id="hot-sobes" data-name="Собеседование - оффер (+375 25 781 7036)">
+      <div class="card-top">
+        <div>
+          <h3>Собеседование - одобрили кандидатуру!</h3>
+          <div class="meta-line">Беларусь (-2 ч к ЕКБ) · Zoom 27.11 · +375 25 781 7036</div>
+        </div>
+        <span class="badge badge-hot">ВХОДЯЩЕЕ 28.11 11:01 · ОФФЕР</span>
+      </div>
+      <div class="context">Сегодня в 11:01 написали: «Тимур, доброе утро! Руководитель одобрил Вашу кандидатуру. Если готовы работать с нами - дайте мне знать.» Ответить первым делом, подтвердить интерес и уточнить условия/старт.</div>
+      <div class="msg-label">Ответить сейчас в Telegram</div>
+      <div class="message">Добрый день! Отличная новость, спасибо! Да, я готов к работе с вами. Подскажите, какие дальнейшие шаги: когда планируем старт и пришлете ли детали по условиям и задачам?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/+375257817036" target="_blank" rel="noopener">Telegram</a>
+        <a class="action-link call-link" href="tel:+375257817036">Позвонить</a>
+      </div>
+      <div class="card-footer">
+        <label class="sub-check"><input type="checkbox" class="wrote-box"> Написал</label>
+        <label class="done-check"><input type="checkbox" class="done-box"> Готово</label>
+        <input type="text" class="note-input" placeholder="Итог (дата старта, условия, созвон...)">
+      </div>
+    </article>
+
+    <article class="card" data-id="hot-poroshin" data-name="Павел Порошин - Лучший День (@poroshinpro)">
+      <div class="card-top">
+        <div>
+          <h3>Павел Порошин («Лучший День»)</h3>
+          <div class="meta-line">Абакан (+2 ч к ЕКБ, сейчас 15:25!) · ведущий + детские праздники · @poroshinpro · +7 923 215-95-79</div>
+        </div>
+        <span class="badge badge-hot">ВХОДЯЩЕЕ 10:58 · СПРОСИЛ ЦЕНУ</span>
+      </div>
+      <div class="context">Сегодня в 10:58 ответил на макет: «Не плохо. Что по цене? Мне надо и меня упаковать, и детские праздники». Даем 2 четких варианта (24 000 лендинг или от 40 000 многостраничный под 2 аудитории) + зовем на 10-минутный созвон на 18:00 по Абакану (16:00 ЕКБ). Следом прикрепи «Прайс Dolzha.png»!</div>
+      <div class="msg-label">Ответить сейчас в Telegram (+ прикрепить Прайс Dolzha.png)</div>
+      <div class="message">Павел, добрый день! Рад, что в целом зашло. Правки внесу без проблем, пока вам все не понравится.
+
+По цене два варианта под вашу задачу:
+
+1. Если упаковать вас как ведущего и добавить блок детских праздников на одну страницу (как на картинках) - 24 000 рублей, срок от 12 рабочих дней (без учета согласований и ожидания материалов), оплата 50/50.
+
+2. Если развести две аудитории по-взрослому: отдельная страница под вас как ведущего и отдельная полноценная страница под детские праздники с программами и фото - это многостраничный сайт от 40 000 рублей, от 18 рабочих дней, оплата в три этапа 40/30/30.
+
+В цену входят тексты под обе темы, ваши фото и видео, заявки в Telegram, отзывы и настройка под Яндекс и Google.
+
+Давайте созвонимся минут на 10 сегодня в 18:00 по вашему времени (16:00 по ЕКБ), обсудим как лучше развести ведущего и детские праздники и сразу все точно посчитаю. Если время неудобно, напишите когда лучше.</div>
+      <div class="msg-label">Если не ответил - короткий звонок до 17:00 ЕКБ (19:00 Абакан)</div>
+      <div class="message call-script">Павел, добрый день, это Тимур по сайту «Лучший День». Ответил вам в Телеграме по цене за оба направления - ведущий и детские праздники. Удобно сейчас минут 5 обсудить, как лучше их развести на сайте?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/poroshinpro" target="_blank" rel="noopener">Telegram</a>
+        <a class="action-link call-link" href="tel:+79232159579">Позвонить</a>
+      </div>
+      <div class="card-footer">
+        <label class="sub-check"><input type="checkbox" class="wrote-box"> Написал</label>
+        <label class="done-check"><input type="checkbox" class="done-box"> Готово</label>
+        <input type="text" class="note-input" placeholder="Итог (созвонились, выбрал 24к или 40к...)">
+      </div>
+    </article>
+
+    <article class="card" data-id="hot-kozlova" data-name="Татьяна Козлова - С иголочки (@kotbor77)">
+      <div class="card-top">
+        <div>
+          <h3>Татьяна Козлова (ателье «С иголочки»)</h3>
+          <div class="meta-line">Белгород (-2 ч к ЕКБ) · ателье · @kotbor77 · цену 24 000 ₽ уже знает</div>
+        </div>
+        <span class="badge badge-warm">д1 после макета · 2 галочки</span>
+      </div>
+      <div class="context">Чистовой макет отправлен 27.11 в 20:16. Татьяна посмотрела (2 галочки), но пока молчит. По схеме 1-3-5 (д1) задаем легкий конкретный вопрос про один блок, без давления.</div>
+      <div class="msg-label">Написать сейчас в Telegram</div>
+      <div class="message">Татьяна, добрый день! Видел, что успели заглянуть в макет. Подскажите по одному моменту: на первом экране я поставил кнопку «Оценить по фото», чтобы клиенты сразу присылали фото вещи в Telegram, и собрал фиолетовую гамму с вашей визитки. Такой формат подходит или хочется сделать светлее и спокойнее?</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст</button>
+        <a class="action-link tg-link" href="https://t.me/kotbor77" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="card-footer">
+        <label class="sub-check"><input type="checkbox" class="wrote-box"> Написал</label>
+        <label class="done-check"><input type="checkbox" class="done-box"> Готово</label>
+        <input type="text" class="note-input" placeholder="Что ответила Татьяна по макету...">
+      </div>
+    </article>
+
+    <article class="card" data-id="hot-elizaveta" data-name="Елизавета - Сияние (@li_zizy) через Ирину">
+      <div class="card-top">
+        <div>
+          <h3>Елизавета («Сияние», логопед Монтессори)</h3>
+          <div class="meta-line">Северск (+2 ч к ЕКБ) · эко-макет · @li_zizy · диалог ведет Ирина!</div>
+        </div>
+        <span class="badge badge-warm">д1 после макета · 1 галка</span>
+      </div>
+      <div class="context">Макет отправлен Ириной 27.11 в 18:35, пока 1 галочка (не открыла чат, но в сети была недавно). Важно: писать должна Ирина в своем теплом стиле - перешли ей этот текст ниже.</div>
+      <div class="msg-label">Текст для Ирины (отправить Елизавете)</div>
+      <div class="message">Елизавета, добрый день! 😊 Заглянула уточнить, дошли ли вчерашние картинки с примером сайта «Сияния»? Если неудобно смотреть на выходных, спокойно посмотрите когда будет время, мы на связи 🤗</div>
+      <div class="btn-row">
+        <button type="button" class="copy-btn">Скопировать текст для Ирины</button>
+        <a class="action-link tg-link" href="https://t.me/irina_vakilova" target="_blank" rel="noopener">Переслать Ирине</a>
+        <a class="action-link tg-link" href="https://t.me/li_zizy" target="_blank" rel="noopener">Чат @li_zizy</a>
+      </div>
+      <div class="card-footer">
+        <label class="sub-check"><input type="checkbox" class="wrote-box"> Передал Ирине</label>
+        <label class="done-check"><input type="checkbox" class="done-box"> Готово</label>
+        <input type="text" class="note-input" placeholder="Итог (прочитала, ответила...)">
+      </div>
+    </article>
 
     <article class="card" data-id="deal-ledavto" data-name="Ледавто - Влад (@ledavtoekb)">
       <div class="card-top">
@@ -396,10 +500,10 @@
           <h3>Ледавто - Влад</h3>
           <div class="meta-line">Екатеринбург (ЕКБ) · автосвет · @ledavtoekb · +7 950 551-62-40</div>
         </div>
-        <span class="badge badge-hot">Сделка · 17 000 ₽</span>
+        <span class="badge badge-money">Сделка · 17 000 ₽</span>
       </div>
-      <div class="context">27.11 в 16:34 отправлены реквизиты («Тимур ВТБ»), пока 1 галочка (не прочитано). Днем клиент писал, что поправил бы только прайс. Утром коротко уточняем, если тишина до 16:00 ЕКБ - звоним.</div>
-      <div class="msg-label">Утром написать в Telegram</div>
+      <div class="context">27.11 в 16:34 отправлены реквизиты («Тимур ВТБ»), пока 1 галочка (не прочитано). Днем клиент писал, что поправил бы только прайс. Пишем сейчас, если тишина до 16:30 ЕКБ - звоним.</div>
+      <div class="msg-label">Написать сейчас в Telegram</div>
       <div class="message">Влад, добрый день! Вчера скинул реквизиты, сообщение пока висит непрочитанным - дублирую на всякий случай. Как раз сегодня свободен, готов сразу поправить прайс и подключить админ-панель после перевода.</div>
       <div class="msg-label">Если молчит - звонок вечером</div>
       <div class="message call-script">Влад, добрый день, это Тимур по сайту Ледавто. Вчера скинул реквизиты в Телеграм, увидел что не прочитано - решил набрать, удобно сегодня закрыть этот шаг, чтобы я сразу прайс поправил и админку поставил?</div>
@@ -423,8 +527,8 @@
         </div>
         <span class="badge badge-hot">Входящее 27.11</span>
       </div>
-      <div class="context">27.11 в 15:34 клиент написал «грузило долго» (проверял новый сайт https://installaudio.ru после переноса и SSL). Утром успокоить по скорости и сказать, что на выходных докрутим индексацию и проверку скорости.</div>
-      <div class="msg-label">Утром написать в Telegram</div>
+      <div class="context">27.11 в 15:34 клиент написал «грузило долго» (проверял новый сайт https://installaudio.ru после переноса и SSL). Успокоить по скорости и попросить проверить еще раз с телефона.</div>
+      <div class="msg-label">Написать сейчас в Telegram</div>
       <div class="message">Дмитрий, добрый день! Вчера как раз шел перенос домена и обновление SSL-сертификата, из-за этого первый раз сайт мог открываться дольше. Сейчас открывается быстро, проверьте пожалуйста еще раз с телефона? На выходных еще докручу Вебмастер и ускорение, чтобы летал моментально.</div>
       <div class="btn-row">
         <button type="button" class="copy-btn">Скопировать текст</button>
@@ -441,7 +545,7 @@
 
   <!-- ==================== 2. ПРИОРИТЕТ 28.11 ==================== -->
   <section id="priority">
-    <h2>2. Приоритет на 28.11: утром пишем -> вечером звоним (12)</h2>
+    <h2>2. Приоритет на 28.11: написать сейчас -> позвонить вечером (11)</h2>
 
     <article class="card" data-id="prio-zimnik" data-name="Зимник Евгений (@zimnik_e)">
       <div class="card-top">
@@ -512,31 +616,6 @@
         <label class="sub-check"><input type="checkbox" class="wrote-box"> Написал</label>
         <label class="done-check"><input type="checkbox" class="done-box"> Готово</label>
         <input type="text" class="note-input" placeholder="Итог касания...">
-      </div>
-    </article>
-
-    <article class="card" data-id="prio-poroshin" data-name="Павел Порошин - Лучший День (@poroshinpro)">
-      <div class="card-top">
-        <div>
-          <h3>Павел Порошин («Лучший День»)</h3>
-          <div class="meta-line">Абакан (+2 ч к ЕКБ) · праздники · @poroshinpro · +7 923 215-95-79</div>
-        </div>
-        <span class="badge badge-warm">д4 после макета</span>
-      </div>
-      <div class="context">Макет demo-luchshiyden отправлен 24.11, прочитан (2 галочки), тишина 4 дня. Пишем утром, если молчит - звоним до 17:00 ЕКБ (в Абакане уже 19:00).</div>
-      <div class="msg-label">Утром написать в Telegram</div>
-      <div class="message">Павел, добрый день! Удалось посмотреть макет? Подскажите честно, как вам по стилю и подаче - если хочется что-то поменять или убрать, я оперативно поправлю.</div>
-      <div class="msg-label">Если молчит - звонок до 17:00 ЕКБ</div>
-      <div class="message call-script">Павел, добрый день, это Тимур, я вам во вторник отправлял макет сайта для «Лучшего Дня». Хотел буквально на минуту спросить - удалось посмотреть, как впечатления?</div>
-      <div class="btn-row">
-        <button type="button" class="copy-btn">Скопировать текст</button>
-        <a class="action-link tg-link" href="https://t.me/poroshinpro" target="_blank" rel="noopener">Telegram</a>
-        <a class="action-link call-link" href="tel:+79232159579">Позвонить</a>
-      </div>
-      <div class="card-footer">
-        <label class="sub-check"><input type="checkbox" class="wrote-box"> Написал</label>
-        <label class="done-check"><input type="checkbox" class="done-box"> Готово</label>
-        <input type="text" class="note-input" placeholder="Итог касания / звонка...">
       </div>
     </article>
 
@@ -713,13 +792,13 @@
       <div class="card-top">
         <div>
           <h3>Ирина-помощница</h3>
-          <div class="meta-line">Сверка диалогов и рассылки · @irina_vakilova</div>
+          <div class="meta-line">Сверка диалогов и пинг Елизавете · @irina_vakilova</div>
         </div>
-        <span class="badge">Сверка лидов</span>
+        <span class="badge">Сверка · суббота без лидов</span>
       </div>
-      <div class="context">Сверить ответ по «Ажур Декор» (макет и цена ушли 27.11), по «Сиянию» (Елизавета, макет ушел в 18:35) и по свежим ответам из рассылки.</div>
-      <div class="msg-label">Утром написать в Telegram</div>
-      <div class="message">Ирин, привет! Подскажи пожалуйста: что ответила Анастасия («Ажур Декор») после цены и Елизавета («Сияние») после макета? И есть ли новые теплые ответы по вчерашней рассылке?</div>
+      <div class="context">Попросить Ирину мягко пингануть Елизавету («Сияние», висит 1 галочка, но была в сети) и спросить по Елене (зоогостиница). Сказать, что сегодня суббота - новых холодных писем не шлем, отдыхаем.</div>
+      <div class="msg-label">Написать сейчас в Telegram</div>
+      <div class="message">Ирин, привет! Сегодня суббота, новых лидов не гоняем, отдыхаем. Подскажи только: что там по Елене (зоогостиница) и есть ли свежие ответы со вчера? И если будет минутка, закинь пожалуйста Елизавете («Сияние») короткое: «Елизавета, добрый день! 😊 Заглянула уточнить, дошли ли вчерашние картинки с примером сайта «Сияния»? Если неудобно смотреть на выходных, спокойно посмотрите когда будет время, мы на связи 🤗»</div>
       <div class="btn-row">
         <button type="button" class="copy-btn">Скопировать текст</button>
         <a class="action-link tg-link" href="https://t.me/irina_vakilova" target="_blank" rel="noopener">Telegram</a>
@@ -971,32 +1050,8 @@
 
   <!-- ==================== 4. НА КОНТРОЛЕ И МАКЕТЫ НА ПН ==================== -->
   <section id="control">
-    <h2>4. На контроле, макеты на ПН 30.11 и декабрьская очередь (10)</h2>
+    <h2>4. На контроле, макеты на ПН 30.11 и декабрьская очередь (7)</h2>
     <div class="list-compact">
-
-      <div class="info-item">
-        <div class="info-title">
-          <span>Анастасия Дулаева («Ажур Декор», Находка, @Anastasia_Dulaeva)</span>
-          <span class="badge badge-hot">Макет сдан 27.11 · запросила цену</span>
-        </div>
-        <div class="info-desc">Макет штор отправлен 27.11 в 13:19 через Ирину, клиентка запросила цену. Проверить статус созвона / ответа у Ирины в субботу 28.11 (учитываем +5 ч к ЕКБ, Находка).</div>
-      </div>
-
-      <div class="info-item">
-        <div class="info-title">
-          <span>Елизавета («Сияние», Северск, @li_zizy)</span>
-          <span class="badge badge-call">Макет отправлен 27.11 18:35</span>
-        </div>
-        <div class="info-desc">Чистовой макет в эко-стиле Монтессори отправлен 27.11 в 18:35. Ждем обратную связь (если молчит - мягкий вопрос в ПН 30.11).</div>
-      </div>
-
-      <div class="info-item">
-        <div class="info-title">
-          <span>Татьяна Козлова (ателье «С иголочки», Белгород, @kotbor77)</span>
-          <span class="badge badge-call">Макет отправлен 27.11 20:16</span>
-        </div>
-        <div class="info-desc">Чистовой макет отправлен 27.11 в 20:16 (пока 1 галочка). Цену 24 000 ₽ уже знает. Ждем оценку на выходных / в ПН.</div>
-      </div>
 
       <div class="info-item">
         <div class="info-title">
@@ -1051,7 +1106,7 @@
           <span>Отсеяны по аудиту TG 27.11 (время не тратим)</span>
           <span class="badge badge-soft">Отказ / Пауза</span>
         </div>
-        <div class="info-desc">Vladimir (@VladimirSatin - вежливый отказ 23.11), СахалинТехЭксперт (неконструктив), Екатерина (@Aminova80 - сетевой маркетинг), Наталья (@nice_shik5 - точно не заказывает), Опольская Наталья (@Nataliaopolia - сама делает сайты), Альба (@albaoutlaw - «пока стоп»).</div>
+        <div class="info-desc">Анастасия Дулаева («Ажур Декор», @Anastasia_Dulaeva - отказ 27.11 в 18:55 после цены 24 000 ₽, созвон отменен), Vladimir (@VladimirSatin - вежливый отказ 23.11), СахалинТехЭксперт (неконструктив), Екатерина (@Aminova80 - сетевой маркетинг), Наталья (@nice_shik5 - точно не заказывает), Опольская Наталья (@Nataliaopolia - сама делает сайты), Альба (@albaoutlaw - «пока стоп»).</div>
       </div>
 
     </div>
@@ -1063,7 +1118,7 @@
 
 <script>
   (function () {
-    const STORAGE_KEY = 'vska_teplye_28_11_v2';
+    const STORAGE_KEY = 'vska_teplye_28_11_v3';
     let state = { hideDone: false, cards: {} };
 
     try {
